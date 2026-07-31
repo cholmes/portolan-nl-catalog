@@ -1,0 +1,474 @@
+{
+  "name": "cbs-wijken-en-buurten",
+  "title": "CBS Wijken en Buurten (Neighborhoods and Districts with Demographics)",
+  "title_nl": "CBS Wijk- en Buurtkaart",
+  "description": "The definitive Dutch demographic geodataset. Published annually by CBS (Statistics Netherlands), this dataset provides demographic, socioeconomic, and geographic statistics at three nested administrative levels: buurten (neighborhoods), wijken (districts), and gemeenten (municipalities). It is the primary source for neighborhood-level population, age, household, migration background, and urbanity data across the entire Netherlands.",
+  "provider": {
+    "name": "CBS (Centraal Bureau voor de Statistiek / Statistics Netherlands)",
+    "url": "https://www.cbs.nl/",
+    "description": "The Dutch national statistics office, responsible for collecting and publishing statistical data about the Netherlands."
+  },
+  "license": {
+    "type": "CC-BY-4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "sources": {
+    "atom_feed": "https://service.pdok.nl/cbs/wijkenbuurten/2025/atom/index.xml",
+    "download_url": "https://service.pdok.nl/cbs/wijkenbuurten/2025/atom/downloads/wijkenbuurten_2025.gpkg",
+    "ogc_api": "https://api.pdok.nl/cbs/wijken-en-buurten-2025/ogc/v1",
+    "pdok_page": "https://www.pdok.nl/datasets"
+  },
+  "format": "GeoPackage",
+  "crs": {
+    "code": "EPSG:28992",
+    "name": "Amersfoort / RD New",
+    "note": "The standard Dutch national coordinate reference system (Rijksdriehoekstelsel). Convert to EPSG:4326 (WGS 84) for web mapping or GeoParquet."
+  },
+  "coverage": "Netherlands (all land and water areas, including a 'Buitenland' boundary marker entry)",
+  "temporal": {
+    "current_year": 2025,
+    "available_years": [2021, 2022, 2023, 2024, 2025],
+    "reference_date": "Statistics reflect the situation as of 1 January of the publication year.",
+    "url_pattern": "https://service.pdok.nl/cbs/wijkenbuurten/{year}/atom/downloads/wijkenbuurten_{year}.gpkg"
+  },
+  "hierarchy": {
+    "description": "The three layers form a strict spatial hierarchy. Each buurt belongs to exactly one wijk, and each wijk belongs to exactly one gemeente. The code system encodes this relationship.",
+    "levels": [
+      {
+        "level": 1,
+        "name_nl": "gemeente",
+        "name_en": "municipality",
+        "code_prefix": "GM",
+        "code_example": "GM0014",
+        "description": "Top-level administrative unit. The Netherlands had 342 municipalities as of 1 Jan 2025, but the dataset includes additional entries (424 total) for historical/special cases."
+      },
+      {
+        "level": 2,
+        "name_nl": "wijk",
+        "name_en": "district",
+        "code_prefix": "WK",
+        "code_example": "WK001400",
+        "description": "Mid-level statistical unit. Each wijk aggregates one or more buurten and belongs to one gemeente. The first 4 digits after WK match the gemeente code."
+      },
+      {
+        "level": 3,
+        "name_nl": "buurt",
+        "name_en": "neighborhood",
+        "code_prefix": "BU",
+        "code_example": "BU00140000",
+        "description": "Finest-grained statistical unit. The first 6 digits after BU encode the wijk (and implicitly the gemeente). 14,823 features total, of which ~14,230 carry actual demographic data."
+      }
+    ],
+    "code_system": {
+      "description": "CBS area codes embed the hierarchy. For buurtcode BU00140000: GM=0014 (gemeente Groningen), WK=001400 (wijk 00 within Groningen), BU=00140000 (buurt 0000 within that wijk).",
+      "gemeente_from_buurt": "Take characters 3-6 of buurtcode (0-indexed: 2:6) to get the 4-digit gemeente code.",
+      "wijk_from_buurt": "Take characters 3-8 of buurtcode (0-indexed: 2:8) to get the 6-digit wijk code."
+    }
+  },
+  "sentinel_values": {
+    "-99997": {
+      "meaning": "Data not available or suppressed",
+      "reasons": [
+        "Privacy protection: areas with too few residents (typically <50) have statistics suppressed to prevent identification of individuals.",
+        "Not applicable: water-only areas and the 'Buitenland' (foreign territory) boundary marker have no meaningful demographic data.",
+        "Data not collected: some statistics may not be available for certain areas."
+      ],
+      "affected_columns": "All numeric statistical columns (population, percentages, densities, household counts, area measurements).",
+      "handling_advice": "Filter out -99997 values before computing averages, sums, or other aggregations. In SQL: WHERE aantal_inwoners != -99997. In Python/pandas: df.replace(-99997, pd.NA)."
+    }
+  },
+  "special_entries": {
+    "buitenland": {
+      "description": "A boundary marker entry labeled 'Buitenland' (Foreign) present in each layer. All statistical values are -99997. Represents the area outside the Netherlands.",
+      "handling": "Exclude from analysis. Filter by: WHERE buurtnaam != 'Buitenland' or WHERE aantal_inwoners != -99997."
+    },
+    "water_areas": {
+      "description": "Areas where the 'water' column is 'JA' represent water bodies (seas, lakes, major rivers). These typically have suppressed demographic statistics.",
+      "handling": "Filter by: WHERE water = 'NEE' for land-based analysis."
+    }
+  },
+  "layers": {
+    "buurten": {
+      "name": "buurten",
+      "name_en": "Neighborhoods",
+      "geometry_type": "Multi Polygon",
+      "feature_count": 14823,
+      "feature_count_with_data": 14230,
+      "description": "Finest-grained statistical areas. Each buurt is a small neighborhood within a gemeente, typically containing a few hundred to a few thousand residents.",
+      "id_column": "buurtcode",
+      "name_column": "buurtnaam",
+      "parent_columns": ["wijkcode", "gemeentecode", "gemeentenaam"]
+    },
+    "wijken": {
+      "name": "wijken",
+      "name_en": "Districts",
+      "geometry_type": "Multi Polygon",
+      "description": "Mid-level aggregation of buurten into districts. Each wijk belongs to one gemeente.",
+      "id_column": "wijkcode",
+      "name_column": "wijknaam",
+      "parent_columns": ["gemeentecode", "gemeentenaam"]
+    },
+    "gemeenten": {
+      "name": "gemeenten",
+      "name_en": "Municipalities",
+      "geometry_type": "Multi Polygon",
+      "feature_count": 424,
+      "feature_count_note": "More than the 342 current municipalities — includes historical/special entries.",
+      "description": "Top-level administrative units (municipalities). Each gemeente aggregates all wijken and buurten within its boundary.",
+      "id_column": "gemeentecode",
+      "name_column": "gemeentenaam",
+      "parent_columns": []
+    }
+  },
+  "schema": {
+    "description": "All three layers share the same column schema (with minor naming differences for the area code/name columns). The columns below use the buurten naming convention; wijken use wijkcode/wijknaam, gemeenten use gemeentecode/gemeentenaam.",
+    "columns": [
+      {
+        "name": "buurtcode",
+        "variants": ["wijkcode", "gemeentecode"],
+        "type": "String",
+        "dutch": "Buurtcode / Wijkcode / Gemeentecode",
+        "english": "Statistical area code",
+        "description": "CBS identifier with prefix BU (buurt), WK (wijk), or GM (gemeente) followed by numeric digits. Encodes the hierarchical relationship between levels."
+      },
+      {
+        "name": "buurtnaam",
+        "variants": ["wijknaam", "gemeentenaam"],
+        "type": "String",
+        "dutch": "Buurtnaam / Wijknaam / Gemeentenaam",
+        "english": "Area name",
+        "description": "Human-readable name of the area."
+      },
+      {
+        "name": "wijkcode",
+        "layer": "buurten only",
+        "type": "String",
+        "dutch": "Wijkcode",
+        "english": "Parent district code",
+        "description": "The wijk (district) that this buurt belongs to. Format: WK + 6 digits."
+      },
+      {
+        "name": "gemeentecode",
+        "type": "String",
+        "dutch": "Gemeentecode",
+        "english": "Municipality code",
+        "description": "The gemeente this area belongs to. Format: GM + 4 digits. Present on buurten and wijken layers."
+      },
+      {
+        "name": "gemeentenaam",
+        "type": "String",
+        "dutch": "Gemeentenaam",
+        "english": "Municipality name",
+        "description": "Human-readable name of the parent municipality."
+      },
+      {
+        "name": "indelingswijziging_wijken_en_buurten",
+        "type": "Integer",
+        "dutch": "Indelingswijziging wijken en buurten",
+        "english": "Boundary change flag",
+        "description": "Whether this area's boundaries changed compared to the previous year. 1 = boundaries changed, 0 = unchanged. Useful for time-series analysis to identify areas that cannot be directly compared year-over-year.",
+        "values": {"0": "No change", "1": "Boundaries changed"}
+      },
+      {
+        "name": "water",
+        "type": "String",
+        "dutch": "Water",
+        "english": "Water area indicator",
+        "description": "Whether this area is primarily a water body. 'JA' = water area (seas, lakes, major rivers), 'NEE' = land area. Water areas typically have all demographic statistics suppressed (-99997).",
+        "values": {"JA": "Water area", "NEE": "Land area"}
+      },
+      {
+        "name": "meest_voorkomende_postcode",
+        "type": "String",
+        "dutch": "Meest voorkomende postcode",
+        "english": "Most common postal code",
+        "description": "The dominant 4-digit postal code (PC4) in this area. Based on address counts. Useful for joining with postal-code-based datasets."
+      },
+      {
+        "name": "dekkingspercentage",
+        "type": "Integer",
+        "dutch": "Dekkingspercentage",
+        "english": "Coverage percentage",
+        "description": "Percentage of addresses in this area that fall within the most common postal code. Higher values indicate the area aligns well with the postal code; lower values indicate the area spans multiple postal codes."
+      },
+      {
+        "name": "omgevingsadressendichtheid",
+        "type": "Integer",
+        "dutch": "Omgevingsadressendichtheid",
+        "english": "Surrounding address density",
+        "description": "Average number of addresses within a 1 km radius of each address in the area. A measure of local urbanization intensity. Higher values indicate denser, more urban environments."
+      },
+      {
+        "name": "stedelijkheid_adressen_per_km2",
+        "type": "Integer",
+        "dutch": "Stedelijkheid (adressen per km2)",
+        "english": "Urbanity classification",
+        "description": "CBS urbanity classification on a 1-5 scale based on surrounding address density. Derived from omgevingsadressendichtheid.",
+        "values": {
+          "1": "Zeer sterk stedelijk / Very highly urban (>=2500 addresses/km2)",
+          "2": "Sterk stedelijk / Highly urban (1500-2500 addresses/km2)",
+          "3": "Matig stedelijk / Moderately urban (1000-1500 addresses/km2)",
+          "4": "Weinig stedelijk / Slightly urban (500-1000 addresses/km2)",
+          "5": "Niet stedelijk / Rural (<500 addresses/km2)"
+        }
+      },
+      {
+        "name": "bevolkingsdichtheid_inwoners_per_km2",
+        "type": "Integer",
+        "dutch": "Bevolkingsdichtheid (inwoners per km2)",
+        "english": "Population density (residents per km2)",
+        "description": "Number of residents per square kilometer of land area."
+      },
+      {
+        "name": "aantal_inwoners",
+        "type": "Integer",
+        "dutch": "Aantal inwoners",
+        "english": "Number of residents",
+        "description": "Total population registered in the area."
+      },
+      {
+        "name": "mannen",
+        "type": "Integer",
+        "dutch": "Mannen",
+        "english": "Male population",
+        "description": "Number of male residents."
+      },
+      {
+        "name": "vrouwen",
+        "type": "Integer",
+        "dutch": "Vrouwen",
+        "english": "Female population",
+        "description": "Number of female residents."
+      },
+      {
+        "name": "percentage_personen_0_tot_15_jaar",
+        "type": "Integer",
+        "dutch": "Percentage personen 0 tot 15 jaar",
+        "english": "% aged 0-14",
+        "description": "Percentage of the population aged 0 to 14 years (children)."
+      },
+      {
+        "name": "percentage_personen_15_tot_25_jaar",
+        "type": "Integer",
+        "dutch": "Percentage personen 15 tot 25 jaar",
+        "english": "% aged 15-24",
+        "description": "Percentage of the population aged 15 to 24 years (young adults, students)."
+      },
+      {
+        "name": "percentage_personen_25_tot_45_jaar",
+        "type": "Integer",
+        "dutch": "Percentage personen 25 tot 45 jaar",
+        "english": "% aged 25-44",
+        "description": "Percentage of the population aged 25 to 44 years (young working age)."
+      },
+      {
+        "name": "percentage_personen_45_tot_65_jaar",
+        "type": "Integer",
+        "dutch": "Percentage personen 45 tot 65 jaar",
+        "english": "% aged 45-64",
+        "description": "Percentage of the population aged 45 to 64 years (older working age)."
+      },
+      {
+        "name": "percentage_personen_65_jaar_en_ouder",
+        "type": "Integer",
+        "dutch": "Percentage personen 65 jaar en ouder",
+        "english": "% aged 65+",
+        "description": "Percentage of the population aged 65 and older (elderly/retired)."
+      },
+      {
+        "name": "percentage_ongehuwd",
+        "type": "Integer",
+        "dutch": "Percentage ongehuwd",
+        "english": "% never married",
+        "description": "Percentage of the population that has never been married."
+      },
+      {
+        "name": "percentage_gehuwd",
+        "type": "Integer",
+        "dutch": "Percentage gehuwd",
+        "english": "% married",
+        "description": "Percentage of the population currently married (including registered partnerships)."
+      },
+      {
+        "name": "percentage_gescheid",
+        "type": "Integer",
+        "dutch": "Percentage gescheid",
+        "english": "% divorced",
+        "description": "Percentage of the population that is divorced."
+      },
+      {
+        "name": "percentage_verweduwd",
+        "type": "Integer",
+        "dutch": "Percentage verweduwd",
+        "english": "% widowed",
+        "description": "Percentage of the population that is widowed."
+      },
+      {
+        "name": "aantal_huishoudens",
+        "type": "Integer",
+        "dutch": "Aantal huishoudens",
+        "english": "Number of households",
+        "description": "Total number of private households in the area."
+      },
+      {
+        "name": "percentage_eenpersoonshuishoudens",
+        "type": "Integer",
+        "dutch": "Percentage eenpersoonshuishoudens",
+        "english": "% single-person households",
+        "description": "Percentage of households consisting of one person living alone."
+      },
+      {
+        "name": "percentage_huishoudens_zonder_kinderen",
+        "type": "Integer",
+        "dutch": "Percentage huishoudens zonder kinderen",
+        "english": "% households without children",
+        "description": "Percentage of multi-person households without children."
+      },
+      {
+        "name": "percentage_huishoudens_met_kinderen",
+        "type": "Integer",
+        "dutch": "Percentage huishoudens met kinderen",
+        "english": "% households with children",
+        "description": "Percentage of households with one or more children."
+      },
+      {
+        "name": "gemiddelde_huishoudsgrootte",
+        "type": "Real",
+        "dutch": "Gemiddelde huishoudgrootte",
+        "english": "Average household size",
+        "description": "Average number of persons per household. Low values (1.0-1.5) indicate student/single neighborhoods; higher values (3.0+) indicate family areas."
+      },
+      {
+        "name": "percentage_met_herkomstland_nederland",
+        "type": "Integer",
+        "dutch": "Percentage met herkomstland Nederland",
+        "english": "% with Dutch background",
+        "description": "Percentage of the population with a Dutch migration background (herkomstland). Under CBS definition: both parents were born in the Netherlands."
+      },
+      {
+        "name": "percentage_met_herkomstland_uit_europa_excl_nl",
+        "type": "Integer",
+        "dutch": "Percentage met herkomstland uit Europa (excl. NL)",
+        "english": "% with European background (excl. NL)",
+        "description": "Percentage of the population with a migration background from another European country. Includes both first and second generation."
+      },
+      {
+        "name": "percentage_met_herkomstland_buiten_europa",
+        "type": "Integer",
+        "dutch": "Percentage met herkomstland buiten Europa",
+        "english": "% with non-European background",
+        "description": "Percentage of the population with a migration background from outside Europe. Includes both first and second generation."
+      },
+      {
+        "name": "percentage_geb_in_nl_met_herkomstland_nederland",
+        "type": "Integer",
+        "dutch": "Percentage geboren in NL met herkomstland Nederland",
+        "english": "% born in NL with Dutch background",
+        "description": "Percentage born in the Netherlands with both parents also born in the Netherlands. Represents the 'native Dutch' population in the CBS definition."
+      },
+      {
+        "name": "perc_geb_in_nl_met_herkomstland_in_europa_ex_nl",
+        "type": "Integer",
+        "dutch": "Percentage geboren in NL met herkomstland in Europa (excl. NL)",
+        "english": "% born in NL with European background",
+        "description": "Second-generation European migration background: born in the Netherlands but with at least one parent born in another European country."
+      },
+      {
+        "name": "perc_geb_in_nl_met_herkomstland_buiten_europa",
+        "type": "Integer",
+        "dutch": "Percentage geboren in NL met herkomstland buiten Europa",
+        "english": "% born in NL with non-European background",
+        "description": "Second-generation non-European migration background: born in the Netherlands but with at least one parent born outside Europe."
+      },
+      {
+        "name": "perc_geb_buiten_nl_met_herkomstlnd_in_europa_ex_nl",
+        "type": "Integer",
+        "dutch": "Percentage geboren buiten NL met herkomstland in Europa (excl. NL)",
+        "english": "% born abroad with European background",
+        "description": "First-generation European immigrants: born in another European country."
+      },
+      {
+        "name": "perc_geb_buiten_nl_met_herkomstlnd_buiten_europa",
+        "type": "Integer",
+        "dutch": "Percentage geboren buiten NL met herkomstland buiten Europa",
+        "english": "% born abroad with non-European background",
+        "description": "First-generation non-European immigrants: born outside Europe."
+      },
+      {
+        "name": "oppervlakte_totaal_in_ha",
+        "type": "Integer",
+        "dutch": "Oppervlakte totaal in hectare",
+        "english": "Total area (hectares)",
+        "description": "Total surface area of the region in hectares (1 ha = 10,000 m2). Includes both land and water."
+      },
+      {
+        "name": "oppervlakte_land_in_ha",
+        "type": "Integer",
+        "dutch": "Oppervlakte land in hectare",
+        "english": "Land area (hectares)",
+        "description": "Land surface area in hectares. Used as the denominator for population density calculations."
+      },
+      {
+        "name": "oppervlakte_water_in_ha",
+        "type": "Integer",
+        "dutch": "Oppervlakte water in hectare",
+        "english": "Water area (hectares)",
+        "description": "Water surface area in hectares."
+      },
+      {
+        "name": "jrstatcode",
+        "type": "String",
+        "dutch": "Jaar + statistisch code",
+        "english": "Year + statistical code",
+        "description": "Composite key combining the year and the area code, e.g., '2025BU00140000'. Useful for multi-year datasets to create unique identifiers."
+      },
+      {
+        "name": "jaar",
+        "type": "Integer",
+        "dutch": "Jaar",
+        "english": "Year",
+        "description": "The reference year for the statistics (e.g., 2025). All records in a single file share the same year."
+      }
+    ]
+  },
+  "sample_data": {
+    "area": "Groningen Binnenstad-Noord",
+    "buurtcode": "BU00140000",
+    "aantal_inwoners": 4765,
+    "mannen": 2495,
+    "vrouwen": 2270,
+    "percentage_personen_15_tot_25_jaar": 48,
+    "bevolkingsdichtheid_inwoners_per_km2": 12845,
+    "percentage_eenpersoonshuishoudens": 82,
+    "gemiddelde_huishoudsgrootte": 1.2,
+    "percentage_met_herkomstland_nederland": 65,
+    "percentage_met_herkomstland_uit_europa_excl_nl": 20,
+    "percentage_met_herkomstland_buiten_europa": 15,
+    "oppervlakte_land_in_ha": 37,
+    "oppervlakte_water_in_ha": 2,
+    "note": "Classic university-town neighborhood: very high youth percentage, dominated by single-person households."
+  },
+  "related_datasets": {
+    "cbs_gebiedsindelingen": {
+      "description": "CBS Gebiedsindelingen (Area Classifications) provides boundary geometries without demographic data. Use Wijken en Buurten when you need statistics; use Gebiedsindelingen when you only need boundaries or need additional geographic levels (COROP, provinces, labor market regions).",
+      "url": "https://www.pdok.nl/introductie/-/article/cbs-gebiedsindelingen"
+    },
+    "bestuurlijke_gebieden": {
+      "description": "Kadaster Bestuurlijke Gebieden provides the authoritative administrative boundaries for municipalities, provinces, and national territory. CBS boundaries are derived from these but may differ slightly due to statistical rounding.",
+      "url": "https://www.pdok.nl/introductie/-/article/bestuurlijke-gebieden"
+    },
+    "bag": {
+      "description": "Basisregistratie Adressen en Gebouwen (BAG) contains individual address and building data. Can be aggregated to buurt level for more detailed analysis.",
+      "url": "https://www.pdok.nl/introductie/-/article/basisregistratie-adressen-en-gebouwen-bag-"
+    }
+  },
+  "notes": [
+    "This is THE go-to dataset for any neighborhood-level demographic analysis in the Netherlands. It combines statistical data from CBS with geographic boundaries, enabling spatial analysis of population, housing, and migration patterns at the finest available granularity.",
+    "All percentage columns are integers (rounded to whole numbers), not decimals.",
+    "The five age-group percentages should sum to approximately 100 for valid areas.",
+    "The three migration-background percentages (Dutch, European, non-European) should sum to approximately 100.",
+    "The three marital-status percentages (unmarried, married, divorced, widowed) should sum to approximately 100.",
+    "Population density is calculated using land area only (oppervlakte_land_in_ha), excluding water.",
+    "Municipal mergers happen regularly in the Netherlands (several per year). When municipalities merge, all their buurten and wijken are renumbered. The indelingswijziging column helps track these changes."
+  ]
+}

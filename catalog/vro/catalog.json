@@ -1,0 +1,67 @@
+{
+  "type": "Catalog",
+  "id": "vro",
+  "stac_version": "1.1.0",
+  "title": "Ministerie van Volkshuisvesting en Ruimtelijke Ordening (VRO)",
+  "description": "Open geodata for which the Ministry of Housing and Spatial Planning (VRO) is the responsible provider on PDOK, drawn from the **Basisregistratie Ondergrond (BRO)** — the Dutch Key Registry of the Subsurface. These are the BRO datasets flagged as EU **High Value Data**: soil and geological boreholes, groundwater systems, soil-contamination decisions, mining constructions, and the national Soil Map and Geomorphological Map. The underlying data is produced by **TNO – Geologische Dienst Nederland** (subsurface objects) and **Wageningen Environmental Research** (the soil and geomorphological maps). All data is CC0 1.0 (public domain).\n\nEach collection is republished here as cloud-native GeoParquet + PMTiles with STAC metadata. Datasets whose source GeoPackage contains several distinct map layers (the Soil Map and the Geomorphological Map) are organised as sub-catalogs with one collection per layer.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/vro/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/vro/README.md",
+      "type": "text/html",
+      "title": "VRO subcatalog documentation"
+    },
+    {
+      "rel": "child",
+      "href": "./wandonderzoek/collection.json",
+      "type": "application/json",
+      "title": "BRO Soil Trench Investigation (SFR)"
+    },
+    {
+      "rel": "child",
+      "href": "./mijnbouwconstructie/collection.json",
+      "type": "application/json",
+      "title": "BRO Mining Construction (EPC)"
+    },
+    {
+      "rel": "child",
+      "href": "./bodemverontreiniging_besluit/collection.json",
+      "type": "application/json",
+      "title": "BRO Government Decision on Soil Contamination (SLD)"
+    },
+    {
+      "rel": "child",
+      "href": "./grondwatergebruiksysteem/collection.json",
+      "type": "application/json",
+      "title": "BRO Groundwater Use System (GUF)"
+    },
+    {
+      "rel": "child",
+      "href": "./bodemkaart/catalog.json",
+      "type": "application/json",
+      "title": "BRO Soil Map of the Netherlands 1:50,000 (SGM)"
+    },
+    {
+      "rel": "child",
+      "href": "./geomorfologische_kaart/catalog.json",
+      "type": "application/json",
+      "title": "BRO Geomorphological Map of the Netherlands 1:50,000 (GMM)"
+    }
+  ]
+}

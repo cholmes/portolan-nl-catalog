@@ -1,0 +1,55 @@
+{
+  "type": "Catalog",
+  "id": "rvo",
+  "stac_version": "1.1.0",
+  "title": "Rijksdienst voor Ondernemend Nederland (RVO)",
+  "description": "Open geodatasets from the Netherlands Enterprise Agency (RVO). RVO publishes data on agriculture, nature conservation, energy infrastructure, habitat protection areas, and agricultural parcel registrations (BRP/gewaspercelen).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rvo/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "icon",
+      "href": "./logo.png",
+      "type": "image/png",
+      "title": "RVO logo"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/rvo/README.md",
+      "type": "text/html",
+      "title": "Rijksdienst voor Ondernemend Nederland (RVO) documentation"
+    },
+    {
+      "rel": "child",
+      "href": "./nationale_parken/collection.json",
+      "type": "application/json",
+      "title": "National Parks (Nationale Parken)"
+    },
+    {
+      "rel": "child",
+      "href": "./natura2000/collection.json",
+      "type": "application/json",
+      "title": "Natura 2000 Protected Areas"
+    },
+    {
+      "rel": "child",
+      "href": "./brp_gewaspercelen/collection.json",
+      "type": "application/json",
+      "title": "BRP Gewaspercelen (Agricultural Crop Parcels)"
+    }
+  ]
+}

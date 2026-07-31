@@ -1,0 +1,216 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "id": "brp_gewaspercelen_2022",
+  "collection": "brp_gewaspercelen",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          3.3597,
+          50.7504
+        ],
+        [
+          7.2244,
+          50.7504
+        ],
+        [
+          7.2244,
+          53.497
+        ],
+        [
+          3.3597,
+          53.497
+        ],
+        [
+          3.3597,
+          50.7504
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    3.3597,
+    50.7504,
+    7.2244,
+    53.497
+  ],
+  "properties": {
+    "datetime": "2022-05-15T00:00:00Z",
+    "start_datetime": "2022-05-15T00:00:00Z",
+    "end_datetime": "2022-05-15T00:00:00Z",
+    "title": "BRP Gewaspercelen 2022",
+    "description": "Definitive crop parcel registration for 2022. The BRP is an annual snapshot reflecting what farmers register each May 15 (the CAP deadline); this 'definitief' edition is finalized after verification. Published by RVO via PDOK.",
+    "proj:code": "EPSG:28992",
+    "table:row_count": 758504,
+    "table:primary_geometry": "geom",
+    "geoparquet:geometry_type": "Polygon",
+    "geoparquet:feature_count": 758504,
+    "vector:geometry_types": [
+      "Polygon"
+    ],
+    "portolan:styles": [
+      "styles/default",
+      "styles/by-category",
+      "styles/by-crop",
+      "styles/landscape-elements"
+    ],
+    "table:columns": [
+      {
+        "name": "id",
+        "type": "int64",
+        "description": "Feature ID. Matches the source GeoPackage."
+      },
+      {
+        "name": "category",
+        "type": "string",
+        "description": "Broad crop category (e.g. Grasland, Bouwland, Landschapselement, Natuurterrein, Braakland, Overige). Note: Landschapselement was added in 2023; absent in this year."
+      },
+      {
+        "name": "gewas",
+        "type": "string",
+        "description": "Specific crop name (e.g. Grasland blijvend, Aardappelen consumptie, Mais snij-)."
+      },
+      {
+        "name": "gewascode",
+        "type": "int32",
+        "description": "Numeric crop code identifying the specific crop type."
+      },
+      {
+        "name": "jaar",
+        "type": "int32",
+        "description": "Registration year."
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "description": "Registration status — always 'Definitief' in this collection."
+      },
+      {
+        "name": "geom",
+        "type": "binary",
+        "description": "Parcel boundary polygon in EPSG:28992 (Amersfoort / RD New), WKB-encoded."
+      }
+    ]
+  },
+  "assets": {
+    "data": {
+      "href": "./brp_gewaspercelen_2022.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "BRP Gewaspercelen 2022 (GeoParquet)",
+      "description": "758,504 agricultural parcel polygons for the 2022 BRP definitive edition. EPSG:28992 (Amersfoort / RD New), zstd-compressed, sorted by bbox per OGC Best Practices for Distributing GeoParquet.",
+      "table:row_count": 758504,
+      "roles": [
+        "data"
+      ]
+    },
+    "source": {
+      "href": "./brpgewaspercelen_definitief_2022.gpkg",
+      "type": "application/geopackage+sqlite3",
+      "title": "Source GeoPackage (PDOK definitive 2022)",
+      "description": "Original GeoPackage download from PDOK, used to derive the GeoParquet and PMTiles for 2022. EPSG:28992. **No schema transformation** — the GeoParquet columns are byte-equivalent to the GPKG.",
+      "roles": [
+        "source"
+      ]
+    },
+    "pmtiles": {
+      "href": "./brp_gewaspercelen_2022.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "BRP Gewaspercelen 2022 (vector tiles)",
+      "roles": [
+        "visual"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "Default (2022)",
+      "description": "Agricultural landscape — green for grassland, yellow for arable. Points at ./brp_gewaspercelen_2022.pmtiles. Generated from the canonical base style in ../styles/ via ../scripts/regen_year_styles.py.",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-category": {
+      "href": "./styles/by-category.json",
+      "type": "application/json",
+      "title": "By Crop Category (2022)",
+      "description": "Distinct colors for each broad crop category. Points at ./brp_gewaspercelen_2022.pmtiles. Generated from the canonical base style in ../styles/ via ../scripts/regen_year_styles.py.",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-crop": {
+      "href": "./styles/by-crop.json",
+      "type": "application/json",
+      "title": "By Crop Type (2022)",
+      "description": "Individual colors for the most common specific crops. Points at ./brp_gewaspercelen_2022.pmtiles. Generated from the canonical base style in ../styles/ via ../scripts/regen_year_styles.py.",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/landscape-elements": {
+      "href": "./styles/landscape-elements.json",
+      "type": "application/json",
+      "title": "Landscape Elements (2022)",
+      "description": "Highlights ditches, hedgerows, tree rows, and ponds. Points at ./brp_gewaspercelen_2022.pmtiles. Generated from the canonical base style in ../styles/ via ../scripts/regen_year_styles.py.",
+      "roles": [
+        "style"
+      ]
+    }
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/2022/brp_gewaspercelen_2022.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "BRP Gewaspercelen (Agricultural Crop Parcels)"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "BRP Gewaspercelen (Agricultural Crop Parcels)"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/rvo/gewaspercelen/atom/downloads/brpgewaspercelen_definitief_2022.gpkg",
+      "type": "application/geopackage+sqlite3",
+      "title": "PDOK source download (2022)"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/2022/brp_gewaspercelen_2022.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/2022/README.md",
+      "type": "text/html",
+      "title": "BRP Gewaspercelen 2022 documentation"
+    }
+  ]
+}

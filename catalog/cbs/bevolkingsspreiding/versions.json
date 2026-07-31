@@ -1,0 +1,160 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-05-07T16:00:00Z",
+      "breaking": false,
+      "assets": {
+        "grid.parquet": {
+          "sha256": "f4e8931141f46153edceb52231c535fcf9d52f410bf9ddf8f7e8e208a558bb2a",
+          "size_bytes": 4008378,
+          "href": "cbs/bevolkingsspreiding/grid.parquet",
+          "mtime": 1778160871.000117
+        },
+        "lau.parquet": {
+          "sha256": "f09f597ff999f30cc2eca8227fcdc0aca919f0c3362e9fcaa8e36dd3b9e5af8d",
+          "size_bytes": 650353,
+          "href": "cbs/bevolkingsspreiding/lau.parquet",
+          "mtime": 1778160667.3087597
+        },
+        "nuts2.parquet": {
+          "sha256": "2fe6f284a1baab20da0ae00d174f43b499be05586e21a7dacc777216b92ab7ba",
+          "size_bytes": 205030,
+          "href": "cbs/bevolkingsspreiding/nuts2.parquet",
+          "mtime": 1778160666.337636
+        },
+        "bevolkingsspreiding.pmtiles": {
+          "sha256": "3b5bc781a2df3e916e27bd88214e3a78b640a11771a0eda59b4018325c43ac48",
+          "size_bytes": 63586955,
+          "href": "cbs/bevolkingsspreiding/bevolkingsspreiding.pmtiles",
+          "mtime": 1778163705.9269152
+        },
+        "collection.json": {
+          "sha256": "7ab25b0aaa21e77262de8620d51f8f3f1e072263f7885c9d3589323c3296d346",
+          "size_bytes": 5056,
+          "href": "cbs/bevolkingsspreiding/collection.json",
+          "mtime": 1778165381.0294082
+        },
+        "llms.txt": {
+          "sha256": "919cfdca761850034cd2319cebe66f8cbd990ca5fe276f71c2388116ca1e9f01",
+          "size_bytes": 6709,
+          "href": "cbs/bevolkingsspreiding/llms.txt",
+          "mtime": 1778164448.946218
+        },
+        "README.md": {
+          "sha256": "abd5a68b84ed701cfa90e7f3998eb9bf011609091dcae4f760439ee03e1eef46",
+          "size_bytes": 2683,
+          "href": "cbs/bevolkingsspreiding/README.md",
+          "mtime": 1778157320.4445152
+        },
+        "thumbnail.png": {
+          "sha256": "8e5c2610f1624f6244e5ab55dcd06bbd76179bec410307bb5607be9bd35bb8f4",
+          "size_bytes": 175825,
+          "href": "cbs/bevolkingsspreiding/thumbnail.png",
+          "mtime": 1778157057.920969
+        }
+      },
+      "changes": [
+        "grid.parquet",
+        "lau.parquet",
+        "nuts2.parquet",
+        "bevolkingsspreiding.pmtiles",
+        "collection.json",
+        "llms.txt",
+        "README.md",
+        "thumbnail.png"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-05-08T18:24:04.146430Z",
+      "breaking": false,
+      "assets": {
+        "grid.parquet": {
+          "sha256": "440f3226357dc7e1506276080a4b36a2f3a2b7ff919673708489a7d8988fcc1f",
+          "size_bytes": 2223784,
+          "href": "cbs/bevolkingsspreiding/grid.parquet",
+          "mtime": 1778166871.0
+        },
+        "lau.parquet": {
+          "sha256": "7e7f334997f9ad0efa859e8cc6d26a1bb38ad5f0afce56b64c88bda350922672",
+          "size_bytes": 385624,
+          "href": "cbs/bevolkingsspreiding/lau.parquet",
+          "mtime": 1778166871.0
+        },
+        "nuts2.parquet": {
+          "sha256": "c5734830a832178345444c8c0bddb9aeeb3da7f844dc7aa8967aa1c2a43fdfa1",
+          "size_bytes": 152250,
+          "href": "cbs/bevolkingsspreiding/nuts2.parquet",
+          "mtime": 1778166871.0
+        },
+        "bevolkingsspreiding.pmtiles": {
+          "sha256": "3b5bc781a2df3e916e27bd88214e3a78b640a11771a0eda59b4018325c43ac48",
+          "size_bytes": 63586955,
+          "href": "cbs/bevolkingsspreiding/bevolkingsspreiding.pmtiles",
+          "mtime": 1778165442.0
+        },
+        "collection.json": {
+          "sha256": "7ab25b0aaa21e77262de8620d51f8f3f1e072263f7885c9d3589323c3296d346",
+          "size_bytes": 5056,
+          "href": "cbs/bevolkingsspreiding/collection.json",
+          "mtime": 1778165381.0294082
+        },
+        "llms.txt": {
+          "sha256": "8de70baf1f2027af0c8ca9e6ff9c0063be48d7676b40816a053991a25f6cd8f1",
+          "size_bytes": 7375,
+          "href": "cbs/bevolkingsspreiding/llms.txt",
+          "mtime": 1778185473.0
+        },
+        "README.md": {
+          "sha256": "abd5a68b84ed701cfa90e7f3998eb9bf011609091dcae4f760439ee03e1eef46",
+          "size_bytes": 2683,
+          "href": "cbs/bevolkingsspreiding/README.md",
+          "mtime": 1778165453.0
+        },
+        "thumbnail.png": {
+          "sha256": "8e5c2610f1624f6244e5ab55dcd06bbd76179bec410307bb5607be9bd35bb8f4",
+          "size_bytes": 175825,
+          "href": "cbs/bevolkingsspreiding/thumbnail.png",
+          "mtime": 1778165454.0
+        },
+        "lau.parquet.aux.xml": {
+          "sha256": "0f5402ff01ffc943c2b3822181d6b892f7cf47a7c96ba91ea2d370e2bcc4174d",
+          "size_bytes": 22232,
+          "href": "cbs/bevolkingsspreiding/lau.parquet.aux.xml",
+          "mtime": 1778185111.0
+        },
+        "nuts2.parquet.aux.xml": {
+          "sha256": "0f5402ff01ffc943c2b3822181d6b892f7cf47a7c96ba91ea2d370e2bcc4174d",
+          "size_bytes": 22232,
+          "href": "cbs/bevolkingsspreiding/nuts2.parquet.aux.xml",
+          "mtime": 1778185111.0
+        },
+        "grid.parquet.aux.xml": {
+          "sha256": "0f5402ff01ffc943c2b3822181d6b892f7cf47a7c96ba91ea2d370e2bcc4174d",
+          "size_bytes": 22232,
+          "href": "cbs/bevolkingsspreiding/grid.parquet.aux.xml",
+          "mtime": 1778185110.0
+        },
+        "bevolkingsspreiding.parquet": {
+          "sha256": "3c47b575febdf4b9d5e508ba09ef5ae030f231520e3ad71195e0724a3a8bd7a2",
+          "size_bytes": 4490816,
+          "href": "cbs/bevolkingsspreiding/bevolkingsspreiding.parquet",
+          "mtime": 1778166871.0
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "lau.parquet",
+        "nuts2.parquet",
+        "lau.parquet.aux.xml",
+        "nuts2.parquet.aux.xml",
+        "grid.parquet",
+        "grid.parquet.aux.xml",
+        "bevolkingsspreiding.parquet"
+      ]
+    }
+  ]
+}

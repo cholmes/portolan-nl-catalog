@@ -1,0 +1,13 @@
+# .portolan/metadata.yaml
+
+contact:
+  name: Chris Holmes
+  email: cholmes@9eo.org
+license: CC0-1.0
+source_url: https://www.pdok.nl/introductie/-/article/gebouwen-inspire-geharmoniseerd-
+processing_notes: >
+  INSPIRE-harmonized buildings from BAG, downloaded via PDOK WFS
+  (https://service.pdok.nl/kadaster/bu/wfs/v1_0) using gpio extract wfs
+  in a tiled grid. Tiles merged with DuckDB, then optimized with gpio
+  (Hilbert sort + bbox covering columns). Original GML.gz from PDOK ATOM
+  download service included as additional asset.

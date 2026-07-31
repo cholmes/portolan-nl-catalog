@@ -1,0 +1,50 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-06-07T21:29:46.993536Z",
+      "breaking": false,
+      "assets": {
+        "llms.txt": {
+          "sha256": "4a9e6651839f4f414e10743d59867ac725d1c36c0f68496c2a190a32b9328913",
+          "size_bytes": 5860,
+          "href": "vro/bodemkaart/soilarea/llms.txt",
+          "mtime": 1780867267.712425
+        },
+        "soilarea.pmtiles": {
+          "sha256": "4464bfd1ffe60904dc4601c3c2e9189b960e8a469769a5bf13a9ec4e9388878b",
+          "size_bytes": 51838354,
+          "href": "vro/bodemkaart/soilarea/soilarea.pmtiles",
+          "mtime": 1780865013.2162347
+        },
+        "README.md": {
+          "sha256": "68eb287788197ef3a83fe2481f982b34895ba379d63b906f9b6fa40c464720f0",
+          "size_bytes": 2766,
+          "href": "vro/bodemkaart/soilarea/README.md",
+          "mtime": 1780867375.3225267
+        },
+        "thumbnail.png": {
+          "sha256": "dd0697538b1bdec50816eaf9b0b85154c6b235d3d6fd924f78d89e6d7fd2188b",
+          "size_bytes": 160585,
+          "href": "vro/bodemkaart/soilarea/thumbnail.png",
+          "mtime": 1780866506.3239472
+        },
+        "soilarea.parquet": {
+          "sha256": "3bac52c20417f797bb8c6483272e7fc622220832f71bbce65ba65a37384b2daf",
+          "size_bytes": 43840527,
+          "href": "vro/bodemkaart/soilarea/soilarea.parquet",
+          "mtime": 1780864968.2734623
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "soilarea.pmtiles",
+        "README.md",
+        "thumbnail.png",
+        "soilarea.parquet"
+      ]
+    }
+  ]
+}

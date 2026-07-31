@@ -1,0 +1,132 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json",
+    "https://stac-extensions.github.io/raster/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "id": "luchtfoto-2024-20en2",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          5.5351787,
+          52.7123031
+        ],
+        [
+          5.5349894,
+          52.6561304
+        ],
+        [
+          5.6088902,
+          52.6560155
+        ],
+        [
+          5.6091741,
+          52.712188
+        ],
+        [
+          5.5351787,
+          52.7123031
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    5.5349894,
+    52.6560155,
+    5.6091741,
+    52.7123031
+  ],
+  "properties": {
+    "title": "Luchtfoto 2024 — Tile 20EN2",
+    "datetime": "2024-06-15T00:00:00Z",
+    "created": "2025-05-16T00:00:00Z",
+    "gsd": 0.25,
+    "proj:code": "EPSG:28992",
+    "proj:shape": [
+      25002,
+      20002
+    ],
+    "beeldmateriaal:kaartblad": "20EN2",
+    "description": "25 cm RGB orthophoto tile 20EN2 from the 2024 Beeldmateriaal Nederland summer campaign. Covers one kaartblad (~5 x 6.25 km) in the Lelystad / Markermeer region. Cloud-Optimized GeoTIFF with JPEG compression, 512x512 tiling, and 6 overview levels."
+  },
+  "links": [
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Luchtfoto 2024 — Aerial Orthophotos"
+    },
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "parent",
+      "href": "./catalog.json",
+      "type": "application/json",
+      "title": "KB 20 — Lelystad / Markermeer"
+    }
+  ],
+  "assets": {
+    "rgb": {
+      "href": "./luchtfoto-2024-20en2-rgb.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "RGB Orthophoto — 20EN2",
+      "description": "3-band RGB orthophoto (25cm, JPEG COG). 37 MB.",
+      "bands": [
+        {
+          "name": "red",
+          "data_type": "uint8",
+          "statistics": {
+            "minimum": 0.0,
+            "maximum": 255.0,
+            "mean": 81.497,
+            "stddev": 26.824
+          },
+          "eo:common_name": "red"
+        },
+        {
+          "name": "green",
+          "data_type": "uint8",
+          "statistics": {
+            "minimum": 8.0,
+            "maximum": 255.0,
+            "mean": 102.382,
+            "stddev": 21.592
+          },
+          "eo:common_name": "green"
+        },
+        {
+          "name": "blue",
+          "data_type": "uint8",
+          "statistics": {
+            "minimum": 5.0,
+            "maximum": 255.0,
+            "mean": 92.679,
+            "stddev": 17.687
+          },
+          "eo:common_name": "blue"
+        }
+      ],
+      "roles": [
+        "data",
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./luchtfoto-2024-20en2-thumbnail.png",
+      "type": "image/png",
+      "title": "Thumbnail",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  },
+  "collection": "luchtfoto_2024"
+}

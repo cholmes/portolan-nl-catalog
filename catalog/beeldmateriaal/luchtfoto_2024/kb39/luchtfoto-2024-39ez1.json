@@ -1,0 +1,132 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json",
+    "https://stac-extensions.github.io/raster/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "id": "luchtfoto-2024-39ez1",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          5.4599801,
+          51.9821319
+        ],
+        [
+          5.4598889,
+          51.9259512
+        ],
+        [
+          5.5325858,
+          51.9258836
+        ],
+        [
+          5.5327681,
+          51.9820643
+        ],
+        [
+          5.4599801,
+          51.9821319
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    5.4598889,
+    51.9258836,
+    5.5327681,
+    51.9821319
+  ],
+  "properties": {
+    "title": "Luchtfoto 2024 — Tile 39EZ1",
+    "datetime": "2024-06-15T00:00:00Z",
+    "created": "2025-05-16T00:00:00Z",
+    "gsd": 0.25,
+    "proj:code": "EPSG:28992",
+    "proj:shape": [
+      25002,
+      20002
+    ],
+    "beeldmateriaal:kaartblad": "39EZ1",
+    "description": "25 cm RGB orthophoto tile 39EZ1 from the 2024 Beeldmateriaal Nederland summer campaign. Covers one kaartblad (~5 x 6.25 km) in the Tiel / Betuwe region. Cloud-Optimized GeoTIFF with JPEG compression, 512x512 tiling, and 6 overview levels."
+  },
+  "links": [
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Luchtfoto 2024 — Aerial Orthophotos"
+    },
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "parent",
+      "href": "./catalog.json",
+      "type": "application/json",
+      "title": "KB 39 — Tiel / Betuwe"
+    }
+  ],
+  "assets": {
+    "rgb": {
+      "href": "./luchtfoto-2024-39ez1-rgb.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "RGB Orthophoto — 39EZ1",
+      "description": "3-band RGB orthophoto (25cm, JPEG COG). 89 MB.",
+      "bands": [
+        {
+          "name": "red",
+          "data_type": "uint8",
+          "statistics": {
+            "minimum": 26.0,
+            "maximum": 255.0,
+            "mean": 104.321,
+            "stddev": 31.605
+          },
+          "eo:common_name": "red"
+        },
+        {
+          "name": "green",
+          "data_type": "uint8",
+          "statistics": {
+            "minimum": 54.0,
+            "maximum": 255.0,
+            "mean": 125.353,
+            "stddev": 22.888
+          },
+          "eo:common_name": "green"
+        },
+        {
+          "name": "blue",
+          "data_type": "uint8",
+          "statistics": {
+            "minimum": 35.0,
+            "maximum": 255.0,
+            "mean": 102.336,
+            "stddev": 19.618
+          },
+          "eo:common_name": "blue"
+        }
+      ],
+      "roles": [
+        "data",
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./luchtfoto-2024-39ez1-thumbnail.png",
+      "type": "image/png",
+      "title": "Thumbnail",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  },
+  "collection": "luchtfoto_2024"
+}

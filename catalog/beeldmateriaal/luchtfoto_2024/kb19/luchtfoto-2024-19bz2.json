@@ -1,0 +1,132 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json",
+    "https://stac-extensions.github.io/raster/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "id": "luchtfoto-2024-19bz2",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          4.7960648,
+          52.6547584
+        ],
+        [
+          4.7968186,
+          52.5985872
+        ],
+        [
+          4.8706208,
+          52.598931
+        ],
+        [
+          4.8699612,
+          52.6551027
+        ],
+        [
+          4.7960648,
+          52.6547584
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    4.7960648,
+    52.5985872,
+    4.8706208,
+    52.6551027
+  ],
+  "properties": {
+    "title": "Luchtfoto 2024 — Tile 19BZ2",
+    "datetime": "2024-06-15T00:00:00Z",
+    "created": "2025-05-16T00:00:00Z",
+    "gsd": 0.25,
+    "proj:code": "EPSG:28992",
+    "proj:shape": [
+      25002,
+      20002
+    ],
+    "beeldmateriaal:kaartblad": "19BZ2",
+    "description": "25 cm RGB orthophoto tile 19BZ2 from the 2024 Beeldmateriaal Nederland summer campaign. Covers one kaartblad (~5 x 6.25 km) in the Alkmaar / Zaandam region. Cloud-Optimized GeoTIFF with JPEG compression, 512x512 tiling, and 6 overview levels."
+  },
+  "links": [
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Luchtfoto 2024 — Aerial Orthophotos"
+    },
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "parent",
+      "href": "./catalog.json",
+      "type": "application/json",
+      "title": "KB 19 — Alkmaar / Zaandam"
+    }
+  ],
+  "assets": {
+    "rgb": {
+      "href": "./luchtfoto-2024-19bz2-rgb.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "RGB Orthophoto — 19BZ2",
+      "description": "3-band RGB orthophoto (25cm, JPEG COG). 87 MB.",
+      "bands": [
+        {
+          "name": "red",
+          "data_type": "uint8",
+          "statistics": {
+            "minimum": 11.0,
+            "maximum": 255.0,
+            "mean": 120.106,
+            "stddev": 39.503
+          },
+          "eo:common_name": "red"
+        },
+        {
+          "name": "green",
+          "data_type": "uint8",
+          "statistics": {
+            "minimum": 28.0,
+            "maximum": 255.0,
+            "mean": 136.539,
+            "stddev": 29.302
+          },
+          "eo:common_name": "green"
+        },
+        {
+          "name": "blue",
+          "data_type": "uint8",
+          "statistics": {
+            "minimum": 20.0,
+            "maximum": 255.0,
+            "mean": 117.353,
+            "stddev": 28.179
+          },
+          "eo:common_name": "blue"
+        }
+      ],
+      "roles": [
+        "data",
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./luchtfoto-2024-19bz2-thumbnail.png",
+      "type": "image/png",
+      "title": "Thumbnail",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  },
+  "collection": "luchtfoto_2024"
+}

@@ -1,0 +1,31 @@
+{
+  "version": 8,
+  "name": "Postcode 6 — Pre-1945 Housing",
+  "sources": {
+    "postcode": {
+      "type": "vector",
+      "url": "pmtiles://../postcode6.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "postcode-fill",
+      "type": "fill",
+      "source": "postcode",
+      "source-layer": "postcode6",
+      "filter": ["!=", ["get", "aantal_woningen_bouwjaar_voor_1945"], -99997],
+      "paint": {
+        "fill-color": [
+          "step", ["get", "aantal_woningen_bouwjaar_voor_1945"],
+          "#FFFDD0",
+          5, "#F5DEB3",
+          20, "#D2B48C",
+          50, "#A0522D",
+          100, "#8B4513",
+          200, "#5C3317"
+        ],
+        "fill-opacity": 0.8
+      }
+    }
+  ]
+}

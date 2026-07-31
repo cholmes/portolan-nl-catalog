@@ -1,0 +1,238 @@
+{
+  "type": "Catalog",
+  "id": "luchtfoto_2024_kb25",
+  "stac_version": "1.1.0",
+  "description": "Kaartblad 25 covers the Amsterdam metropolitan area including the city centre, Amstelveen, Schiphol Airport, Aalsmeer (flower auctions), and Weesp. The most densely urbanised sheet in the collection, featuring the historic canal ring, harbour areas, and suburban development. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the Beeldmateriaal Nederland summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/beeldmateriaal/luchtfoto_2024/kb25/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25an1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25AN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25an2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25AN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25az1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25AZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25az2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25AZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25bn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25BN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25bn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25BN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25bz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25BZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25bz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25BZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25cn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25CN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25cn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25CN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25cz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25CZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25cz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25CZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25dn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25DN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25dn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25DN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25dz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25DZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25dz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25DZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25en1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25EN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25en2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25EN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25ez1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25EZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25ez2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25EZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25fn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25FN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25fn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25FN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25fz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25FZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25fz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25FZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25gn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25GN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25gn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25GN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25gz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25GZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25gz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25GZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25hn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25HN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25hn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25HN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25hz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25HZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-25hz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 25HZ2"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Luchtfoto 2024 — Aerial Orthophotos"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          4.5775072,
+          52.2602789,
+          5.1674884,
+          52.4875122
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2024-04-01T00:00:00Z",
+          "2024-09-30T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "title": "KB 25 — Amsterdam"
+}

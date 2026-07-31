@@ -1,0 +1,36 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-05-08T18:21:31.875984Z",
+      "breaking": false,
+      "assets": {
+        "llms.txt": {
+          "sha256": "6c4503c800f6c0c324ae9b700272a766d5cbb429cbe705ca3ee743651019362d",
+          "size_bytes": 12047,
+          "href": "beeldmateriaal/luchtfoto_2024/llms.txt",
+          "mtime": 1778233001.0
+        },
+        "items.parquet": {
+          "sha256": "a8cde459cd1c1bb9e6dab676ed7296847b2519341b5e8f8aa3b4583bf731d498",
+          "size_bytes": 95252,
+          "href": "beeldmateriaal/luchtfoto_2024/items.parquet",
+          "mtime": 1778244747.0
+        },
+        "README.md": {
+          "sha256": "de3237635522070b2ef7447e6f3ca92468e71bafeee08b95b1edb34c8795baeb",
+          "size_bytes": 4111,
+          "href": "beeldmateriaal/luchtfoto_2024/README.md",
+          "mtime": 1778225398.0
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "items.parquet",
+        "README.md"
+      ]
+    }
+  ]
+}

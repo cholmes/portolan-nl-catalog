@@ -1,0 +1,60 @@
+{
+  "type": "Catalog",
+  "id": "geomorfologische_kaart",
+  "stac_version": "1.1.0",
+  "title": "BRO Geomorphological Map of the Netherlands 1:50,000 (Geomorfologische kaart, GMM)",
+  "description": "The national Geomorphological Map of the Netherlands at scale 1:50,000 (BRO object GMM), produced by Wageningen Environmental Research. The source GeoPackage holds three distinct polygon layers, published here as separate collections:\n\n- **geomorphological_area** — the map itself: 80,148 landform polygons, each classified by genesis (eolian, fluvial, marine, glacial, anthropogenic, …), relief form and landform subgroup. This is the layer you map and analyse.\n- **area_of_geomorphological_interest** — 40,840 polygons delimiting where the geomorphological mapping applies.\n- **geomorphological_area_collection** — 70 polygons grouping the map by survey / publication unit.\n\nCC0 1.0. Provider VRO; bronhouder Wageningen Environmental Research.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Ministerie van Volkshuisvesting en Ruimtelijke Ordening (VRO)"
+    },
+    {
+      "rel": "preview",
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Thumbnail (PDOK preview)"
+    },
+    {
+      "rel": "child",
+      "href": "./geomorphological_area/collection.json",
+      "type": "application/json",
+      "title": "Geomorphological areas (the map)"
+    },
+    {
+      "rel": "child",
+      "href": "./area_of_geomorphological_interest/collection.json",
+      "type": "application/json",
+      "title": "Area of geomorphological interest"
+    },
+    {
+      "rel": "child",
+      "href": "./geomorphological_area_collection/collection.json",
+      "type": "application/json",
+      "title": "Map area collections"
+    }
+  ],
+  "assets": {
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Thumbnail (PDOK preview)",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  }
+}

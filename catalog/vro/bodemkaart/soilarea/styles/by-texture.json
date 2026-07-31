@@ -1,0 +1,67 @@
+{
+  "version": 8,
+  "name": "Bodemkaart \u2014 sand / clay / peat",
+  "sources": {
+    "soilarea": {
+      "type": "vector",
+      "url": "pmtiles://../soilarea.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "soilarea-fill",
+      "type": "fill",
+      "source": "soilarea",
+      "source-layer": "soilarea",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "hoofdklasse"
+          ],
+          "Podzolgronden",
+          "#FCE08A",
+          "Kalkloze zandgronden",
+          "#FCE08A",
+          "Kalkhoudende zandgronden",
+          "#FCE08A",
+          "Brikgronden",
+          "#FCE08A",
+          "Leemgronden",
+          "#FCE08A",
+          "Keileemgronden",
+          "#FCE08A",
+          "Zeekleigronden",
+          "#5CA75C",
+          "Rivierkleigronden",
+          "#5CA75C",
+          "Oude rivierkleigronden",
+          "#5CA75C",
+          "Zeer oude mariene afzettingen",
+          "#5CA75C",
+          "Zeer oude fluviatiele afzettingen",
+          "#5CA75C",
+          "Niet-gerijpte minerale gronden",
+          "#5CA75C",
+          "Veengronden",
+          "#8E63A8",
+          "Moerige gronden",
+          "#8E63A8",
+          "#CFCFCF"
+        ],
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "soilarea-outline",
+      "type": "line",
+      "source": "soilarea",
+      "source-layer": "soilarea",
+      "paint": {
+        "line-color": "#777777",
+        "line-width": 0.3
+      }
+    }
+  ]
+}

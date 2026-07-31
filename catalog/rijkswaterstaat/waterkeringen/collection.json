@@ -1,0 +1,273 @@
+{
+  "type": "Collection",
+  "id": "waterkeringen",
+  "stac_version": "1.1.0",
+  "description": "Primary water barriers (primaire keringen) across the Netherlands, showing the 238 dike sections that form the backbone of Dutch flood protection under the Water Act (Waterwet).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/waterkeringen/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Rijkswaterstaat"
+    },
+    {
+      "rel": "via",
+      "href": "https://services-eu1.arcgis.com/4D1GBrbE6xp1T4YG/arcgis/rest/services/Waterkeringen/FeatureServer/30",
+      "type": "text/html",
+      "title": "Source ArcGIS Feature Layer"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/waterkeringen/waterkeringen.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/rijkswaterstaat/waterkeringen/README.md",
+      "type": "text/html",
+      "title": "Primary Flood Defenses documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "table:row_count": 476,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "OBJECTID",
+      "type": "int64"
+    },
+    {
+      "name": "NAMESPACE",
+      "type": "string"
+    },
+    {
+      "name": "TRAJECT_ID",
+      "type": "string"
+    },
+    {
+      "name": "VERSIE",
+      "type": "string"
+    },
+    {
+      "name": "FL_BEGIN",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "FL_EINDE",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "FH_BEGIN",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "FH_EINDE",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "NORMGRP_C",
+      "type": "string"
+    },
+    {
+      "name": "NORMGRP_O",
+      "type": "string"
+    },
+    {
+      "name": "NORMKDR_C",
+      "type": "string"
+    },
+    {
+      "name": "NORMKDR_O",
+      "type": "string"
+    },
+    {
+      "name": "NORMTYP_ID",
+      "type": "int32"
+    },
+    {
+      "name": "NORMTYP_O",
+      "type": "string"
+    },
+    {
+      "name": "NORM_SW",
+      "type": "int32"
+    },
+    {
+      "name": "NORM_OG",
+      "type": "int32"
+    },
+    {
+      "name": "NORM_THB",
+      "type": "int32"
+    },
+    {
+      "name": "NORM_NS",
+      "type": "int32"
+    },
+    {
+      "name": "WET_JN",
+      "type": "string"
+    },
+    {
+      "name": "Shape__Length",
+      "type": "double"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    }
+  ],
+  "portolan:styles": [
+    {
+      "name": "default",
+      "href": "./styles/default.json"
+    }
+  ],
+  "geoparquet:geometry_type": "LineString",
+  "geoparquet:feature_count": 238,
+  "proj:epsg": 3857,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 13,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    4.680176,
+    51.822196,
+    13
+  ],
+  "pmtiles:layers": [
+    "waterkeringen"
+  ],
+  "title": "Primary Flood Defenses",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.3721,
+          50.776122,
+          7.21140905854882,
+          53.495879
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "LineString"
+    ],
+    "geoparquet:feature_count": [
+      238
+    ],
+    "table:column_statistics": [
+      {
+        "OBJECTID": {
+          "minimum": 1,
+          "maximum": 238
+        },
+        "TRAJECT_ID": {
+          "minimum": "1-1",
+          "maximum": "95-1"
+        },
+        "NORMTYP_O": {
+          "minimum": "Faalkans",
+          "maximum": "Overstromingskans"
+        },
+        "Shape__Length": {
+          "minimum": 71.78112051990543,
+          "maximum": 46861.49861151935
+        }
+      }
+    ],
+    "portolan:datetime_provisional": [
+      true
+    ],
+    "vector:geometry_types": [
+      "LineString"
+    ]
+  },
+  "assets": {
+    "data": {
+      "href": "./waterkeringen.parquet",
+      "type": "application/x-parquet",
+      "title": "Primary flood defenses",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./waterkeringen.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Primary flood defenses (vector tiles)",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail_.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "Flood Defenses — Default",
+      "roles": [
+        "style"
+      ]
+    },
+    "waterkeringen": {
+      "href": "./waterkeringen.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "data"
+      ]
+    },
+    "documentation": {
+      "href": "./llms.txt",
+      "type": "text/plain",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "README": {
+      "href": "./README.md",
+      "type": "text/markdown",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "thumbnail.png": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  }
+}

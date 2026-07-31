@@ -1,0 +1,328 @@
+{
+  "type": "Collection",
+  "id": "gezondheid",
+  "stac_version": "1.1.0",
+  "description": "INSPIRE-harmonized health statistics for the Netherlands, containing doctor counts and mortality rates per 100,000 inhabitants at the NUTS2 (province) level. This is a small dataset: 12 provinces x 2 indicators = ~24 features. Geometry is MultiPolygon provincial boundaries in EPSG:3035 (ETRS89-LAEA), the European standard grid CRS. Published by CBS (Statistics Netherlands) via PDOK as part of the INSPIRE Human Health theme.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/cbs/gezondheid/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Centraal Bureau voor de Statistiek (CBS)"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.pdok.nl/introductie/-/article/cbs-gezondheid-human-health-statistics-netherlands-",
+      "type": "text/html",
+      "title": "PDOK CBS Gezondheid dataset page"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/cbs/hh/wfs/v1_0",
+      "type": "application/xml",
+      "title": "WFS INSPIRE endpoint"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/cbs/human-health-statistics/wfs/v1_0",
+      "type": "application/xml",
+      "title": "WFS harmonized endpoint"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/cbs/hh/atom/v1_0/index.xml",
+      "type": "application/atom+xml",
+      "title": "ATOM download service"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/cbs/gezondheid/gezondheid.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/cbs/gezondheid/README.md",
+      "type": "text/html",
+      "title": "Human Health Statistics (Gezondheid) documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json"
+  ],
+  "table:row_count": 48,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "gml_id",
+      "type": "string"
+    },
+    {
+      "name": "localId",
+      "type": "string"
+    },
+    {
+      "name": "namespace",
+      "type": "string"
+    },
+    {
+      "name": "identifier",
+      "type": "string"
+    },
+    {
+      "name": "text",
+      "type": "string"
+    },
+    {
+      "name": "timePosition",
+      "type": "datetime"
+    },
+    {
+      "name": "referencePeriod_begin",
+      "type": "datetime"
+    },
+    {
+      "name": "referencePeriod_end",
+      "type": "datetime"
+    },
+    {
+      "name": "areaValue",
+      "type": "float64"
+    },
+    {
+      "name": "HH_NL_NUTS2_doctors_STATCODE",
+      "type": "string"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    },
+    {
+      "name": "gml_id2",
+      "type": "string"
+    },
+    {
+      "name": "versionId",
+      "type": "string"
+    },
+    {
+      "name": "identifierScheme",
+      "type": "string"
+    },
+    {
+      "name": "language",
+      "type": "string"
+    },
+    {
+      "name": "nameStatus",
+      "type": "string"
+    },
+    {
+      "name": "sourceOfName",
+      "type": "string"
+    },
+    {
+      "name": "pronunciation",
+      "type": "string"
+    },
+    {
+      "name": "script",
+      "type": "string"
+    },
+    {
+      "name": "beginLifespanVersion",
+      "type": "string"
+    },
+    {
+      "name": "endLifespanVersion",
+      "type": "string"
+    },
+    {
+      "name": "validityPeriod",
+      "type": "string"
+    },
+    {
+      "name": "leastDetailedScale",
+      "type": "int32"
+    },
+    {
+      "name": "areaValue_uom",
+      "type": "string"
+    },
+    {
+      "name": "landAreaValue",
+      "type": "string"
+    },
+    {
+      "name": "livableAreaValue",
+      "type": "string"
+    },
+    {
+      "name": "tesselation_localId",
+      "type": "string"
+    },
+    {
+      "name": "tesselation_namespace",
+      "type": "string"
+    },
+    {
+      "name": "HH_NL_NUTS2_nrdeath_STATCODE",
+      "type": "string"
+    },
+    {
+      "name": "HH_NL_NUTS2_nrdeath_JAAR",
+      "type": "string"
+    },
+    {
+      "name": "HH_NL_NUTS2_nrdeath_OBS_VALUE",
+      "type": "string"
+    },
+    {
+      "name": "fuuid",
+      "type": "string"
+    },
+    {
+      "name": "geom",
+      "type": "binary"
+    },
+    {
+      "name": "geom_bbox",
+      "type": "struct<xmin: float, ymin: float, xmax: float, ymax: float>"
+    },
+    {
+      "name": "HH_NL_NUTS2_doctors_YEAR",
+      "type": "string"
+    },
+    {
+      "name": "HH_NL_NUTS2_doctors_OBS_VALUE",
+      "type": "string"
+    }
+  ],
+  "portolan:styles": [
+    {
+      "name": "default",
+      "href": "./styles/default.json"
+    }
+  ],
+  "geoparquet:geometry_type": "Polygon",
+  "geoparquet:feature_count": 12,
+  "title": "Human Health Statistics (Gezondheid)",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.036632612495225,
+          50.63645462576518,
+          7.370635223912046,
+          53.57328331938552
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2016-01-01T00:00:00Z",
+          "2017-12-31T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "license": "CC0-1.0",
+  "summaries": {
+    "vector:geometry_types": [
+      "MultiPolygon"
+    ]
+  },
+  "assets": {
+    "doctors": {
+      "href": "./doctors.parquet",
+      "type": "application/x-parquet",
+      "roles": [
+        "data"
+      ]
+    },
+    "deaths": {
+      "href": "./deaths.parquet",
+      "type": "application/x-parquet",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./gezondheid.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Health statistics (vector tiles)",
+      "description": "Provincial health indicators as vector tiles for web visualization.",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "Health Statistics — Default",
+      "roles": [
+        "style"
+      ]
+    },
+    "documentation": {
+      "href": "./llms.txt",
+      "type": "text/plain",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "metadata": {
+      "href": "./doctors.parquet.aux.xml",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ]
+    },
+    "README": {
+      "href": "./README.md",
+      "type": "text/markdown",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "deaths.parquet.aux": {
+      "href": "./deaths.parquet.aux.xml",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ]
+    },
+    "gezondheid": {
+      "href": "./gezondheid.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "data"
+      ]
+    }
+  }
+}

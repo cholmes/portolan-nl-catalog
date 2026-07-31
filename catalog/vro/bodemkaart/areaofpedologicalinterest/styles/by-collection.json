@@ -1,0 +1,59 @@
+{
+  "version": 8,
+  "name": "Area of pedological interest — by survey campaign",
+  "sources": {
+    "areaofpedologicalinterest": {
+      "type": "vector",
+      "url": "pmtiles://../areaofpedologicalinterest.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "areaofpedologicalinterest-fill",
+      "type": "fill",
+      "source": "areaofpedologicalinterest",
+      "source-layer": "areaofpedologicalinterest",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "maparea_collection"
+          ],
+          "Eerste opname met uitgebreide veldverkenning",
+          "#1B9E77",
+          "Actualisatie met digitale bodemkartering 2023",
+          "#D95F02",
+          "Actualisatie met digitale bodemkartering 2022",
+          "#7570B3",
+          "Actualisatie met digitale bodemkartering 2024",
+          "#E7298A",
+          "Actualisatie met uitgebreide veldverkenning 2024",
+          "#66A61E",
+          "Actualisatie met uitgebreide veldverkenning 2010",
+          "#E6AB02",
+          "Actualisatie met digitale bodemkartering 2018",
+          "#A6761D",
+          "Revisie met detailbodemkaart 2020",
+          "#666666",
+          "Actualisatie met AHN3 2020",
+          "#1B9E77",
+          "Actualisatie met uitgebreide veldverkenning 2020",
+          "#D95F02",
+          "#E0E0E0"
+        ],
+        "fill-opacity": 0.7
+      }
+    },
+    {
+      "id": "areaofpedologicalinterest-outline",
+      "type": "line",
+      "source": "areaofpedologicalinterest",
+      "source-layer": "areaofpedologicalinterest",
+      "paint": {
+        "line-color": "#777777",
+        "line-width": 0.3
+      }
+    }
+  ]
+}

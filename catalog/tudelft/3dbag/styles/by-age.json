@@ -1,0 +1,143 @@
+{
+  "version": 8,
+  "name": "3D BAG \u2014 By Construction Year",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../3dbag-lod13.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "buildings-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "buildings-overview",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "to-number",
+            [
+              "get",
+              "bouwjaar"
+            ],
+            0
+          ],
+          "#5C3317",
+          1800,
+          "#8B4513",
+          1900,
+          "#CD6600",
+          1940,
+          "#E8A040",
+          1970,
+          "#F0C060",
+          2000,
+          "#FCE88A"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "buildings-overview",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "buildings-overview",
+      "maxzoom": 12,
+      "paint": {
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          0,
+          1.5,
+          6,
+          2,
+          8,
+          2.5,
+          10,
+          3,
+          12,
+          4
+        ],
+        "circle-color": [
+          "step",
+          [
+            "to-number",
+            [
+              "get",
+              "bouwjaar"
+            ],
+            0
+          ],
+          "#5C3317",
+          1800,
+          "#8B4513",
+          1900,
+          "#CD6600",
+          1940,
+          "#E8A040",
+          1970,
+          "#F0C060",
+          2000,
+          "#FCE88A"
+        ],
+        "circle-opacity": 0.8
+      }
+    },
+    {
+      "id": "buildings-extrusion",
+      "type": "fill-extrusion",
+      "source": "data",
+      "source-layer": "buildings",
+      "minzoom": 10,
+      "paint": {
+        "fill-extrusion-color": [
+          "step",
+          [
+            "to-number",
+            [
+              "get",
+              "bouwjaar"
+            ],
+            0
+          ],
+          "#5C3317",
+          1800,
+          "#8B4513",
+          1900,
+          "#CD6600",
+          1940,
+          "#E8A040",
+          1970,
+          "#F0C060",
+          2000,
+          "#FCE88A"
+        ],
+        "fill-extrusion-height": [
+          "get",
+          "height"
+        ],
+        "fill-extrusion-base": 0,
+        "fill-extrusion-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          10,
+          0,
+          12,
+          1
+        ]
+      }
+    }
+  ]
+}

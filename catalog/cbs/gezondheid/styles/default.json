@@ -1,0 +1,38 @@
+{
+  "version": 8,
+  "name": "Health Statistics — Default",
+  "sources": {
+    "gezondheid": {
+      "type": "vector",
+      "url": "pmtiles://../gezondheid.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "doctors-fill",
+      "type": "fill",
+      "source": "gezondheid",
+      "source-layer": "doctors",
+      "paint": {
+        "fill-color": [
+          "interpolate", ["linear"], ["get", "HH_NL_NUTS2_doctors_STATCODE"],
+          0, "#FEE0D2",
+          200, "#FC9272",
+          400, "#DE2D26",
+          600, "#A50F15"
+        ],
+        "fill-opacity": 0.75
+      }
+    },
+    {
+      "id": "doctors-outline",
+      "type": "line",
+      "source": "gezondheid",
+      "source-layer": "doctors",
+      "paint": {
+        "line-color": "#333333",
+        "line-width": 1
+      }
+    }
+  ]
+}

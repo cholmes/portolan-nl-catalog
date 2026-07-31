@@ -1,0 +1,86 @@
+{
+  "version": 8,
+  "name": "3D BAG — Flat (2D Overview)",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../3dbag-lod13.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "buildings-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "buildings",
+      "paint": {
+        "fill-color": "#2B8DA8",
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "buildings-overview",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "buildings-overview",
+      "maxzoom": 12,
+      "paint": {
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          0,
+          1.5,
+          6,
+          2,
+          8,
+          2.5,
+          10,
+          3,
+          12,
+          4
+        ],
+        "circle-color": "#2B8DA8",
+        "circle-opacity": 0.7
+      }
+    },
+    {
+      "id": "buildings-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "buildings",
+      "minzoom": 10,
+      "paint": {
+        "fill-color": "#2B8DA8",
+        "fill-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          10,
+          0,
+          12,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "buildings-outline",
+      "type": "line",
+      "source": "data",
+      "source-layer": "buildings",
+      "minzoom": 12,
+      "paint": {
+        "line-color": "#1E6B80",
+        "line-width": 1.2
+      }
+    }
+  ]
+}

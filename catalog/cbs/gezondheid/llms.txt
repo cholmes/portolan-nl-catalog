@@ -1,0 +1,191 @@
+# Human Health Statistics (Gezondheid) -- CBS / Netherlands
+
+## What This Dataset Is
+
+INSPIRE-harmonized health statistics for the Netherlands from **CBS** (Centraal Bureau voor
+de Statistiek / Statistics Netherlands). Contains two indicators at the NUTS2 (province)
+level:
+
+1. **Doctors per 100,000 inhabitants** (2017 data)
+2. **Deaths per 100,000 inhabitants** (2016 data)
+
+This is a **very small dataset**: 12 provinces x 2 indicators = ~24 features total. Each
+feature is a provincial boundary polygon with the associated health statistic. It is the
+Dutch contribution to the European INSPIRE Human Health and Safety theme.
+
+**Source:** https://www.pdok.nl/introductie/-/article/cbs-gezondheid-human-health-statistics-netherlands-
+**Provider:** CBS (Statistics Netherlands)
+**License:** CC0 (public domain)
+
+## How to Access
+
+Two GeoParquet files (one per indicator) and a combined PMTiles file for web
+visualization are available from Source Cooperative. Native CRS is **EPSG:3035**
+(ETRS89-LAEA) — coordinates are in meters.
+
+| File | Features | Size | Contents |
+|------|----------|------|----------|
+| `doctors.parquet` | 12 | 198 KB | Doctors per 100,000 by province (2017) |
+| `deaths.parquet` | 12 | 198 KB | Deaths per 100,000 by province (2016) |
+| `gezondheid.pmtiles` | — | 5.0 MB | Both layers as vector tiles |
+
+**Base URL:** `https://data.source.coop/cholmes/portolan-nl/cbs/gezondheid/`
+
+```python
+import duckdb
+
+con = duckdb.connect()
+con.execute("INSTALL spatial; LOAD spatial;")
+
+URL = 'https://data.source.coop/cholmes/portolan-nl/cbs/gezondheid/doctors.parquet'
+df = con.execute(f"SELECT * FROM read_parquet('{URL}')").df()
+```
+
+Also available via WFS, WMS, and ATOM from PDOK:
+- **WFS:** `https://service.pdok.nl/cbs/hh/wfs/v1_0`
+- **WMS:** `https://service.pdok.nl/cbs/hh/wms/v1_0`
+- **ATOM:** `https://service.pdok.nl/cbs/hh/atom/v1_0/index.xml`
+
+## Feature Types
+
+| Layer name | Description |
+|-----------|-------------|
+| `hh:hh-nl-nuts2-doctors-2017` | Doctors per 100,000 inhabitants in 2017, per NUTS2 province |
+| `hh:hh-nl-nuts2-death-2016` | Deaths per 100,000 inhabitants in 2016, per NUTS2 province |
+
+Each layer has 12 features (one per province).
+
+## Schema -- Field Meanings
+
+| Field | Type | Meaning |
+|-------|------|---------|
+| `gml_id` | string | GML feature identifier |
+| `localId` | string | Statistical unit ID combining year and NUTS code, e.g. `2016NL11` |
+| `namespace` | string | INSPIRE namespace: `NL.KAD.CBS.SU.StatisticalUnit` |
+| `identifier` | string | **NUTS2 province code**, e.g. `NL11` (Groningen), `NL33` (Zuid-Holland) |
+| `text` | string | **Province name** in Dutch, e.g. `Groningen`, `Noord-Holland` |
+| `timePosition` | datetime | Time of the observation |
+| `referencePeriod_begin` | datetime | Start of the reference period |
+| `referencePeriod_end` | datetime | End of the reference period |
+| `areaValue` | float64 | Province area in square metres |
+| `HH_NL_NUTS2_doctors_STATCODE` | string | Province code in the doctors layer, e.g. `PV20` |
+| `geometry` | MultiPolygon | Provincial boundary in **EPSG:3035** (ETRS89-LAEA) |
+
+Additional INSPIRE-standard metadata fields may be present depending on the WFS response.
+
+## Important Columns
+
+The columns you'll most often use:
+
+- **`identifier`** -- NUTS2 province code (the join key for Eurostat/INSPIRE data)
+- **`text`** -- province name in Dutch
+- **`geometry`** -- provincial boundary polygon
+
+## NUTS2 Province Codes
+
+| NUTS2 | Province |
+|-------|----------|
+| NL11 | Groningen |
+| NL12 | Friesland |
+| NL13 | Drenthe |
+| NL21 | Overijssel |
+| NL22 | Gelderland |
+| NL23 | Flevoland |
+| NL31 | Utrecht |
+| NL32 | Noord-Holland |
+| NL33 | Zuid-Holland |
+| NL34 | Zeeland |
+| NL41 | Noord-Brabant |
+| NL42 | Limburg |
+
+## Geometry Notes
+
+- CRS is **EPSG:3035** (ETRS89-LAEA / European Lambert Azimuthal Equal-Area). This is the
+  pan-European standard grid CRS used by INSPIRE, NOT the Dutch national CRS (EPSG:28992).
+  Coordinates are in metres on a European-wide grid.
+- To convert to WGS84 (lon/lat) for web mapping:
+  ```sql
+  ST_Transform(geometry, 'EPSG:3035', 'EPSG:4326')
+  ```
+- To convert to Dutch national CRS:
+  ```sql
+  ST_Transform(geometry, 'EPSG:3035', 'EPSG:28992')
+  ```
+- Bounding box in WGS84: [3.37, 50.73, 7.24, 53.55] (all of Netherlands)
+
+## INSPIRE Context
+
+This dataset is part of the INSPIRE (Infrastructure for Spatial Information in Europe)
+Directive. INSPIRE harmonizes spatial data across EU member states to enable cross-border
+interoperability. The Human Health theme (Annex III) provides health-related statistics
+referenced to standard European administrative units (NUTS).
+
+Key implications:
+- **NUTS2 level only** -- provincial aggregation, no finer resolution
+- **EPSG:3035** -- the mandated INSPIRE CRS for pan-European analysis
+- **INSPIRE-standard field names** -- `localId`, `namespace`, `identifier` follow the
+  INSPIRE Generic Conceptual Model
+- **Designed for European comparison** -- values are rates per 100,000 for cross-country
+  comparability
+
+## Useful Query Patterns
+
+### Fetch all doctors data via WFS (Python)
+
+```python
+import requests
+import geopandas as gpd
+from io import BytesIO
+
+url = "https://service.pdok.nl/cbs/hh/wfs/v1_0"
+params = {
+    "service": "WFS",
+    "version": "2.0.0",
+    "request": "GetFeature",
+    "typeName": "hh:hh-nl-nuts2-doctors-2017",
+    "outputFormat": "application/json",
+    "srsName": "EPSG:4326"
+}
+response = requests.get(url, params=params)
+gdf = gpd.read_file(BytesIO(response.content))
+print(gdf[['identifier', 'text']].to_string())
+```
+
+### View on a WMS map (Leaflet/OpenLayers URL)
+
+```
+https://service.pdok.nl/cbs/hh/wms/v1_0?service=WMS&request=GetMap&layers=hh-nl-nuts2-doctors-2017&bbox=3.37,50.73,7.24,53.55&width=800&height=600&srs=EPSG:4326&format=image/png
+```
+
+## Caveats
+
+- **Data vintage**: Doctor counts are from 2017, death rates from 2016. This is a snapshot,
+  not a time series. The data is not regularly updated.
+- **Provincial level only**: NUTS2 aggregation means only 12 spatial units per indicator.
+  No municipality-level or neighborhood-level breakdown.
+- **EPSG:3035 coordinates**: Unlike most Dutch datasets (which use EPSG:28992 RD New), this
+  uses the European INSPIRE CRS. You must transform coordinates when combining with other
+  Dutch datasets.
+- **INSPIRE overhead**: Field names follow INSPIRE conventions, which can be verbose. The
+  `namespace` and `localId` fields are INSPIRE administrative metadata, not analytical data.
+- **Tiny dataset**: Each parquet file is under 200 KB — small enough to load entirely into
+  memory without spatial filtering.
+
+
+## Visualization Styles
+
+One Mapbox GL v8 style is available for interactive map visualization via the PMTiles file.
+
+Style files are Mapbox GL v8 JSON with relative PMTiles source paths. They can be
+used with MapLibre GL JS, OpenLayers (via ol-mapbox-style), or any Mapbox GL v8-compatible renderer.
+
+- **`styles/default.json`** — **Health indicator choropleth.** Red sequential ramp showing doctors-per-province statistics. Light pink (fewer) to deep red (more). Province-level view of healthcare distribution.
+
+Style files are at: `https://data.source.coop/cholmes/portolan-nl/cbs/gezondheid/styles/`
+## Also Available As
+
+- **GeoParquet:** `doctors.parquet` (198 KB) and `deaths.parquet` (198 KB), EPSG:3035
+- **PMTiles:** `gezondheid.pmtiles` (5.0 MB, for web map visualization)
+- **WFS**: Live access via the endpoints listed above
+- **WMS**: Map visualization via the WMS endpoints listed above
+- **ATOM**: Bulk download via `https://service.pdok.nl/cbs/hh/atom/v1_0/index.xml`

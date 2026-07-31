@@ -1,0 +1,145 @@
+{
+  "version": 8,
+  "name": "3D BAG \u2014 By Building Height",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../3dbag-lod13.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "buildings-legend",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "buildings-overview",
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "get",
+            "height"
+          ],
+          "#2166AC",
+          5,
+          "#67A9CF",
+          10,
+          "#D1E5F0",
+          15,
+          "#FDDBC7",
+          25,
+          "#EF8A62",
+          40,
+          "#B2182B",
+          80,
+          "#67001F"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "buildings-overview",
+      "type": "circle",
+      "source": "data",
+      "source-layer": "buildings-overview",
+      "maxzoom": 12,
+      "paint": {
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          0,
+          1.5,
+          6,
+          2,
+          8,
+          2.5,
+          10,
+          3,
+          12,
+          4
+        ],
+        "circle-color": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "get",
+            "height"
+          ],
+          0,
+          "#2166AC",
+          5,
+          "#67A9CF",
+          10,
+          "#D1E5F0",
+          15,
+          "#FDDBC7",
+          25,
+          "#EF8A62",
+          40,
+          "#B2182B",
+          80,
+          "#67001F"
+        ],
+        "circle-opacity": 0.8
+      }
+    },
+    {
+      "id": "buildings-extrusion",
+      "type": "fill-extrusion",
+      "source": "data",
+      "source-layer": "buildings",
+      "minzoom": 10,
+      "paint": {
+        "fill-extrusion-color": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "get",
+            "height"
+          ],
+          0,
+          "#2166AC",
+          5,
+          "#67A9CF",
+          10,
+          "#D1E5F0",
+          15,
+          "#FDDBC7",
+          25,
+          "#EF8A62",
+          40,
+          "#B2182B",
+          80,
+          "#67001F"
+        ],
+        "fill-extrusion-height": [
+          "get",
+          "height"
+        ],
+        "fill-extrusion-base": 0,
+        "fill-extrusion-opacity": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          10,
+          0,
+          12,
+          1
+        ]
+      }
+    }
+  ]
+}

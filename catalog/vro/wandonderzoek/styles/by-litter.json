@@ -1,0 +1,71 @@
+{
+  "version": 8,
+  "name": "wandonderzoek — by litter layer investigated",
+  "sources": {
+    "wandonderzoek": {
+      "type": "vector",
+      "url": "pmtiles://../wandonderzoek.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "wandonderzoek-legend",
+      "type": "fill",
+      "source": "wandonderzoek",
+      "source-layer": "wandonderzoek",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "litter_layer_investigated"
+          ],
+          "nee",
+          "#90A4AE",
+          "ja",
+          "#43A047",
+          "#BBBBBB"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "wandonderzoek-circle",
+      "type": "circle",
+      "source": "wandonderzoek",
+      "source-layer": "wandonderzoek",
+      "paint": {
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          4,
+          1.5,
+          10,
+          3.5,
+          14,
+          6.5
+        ],
+        "circle-color": [
+          "match",
+          [
+            "get",
+            "litter_layer_investigated"
+          ],
+          "nee",
+          "#90A4AE",
+          "ja",
+          "#43A047",
+          "#BBBBBB"
+        ],
+        "circle-stroke-color": "#ffffff",
+        "circle-stroke-width": 0.4,
+        "circle-opacity": 0.85
+      }
+    }
+  ]
+}

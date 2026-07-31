@@ -1,0 +1,132 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json",
+    "https://stac-extensions.github.io/raster/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "id": "luchtfoto-2024-31hn1",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          5.0219256,
+          52.1501155
+        ],
+        [
+          5.0223845,
+          52.0939371
+        ],
+        [
+          5.0953538,
+          52.0941403
+        ],
+        [
+          5.0949868,
+          52.150319
+        ],
+        [
+          5.0219256,
+          52.1501155
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    5.0219256,
+    52.0939371,
+    5.0953538,
+    52.150319
+  ],
+  "properties": {
+    "title": "Luchtfoto 2024 — Tile 31HN1",
+    "datetime": "2024-06-15T00:00:00Z",
+    "created": "2025-05-16T00:00:00Z",
+    "gsd": 0.25,
+    "proj:code": "EPSG:28992",
+    "proj:shape": [
+      25002,
+      20002
+    ],
+    "beeldmateriaal:kaartblad": "31HN1",
+    "description": "25 cm RGB orthophoto tile 31HN1 from the 2024 Beeldmateriaal Nederland summer campaign. Covers one kaartblad (~5 x 6.25 km) in the Utrecht / Vinkeveen region. Cloud-Optimized GeoTIFF with JPEG compression, 512x512 tiling, and 6 overview levels."
+  },
+  "links": [
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Luchtfoto 2024 — Aerial Orthophotos"
+    },
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "parent",
+      "href": "./catalog.json",
+      "type": "application/json",
+      "title": "KB 31 — Utrecht / Vinkeveen"
+    }
+  ],
+  "assets": {
+    "rgb": {
+      "href": "./luchtfoto-2024-31hn1-rgb.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "RGB Orthophoto — 31HN1",
+      "description": "3-band RGB orthophoto (25cm, JPEG COG). 107 MB.",
+      "bands": [
+        {
+          "name": "red",
+          "data_type": "uint8",
+          "statistics": {
+            "minimum": 0.0,
+            "maximum": 255.0,
+            "mean": 110.381,
+            "stddev": 44.792
+          },
+          "eo:common_name": "red"
+        },
+        {
+          "name": "green",
+          "data_type": "uint8",
+          "statistics": {
+            "minimum": 5.0,
+            "maximum": 255.0,
+            "mean": 129.147,
+            "stddev": 36.128
+          },
+          "eo:common_name": "green"
+        },
+        {
+          "name": "blue",
+          "data_type": "uint8",
+          "statistics": {
+            "minimum": 0.0,
+            "maximum": 255.0,
+            "mean": 112.065,
+            "stddev": 33.99
+          },
+          "eo:common_name": "blue"
+        }
+      ],
+      "roles": [
+        "data",
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./luchtfoto-2024-31hn1-thumbnail.png",
+      "type": "image/png",
+      "title": "Thumbnail",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  },
+  "collection": "luchtfoto_2024"
+}

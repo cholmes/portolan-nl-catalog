@@ -1,0 +1,132 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json",
+    "https://stac-extensions.github.io/raster/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "id": "luchtfoto-2024-27hz2",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          6.2671418,
+          52.315927
+        ],
+        [
+          6.2660303,
+          52.2597546
+        ],
+        [
+          6.3392642,
+          52.2591871
+        ],
+        [
+          6.3404682,
+          52.3153585
+        ],
+        [
+          6.2671418,
+          52.315927
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    6.2660303,
+    52.2591871,
+    6.3404682,
+    52.315927
+  ],
+  "properties": {
+    "title": "Luchtfoto 2024 — Tile 27HZ2",
+    "datetime": "2024-06-15T00:00:00Z",
+    "created": "2025-05-16T00:00:00Z",
+    "gsd": 0.25,
+    "proj:code": "EPSG:28992",
+    "proj:shape": [
+      25002,
+      20002
+    ],
+    "beeldmateriaal:kaartblad": "27HZ2",
+    "description": "25 cm RGB orthophoto tile 27HZ2 from the 2024 Beeldmateriaal Nederland summer campaign. Covers one kaartblad (~5 x 6.25 km) in the Harderwijk / Veluwe West region. Cloud-Optimized GeoTIFF with JPEG compression, 512x512 tiling, and 6 overview levels."
+  },
+  "links": [
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Luchtfoto 2024 — Aerial Orthophotos"
+    },
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "parent",
+      "href": "./catalog.json",
+      "type": "application/json",
+      "title": "KB 27 — Harderwijk / Veluwe West"
+    }
+  ],
+  "assets": {
+    "rgb": {
+      "href": "./luchtfoto-2024-27hz2-rgb.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "RGB Orthophoto — 27HZ2",
+      "description": "3-band RGB orthophoto (25cm, JPEG COG). 69 MB.",
+      "bands": [
+        {
+          "name": "red",
+          "data_type": "uint8",
+          "statistics": {
+            "minimum": 23.0,
+            "maximum": 255.0,
+            "mean": 94.365,
+            "stddev": 26.15
+          },
+          "eo:common_name": "red"
+        },
+        {
+          "name": "green",
+          "data_type": "uint8",
+          "statistics": {
+            "minimum": 43.0,
+            "maximum": 255.0,
+            "mean": 118.622,
+            "stddev": 19.806
+          },
+          "eo:common_name": "green"
+        },
+        {
+          "name": "blue",
+          "data_type": "uint8",
+          "statistics": {
+            "minimum": 23.0,
+            "maximum": 255.0,
+            "mean": 95.035,
+            "stddev": 15.375
+          },
+          "eo:common_name": "blue"
+        }
+      ],
+      "roles": [
+        "data",
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./luchtfoto-2024-27hz2-thumbnail.png",
+      "type": "image/png",
+      "title": "Thumbnail",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  },
+  "collection": "luchtfoto_2024"
+}

@@ -1,0 +1,39 @@
+{
+  "version": 8,
+  "name": "grondwatergebruiksysteem \u2014 default",
+  "sources": {
+    "grondwatergebruiksysteem": {
+      "type": "vector",
+      "url": "pmtiles://../grondwatergebruiksysteem.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "grondwatergebruiksysteem-circle",
+      "type": "circle",
+      "source": "grondwatergebruiksysteem",
+      "source-layer": "grondwatergebruiksysteem",
+      "paint": {
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          4,
+          1.5,
+          10,
+          3.5,
+          14,
+          6.5
+        ],
+        "circle-color": "#1E88E5",
+        "circle-stroke-color": "#ffffff",
+        "circle-stroke-width": 0.4,
+        "circle-opacity": 0.85
+      }
+    }
+  ]
+}

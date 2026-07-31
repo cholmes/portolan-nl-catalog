@@ -1,0 +1,361 @@
+{
+  "type": "Collection",
+  "id": "gebiedsindelingen",
+  "stac_version": "1.1.0",
+  "title": "CBS Gebiedsindelingen (Area Classifications)",
+  "description": "All 26 types of regional area classifications for the Netherlands, published by CBS (Statistics Netherlands) via PDOK. Contains generalized polygon boundaries for every administrative, statistical, and functional region used in Dutch governance: gemeenten (342), provincies (12), wijken (3,423), buurten (14,729), COROP regions, safety regions, GGD health regions, labour market regions, energy strategy regions, court districts, and more. Each classification type is a separate GeoParquet file in EPSG:28992 (Amersfoort / RD New). These are generalized (simplified) boundaries suitable for thematic mapping and statistical visualization, not precision boundary work.\n\n🤖 AI/Agent users: See llms.txt for field descriptions, query examples, and usage tips.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/cbs/gebiedsindelingen/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Centraal Bureau voor de Statistiek (CBS)"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/cbs/gebiedsindelingen/atom/v1_0/index.xml",
+      "type": "application/xml",
+      "title": "PDOK Atom feed (source)"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.pdok.nl/introductie/-/article/cbs-gebiedsindelingen",
+      "type": "text/html",
+      "title": "PDOK dataset page"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/cbs/gebiedsindelingen/gebiedsindelingen.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "proj:epsg": 28992,
+  "table:primary_geometry": "geom",
+  "table:columns": [
+    {
+      "name": "statcode",
+      "type": "string",
+      "description": "CBS statistical code, unique within classification type (e.g., 'GM0014', 'PV20', 'VR01'). Prefix indicates type."
+    },
+    {
+      "name": "jrstatcode",
+      "type": "string",
+      "description": "Year-prefixed statistical code for temporal disambiguation (e.g., '2025GM0014', '2025PV20')"
+    },
+    {
+      "name": "statnaam",
+      "type": "string",
+      "description": "Name of the area (e.g., 'Groningen', 'Noord-Holland')"
+    },
+    {
+      "name": "rubriek",
+      "type": "string",
+      "description": "Classification category/rubric (e.g., 'gemeente', 'provincie', 'veiligheidsregio')"
+    },
+    {
+      "name": "id",
+      "type": "int32",
+      "description": "Internal sequential identifier"
+    },
+    {
+      "name": "geom",
+      "type": "binary",
+      "description": "Generalized polygon boundary in EPSG:28992 (Amersfoort / RD New), WKB encoded"
+    }
+  ],
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 7,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    4.21875,
+    51.6096176,
+    7
+  ],
+  "pmtiles:layers": [
+    "gemeenten"
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.21,
+          50.73,
+          7.24,
+          53.58
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "assets": {
+    "gemeente": {
+      "href": "./gemeente_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "Gemeenten / Municipalities (342)",
+      "description": "342 municipalities — the fundamental building block of Dutch administrative geography.",
+      "roles": [
+        "data"
+      ]
+    },
+    "provincie": {
+      "href": "./provincie_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "Provincies / Provinces (12)",
+      "description": "The 12 Dutch provinces.",
+      "roles": [
+        "data"
+      ]
+    },
+    "wijk": {
+      "href": "./wijk_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "Wijken / Districts (3,423)",
+      "description": "Sub-municipal districts for statistical purposes.",
+      "roles": [
+        "data"
+      ]
+    },
+    "buurt": {
+      "href": "./buurt_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "Buurten / Neighborhoods (14,729)",
+      "description": "Neighborhoods — the finest-grained CBS statistical unit.",
+      "roles": [
+        "data"
+      ]
+    },
+    "landsdeel": {
+      "href": "./landsdeel_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "Landsdelen / Country parts (4)",
+      "roles": [
+        "data"
+      ]
+    },
+    "coropgebied": {
+      "href": "./coropgebied_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "COROP-gebieden / COROP regions (40)",
+      "roles": [
+        "data"
+      ]
+    },
+    "coropplusgebied": {
+      "href": "./coropplusgebied_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "COROP-plus-gebieden (24)",
+      "roles": [
+        "data"
+      ]
+    },
+    "coropsubgebied": {
+      "href": "./coropsubgebied_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "COROP-subgebieden (84)",
+      "roles": [
+        "data"
+      ]
+    },
+    "veiligheidsregio": {
+      "href": "./veiligheidsregio_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "Veiligheidsregio's / Safety regions (25)",
+      "roles": [
+        "data"
+      ]
+    },
+    "arbeidsmarktregio": {
+      "href": "./arbeidsmarktregio_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "Arbeidsmarktregio's / Labour market regions (35)",
+      "roles": [
+        "data"
+      ]
+    },
+    "regioplus_arbeidsmarktregio": {
+      "href": "./regioplus_arbeidsmarktregio_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "Regioplus Arbeidsmarktregio's (7)",
+      "roles": [
+        "data"
+      ]
+    },
+    "ggdregio": {
+      "href": "./ggdregio_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "GGD-regio's / Public health regions (25)",
+      "roles": [
+        "data"
+      ]
+    },
+    "jeugdregio": {
+      "href": "./jeugdregio_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "Jeugdregio's / Youth care regions (42)",
+      "roles": [
+        "data"
+      ]
+    },
+    "regionale_eenheid": {
+      "href": "./regionale_eenheid_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "Regionale Eenheden / Police regions (10)",
+      "roles": [
+        "data"
+      ]
+    },
+    "arrondissementsgebied": {
+      "href": "./arrondissementsgebied_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "Arrondissementen / Court districts (11)",
+      "roles": [
+        "data"
+      ]
+    },
+    "ressort": {
+      "href": "./ressort_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "Ressorten / Court of appeal areas (4)",
+      "roles": [
+        "data"
+      ]
+    },
+    "regionale_energiestrategie": {
+      "href": "./regionale_energiestrategie_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "RES-regio's / Energy strategy regions (30)",
+      "roles": [
+        "data"
+      ]
+    },
+    "zorgkantoorregio": {
+      "href": "./zorgkantoorregio_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "Zorgkantoorregio's / Health office regions (31)",
+      "roles": [
+        "data"
+      ]
+    },
+    "veiligthuisregio": {
+      "href": "./veiligthuisregio_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "Veilig Thuis-regio's / Domestic safety regions (26)",
+      "roles": [
+        "data"
+      ]
+    },
+    "subres_regio": {
+      "href": "./subres_regio_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "Sub-RES regio's (59)",
+      "roles": [
+        "data"
+      ]
+    },
+    "regionaalmeld_coordinatiepunt": {
+      "href": "./regionaalmeld_coordinatiepunt_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "RMC-regio's (39)",
+      "roles": [
+        "data"
+      ]
+    },
+    "kamervankoophandelregio": {
+      "href": "./kamervankoophandelregio_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "KvK-regio's (5)",
+      "roles": [
+        "data"
+      ]
+    },
+    "landbouwgebied": {
+      "href": "./landbouwgebied_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "Landbouwgebieden / Agricultural areas (66)",
+      "roles": [
+        "data"
+      ]
+    },
+    "landbouwgroep": {
+      "href": "./landbouwgroep_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "Landbouwgroepen / Agricultural groups (14)",
+      "roles": [
+        "data"
+      ]
+    },
+    "toeristengebied": {
+      "href": "./toeristengebied_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "Toeristengebieden / Tourist areas (26)",
+      "roles": [
+        "data"
+      ]
+    },
+    "toeristengroep": {
+      "href": "./toeristengroep_gegeneraliseerd.parquet",
+      "type": "application/x-parquet",
+      "title": "Toeristengroepen / Tourist groups (6)",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./gebiedsindelingen.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Gemeente boundaries (vector tiles)",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "CBS Gebiedsindelingen thumbnail",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "Polygon",
+      "MultiPolygon"
+    ],
+    "vector:geometry_types": [
+      "Polygon",
+      "MultiPolygon"
+    ]
+  }
+}

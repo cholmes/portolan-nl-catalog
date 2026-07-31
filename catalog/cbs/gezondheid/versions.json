@@ -1,0 +1,132 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-05-07T16:00:00Z",
+      "breaking": false,
+      "assets": {
+        "doctors.parquet": {
+          "sha256": "bfe8aa572f98ffcf02f13e90a5d13b58dfdc8d610a1c50e8d568d19fc5252a04",
+          "size_bytes": 202292,
+          "href": "cbs/gezondheid/doctors.parquet",
+          "mtime": 1778160651.3656223
+        },
+        "deaths.parquet": {
+          "sha256": "f16395ac9237b6615ffd0ebf7210fc66443ab7148cff70510fa8c3dbd0184b23",
+          "size_bytes": 202262,
+          "href": "cbs/gezondheid/deaths.parquet",
+          "mtime": 1778160665.632992
+        },
+        "gezondheid.pmtiles": {
+          "sha256": "877b8cd2accafca99d1b848fd8514514862cf96ea0e9d295acfcafe832d5b0b8",
+          "size_bytes": 5246260,
+          "href": "cbs/gezondheid/gezondheid.pmtiles",
+          "mtime": 1778163605.6417794
+        },
+        "collection.json": {
+          "sha256": "93e8b27e66dbf7645adfc77db76a0aa6f2421dd3debe1ee6e83e1c074cf12e43",
+          "size_bytes": 5067,
+          "href": "cbs/gezondheid/collection.json",
+          "mtime": 1778165382.2144177
+        },
+        "llms.txt": {
+          "sha256": "c9d0f89e7f9ea9650f3317300d414c766a875e23f0e4b4c81a5fa081f1b7411d",
+          "size_bytes": 7002,
+          "href": "cbs/gezondheid/llms.txt",
+          "mtime": 1778164478.4323006
+        },
+        "README.md": {
+          "sha256": "a2dff935d412b79d5754de7ce77e17b327e69b715738a634e8713cda8d2035f6",
+          "size_bytes": 2326,
+          "href": "cbs/gezondheid/README.md",
+          "mtime": 1778157320.4643703
+        },
+        "thumbnail.png": {
+          "sha256": "892fb12428d714da98f63843096d76659afa628eb4e7aed225c6bb70df5ec5a3",
+          "size_bytes": 67825,
+          "href": "cbs/gezondheid/thumbnail.png",
+          "mtime": 1778157059.665236
+        }
+      },
+      "changes": [
+        "doctors.parquet",
+        "deaths.parquet",
+        "gezondheid.pmtiles",
+        "collection.json",
+        "llms.txt",
+        "README.md",
+        "thumbnail.png"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-05-08T18:24:04.155041Z",
+      "breaking": false,
+      "assets": {
+        "doctors.parquet": {
+          "sha256": "fce85d92382ef5e48d5beed2e48fa3c5932f6b53c5f25daca1b92852c7f525dc",
+          "size_bytes": 150512,
+          "href": "cbs/gezondheid/doctors.parquet",
+          "mtime": 1778166869.0
+        },
+        "deaths.parquet": {
+          "sha256": "5b28c8881b1e64fe1711096ec1b03dba26c347838512273768c07d507616d0f7",
+          "size_bytes": 150487,
+          "href": "cbs/gezondheid/deaths.parquet",
+          "mtime": 1778166868.0
+        },
+        "gezondheid.pmtiles": {
+          "sha256": "877b8cd2accafca99d1b848fd8514514862cf96ea0e9d295acfcafe832d5b0b8",
+          "size_bytes": 5246260,
+          "href": "cbs/gezondheid/gezondheid.pmtiles",
+          "mtime": 1778165430.0
+        },
+        "collection.json": {
+          "sha256": "93e8b27e66dbf7645adfc77db76a0aa6f2421dd3debe1ee6e83e1c074cf12e43",
+          "size_bytes": 5067,
+          "href": "cbs/gezondheid/collection.json",
+          "mtime": 1778165382.2144177
+        },
+        "llms.txt": {
+          "sha256": "9f042a035d2a1bd7d9cb1cbc40974adbee660d9b64809cc30013f96062e4a7dc",
+          "size_bytes": 7609,
+          "href": "cbs/gezondheid/llms.txt",
+          "mtime": 1778185473.0
+        },
+        "README.md": {
+          "sha256": "a2dff935d412b79d5754de7ce77e17b327e69b715738a634e8713cda8d2035f6",
+          "size_bytes": 2326,
+          "href": "cbs/gezondheid/README.md",
+          "mtime": 1778165432.0
+        },
+        "thumbnail.png": {
+          "sha256": "892fb12428d714da98f63843096d76659afa628eb4e7aed225c6bb70df5ec5a3",
+          "size_bytes": 67825,
+          "href": "cbs/gezondheid/thumbnail.png",
+          "mtime": 1778165432.0
+        },
+        "doctors.parquet.aux.xml": {
+          "sha256": "746d6169e99a29cc36b8b8434a5e5182b97664c1c4bd355344ac6b5be783a235",
+          "size_bytes": 20502,
+          "href": "cbs/gezondheid/doctors.parquet.aux.xml",
+          "mtime": 1778185111.0
+        },
+        "deaths.parquet.aux.xml": {
+          "sha256": "746d6169e99a29cc36b8b8434a5e5182b97664c1c4bd355344ac6b5be783a235",
+          "size_bytes": 20502,
+          "href": "cbs/gezondheid/deaths.parquet.aux.xml",
+          "mtime": 1778185111.0
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "doctors.parquet.aux.xml",
+        "doctors.parquet",
+        "deaths.parquet.aux.xml",
+        "deaths.parquet"
+      ]
+    }
+  ]
+}

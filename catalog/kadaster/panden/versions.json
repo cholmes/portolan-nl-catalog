@@ -1,0 +1,98 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-05-06T21:26:26.438401Z",
+      "breaking": false,
+      "assets": {
+        "llms.txt": {
+          "sha256": "5b01c215451d2f895db38513c4c048f88fac4a405751aad55dc2db2d2289e5f2",
+          "size_bytes": 14072,
+          "href": "kadaster/panden/llms.txt",
+          "mtime": 1778102567.7210886
+        },
+        "thumbnail_.png": {
+          "sha256": "3863a9bfadd87203c8efb06a9dac20e283aa0dfee3a95cd81360713cf3e637bd",
+          "size_bytes": 115202,
+          "href": "kadaster/panden/thumbnail_.png",
+          "mtime": 1778102427.1334894
+        },
+        "bag-light.parquet": {
+          "sha256": "f200e10708505e9e8c65e4a0d4ac531e20fe743008433796daf91622aaaef88a",
+          "size_bytes": 977876688,
+          "href": "kadaster/panden/bag-light.parquet",
+          "mtime": 1778102423.2815292
+        },
+        "bag-light.gpkg": {
+          "sha256": "a2cdb0ad678f96ab178f75f0a9d23749e5a80e71f49d599eea26a14aac21c2ea",
+          "size_bytes": 7769759744,
+          "href": "kadaster/panden/bag-light.gpkg",
+          "mtime": 1778102427.1044972
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "thumbnail_.png",
+        "bag-light.parquet",
+        "bag-light.gpkg"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-05-08T18:24:04.169097Z",
+      "breaking": false,
+      "assets": {
+        "llms.txt": {
+          "sha256": "b943e5dd98dc2acb45871b77fed206136072be8ff5069b0509b01b354b95df1d",
+          "size_bytes": 14025,
+          "href": "kadaster/panden/llms.txt",
+          "mtime": 1778233362.1733224
+        },
+        "thumbnail_.png": {
+          "sha256": "3863a9bfadd87203c8efb06a9dac20e283aa0dfee3a95cd81360713cf3e637bd",
+          "size_bytes": 115202,
+          "href": "kadaster/panden/thumbnail_.png",
+          "mtime": 1778102427.1334894
+        },
+        "bag-light.parquet": {
+          "sha256": "f200e10708505e9e8c65e4a0d4ac531e20fe743008433796daf91622aaaef88a",
+          "size_bytes": 977876688,
+          "href": "kadaster/panden/bag-light.parquet",
+          "mtime": 1778102423.2815292
+        },
+        "bag-light.gpkg": {
+          "sha256": "a2cdb0ad678f96ab178f75f0a9d23749e5a80e71f49d599eea26a14aac21c2ea",
+          "size_bytes": 7769759744,
+          "href": "kadaster/panden/bag-light.gpkg",
+          "mtime": 1778102427.1044972
+        },
+        "bag-light.pmtiles": {
+          "sha256": "2256012722a5e81871c8729a6169ea43b25d53f187a60f3d456629ee2e8d19ad",
+          "size_bytes": 599272946,
+          "href": "kadaster/panden/bag-light.pmtiles",
+          "mtime": 1778103888.7792692
+        },
+        "README.md": {
+          "sha256": "ea34ba4aa874f4e84f9af5f78a25b2ba472419c4fcdef31efe72c95f06dc8469",
+          "size_bytes": 4348,
+          "href": "kadaster/panden/README.md",
+          "mtime": 1778233210.0008836
+        },
+        "thumbnail.png": {
+          "sha256": "3863a9bfadd87203c8efb06a9dac20e283aa0dfee3a95cd81360713cf3e637bd",
+          "size_bytes": 115202,
+          "href": "kadaster/panden/thumbnail.png",
+          "mtime": 1778234529.0
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "bag-light.pmtiles",
+        "README.md",
+        "thumbnail.png"
+      ]
+    }
+  ]
+}

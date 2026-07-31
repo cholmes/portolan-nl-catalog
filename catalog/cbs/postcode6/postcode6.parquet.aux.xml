@@ -1,0 +1,380 @@
+<PAMDataset>
+  <Metadata>
+    <MDI key="ABSTRACT">De WFS service postcode6 bevat statistische gegevens voor afzonderlijke postcodes vanaf 2015. Met ingang van het tweede kwartaal 2025 zijn gegevens over het jaar 2024 toegevoegd en zijn het aantal gegevens van de jaren 2023 en 2022 uitgebreid met gegevens over demografie, woningen, energie, inkomen, sociale zekerheid, nabijheid van voorzieningen en dichtheid. Lees voor meer informatie: https://www.cbs.nl/nl-nl/longread/diversen/2025/statistische-gegevens-per-vierkant-en-postcode-2022-2023-2024</MDI>
+    <MDI key="PROVIDER_NAME">PDOK</MDI>
+    <MDI key="TITLE">CBS Postcode6 statistieken 2024 WFS</MDI>
+  </Metadata>
+  <Metadata domain="xml:capabilities" format="xml">
+    <?xml version="1.0" encoding="UTF-8"?>
+    <WFS_Capabilities xmlns:gml="http://www.opengis.net/gml/3.2" xmlns="http://www.opengis.net/wfs/2.0" xmlns:ows="http://www.opengis.net/ows/1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:fes="http://www.opengis.net/fes/2.0" xmlns:postcode6="http://postcode6.geonovum.nl" version="2.0.0" xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd ">
+      <ows:ServiceIdentification>
+        <ows:Title>CBS Postcode6 statistieken 2024 WFS</ows:Title>
+        <ows:Abstract>De WFS service postcode6 bevat statistische gegevens voor afzonderlijke postcodes vanaf 2015. Met ingang van het tweede kwartaal 2025 zijn gegevens over het jaar 2024 toegevoegd en zijn het aantal gegevens van de jaren 2023 en 2022 uitgebreid met gegevens over demografie, woningen, energie, inkomen, sociale zekerheid, nabijheid van voorzieningen en dichtheid. Lees voor meer informatie: https://www.cbs.nl/nl-nl/longread/diversen/2025/statistische-gegevens-per-vierkant-en-postcode-2022-2023-2024</ows:Abstract>
+        <ows:Keywords>
+          <ows:Keyword>Demografie</ows:Keyword>
+          <ows:Keyword>Postcode</ows:Keyword>
+          <ows:Keyword>Pc6</ows:Keyword>
+          <ows:Keyword>Statistiek</ows:Keyword>
+          <ows:Keyword>Bevolking</ows:Keyword>
+          <ows:Keyword>Inwoners</ows:Keyword>
+          <ows:Keyword>Leeftijd</ows:Keyword>
+          <ows:Keyword>Etniciteit</ows:Keyword>
+          <ows:Keyword>Woningen</ows:Keyword>
+          <ows:Keyword>Inkomen</ows:Keyword>
+          <ows:Keyword>Sociale_zekerheid</ows:Keyword>
+          <ows:Keyword>Woz</ows:Keyword>
+          <ows:Keyword>Woningeigendom</ows:Keyword>
+          <ows:Keyword>Huur</ows:Keyword>
+          <ows:Keyword>Voorziening</ows:Keyword>
+          <ows:Keyword>Nabijheid</ows:Keyword>
+          <ows:Keyword>Spreiding_van_de_bevolking</ows:Keyword>
+          <ows:Keyword>InfoMapAccessService</ows:Keyword>
+        </ows:Keywords>
+        <ows:ServiceType codeSpace="OGC">WFS</ows:ServiceType>
+        <ows:ServiceTypeVersion>2.0.0</ows:ServiceTypeVersion>
+        <ows:Fees>none</ows:Fees>
+        <ows:AccessConstraints>https://creativecommons.org/licenses/by/4.0/deed.nl</ows:AccessConstraints>
+      </ows:ServiceIdentification>
+      <ows:ServiceProvider>
+        <ows:ProviderName>PDOK</ows:ProviderName>
+        <ows:ProviderSite xlink:type="simple" xlink:href="https://www.pdok.nl" />
+        <ows:ServiceContact>
+          <ows:IndividualName>KlantContactCenter PDOK</ows:IndividualName>
+          <ows:PositionName>pointOfContact</ows:PositionName>
+          <ows:ContactInfo>
+            <ows:Phone>
+              <ows:Voice />
+              <ows:Facsimile />
+            </ows:Phone>
+            <ows:Address>
+              <ows:DeliveryPoint />
+              <ows:City>Apeldoorn</ows:City>
+              <ows:AdministrativeArea />
+              <ows:PostalCode />
+              <ows:Country>Netherlands</ows:Country>
+              <ows:ElectronicMailAddress>BeheerPDOK@kadaster.nl</ows:ElectronicMailAddress>
+            </ows:Address>
+            <ows:OnlineResource xlink:type="simple" xlink:href="https://www.pdok.nl" />
+            <ows:HoursOfService />
+            <ows:ContactInstructions />
+          </ows:ContactInfo>
+          <ows:Role />
+        </ows:ServiceContact>
+      </ows:ServiceProvider>
+      <ows:OperationsMetadata>
+        <ows:Operation name="GetCapabilities">
+          <ows:DCP>
+            <ows:HTTP>
+              <ows:Get xlink:type="simple" xlink:href="https://service.pdok.nl/cbs/postcode6/2024/wfs/v1_0?" />
+            </ows:HTTP>
+          </ows:DCP>
+          <ows:Parameter name="AcceptVersions">
+            <ows:AllowedValues>
+              <ows:Value>2.0.0</ows:Value>
+            </ows:AllowedValues>
+          </ows:Parameter>
+          <ows:Parameter name="AcceptFormats">
+            <ows:AllowedValues>
+              <ows:Value>text/xml</ows:Value>
+            </ows:AllowedValues>
+          </ows:Parameter>
+          <ows:Parameter name="Sections">
+            <ows:AllowedValues>
+              <ows:Value>ServiceIdentification</ows:Value>
+              <ows:Value>ServiceProvider</ows:Value>
+              <ows:Value>OperationsMetadata</ows:Value>
+              <ows:Value>FeatureTypeList</ows:Value>
+              <ows:Value>Filter_Capabilities</ows:Value>
+            </ows:AllowedValues>
+          </ows:Parameter>
+        </ows:Operation>
+        <ows:Operation name="DescribeFeatureType">
+          <ows:DCP>
+            <ows:HTTP>
+              <ows:Get xlink:type="simple" xlink:href="https://service.pdok.nl/cbs/postcode6/2024/wfs/v1_0?" />
+            </ows:HTTP>
+          </ows:DCP>
+          <ows:Parameter name="outputFormat">
+            <ows:AllowedValues>
+              <ows:Value>application/gml+xml; version=3.2</ows:Value>
+              <ows:Value>text/xml; subtype=gml/3.2.1</ows:Value>
+              <ows:Value>text/xml; subtype=gml/3.1.1</ows:Value>
+            </ows:AllowedValues>
+          </ows:Parameter>
+        </ows:Operation>
+        <ows:Operation name="GetFeature">
+          <ows:DCP>
+            <ows:HTTP>
+              <ows:Get xlink:type="simple" xlink:href="https://service.pdok.nl/cbs/postcode6/2024/wfs/v1_0?" />
+              <ows:Post xlink:type="simple" xlink:href="https://service.pdok.nl/cbs/postcode6/2024/wfs/v1_0" />
+            </ows:HTTP>
+          </ows:DCP>
+          <ows:Parameter name="outputFormat">
+            <ows:AllowedValues>
+              <ows:Value>application/gml+xml; version=3.2</ows:Value>
+              <ows:Value>text/xml; subtype=gml/3.2.1</ows:Value>
+              <ows:Value>text/xml; subtype=gml/3.1.1</ows:Value>
+              <ows:Value>application/json; subtype=geojson</ows:Value>
+              <ows:Value>application/json</ows:Value>
+            </ows:AllowedValues>
+          </ows:Parameter>
+        </ows:Operation>
+        <ows:Operation name="ListStoredQueries">
+          <ows:DCP>
+            <ows:HTTP>
+              <ows:Get xlink:type="simple" xlink:href="https://service.pdok.nl/cbs/postcode6/2024/wfs/v1_0?" />
+            </ows:HTTP>
+          </ows:DCP>
+        </ows:Operation>
+        <ows:Operation name="DescribeStoredQueries">
+          <ows:DCP>
+            <ows:HTTP>
+              <ows:Get xlink:type="simple" xlink:href="https://service.pdok.nl/cbs/postcode6/2024/wfs/v1_0?" />
+            </ows:HTTP>
+          </ows:DCP>
+        </ows:Operation>
+        <ows:Parameter name="version">
+          <ows:AllowedValues>
+            <ows:Value>2.0.0</ows:Value>
+          </ows:AllowedValues>
+        </ows:Parameter>
+        <ows:Constraint name="ImplementsBasicWFS">
+          <ows:NoValues />
+          <ows:DefaultValue>TRUE</ows:DefaultValue>
+        </ows:Constraint>
+        <ows:Constraint name="ImplementsTransactionalWFS">
+          <ows:NoValues />
+          <ows:DefaultValue>FALSE</ows:DefaultValue>
+        </ows:Constraint>
+        <ows:Constraint name="ImplementsLockingWFS">
+          <ows:NoValues />
+          <ows:DefaultValue>FALSE</ows:DefaultValue>
+        </ows:Constraint>
+        <ows:Constraint name="KVPEncoding">
+          <ows:NoValues />
+          <ows:DefaultValue>TRUE</ows:DefaultValue>
+        </ows:Constraint>
+        <ows:Constraint name="XMLEncoding">
+          <ows:NoValues />
+          <ows:DefaultValue>TRUE</ows:DefaultValue>
+        </ows:Constraint>
+        <ows:Constraint name="SOAPEncoding">
+          <ows:NoValues />
+          <ows:DefaultValue>FALSE</ows:DefaultValue>
+        </ows:Constraint>
+        <ows:Constraint name="ImplementsInheritance">
+          <ows:NoValues />
+          <ows:DefaultValue>FALSE</ows:DefaultValue>
+        </ows:Constraint>
+        <ows:Constraint name="ImplementsRemoteResolve">
+          <ows:NoValues />
+          <ows:DefaultValue>FALSE</ows:DefaultValue>
+        </ows:Constraint>
+        <ows:Constraint name="ImplementsResultPaging">
+          <ows:NoValues />
+          <ows:DefaultValue>TRUE</ows:DefaultValue>
+        </ows:Constraint>
+        <ows:Constraint name="ImplementsStandardJoins">
+          <ows:NoValues />
+          <ows:DefaultValue>FALSE</ows:DefaultValue>
+        </ows:Constraint>
+        <ows:Constraint name="ImplementsSpatialJoins">
+          <ows:NoValues />
+          <ows:DefaultValue>FALSE</ows:DefaultValue>
+        </ows:Constraint>
+        <ows:Constraint name="ImplementsTemporalJoins">
+          <ows:NoValues />
+          <ows:DefaultValue>FALSE</ows:DefaultValue>
+        </ows:Constraint>
+        <ows:Constraint name="ImplementsFeatureVersioning">
+          <ows:NoValues />
+          <ows:DefaultValue>FALSE</ows:DefaultValue>
+        </ows:Constraint>
+        <ows:Constraint name="ManageStoredQueries">
+          <ows:NoValues />
+          <ows:DefaultValue>FALSE</ows:DefaultValue>
+        </ows:Constraint>
+        <ows:Constraint name="PagingIsTransactionSafe">
+          <ows:NoValues />
+          <ows:DefaultValue>FALSE</ows:DefaultValue>
+        </ows:Constraint>
+        <ows:Constraint name="CountDefault">
+          <ows:NoValues />
+          <ows:DefaultValue>1000</ows:DefaultValue>
+        </ows:Constraint>
+        <ows:Constraint name="QueryExpressions">
+          <ows:AllowedValues>
+            <ows:Value>wfs:Query</ows:Value>
+            <ows:Value>wfs:StoredQuery</ows:Value>
+          </ows:AllowedValues>
+        </ows:Constraint>
+      </ows:OperationsMetadata>
+      <FeatureTypeList>
+        <FeatureType>
+          <Name>postcode6:postcode6</Name>
+          <Title>Postcode 2024, volledig</Title>
+          <Abstract>De WFS service postcode6 bevat statistische gegevens voor afzonderlijke postcodes vanaf 2015. Met ingang van het tweede kwartaal 2025 zijn gegevens over het jaar 2024 toegevoegd en zijn het aantal gegevens van de jaren 2023 en 2022 uitgebreid met gegevens over demografie, woningen, energie, inkomen, sociale zekerheid, nabijheid van voorzieningen en dichtheid. Lees voor meer informatie: https://www.cbs.nl/nl-nl/longread/diversen/2025/statistische-gegevens-per-vierkant-en-postcode-2022-2023-2024</Abstract>
+          <ows:Keywords>
+            <ows:Keyword>Demografie</ows:Keyword>
+            <ows:Keyword>Postcode</ows:Keyword>
+            <ows:Keyword>Pc6</ows:Keyword>
+            <ows:Keyword>Statistiek</ows:Keyword>
+            <ows:Keyword>Bevolking</ows:Keyword>
+            <ows:Keyword>Inwoners</ows:Keyword>
+            <ows:Keyword>Leeftijd</ows:Keyword>
+            <ows:Keyword>Herkomst</ows:Keyword>
+            <ows:Keyword>Woningen</ows:Keyword>
+            <ows:Keyword>Inkomen</ows:Keyword>
+            <ows:Keyword>Sociale_zekerheid</ows:Keyword>
+            <ows:Keyword>Woz</ows:Keyword>
+            <ows:Keyword>Woningeigendom</ows:Keyword>
+            <ows:Keyword>Huur</ows:Keyword>
+            <ows:Keyword>Voorziening</ows:Keyword>
+            <ows:Keyword>Nabijheid</ows:Keyword>
+            <ows:Keyword>Spreiding_van_de_bevolking</ows:Keyword>
+            <ows:Keyword>InfoMapAccessService</ows:Keyword>
+          </ows:Keywords>
+          <DefaultCRS>urn:ogc:def:crs:EPSG::28992</DefaultCRS>
+          <OtherCRS>urn:ogc:def:crs:EPSG::25831</OtherCRS>
+          <OtherCRS>urn:ogc:def:crs:EPSG::25832</OtherCRS>
+          <OtherCRS>urn:ogc:def:crs:EPSG::3034</OtherCRS>
+          <OtherCRS>urn:ogc:def:crs:EPSG::3035</OtherCRS>
+          <OtherCRS>urn:ogc:def:crs:EPSG::3857</OtherCRS>
+          <OtherCRS>urn:ogc:def:crs:EPSG::4258</OtherCRS>
+          <OtherCRS>urn:ogc:def:crs:EPSG::4326</OtherCRS>
+          <OutputFormats>
+            <Format>application/gml+xml; version=3.2</Format>
+            <Format>text/xml; subtype=gml/3.2.1</Format>
+            <Format>text/xml; subtype=gml/3.1.1</Format>
+            <Format>application/json; subtype=geojson</Format>
+            <Format>application/json</Format>
+          </OutputFormats>
+          <ows:WGS84BoundingBox>
+            <ows:LowerCorner>2.527125 50.212863</ows:LowerCorner>
+            <ows:UpperCorner>7.374026 55.721160</ows:UpperCorner>
+          </ows:WGS84BoundingBox>
+          <MetadataURL xlink:href="https://www.nationaalgeoregister.nl/geonetwork/srv/dut/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;outputschema=http://www.isotc211.org/2005/gmd&amp;elementsetname=full&amp;id=e9841ae6-8f1d-460f-9506-a6b5ed2dc15f" />
+        </FeatureType>
+      </FeatureTypeList>
+      <fes:Filter_Capabilities>
+        <fes:Conformance>
+          <fes:Constraint name="ImplementsQuery">
+            <ows:NoValues />
+            <ows:DefaultValue>TRUE</ows:DefaultValue>
+          </fes:Constraint>
+          <fes:Constraint name="ImplementsAdHocQuery">
+            <ows:NoValues />
+            <ows:DefaultValue>TRUE</ows:DefaultValue>
+          </fes:Constraint>
+          <fes:Constraint name="ImplementsFunctions">
+            <ows:NoValues />
+            <ows:DefaultValue>FALSE</ows:DefaultValue>
+          </fes:Constraint>
+          <fes:Constraint name="ImplementsResourceId">
+            <ows:NoValues />
+            <ows:DefaultValue>TRUE</ows:DefaultValue>
+          </fes:Constraint>
+          <fes:Constraint name="ImplementsMinStandardFilter">
+            <ows:NoValues />
+            <ows:DefaultValue>TRUE</ows:DefaultValue>
+          </fes:Constraint>
+          <fes:Constraint name="ImplementsStandardFilter">
+            <ows:NoValues />
+            <ows:DefaultValue>TRUE</ows:DefaultValue>
+          </fes:Constraint>
+          <fes:Constraint name="ImplementsMinSpatialFilter">
+            <ows:NoValues />
+            <ows:DefaultValue>TRUE</ows:DefaultValue>
+          </fes:Constraint>
+          <fes:Constraint name="ImplementsSpatialFilter">
+            <ows:NoValues />
+            <ows:DefaultValue>FALSE</ows:DefaultValue>
+          </fes:Constraint>
+          <fes:Constraint name="ImplementsMinTemporalFilter">
+            <ows:NoValues />
+            <ows:DefaultValue>TRUE</ows:DefaultValue>
+          </fes:Constraint>
+          <fes:Constraint name="ImplementsTemporalFilter">
+            <ows:NoValues />
+            <ows:DefaultValue>FALSE</ows:DefaultValue>
+          </fes:Constraint>
+          <fes:Constraint name="ImplementsVersionNav">
+            <ows:NoValues />
+            <ows:DefaultValue>FALSE</ows:DefaultValue>
+          </fes:Constraint>
+          <fes:Constraint name="ImplementsSorting">
+            <ows:NoValues />
+            <ows:DefaultValue>TRUE</ows:DefaultValue>
+          </fes:Constraint>
+          <fes:Constraint name="ImplementsExtendedOperators">
+            <ows:NoValues />
+            <ows:DefaultValue>FALSE</ows:DefaultValue>
+          </fes:Constraint>
+          <fes:Constraint name="ImplementsMinimumXPath">
+            <ows:NoValues />
+            <ows:DefaultValue>TRUE</ows:DefaultValue>
+          </fes:Constraint>
+          <fes:Constraint name="ImplementsSchemaElementFunc">
+            <ows:NoValues />
+            <ows:DefaultValue>FALSE</ows:DefaultValue>
+          </fes:Constraint>
+        </fes:Conformance>
+        <fes:Id_Capabilities>
+          <fes:ResourceIdentifier name="fes:ResourceId" />
+        </fes:Id_Capabilities>
+        <fes:Scalar_Capabilities>
+          <fes:LogicalOperators />
+          <fes:ComparisonOperators>
+            <fes:ComparisonOperator name="PropertyIsEqualTo" />
+            <fes:ComparisonOperator name="PropertyIsNotEqualTo" />
+            <fes:ComparisonOperator name="PropertyIsLessThan" />
+            <fes:ComparisonOperator name="PropertyIsGreaterThan" />
+            <fes:ComparisonOperator name="PropertyIsLessThanOrEqualTo" />
+            <fes:ComparisonOperator name="PropertyIsGreaterThanOrEqualTo" />
+            <fes:ComparisonOperator name="PropertyIsLike" />
+            <fes:ComparisonOperator name="PropertyIsBetween" />
+            <fes:ComparisonOperator name="PropertyIsNull" />
+          </fes:ComparisonOperators>
+        </fes:Scalar_Capabilities>
+        <fes:Spatial_Capabilities>
+          <fes:GeometryOperands>
+            <fes:GeometryOperand name="gml:Point" />
+            <fes:GeometryOperand name="gml:MultiPoint" />
+            <fes:GeometryOperand name="gml:LineString" />
+            <fes:GeometryOperand name="gml:MultiLineString" />
+            <fes:GeometryOperand name="gml:Curve" />
+            <fes:GeometryOperand name="gml:MultiCurve" />
+            <fes:GeometryOperand name="gml:Polygon" />
+            <fes:GeometryOperand name="gml:MultiPolygon" />
+            <fes:GeometryOperand name="gml:Surface" />
+            <fes:GeometryOperand name="gml:MultiSurface" />
+            <fes:GeometryOperand name="gml:Box" />
+            <fes:GeometryOperand name="gml:Envelope" />
+          </fes:GeometryOperands>
+          <fes:SpatialOperators>
+            <fes:SpatialOperator name="Equals" />
+            <fes:SpatialOperator name="Disjoint" />
+            <fes:SpatialOperator name="Touches" />
+            <fes:SpatialOperator name="Within" />
+            <fes:SpatialOperator name="Overlaps" />
+            <fes:SpatialOperator name="Crosses" />
+            <fes:SpatialOperator name="Intersects" />
+            <fes:SpatialOperator name="Contains" />
+            <fes:SpatialOperator name="DWithin" />
+            <fes:SpatialOperator name="Beyond" />
+            <fes:SpatialOperator name="BBOX" />
+          </fes:SpatialOperators>
+        </fes:Spatial_Capabilities>
+        <fes:Temporal_Capabilities>
+          <fes:TemporalOperands>
+            <fes:TemporalOperand name="gml:TimePeriod" />
+            <fes:TemporalOperand name="gml:TimeInstant" />
+          </fes:TemporalOperands>
+          <fes:TemporalOperators>
+            <fes:TemporalOperator name="During" />
+          </fes:TemporalOperators>
+        </fes:Temporal_Capabilities>
+      </fes:Filter_Capabilities>
+    </WFS_Capabilities>
+  </Metadata>
+</PAMDataset>

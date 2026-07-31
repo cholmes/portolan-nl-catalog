@@ -1,0 +1,38 @@
+{
+  "extraction_date": "2026-04-17T13:34:53.020405+00:00",
+  "source_url": "https://services-eu1.arcgis.com/4D1GBrbE6xp1T4YG/arcgis/rest/services/Bergingsgebieden/FeatureServer",
+  "portolan_version": "0.6.0",
+  "gpio_version": "1.0.0",
+  "metadata_extracted": {
+    "source_url": "https://services-eu1.arcgis.com/4D1GBrbE6xp1T4YG/arcgis/rest/services/Bergingsgebieden/FeatureServer",
+    "description": null,
+    "attribution": null,
+    "keywords": null,
+    "contact_name": null,
+    "processing_notes": "ROR-conceptkaarten beschikbaar gesteld ter review",
+    "known_issues": null,
+    "license_info_raw": null
+  },
+  "layers": [
+    {
+      "id": 32,
+      "name": "Bergingsgebieden",
+      "status": "success",
+      "warnings": [],
+      "attempts": 1,
+      "features": 1545,
+      "size_bytes": 3873973,
+      "duration_seconds": 7.2134542090352625,
+      "output_path": "bergingsgebieden/bergingsgebieden.parquet"
+    }
+  ],
+  "summary": {
+    "total_layers": 1,
+    "succeeded": 1,
+    "failed": 0,
+    "skipped": 0,
+    "total_features": 1545,
+    "total_size_bytes": 3873973,
+    "total_duration_seconds": 7.2134542090352625
+  }
+}

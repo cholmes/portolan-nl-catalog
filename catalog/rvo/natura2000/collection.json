@@ -1,0 +1,244 @@
+{
+  "type": "Collection",
+  "id": "natura2000",
+  "stac_version": "1.1.0",
+  "title": "Natura 2000 Protected Areas",
+  "description": "Boundaries of all 162 Natura 2000 protected areas in the Netherlands, designated under the EU Birds Directive (Vogelrichtlijn) and Habitats Directive (Habitatrichtlijn). Contains 209 features because some areas have separate features for different designation types (VR, HR, or VR+HR). Includes terrestrial and marine areas extending into the North Sea EEZ. Published by RVO via PDOK.\n\nNatura 2000 areas carry the strongest nature protection in Dutch law — any plan or project that may affect them requires assessment under the Wet natuurbescherming.\n\n🤖 AI/Agent users: See llms.txt for field descriptions, query examples, and usage tips.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rvo/natura2000/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Rijksdienst voor Ondernemend Nederland (RVO)"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.pdok.nl/introductie/-/article/natura-2000",
+      "type": "text/html",
+      "title": "PDOK dataset page"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/rvo/natura2000/atom/downloads/natura2000.gpkg",
+      "type": "application/geopackage+sqlite3",
+      "title": "Source GeoPackage download"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rvo/natura2000/natura2000.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/rvo/natura2000/README.md",
+      "type": "text/html",
+      "title": "Natura 2000 Protected Areas documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "table:row_count": 209,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "id",
+      "type": "int64",
+      "description": "Feature ID"
+    },
+    {
+      "name": "objectid",
+      "type": "int32",
+      "description": "Internal object identifier"
+    },
+    {
+      "name": "naam_n2k",
+      "type": "string",
+      "description": "Name of the Natura 2000 area (Dutch)"
+    },
+    {
+      "name": "nr",
+      "type": "int32",
+      "description": "Official Natura 2000 area number (1–166)"
+    },
+    {
+      "name": "vhn_new",
+      "type": "int16",
+      "description": "Designation type code: 1=VR (Birds), 2=HR (Habitats), 3=Both, 9=HR quarry"
+    },
+    {
+      "name": "beschermin",
+      "type": "string",
+      "description": "Protection type as text: VR, HR, VR+HR, or HR groeve"
+    },
+    {
+      "name": "sitecode_v",
+      "type": "string",
+      "description": "EU site code for Birds Directive (blank if HR-only)"
+    },
+    {
+      "name": "sitecode_h",
+      "type": "string",
+      "description": "EU site code for Habitats Directive (blank if VR-only)"
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "description": "Legal designation status (free-text with date)"
+    },
+    {
+      "name": "kadaster",
+      "type": "string",
+      "description": "Cadastral reference number"
+    },
+    {
+      "name": "staatscour",
+      "type": "string",
+      "description": "Staatscourant (Government Gazette) reference"
+    },
+    {
+      "name": "shape_area",
+      "type": "float64",
+      "description": "Area per feature in m² (sum by nr for total site area)"
+    },
+    {
+      "name": "shape_len",
+      "type": "float64",
+      "description": "Perimeter per feature in metres"
+    },
+    {
+      "name": "puuid",
+      "type": "string",
+      "description": "Persistent unique identifier"
+    },
+    {
+      "name": "fuuid",
+      "type": "string",
+      "description": "Feature unique identifier"
+    },
+    {
+      "name": "geometry",
+      "type": "binary",
+      "description": "Area boundary polygon in EPSG:28992 (Amersfoort / RD New), WKB encoded"
+    }
+  ],
+  "geoparquet:geometry_type": "MultiPolygon",
+  "geoparquet:feature_count": 209,
+  "proj:epsg": 28992,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 12,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    5.0537109,
+    52.1873965,
+    12
+  ],
+  "pmtiles:layers": [
+    "natura2000"
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          2.681884,
+          50.729086,
+          7.319863,
+          55.657302
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "assets": {
+    "data": {
+      "href": "./natura2000.parquet",
+      "type": "application/x-parquet",
+      "title": "Natura 2000 areas (GeoParquet)",
+      "description": "209 features representing 162 Natura 2000 protected areas in EPSG:28992.",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./natura2000.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Natura 2000 areas (vector tiles)",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Thumbnail",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "Natura 2000 — Default",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-directive": {
+      "href": "./styles/by-directive.json",
+      "type": "application/json",
+      "title": "Natura 2000 — By EU Directive",
+      "roles": [
+        "style"
+      ]
+    }
+  },
+  "license": "CC0-1.0",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "MultiPolygon"
+    ],
+    "geoparquet:feature_count": [
+      209
+    ],
+    "vector:geometry_types": [
+      "MultiPolygon"
+    ]
+  },
+  "portolan:styles": [
+    {
+      "name": "default",
+      "href": "./styles/default.json"
+    },
+    {
+      "name": "by-directive",
+      "href": "./styles/by-directive.json"
+    }
+  ]
+}

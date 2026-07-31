@@ -1,0 +1,72 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-04-17T11:46:32.514033Z",
+      "breaking": false,
+      "assets": {
+        "fme_disk_tunnels/fme_disk_tunnels.parquet": {
+          "sha256": "5d545ab2b0a3f7a17ae55cab596522bb04cdb3911a250c9e896854611d6e4774",
+          "size_bytes": 4220,
+          "href": "fme_disk_tunnels/fme_disk_tunnels.parquet",
+          "mtime": 1776426392.5057595
+        }
+      },
+      "changes": [
+        "fme_disk_tunnels/fme_disk_tunnels.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-05-08T18:24:04.174367Z",
+      "breaking": false,
+      "assets": {
+        "fme_disk_tunnels/fme_disk_tunnels.parquet": {
+          "sha256": "5d545ab2b0a3f7a17ae55cab596522bb04cdb3911a250c9e896854611d6e4774",
+          "size_bytes": 4220,
+          "href": "fme_disk_tunnels/fme_disk_tunnels.parquet",
+          "mtime": 1776426392.5057595
+        },
+        "llms.txt": {
+          "sha256": "c84c934df9510b1953cc011dd762d51bd1399eaf35724d6348ca8e8374755129",
+          "size_bytes": 3996,
+          "href": "rijkswaterstaat/fme_disk_tunnels/llms.txt",
+          "mtime": 1778185474.0
+        },
+        "thumbnail_.png": {
+          "sha256": "9a1e6fe94cc87777e490a03d2fc3f67cbe75cda959a10eb7384ffd589d2e8195",
+          "size_bytes": 200458,
+          "href": "rijkswaterstaat/fme_disk_tunnels/thumbnail_.png",
+          "mtime": 1778070780.9354699
+        },
+        "fme_disk_tunnels.pmtiles": {
+          "sha256": "9115a41786eb49247ad9b293e66ab7209e2c0ad78d1324d375217778ddf2fea0",
+          "size_bytes": 5483,
+          "href": "rijkswaterstaat/fme_disk_tunnels/fme_disk_tunnels.pmtiles",
+          "mtime": 1778070780.9379818
+        },
+        "README.md": {
+          "sha256": "2c5f712b37c70a99ef6b996338b4686e05f06798d7338911804d67df92dd0d3b",
+          "size_bytes": 2133,
+          "href": "rijkswaterstaat/fme_disk_tunnels/README.md",
+          "mtime": 1778070780.9384284
+        },
+        "fme_disk_tunnels.parquet": {
+          "sha256": "5d545ab2b0a3f7a17ae55cab596522bb04cdb3911a250c9e896854611d6e4774",
+          "size_bytes": 4220,
+          "href": "rijkswaterstaat/fme_disk_tunnels/fme_disk_tunnels.parquet",
+          "mtime": 1778070780.9388576
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "thumbnail_.png",
+        "fme_disk_tunnels.pmtiles",
+        "README.md",
+        "fme_disk_tunnels.parquet"
+      ]
+    }
+  ]
+}

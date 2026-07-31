@@ -1,0 +1,59 @@
+{
+  "version": 8,
+  "name": "Geomorfologie \u2014 by genesis (genese)",
+  "sources": {
+    "geomorphological_area": {
+      "type": "vector",
+      "url": "pmtiles://../geomorphological_area.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "geomorphological_area-fill",
+      "type": "fill",
+      "source": "geomorphological_area",
+      "source-layer": "geomorphological_area",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "genese_code"
+          ],
+          "5",
+          "#F2E6A0",
+          "4",
+          "#4F9DD6",
+          "2",
+          "#C9A0DC",
+          "9",
+          "#E57373",
+          "7",
+          "#66C2A5",
+          "1",
+          "#A6CEE3",
+          "8",
+          "#8E6C3A",
+          "3",
+          "#BDB76B",
+          "0",
+          "#B0A0A0",
+          "6",
+          "#80B1D3",
+          "#DDDDDD"
+        ],
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "geomorphological_area-outline",
+      "type": "line",
+      "source": "geomorphological_area",
+      "source-layer": "geomorphological_area",
+      "paint": {
+        "line-color": "#777777",
+        "line-width": 0.3
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+# .portolan/metadata.yaml
+
+contact:
+  name: Chris Holmes
+  email: cholmes@9eo.org
+license: CC0-1.0
+source_url: https://www.pdok.nl/introductie/-/article/basisregistratie-adressen-en-gebouwen-ba-1
+processing_notes: >
+  BAG GeoPackage 'light' extract downloaded from PDOK ATOM service
+  (https://service.pdok.nl/lv/bag/atom/bag.xml). Pand table extracted
+  to GeoParquet with gpio, preserving native EPSG:28992 CRS. Optimized
+  with Hilbert sort and bbox covering columns.

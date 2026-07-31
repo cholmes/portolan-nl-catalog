@@ -1,0 +1,208 @@
+{
+  "type": "Collection",
+  "id": "bestand_bodemgebruik_2017",
+  "stac_version": "1.1.0",
+  "description": "Digital geometry of land use in the Netherlands (2017). Covers all functional land use at ground level: transportation, buildings, recreation, agriculture, forest, water. Boundaries are largely based on Top10NL/BRT topographic map. Aerial photographs from summer 2017 serve as the primary interpretation source. Uses a hierarchical classification system with approximately 40 land use types, typically with a 1-hectare minimum mapping threshold. This is the BBG 2017 (old methodology); from 2020 onwards CBS produces the NBBG (renewed methodology). Published by CBS (Centraal Bureau voor de Statistiek) via PDOK. Native CRS is EPSG:28992 (RD New / Amersfoort).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/cbs/bestand_bodemgebruik_2017/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Centraal Bureau voor de Statistiek (CBS)"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.pdok.nl/introductie/-/article/cbs-bestand-bodemgebruik-2017",
+      "type": "text/html",
+      "title": "PDOK Bestand Bodemgebruik 2017 dataset page"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/geografische-data/natuur-en-milieu/bestand-bodemgebruik",
+      "type": "text/html",
+      "title": "CBS Bestand Bodemgebruik overview"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/cbs/bestandbodemgebruik/2017/wfs/v1_0",
+      "type": "text/xml",
+      "title": "WFS service endpoint"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/cbs/bestand_bodemgebruik_2017/bbg2017.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/cbs/bestand_bodemgebruik_2017/README.md",
+      "type": "text/html",
+      "title": "Bestand Bodemgebruik 2017 (Land Use File) documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "table:primary_geometry": "geom",
+  "table:columns": [
+    {
+      "name": "fid",
+      "type": "int64"
+    },
+    {
+      "name": "bg2017",
+      "type": "int32"
+    },
+    {
+      "name": "bodemgebruik",
+      "type": "string"
+    },
+    {
+      "name": "categorie",
+      "type": "string"
+    },
+    {
+      "name": "geom",
+      "type": "binary"
+    },
+    {
+      "name": "geom_bbox",
+      "type": "struct<xmin: float, ymin: float, xmax: float, ymax: float>"
+    }
+  ],
+  "proj:epsg": 28992,
+  "portolan:styles": [
+    {
+      "name": "default",
+      "href": "./styles/default.json"
+    },
+    {
+      "name": "by-detailed-use",
+      "href": "./styles/by-detailed-use.json"
+    }
+  ],
+  "geoparquet:geometry_type": "MultiPolygon",
+  "geoparquet:feature_count": 171543,
+  "table:row_count": 171543,
+  "title": "Bestand Bodemgebruik 2017 (Land Use File)",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.197334050397501,
+          50.67179904221547,
+          7.275203767518889,
+          53.61086453083427
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2017-01-01T00:00:00Z",
+          "2017-12-31T23:59:59Z"
+        ]
+      ]
+    }
+  },
+  "license": "CC0-1.0",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "MultiPolygon"
+    ],
+    "vector:geometry_types": [
+      "MultiPolygon"
+    ]
+  },
+  "assets": {
+    "data": {
+      "href": "./bbg2017.parquet",
+      "type": "application/x-parquet",
+      "title": "Bestand Bodemgebruik 2017 (GeoParquet)",
+      "description": "171,543 land use polygons with ~40-type classification, EPSG:28992.",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./bbg2017.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Land use 2017 (vector tiles)",
+      "description": "BBG 2017 land use polygons as vector tiles for web visualization.",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "Land Use 2017 — Default",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-detailed-use": {
+      "href": "./styles/by-detailed-use.json",
+      "type": "application/json",
+      "title": "Land Use 2017 — Detailed",
+      "roles": [
+        "style"
+      ]
+    },
+    "documentation": {
+      "href": "./llms.txt",
+      "type": "text/plain",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "bbg2017": {
+      "href": "./bbg2017.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "./bbg2017.parquet.aux.xml",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ]
+    },
+    "README": {
+      "href": "./README.md",
+      "type": "text/markdown",
+      "roles": [
+        "documentation"
+      ]
+    }
+  }
+}

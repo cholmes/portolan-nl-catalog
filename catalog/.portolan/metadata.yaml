@@ -1,0 +1,8 @@
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+license: "CC0-1.0"
+license_url: "https://creativecommons.org/publicdomain/zero/1.0/"
+keywords: [netherlands, dutch-government, open-data, geodata, pdok, cloud-native, geoparquet, stac, pmtiles]
+attribution: "Various Dutch government authorities"
+source_url: "https://www.pdok.nl/datasets"

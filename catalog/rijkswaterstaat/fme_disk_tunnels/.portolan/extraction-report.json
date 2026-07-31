@@ -1,0 +1,38 @@
+{
+  "extraction_date": "2026-04-17T11:46:32.508295+00:00",
+  "source_url": "https://services-eu1.arcgis.com/4D1GBrbE6xp1T4YG/arcgis/rest/services/FME_DISK_tunnels_view_locatiekaartjes/FeatureServer",
+  "portolan_version": "0.6.0",
+  "gpio_version": "1.0.0",
+  "metadata_extracted": {
+    "source_url": "https://services-eu1.arcgis.com/4D1GBrbE6xp1T4YG/arcgis/rest/services/FME_DISK_tunnels_view_locatiekaartjes/FeatureServer",
+    "description": null,
+    "attribution": null,
+    "keywords": null,
+    "contact_name": null,
+    "processing_notes": null,
+    "known_issues": null,
+    "license_info_raw": null
+  },
+  "layers": [
+    {
+      "id": 1,
+      "name": "FME_DISK_tunnels",
+      "status": "success",
+      "warnings": [],
+      "attempts": 1,
+      "features": 25,
+      "size_bytes": 4220,
+      "duration_seconds": 3.1245037079788744,
+      "output_path": "fme_disk_tunnels/fme_disk_tunnels.parquet"
+    }
+  ],
+  "summary": {
+    "total_layers": 1,
+    "succeeded": 1,
+    "failed": 0,
+    "skipped": 0,
+    "total_features": 25,
+    "total_size_bytes": 4220,
+    "total_duration_seconds": 3.1245037079788744
+  }
+}

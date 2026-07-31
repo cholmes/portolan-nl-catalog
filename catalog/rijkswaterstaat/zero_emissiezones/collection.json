@@ -1,0 +1,218 @@
+{
+  "type": "Collection",
+  "id": "zero_emissiezones",
+  "stac_version": "1.1.0",
+  "description": "Zero emission zones (zero-emissiezones) in Dutch cities where only emission-free vehicles are allowed, including Low Emission Zones (LEZ) and Zero Emission Stadslogistiek (ZES) areas.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/zero_emissiezones/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Rijkswaterstaat"
+    },
+    {
+      "rel": "via",
+      "href": "https://services-eu1.arcgis.com/4D1GBrbE6xp1T4YG/arcgis/rest/services/Zero_emissiezones/FeatureServer/34",
+      "type": "text/html",
+      "title": "Source ArcGIS Feature Layer"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/zero_emissiezones/zero_emissiezones.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/rijkswaterstaat/zero_emissiezones/README.md",
+      "type": "text/html",
+      "title": "Zero Emission Zones documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "table:row_count": 84,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "OBJECTID",
+      "type": "int64"
+    },
+    {
+      "name": "Naam",
+      "type": "string"
+    },
+    {
+      "name": "Startdatum",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "Einddatum",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "Soort",
+      "type": "string"
+    },
+    {
+      "name": "Shape__Area",
+      "type": "double"
+    },
+    {
+      "name": "Shape__Length",
+      "type": "double"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    }
+  ],
+  "portolan:styles": [
+    {
+      "name": "default",
+      "href": "./styles/default.json"
+    }
+  ],
+  "geoparquet:geometry_type": "MultiPolygon",
+  "geoparquet:feature_count": 42,
+  "proj:epsg": 3857,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 11,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    4.482422,
+    51.890021,
+    11
+  ],
+  "pmtiles:layers": [
+    "zero_emissiezones"
+  ],
+  "title": "Zero Emission Zones",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.96125789974099,
+          50.8419685644372,
+          6.90016,
+          53.222107
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "MultiPolygon"
+    ],
+    "geoparquet:feature_count": [
+      42
+    ],
+    "table:column_statistics": [
+      {
+        "OBJECTID": {
+          "minimum": 1,
+          "maximum": 42
+        },
+        "Naam": {
+          "minimum": "LEZ 's-Hertogenbosch",
+          "maximum": "onbekend"
+        },
+        "Startdatum": {
+          "minimum": "2019-12-31T23:00:00",
+          "maximum": "2029-12-31T23:00:00"
+        },
+        "Soort": {
+          "minimum": "LEZ",
+          "maximum": "ZES"
+        },
+        "Shape__Area": {
+          "minimum": 50481.6982421875,
+          "maximum": 179351705.77978516
+        }
+      }
+    ],
+    "portolan:datetime_provisional": [
+      true
+    ],
+    "vector:geometry_types": [
+      "MultiPolygon"
+    ]
+  },
+  "assets": {
+    "data": {
+      "href": "./zero_emissiezones.parquet",
+      "type": "application/x-parquet",
+      "title": "Zero emission zones",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./zero_emissiezones.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Zero emission zones (vector tiles)",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail_.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "Zero Emission Zones — Default",
+      "roles": [
+        "style"
+      ]
+    },
+    "documentation": {
+      "href": "./llms.txt",
+      "type": "text/plain",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "zero_emissiezones": {
+      "href": "./zero_emissiezones.parquet",
+      "type": "application/x-parquet",
+      "roles": [
+        "data"
+      ]
+    },
+    "README": {
+      "href": "./README.md",
+      "type": "text/markdown",
+      "roles": [
+        "documentation"
+      ]
+    }
+  }
+}

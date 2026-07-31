@@ -1,0 +1,23 @@
+{
+  "type": "Catalog",
+  "id": "to-import/natura2000",
+  "stac_version": "1.1.0",
+  "description": "Catalog: to-import/natura2000",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "self",
+      "href": "./catalog.json",
+      "type": "application/json"
+    }
+  ]
+}

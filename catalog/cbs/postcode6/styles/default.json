@@ -1,0 +1,31 @@
+{
+  "version": 8,
+  "name": "Postcode 6 — Population",
+  "sources": {
+    "postcode": {
+      "type": "vector",
+      "url": "pmtiles://../postcode6.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "postcode-fill",
+      "type": "fill",
+      "source": "postcode",
+      "source-layer": "postcode6",
+      "filter": ["!=", ["get", "aantal_inwoners"], -99997],
+      "paint": {
+        "fill-color": [
+          "step", ["get", "aantal_inwoners"],
+          "#FFF5F0",
+          10, "#FEE0D2",
+          50, "#FC9272",
+          100, "#EF3B2C",
+          300, "#CB181D",
+          500, "#99000D"
+        ],
+        "fill-opacity": 0.8
+      }
+    }
+  ]
+}

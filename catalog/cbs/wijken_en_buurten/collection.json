@@ -1,0 +1,411 @@
+{
+  "type": "Collection",
+  "id": "wijken_en_buurten",
+  "stac_version": "1.1.0",
+  "description": "Geometry of all municipalities (gemeenten), districts (wijken), and neighborhoods (buurten) in the Netherlands with statistical key figures (kerncijfers) as attributes. Contains demographic, household, and area statistics at three geographic levels. Updated annually by CBS (Centraal Bureau voor de Statistiek / Statistics Netherlands). Boundaries derived from BRK (municipalities), municipality submissions (neighborhoods), and Bestand Bodemgebruik (water/land borders). Native CRS is EPSG:28992 (RD New / Amersfoort). Versions available for 2021-2025.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/cbs/wijken_en_buurten/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Centraal Bureau voor de Statistiek (CBS)"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.pdok.nl/introductie/-/article/cbs-wijken-en-buurten",
+      "type": "text/html",
+      "title": "PDOK CBS Wijken en Buurten dataset page"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.cbs.nl/nl-nl/dossier/nederland-regionaal/geografische-data/wijk-en-buurtkaart-2024",
+      "type": "text/html",
+      "title": "CBS Wijk- en Buurtkaart overview"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/cbs/wijkenbuurten/2025/wfs/v1_0",
+      "type": "text/html",
+      "title": "WFS service (2025)"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/cbs/wijkenbuurten/2025/wms/v1_0",
+      "type": "text/html",
+      "title": "WMS service (2025)"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/cbs/wijken_en_buurten/wijken_en_buurten.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/cbs/wijken_en_buurten/README.md",
+      "type": "text/html",
+      "title": "Wijken en Buurten (Districts and Neighborhoods) documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+  ],
+  "table:primary_geometry": "geom",
+  "table:columns": [
+    {
+      "name": "gml_id",
+      "type": "string"
+    },
+    {
+      "name": "buurtcode",
+      "type": "string"
+    },
+    {
+      "name": "buurtnaam",
+      "type": "string"
+    },
+    {
+      "name": "wijkcode",
+      "type": "string"
+    },
+    {
+      "name": "gemeentecode",
+      "type": "string"
+    },
+    {
+      "name": "gemeentenaam",
+      "type": "string"
+    },
+    {
+      "name": "indelingswijzigingWijkenEnBuurten",
+      "type": "int32"
+    },
+    {
+      "name": "water",
+      "type": "string"
+    },
+    {
+      "name": "meestVoorkomendePostcode",
+      "type": "string"
+    },
+    {
+      "name": "dekkingspercentage",
+      "type": "int32"
+    },
+    {
+      "name": "omgevingsadressendichtheid",
+      "type": "int32"
+    },
+    {
+      "name": "stedelijkheidAdressenPerKm2",
+      "type": "int32"
+    },
+    {
+      "name": "bevolkingsdichtheidInwonersPerKm2",
+      "type": "int32"
+    },
+    {
+      "name": "aantalInwoners",
+      "type": "int32"
+    },
+    {
+      "name": "mannen",
+      "type": "int32"
+    },
+    {
+      "name": "vrouwen",
+      "type": "int32"
+    },
+    {
+      "name": "percentagePersonen0Tot15Jaar",
+      "type": "int32"
+    },
+    {
+      "name": "percentagePersonen15Tot25Jaar",
+      "type": "int32"
+    },
+    {
+      "name": "percentagePersonen25Tot45Jaar",
+      "type": "int32"
+    },
+    {
+      "name": "percentagePersonen45Tot65Jaar",
+      "type": "int32"
+    },
+    {
+      "name": "percentagePersonen65JaarEnOuder",
+      "type": "int32"
+    },
+    {
+      "name": "percentageOngehuwd",
+      "type": "int32"
+    },
+    {
+      "name": "percentageGehuwd",
+      "type": "int32"
+    },
+    {
+      "name": "percentageGescheid",
+      "type": "int32"
+    },
+    {
+      "name": "percentageVerweduwd",
+      "type": "int32"
+    },
+    {
+      "name": "aantalHuishoudens",
+      "type": "int32"
+    },
+    {
+      "name": "percentageEenpersoonshuishoudens",
+      "type": "int32"
+    },
+    {
+      "name": "percentageHuishoudensZonderKinderen",
+      "type": "int32"
+    },
+    {
+      "name": "percentageHuishoudensMetKinderen",
+      "type": "int32"
+    },
+    {
+      "name": "gemiddeldeHuishoudsgrootte",
+      "type": "double"
+    },
+    {
+      "name": "percentageMetHerkomstlandNederland",
+      "type": "int32"
+    },
+    {
+      "name": "percentageMetHerkomstlandUitEuropaExclNl",
+      "type": "int32"
+    },
+    {
+      "name": "percentageMetHerkomstlandBuitenEuropa",
+      "type": "int32"
+    },
+    {
+      "name": "percentageGebInNlMetHerkomstlandNederland",
+      "type": "int32"
+    },
+    {
+      "name": "percGebInNlMetHerkomstlandInEuropaExNl",
+      "type": "int32"
+    },
+    {
+      "name": "percGebInNlMetHerkomstlandBuitenEuropa",
+      "type": "int32"
+    },
+    {
+      "name": "percGebBuitenNlMetHerkomstlndInEuropaExNl",
+      "type": "int32"
+    },
+    {
+      "name": "percGebBuitenNlMetHerkomstlndBuitenEuropa",
+      "type": "int32"
+    },
+    {
+      "name": "oppervlakteTotaalInHa",
+      "type": "int32"
+    },
+    {
+      "name": "oppervlakteLandInHa",
+      "type": "int32"
+    },
+    {
+      "name": "oppervlakteWaterInHa",
+      "type": "int32"
+    },
+    {
+      "name": "jrstatcode",
+      "type": "string"
+    },
+    {
+      "name": "jaar",
+      "type": "int32"
+    },
+    {
+      "name": "fuuid",
+      "type": "string"
+    },
+    {
+      "name": "geom",
+      "type": "binary"
+    },
+    {
+      "name": "geom_bbox",
+      "type": "struct<xmin: float, ymin: float, xmax: float, ymax: float>"
+    },
+    {
+      "name": "wijknaam",
+      "type": "string"
+    }
+  ],
+  "portolan:styles": [
+    {
+      "name": "default",
+      "href": "./styles/default.json"
+    },
+    {
+      "name": "by-aging",
+      "href": "./styles/by-aging.json"
+    },
+    {
+      "name": "by-household-size",
+      "href": "./styles/by-household-size.json"
+    }
+  ],
+  "geoparquet:geometry_type": "Polygon",
+  "geoparquet:feature_count": 3505,
+  "table:row_count": 18752,
+  "title": "Wijken en Buurten (Districts and Neighborhoods)",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.2051823188879496,
+          50.73,
+          7.244186209772124,
+          53.58278512971148
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "CC0-1.0",
+  "summaries": {
+    "vector:geometry_types": [
+      "MultiPolygon"
+    ]
+  },
+  "assets": {
+    "buurten": {
+      "href": "./buurten.parquet",
+      "type": "application/x-parquet",
+      "roles": [
+        "data"
+      ]
+    },
+    "wijken": {
+      "href": "./wijken.parquet",
+      "type": "application/x-parquet",
+      "roles": [
+        "data"
+      ]
+    },
+    "gemeenten": {
+      "href": "./gemeenten.parquet",
+      "type": "application/x-parquet",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./wijken_en_buurten.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Districts and neighborhoods (vector tiles)",
+      "description": "Buurten, wijken, and gemeenten boundaries as vector tiles for web visualization.",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "Districts & Neighborhoods — Population Density",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-aging": {
+      "href": "./styles/by-aging.json",
+      "type": "application/json",
+      "title": "Districts & Neighborhoods — Aging Population",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-household-size": {
+      "href": "./styles/by-household-size.json",
+      "type": "application/json",
+      "title": "Districts & Neighborhoods — Household Size",
+      "roles": [
+        "style"
+      ]
+    },
+    "documentation": {
+      "href": "./llms.txt",
+      "type": "text/plain",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "wijken_en_buurten": {
+      "href": "./wijken_en_buurten.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "data"
+      ]
+    },
+    "metadata": {
+      "href": "./gemeenten.parquet.aux.xml",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ]
+    },
+    "README": {
+      "href": "./README.md",
+      "type": "text/markdown",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "wijken.parquet.aux": {
+      "href": "./wijken.parquet.aux.xml",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ]
+    },
+    "buurten.parquet.aux": {
+      "href": "./buurten.parquet.aux.xml",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ]
+    }
+  }
+}

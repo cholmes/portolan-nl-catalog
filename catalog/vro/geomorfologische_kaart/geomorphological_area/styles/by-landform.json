@@ -1,0 +1,63 @@
+{
+  "version": 8,
+  "name": "Geomorfologie — by landform subgroup",
+  "sources": {
+    "geomorphological_area": {
+      "type": "vector",
+      "url": "pmtiles://../geomorphological_area.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "geomorphological_area-fill",
+      "type": "fill",
+      "source": "geomorphological_area",
+      "source-layer": "geomorphological_area",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "landform_subgroup_code"
+          ],
+          "B53",
+          "#1B9E77",
+          "N51",
+          "#D95F02",
+          "L51",
+          "#7570B3",
+          "R21",
+          "#E7298A",
+          "L54",
+          "#66A61E",
+          "R23",
+          "#E6AB02",
+          "N94",
+          "#A6761D",
+          "M53",
+          "#666666",
+          "N22",
+          "#1B9E77",
+          "M72",
+          "#D95F02",
+          "L53",
+          "#7570B3",
+          "R42",
+          "#E7298A",
+          "#E0E0E0"
+        ],
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "geomorphological_area-outline",
+      "type": "line",
+      "source": "geomorphological_area",
+      "source-layer": "geomorphological_area",
+      "paint": {
+        "line-color": "#777777",
+        "line-width": 0.3
+      }
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-05-07T16:00:00Z",
+      "breaking": false,
+      "assets": {
+        "buurten.parquet": {
+          "sha256": "205047b3f55ed17a22f55dbbfc199cc14c4d4fd358197acdafb969c834b6cb3b",
+          "size_bytes": 61100972,
+          "href": "cbs/wijken_en_buurten/buurten.parquet",
+          "mtime": 1778160886.274473
+        },
+        "wijken.parquet": {
+          "sha256": "8f1ae6547741d7548747f9a946cd358f7b09c6d69b1d4cb03aae50d6caf6087f",
+          "size_bytes": 41075403,
+          "href": "cbs/wijken_en_buurten/wijken.parquet",
+          "mtime": 1778160858.7817276
+        },
+        "gemeenten.parquet": {
+          "sha256": "8b0019f92d379a20a415cb5281bf5a9e8c0f8a156fb05ccb69e53813a22dadc4",
+          "size_bytes": 27773245,
+          "href": "cbs/wijken_en_buurten/gemeenten.parquet",
+          "mtime": 1778160841.6063242
+        },
+        "wijken_en_buurten.pmtiles": {
+          "sha256": "419b103e45352f6146f6f143b076f1fc132b99e9d47a0ae19da5f3221dd145c6",
+          "size_bytes": 104062201,
+          "href": "cbs/wijken_en_buurten/wijken_en_buurten.pmtiles",
+          "mtime": 1778163801.6140413
+        },
+        "collection.json": {
+          "sha256": "9b42ad82686906d95bb115b2eca066011173a304366837d8ff810f198310b694",
+          "size_bytes": 8651,
+          "href": "cbs/wijken_en_buurten/collection.json",
+          "mtime": 1778165382.5601242
+        },
+        "llms.txt": {
+          "sha256": "2922da8a69f79c4ff344f0cf97924aaafa00d2fcc7b54bf01cd9bab4de0add6b",
+          "size_bytes": 11342,
+          "href": "cbs/wijken_en_buurten/llms.txt",
+          "mtime": 1778164401.286828
+        },
+        "README.md": {
+          "sha256": "48ad49ab0aae5bf88abda5d918f8d965f9da56b9f3d500117cfec093dc89ce85",
+          "size_bytes": 2648,
+          "href": "cbs/wijken_en_buurten/README.md",
+          "mtime": 1778157320.4332545
+        },
+        "thumbnail.png": {
+          "sha256": "ce7beda664b09ca24023f0e5e814bb1c17fc721d4b25e89d4e9298ceb235357e",
+          "size_bytes": 273333,
+          "href": "cbs/wijken_en_buurten/thumbnail.png",
+          "mtime": 1778157056.8280294
+        }
+      },
+      "changes": [
+        "buurten.parquet",
+        "wijken.parquet",
+        "gemeenten.parquet",
+        "wijken_en_buurten.pmtiles",
+        "collection.json",
+        "llms.txt",
+        "README.md",
+        "thumbnail.png"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-05-08T18:24:04.165058Z",
+      "breaking": false,
+      "assets": {
+        "buurten.parquet": {
+          "sha256": "c131626930f331ce82b0073b1e0b2495bdbe460053784fed2696651a77faef55",
+          "size_bytes": 39758471,
+          "href": "cbs/wijken_en_buurten/buurten.parquet",
+          "mtime": 1778166873.0
+        },
+        "wijken.parquet": {
+          "sha256": "237e5febeca11129971db385684d89c429bd93b264e72380fda7b2f9595e02d4",
+          "size_bytes": 28146090,
+          "href": "cbs/wijken_en_buurten/wijken.parquet",
+          "mtime": 1778166876.0
+        },
+        "gemeenten.parquet": {
+          "sha256": "4da3faef33c8323ff78b46548e7974477d9e9c1d6fca34ce2d516b3677bf0d14",
+          "size_bytes": 20381655,
+          "href": "cbs/wijken_en_buurten/gemeenten.parquet",
+          "mtime": 1778166874.0
+        },
+        "wijken_en_buurten.pmtiles": {
+          "sha256": "419b103e45352f6146f6f143b076f1fc132b99e9d47a0ae19da5f3221dd145c6",
+          "size_bytes": 104062201,
+          "href": "cbs/wijken_en_buurten/wijken_en_buurten.pmtiles",
+          "mtime": 1778165496.0
+        },
+        "collection.json": {
+          "sha256": "9b42ad82686906d95bb115b2eca066011173a304366837d8ff810f198310b694",
+          "size_bytes": 8651,
+          "href": "cbs/wijken_en_buurten/collection.json",
+          "mtime": 1778165382.5601242
+        },
+        "llms.txt": {
+          "sha256": "1447c87def74fad5f1341dc94103568539a363bd1b0150345b079e96c7f1b49a",
+          "size_bytes": 12613,
+          "href": "cbs/wijken_en_buurten/llms.txt",
+          "mtime": 1778185473.0
+        },
+        "README.md": {
+          "sha256": "48ad49ab0aae5bf88abda5d918f8d965f9da56b9f3d500117cfec093dc89ce85",
+          "size_bytes": 2648,
+          "href": "cbs/wijken_en_buurten/README.md",
+          "mtime": 1778165501.0
+        },
+        "thumbnail.png": {
+          "sha256": "ce7beda664b09ca24023f0e5e814bb1c17fc721d4b25e89d4e9298ceb235357e",
+          "size_bytes": 273333,
+          "href": "cbs/wijken_en_buurten/thumbnail.png",
+          "mtime": 1778165501.0
+        },
+        "gemeenten.parquet.aux.xml": {
+          "sha256": "27c6f967c3f9c38d2aca91085a055aef3af0849c021ea7ebbff7b5f684332504",
+          "size_bytes": 23968,
+          "href": "cbs/wijken_en_buurten/gemeenten.parquet.aux.xml",
+          "mtime": 1778185111.0
+        },
+        "wijken.parquet.aux.xml": {
+          "sha256": "27c6f967c3f9c38d2aca91085a055aef3af0849c021ea7ebbff7b5f684332504",
+          "size_bytes": 23968,
+          "href": "cbs/wijken_en_buurten/wijken.parquet.aux.xml",
+          "mtime": 1778185111.0
+        },
+        "buurten.parquet.aux.xml": {
+          "sha256": "27c6f967c3f9c38d2aca91085a055aef3af0849c021ea7ebbff7b5f684332504",
+          "size_bytes": 23968,
+          "href": "cbs/wijken_en_buurten/buurten.parquet.aux.xml",
+          "mtime": 1778185111.0
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "buurten.parquet",
+        "gemeenten.parquet",
+        "wijken.parquet",
+        "gemeenten.parquet.aux.xml",
+        "wijken.parquet.aux.xml",
+        "buurten.parquet.aux.xml"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "type": "Collection",
+  "id": "3dbag",
+  "stac_version": "1.1.0",
+  "title": "3D BAG",
+  "description": "All ~10.8 million buildings in the Netherlands as detailed 3D models, produced by the [3D Geoinformation Research Group](https://3d.bk.tudelft.nl/) at TU Delft in collaboration with [3DGI](https://3dgi.xyz/). The [3D BAG](https://3dbag.nl/) enriches the official [BAG building registry](https://www.pdok.nl/introductie/-/article/basisregistratie-adressen-en-gebouwen-ba-1) (maintained by Kadaster) with building heights, roof types, volumes, and surface areas derived from the [AHN](https://www.ahn.nl/) national point cloud survey.\n\nThe source BAG footprints and attributes (construction year, function, status) are available in this catalog as [Buildings (Panden)](../kadaster/panden/collection.json) from Kadaster. The 3D BAG adds computed height fields that enable 2.5D extrusion rendering, plus detailed 3D metrics (volumes, roof/wall areas, floor counts) for energy modelling, urban planning, and environmental simulation.\n\nThis collection provides LOD 1.3 building-part geometries (~14.1M parts for ~10.8M buildings) with pre-computed `height` and `base_height` fields ready for [MapLibre GL fill-extrusion](https://maplibre.org/maplibre-style-spec/layers/#fill-extrusion) rendering. A separate whole-building file contains the full set of 58 3D-derived attributes for advanced analysis.\n\nFunded by the European Research Council (ERC). Updated regularly as new AHN releases become available.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/tudelft/3dbag/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "TU Delft — 3D Geoinformation Research Group"
+    },
+    {
+      "rel": "via",
+      "href": "https://3dbag.nl/",
+      "type": "text/html",
+      "title": "3D BAG — official viewer and download"
+    },
+    {
+      "rel": "via",
+      "href": "https://docs.3dbag.nl/en/",
+      "type": "text/html",
+      "title": "3D BAG documentation"
+    },
+    {
+      "rel": "via",
+      "href": "https://3d.bk.tudelft.nl/projects/3dbag/",
+      "type": "text/html",
+      "title": "3D BAG project page (TU Delft)"
+    },
+    {
+      "rel": "via",
+      "href": "https://docs.3dbag.nl/en/schema/attributes/",
+      "type": "text/html",
+      "title": "3D BAG attribute documentation"
+    },
+    {
+      "rel": "related",
+      "href": "../../kadaster/panden/collection.json",
+      "type": "application/json",
+      "title": "Buildings (Panden) — source BAG footprints and attributes from Kadaster"
+    },
+    {
+      "rel": "derived_from",
+      "href": "https://data.source.coop/cholmes/portolan-nl/kadaster/panden/collection.json",
+      "type": "application/json",
+      "title": "BAG Buildings (Panden) — source building footprints from Kadaster"
+    },
+    {
+      "rel": "related",
+      "href": "https://www.ahn.nl/",
+      "type": "text/html",
+      "title": "AHN (Actueel Hoogtebestand Nederland) — source elevation point cloud used to derive building heights"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/tudelft/3dbag/3dbag-lod13.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "tilejson",
+      "href": "https://d5ombmw12oj5f.cloudfront.net/tudelft/3dbag/3dbag-lod13.json",
+      "type": "application/json",
+      "title": "TileJSON for 3D BAG vector tiles"
+    },
+    {
+      "rel": "xyz",
+      "href": "https://d5ombmw12oj5f.cloudfront.net/tudelft/3dbag/3dbag-lod13/{z}/{x}/{y}.mvt",
+      "type": "application/vnd.mapbox-vector-tile",
+      "title": "XYZ vector tile endpoint for 3D BAG"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/tudelft/3dbag/README.md",
+      "type": "text/html",
+      "title": "3D BAG documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "portolan:styles": [
+    "styles/default",
+    "styles/by-height",
+    "styles/by-age",
+    "styles/by-use",
+    "styles/by-roof-type",
+    "styles/flat"
+  ],
+  "table:row_count": 14141553,
+  "table:primary_geometry": "geom",
+  "table:columns": [
+    {
+      "name": "identificatie",
+      "type": "string",
+      "description": "BAG building ID (16-char pand ID). Links to the Kadaster BAG registry. First 4 digits encode the municipality code."
+    },
+    {
+      "name": "b3_pand_deel_id",
+      "type": "int64",
+      "description": "Building-part ID within a building. Buildings are split where roof heights differ."
+    },
+    {
+      "name": "b3_dd_id",
+      "type": "int64",
+      "description": "Sub-part ID within a building part."
+    },
+    {
+      "name": "height",
+      "type": "double",
+      "description": "Building part height in meters (roof 70th percentile minus ground elevation). Use as fill-extrusion-height for 3D rendering."
+    },
+    {
+      "name": "base_height",
+      "type": "double",
+      "description": "Base elevation relative to ground in meters. Use as fill-extrusion-base for stepped building parts in 3D rendering."
+    },
+    {
+      "name": "dak_type",
+      "type": "string",
+      "description": "Roof type classification: 'horizontal', 'slanted', 'multiple horizontal', or 'unknown'."
+    },
+    {
+      "name": "bouwjaar",
+      "type": "int64",
+      "description": "Original construction year from BAG. Value of 9999 means unknown."
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "description": "Building lifecycle status from BAG (e.g. 'Pand in gebruik', 'Bouw gestart')."
+    },
+    {
+      "name": "gebruiksdoel",
+      "type": "string",
+      "description": "Building usage function from BAG (e.g. 'woonfunctie', 'kantoorfunctie'). Comma-separated for mixed use."
+    },
+    {
+      "name": "oppervlakte_min",
+      "type": "int64",
+      "description": "Minimum floor area (m²) of contained dwelling units."
+    },
+    {
+      "name": "oppervlakte_max",
+      "type": "int64",
+      "description": "Maximum floor area (m²) of contained dwelling units."
+    },
+    {
+      "name": "aantal_verblijfsobjecten",
+      "type": "int64",
+      "description": "Number of dwelling units in the building."
+    }
+  ],
+  "proj:epsg": 3857,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 15,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    5.29,
+    52.12,
+    14
+  ],
+  "pmtiles:layers": [
+    "buildings",
+    "buildings-overview"
+  ],
+  "title": "3D BAG",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.36,
+          50.75,
+          7.23,
+          53.50
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "providers": [
+    {
+      "name": "3D Geoinformation Research Group, TU Delft",
+      "roles": ["producer", "licensor"],
+      "url": "https://3d.bk.tudelft.nl/"
+    },
+    {
+      "name": "3DGI",
+      "roles": ["producer"],
+      "url": "https://3dgi.xyz/"
+    }
+  ],
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "Polygon"
+    ],
+    "geoparquet:feature_count": [
+      14141553
+    ],
+    "vector:geometry_types": [
+      "Polygon"
+    ]
+  },
+  "assets": {
+    "lod13-data": {
+      "href": "./3dbag-lod13.parquet",
+      "type": "application/x-parquet",
+      "title": "3D BAG LOD 1.3 Building Parts (GeoParquet)",
+      "description": "14.1M building-part polygons with height and base_height fields for 3D extrusion, plus BAG attributes. EPSG:7415 (RD New + NAP height). 747 MB.",
+      "roles": [
+        "data"
+      ]
+    },
+    "pand-data": {
+      "href": "./3dbag-pand.parquet",
+      "type": "application/x-parquet",
+      "title": "3D BAG Whole Buildings (GeoParquet)",
+      "description": "10.8M whole-building polygons with 62 attributes including volumes, surface areas, floor counts, roof types, and AHN quality metrics. EPSG:7415. 1.3 GB. Join to LOD 1.3 parts on identificatie.",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./3dbag-lod13.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "3D BAG LOD 1.3 (vector tiles)",
+      "description": "Vector tiles of building parts with height data for 3D extrusion rendering. EPSG:4326. 1.2 GB.",
+      "roles": [
+        "visual"
+      ]
+    },
+    "tilejson": {
+      "href": "https://d5ombmw12oj5f.cloudfront.net/tudelft/3dbag/3dbag-lod13.json",
+      "type": "application/json",
+      "title": "TileJSON endpoint (CloudFront)",
+      "description": "TileJSON 3.0 document served via AWS CloudFront, backed by Protomaps-on-Lambda reading the PMTiles archive on Source Cooperative. Use this URL directly with MapLibre GL, Mapbox GL, deck.gl, OpenLayers, or Leaflet vector-tile plugins.",
+      "roles": [
+        "tiles",
+        "metadata"
+      ]
+    },
+    "xyz": {
+      "href": "https://d5ombmw12oj5f.cloudfront.net/tudelft/3dbag/3dbag-lod13/{z}/{x}/{y}.mvt",
+      "type": "application/vnd.mapbox-vector-tile",
+      "title": "XYZ vector tile endpoint (CloudFront)",
+      "description": "Direct {z}/{x}/{y} MVT endpoint served via AWS CloudFront. Min zoom 0, max zoom 15. Layers: 'buildings' (z10–15, full attributes) and 'buildings-overview' (z0–12, simplified).",
+      "roles": [
+        "tiles",
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.jpg",
+      "type": "image/jpeg",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "Default (3D Extruded)",
+      "description": "Light grey 3D extruded buildings with height-based shading.",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-height": {
+      "href": "./styles/by-height.json",
+      "type": "application/json",
+      "title": "By Building Height",
+      "description": "Color ramp from cool blue (low) to warm red (tall) with 3D extrusion.",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-age": {
+      "href": "./styles/by-age.json",
+      "type": "application/json",
+      "title": "By Construction Year",
+      "description": "Dark brown (pre-1800) through orange to pale yellow (post-2000) with 3D extrusion.",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-use": {
+      "href": "./styles/by-use.json",
+      "type": "application/json",
+      "title": "By Building Function",
+      "description": "Categorical colors by gebruiksdoel with 3D extrusion.",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-roof-type": {
+      "href": "./styles/by-roof-type.json",
+      "type": "application/json",
+      "title": "By Roof Type",
+      "description": "Categorical colors by dak_type with 3D extrusion.",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/flat": {
+      "href": "./styles/flat.json",
+      "type": "application/json",
+      "title": "Flat (2D Overview)",
+      "description": "2D flat fill view for performance and overview mapping.",
+      "roles": [
+        "style"
+      ]
+    },
+    "documentation": {
+      "href": "./llms.txt",
+      "type": "text/plain",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "README": {
+      "href": "./README.md",
+      "type": "text/markdown",
+      "roles": [
+        "documentation"
+      ]
+    }
+  }
+}

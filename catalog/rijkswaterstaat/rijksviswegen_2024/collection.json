@@ -1,0 +1,316 @@
+{
+  "type": "Collection",
+  "id": "rijksviswegen_2024",
+  "stac_version": "1.1.0",
+  "description": "National fish migration routes (Rijksviswegen) from the Nationale Visroutekaart, showing connectivity status of waterways under the EU Water Framework Directive.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/rijksviswegen_2024/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Rijkswaterstaat"
+    },
+    {
+      "rel": "via",
+      "href": "https://services-eu1.arcgis.com/4D1GBrbE6xp1T4YG/arcgis/rest/services/Vismigratie_2025/FeatureServer/29",
+      "type": "text/html",
+      "title": "Source ArcGIS Feature Layer"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/rijksviswegen_2024/rijksviswegen_2024.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/rijkswaterstaat/rijksviswegen_2024/README.md",
+      "type": "text/html",
+      "title": "Fish Migration Routes (2024) documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "table:row_count": 2122,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "OBJECTID",
+      "type": "int64"
+    },
+    {
+      "name": "BEHEERDER",
+      "type": "string"
+    },
+    {
+      "name": "CODE",
+      "type": "string"
+    },
+    {
+      "name": "MIGR_TYPE",
+      "type": "string"
+    },
+    {
+      "name": "OPMERKING",
+      "type": "string"
+    },
+    {
+      "name": "NAAM",
+      "type": "string"
+    },
+    {
+      "name": "BRON",
+      "type": "string"
+    },
+    {
+      "name": "Status2009",
+      "type": "string"
+    },
+    {
+      "name": "Status2015",
+      "type": "string"
+    },
+    {
+      "name": "Status2019",
+      "type": "string"
+    },
+    {
+      "name": "Status2021",
+      "type": "string"
+    },
+    {
+      "name": "Status2024",
+      "type": "string"
+    },
+    {
+      "name": "Status2027",
+      "type": "string"
+    },
+    {
+      "name": "Status2030",
+      "type": "string"
+    },
+    {
+      "name": "Status2033",
+      "type": "string"
+    },
+    {
+      "name": "Shape__Length",
+      "type": "double"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    }
+  ],
+  "portolan:styles": [
+    {
+      "name": "default",
+      "href": "./styles/default.json"
+    },
+    {
+      "name": "by-status",
+      "href": "./styles/by-status.json"
+    }
+  ],
+  "proj:epsg": 3857,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 9,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    4.5703129,
+    51.835254,
+    9
+  ],
+  "pmtiles:layers": [
+    "rijksviswegen_2024"
+  ],
+  "title": "Fish Migration Routes (2024)",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.352556,
+          50.757487,
+          7.208686,
+          53.5674440075212
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "LineString"
+    ],
+    "geoparquet:feature_count": [
+      2122
+    ],
+    "table:column_statistics": [
+      {
+        "OBJECTID": {
+          "minimum": 957189,
+          "maximum": 1012408
+        },
+        "BEHEERDER": {
+          "minimum": "",
+          "maximum": " ",
+          "null_count": 2041
+        },
+        "CODE": {
+          "minimum": "B24517",
+          "maximum": "W11285",
+          "null_count": 2041
+        },
+        "MIGR_TYPE": {
+          "minimum": "rijk",
+          "maximum": "rijk"
+        },
+        "OPMERKING": {
+          "minimum": "",
+          "maximum": "uitstroomleiding gemaal RVK Gegevens 1961",
+          "null_count": 2041
+        },
+        "NAAM": {
+          "minimum": "",
+          "maximum": "Zwolsche Diep",
+          "null_count": 820
+        },
+        "BRON": {
+          "minimum": "Rijkswaterstaat",
+          "maximum": "Rijkswaterstaat"
+        },
+        "Status2009": {
+          "minimum": "Geen onderdeel visroutenetwerk",
+          "maximum": "Verbonden",
+          "null_count": 4
+        },
+        "Status2015": {
+          "minimum": "Geen onderdeel visroutenetwerk",
+          "maximum": "Verbonden",
+          "null_count": 4
+        },
+        "Status2019": {
+          "minimum": "Geen onderdeel visroutenetwerk",
+          "maximum": "Verbonden",
+          "null_count": 4
+        },
+        "Status2021": {
+          "minimum": "Geen onderdeel visroutenetwerk",
+          "maximum": "Verbonden",
+          "null_count": 4
+        },
+        "Status2024": {
+          "minimum": "Geen onderdeel visroutenetwerk",
+          "maximum": "Verbonden"
+        },
+        "Status2027": {
+          "minimum": "Geen onderdeel visroutenetwerk",
+          "maximum": "Verbonden"
+        },
+        "Status2030": {
+          "minimum": "Geen onderdeel visroutenetwerk",
+          "maximum": "Verbonden"
+        },
+        "Status2033": {
+          "minimum": "Geen onderdeel visroutenetwerk",
+          "maximum": "Verbonden"
+        },
+        "Shape__Length": {
+          "minimum": 0.5224836914575516,
+          "maximum": 64164.57199253987
+        }
+      }
+    ],
+    "portolan:datetime_provisional": [
+      true
+    ],
+    "vector:geometry_types": [
+      "LineString"
+    ]
+  },
+  "assets": {
+    "data": {
+      "href": "./rijksviswegen_2024.parquet",
+      "type": "application/x-parquet",
+      "title": "Fish migration routes (2024)",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./rijksviswegen_2024.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Fish migration routes (vector tiles)",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail_.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "Fish Migration Routes — Default",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-status": {
+      "href": "./styles/by-status.json",
+      "type": "application/json",
+      "title": "Fish Migration Routes — By Connectivity Status",
+      "roles": [
+        "style"
+      ]
+    },
+    "documentation": {
+      "href": "./llms.txt",
+      "type": "text/plain",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "rijksviswegen_2024": {
+      "href": "./rijksviswegen_2024.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "data"
+      ]
+    },
+    "README": {
+      "href": "./README.md",
+      "type": "text/markdown",
+      "roles": [
+        "documentation"
+      ]
+    }
+  }
+}

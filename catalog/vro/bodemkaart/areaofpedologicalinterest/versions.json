@@ -1,0 +1,50 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-06-07T21:29:48.407913Z",
+      "breaking": false,
+      "assets": {
+        "llms.txt": {
+          "sha256": "f41f6ff811be332f5c0be9d8da320f5ef5eb1d35c257385dea3c870721900eeb",
+          "size_bytes": 4402,
+          "href": "vro/bodemkaart/areaofpedologicalinterest/llms.txt",
+          "mtime": 1780867267.7128139
+        },
+        "areaofpedologicalinterest.parquet": {
+          "sha256": "4ce64927b139f51ade90a58b4903bde9d68856722061eb2d99153de922717172",
+          "size_bytes": 5150133,
+          "href": "vro/bodemkaart/areaofpedologicalinterest/areaofpedologicalinterest.parquet",
+          "mtime": 1780863689.070348
+        },
+        "README.md": {
+          "sha256": "bc7aa63bc98db1d9f521885bfb66c423a665d903c93795dc4a400c62be6bfbf3",
+          "size_bytes": 2245,
+          "href": "vro/bodemkaart/areaofpedologicalinterest/README.md",
+          "mtime": 1780867375.3228323
+        },
+        "thumbnail.png": {
+          "sha256": "dd0697538b1bdec50816eaf9b0b85154c6b235d3d6fd924f78d89e6d7fd2188b",
+          "size_bytes": 160585,
+          "href": "vro/bodemkaart/areaofpedologicalinterest/thumbnail.png",
+          "mtime": 1780866506.3266163
+        },
+        "areaofpedologicalinterest.pmtiles": {
+          "sha256": "c96ad0840b371f2dd6cccdfd0acb9d2afc9577d22d7270647aeb8f7296aaa2db",
+          "size_bytes": 4556596,
+          "href": "vro/bodemkaart/areaofpedologicalinterest/areaofpedologicalinterest.pmtiles",
+          "mtime": 1780864440.5648777
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "areaofpedologicalinterest.parquet",
+        "README.md",
+        "thumbnail.png",
+        "areaofpedologicalinterest.pmtiles"
+      ]
+    }
+  ]
+}

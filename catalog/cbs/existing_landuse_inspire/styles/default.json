@@ -1,0 +1,59 @@
+{
+  "version": 8,
+  "name": "INSPIRE Land Use — Default",
+  "sources": {
+    "landuse": {
+      "type": "vector",
+      "url": "pmtiles://../existing_landuse.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "landuse-fill",
+      "type": "fill",
+      "source": "landuse",
+      "source-layer": "existing_landuse",
+      "paint": {
+        "fill-color": [
+          "match", ["get", "description"],
+          "Other agricultural usage", "#A8D08D",
+          "Greenhouses", "#C5E1A5",
+          "Woodland", "#2E7D32",
+          "Dry natural area", "#8BC34A",
+          "Wet natural area", "#558B2F",
+          "Residential", "#E8B4B8",
+          "Industrial area and offices", "#9E9E9E",
+          "Socio-cultural facility", "#C0A0C0",
+          "Retail trade, hotel and catering", "#D4A0A0",
+          "Public institutions", "#C08080",
+          "Building site", "#D7CCC8",
+          "Other semi built-up area", "#BCAAA4",
+          "Cemetery", "#78909C",
+          "Dump site", "#795548",
+          "Sports ground (incl. car parks)", "#FDD835",
+          "Park and public garden", "#DCEDC8",
+          "Allotment garden", "#FFF176",
+          "Area for daytrips", "#FFD54F",
+          "Holiday recreation", "#FFE082",
+          "Water with recreational usage", "#4FC3F7",
+          "Other inland water", "#42A5F5",
+          "Motorway", "#757575",
+          "Railway", "#616161",
+          "Airport", "#9E9E9E",
+          "#DDDDDD"
+        ],
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "landuse-outline",
+      "type": "line",
+      "source": "landuse",
+      "source-layer": "existing_landuse",
+      "paint": {
+        "line-color": "#333333",
+        "line-width": 0.3
+      }
+    }
+  ]
+}

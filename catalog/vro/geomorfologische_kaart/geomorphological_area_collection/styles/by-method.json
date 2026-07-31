@@ -1,0 +1,47 @@
+{
+  "version": 8,
+  "name": "Map area collections — by inventory method",
+  "sources": {
+    "geomorphological_area_collection": {
+      "type": "vector",
+      "url": "pmtiles://../geomorphological_area_collection.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "geomorphological_area_collection-fill",
+      "type": "fill",
+      "source": "geomorphological_area_collection",
+      "source-layer": "geomorphological_area_collection",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "inventorymethod"
+          ],
+          "Analoog met veldverkenning",
+          "#1B9E77",
+          "Digitaal met veldverificatie",
+          "#D95F02",
+          "Digitaal",
+          "#7570B3",
+          "Digitaal met veldverkenning",
+          "#E7298A",
+          "#999999"
+        ],
+        "fill-opacity": 0.7
+      }
+    },
+    {
+      "id": "geomorphological_area_collection-outline",
+      "type": "line",
+      "source": "geomorphological_area_collection",
+      "source-layer": "geomorphological_area_collection",
+      "paint": {
+        "line-color": "#777777",
+        "line-width": 0.3
+      }
+    }
+  ]
+}

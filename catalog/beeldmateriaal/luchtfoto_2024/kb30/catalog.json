@@ -1,0 +1,196 @@
+{
+  "type": "Catalog",
+  "id": "luchtfoto_2024_kb30",
+  "stac_version": "1.1.0",
+  "description": "Kaartblad 30 covers the Gouda area in the Green Heart (Groene Hart) of the Randstad — the open peat meadow landscape between the major cities. Features include the historic cheese city of Gouda, polder farmland with characteristic long narrow parcels, and the Oude Rijn river valley. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the Beeldmateriaal Nederland summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/beeldmateriaal/luchtfoto_2024/kb30/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30bn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30BN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30bz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30BZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30bz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30BZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30cn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30CN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30cz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30CZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30cz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30CZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30dn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30DN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30dn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30DN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30dz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30DZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30dz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30DZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30en1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30EN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30en2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30EN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30ez1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30EZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30ez2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30EZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30fn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30FN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30fn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30FN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30fz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30FZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30fz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30FZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30gn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30GN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30gn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30GN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30gz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30GZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30gz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30GZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30hn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30HN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30hz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30HZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-30hz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 30HZ2"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Luchtfoto 2024 — Aerial Orthophotos"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          4.0010827,
+          52.0301882,
+          4.5856502,
+          52.2602835
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2024-04-01T00:00:00Z",
+          "2024-09-30T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "title": "KB 30 — Gouda Area"
+}

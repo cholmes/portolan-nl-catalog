@@ -1,0 +1,295 @@
+# CBS Postcode6 — Statistics per 6-Digit Postcode / Netherlands
+
+## What This Dataset Is
+
+Statistical data for all 6-digit postcodes (e.g. "1011AB") in the Netherlands, published
+by **CBS** (Centraal Bureau voor de Statistiek / Statistics Netherlands) via PDOK. Contains
+**157 attributes** covering six domains: demographics, housing, energy consumption, income,
+social security, and proximity to facilities. Data is available from 2015 onwards, with
+each year measured as of January 1st. Some variables (energy, income) reflect full-year
+figures rather than point-in-time snapshots.
+
+**Source:** https://www.pdok.nl/introductie/-/article/cbspostcode6
+**CBS documentation:** https://www.cbs.nl/nl-nl/longread/diversen/2025/statistische-gegevens-per-vierkant-en-postcode-2022-2023-2024
+**OGC API Features:** https://api.pdok.nl/cbs/postcode6/ogc/v1_0/
+**Provider:** CBS (Statistics Netherlands)
+**License:** CC BY 4.0
+**Available years:** 2015 to 2024
+**Geometry type:** MultiPolygon
+
+## How to Access
+
+GeoParquet and PMTiles files are available from Source Cooperative. Native CRS is
+**EPSG:28992** (RD New / Amersfoort) — coordinates are in meters, not degrees.
+
+| File | Features | Size | Contents |
+|------|----------|------|----------|
+| `postcode6.parquet` | 464,964 | 134 MB | All postcodes with 157 statistical attributes |
+| `postcode6.pmtiles` | — | 77 MB | Postcode area polygons as vector tiles |
+
+**Base URL:** `https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/`
+
+```python
+import duckdb
+
+con = duckdb.connect()
+con.execute("INSTALL spatial; LOAD spatial;")
+
+URL = 'https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/postcode6.parquet'
+
+df = con.execute(f"""
+    SELECT * FROM read_parquet('{URL}')
+    LIMIT 5
+""").df()
+```
+
+Also available via OGC API Features from PDOK:
+- **OGC API:** `https://api.pdok.nl/cbs/postcode6/ogc/v1_0/`
+
+## Statistical Domains and Key Fields
+
+The 157 fields are organized into six statistical domains. The value **-99997** means
+data is suppressed for privacy protection.
+
+### 1. Demographics (~20 fields)
+
+| Field | Meaning |
+|-------|---------|
+| `aantal_inwoners` | Total inhabitants |
+| `aantal_mannen` / `aantal_vrouwen` | Male / female inhabitants |
+| `percentage_inwoners_0_tot_15_jaar` | % aged 0-14 |
+| `percentage_inwoners_15_tot_25_jaar` | % aged 15-24 |
+| `percentage_inwoners_25_tot_45_jaar` | % aged 25-44 |
+| `percentage_inwoners_45_tot_65_jaar` | % aged 45-64 |
+| `percentage_inwoners_65_jaar_en_ouder` | % aged 65+ |
+| `percentage_westerse_migratieachtergr` | % Western migration background |
+| `percentage_niet_westerse_migratieach` | % Non-Western migration background |
+
+### 2. Housing (~30 fields)
+
+| Field | Meaning |
+|-------|---------|
+| `aantal_woningen` | Total dwellings |
+| `aantal_meergezins_woningen` | Multi-family dwellings (apartments) |
+| `aantal_eengezins_woningen` | Single-family dwellings |
+| `aantal_niet_bewoonde_woningen` | Unoccupied dwellings |
+| `aantal_woningen_bouwjaar_voor_1945` | Built before 1945 |
+| `aantal_woningen_bouwjaar_1945_1964` | Built 1945-1964 |
+| `aantal_woningen_bouwjaar_1965_1974` | Built 1965-1974 |
+| `aantal_woningen_bouwjaar_1975_1984` | Built 1975-1984 |
+| `aantal_woningen_bouwjaar_1985_1994` | Built 1985-1994 |
+| `aantal_woningen_bouwjaar_1995_2004` | Built 1995-2004 |
+| `aantal_woningen_bouwjaar_2005_en_later` | Built 2005+ |
+| `percentage_koopwoning` | % owner-occupied |
+| `percentage_huurwoning` | % rental |
+| `gemiddelde_woningwaarde` | Average property value (WOZ) |
+
+### 3. Energy Consumption (~10 fields)
+
+| Field | Meaning |
+|-------|---------|
+| `gemiddeld_aardgasverbruik_totaal` | Avg. total gas consumption (m3) |
+| `gemiddeld_aardgasverbruik_appartement` | Avg. gas — apartments |
+| `gemiddeld_aardgasverbruik_tussenwoning` | Avg. gas — terraced houses |
+| `gemiddeld_aardgasverbruik_hoekwoning` | Avg. gas — corner houses |
+| `gemiddeld_aardgasverbruik_twee_onder_een_kap_woning` | Avg. gas — semi-detached |
+| `gemiddeld_aardgasverbruik_vrijstaande_woning` | Avg. gas — detached houses |
+| `gemiddeld_elektriciteitsverbruik_totaal` | Avg. total electricity (kWh) |
+| `gemiddeld_elektriciteitsverbruik_appartement` | Avg. electricity — apartments |
+
+### 4. Income (~5 fields)
+
+| Field | Meaning |
+|-------|---------|
+| `mediaan_inkomen_huishouden` | Median household income (x1000 EUR) |
+| `gemiddeld_inkomen_per_inkomensontvanger` | Avg. income per income recipient |
+| `percentage_huishoudens_met_laag_inkomen` | % low-income households |
+| `percentage_huishoudens_met_hoog_inkomen` | % high-income households |
+
+### 5. Social Security (~10 fields)
+
+| Field | Meaning |
+|-------|---------|
+| `percentage_personen_met_uitkering_onder_aowleeftijd` | % receiving benefits (under AOW age) |
+| `percentage_personen_met_ww_uitkering` | % receiving unemployment (WW) |
+| `percentage_personen_met_bijstandsuitkering` | % receiving social assistance |
+
+### 6. Facility Proximity (~80 fields)
+
+Distance to nearest facility and count within radius. There are 40+ facility types
+with metrics at 1km, 3km, 5km, 10km, and 20km radii.
+
+| Field Pattern | Meaning |
+|---------------|---------|
+| `afstand_tot_huisartsenpraktijk` | Distance to nearest GP practice (km) |
+| `afstand_tot_ziekenhuis_excl_buitenpoli` | Distance to nearest hospital (km) |
+| `afstand_tot_basisonderwijs` | Distance to nearest primary school (km) |
+| `afstand_tot_supermarkt` | Distance to nearest supermarket (km) |
+| `afstand_tot_oprit_hoofdverkeersweg` | Distance to nearest highway on-ramp (km) |
+| `afstand_tot_treinstation` | Distance to nearest train station (km) |
+| `aantal_huisartsenpraktijken_binnen_3_km` | GP practices within 3 km |
+| `aantal_supermarkten_binnen_3_km` | Supermarkets within 3 km |
+
+### General / Temporal Fields
+
+| Field | Meaning |
+|-------|---------|
+| `postcode6` | 6-digit postcode (e.g. "1011AB") — primary identifier |
+| `jaarcode` | Reference year (e.g. 2024) |
+| `startdatum` / `einddatum` | Validity period |
+| `geom` | Postcode area polygon in EPSG:28992 |
+
+## Privacy Suppression
+
+Values of **-99997** indicate the data is suppressed for privacy. CBS applies suppression
+when a postcode has fewer than **5 residents** or **5 housing units**. This is important:
+always filter out -99997 before computing averages or aggregations.
+
+```sql
+-- Correct: exclude suppressed values
+SELECT AVG(aantal_inwoners)
+FROM read_parquet(URL)
+WHERE aantal_inwoners != -99997
+  AND jaarcode = 2024
+```
+
+## Geometry Notes
+
+- CRS is **EPSG:28992** (RD New / Amersfoort) — coordinates are in **meters**, not
+  degrees. X ranges from ~13,600 to ~278,000; Y ranges from ~306,900 to ~617,100.
+- Geometry type is **MultiPolygon**
+- To convert to WGS84 (lon/lat) for web mapping:
+  ```sql
+  ST_Transform(geom, 'EPSG:28992', 'EPSG:4326')
+  ```
+- Bounding box in WGS84: [3.37, 50.73, 7.24, 53.55] (all of Netherlands)
+
+## Useful Query Patterns
+
+### Count postcodes per year
+
+```sql
+SELECT jaarcode, COUNT(*) AS postcodes
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/postcode6.parquet')
+GROUP BY jaarcode
+ORDER BY jaarcode
+```
+
+### Average household income by year (excluding suppressed)
+
+```sql
+SELECT jaarcode, AVG(CAST(mediaan_inkomen_huishouden AS DOUBLE)) AS avg_median_income
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/postcode6.parquet')
+WHERE mediaan_inkomen_huishouden != '-99997'
+GROUP BY jaarcode
+ORDER BY jaarcode
+```
+
+### Postcodes with highest population (latest year)
+
+```sql
+SELECT postcode6, aantal_inwoners, aantal_woningen
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/postcode6.parquet')
+WHERE jaarcode = 2024
+  AND aantal_inwoners != -99997
+ORDER BY aantal_inwoners DESC
+LIMIT 20
+```
+
+### Energy consumption comparison by dwelling type
+
+```sql
+SELECT
+    AVG(gemiddeld_aardgasverbruik_appartement) AS avg_gas_apartment,
+    AVG(gemiddeld_aardgasverbruik_vrijstaande_woning) AS avg_gas_detached,
+    AVG(gemiddeld_elektriciteitsverbruik_totaal) AS avg_elec_total
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/postcode6.parquet')
+WHERE jaarcode = 2024
+  AND gemiddeld_aardgasverbruik_appartement != -99997
+  AND gemiddeld_aardgasverbruik_vrijstaande_woning != -99997
+```
+
+### Find postcodes near a specific location (bbox filter)
+
+```sql
+INSTALL spatial; LOAD spatial;
+
+-- Amsterdam city center (RD New coordinates)
+SELECT postcode6, aantal_inwoners, aantal_woningen, mediaan_inkomen_huishouden
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/postcode6.parquet')
+WHERE jaarcode = 2024
+  AND bbox.xmin >= 119000 AND bbox.xmax <= 123000
+  AND bbox.ymin >= 484000 AND bbox.ymax <= 488000
+```
+
+### Distance to facilities — find underserved postcodes
+
+```sql
+SELECT postcode6, aantal_inwoners,
+       afstand_tot_huisartsenpraktijk,
+       afstand_tot_supermarkt,
+       afstand_tot_basisonderwijs
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/postcode6.parquet')
+WHERE jaarcode = 2024
+  AND aantal_inwoners > 100
+  AND afstand_tot_huisartsenpraktijk > 5
+ORDER BY afstand_tot_huisartsenpraktijk DESC
+LIMIT 20
+```
+
+### Load into GeoPandas
+
+```python
+import geopandas as gpd
+
+gdf = gpd.read_parquet(
+    'https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/postcode6.parquet',
+    columns=['postcode6', 'jaarcode', 'aantal_inwoners', 'aantal_woningen',
+             'mediaan_inkomen_huishouden', 'geom']
+)
+print(f"CRS: {gdf.crs}")  # EPSG:28992
+print(f"Rows: {len(gdf):,}")
+```
+
+## Temporal Coverage
+
+Data covers years **2015 to 2024**. Each row has a `jaarcode` indicating the reference
+year. The dataset contains multiple years stacked — filter by `jaarcode` to get a single
+year's snapshot. Most demographic and housing data reflects the situation on January 1st
+of that year. Energy and income data reflect the full preceding year.
+
+## Caveats
+
+- **Privacy suppression (-99997):** Always filter out -99997 values before computing
+  statistics. Postcodes with <5 residents or <5 dwellings are suppressed across most
+  fields.
+- **Supplementation over 3 years:** CBS supplements the data over a 3-year period. The
+  most recent year may have fewer variables filled in than older years.
+- **EPSG:28992 coordinates:** Coordinates are in meters (RD New), not degrees. You must
+  transform to WGS84 for web maps.
+- **Mixed types:** Some numeric-looking fields (e.g. `mediaan_inkomen_huishouden`) are
+  stored as strings due to the -99997 suppression marker. Cast to numeric after filtering.
+- **Multi-year dataset:** The file contains all years stacked. Always filter by `jaarcode`
+  unless you specifically want time-series analysis.
+
+
+## Visualization Styles
+
+Three Mapbox GL v8 styles are available for interactive map visualization via the PMTiles file. Privacy-suppressed values (-99997) are filtered out.
+
+Style files are Mapbox GL v8 JSON with relative PMTiles source paths. They can be
+used with MapLibre GL JS, OpenLayers (via ol-mapbox-style), or any Mapbox GL v8-compatible renderer.
+
+- **`styles/default.json`** — **Population density.** Red sequential ramp on `aantal_inwoners`. White (few) to dark red (500+). Shows population concentration patterns at the 6-digit postcode level.
+- **`styles/by-homeownership.json`** — **Housing tenure analysis.** Diverging purple-to-green ramp on `percentage_koopwoningen` (homeownership rate, 0-100%). Purple = mostly rental, green = mostly owner-occupied. Reveals the stark urban/suburban divide in Dutch housing markets — city centers are predominantly rental while suburbs and rural areas are owner-occupied.
+- **`styles/by-housing-age.json`** — **Historic housing stock.** Brown ramp on `aantal_woningen_bouwjaar_voor_1945` (pre-1945 housing count). Dark brown = many pre-war buildings, cream = modern neighborhoods. Highlights historic city centers and early 20th-century expansion areas.
+
+Style files are at: `https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/styles/`
+## Also Available As
+
+- **GeoParquet:** `postcode6.parquet` (134 MB, 464,964 features, EPSG:28992)
+- **PMTiles:** `postcode6.pmtiles` (77 MB, for web map visualization)
+- **OGC API Features:** https://api.pdok.nl/cbs/postcode6/ogc/v1_0/
+- **WFS:** Available for years 2015-2024
+- **WMS:** Available for years 2015-2024
+- **ATOM download:** Available from PDOK

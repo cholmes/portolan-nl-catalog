@@ -1,0 +1,57 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-05-08T18:16:25.558309Z",
+      "breaking": false,
+      "assets": {
+        "waterkeringen.parquet": {
+          "sha256": "b89a92a8752869a3c79a3d1310a07565a8356a76fcc060af7d5bec782deda9f3",
+          "size_bytes": 4069926,
+          "href": "rijkswaterstaat/waterkeringen/waterkeringen.parquet",
+          "mtime": 1778070780.9644186
+        },
+        "llms.txt": {
+          "sha256": "451a4ac9f695c3fafa6f2ae43edf677e096553bcdbf3ace7367b35ca7f47841f",
+          "size_bytes": 5331,
+          "href": "rijkswaterstaat/waterkeringen/llms.txt",
+          "mtime": 1778185474.0
+        },
+        "thumbnail_.png": {
+          "sha256": "3d6563abff6c9d6f5451a206d4ea0027dbfb828150a59cedc94d9a19f9b528f8",
+          "size_bytes": 294626,
+          "href": "rijkswaterstaat/waterkeringen/thumbnail_.png",
+          "mtime": 1778070780.966741
+        },
+        "README.md": {
+          "sha256": "5def11b0ec46f48a89b7aa782a8e068d8f9e8bafcd81fef00afeb9cf13ad3c99",
+          "size_bytes": 2157,
+          "href": "rijkswaterstaat/waterkeringen/README.md",
+          "mtime": 1778148808.0
+        },
+        "thumbnail.png": {
+          "sha256": "2bfe8a3faf7a76c68dc97169606a5bcbe9b14d88f3689db90615cb70e50b0263",
+          "size_bytes": 328244,
+          "href": "rijkswaterstaat/waterkeringen/thumbnail.png",
+          "mtime": 1778148808.0
+        },
+        "waterkeringen.pmtiles": {
+          "sha256": "f6abc0659327dcde042dde5381e759895f653be81200015c77c7c67a2f0b3778",
+          "size_bytes": 1280986,
+          "href": "rijkswaterstaat/waterkeringen/waterkeringen.pmtiles",
+          "mtime": 1778070780.9725611
+        }
+      },
+      "changes": [
+        "waterkeringen.parquet",
+        "llms.txt",
+        "thumbnail_.png",
+        "README.md",
+        "thumbnail.png",
+        "waterkeringen.pmtiles"
+      ]
+    }
+  ]
+}

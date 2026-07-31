@@ -1,0 +1,187 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json",
+    "https://stac-extensions.github.io/raster/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "id": "luchtfoto-2024-32fz1",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          5.6066422,
+          52.2066507
+        ],
+        [
+          5.6063657,
+          52.1504722
+        ],
+        [
+          5.6794275,
+          52.1503137
+        ],
+        [
+          5.679796,
+          52.2064919
+        ],
+        [
+          5.6066422,
+          52.2066507
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    5.6063657,
+    52.1503137,
+    5.679796,
+    52.2066507
+  ],
+  "properties": {
+    "title": "Luchtfoto 2024 — Tile 32FZ1",
+    "datetime": "2024-06-15T00:00:00Z",
+    "created": "2025-05-16T00:00:00Z",
+    "gsd": 0.25,
+    "proj:code": "EPSG:28992",
+    "proj:shape": [
+      25002,
+      20002
+    ],
+    "beeldmateriaal:kaartblad": "32FZ1",
+    "description": "25 cm RGB orthophoto tile 32FZ1 from the 2024 Beeldmateriaal Nederland summer campaign. Covers one kaartblad (~5 x 6.25 km) in the Amersfoort region. Cloud-Optimized GeoTIFF with JPEG compression, 512x512 tiling, and 6 overview levels. Also available as 4-band RGBNIR with near-infrared from winter CIR capture."
+  },
+  "links": [
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Luchtfoto 2024 — Aerial Orthophotos"
+    },
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "parent",
+      "href": "./catalog.json",
+      "type": "application/json",
+      "title": "KB 32 — Amersfoort"
+    }
+  ],
+  "assets": {
+    "rgb": {
+      "href": "./luchtfoto-2024-32fz1-rgb.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "RGB Orthophoto — 32FZ1",
+      "description": "3-band RGB orthophoto (25cm, JPEG COG). 91 MB.",
+      "bands": [
+        {
+          "name": "red",
+          "data_type": "uint8",
+          "statistics": {
+            "minimum": 2.0,
+            "maximum": 255.0,
+            "mean": 99.562,
+            "stddev": 38.97
+          },
+          "eo:common_name": "red"
+        },
+        {
+          "name": "green",
+          "data_type": "uint8",
+          "statistics": {
+            "minimum": 12.0,
+            "maximum": 255.0,
+            "mean": 120.657,
+            "stddev": 31.225
+          },
+          "eo:common_name": "green"
+        },
+        {
+          "name": "blue",
+          "data_type": "uint8",
+          "statistics": {
+            "minimum": 0.0,
+            "maximum": 255.0,
+            "mean": 102.034,
+            "stddev": 28.384
+          },
+          "eo:common_name": "blue"
+        }
+      ],
+      "roles": [
+        "data",
+        "visual"
+      ]
+    },
+    "rgbnir": {
+      "href": "./luchtfoto-2024-32fz1-rgbnir.tif",
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "RGBNIR Orthophoto — 32FZ1",
+      "description": "4-band RGBNIR orthophoto (25cm, JPEG COG). NIR from CIR band 1. 344 MB.",
+      "bands": [
+        {
+          "name": "red",
+          "data_type": "uint8",
+          "statistics": {
+            "minimum": 2.0,
+            "maximum": 255.0,
+            "mean": 99.562,
+            "stddev": 38.97
+          },
+          "eo:common_name": "red"
+        },
+        {
+          "name": "green",
+          "data_type": "uint8",
+          "statistics": {
+            "minimum": 12.0,
+            "maximum": 255.0,
+            "mean": 120.657,
+            "stddev": 31.225
+          },
+          "eo:common_name": "green"
+        },
+        {
+          "name": "blue",
+          "data_type": "uint8",
+          "statistics": {
+            "minimum": 0.0,
+            "maximum": 255.0,
+            "mean": 102.034,
+            "stddev": 28.384
+          },
+          "eo:common_name": "blue"
+        },
+        {
+          "name": "nir",
+          "data_type": "uint8",
+          "statistics": {
+            "minimum": 0.0,
+            "maximum": 255.0,
+            "mean": 151.829,
+            "stddev": 37.603
+          },
+          "eo:common_name": "nir"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    },
+    "thumbnail": {
+      "href": "./luchtfoto-2024-32fz1-thumbnail.png",
+      "type": "image/png",
+      "title": "Thumbnail",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  },
+  "collection": "luchtfoto_2024"
+}

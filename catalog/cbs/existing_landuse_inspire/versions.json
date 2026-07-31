@@ -1,0 +1,111 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-05-07T16:00:00Z",
+      "breaking": false,
+      "assets": {
+        "existing_landuse.parquet": {
+          "sha256": "2c422749e71c6bc85957ef68a58e68f16f2f3b2a25912b3731c238b1b4744198",
+          "size_bytes": 1483334939,
+          "href": "cbs/existing_landuse_inspire/existing_landuse.parquet",
+          "mtime": 1778162588.1951168
+        },
+        "existing_landuse.pmtiles": {
+          "sha256": "190f80246c4bb6470705b91e06150b23170c17dad99e3b7aee3f4741359dfba3",
+          "size_bytes": 199037294,
+          "href": "cbs/existing_landuse_inspire/existing_landuse.pmtiles",
+          "mtime": 1778164142.0508041
+        },
+        "collection.json": {
+          "sha256": "89b70743c317ea8dbde359f5a0760d7dc544e5bbab6e4a764c7f7609377cbaae",
+          "size_bytes": 4999,
+          "href": "cbs/existing_landuse_inspire/collection.json",
+          "mtime": 1778165382.1976569
+        },
+        "llms.txt": {
+          "sha256": "66a6738abfc366566cb8b7333dca914824c70f0a349650221a999e5c4c237724",
+          "size_bytes": 9960,
+          "href": "cbs/existing_landuse_inspire/llms.txt",
+          "mtime": 1778164477.954339
+        },
+        "README.md": {
+          "sha256": "0aee5c014b18ce2ba829a7d8ee61d2014c50a03bb933af7e020636db18f9a623",
+          "size_bytes": 2294,
+          "href": "cbs/existing_landuse_inspire/README.md",
+          "mtime": 1778157391.645596
+        },
+        "thumbnail.png": {
+          "sha256": "64fc5d3d75b9f064b42184db3befe38d2f1dc8583727a7f28505866ceaf7ed85",
+          "size_bytes": 251739,
+          "href": "cbs/existing_landuse_inspire/thumbnail.png",
+          "mtime": 1778157058.5154705
+        }
+      },
+      "changes": [
+        "existing_landuse.parquet",
+        "existing_landuse.pmtiles",
+        "collection.json",
+        "llms.txt",
+        "README.md",
+        "thumbnail.png"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-05-08T18:24:04.150111Z",
+      "breaking": false,
+      "assets": {
+        "existing_landuse.parquet": {
+          "sha256": "f2d061644a398b3c6f1518abf004de51e4c269713a80fcc14ddd27fd5a9785e8",
+          "size_bytes": 1002512944,
+          "href": "cbs/existing_landuse_inspire/existing_landuse.parquet",
+          "mtime": 1778167023.0
+        },
+        "existing_landuse.pmtiles": {
+          "sha256": "190f80246c4bb6470705b91e06150b23170c17dad99e3b7aee3f4741359dfba3",
+          "size_bytes": 199037294,
+          "href": "cbs/existing_landuse_inspire/existing_landuse.pmtiles",
+          "mtime": 1778165642.0
+        },
+        "collection.json": {
+          "sha256": "89b70743c317ea8dbde359f5a0760d7dc544e5bbab6e4a764c7f7609377cbaae",
+          "size_bytes": 4999,
+          "href": "cbs/existing_landuse_inspire/collection.json",
+          "mtime": 1778165382.1976569
+        },
+        "llms.txt": {
+          "sha256": "819c7ae428fb4a0efd88507ec1ab6b1bf71e5db49b3a964a7b284ecb0a46f752",
+          "size_bytes": 10755,
+          "href": "cbs/existing_landuse_inspire/llms.txt",
+          "mtime": 1778185473.0
+        },
+        "README.md": {
+          "sha256": "0aee5c014b18ce2ba829a7d8ee61d2014c50a03bb933af7e020636db18f9a623",
+          "size_bytes": 2294,
+          "href": "cbs/existing_landuse_inspire/README.md",
+          "mtime": 1778165651.0
+        },
+        "thumbnail.png": {
+          "sha256": "64fc5d3d75b9f064b42184db3befe38d2f1dc8583727a7f28505866ceaf7ed85",
+          "size_bytes": 251739,
+          "href": "cbs/existing_landuse_inspire/thumbnail.png",
+          "mtime": 1778165652.0
+        },
+        "existing_landuse.parquet.aux.xml": {
+          "sha256": "159abc881039052db009c51e5e26013f27a31c5ee408000b0a719d07b24b7c57",
+          "size_bytes": 19033,
+          "href": "cbs/existing_landuse_inspire/existing_landuse.parquet.aux.xml",
+          "mtime": 1778185111.0
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "existing_landuse.parquet.aux.xml",
+        "existing_landuse.parquet"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "type": "Catalog",
+  "id": "luchtfoto_2024_kb31",
+  "stac_version": "1.1.0",
+  "description": "Kaartblad 31 covers Utrecht — the fourth-largest city in the Netherlands — and its surroundings including Nieuwegein, IJsselstein, Woerden, and the Vinkeveen lakes. Features the medieval Dom Tower, the Utrecht Science Park, and extensive polder landscapes of De Ronde Venen. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the Beeldmateriaal Nederland summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/beeldmateriaal/luchtfoto_2024/kb31/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31an1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31AN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31an2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31AN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31az1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31AZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31az2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31AZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31bn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31BN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31bn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31BN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31bz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31BZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31bz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31BZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31cn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31CN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31cn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31CN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31cz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31CZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31cz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31CZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31dn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31DN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31dn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31DN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31dz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31DZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31dz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31DZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31en1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31EN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31en2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31EN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31ez1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31EZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31ez2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31EZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31fn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31FN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31fn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31FN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31fz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31FZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31fz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31FZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31gn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31GN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31gn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31GN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31gz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31GZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31gz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31GZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31hn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31HN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31hn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31HN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31hz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31HZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-31hz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 31HZ2"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Luchtfoto 2024 — Aerial Orthophotos"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          4.5815986,
+          52.0355985,
+          5.1685909,
+          52.2628247
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2024-04-01T00:00:00Z",
+          "2024-09-30T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "title": "KB 31 — Utrecht / Vinkeveen"
+}

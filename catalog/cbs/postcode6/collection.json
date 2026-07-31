@@ -1,0 +1,726 @@
+{
+  "type": "Collection",
+  "id": "postcode6",
+  "stac_version": "1.1.0",
+  "description": "Statistical data for all 6-digit postcodes in the Netherlands, published by CBS (Statistics Netherlands) via PDOK. Contains 157 attributes covering demographics, housing, energy consumption, income, social security, and proximity to facilities. Data is measured as of January 1st annually from 2015 onwards; some variables (energy, income) reflect full-year figures. Privacy protected: postcodes with fewer than 5 residents or 5 housing units are suppressed (value -99997). Data is supplemented over a 3-year period. Native CRS is EPSG:28992 (RD New / Amersfoort).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Centraal Bureau voor de Statistiek (CBS)"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.pdok.nl/introductie/-/article/cbspostcode6",
+      "type": "text/html",
+      "title": "PDOK CBS Postcode6 dataset page"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.cbs.nl/nl-nl/longread/diversen/2025/statistische-gegevens-per-vierkant-en-postcode-2022-2023-2024",
+      "type": "text/html",
+      "title": "CBS documentation — Statistical data per grid and postcode"
+    },
+    {
+      "rel": "via",
+      "href": "https://api.pdok.nl/cbs/postcode6/ogc/v1_0/",
+      "type": "text/html",
+      "title": "OGC API Features endpoint"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/postcode6.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/cbs/postcode6/README.md",
+      "type": "text/html",
+      "title": "CBS Postcode6 (Statistics per Postcode) documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json"
+  ],
+  "table:primary_geometry": "geom",
+  "table:columns": [
+    {
+      "name": "fid",
+      "type": "int64"
+    },
+    {
+      "name": "postcode6",
+      "type": "string"
+    },
+    {
+      "name": "aantal_inwoners",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_mannen",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_vrouwen",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_inwoners_0_tot_15_jaar",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_inwoners_15_tot_25_jaar",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_inwoners_25_tot_45_jaar",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_inwoners_45_tot_65_jaar",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_inwoners_65_jaar_en_ouder",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_geboorten",
+      "type": "int32"
+    },
+    {
+      "name": "percentage_geb_nederland_herkomst_nederland",
+      "type": "int32"
+    },
+    {
+      "name": "percentage_geb_nederland_herkomst_overig_europa",
+      "type": "int32"
+    },
+    {
+      "name": "percentage_geb_nederland_herkomst_buiten_europa",
+      "type": "int32"
+    },
+    {
+      "name": "percentage_geb_buiten_nederland_herkomst_europa",
+      "type": "int32"
+    },
+    {
+      "name": "percentage_geb_buiten_nederland_herkmst_buiten_europa",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_part_huishoudens",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_eenpersoonshuishoudens",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_meerpersoonshuishoudens_zonder_kind",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_eenouderhuishoudens",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_tweeouderhuishoudens",
+      "type": "int32"
+    },
+    {
+      "name": "gemiddelde_huishoudensgrootte",
+      "type": "double"
+    },
+    {
+      "name": "aantal_woningen",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_woningen_bouwjaar_voor_1945",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_woningen_bouwjaar_45_tot_65",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_woningen_bouwjaar_65_tot_75",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_woningen_bouwjaar_75_tot_85",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_woningen_bouwjaar_85_tot_95",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_woningen_bouwjaar_95_tot_05",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_woningen_bouwjaar_05_tot_15",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_woningen_bouwjaar_15_en_later",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_meergezins_woningen",
+      "type": "int32"
+    },
+    {
+      "name": "percentage_koopwoningen",
+      "type": "int32"
+    },
+    {
+      "name": "percentage_huurwoningen",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_huurwoningen_in_bezit_woningcorporaties",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_niet_bewoonde_woningen",
+      "type": "int32"
+    },
+    {
+      "name": "gemiddelde_woz_waarde_woning",
+      "type": "int32"
+    },
+    {
+      "name": "gemiddeld_gasverbruik_woning",
+      "type": "int32"
+    },
+    {
+      "name": "gemiddeld_elektriciteitsverbruik_woning",
+      "type": "int32"
+    },
+    {
+      "name": "aantal_personen_met_uitkering_onder_aowlft",
+      "type": "int32"
+    },
+    {
+      "name": "dichtstbijzijnde_grote_supermarkt_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "grote_supermarkt_aantal_binnen_1_km",
+      "type": "double"
+    },
+    {
+      "name": "grote_supermarkt_aantal_binnen_3_km",
+      "type": "double"
+    },
+    {
+      "name": "grote_supermarkt_aantal_binnen_5_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_winkels_ov_dagel_levensm_afst_in_km",
+      "type": "double"
+    },
+    {
+      "name": "winkels_ov_dagel_levensm_aantal_binnen_1_km",
+      "type": "double"
+    },
+    {
+      "name": "winkels_ov_dagel_levensm_aantal_binnen_3_km",
+      "type": "double"
+    },
+    {
+      "name": "winkels_ov_dagel_levensm_aantal_binnen_5_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_warenhuis_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "warenhuis_aantal_binnen_5_km",
+      "type": "double"
+    },
+    {
+      "name": "warenhuis_aantal_binnen_10_km",
+      "type": "double"
+    },
+    {
+      "name": "warenhuis_aantal_binnen_20_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_cafe_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "cafe_aantal_binnen_1_km",
+      "type": "double"
+    },
+    {
+      "name": "cafe_aantal_binnen_3_km",
+      "type": "double"
+    },
+    {
+      "name": "cafe_aantal_binnen_5_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_cafetaria_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "cafetaria_aantal_binnen_1_km",
+      "type": "double"
+    },
+    {
+      "name": "cafetaria_aantal_binnen_3_km",
+      "type": "double"
+    },
+    {
+      "name": "cafetaria_aantal_binnen_5_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_hotel_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "hotel_aantal_binnen_5_km",
+      "type": "double"
+    },
+    {
+      "name": "hotel_aantal_binnen_10_km",
+      "type": "double"
+    },
+    {
+      "name": "hotel_aantal_binnen_20_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_restaurant_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "restaurant_aantal_binnen_1_km",
+      "type": "double"
+    },
+    {
+      "name": "restaurant_aantal_binnen_3_km",
+      "type": "double"
+    },
+    {
+      "name": "restaurant_aantal_binnen_5_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_buitenschoolse_opvang_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "buitenschoolse_opvang_aantal_binnen_1_km",
+      "type": "double"
+    },
+    {
+      "name": "buitenschoolse_opvang_aantal_binnen_3_km",
+      "type": "double"
+    },
+    {
+      "name": "buitenschoolse_opvang_aantal_binnen_5_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_kinderdagverblijf_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "kinderdagverblijf_aantal_binnen_1_km",
+      "type": "double"
+    },
+    {
+      "name": "kinderdagverblijf_aantal_binnen_3_km",
+      "type": "double"
+    },
+    {
+      "name": "kinderdagverblijf_aantal_binnen_5_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_brandweerkazerne_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_oprit_hoofdverkeersweg_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_overstapstation_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_treinstation_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_attractiepark_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "attractiepark_aantal_binnen_10_km",
+      "type": "double"
+    },
+    {
+      "name": "attractiepark_aantal_binnen_20_km",
+      "type": "double"
+    },
+    {
+      "name": "attractiepark_aantal_binnen_50_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_bioscoop_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "bioscoop_aantal_binnen_5_km",
+      "type": "double"
+    },
+    {
+      "name": "bioscoop_aantal_binnen_10_km",
+      "type": "double"
+    },
+    {
+      "name": "bioscoop_aantal_binnen_20_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_museum_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "museum_aantal_binnen_5_km",
+      "type": "double"
+    },
+    {
+      "name": "museum_aantal_binnen_10_km",
+      "type": "double"
+    },
+    {
+      "name": "museum_aantal_binnen_20_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_theater_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "theater_aantal_binnen_5_km",
+      "type": "double"
+    },
+    {
+      "name": "theater_aantal_binnen_10_km",
+      "type": "double"
+    },
+    {
+      "name": "theater_aantal_binnen_20_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_bibliotheek_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_kunstijsbaan_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_poppodium_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_sauna_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_zonnebank_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_zwembad_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_basisonderwijs_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "basisonderwijs_aantal_binnen_1_km",
+      "type": "double"
+    },
+    {
+      "name": "basisonderwijs_aantal_binnen_3_km",
+      "type": "double"
+    },
+    {
+      "name": "basisonderwijs_aantal_binnen_5_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_havo_vwo_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "havo_vwo_aantal_binnen_3_km",
+      "type": "double"
+    },
+    {
+      "name": "havo_vwo_aantal_binnen_5_km",
+      "type": "double"
+    },
+    {
+      "name": "havo_vwo_aantal_binnen_10_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_vmbo_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "vmbo_aantal_binnen_3_km",
+      "type": "double"
+    },
+    {
+      "name": "vmbo_aantal_binnen_5_km",
+      "type": "double"
+    },
+    {
+      "name": "vmbo_aantal_binnen_10_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_voortgezet_onderwijs_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "voortgezet_onderwijs_aantal_binnen_3_km",
+      "type": "double"
+    },
+    {
+      "name": "voortgezet_onderwijs_aantal_binnen_5_km",
+      "type": "double"
+    },
+    {
+      "name": "voortgezet_onderwijs_aantal_binnen_10_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_huisartsenpraktijk_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "huisartsenpraktijk_aantal_binnen_1_km",
+      "type": "double"
+    },
+    {
+      "name": "huisartsenpraktijk_aantal_binnen_3_km",
+      "type": "double"
+    },
+    {
+      "name": "huisartsenpraktijk_aantal_binnen_5_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_ziekenh_excl_buitenpoli_afst_in_km",
+      "type": "double"
+    },
+    {
+      "name": "ziekenhuis_excl_buitenpoli_aantal_binnen_5_km",
+      "type": "double"
+    },
+    {
+      "name": "ziekenhuis_excl_buitenpoli_aantal_binnen_10_km",
+      "type": "double"
+    },
+    {
+      "name": "ziekenhuis_excl_buitenpoli_aantal_binnen_20_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_ziekenh_incl_buitenpoli_afst_in_km",
+      "type": "double"
+    },
+    {
+      "name": "ziekenhuis_incl_buitenpoli_aantal_binnen_5_km",
+      "type": "double"
+    },
+    {
+      "name": "ziekenhuis_incl_buitenpoli_aantal_binnen_10_km",
+      "type": "double"
+    },
+    {
+      "name": "ziekenhuis_incl_buitenpoli_aantal_binnen_20_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_apotheek_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "dichtstbijzijnde_huisartsenpost_afstand_in_km",
+      "type": "double"
+    },
+    {
+      "name": "geom",
+      "type": "binary"
+    },
+    {
+      "name": "geom_bbox",
+      "type": "struct<xmin: float, ymin: float, xmax: float, ymax: float>"
+    }
+  ],
+  "portolan:styles": [
+    {
+      "name": "default",
+      "href": "./styles/default.json"
+    },
+    {
+      "name": "by-homeownership",
+      "href": "./styles/by-homeownership.json"
+    },
+    {
+      "name": "by-housing-age",
+      "href": "./styles/by-housing-age.json"
+    }
+  ],
+  "geoparquet:geometry_type": "MultiPolygon",
+  "geoparquet:feature_count": 464964,
+  "table:row_count": 464964,
+  "title": "CBS Postcode6 (Statistics per Postcode)",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.2556101863080755,
+          50.73,
+          7.241518696347043,
+          53.55
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2015-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "summaries": {
+    "vector:geometry_types": [
+      "MultiPolygon"
+    ]
+  },
+  "assets": {
+    "data": {
+      "href": "./postcode6.parquet",
+      "type": "application/x-parquet",
+      "title": "Postcode6 Statistics 2024 (GeoParquet)",
+      "description": "464,964 postcode areas with 157 statistical attributes, EPSG:28992.",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./postcode6.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Postcode statistics (vector tiles)",
+      "description": "Postcode area polygons as vector tiles for web visualization.",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "Postcode 6 — Population",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-homeownership": {
+      "href": "./styles/by-homeownership.json",
+      "type": "application/json",
+      "title": "Postcode 6 — Homeownership Rate",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-housing-age": {
+      "href": "./styles/by-housing-age.json",
+      "type": "application/json",
+      "title": "Postcode 6 — Pre-1945 Housing",
+      "roles": [
+        "style"
+      ]
+    },
+    "postcode6": {
+      "href": "./postcode6.parquet",
+      "type": "application/x-parquet",
+      "roles": [
+        "data"
+      ]
+    },
+    "documentation": {
+      "href": "./llms.txt",
+      "type": "text/plain",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "README": {
+      "href": "./README.md",
+      "type": "text/markdown",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "metadata": {
+      "href": "./postcode6.parquet.aux.xml",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ]
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-06-07T21:29:42.679192Z",
+      "breaking": false,
+      "assets": {
+        "llms.txt": {
+          "sha256": "032ad813555ad9c1e8a0fc74ee705a9f88a228ce5833162ef7c5cbbb203d506c",
+          "size_bytes": 5833,
+          "href": "vro/mijnbouwconstructie/llms.txt",
+          "mtime": 1780867267.711314
+        },
+        "mijnbouwconstructie.parquet": {
+          "sha256": "90e67c2310df1797c045defbd1e44e3119d62b036bf23f35f215a985a5473a1a",
+          "size_bytes": 154692,
+          "href": "vro/mijnbouwconstructie/mijnbouwconstructie.parquet",
+          "mtime": 1780863485.2008696
+        },
+        "README.md": {
+          "sha256": "7971e4222b491409a4e5a5a07c0837ee35fb7aacef38d582b6c6e95d1b7c5739",
+          "size_bytes": 2999,
+          "href": "vro/mijnbouwconstructie/README.md",
+          "mtime": 1780867375.3215432
+        },
+        "thumbnail.png": {
+          "sha256": "f72a321f4a255ee8662781cce18a54a71b23a0e12e1d1609510ee08c239d5c00",
+          "size_bytes": 338091,
+          "href": "vro/mijnbouwconstructie/thumbnail.png",
+          "mtime": 1780866505.5027328
+        },
+        "mijnbouwconstructie.pmtiles": {
+          "sha256": "77faf347480f135f919617dbc8ca9efba23470f460835e5a18aa63ef642febff",
+          "size_bytes": 641774,
+          "href": "vro/mijnbouwconstructie/mijnbouwconstructie.pmtiles",
+          "mtime": 1780863486.716323
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "mijnbouwconstructie.parquet",
+        "README.md",
+        "thumbnail.png",
+        "mijnbouwconstructie.pmtiles"
+      ]
+    }
+  ]
+}

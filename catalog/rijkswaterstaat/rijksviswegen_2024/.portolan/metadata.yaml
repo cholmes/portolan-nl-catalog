@@ -1,0 +1,36 @@
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+
+license: "CC0-1.0"
+
+license_url: "https://creativecommons.org/publicdomain/zero/1.0/"
+citation: ""
+doi: ""
+keywords:
+  - fish-migration
+  - ecology
+  - water-framework-directive
+  - rijkswaterstaat
+  - netherlands
+  - vismigratie
+  - biodiversity
+  - aquatic-ecology
+attribution: "Rijkswaterstaat"
+
+source_url: "https://services-eu1.arcgis.com/4D1GBrbE6xp1T4YG/arcgis/rest/services/Vismigratie_2025/FeatureServer"
+processing_notes: |
+  Extracted from ArcGIS FeatureServer layer 29 (Rijksviswegen 2024).
+  ~2,100 polyline features representing national fish migration routes (Rijksviswegen)
+  from the Nationale Visroutekaart (NVRK), under the EU Water Framework Directive (KRW).
+  Original CRS: EPSG:28992 (RD New / Amersfoort).
+  Coverage: entire Netherlands waterway network.
+  Fields: BEHEERDER (operator), CODE, MIGR_TYPE (migration type), OPMERKING (remarks),
+  NAAM (name), BRON (source), Status2009 through Status2033 (status per reference year),
+  Shape__Length.
+
+defaults:
+  temporal:
+    year: 2024
+
+known_issues: "This layer contains status columns for years 2009-2033, representing planned/actual migration route status over time. Only the 2024 snapshot is extracted here."

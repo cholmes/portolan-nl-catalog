@@ -1,0 +1,50 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-06-07T21:29:45.474025Z",
+      "breaking": false,
+      "assets": {
+        "llms.txt": {
+          "sha256": "9f53436616a2efd10f894dd7e642a73f6343e17b3d11feb3adeb7b688485acff",
+          "size_bytes": 5624,
+          "href": "vro/grondwatergebruiksysteem/llms.txt",
+          "mtime": 1780867267.7120428
+        },
+        "grondwatergebruiksysteem.pmtiles": {
+          "sha256": "c8ee02e8e5506da6a10771c8a34055374e017722769bc6a6ba999b488955e87c",
+          "size_bytes": 4246857,
+          "href": "vro/grondwatergebruiksysteem/grondwatergebruiksysteem.pmtiles",
+          "mtime": 1780863398.7940652
+        },
+        "README.md": {
+          "sha256": "edbf0138e7aef68123b5ae6e4a55cf8be3f080d0f6204fd70e12a68eb99c9fc0",
+          "size_bytes": 2832,
+          "href": "vro/grondwatergebruiksysteem/README.md",
+          "mtime": 1780867375.32215
+        },
+        "thumbnail.png": {
+          "sha256": "976e5a90a4452d186b1c43ece0de05151f8c7eec5fd8087eb1ddb154d2575257",
+          "size_bytes": 262026,
+          "href": "vro/grondwatergebruiksysteem/thumbnail.png",
+          "mtime": 1780866506.0437636
+        },
+        "grondwatergebruiksysteem.parquet": {
+          "sha256": "98908103a418bf818537dd9f6afbe0dbfb9491acf303733b138ccc33c9c9f96d",
+          "size_bytes": 1733173,
+          "href": "vro/grondwatergebruiksysteem/grondwatergebruiksysteem.parquet",
+          "mtime": 1780863395.595011
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "grondwatergebruiksysteem.pmtiles",
+        "README.md",
+        "thumbnail.png",
+        "grondwatergebruiksysteem.parquet"
+      ]
+    }
+  ]
+}

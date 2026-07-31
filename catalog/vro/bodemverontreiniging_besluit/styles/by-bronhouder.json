@@ -1,0 +1,55 @@
+{
+  "version": 8,
+  "name": "bodemverontreiniging_besluit — by data owner (bronhouder)",
+  "sources": {
+    "bodemverontreiniging_besluit": {
+      "type": "vector",
+      "url": "pmtiles://../bodemverontreiniging_besluit.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "bodemverontreiniging_besluit-fill",
+      "type": "fill",
+      "source": "bodemverontreiniging_besluit",
+      "source-layer": "bodemverontreiniging_besluit",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "delivery_accountable_party"
+          ],
+          "27370940",
+          "#1B9E77",
+          "73558907",
+          "#D95F02",
+          "17273152",
+          "#7570B3",
+          "27370956",
+          "#E7298A",
+          "85028827",
+          "#66A61E",
+          "62255398",
+          "#E6AB02",
+          "01181973",
+          "#A6761D",
+          "17272342",
+          "#1F78B4",
+          "#999999"
+        ],
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "bodemverontreiniging_besluit-outline",
+      "type": "line",
+      "source": "bodemverontreiniging_besluit",
+      "source-layer": "bodemverontreiniging_besluit",
+      "paint": {
+        "line-color": "#777777",
+        "line-width": 0.3
+      }
+    }
+  ]
+}

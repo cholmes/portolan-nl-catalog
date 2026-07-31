@@ -1,0 +1,32 @@
+{
+  "version": 8,
+  "name": "area_of_geomorphological_interest",
+  "sources": {
+    "area_of_geomorphological_interest": {
+      "type": "vector",
+      "url": "pmtiles://../area_of_geomorphological_interest.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "area_of_geomorphological_interest-fill",
+      "type": "fill",
+      "source": "area_of_geomorphological_interest",
+      "source-layer": "area_of_geomorphological_interest",
+      "paint": {
+        "fill-color": "#90A4AE",
+        "fill-opacity": 0.4
+      }
+    },
+    {
+      "id": "area_of_geomorphological_interest-outline",
+      "type": "line",
+      "source": "area_of_geomorphological_interest",
+      "source-layer": "area_of_geomorphological_interest",
+      "paint": {
+        "line-color": "#546E7A",
+        "line-width": 0.3
+      }
+    }
+  ]
+}

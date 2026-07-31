@@ -1,0 +1,32 @@
+{
+  "version": 8,
+  "name": "BAG Buildings — Default",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../bag-light.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "buildings-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "panden",
+      "paint": {
+        "fill-color": "#B8B8B8",
+        "fill-opacity": 0.7
+      }
+    },
+    {
+      "id": "buildings-outline",
+      "type": "line",
+      "source": "data",
+      "source-layer": "panden",
+      "paint": {
+        "line-color": "#2B8DA8",
+        "line-width": 1.2
+      }
+    }
+  ]
+}

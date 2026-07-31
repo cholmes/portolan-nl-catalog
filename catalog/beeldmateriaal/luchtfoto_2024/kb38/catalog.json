@@ -1,0 +1,238 @@
+{
+  "type": "Catalog",
+  "id": "luchtfoto_2024_kb38",
+  "stac_version": "1.1.0",
+  "description": "Kaartblad 38 covers the Rivierenland — the area between the great rivers (Rhine, Waal, Lek, Merwede). Features the fortified towns of Gorinchem and Vianen, dike villages along the rivers, brick-making areas, and the characteristic river landscape with floodplains and fruit orchards. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the Beeldmateriaal Nederland summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/beeldmateriaal/luchtfoto_2024/kb38/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38an1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38AN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38an2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38AN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38az1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38AZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38az2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38AZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38bn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38BN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38bn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38BN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38bz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38BZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38bz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38BZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38cn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38CN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38cn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38CN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38cz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38CZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38cz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38CZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38dn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38DN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38dn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38DN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38dz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38DZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38dz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38DZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38en1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38EN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38en2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38EN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38ez1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38EZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38ez2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38EZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38fn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38FN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38fn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38FN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38fz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38FZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38fz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38FZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38gn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38GN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38gn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38GN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38gz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38GZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38gz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38GZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38hn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38HN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38hn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38HN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38hz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38HZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-38hz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 38HZ2"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Luchtfoto 2024 — Aerial Orthophotos"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          4.5856429,
+          51.8109102,
+          5.1696808,
+          52.0381277
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2024-04-01T00:00:00Z",
+          "2024-09-30T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "title": "KB 38 — Gorinchem / Rivierenland"
+}

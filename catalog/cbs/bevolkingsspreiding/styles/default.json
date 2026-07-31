@@ -1,0 +1,30 @@
+{
+  "version": 8,
+  "name": "Population Distribution — Default",
+  "sources": {
+    "bevolking": {
+      "type": "vector",
+      "url": "pmtiles://../bevolkingsspreiding.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "population-fill",
+      "type": "fill",
+      "source": "bevolking",
+      "source-layer": "grid",
+      "paint": {
+        "fill-color": [
+          "interpolate", ["linear"], ["get", "obsvalue"],
+          0, "#FFF5F0",
+          50, "#FDCAB5",
+          200, "#FC8D59",
+          500, "#E34A33",
+          1000, "#C62828",
+          5000, "#67000D"
+        ],
+        "fill-opacity": 0.75
+      }
+    }
+  ]
+}

@@ -1,10 +1,25 @@
 .env
+
+# Data. This repo holds catalog metadata only; the data lives on Source
+# Cooperative. This is a backstop -- the real mechanism is that data is never
+# copied into catalog/ in the first place.
 *.parquet
 *.pmtiles
 *.gpkg
 *.tif
 *.zip
 *.zarr
+
+# Source downloads staged for conversion. Each staging collection has a
+# download.sh that refetches these, so they are never committed.
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.geojson
+staging/*/data/
+
 __pycache__/
 *.pyc
 .DS_Store

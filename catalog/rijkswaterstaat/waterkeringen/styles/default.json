@@ -1,0 +1,22 @@
+{
+  "version": 8,
+  "name": "Flood Defenses — Default",
+  "sources": {
+    "rws": {
+      "type": "vector",
+      "url": "pmtiles://../waterkeringen.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "defenses-line",
+      "type": "line",
+      "source": "rws",
+      "source-layer": "waterkeringen",
+      "paint": {
+        "line-color": "#D32F2F",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 6, 1.5, 12, 4]
+      }
+    }
+  ]
+}

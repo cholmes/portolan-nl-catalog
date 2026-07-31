@@ -1,0 +1,232 @@
+{
+  "type": "Catalog",
+  "id": "luchtfoto_2024_kb33",
+  "stac_version": "1.1.0",
+  "description": "Kaartblad 33 covers the eastern Veluwe and the Gelderse Vallei — Apeldoorn (with Het Loo palace), Ede, Wageningen (university city and agricultural research centre), and Barneveld. Landscape ranges from dense Veluwe forest and heathland to intensive agriculture in the valley. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the Beeldmateriaal Nederland summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/beeldmateriaal/luchtfoto_2024/kb33/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33an1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33AN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33an2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33AN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33az1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33AZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33az2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33AZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33bn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33BN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33bn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33BN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33bz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33BZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33bz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33BZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33cn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33CN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33cn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33CN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33cz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33CZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33cz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33CZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33dn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33DN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33dn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33DN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33dz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33DZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33dz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33DZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33en2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33EN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33ez1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33EZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33ez2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33EZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33fn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33FN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33fn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33FN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33fz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33FZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33fz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33FZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33gn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33GN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33gn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33GN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33gz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33GZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33gz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33GZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33hn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33HN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33hn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33HN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33hz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33HZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-33hz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 33HZ2"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Luchtfoto 2024 — Aerial Orthophotos"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          5.7515568,
+          52.0345137,
+          6.3392643,
+          52.2624607
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2024-04-01T00:00:00Z",
+          "2024-09-30T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "title": "KB 33 — Apeldoorn / Veluwe East"
+}

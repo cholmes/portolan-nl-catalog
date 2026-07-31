@@ -1,0 +1,18 @@
+# .portolan/metadata.yaml
+#
+# Auto-seeded from: arcgis_featureserver
+# Review and complete fields marked with "TODO".
+#
+# Required fields:
+#   - contact.name: Person or team responsible
+#   - contact.email: Contact email address
+#   - license: SPDX identifier (e.g., "CC-BY-4.0", "MIT", "CC0-1.0")
+#
+# See: https://portolan.dev/docs/metadata for field descriptions
+
+contact:
+  name: 'TODO: Add value'
+  email: 'cholmes@9eo.org'
+license: 'TODO: Add value'
+source_url: https://services-eu1.arcgis.com/4D1GBrbE6xp1T4YG/arcgis/rest/services/Zero_emissiezones/FeatureServer
+processing_notes: Zero_emissiezones

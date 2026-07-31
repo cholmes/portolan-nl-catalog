@@ -1,0 +1,3648 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-05-08T18:21:21.702527Z",
+      "breaking": false,
+      "assets": {
+        "kdtree_cell=0000000000/0000000000.parquet": {
+          "sha256": "ff019b324904d767cb78a8ca8712b02845b1ec5e8ad140a4ed527c49c4edd834",
+          "size_bytes": 3973750,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000000000/0000000000.parquet",
+          "mtime": 1778264270.4254773
+        },
+        "kdtree_cell=0000000001/0000000001.parquet": {
+          "sha256": "096a7a696e9f7b7913f63fc0da4a495b0690cc334f657201bcd6effc2e6d1f03",
+          "size_bytes": 4107489,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000000001/0000000001.parquet",
+          "mtime": 1778264270.7306995
+        },
+        "kdtree_cell=0000000010/0000000010.parquet": {
+          "sha256": "faab94e63ad36ac6cd4e52cfc3ee6b3472bd65b432f4bb82f5597113e0e86b5d",
+          "size_bytes": 3833264,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000000010/0000000010.parquet",
+          "mtime": 1778264270.9607713
+        },
+        "kdtree_cell=0000000011/0000000011.parquet": {
+          "sha256": "96f6d4c97c2a30d76b9e5cbd0142884c886f57c0904483ffce85b832ebfd02f9",
+          "size_bytes": 4293243,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000000011/0000000011.parquet",
+          "mtime": 1778264271.323514
+        },
+        "kdtree_cell=0000000100/0000000100.parquet": {
+          "sha256": "85227164bfedc3f9c28715ca7466f037d1e5d87c3b552900ae7eec2b4a556720",
+          "size_bytes": 4840080,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000000100/0000000100.parquet",
+          "mtime": 1778264271.6421924
+        },
+        "kdtree_cell=0000000101/0000000101.parquet": {
+          "sha256": "4024dfe509dbe2e610d4edfb82e2c666f15808952134a1ef9197a9773f888d47",
+          "size_bytes": 4296356,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000000101/0000000101.parquet",
+          "mtime": 1778264271.9379785
+        },
+        "kdtree_cell=0000000110/0000000110.parquet": {
+          "sha256": "d2c941513ed4b27012dc799e530992c01ab4ac2a2f6de37d33ddb9c38e0168cc",
+          "size_bytes": 4603272,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000000110/0000000110.parquet",
+          "mtime": 1778264272.235611
+        },
+        "kdtree_cell=0000000111/0000000111.parquet": {
+          "sha256": "c5b493db9ea21cacd00987fbc49a8535d9ed8ee18537297493fb454a87257e18",
+          "size_bytes": 4130917,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000000111/0000000111.parquet",
+          "mtime": 1778264272.545375
+        },
+        "kdtree_cell=0000001000/0000001000.parquet": {
+          "sha256": "f16219eb47335e7d80205e2c44ac8b97ce5cd4f99de8db0b3bbfae0bbb33816d",
+          "size_bytes": 3484293,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000001000/0000001000.parquet",
+          "mtime": 1778264272.7901685
+        },
+        "kdtree_cell=0000001001/0000001001.parquet": {
+          "sha256": "a5c21d90fde50c8274c82950dc46f53406c5f28d0a0bf20dec9d71ca8926e3aa",
+          "size_bytes": 3709718,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000001001/0000001001.parquet",
+          "mtime": 1778264273.1505742
+        },
+        "kdtree_cell=0000001010/0000001010.parquet": {
+          "sha256": "d80fb37ac3395a11a1dd3b330316859559e261295fac413bb1062f1a6f26daec",
+          "size_bytes": 4221800,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000001010/0000001010.parquet",
+          "mtime": 1778264273.4199874
+        },
+        "kdtree_cell=0000001011/0000001011.parquet": {
+          "sha256": "697630996fa45a33e18f553f42f89dfb58c3d3baf08969ce9eefdd6599239ccc",
+          "size_bytes": 3926699,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000001011/0000001011.parquet",
+          "mtime": 1778264273.6785853
+        },
+        "kdtree_cell=0000001100/0000001100.parquet": {
+          "sha256": "5f7042274c9815c801aea9c10d33066f0748d3daa1bc2730f824b47e51d2270f",
+          "size_bytes": 3931738,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000001100/0000001100.parquet",
+          "mtime": 1778264273.890718
+        },
+        "kdtree_cell=0000001101/0000001101.parquet": {
+          "sha256": "db16ea844d5f6287de5a12df9f7f01083e857d69cf0ab5dc38a49535f41abfd9",
+          "size_bytes": 4479772,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000001101/0000001101.parquet",
+          "mtime": 1778264274.1422598
+        },
+        "kdtree_cell=0000001110/0000001110.parquet": {
+          "sha256": "6e7af69c4363be4f33a34aee796ca37542d158bb92a0e1139fdbe568eb175607",
+          "size_bytes": 4442016,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000001110/0000001110.parquet",
+          "mtime": 1778264274.4672058
+        },
+        "kdtree_cell=0000001111/0000001111.parquet": {
+          "sha256": "85886182022471a0ef8e858bf16d4133d7d05dc56e913cdccdafd51859d1267d",
+          "size_bytes": 4044833,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000001111/0000001111.parquet",
+          "mtime": 1778264275.2340515
+        },
+        "kdtree_cell=0000010000/0000010000.parquet": {
+          "sha256": "057ff16f0c44367ecca983ff976bf9b9e1da85ac46e499474fe150a89d0f76d4",
+          "size_bytes": 4419398,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000010000/0000010000.parquet",
+          "mtime": 1778264275.6157281
+        },
+        "kdtree_cell=0000010001/0000010001.parquet": {
+          "sha256": "c32cbb3a17e41af7fb0cd56fc831f3693b7cc853a466325bef71d2b97083e5de",
+          "size_bytes": 4898347,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000010001/0000010001.parquet",
+          "mtime": 1778264275.873833
+        },
+        "kdtree_cell=0000010010/0000010010.parquet": {
+          "sha256": "f6374d4a02c3f2e47798288ac521122b14833887b00cc234237ebfdf5abd4729",
+          "size_bytes": 4259719,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000010010/0000010010.parquet",
+          "mtime": 1778264276.1924884
+        },
+        "kdtree_cell=0000010011/0000010011.parquet": {
+          "sha256": "e9654cf6ea2e652f7e553e331d7a7c84908a4abe7effdd32aca285bec3c68b97",
+          "size_bytes": 4362194,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000010011/0000010011.parquet",
+          "mtime": 1778264276.4416711
+        },
+        "kdtree_cell=0000010100/0000010100.parquet": {
+          "sha256": "21b1e42ebaf8b25f617e9573cb1e1cc9571ac9afe62690eb0a68c42814a03fe2",
+          "size_bytes": 5331837,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000010100/0000010100.parquet",
+          "mtime": 1778264276.78868
+        },
+        "kdtree_cell=0000010101/0000010101.parquet": {
+          "sha256": "c19d0955c48c216bb5bf624e3509756839bf884889bf5c27aede484d174899d7",
+          "size_bytes": 5466823,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000010101/0000010101.parquet",
+          "mtime": 1778264277.1427171
+        },
+        "kdtree_cell=0000010110/0000010110.parquet": {
+          "sha256": "afa013ea06e04ef5d55bfe929ea652c06724d3189627d590465b31d15ad644c3",
+          "size_bytes": 5507436,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000010110/0000010110.parquet",
+          "mtime": 1778264277.5026953
+        },
+        "kdtree_cell=0000010111/0000010111.parquet": {
+          "sha256": "8157fdc0fd16ab54e0b27bc7c63e90be655002e9ffa6478b498af31165ad7e8c",
+          "size_bytes": 4608716,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000010111/0000010111.parquet",
+          "mtime": 1778264277.77303
+        },
+        "kdtree_cell=0000011000/0000011000.parquet": {
+          "sha256": "62e8f0be12914cc9d9ad06631859e41c913165264449bfec3d711c23d7340522",
+          "size_bytes": 4332049,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000011000/0000011000.parquet",
+          "mtime": 1778264278.0918832
+        },
+        "kdtree_cell=0000011001/0000011001.parquet": {
+          "sha256": "8427f8b69fe5b4064412e190a9309496fde49d375956a50f471b97101173bc68",
+          "size_bytes": 4096969,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000011001/0000011001.parquet",
+          "mtime": 1778264278.5474415
+        },
+        "kdtree_cell=0000011010/0000011010.parquet": {
+          "sha256": "10efc68ba54a09101878cd7f69e0f46e31ba8de7a7c7fd559231dec921abd41d",
+          "size_bytes": 4517269,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000011010/0000011010.parquet",
+          "mtime": 1778264278.989073
+        },
+        "kdtree_cell=0000011011/0000011011.parquet": {
+          "sha256": "e741be7a4a5dfb72f40137eb7582c8ca1b9b1049a560e2117269e73602eab93c",
+          "size_bytes": 4468210,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000011011/0000011011.parquet",
+          "mtime": 1778264279.3632886
+        },
+        "kdtree_cell=0000011100/0000011100.parquet": {
+          "sha256": "ad81f42a6b42b9303ffbc41f9ab0211718be94df45d04a9a1e07b9571b8ed217",
+          "size_bytes": 4055153,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000011100/0000011100.parquet",
+          "mtime": 1778264279.6927881
+        },
+        "kdtree_cell=0000011101/0000011101.parquet": {
+          "sha256": "df3dd7b4203d15c132078bc871e1c06c553f8c9aef107f7030ea6fec5efbec7a",
+          "size_bytes": 2878965,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000011101/0000011101.parquet",
+          "mtime": 1778264280.1022017
+        },
+        "kdtree_cell=0000011110/0000011110.parquet": {
+          "sha256": "bd5085dc5d02bfed0f4540bb0ef4a40521a8efc24fe1fe0f212d57d4ad625485",
+          "size_bytes": 4549104,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000011110/0000011110.parquet",
+          "mtime": 1778264280.4451025
+        },
+        "kdtree_cell=0000011111/0000011111.parquet": {
+          "sha256": "9dae60662dfbe16c4bc327a887c730edacf4db514d68d10af43c3ea5ddfa5fc8",
+          "size_bytes": 4347838,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000011111/0000011111.parquet",
+          "mtime": 1778264280.7801216
+        },
+        "kdtree_cell=0000100000/0000100000.parquet": {
+          "sha256": "cd91de0eae7356fafba52ffd853f965f05e5071f15e28af2048dfb3b9fdb86a2",
+          "size_bytes": 4420658,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000100000/0000100000.parquet",
+          "mtime": 1778264281.0298398
+        },
+        "kdtree_cell=0000100001/0000100001.parquet": {
+          "sha256": "2d804d7acaf6b5f7bd9ed09d906215d4ca5ce4778f4e164ae28c0474fbb457f3",
+          "size_bytes": 4192429,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000100001/0000100001.parquet",
+          "mtime": 1778264281.3806186
+        },
+        "kdtree_cell=0000100010/0000100010.parquet": {
+          "sha256": "edc4ff65573a71983f60b1bbef3bb518ed1aa8ab13fa22db1e349c64c532c60f",
+          "size_bytes": 4094031,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000100010/0000100010.parquet",
+          "mtime": 1778264281.671879
+        },
+        "kdtree_cell=0000100011/0000100011.parquet": {
+          "sha256": "ed51600e9b1d578f9720329b6b8b6ecc8706a1dcd72a33d5ef67d49bcb9e97a0",
+          "size_bytes": 3053856,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000100011/0000100011.parquet",
+          "mtime": 1778264281.9691327
+        },
+        "kdtree_cell=0000100100/0000100100.parquet": {
+          "sha256": "f1fff65448cef31a39ddc7b16ea352f0fb7426824e3809d24d27939606d6ca92",
+          "size_bytes": 4151807,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000100100/0000100100.parquet",
+          "mtime": 1778264282.2116778
+        },
+        "kdtree_cell=0000100101/0000100101.parquet": {
+          "sha256": "f79b3a6cd3e11875c90d4fd7e596b204273ef008a2b3663453296ff1fce43ece",
+          "size_bytes": 4321302,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000100101/0000100101.parquet",
+          "mtime": 1778264282.453116
+        },
+        "kdtree_cell=0000100110/0000100110.parquet": {
+          "sha256": "484e992459637c9fa8f16da66ee5c147fff3df85fbb9525c0da3b654d35c72f1",
+          "size_bytes": 3248827,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000100110/0000100110.parquet",
+          "mtime": 1778264282.6711562
+        },
+        "kdtree_cell=0000100111/0000100111.parquet": {
+          "sha256": "fcdaf685ed5bd7f7ade2400bc2f71c14f883c57c18634b90a185847dbe4f34c2",
+          "size_bytes": 3885829,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000100111/0000100111.parquet",
+          "mtime": 1778264282.985989
+        },
+        "kdtree_cell=0000101000/0000101000.parquet": {
+          "sha256": "eb08a7d25fa469f790238645f7bc950eab2083ca0d78a79337198c4de802423a",
+          "size_bytes": 3605402,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000101000/0000101000.parquet",
+          "mtime": 1778264283.3531053
+        },
+        "kdtree_cell=0000101001/0000101001.parquet": {
+          "sha256": "bddf645c83fb4146239c27ba1e38d82998dac58f6b91e9c0a104c6727a8d9ef6",
+          "size_bytes": 4038250,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000101001/0000101001.parquet",
+          "mtime": 1778264283.6714659
+        },
+        "kdtree_cell=0000101010/0000101010.parquet": {
+          "sha256": "e6a0fb07bc984b4e7fe813b7021c3c28f4b21847f3fd49979384c6925e40e056",
+          "size_bytes": 3643522,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000101010/0000101010.parquet",
+          "mtime": 1778264284.0105612
+        },
+        "kdtree_cell=0000101011/0000101011.parquet": {
+          "sha256": "819579fc98034a5f9e60d0d0fa495c482fd3d5a909d9bd9e339a7c3c06b0a94e",
+          "size_bytes": 3863537,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000101011/0000101011.parquet",
+          "mtime": 1778264284.3559065
+        },
+        "kdtree_cell=0000101100/0000101100.parquet": {
+          "sha256": "8f2bc72e244503458b82309325dbe90afeafdd22e475747b79ac21968fc3ca55",
+          "size_bytes": 3515350,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000101100/0000101100.parquet",
+          "mtime": 1778264284.7200952
+        },
+        "kdtree_cell=0000101101/0000101101.parquet": {
+          "sha256": "8a8cd274c4794ea6f1448351645d0974c76e2230e16d4e75984fefbfbdb06156",
+          "size_bytes": 4232268,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000101101/0000101101.parquet",
+          "mtime": 1778264285.04991
+        },
+        "kdtree_cell=0000101110/0000101110.parquet": {
+          "sha256": "5f410d4a78e1e036cebfe41a293c3e4a379bfee1d55a0b11efd250cb4c9f2bb7",
+          "size_bytes": 4638086,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000101110/0000101110.parquet",
+          "mtime": 1778264285.3036673
+        },
+        "kdtree_cell=0000101111/0000101111.parquet": {
+          "sha256": "2262b3c3ba4afd32582941bf5320623708f77293be926b80ab4e1fe3f1118424",
+          "size_bytes": 4278659,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000101111/0000101111.parquet",
+          "mtime": 1778264285.583127
+        },
+        "kdtree_cell=0000110000/0000110000.parquet": {
+          "sha256": "73123f96a43ddf507e2c258d3bfc041bc8004d6101178617b5bb815307d307ed",
+          "size_bytes": 3629242,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000110000/0000110000.parquet",
+          "mtime": 1778264285.8741527
+        },
+        "kdtree_cell=0000110001/0000110001.parquet": {
+          "sha256": "311b402502fe43acf89458eda85fed1850067e305b5013b786ae433c36b13ed3",
+          "size_bytes": 3853780,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000110001/0000110001.parquet",
+          "mtime": 1778264286.1930783
+        },
+        "kdtree_cell=0000110010/0000110010.parquet": {
+          "sha256": "8cee50f1422c119824fd2d0e5a52851920d7b8aa0d60d07ba339d42a3b9dfcf6",
+          "size_bytes": 3004548,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000110010/0000110010.parquet",
+          "mtime": 1778264286.4285386
+        },
+        "kdtree_cell=0000110011/0000110011.parquet": {
+          "sha256": "998fde6d4f74deed896ab3ee97a8659f6ba6f281aca2b50553defeeb79a7d31d",
+          "size_bytes": 3236840,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000110011/0000110011.parquet",
+          "mtime": 1778264286.6635802
+        },
+        "kdtree_cell=0000110100/0000110100.parquet": {
+          "sha256": "4f19d1a9b52e1c075b5663d4c657e5a2bf2d12f4c0a704e73b15623fafc6f14f",
+          "size_bytes": 4045426,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000110100/0000110100.parquet",
+          "mtime": 1778264286.8934598
+        },
+        "kdtree_cell=0000110101/0000110101.parquet": {
+          "sha256": "0658f43800ec4d3bb19091df77f8a2fe85cdcc0401a9c543fc7a31ae656aefe7",
+          "size_bytes": 4306652,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000110101/0000110101.parquet",
+          "mtime": 1778264287.1920033
+        },
+        "kdtree_cell=0000110110/0000110110.parquet": {
+          "sha256": "27fae7523fd4d287ef44ee5724506af4fe803d7df2e2fedecdc90e1f953d289b",
+          "size_bytes": 3581703,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000110110/0000110110.parquet",
+          "mtime": 1778264287.5046778
+        },
+        "kdtree_cell=0000110111/0000110111.parquet": {
+          "sha256": "18bc6c628d6533150e6e94ddca03f1140e9bc73530a58f2bca240e526e4635c6",
+          "size_bytes": 4139569,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000110111/0000110111.parquet",
+          "mtime": 1778264287.8610694
+        },
+        "kdtree_cell=0000111000/0000111000.parquet": {
+          "sha256": "51dc6a5ff63853a64483ea814bfc217948d3beb810f7ea424dfceb898a54d651",
+          "size_bytes": 3753181,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000111000/0000111000.parquet",
+          "mtime": 1778264288.2398193
+        },
+        "kdtree_cell=0000111001/0000111001.parquet": {
+          "sha256": "2c1f2c85bb10bacd8b0da70f3e0573e5b100cdfe9166d8bdc6781850e15a3461",
+          "size_bytes": 3514326,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000111001/0000111001.parquet",
+          "mtime": 1778264288.7452219
+        },
+        "kdtree_cell=0000111010/0000111010.parquet": {
+          "sha256": "ea91e52dee984958c8975e77db6fd0053b9ddfa1debc0d4da9dfc5de275bb08f",
+          "size_bytes": 3264820,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000111010/0000111010.parquet",
+          "mtime": 1778264289.0406535
+        },
+        "kdtree_cell=0000111011/0000111011.parquet": {
+          "sha256": "a7e185ab7d33b07f1ab035f742b560c86eebb73695513502230ed566ff644e9f",
+          "size_bytes": 4000407,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000111011/0000111011.parquet",
+          "mtime": 1778264289.3513544
+        },
+        "kdtree_cell=0000111100/0000111100.parquet": {
+          "sha256": "8733976c315d23af9a3a5cd5144086b1bc71d90300acf0eea16a3baf0b46765d",
+          "size_bytes": 4214100,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000111100/0000111100.parquet",
+          "mtime": 1778264289.740415
+        },
+        "kdtree_cell=0000111101/0000111101.parquet": {
+          "sha256": "2f9440dd3ed71c8e8073a82ab45311c193a438691d9c29ef24cbbf77eb796824",
+          "size_bytes": 4415477,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000111101/0000111101.parquet",
+          "mtime": 1778264289.9924486
+        },
+        "kdtree_cell=0000111110/0000111110.parquet": {
+          "sha256": "583ab48f96925725cf049620b0d52f831ae41aa359aeef6edebbe0266022efe3",
+          "size_bytes": 4323006,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000111110/0000111110.parquet",
+          "mtime": 1778264290.448329
+        },
+        "kdtree_cell=0000111111/0000111111.parquet": {
+          "sha256": "b072d1582f7662d3e7efe68c43431f4d71787745c90d077427c7ddf942cd302e",
+          "size_bytes": 3699009,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0000111111/0000111111.parquet",
+          "mtime": 1778264290.7326577
+        },
+        "kdtree_cell=0001000000/0001000000.parquet": {
+          "sha256": "e58360be191e5716bd8880c7cc6d790bde5e101646c8fa5c717fc3071646b773",
+          "size_bytes": 4383970,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001000000/0001000000.parquet",
+          "mtime": 1778264291.1382663
+        },
+        "kdtree_cell=0001000001/0001000001.parquet": {
+          "sha256": "f7cedeab328715be8a9e7741aa919b10176bbbe4d35d22a7ff1dcde88403b03f",
+          "size_bytes": 5175909,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001000001/0001000001.parquet",
+          "mtime": 1778264291.7487938
+        },
+        "kdtree_cell=0001000010/0001000010.parquet": {
+          "sha256": "e371959d1a9bacee5846051d7e75034b3e13e85398d9be5d0bfe3340368d605f",
+          "size_bytes": 5178313,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001000010/0001000010.parquet",
+          "mtime": 1778264292.2939425
+        },
+        "kdtree_cell=0001000011/0001000011.parquet": {
+          "sha256": "d8d1874cca1f460f6e1e8304a7d27efafad13d965e331ca60e554cb3408e3abf",
+          "size_bytes": 6328608,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001000011/0001000011.parquet",
+          "mtime": 1778264292.5998108
+        },
+        "kdtree_cell=0001000100/0001000100.parquet": {
+          "sha256": "f2dcb775350d8ad02c48c819f0fe9ecffe11fb6779a2ae6b46d109d3f66cdecd",
+          "size_bytes": 4263506,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001000100/0001000100.parquet",
+          "mtime": 1778264292.9915285
+        },
+        "kdtree_cell=0001000101/0001000101.parquet": {
+          "sha256": "5f02d6b30865c45822804aa4bfb55e8fa3b7ed7c28fa3a4e92ce914b061efd4d",
+          "size_bytes": 4056162,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001000101/0001000101.parquet",
+          "mtime": 1778264293.4851525
+        },
+        "kdtree_cell=0001000110/0001000110.parquet": {
+          "sha256": "72db30b9720d7896e19a496ccadcb332f61f180bf0e0613832895388dcecb5ea",
+          "size_bytes": 4805468,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001000110/0001000110.parquet",
+          "mtime": 1778264293.801396
+        },
+        "kdtree_cell=0001000111/0001000111.parquet": {
+          "sha256": "8191820cb14b87b282311c37df0b8125d6eeefa5b689d6cfdfb2937f868ee565",
+          "size_bytes": 4431960,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001000111/0001000111.parquet",
+          "mtime": 1778264294.1047983
+        },
+        "kdtree_cell=0001001000/0001001000.parquet": {
+          "sha256": "d8507a5100918d7c69cb6213b6c2e63d9aca62c82595e13bb35f69a60dd792d0",
+          "size_bytes": 5911635,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001001000/0001001000.parquet",
+          "mtime": 1778264294.4602232
+        },
+        "kdtree_cell=0001001001/0001001001.parquet": {
+          "sha256": "afa86aa97a30b756b17ef82416848e6b5a35fcfe34ebadc1bd00e4d1f66fc427",
+          "size_bytes": 4167318,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001001001/0001001001.parquet",
+          "mtime": 1778264294.740284
+        },
+        "kdtree_cell=0001001010/0001001010.parquet": {
+          "sha256": "00e03262184ee5268980bfe3055740e6eb319d491129dab340bd50574c709b94",
+          "size_bytes": 4732360,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001001010/0001001010.parquet",
+          "mtime": 1778264295.3233519
+        },
+        "kdtree_cell=0001001011/0001001011.parquet": {
+          "sha256": "10979ee013e7d51b61e8fce3fb68e1747a5db5d63d50468daa16f5040345e90b",
+          "size_bytes": 4014148,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001001011/0001001011.parquet",
+          "mtime": 1778264295.7234256
+        },
+        "kdtree_cell=0001001100/0001001100.parquet": {
+          "sha256": "bfa8e67c36ed7c5bc8db8ea93ebc7e571bedca0244cf547d321b52d4c3112b9d",
+          "size_bytes": 4387658,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001001100/0001001100.parquet",
+          "mtime": 1778264296.0467894
+        },
+        "kdtree_cell=0001001101/0001001101.parquet": {
+          "sha256": "e1803b45c5d481bf1b9f697d5ef0df598435598e44c716430c9abf59a4fd3d49",
+          "size_bytes": 5285503,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001001101/0001001101.parquet",
+          "mtime": 1778264296.5143874
+        },
+        "kdtree_cell=0001001110/0001001110.parquet": {
+          "sha256": "302014ea3b9f46fcd741a28a8b8278c3591b8f9f06c531e5aebeb72d95861242",
+          "size_bytes": 4063045,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001001110/0001001110.parquet",
+          "mtime": 1778264296.834361
+        },
+        "kdtree_cell=0001001111/0001001111.parquet": {
+          "sha256": "ec738c2d6ae2abf175ac68b4f8cc38018e37093bdc0691dc735c8ffab87ca3b1",
+          "size_bytes": 3900605,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001001111/0001001111.parquet",
+          "mtime": 1778264297.082303
+        },
+        "kdtree_cell=0001010000/0001010000.parquet": {
+          "sha256": "7da575f5595cf6260e120c6312d8fadd7bac32e38d710805cef48e9a7da33b88",
+          "size_bytes": 4332956,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001010000/0001010000.parquet",
+          "mtime": 1778264297.4847846
+        },
+        "kdtree_cell=0001010001/0001010001.parquet": {
+          "sha256": "f8fc7de8c270f94229753abbbcd92b99794c1dbe05a6efcd4b6a90a59e939dc5",
+          "size_bytes": 5009598,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001010001/0001010001.parquet",
+          "mtime": 1778264297.8422983
+        },
+        "kdtree_cell=0001010010/0001010010.parquet": {
+          "sha256": "83d9f01b7ca2b3d42601d84edb796ed91232fc2c366e6bf6980a97381ca4594b",
+          "size_bytes": 4054193,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001010010/0001010010.parquet",
+          "mtime": 1778264298.09417
+        },
+        "kdtree_cell=0001010011/0001010011.parquet": {
+          "sha256": "3a3d27389d95cf710dad8281162e04a982093b018108efbea8337a3ac06b6b9e",
+          "size_bytes": 4411093,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001010011/0001010011.parquet",
+          "mtime": 1778264298.4382594
+        },
+        "kdtree_cell=0001010100/0001010100.parquet": {
+          "sha256": "2ffd1f72c188b79990a59c2c3ba91ca5b6edc4d7a671445e7d1558d9dd947aba",
+          "size_bytes": 4816284,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001010100/0001010100.parquet",
+          "mtime": 1778264298.757161
+        },
+        "kdtree_cell=0001010101/0001010101.parquet": {
+          "sha256": "1f44d97e2d80edad80ab87ee53032d361a5705aa54a9322b27ee6a8fc840c51d",
+          "size_bytes": 4771340,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001010101/0001010101.parquet",
+          "mtime": 1778264299.3315582
+        },
+        "kdtree_cell=0001010110/0001010110.parquet": {
+          "sha256": "d4c41dab96aa4b7ce60da2bc21e99f90790519fcc33ec87ce649cff08e792f1d",
+          "size_bytes": 4318634,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001010110/0001010110.parquet",
+          "mtime": 1778264299.8689835
+        },
+        "kdtree_cell=0001010111/0001010111.parquet": {
+          "sha256": "3a8fa1b396337f39bf4f0f5890a5408d92830881b35b193f1224a7ed2cf4e18e",
+          "size_bytes": 4620650,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001010111/0001010111.parquet",
+          "mtime": 1778264300.2866907
+        },
+        "kdtree_cell=0001011000/0001011000.parquet": {
+          "sha256": "d0fd5bc129676e756d64b08cade9b15f2fd69a37a2d225b6b6651c9c7490d7de",
+          "size_bytes": 4228077,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001011000/0001011000.parquet",
+          "mtime": 1778264300.572103
+        },
+        "kdtree_cell=0001011001/0001011001.parquet": {
+          "sha256": "ccd4977d7e93e6b5058e88bc18393c45f4c446cb47412ab23639f13f35ded659",
+          "size_bytes": 3561690,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001011001/0001011001.parquet",
+          "mtime": 1778264300.926513
+        },
+        "kdtree_cell=0001011010/0001011010.parquet": {
+          "sha256": "8ac8975be20326907b55c0a9ad5b5f9e04878d280537debd3470b921350cf203",
+          "size_bytes": 3880934,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001011010/0001011010.parquet",
+          "mtime": 1778264301.4791012
+        },
+        "kdtree_cell=0001011011/0001011011.parquet": {
+          "sha256": "b6448111a3809eddce4f30a8d98c647aac2ae3f64f00655e9aab971220552fd5",
+          "size_bytes": 3550745,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001011011/0001011011.parquet",
+          "mtime": 1778264301.8081083
+        },
+        "kdtree_cell=0001011100/0001011100.parquet": {
+          "sha256": "b7fd0a125299cdc4798cf62e80d92cd9cf67271fc71e26d80ed13f7ab762cbf0",
+          "size_bytes": 3713667,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001011100/0001011100.parquet",
+          "mtime": 1778264302.2101982
+        },
+        "kdtree_cell=0001011101/0001011101.parquet": {
+          "sha256": "eb5273ead1733cecd40b3b1c49aed5c4c9b58ad0c09b030a052c412b9057f68a",
+          "size_bytes": 4626282,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001011101/0001011101.parquet",
+          "mtime": 1778264302.4773798
+        },
+        "kdtree_cell=0001011110/0001011110.parquet": {
+          "sha256": "2fed717bace58a6dacfe7e2cd2fb32d9b64eff1458145076e5faf2166fc4b79b",
+          "size_bytes": 5025345,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001011110/0001011110.parquet",
+          "mtime": 1778264302.9921367
+        },
+        "kdtree_cell=0001011111/0001011111.parquet": {
+          "sha256": "e108aaf5d5b28c14c4e900d0c18fd3982366759538a622c71f903e2e8fb942db",
+          "size_bytes": 5166240,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001011111/0001011111.parquet",
+          "mtime": 1778264303.3438306
+        },
+        "kdtree_cell=0001100000/0001100000.parquet": {
+          "sha256": "aa0d370920ee9257eb1c5d7374334a35447fe4da7605ce872bc22b99947d380a",
+          "size_bytes": 3642068,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001100000/0001100000.parquet",
+          "mtime": 1778264303.6614318
+        },
+        "kdtree_cell=0001100001/0001100001.parquet": {
+          "sha256": "22f8b3038fbbafcd5bfbd011e770e05971f5f7caec87325e9c4fd2a8225dea39",
+          "size_bytes": 4537809,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001100001/0001100001.parquet",
+          "mtime": 1778264304.1102939
+        },
+        "kdtree_cell=0001100010/0001100010.parquet": {
+          "sha256": "f5fec2d9c108e4e31ba4efb46021575db14af0d670b900fae04e24ae1a74a323",
+          "size_bytes": 4012601,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001100010/0001100010.parquet",
+          "mtime": 1778264304.4950848
+        },
+        "kdtree_cell=0001100011/0001100011.parquet": {
+          "sha256": "8263dc52c1ed846e109975376bab7c797c0fcf53b103962d20b8c0b55efbc706",
+          "size_bytes": 4393464,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001100011/0001100011.parquet",
+          "mtime": 1778264304.8123987
+        },
+        "kdtree_cell=0001100100/0001100100.parquet": {
+          "sha256": "8ebffbb83a17158b7b8845cafd62d06c17ba51549615b09ae96c31ca2eebeb06",
+          "size_bytes": 4603206,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001100100/0001100100.parquet",
+          "mtime": 1778264305.2071393
+        },
+        "kdtree_cell=0001100101/0001100101.parquet": {
+          "sha256": "d4fbe4efeb0845a5734bcfe4ea73f0ee62fa5551a985904629e217fc6d95b6b5",
+          "size_bytes": 4844344,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001100101/0001100101.parquet",
+          "mtime": 1778264305.5672092
+        },
+        "kdtree_cell=0001100110/0001100110.parquet": {
+          "sha256": "9ae93fe006a351deeff476a5e35bff19544c16ee429db7a5966624cbf7102628",
+          "size_bytes": 3896197,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001100110/0001100110.parquet",
+          "mtime": 1778264305.9081628
+        },
+        "kdtree_cell=0001100111/0001100111.parquet": {
+          "sha256": "eb5380d14ca38cc3ab3cc0dabba0bd2ba07134faad920d85275dde66699e6b72",
+          "size_bytes": 4150796,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001100111/0001100111.parquet",
+          "mtime": 1778264306.1540625
+        },
+        "kdtree_cell=0001101000/0001101000.parquet": {
+          "sha256": "fe86c3dc91092a5deec592b43ca0bed2a049eba2aa5f70649b43cb9188e6e0f0",
+          "size_bytes": 4638804,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001101000/0001101000.parquet",
+          "mtime": 1778264306.4541533
+        },
+        "kdtree_cell=0001101001/0001101001.parquet": {
+          "sha256": "120bfdf081adfb7a94c716155b5e0d5c995bb2b66c59380900decfebaeeddbc2",
+          "size_bytes": 4194785,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001101001/0001101001.parquet",
+          "mtime": 1778264306.9115145
+        },
+        "kdtree_cell=0001101010/0001101010.parquet": {
+          "sha256": "65477a6323f7f1df9cb01aa4b8b0d416a87032d9443e36d5c51e4b3784366753",
+          "size_bytes": 4592728,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001101010/0001101010.parquet",
+          "mtime": 1778264307.2078993
+        },
+        "kdtree_cell=0001101011/0001101011.parquet": {
+          "sha256": "d6116724c0f807e060bc600a677fc14d68399270b4dba4c869f25583403ef9b0",
+          "size_bytes": 4038507,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001101011/0001101011.parquet",
+          "mtime": 1778264307.6677735
+        },
+        "kdtree_cell=0001101100/0001101100.parquet": {
+          "sha256": "1615576bd8ac78494f502f70bfc3058b3f1d8a518f042ed7db59ec34a5ca33f1",
+          "size_bytes": 4309293,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001101100/0001101100.parquet",
+          "mtime": 1778264307.9825814
+        },
+        "kdtree_cell=0001101101/0001101101.parquet": {
+          "sha256": "347577a346356c5b9400a56880d2604125b21389c0b0407f61cf062356ea3460",
+          "size_bytes": 3345610,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001101101/0001101101.parquet",
+          "mtime": 1778264308.282382
+        },
+        "kdtree_cell=0001101110/0001101110.parquet": {
+          "sha256": "aaf74f2aab41e99a474f671c8addde60e317da0977cfe205427d6fe324c6868d",
+          "size_bytes": 4206104,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001101110/0001101110.parquet",
+          "mtime": 1778264308.654865
+        },
+        "kdtree_cell=0001101111/0001101111.parquet": {
+          "sha256": "c2b9fa854b205dad422dc02cc0100416e9e7bfb42153c13e0ac554b3b03eab8c",
+          "size_bytes": 4436678,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001101111/0001101111.parquet",
+          "mtime": 1778264309.0517747
+        },
+        "kdtree_cell=0001110000/0001110000.parquet": {
+          "sha256": "42be500842b3ffaafe99d130ada76b6016fe0a4c538d4c85e70c6508897df384",
+          "size_bytes": 3990718,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001110000/0001110000.parquet",
+          "mtime": 1778264309.3483257
+        },
+        "kdtree_cell=0001110001/0001110001.parquet": {
+          "sha256": "e1bbc45d1e86605ab2e8be89996d35cca9a905f862a2798fb69c17cbc25a09f5",
+          "size_bytes": 5003513,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001110001/0001110001.parquet",
+          "mtime": 1778264309.6687841
+        },
+        "kdtree_cell=0001110010/0001110010.parquet": {
+          "sha256": "c4de58295d171f0f5682a5cd230a55d16fa0095eebb0c358912e524b461e6c8b",
+          "size_bytes": 4441591,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001110010/0001110010.parquet",
+          "mtime": 1778264310.0244713
+        },
+        "kdtree_cell=0001110011/0001110011.parquet": {
+          "sha256": "899026cd2cb9ef8e13093bfefeb6a14aad340f36a24b6271dea85f466f03d966",
+          "size_bytes": 4630854,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001110011/0001110011.parquet",
+          "mtime": 1778264310.516131
+        },
+        "kdtree_cell=0001110100/0001110100.parquet": {
+          "sha256": "fbec742b4799a5244e03b80046d21768ede480b028f727c237e9b82965361d87",
+          "size_bytes": 4730829,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001110100/0001110100.parquet",
+          "mtime": 1778264310.721588
+        },
+        "kdtree_cell=0001110101/0001110101.parquet": {
+          "sha256": "cd2514801196779d022cb1bac16c4159ed1df4b0d989b2828dd7b8773dcd095e",
+          "size_bytes": 5057999,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001110101/0001110101.parquet",
+          "mtime": 1778264311.138762
+        },
+        "kdtree_cell=0001110110/0001110110.parquet": {
+          "sha256": "1bc012e42a7b1ae8520842d133e0fb485afef6ebd3238322c86a56a991760e70",
+          "size_bytes": 4834826,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001110110/0001110110.parquet",
+          "mtime": 1778264311.471339
+        },
+        "kdtree_cell=0001110111/0001110111.parquet": {
+          "sha256": "56c89b4d52334100fd4f8daf94e87dd527fe84d713370193b5c552f2baa172bb",
+          "size_bytes": 3888178,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001110111/0001110111.parquet",
+          "mtime": 1778264311.841896
+        },
+        "kdtree_cell=0001111000/0001111000.parquet": {
+          "sha256": "d227fc5820f29bcd82d0285388bf7c864a75a6823764ba4f14685c011dc83ce9",
+          "size_bytes": 3817864,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001111000/0001111000.parquet",
+          "mtime": 1778264312.1484761
+        },
+        "kdtree_cell=0001111001/0001111001.parquet": {
+          "sha256": "d07b00e3bb57cce894402f1d874fa0659d5c73515b4ab2d9a802b4e9c318d02e",
+          "size_bytes": 4547624,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001111001/0001111001.parquet",
+          "mtime": 1778264312.5177884
+        },
+        "kdtree_cell=0001111010/0001111010.parquet": {
+          "sha256": "6fd5d5874fb067f09b0b07c47d811bf033bd6f60019dd3dc985f38830580f9f6",
+          "size_bytes": 4729047,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001111010/0001111010.parquet",
+          "mtime": 1778264312.7657316
+        },
+        "kdtree_cell=0001111011/0001111011.parquet": {
+          "sha256": "6dc9ca9ccf760cc61a9f6e4458fb25c0be4639eb1914bc8083ba65bf47302223",
+          "size_bytes": 3583650,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001111011/0001111011.parquet",
+          "mtime": 1778264313.1197894
+        },
+        "kdtree_cell=0001111100/0001111100.parquet": {
+          "sha256": "db5eecfd869f7d79628fde3b9cc8d8883a7716bc85624dc79c76305cdfdd7b46",
+          "size_bytes": 4742306,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001111100/0001111100.parquet",
+          "mtime": 1778264313.375626
+        },
+        "kdtree_cell=0001111101/0001111101.parquet": {
+          "sha256": "1ce480dbabea6bbf70c82575af7bf2a3e3d7bc0a5e25dc438601992ca8aa26f3",
+          "size_bytes": 4915625,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001111101/0001111101.parquet",
+          "mtime": 1778264313.694194
+        },
+        "kdtree_cell=0001111110/0001111110.parquet": {
+          "sha256": "083c84b7e6ae5a6b4c2755cf31357d510564da97b5711d3a125a61300436306e",
+          "size_bytes": 4156196,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001111110/0001111110.parquet",
+          "mtime": 1778264314.004373
+        },
+        "kdtree_cell=0001111111/0001111111.parquet": {
+          "sha256": "6b6d5ebc35cd79551642981f10b59f8a070301a841e6afd3bbeeb4a0c04b1842",
+          "size_bytes": 2958420,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0001111111/0001111111.parquet",
+          "mtime": 1778264314.233711
+        },
+        "kdtree_cell=0010000000/0010000000.parquet": {
+          "sha256": "1f1477444f61d5016b9822809b8e86788151ef36dbcaf96db4aba956f5cfcc96",
+          "size_bytes": 4071759,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010000000/0010000000.parquet",
+          "mtime": 1778264314.622987
+        },
+        "kdtree_cell=0010000001/0010000001.parquet": {
+          "sha256": "2cb885cdfd4573c98e2c4d4353cc511f4aea6c858da4ac3a8951eac96fd51f74",
+          "size_bytes": 3724481,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010000001/0010000001.parquet",
+          "mtime": 1778264315.019953
+        },
+        "kdtree_cell=0010000010/0010000010.parquet": {
+          "sha256": "6736b62700cb399f42c3f363e844a815e5564651528cd54367482fa011029b2a",
+          "size_bytes": 4990582,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010000010/0010000010.parquet",
+          "mtime": 1778264315.2717373
+        },
+        "kdtree_cell=0010000011/0010000011.parquet": {
+          "sha256": "87eee63a67d45577dc72579060f0068b31900585b12dc0d3fd2a88607d23d3a5",
+          "size_bytes": 4279901,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010000011/0010000011.parquet",
+          "mtime": 1778264315.7468379
+        },
+        "kdtree_cell=0010000100/0010000100.parquet": {
+          "sha256": "98eacdb6003af8c4ca6accd655abfa7e693b2d984ee24fc531f166040bff7e11",
+          "size_bytes": 3529553,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010000100/0010000100.parquet",
+          "mtime": 1778264316.0783544
+        },
+        "kdtree_cell=0010000101/0010000101.parquet": {
+          "sha256": "f3bfee641034b3170967a10376dbebf10edbec55667819a4169304b092bb632c",
+          "size_bytes": 3901797,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010000101/0010000101.parquet",
+          "mtime": 1778264316.3736374
+        },
+        "kdtree_cell=0010000110/0010000110.parquet": {
+          "sha256": "97b28b726f84fde9bbfa1833a08f21ac339c631c276f9c331f4aeac5e20e3f36",
+          "size_bytes": 4615394,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010000110/0010000110.parquet",
+          "mtime": 1778264316.6407042
+        },
+        "kdtree_cell=0010000111/0010000111.parquet": {
+          "sha256": "a8869016c6021cc1ec073f2033ca4be9e3d166fe6d6d6991836bd72b93fdd4c9",
+          "size_bytes": 4946839,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010000111/0010000111.parquet",
+          "mtime": 1778264317.047051
+        },
+        "kdtree_cell=0010001000/0010001000.parquet": {
+          "sha256": "7bb9b2ab8b4ca5cbba29a478b20454908de0499e634b44eab8317f28f88fcdc8",
+          "size_bytes": 5599488,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010001000/0010001000.parquet",
+          "mtime": 1778264317.38748
+        },
+        "kdtree_cell=0010001001/0010001001.parquet": {
+          "sha256": "4583f62fe1ecfb94fa727839a95c187759c4599f099de15fe83fd8546767b93c",
+          "size_bytes": 5056901,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010001001/0010001001.parquet",
+          "mtime": 1778264317.666387
+        },
+        "kdtree_cell=0010001010/0010001010.parquet": {
+          "sha256": "cc713aba23a9f36eb63caad03fa04c0e45d018fabfd8e1a09b6dc811f4e35c93",
+          "size_bytes": 6067301,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010001010/0010001010.parquet",
+          "mtime": 1778264318.0729554
+        },
+        "kdtree_cell=0010001011/0010001011.parquet": {
+          "sha256": "eae6267e897f74365fa68fe4ee1ff6ada1d1a8d6e81f740a6c5b3aad7039b43d",
+          "size_bytes": 4437521,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010001011/0010001011.parquet",
+          "mtime": 1778264318.3944237
+        },
+        "kdtree_cell=0010001100/0010001100.parquet": {
+          "sha256": "eda4b0d2cbd99dbb4a754270d7e6d0d62a692fff3a1c415adf2ff30a95aeb1e3",
+          "size_bytes": 4002810,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010001100/0010001100.parquet",
+          "mtime": 1778264318.8643475
+        },
+        "kdtree_cell=0010001101/0010001101.parquet": {
+          "sha256": "d2aaa0a91c0b01485e81581af09fe2712fb8e9bb17bcaba389e5c13092b4d42c",
+          "size_bytes": 4054355,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010001101/0010001101.parquet",
+          "mtime": 1778264319.2146406
+        },
+        "kdtree_cell=0010001110/0010001110.parquet": {
+          "sha256": "ae87058b354d73194e96698c0e5c588abd9e5bf0d25207664cd5108ed6b72319",
+          "size_bytes": 4170447,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010001110/0010001110.parquet",
+          "mtime": 1778264319.4707773
+        },
+        "kdtree_cell=0010001111/0010001111.parquet": {
+          "sha256": "2558abe4a28e7ce813239d693885a0aa37cc5932338b51415d4e5a2e7d78973e",
+          "size_bytes": 4018287,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010001111/0010001111.parquet",
+          "mtime": 1778264319.8139396
+        },
+        "kdtree_cell=0010010000/0010010000.parquet": {
+          "sha256": "5c736f09aae55daf910776b93e3f95778b93e839fbae4e468e1347f5176850f1",
+          "size_bytes": 4673443,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010010000/0010010000.parquet",
+          "mtime": 1778264320.149487
+        },
+        "kdtree_cell=0010010001/0010010001.parquet": {
+          "sha256": "3d0b5d154f2ac65cda1edf11d3b1d01456f443126f102c20755ab7d97ea1b74f",
+          "size_bytes": 3807549,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010010001/0010010001.parquet",
+          "mtime": 1778264320.5502472
+        },
+        "kdtree_cell=0010010010/0010010010.parquet": {
+          "sha256": "de1032981b008c64dbf3d05e22300b9f7b1d7434cc1f8dbd87f43b7e083aee3d",
+          "size_bytes": 5334506,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010010010/0010010010.parquet",
+          "mtime": 1778264320.831092
+        },
+        "kdtree_cell=0010010011/0010010011.parquet": {
+          "sha256": "85ed78cbd9b000ab5d526345be6418dea309d48e68b75dd69a6856d562055cc1",
+          "size_bytes": 4282317,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010010011/0010010011.parquet",
+          "mtime": 1778264321.0235114
+        },
+        "kdtree_cell=0010010100/0010010100.parquet": {
+          "sha256": "387af404c1479418535ce3bb18c53b764097e7d008a7c55ce31d60f73d63b035",
+          "size_bytes": 3899103,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010010100/0010010100.parquet",
+          "mtime": 1778264321.3809528
+        },
+        "kdtree_cell=0010010101/0010010101.parquet": {
+          "sha256": "d38654d81284047184e1d0805d943f068c4f8049415b260fb336925c252e8dc1",
+          "size_bytes": 3980584,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010010101/0010010101.parquet",
+          "mtime": 1778264321.620821
+        },
+        "kdtree_cell=0010010110/0010010110.parquet": {
+          "sha256": "1d6a159fd13e8d36d77ab73264103897b21564d9aa50a18215b3a583b5c4f2b5",
+          "size_bytes": 4837032,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010010110/0010010110.parquet",
+          "mtime": 1778264321.8822577
+        },
+        "kdtree_cell=0010010111/0010010111.parquet": {
+          "sha256": "40c3ceebea585c0599eb7c97b0cea2cc5188cf08f6976b08410e1aacaec6449c",
+          "size_bytes": 4290752,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010010111/0010010111.parquet",
+          "mtime": 1778264322.1885462
+        },
+        "kdtree_cell=0010011000/0010011000.parquet": {
+          "sha256": "1d5f054647de678e541f6d063d3f945042cfc179db4c5ede7ee79045e706e14d",
+          "size_bytes": 3491802,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010011000/0010011000.parquet",
+          "mtime": 1778264322.4656863
+        },
+        "kdtree_cell=0010011001/0010011001.parquet": {
+          "sha256": "39685601f2517feaf5bc0db33ee66ff51021ce3b8f24c080ee94436a3b8eac7b",
+          "size_bytes": 4201438,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010011001/0010011001.parquet",
+          "mtime": 1778264322.9558003
+        },
+        "kdtree_cell=0010011010/0010011010.parquet": {
+          "sha256": "79567af3f7b1dba4ac8624552304c5d95f736a62a894cd774a3c784bf6887188",
+          "size_bytes": 4174396,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010011010/0010011010.parquet",
+          "mtime": 1778264323.2586882
+        },
+        "kdtree_cell=0010011011/0010011011.parquet": {
+          "sha256": "94121b70539654eacd5f6cdad2004b7821da25bdcc0bc39fa2b04e6fb2882e07",
+          "size_bytes": 4854328,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010011011/0010011011.parquet",
+          "mtime": 1778264323.6749752
+        },
+        "kdtree_cell=0010011100/0010011100.parquet": {
+          "sha256": "e04f46a7905559b088e1e23ee0caf92d41b2e9ca9bbd970bc8cd59fbf581c30a",
+          "size_bytes": 4141263,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010011100/0010011100.parquet",
+          "mtime": 1778264324.049847
+        },
+        "kdtree_cell=0010011101/0010011101.parquet": {
+          "sha256": "ddde20a8eb94876fd1ad798cf964fa0b060cecc022df196877aff90a2093ca9a",
+          "size_bytes": 3731648,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010011101/0010011101.parquet",
+          "mtime": 1778264324.4133418
+        },
+        "kdtree_cell=0010011110/0010011110.parquet": {
+          "sha256": "7aefd60a979a082b3d372cdfce0f4450222c5b5ec1372f561da8eef6bc470886",
+          "size_bytes": 3389841,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010011110/0010011110.parquet",
+          "mtime": 1778264324.75843
+        },
+        "kdtree_cell=0010011111/0010011111.parquet": {
+          "sha256": "a9fc2aecbd414b1e5704b88f70cc878955e2bbe64582f7f2a798275c756c5e64",
+          "size_bytes": 3874615,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010011111/0010011111.parquet",
+          "mtime": 1778264325.0918226
+        },
+        "kdtree_cell=0010100000/0010100000.parquet": {
+          "sha256": "16214c53cafe59e7323af043ccf7da74684e573215fa2545bcaba791e6c25d28",
+          "size_bytes": 4945031,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010100000/0010100000.parquet",
+          "mtime": 1778264325.3493738
+        },
+        "kdtree_cell=0010100001/0010100001.parquet": {
+          "sha256": "8bf0d9dee5dc10fac0a4665a0fafaf66227ef44b2eaea3a3dc7e088f418d7343",
+          "size_bytes": 4610816,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010100001/0010100001.parquet",
+          "mtime": 1778264325.613667
+        },
+        "kdtree_cell=0010100010/0010100010.parquet": {
+          "sha256": "79f2b930756ce2bff7da6dcfdd40e0b0f5b46fac30f4c23705ccab1641f9c0ab",
+          "size_bytes": 5590954,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010100010/0010100010.parquet",
+          "mtime": 1778264326.0361893
+        },
+        "kdtree_cell=0010100011/0010100011.parquet": {
+          "sha256": "9b9240f08b488fd973b4cb78a91faa457c632588c95f87ab9514ed7bd811858e",
+          "size_bytes": 5156929,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010100011/0010100011.parquet",
+          "mtime": 1778264326.4418874
+        },
+        "kdtree_cell=0010100100/0010100100.parquet": {
+          "sha256": "bdc6ceeef90b48830fe549731e7d2aab7d29fc7d334210b534b5b0f7be4dfd6e",
+          "size_bytes": 4442468,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010100100/0010100100.parquet",
+          "mtime": 1778264326.7492757
+        },
+        "kdtree_cell=0010100101/0010100101.parquet": {
+          "sha256": "2b95e9fc87043a9c85d5b6d755e0e909d892701da0c088b82b1345bc1ad4d31e",
+          "size_bytes": 4250262,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010100101/0010100101.parquet",
+          "mtime": 1778264327.1516678
+        },
+        "kdtree_cell=0010100110/0010100110.parquet": {
+          "sha256": "ae8c4a7df93c1123e659ab82d7d52994e1d1f1c48ba507028d025b2005df6fd7",
+          "size_bytes": 4309550,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010100110/0010100110.parquet",
+          "mtime": 1778264327.428911
+        },
+        "kdtree_cell=0010100111/0010100111.parquet": {
+          "sha256": "f287732b21a3f5fcda89080fc39d92b34fd1131d4dc6aa9febf52a338a95ebce",
+          "size_bytes": 4297448,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010100111/0010100111.parquet",
+          "mtime": 1778264327.810924
+        },
+        "kdtree_cell=0010101000/0010101000.parquet": {
+          "sha256": "1876d5370d8a58c3d1d867d7f198f208562d442fc27d362fb98a7f76ea8b8b5c",
+          "size_bytes": 5327321,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010101000/0010101000.parquet",
+          "mtime": 1778264328.1473637
+        },
+        "kdtree_cell=0010101001/0010101001.parquet": {
+          "sha256": "2d7aad96873f81f70b46b6370cdbf34581ef4298ec0423ec70188e4ceea012b1",
+          "size_bytes": 4750363,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010101001/0010101001.parquet",
+          "mtime": 1778264328.4125204
+        },
+        "kdtree_cell=0010101010/0010101010.parquet": {
+          "sha256": "a892a005d3854cfba28b1a933f1bcbd3d56412c89a38cf2f5eb0625612448eca",
+          "size_bytes": 4282376,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010101010/0010101010.parquet",
+          "mtime": 1778264328.7348335
+        },
+        "kdtree_cell=0010101011/0010101011.parquet": {
+          "sha256": "4ed68021b8758b59ce31caf218b9e8fdfdc525a615602a4fc921a5b9da0e2e41",
+          "size_bytes": 4201609,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010101011/0010101011.parquet",
+          "mtime": 1778264329.0170457
+        },
+        "kdtree_cell=0010101100/0010101100.parquet": {
+          "sha256": "ebda0ffc4f4d6f7e587f3c619e9d633b1508e9670030b864c5da572c7283f593",
+          "size_bytes": 3475027,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010101100/0010101100.parquet",
+          "mtime": 1778264329.3585398
+        },
+        "kdtree_cell=0010101101/0010101101.parquet": {
+          "sha256": "8ae747704529e04130ac66bc8195270441100938a3bf16c59f1a22dae60b69c8",
+          "size_bytes": 4718944,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010101101/0010101101.parquet",
+          "mtime": 1778264329.8702903
+        },
+        "kdtree_cell=0010101110/0010101110.parquet": {
+          "sha256": "5299ea379bd637dfdae862cc72b8292059414418d38e52ff99f97ac9c68de192",
+          "size_bytes": 4466427,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010101110/0010101110.parquet",
+          "mtime": 1778264330.3765576
+        },
+        "kdtree_cell=0010101111/0010101111.parquet": {
+          "sha256": "a7289f3bfa3fb20a145e0753de735fb09d77b2c6b8d68415e3cfa822d88bcbd6",
+          "size_bytes": 4631081,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010101111/0010101111.parquet",
+          "mtime": 1778264330.9170384
+        },
+        "kdtree_cell=0010110000/0010110000.parquet": {
+          "sha256": "11895fee99d5f2d78f178fa007b8e890ffbb3653a8a8c1503da78760673863c5",
+          "size_bytes": 3656554,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010110000/0010110000.parquet",
+          "mtime": 1778264331.2604172
+        },
+        "kdtree_cell=0010110001/0010110001.parquet": {
+          "sha256": "7fda26ac8a69d92c0f78ecfbb557039e7c8a82670c9eb4b59310e8a203d3f486",
+          "size_bytes": 3968416,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010110001/0010110001.parquet",
+          "mtime": 1778264331.5958695
+        },
+        "kdtree_cell=0010110010/0010110010.parquet": {
+          "sha256": "b41c27bac69edef06fac3255dcc0e828c4b1ce644cb54bb22e1aa59e46780f66",
+          "size_bytes": 4538303,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010110010/0010110010.parquet",
+          "mtime": 1778264332.1688824
+        },
+        "kdtree_cell=0010110011/0010110011.parquet": {
+          "sha256": "628de0db6815340074514dea1f93ab12b7a6260f7b16b903a5ba47a9a0081c0f",
+          "size_bytes": 4967190,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010110011/0010110011.parquet",
+          "mtime": 1778264332.561227
+        },
+        "kdtree_cell=0010110100/0010110100.parquet": {
+          "sha256": "652b0eb69e92104fe97f2af407ca999bb052603652146930cef6645929eb3fac",
+          "size_bytes": 4238964,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010110100/0010110100.parquet",
+          "mtime": 1778264332.9627829
+        },
+        "kdtree_cell=0010110101/0010110101.parquet": {
+          "sha256": "adaead4c66f620db1090693501c3ddf8bc6496e257268effe7897d5ee1eaa6fa",
+          "size_bytes": 4894827,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010110101/0010110101.parquet",
+          "mtime": 1778264333.3016727
+        },
+        "kdtree_cell=0010110110/0010110110.parquet": {
+          "sha256": "407b2ec9582ff5b9ed85c11b14e06f8bbd9755092d99031e23c5b7b4204e6962",
+          "size_bytes": 4134417,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010110110/0010110110.parquet",
+          "mtime": 1778264333.6510022
+        },
+        "kdtree_cell=0010110111/0010110111.parquet": {
+          "sha256": "d7f33104cf9f4c640e804ae23afbc3c53c3b7176647c9c22b13b60bdb396922f",
+          "size_bytes": 4777632,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010110111/0010110111.parquet",
+          "mtime": 1778264334.239616
+        },
+        "kdtree_cell=0010111000/0010111000.parquet": {
+          "sha256": "01e41d31760aeace390ff29f214dbafcab4d400ac13bd86f32572f2e4a8f9a1e",
+          "size_bytes": 4304564,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010111000/0010111000.parquet",
+          "mtime": 1778264334.4922416
+        },
+        "kdtree_cell=0010111001/0010111001.parquet": {
+          "sha256": "bf8f701e3b94a0a414bcc9cdd69b736a6ec1c6b1e37aaea00c764cabf1448669",
+          "size_bytes": 4332418,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010111001/0010111001.parquet",
+          "mtime": 1778264334.7504396
+        },
+        "kdtree_cell=0010111010/0010111010.parquet": {
+          "sha256": "d4e688e69fa12f7457ed940679a287b475f65b67f40ce73e3cee49c4185b83b6",
+          "size_bytes": 4127514,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010111010/0010111010.parquet",
+          "mtime": 1778264335.1278527
+        },
+        "kdtree_cell=0010111011/0010111011.parquet": {
+          "sha256": "6ce82d2eb3aab192d0e413a0709492e95ae210d628e212e49a596d8d6bd744af",
+          "size_bytes": 4131485,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010111011/0010111011.parquet",
+          "mtime": 1778264335.520855
+        },
+        "kdtree_cell=0010111100/0010111100.parquet": {
+          "sha256": "75b3ddecc3361d28260c095bee32be65556fb42d514dff5f5916d27ec1e1d1e6",
+          "size_bytes": 4516555,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010111100/0010111100.parquet",
+          "mtime": 1778264335.8101583
+        },
+        "kdtree_cell=0010111101/0010111101.parquet": {
+          "sha256": "37ea9251b2c250e5876cf46ebcb2d627eedd9443c6a573ad23e929c429d19ed9",
+          "size_bytes": 4834347,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010111101/0010111101.parquet",
+          "mtime": 1778264336.2731
+        },
+        "kdtree_cell=0010111110/0010111110.parquet": {
+          "sha256": "4f5213b26dc744e55effb93cdb258b558deda00ff2174cd157e5014eb9df0c7d",
+          "size_bytes": 4228534,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010111110/0010111110.parquet",
+          "mtime": 1778264336.6515465
+        },
+        "kdtree_cell=0010111111/0010111111.parquet": {
+          "sha256": "80312cfc161212891f14ab303b1efcd3572a750d298125913d3724c3f0608217",
+          "size_bytes": 4555065,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0010111111/0010111111.parquet",
+          "mtime": 1778264337.0434933
+        },
+        "kdtree_cell=0011000000/0011000000.parquet": {
+          "sha256": "668d0bb58dd2a4ffa70363208e20aa0d4e2a2f78122220e6f354fe7b0b45ba9b",
+          "size_bytes": 4119463,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011000000/0011000000.parquet",
+          "mtime": 1778264337.3415508
+        },
+        "kdtree_cell=0011000001/0011000001.parquet": {
+          "sha256": "9d68aa8d30a980434f9274905a98e4213e82d87add84e178af5c5c0775faa895",
+          "size_bytes": 4271973,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011000001/0011000001.parquet",
+          "mtime": 1778264337.7533057
+        },
+        "kdtree_cell=0011000010/0011000010.parquet": {
+          "sha256": "ae8b3c91e0c31186f96bd94b2a892b26d301107f8483ef0863024d3dc11ff90a",
+          "size_bytes": 4137968,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011000010/0011000010.parquet",
+          "mtime": 1778264338.0064416
+        },
+        "kdtree_cell=0011000011/0011000011.parquet": {
+          "sha256": "66ded2224f3e2a45a4bc78c5f3b141f53d86511dcc0026a1a2fdda148e649437",
+          "size_bytes": 4086910,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011000011/0011000011.parquet",
+          "mtime": 1778264338.2593374
+        },
+        "kdtree_cell=0011000100/0011000100.parquet": {
+          "sha256": "6f741fb0fa7f7484b74ecc66a74202e6d143d69fab733876b25f0e7d82f461d6",
+          "size_bytes": 3455489,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011000100/0011000100.parquet",
+          "mtime": 1778264338.5190566
+        },
+        "kdtree_cell=0011000101/0011000101.parquet": {
+          "sha256": "61378583f60ff5913d0ea9a64af9f1c856141253bed13ce1bef38054583a5e18",
+          "size_bytes": 5150429,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011000101/0011000101.parquet",
+          "mtime": 1778264338.7767417
+        },
+        "kdtree_cell=0011000110/0011000110.parquet": {
+          "sha256": "bf903685841d9ba0253ea3c9ba0a4b8726ce8cfa001b2c1a0018920a0c1cb1cd",
+          "size_bytes": 3805856,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011000110/0011000110.parquet",
+          "mtime": 1778264339.0804992
+        },
+        "kdtree_cell=0011000111/0011000111.parquet": {
+          "sha256": "d6fdd901c23564fcab0077922f087feaf287dec2d78b874943a565d7d2ba8c42",
+          "size_bytes": 5938870,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011000111/0011000111.parquet",
+          "mtime": 1778264339.5509975
+        },
+        "kdtree_cell=0011001000/0011001000.parquet": {
+          "sha256": "654b6d3e097df174e9f4f2afae04b682beabcf51db1813f7e9b5c7f9ea682136",
+          "size_bytes": 4208065,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011001000/0011001000.parquet",
+          "mtime": 1778264339.9379091
+        },
+        "kdtree_cell=0011001001/0011001001.parquet": {
+          "sha256": "2779a76ddb8cb647828a940c90d6bcc5d4d2b8dbcf7f4bb9c021f44588f71754",
+          "size_bytes": 4424553,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011001001/0011001001.parquet",
+          "mtime": 1778264340.270864
+        },
+        "kdtree_cell=0011001010/0011001010.parquet": {
+          "sha256": "5eaec376de29091453b109a1f7bff919644172ee6b2443cef30c292393fbbe80",
+          "size_bytes": 3914078,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011001010/0011001010.parquet",
+          "mtime": 1778264340.5192974
+        },
+        "kdtree_cell=0011001011/0011001011.parquet": {
+          "sha256": "82e42fd165e2d62f66dd84f185155ee4c5c42694c17b27690d112d7c2618dcd0",
+          "size_bytes": 4106865,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011001011/0011001011.parquet",
+          "mtime": 1778264340.8900864
+        },
+        "kdtree_cell=0011001100/0011001100.parquet": {
+          "sha256": "26017d4782881ffa425e65a699d17c982c0218c1b994c78d2184cc6f806ceaea",
+          "size_bytes": 4388795,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011001100/0011001100.parquet",
+          "mtime": 1778264341.2003973
+        },
+        "kdtree_cell=0011001101/0011001101.parquet": {
+          "sha256": "e6425877aa889e2a64d1900f53b2bed0ca4e4cf48f1d78b431b311bf04baac64",
+          "size_bytes": 4442551,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011001101/0011001101.parquet",
+          "mtime": 1778264341.5310824
+        },
+        "kdtree_cell=0011001110/0011001110.parquet": {
+          "sha256": "1b3c713eb365efa530cc7b0399c39b337f4f27c7c9fb62b1a7fed4e260916a3a",
+          "size_bytes": 3495600,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011001110/0011001110.parquet",
+          "mtime": 1778264342.2055871
+        },
+        "kdtree_cell=0011001111/0011001111.parquet": {
+          "sha256": "14f185e47e7bfe0e6555914765b9b64edbb907bd8a23f6ce193dcefb653dab52",
+          "size_bytes": 4569570,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011001111/0011001111.parquet",
+          "mtime": 1778264342.6080391
+        },
+        "kdtree_cell=0011010000/0011010000.parquet": {
+          "sha256": "2b1da7c4d1c498dc4c088946d9a50f42e4dbfed0be8c9200eba596791367fe8d",
+          "size_bytes": 4376539,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011010000/0011010000.parquet",
+          "mtime": 1778264343.0009778
+        },
+        "kdtree_cell=0011010001/0011010001.parquet": {
+          "sha256": "16bc2a5a427aadcf2d6d01af79906f2d2d6ab10e6c1f963582183135077965f8",
+          "size_bytes": 4890345,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011010001/0011010001.parquet",
+          "mtime": 1778264343.313994
+        },
+        "kdtree_cell=0011010010/0011010010.parquet": {
+          "sha256": "576ca103e2b4bd2fdecb8365d73b97e7342ada6b7188b5c632648078303f9175",
+          "size_bytes": 4564448,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011010010/0011010010.parquet",
+          "mtime": 1778264343.7530322
+        },
+        "kdtree_cell=0011010011/0011010011.parquet": {
+          "sha256": "aac70ff337b127e607f2ebc10ef02cf6b350c43416c2cabfdec4722ac7924593",
+          "size_bytes": 5050750,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011010011/0011010011.parquet",
+          "mtime": 1778264344.212014
+        },
+        "kdtree_cell=0011010100/0011010100.parquet": {
+          "sha256": "621d477b211bce22e7e7d25a203f16f87b8ec7c6e0546a623946c1669a0d428e",
+          "size_bytes": 3804670,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011010100/0011010100.parquet",
+          "mtime": 1778264344.5171535
+        },
+        "kdtree_cell=0011010101/0011010101.parquet": {
+          "sha256": "cf39c79b6b42c0eb1a645aac84faae1b5a16f57f67040094698a90d1a16a8f7f",
+          "size_bytes": 4251247,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011010101/0011010101.parquet",
+          "mtime": 1778264344.829461
+        },
+        "kdtree_cell=0011010110/0011010110.parquet": {
+          "sha256": "88a6b5c1a18f610937f891cf13a06c4e6e054691dd7c537a2a2dabfe9fc835f9",
+          "size_bytes": 5028289,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011010110/0011010110.parquet",
+          "mtime": 1778264345.1102154
+        },
+        "kdtree_cell=0011010111/0011010111.parquet": {
+          "sha256": "73fe8672f51a8c6807bc89261cf0a1f7eba7118eb254fa9503b8098522e91003",
+          "size_bytes": 4757702,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011010111/0011010111.parquet",
+          "mtime": 1778264345.4369981
+        },
+        "kdtree_cell=0011011000/0011011000.parquet": {
+          "sha256": "34b4097045deaabb1a71d63d64c683f5c9bca183d322f5cd9337bccfb269515f",
+          "size_bytes": 5868777,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011011000/0011011000.parquet",
+          "mtime": 1778264345.7675076
+        },
+        "kdtree_cell=0011011001/0011011001.parquet": {
+          "sha256": "90eca85a0233aedbed375cff6f573f4fc97e8382debb508075c6afa4695e29be",
+          "size_bytes": 4487229,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011011001/0011011001.parquet",
+          "mtime": 1778264346.1793976
+        },
+        "kdtree_cell=0011011010/0011011010.parquet": {
+          "sha256": "01b45b699481a8966e19998e082d6a4e615601eabd368c29734bb9012694dc8a",
+          "size_bytes": 3765337,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011011010/0011011010.parquet",
+          "mtime": 1778264346.431463
+        },
+        "kdtree_cell=0011011011/0011011011.parquet": {
+          "sha256": "4896cbfb8e684f070bde9a6be681fde8b5b59286f36e3d91924d74f521430f02",
+          "size_bytes": 3875246,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011011011/0011011011.parquet",
+          "mtime": 1778264346.6062539
+        },
+        "kdtree_cell=0011011100/0011011100.parquet": {
+          "sha256": "7997a0ae39e9561915d2fa29fe2792da237adf287def91b8bd119321b3ac7756",
+          "size_bytes": 4535380,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011011100/0011011100.parquet",
+          "mtime": 1778264346.9294944
+        },
+        "kdtree_cell=0011011101/0011011101.parquet": {
+          "sha256": "78eb958c8c750c834c94228e4cf1e9434e47ede8e42877f15e315e46bb4305e1",
+          "size_bytes": 4250464,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011011101/0011011101.parquet",
+          "mtime": 1778264347.177064
+        },
+        "kdtree_cell=0011011110/0011011110.parquet": {
+          "sha256": "3b7dd0f631fee7b492d8c781f8b779a623d8fe6ae0f4981c02081bfd2ecd09ca",
+          "size_bytes": 4092956,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011011110/0011011110.parquet",
+          "mtime": 1778264347.5217338
+        },
+        "kdtree_cell=0011011111/0011011111.parquet": {
+          "sha256": "640b8a3fbd4b4bb17e9b7ec18112969f294707ecbd2bfa6f041ba4f22202366a",
+          "size_bytes": 4225942,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011011111/0011011111.parquet",
+          "mtime": 1778264347.7856495
+        },
+        "kdtree_cell=0011100000/0011100000.parquet": {
+          "sha256": "938994395f64d797196750ff3fecd167363fd54c72045332e6018aa5bd583c5b",
+          "size_bytes": 5913679,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011100000/0011100000.parquet",
+          "mtime": 1778264348.0907693
+        },
+        "kdtree_cell=0011100001/0011100001.parquet": {
+          "sha256": "5cb0b2cbd9d79a8f6aaa5ad94d5e499f4a5ebd62ebf1192fd217fde23919ce54",
+          "size_bytes": 6577401,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011100001/0011100001.parquet",
+          "mtime": 1778264348.464183
+        },
+        "kdtree_cell=0011100010/0011100010.parquet": {
+          "sha256": "6eca86fd2defea9055a3ef9ce90ce9174535c57e5608264a564ca331fffd4b9f",
+          "size_bytes": 5220715,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011100010/0011100010.parquet",
+          "mtime": 1778264348.7474015
+        },
+        "kdtree_cell=0011100011/0011100011.parquet": {
+          "sha256": "9002b589ea6276b9b18da1f8682baec49a6887dde85f23288e6056e75d94f0cc",
+          "size_bytes": 4871420,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011100011/0011100011.parquet",
+          "mtime": 1778264349.1137176
+        },
+        "kdtree_cell=0011100100/0011100100.parquet": {
+          "sha256": "4f0670b1814950941ff22f04e9a9752692e24521dfa255cec9eef76cad27283e",
+          "size_bytes": 4848239,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011100100/0011100100.parquet",
+          "mtime": 1778264349.5357375
+        },
+        "kdtree_cell=0011100101/0011100101.parquet": {
+          "sha256": "bfa6fd8fad88921569da96fcda38fe75f9b1a6e2d0d4000a31cba1933dc71267",
+          "size_bytes": 4542948,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011100101/0011100101.parquet",
+          "mtime": 1778264349.8717873
+        },
+        "kdtree_cell=0011100110/0011100110.parquet": {
+          "sha256": "4ee242e351140d33c09c97787e763f6dac50601b6a47ab20f3dff765a7db149a",
+          "size_bytes": 4743776,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011100110/0011100110.parquet",
+          "mtime": 1778264350.1462147
+        },
+        "kdtree_cell=0011100111/0011100111.parquet": {
+          "sha256": "41807b1b4288465d861ff44b00bbf40aa990d1320eeaa610db83b2c6b24e71bc",
+          "size_bytes": 5083291,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011100111/0011100111.parquet",
+          "mtime": 1778264350.4982686
+        },
+        "kdtree_cell=0011101000/0011101000.parquet": {
+          "sha256": "12f43d4200a26817e758cf0ea90a7c8651a66d3206045a914730f0ccfb499349",
+          "size_bytes": 5258917,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011101000/0011101000.parquet",
+          "mtime": 1778264350.9128098
+        },
+        "kdtree_cell=0011101001/0011101001.parquet": {
+          "sha256": "dd10ce0f42622a6920628988f09f026a00520e3129d9c833feadd94d5f183b6e",
+          "size_bytes": 4766304,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011101001/0011101001.parquet",
+          "mtime": 1778264351.326004
+        },
+        "kdtree_cell=0011101010/0011101010.parquet": {
+          "sha256": "d3ff59311f2dcbc8175c46b7cd1b63113dc16f16bc11b6651ba4a2cc5257c7b1",
+          "size_bytes": 4458774,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011101010/0011101010.parquet",
+          "mtime": 1778264351.7696173
+        },
+        "kdtree_cell=0011101011/0011101011.parquet": {
+          "sha256": "c7dfba0149c30ddfffd957bdcd24f2f810ab618e504ead0bcf829a86e72ef1fa",
+          "size_bytes": 4919624,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011101011/0011101011.parquet",
+          "mtime": 1778264352.2878485
+        },
+        "kdtree_cell=0011101100/0011101100.parquet": {
+          "sha256": "74e36e079c0d05426dd1c3e84ac5dd1c31121bf108c45cee25d44960cfc02475",
+          "size_bytes": 5170758,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011101100/0011101100.parquet",
+          "mtime": 1778264352.9425154
+        },
+        "kdtree_cell=0011101101/0011101101.parquet": {
+          "sha256": "6222f6d135fce429c4afc1e931160780eb5fb6b1974d7e37b35cb0e31f7f605d",
+          "size_bytes": 4249534,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011101101/0011101101.parquet",
+          "mtime": 1778264353.2414129
+        },
+        "kdtree_cell=0011101110/0011101110.parquet": {
+          "sha256": "f6e4219e83642f434eec2647b5e7ed09cf2ba2d053e8306368ea5c44ba6f6221",
+          "size_bytes": 4224375,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011101110/0011101110.parquet",
+          "mtime": 1778264353.9941742
+        },
+        "kdtree_cell=0011101111/0011101111.parquet": {
+          "sha256": "8386a3e1246c53d196d84f2df677f83e16d48984afe75a6751504050a722e6f7",
+          "size_bytes": 3777835,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011101111/0011101111.parquet",
+          "mtime": 1778264354.4212725
+        },
+        "kdtree_cell=0011110000/0011110000.parquet": {
+          "sha256": "f5b0bcbf37e8d1bb05d9945a7d7a72c0b872dc9f7caa2eea58f400450918c7c3",
+          "size_bytes": 4326099,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011110000/0011110000.parquet",
+          "mtime": 1778264354.7114499
+        },
+        "kdtree_cell=0011110001/0011110001.parquet": {
+          "sha256": "5b7220e3d07d910f7ab8de22938ae696372695e3239e3e865d700692089f1c2d",
+          "size_bytes": 4371720,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011110001/0011110001.parquet",
+          "mtime": 1778264355.1747377
+        },
+        "kdtree_cell=0011110010/0011110010.parquet": {
+          "sha256": "51d9048ae1cbf33cdb1e5a11fd46ee7f6e5b36716d24fd2003bc9bf1c6cbd33b",
+          "size_bytes": 3844507,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011110010/0011110010.parquet",
+          "mtime": 1778264355.4973705
+        },
+        "kdtree_cell=0011110011/0011110011.parquet": {
+          "sha256": "a955db0b784a09ad0fd1d12908e894cbd4268fb6e668e94a4f2c5517e7943c1d",
+          "size_bytes": 4457484,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011110011/0011110011.parquet",
+          "mtime": 1778264355.8784192
+        },
+        "kdtree_cell=0011110100/0011110100.parquet": {
+          "sha256": "40694ed258ff6f2453c215c1f1064fcbbf85e8dcd293deebe56069999219e71f",
+          "size_bytes": 4548421,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011110100/0011110100.parquet",
+          "mtime": 1778264356.1271126
+        },
+        "kdtree_cell=0011110101/0011110101.parquet": {
+          "sha256": "c35e4e2116fb02330e96936ea9b808c24512c90ce9b07ceed90a000603208ab0",
+          "size_bytes": 4077566,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011110101/0011110101.parquet",
+          "mtime": 1778264356.490661
+        },
+        "kdtree_cell=0011110110/0011110110.parquet": {
+          "sha256": "ea4d11418df1df443d62c5541b468f61091f3150d3b19addcef6f3ec4c968352",
+          "size_bytes": 5117595,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011110110/0011110110.parquet",
+          "mtime": 1778264356.7373776
+        },
+        "kdtree_cell=0011110111/0011110111.parquet": {
+          "sha256": "83a8885cb3be712381bc2356478763833728a656cf6dd9939f8521160e7fe41a",
+          "size_bytes": 4419520,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011110111/0011110111.parquet",
+          "mtime": 1778264356.96581
+        },
+        "kdtree_cell=0011111000/0011111000.parquet": {
+          "sha256": "6e094a03fede01cba7f8f1afc74c1c93f58500f05100e46306f79728a0de4746",
+          "size_bytes": 4091569,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011111000/0011111000.parquet",
+          "mtime": 1778264357.3194456
+        },
+        "kdtree_cell=0011111001/0011111001.parquet": {
+          "sha256": "917f15bc75813d80bf2518dd9fffdedf74fe9deb4e5761a5ef9309278735fba7",
+          "size_bytes": 5179876,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011111001/0011111001.parquet",
+          "mtime": 1778264357.6269143
+        },
+        "kdtree_cell=0011111010/0011111010.parquet": {
+          "sha256": "a43032a2a6d09b5554be470023f433a5da918aadf1090d033d3a613269aba31b",
+          "size_bytes": 4477178,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011111010/0011111010.parquet",
+          "mtime": 1778264358.056255
+        },
+        "kdtree_cell=0011111011/0011111011.parquet": {
+          "sha256": "f92ee5e0fa5f5a6acb4f3ea498f1616b1963fa596f1e52e0fa567cb60c1d93b6",
+          "size_bytes": 5505999,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011111011/0011111011.parquet",
+          "mtime": 1778264358.633091
+        },
+        "kdtree_cell=0011111100/0011111100.parquet": {
+          "sha256": "b6024054da183f20dfef9cce120fe4502f4a6a26bd769f1750f7d060761cc762",
+          "size_bytes": 5357269,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011111100/0011111100.parquet",
+          "mtime": 1778264361.5699918
+        },
+        "kdtree_cell=0011111101/0011111101.parquet": {
+          "sha256": "045b3a170f2e3683ff7e53f8de73467b805b470c4401c626bce87f2e8d95be78",
+          "size_bytes": 4849805,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011111101/0011111101.parquet",
+          "mtime": 1778264362.6153343
+        },
+        "kdtree_cell=0011111110/0011111110.parquet": {
+          "sha256": "2750501260598a1458140370f4878bebd5f8dafc187a7c7250c7e034ab20b0b6",
+          "size_bytes": 5369096,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011111110/0011111110.parquet",
+          "mtime": 1778264364.239572
+        },
+        "kdtree_cell=0011111111/0011111111.parquet": {
+          "sha256": "99d956e13985984be131fb61c3df8300d5fb05ee3e495036e77e704d40943ace",
+          "size_bytes": 4574961,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0011111111/0011111111.parquet",
+          "mtime": 1778264364.9887102
+        },
+        "kdtree_cell=0100000000/0100000000.parquet": {
+          "sha256": "729e36261d424745ae1d3ac4a1cd464429554e57ce84ddd4744ac58eafaa6fcc",
+          "size_bytes": 4894230,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100000000/0100000000.parquet",
+          "mtime": 1778264365.5887804
+        },
+        "kdtree_cell=0100000001/0100000001.parquet": {
+          "sha256": "8da292032b078aba6382ce6c2ad4b81b5e98eaedb6c0051cc8bb7bc17b44faea",
+          "size_bytes": 5160088,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100000001/0100000001.parquet",
+          "mtime": 1778264366.077838
+        },
+        "kdtree_cell=0100000010/0100000010.parquet": {
+          "sha256": "40b09b3569ef5bac300f2722b80a42bf83c2bd8f2d322295a9f53966ffc7b58d",
+          "size_bytes": 3673867,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100000010/0100000010.parquet",
+          "mtime": 1778264366.3464057
+        },
+        "kdtree_cell=0100000011/0100000011.parquet": {
+          "sha256": "577358d70f269275c7cd42cb83d32a0c98169d409d9872c6ed1ad733636a80eb",
+          "size_bytes": 4148197,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100000011/0100000011.parquet",
+          "mtime": 1778264366.62742
+        },
+        "kdtree_cell=0100000100/0100000100.parquet": {
+          "sha256": "c6ab04241b1430dae57294b8327af672be5bd53e1579d9a7f11d5f30c1b22f3c",
+          "size_bytes": 4136884,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100000100/0100000100.parquet",
+          "mtime": 1778264367.059167
+        },
+        "kdtree_cell=0100000101/0100000101.parquet": {
+          "sha256": "879fc903921597b3ad7a897bc199ef17cdb02a9b106dbc414ba286f55aba43a6",
+          "size_bytes": 4411397,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100000101/0100000101.parquet",
+          "mtime": 1778264368.1909893
+        },
+        "kdtree_cell=0100000110/0100000110.parquet": {
+          "sha256": "7df028a108b9f88f577c761aa55ccacf252e33477d3de740a9045967ee2ca597",
+          "size_bytes": 3670989,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100000110/0100000110.parquet",
+          "mtime": 1778264368.4731493
+        },
+        "kdtree_cell=0100000111/0100000111.parquet": {
+          "sha256": "c79869511e16a78c6e6c54dfb82fe789f91695835eb585417260de82ec649e5b",
+          "size_bytes": 4925511,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100000111/0100000111.parquet",
+          "mtime": 1778264368.842423
+        },
+        "kdtree_cell=0100001000/0100001000.parquet": {
+          "sha256": "536865afc002d95fa60572b2e127c33b8b44f4b3b522f74d1868594978e9b973",
+          "size_bytes": 3225466,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100001000/0100001000.parquet",
+          "mtime": 1778264369.1874018
+        },
+        "kdtree_cell=0100001001/0100001001.parquet": {
+          "sha256": "e9703df0bb4232a708e6c96e2ae4152199866c9ed619e8dcfdfd01d365f9fe12",
+          "size_bytes": 4315709,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100001001/0100001001.parquet",
+          "mtime": 1778264369.7143955
+        },
+        "kdtree_cell=0100001010/0100001010.parquet": {
+          "sha256": "e884dab3a1f555b19774f47ec1c4acd1f87cb3690695ac33420c6ccf7813f7b8",
+          "size_bytes": 4143853,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100001010/0100001010.parquet",
+          "mtime": 1778264370.1343963
+        },
+        "kdtree_cell=0100001011/0100001011.parquet": {
+          "sha256": "d2953eb49a5fa15153d356547f1e89707ef1aa6ec8aa6132e9440b31a813269a",
+          "size_bytes": 4539466,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100001011/0100001011.parquet",
+          "mtime": 1778264370.4421422
+        },
+        "kdtree_cell=0100001100/0100001100.parquet": {
+          "sha256": "12d1bca15c970e036c3771396b402b4cc14a320da7c41c03a701ac3f5ccddedf",
+          "size_bytes": 4479204,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100001100/0100001100.parquet",
+          "mtime": 1778264370.961105
+        },
+        "kdtree_cell=0100001101/0100001101.parquet": {
+          "sha256": "7ed10b39c213f36e1a411defc010272ab571c62b999f53b22d2b6443e7cf55fa",
+          "size_bytes": 3400665,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100001101/0100001101.parquet",
+          "mtime": 1778264371.3410037
+        },
+        "kdtree_cell=0100001110/0100001110.parquet": {
+          "sha256": "ae97efdd81f698d589bb884c82ec113dc303e570a222658fd9c98191db40a487",
+          "size_bytes": 5085399,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100001110/0100001110.parquet",
+          "mtime": 1778264371.7780485
+        },
+        "kdtree_cell=0100001111/0100001111.parquet": {
+          "sha256": "160d9fc66a812463ef3da1d97139b6d80da19a6af9cb715f6913d6ab6e7000b8",
+          "size_bytes": 3905767,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100001111/0100001111.parquet",
+          "mtime": 1778264372.1431484
+        },
+        "kdtree_cell=0100010000/0100010000.parquet": {
+          "sha256": "80c683a96cc83c928d76ccfbb9b7a1787c9477ae48e8eb35cca6702e79ad01e9",
+          "size_bytes": 3615555,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100010000/0100010000.parquet",
+          "mtime": 1778264372.5303822
+        },
+        "kdtree_cell=0100010001/0100010001.parquet": {
+          "sha256": "0e00e047ccf1947b33ae97f61965ec16a707a5ef817cd547acc0e8e097c2dfe1",
+          "size_bytes": 3576080,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100010001/0100010001.parquet",
+          "mtime": 1778264372.8061252
+        },
+        "kdtree_cell=0100010010/0100010010.parquet": {
+          "sha256": "112cf55b10ee7d996637f8325b68bab629931c621dc4495630076b486d7e3a09",
+          "size_bytes": 3921405,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100010010/0100010010.parquet",
+          "mtime": 1778264373.3190832
+        },
+        "kdtree_cell=0100010011/0100010011.parquet": {
+          "sha256": "b4fb4b0c18b3b3441291f15877e17d899e6112a32ad3bfbbf161ceeed3c520ae",
+          "size_bytes": 3504915,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100010011/0100010011.parquet",
+          "mtime": 1778264373.589386
+        },
+        "kdtree_cell=0100010100/0100010100.parquet": {
+          "sha256": "549a0c2c93f4d5646f16cfb6067008c42ad1145ebcefd3990a5b5f6d972a9da2",
+          "size_bytes": 4613919,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100010100/0100010100.parquet",
+          "mtime": 1778264373.9879792
+        },
+        "kdtree_cell=0100010101/0100010101.parquet": {
+          "sha256": "cc9e3120af9e72091d79005cf91aaf93b02345172115745139d4c067f770a2de",
+          "size_bytes": 4050734,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100010101/0100010101.parquet",
+          "mtime": 1778264374.4005873
+        },
+        "kdtree_cell=0100010110/0100010110.parquet": {
+          "sha256": "5ec2cd3fe06bea8f11d8ddfed35a919590cb98f83dfcd1410c06f7e63cc3fa64",
+          "size_bytes": 4573278,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100010110/0100010110.parquet",
+          "mtime": 1778264374.7653835
+        },
+        "kdtree_cell=0100010111/0100010111.parquet": {
+          "sha256": "c77322df72585c8f7019b62f57b46cc7da61736a63274ef4f9f0cf6d8a8b4e69",
+          "size_bytes": 4197553,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100010111/0100010111.parquet",
+          "mtime": 1778264375.1066582
+        },
+        "kdtree_cell=0100011000/0100011000.parquet": {
+          "sha256": "164b63f4c75ce0f235ed8bdda01c1404681dbb72aa74967bc0ca0472013d68e2",
+          "size_bytes": 4036746,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100011000/0100011000.parquet",
+          "mtime": 1778264375.6343713
+        },
+        "kdtree_cell=0100011001/0100011001.parquet": {
+          "sha256": "12d5c18e0f5e0b4a238bdc7d929087619521ac5ee5a050a33357d087a24e9644",
+          "size_bytes": 3813456,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100011001/0100011001.parquet",
+          "mtime": 1778264376.1364956
+        },
+        "kdtree_cell=0100011010/0100011010.parquet": {
+          "sha256": "1582ef611cbbb005f34bc9d71e7d1c0e6d51e963fefa6a228b0bc8be84efceb1",
+          "size_bytes": 3852148,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100011010/0100011010.parquet",
+          "mtime": 1778264376.529954
+        },
+        "kdtree_cell=0100011011/0100011011.parquet": {
+          "sha256": "12c7726a217d3d8b1216df64a5e061295bf083a572101ebdf24ec2a2211f94ae",
+          "size_bytes": 4411648,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100011011/0100011011.parquet",
+          "mtime": 1778264377.036412
+        },
+        "kdtree_cell=0100011100/0100011100.parquet": {
+          "sha256": "7f37a80d4ec79d3a2098b25b018886aac1329e59012d4563706583c61fec92eb",
+          "size_bytes": 4351310,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100011100/0100011100.parquet",
+          "mtime": 1778264377.3903012
+        },
+        "kdtree_cell=0100011101/0100011101.parquet": {
+          "sha256": "98dc2244d41c7f7a863965a3c9d2f0cd5322e7c1a858e765f90deac2aaf57171",
+          "size_bytes": 4535368,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100011101/0100011101.parquet",
+          "mtime": 1778264377.6573093
+        },
+        "kdtree_cell=0100011110/0100011110.parquet": {
+          "sha256": "a44e279a4a15fbaec709aeb3221bdb8ae5ade4ade57e467f3c9343e858191862",
+          "size_bytes": 4085983,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100011110/0100011110.parquet",
+          "mtime": 1778264377.9723022
+        },
+        "kdtree_cell=0100011111/0100011111.parquet": {
+          "sha256": "3c934b38a0b7d97c0467c97c88edc133a638ec631f51916adaeed3d7824f44e0",
+          "size_bytes": 3923409,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100011111/0100011111.parquet",
+          "mtime": 1778264378.3199146
+        },
+        "kdtree_cell=0100100000/0100100000.parquet": {
+          "sha256": "823978bfc11aaa113fd444d727da2d337115464fd83564971441e2c6cfbcd2b5",
+          "size_bytes": 4225179,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100100000/0100100000.parquet",
+          "mtime": 1778264378.733232
+        },
+        "kdtree_cell=0100100001/0100100001.parquet": {
+          "sha256": "8976d79c6e92913d13814d48fb01c24a897fcf3800b916ced739fbef102de8eb",
+          "size_bytes": 4086562,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100100001/0100100001.parquet",
+          "mtime": 1778264379.1133633
+        },
+        "kdtree_cell=0100100010/0100100010.parquet": {
+          "sha256": "c156895b941edd33b20070fdc1ce7915a72b86c7d07c9792c173de62196c4752",
+          "size_bytes": 4023072,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100100010/0100100010.parquet",
+          "mtime": 1778264379.5024421
+        },
+        "kdtree_cell=0100100011/0100100011.parquet": {
+          "sha256": "db5abcc7a4643ac47f18721859127773c3aecfb019b7750a47e1f94739541623",
+          "size_bytes": 4330304,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100100011/0100100011.parquet",
+          "mtime": 1778264379.8688874
+        },
+        "kdtree_cell=0100100100/0100100100.parquet": {
+          "sha256": "764197aa54c94c6bcf3808f3db6acd91269cba48e0a25414c073c11a1a89267b",
+          "size_bytes": 5311473,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100100100/0100100100.parquet",
+          "mtime": 1778264380.2536204
+        },
+        "kdtree_cell=0100100101/0100100101.parquet": {
+          "sha256": "bc179e3e8ada8ac0ab2a18437db63521f9e41df5400756b12fa28e09a85af2a1",
+          "size_bytes": 3688188,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100100101/0100100101.parquet",
+          "mtime": 1778264380.611563
+        },
+        "kdtree_cell=0100100110/0100100110.parquet": {
+          "sha256": "664a02acb13f285c5263e5cf0fddc0f6bb55f53c4ec4f9164d133d3971bbf9e6",
+          "size_bytes": 4349081,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100100110/0100100110.parquet",
+          "mtime": 1778264380.9733543
+        },
+        "kdtree_cell=0100100111/0100100111.parquet": {
+          "sha256": "5bf771f5d43370b16024acc0282f1ce492bb16777b200feac19046606ac32563",
+          "size_bytes": 4759999,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100100111/0100100111.parquet",
+          "mtime": 1778264381.4353583
+        },
+        "kdtree_cell=0100101000/0100101000.parquet": {
+          "sha256": "40fb5a126d6faeb0845146b221482812560b4d678b197fa8c0df2853c00caf69",
+          "size_bytes": 3953807,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100101000/0100101000.parquet",
+          "mtime": 1778264381.7478926
+        },
+        "kdtree_cell=0100101001/0100101001.parquet": {
+          "sha256": "705cf86c0c3aa04f10ecfdba059552d1f7d48e2aaa80fc3861775601e86a2c11",
+          "size_bytes": 3993341,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100101001/0100101001.parquet",
+          "mtime": 1778264382.0772479
+        },
+        "kdtree_cell=0100101010/0100101010.parquet": {
+          "sha256": "f08ed1752b14e9107092ccc6d999c9173d02db798541dc996a350a42957b57b2",
+          "size_bytes": 4949853,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100101010/0100101010.parquet",
+          "mtime": 1778264382.6321745
+        },
+        "kdtree_cell=0100101011/0100101011.parquet": {
+          "sha256": "4361e4965cac274d0b799db7d32a5ca9ee8a3ce2052045345ed525fccbacaf7e",
+          "size_bytes": 4055144,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100101011/0100101011.parquet",
+          "mtime": 1778264382.9825728
+        },
+        "kdtree_cell=0100101100/0100101100.parquet": {
+          "sha256": "4da8dd0e51a7b79e6ff96d076fe1bc5999623e6c7a978a56e84f92b2463d5fbb",
+          "size_bytes": 4206559,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100101100/0100101100.parquet",
+          "mtime": 1778264383.3234906
+        },
+        "kdtree_cell=0100101101/0100101101.parquet": {
+          "sha256": "c473e408dbd80a76fa9098a9388c2feda18192ffb7f6e36a0e0e799bb48dbd28",
+          "size_bytes": 4121631,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100101101/0100101101.parquet",
+          "mtime": 1778264383.791979
+        },
+        "kdtree_cell=0100101110/0100101110.parquet": {
+          "sha256": "e29b9831bf871d7a804328078eb830bd15088fae80e6b34fa00d486b9fdbb542",
+          "size_bytes": 4313589,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100101110/0100101110.parquet",
+          "mtime": 1778264384.1326928
+        },
+        "kdtree_cell=0100101111/0100101111.parquet": {
+          "sha256": "dce6e7f9440e1df0448769472a33c9c54aefba8d567c26a90a47daf17d25eaae",
+          "size_bytes": 3801505,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100101111/0100101111.parquet",
+          "mtime": 1778264384.5536048
+        },
+        "kdtree_cell=0100110000/0100110000.parquet": {
+          "sha256": "b1a66a91d60c17d2742c420a10c3abfcb7ea04eb0205ead8a0d2917d062847f3",
+          "size_bytes": 5328433,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100110000/0100110000.parquet",
+          "mtime": 1778264384.8045158
+        },
+        "kdtree_cell=0100110001/0100110001.parquet": {
+          "sha256": "bf28df7435644eece5e59eebf11e12ec13a14ea49c6926beb527893e5a8c2629",
+          "size_bytes": 4920030,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100110001/0100110001.parquet",
+          "mtime": 1778264385.1473994
+        },
+        "kdtree_cell=0100110010/0100110010.parquet": {
+          "sha256": "365e784c4f56cd9d06fa8e68eb0c439f4befc1519c8bfde1b212631b8b697621",
+          "size_bytes": 4590453,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100110010/0100110010.parquet",
+          "mtime": 1778264385.4265666
+        },
+        "kdtree_cell=0100110011/0100110011.parquet": {
+          "sha256": "2080d86824ab855d6a7133c4a31233b2116c669ef31fe9779e1ef2e2ed11c043",
+          "size_bytes": 4106687,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100110011/0100110011.parquet",
+          "mtime": 1778264385.9338531
+        },
+        "kdtree_cell=0100110100/0100110100.parquet": {
+          "sha256": "007e9d809b0e43f3ef564caec9a275d9476ac2fe5d6ee75d0e19427f21d93153",
+          "size_bytes": 4187349,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100110100/0100110100.parquet",
+          "mtime": 1778264386.2564502
+        },
+        "kdtree_cell=0100110101/0100110101.parquet": {
+          "sha256": "2e8e0596bfb6dd888742f5d506ea50bbeadf1039ee798b4205806148879381b4",
+          "size_bytes": 4269528,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100110101/0100110101.parquet",
+          "mtime": 1778264386.5933776
+        },
+        "kdtree_cell=0100110110/0100110110.parquet": {
+          "sha256": "5edcd6d1b171c23f940833098868d7a082ace032bb5ca56ac102192f1550bba9",
+          "size_bytes": 5064869,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100110110/0100110110.parquet",
+          "mtime": 1778264386.8882139
+        },
+        "kdtree_cell=0100110111/0100110111.parquet": {
+          "sha256": "1d913462b0b96e243d4091b380592dad161b3bb04e119a9b63d106efa427df9b",
+          "size_bytes": 4464095,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100110111/0100110111.parquet",
+          "mtime": 1778264387.1481657
+        },
+        "kdtree_cell=0100111000/0100111000.parquet": {
+          "sha256": "e706c7b03bdb91e4f03a6d866ec3727b0170c5e208210a6f34773efe1b327b61",
+          "size_bytes": 3812991,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100111000/0100111000.parquet",
+          "mtime": 1778264387.439945
+        },
+        "kdtree_cell=0100111001/0100111001.parquet": {
+          "sha256": "78d1c3378d648cfce5b86956fc0f281b3fb16de828ccc2fd87a029cd30af5d14",
+          "size_bytes": 4064385,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100111001/0100111001.parquet",
+          "mtime": 1778264387.6976278
+        },
+        "kdtree_cell=0100111010/0100111010.parquet": {
+          "sha256": "8355a28ba2d320e8787903ca3052c236ac84fc355759a09e8ffdd2aca251af49",
+          "size_bytes": 4240198,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100111010/0100111010.parquet",
+          "mtime": 1778264388.4437983
+        },
+        "kdtree_cell=0100111011/0100111011.parquet": {
+          "sha256": "648523c47d38a88b0f5bb7da93d2002c2c60785750fc1df8495f48a070505657",
+          "size_bytes": 4309338,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100111011/0100111011.parquet",
+          "mtime": 1778264388.8046317
+        },
+        "kdtree_cell=0100111100/0100111100.parquet": {
+          "sha256": "726ee7fcc94f572334feaacd102891e7a581944fe5c7ecb573455e9e1cf132d3",
+          "size_bytes": 4220918,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100111100/0100111100.parquet",
+          "mtime": 1778264389.2254124
+        },
+        "kdtree_cell=0100111101/0100111101.parquet": {
+          "sha256": "e0c3231a5a33d54e07a66ff360529b2c585df7c9618f81e861bbebec9071afdd",
+          "size_bytes": 4483752,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100111101/0100111101.parquet",
+          "mtime": 1778264389.585909
+        },
+        "kdtree_cell=0100111110/0100111110.parquet": {
+          "sha256": "a086640961a0f24d8c7b1f4fd2e14e057243ec06b47855bbb1158c6f1fdb0b16",
+          "size_bytes": 3810502,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100111110/0100111110.parquet",
+          "mtime": 1778264389.8709192
+        },
+        "kdtree_cell=0100111111/0100111111.parquet": {
+          "sha256": "a5cc3f8b92ebddeb24ddae227fed3f050a3a57681b0e8e23bf03fa30003fa9bb",
+          "size_bytes": 4233690,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0100111111/0100111111.parquet",
+          "mtime": 1778264390.2185116
+        },
+        "kdtree_cell=0101000000/0101000000.parquet": {
+          "sha256": "0ff2b6840ad17870ca6a2dbf09ebca3989f1b3b0f81e5fd3e490fa6af6c7bfab",
+          "size_bytes": 4281542,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101000000/0101000000.parquet",
+          "mtime": 1778264390.726967
+        },
+        "kdtree_cell=0101000001/0101000001.parquet": {
+          "sha256": "1ce52a3b7dfc4399ea6d06a1ed138043d617b7911c26a8ba238d593dbae4da88",
+          "size_bytes": 4646370,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101000001/0101000001.parquet",
+          "mtime": 1778264391.0484204
+        },
+        "kdtree_cell=0101000010/0101000010.parquet": {
+          "sha256": "0c46a8f727e979055f33b026fd838e6fa69539cc35e3c53a1ee03ca6f5ba1b69",
+          "size_bytes": 3809265,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101000010/0101000010.parquet",
+          "mtime": 1778264391.2922575
+        },
+        "kdtree_cell=0101000011/0101000011.parquet": {
+          "sha256": "b9ac006332b201dd00b564b857c18950d55eb8d27577a4e0c7727f1b51368772",
+          "size_bytes": 4042951,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101000011/0101000011.parquet",
+          "mtime": 1778264391.568113
+        },
+        "kdtree_cell=0101000100/0101000100.parquet": {
+          "sha256": "b40bc476a4184ee6347b2d70e1f6d4d5c4fc34becccd626faa32dbd64adabb35",
+          "size_bytes": 4816049,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101000100/0101000100.parquet",
+          "mtime": 1778264392.4080439
+        },
+        "kdtree_cell=0101000101/0101000101.parquet": {
+          "sha256": "fcf3414cadea38ead034058756eaddec9e0493eed5ddc208502c9ec466d77096",
+          "size_bytes": 4361593,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101000101/0101000101.parquet",
+          "mtime": 1778264392.680756
+        },
+        "kdtree_cell=0101000110/0101000110.parquet": {
+          "sha256": "e3a56c846fc8e05566538ecb8f8249fb542f9ab888b7667281c730372102919b",
+          "size_bytes": 4035641,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101000110/0101000110.parquet",
+          "mtime": 1778264393.0891907
+        },
+        "kdtree_cell=0101000111/0101000111.parquet": {
+          "sha256": "fd39929270dde6c56af016ad3ae0a323cf8654c8a0d12b62ae9d0973d236f8ef",
+          "size_bytes": 3504334,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101000111/0101000111.parquet",
+          "mtime": 1778264393.6885474
+        },
+        "kdtree_cell=0101001000/0101001000.parquet": {
+          "sha256": "2d89735452413a1c1572fd921234b818c9fbf3716d3e765b6b077a632479b632",
+          "size_bytes": 4844007,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101001000/0101001000.parquet",
+          "mtime": 1778264394.1553764
+        },
+        "kdtree_cell=0101001001/0101001001.parquet": {
+          "sha256": "48982e4a8beb943ace742e5358217d96c3fc0050691480a435aab5021007bc9b",
+          "size_bytes": 4747000,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101001001/0101001001.parquet",
+          "mtime": 1778264394.759074
+        },
+        "kdtree_cell=0101001010/0101001010.parquet": {
+          "sha256": "ca3fc619cb79e41bfceb07b86d514b35b7ff78276a37b9ab99281baca8c66239",
+          "size_bytes": 3882526,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101001010/0101001010.parquet",
+          "mtime": 1778264395.3925858
+        },
+        "kdtree_cell=0101001011/0101001011.parquet": {
+          "sha256": "e640053e54bf156c50f107c6e706d54f2ef08c3148b365c81f8a06a6790267b3",
+          "size_bytes": 4998482,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101001011/0101001011.parquet",
+          "mtime": 1778264395.910344
+        },
+        "kdtree_cell=0101001100/0101001100.parquet": {
+          "sha256": "ca5b869392ccfd9e720499f0cb4d7055541addac739ee35a73bce1f2d0ce5a91",
+          "size_bytes": 4765486,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101001100/0101001100.parquet",
+          "mtime": 1778264396.703294
+        },
+        "kdtree_cell=0101001101/0101001101.parquet": {
+          "sha256": "17f45dea644b54958a36ef14f6bb92bd3720b5a9130048d988c1b4772b45e4d5",
+          "size_bytes": 4721015,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101001101/0101001101.parquet",
+          "mtime": 1778264397.4461489
+        },
+        "kdtree_cell=0101001110/0101001110.parquet": {
+          "sha256": "abeb64981c545fc119ec093f52aff308ac82c956ea22678ed8af628f1dbe33db",
+          "size_bytes": 4771619,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101001110/0101001110.parquet",
+          "mtime": 1778264397.7925556
+        },
+        "kdtree_cell=0101001111/0101001111.parquet": {
+          "sha256": "4e2e9af5de967ef09d7f45ccf69b3eb34659f3d91e9db8acef053009687cdd0a",
+          "size_bytes": 4574797,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101001111/0101001111.parquet",
+          "mtime": 1778264398.268292
+        },
+        "kdtree_cell=0101010000/0101010000.parquet": {
+          "sha256": "097e2c18603ba05c053f7fe75c23a7622d436d1621abe9ed9594a92355edae9b",
+          "size_bytes": 4957723,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101010000/0101010000.parquet",
+          "mtime": 1778264398.581007
+        },
+        "kdtree_cell=0101010001/0101010001.parquet": {
+          "sha256": "fb191933cc9c7e9db764825a2441a303fba641ab08dfa576518cd9ae2208ed49",
+          "size_bytes": 4317298,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101010001/0101010001.parquet",
+          "mtime": 1778264398.9349346
+        },
+        "kdtree_cell=0101010010/0101010010.parquet": {
+          "sha256": "b77d33192ff75fd98658db326f2eb1e11d582085a21a0d3712910268f1e362b6",
+          "size_bytes": 4525416,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101010010/0101010010.parquet",
+          "mtime": 1778264399.510075
+        },
+        "kdtree_cell=0101010011/0101010011.parquet": {
+          "sha256": "577be59b0db73ec695a442c305b8d8d2cee1d1fc64b6f536e1285876049cd8f9",
+          "size_bytes": 4027559,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101010011/0101010011.parquet",
+          "mtime": 1778264400.1367993
+        },
+        "kdtree_cell=0101010100/0101010100.parquet": {
+          "sha256": "4e1f0eae9ce0b7da5420ecae14f3fc7b1ee53799336bfab7884511a1c1cd0325",
+          "size_bytes": 5122116,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101010100/0101010100.parquet",
+          "mtime": 1778264400.6139894
+        },
+        "kdtree_cell=0101010101/0101010101.parquet": {
+          "sha256": "7722bc4b3cf04e45caff0968fc1e4524411bff557daa9e319ef77201e0cc7d31",
+          "size_bytes": 4313626,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101010101/0101010101.parquet",
+          "mtime": 1778264400.969879
+        },
+        "kdtree_cell=0101010110/0101010110.parquet": {
+          "sha256": "ec3590ecab6c9f7d4d1f5d8548e8148f916c758f4d26e4571cf460bc44eefaf9",
+          "size_bytes": 4361960,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101010110/0101010110.parquet",
+          "mtime": 1778264401.3389955
+        },
+        "kdtree_cell=0101010111/0101010111.parquet": {
+          "sha256": "3ba020604bae2b3097caa7289d2382e6e78aa7750ff92990efb1720b25a43337",
+          "size_bytes": 4026938,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101010111/0101010111.parquet",
+          "mtime": 1778264401.673818
+        },
+        "kdtree_cell=0101011000/0101011000.parquet": {
+          "sha256": "8527ef01a0ae50fecd3d8a505dc2fbeb3662436b56217f489fd1275c7aed696c",
+          "size_bytes": 4738351,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101011000/0101011000.parquet",
+          "mtime": 1778264402.0831718
+        },
+        "kdtree_cell=0101011001/0101011001.parquet": {
+          "sha256": "6363e5be2f7c526790e54948da5098462cd47fbed6ede2bad14aced6b509546e",
+          "size_bytes": 4547790,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101011001/0101011001.parquet",
+          "mtime": 1778264403.5388725
+        },
+        "kdtree_cell=0101011010/0101011010.parquet": {
+          "sha256": "0b432181e6499daeb69f50c8df3b999e3daad65ef7377627aeecd8acce0be380",
+          "size_bytes": 4165801,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101011010/0101011010.parquet",
+          "mtime": 1778264404.1257663
+        },
+        "kdtree_cell=0101011011/0101011011.parquet": {
+          "sha256": "4944e657405681b462259abcfcb06c56a47aae6e384abcf88825f620a0e1e8bb",
+          "size_bytes": 4055495,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101011011/0101011011.parquet",
+          "mtime": 1778264404.4990563
+        },
+        "kdtree_cell=0101011100/0101011100.parquet": {
+          "sha256": "b227a56a270b46f3c4347597dfd1e6019e26e6a8b779a28ed8c332824ae59ec1",
+          "size_bytes": 3974725,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101011100/0101011100.parquet",
+          "mtime": 1778264404.8239224
+        },
+        "kdtree_cell=0101011101/0101011101.parquet": {
+          "sha256": "c601e66079458cce8d16ebe2fa3ae43c91fdda61017d1ef5eb34187e90c6f12a",
+          "size_bytes": 4176618,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101011101/0101011101.parquet",
+          "mtime": 1778264406.2011454
+        },
+        "kdtree_cell=0101011110/0101011110.parquet": {
+          "sha256": "888ff0ac678c10a927eb00e186d4e1f590dafd00712a3da9a1204fc5f86417d4",
+          "size_bytes": 4157294,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101011110/0101011110.parquet",
+          "mtime": 1778264406.659878
+        },
+        "kdtree_cell=0101011111/0101011111.parquet": {
+          "sha256": "a7e4d4466decd8cd425718c62b9eb79c80168db96c61e9f924568061c9ad9150",
+          "size_bytes": 4340978,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101011111/0101011111.parquet",
+          "mtime": 1778264407.2674634
+        },
+        "kdtree_cell=0101100000/0101100000.parquet": {
+          "sha256": "12256a88c31e1fbf716f3347b43695fcd6a0f9d305f777fcebb2fa05f727b964",
+          "size_bytes": 4574872,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101100000/0101100000.parquet",
+          "mtime": 1778264407.901004
+        },
+        "kdtree_cell=0101100001/0101100001.parquet": {
+          "sha256": "a08cd791f2c8592aea1ff362c02d7d5672ad94ba5e846894d0abf293c8c78818",
+          "size_bytes": 4290930,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101100001/0101100001.parquet",
+          "mtime": 1778264410.8842466
+        },
+        "kdtree_cell=0101100010/0101100010.parquet": {
+          "sha256": "814363ac1bc9170b8cae363c3b7179b5dd9f970930866ae4c4fcdf8f2b642a38",
+          "size_bytes": 4307485,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101100010/0101100010.parquet",
+          "mtime": 1778264411.318423
+        },
+        "kdtree_cell=0101100011/0101100011.parquet": {
+          "sha256": "17d1b18e9f7989f6b8cea361ab459faccccb50bfe42d848a7873380c0885eb9f",
+          "size_bytes": 3721524,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101100011/0101100011.parquet",
+          "mtime": 1778264411.631761
+        },
+        "kdtree_cell=0101100100/0101100100.parquet": {
+          "sha256": "a2061b78c1728e69aa05240c2d42f6ff638eb4cb92e0d14890cb87324dff8df7",
+          "size_bytes": 4719453,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101100100/0101100100.parquet",
+          "mtime": 1778264412.2997336
+        },
+        "kdtree_cell=0101100101/0101100101.parquet": {
+          "sha256": "7baba2ad2ab9eb42e9be5081975c703766b280729e1694d15890f3cafd8b0e2e",
+          "size_bytes": 4197008,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101100101/0101100101.parquet",
+          "mtime": 1778264412.7723734
+        },
+        "kdtree_cell=0101100110/0101100110.parquet": {
+          "sha256": "e28cebd3e70c48c1a50e1cdf01575f53b8894a66c83df37d131bddd98f29c28f",
+          "size_bytes": 4101387,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101100110/0101100110.parquet",
+          "mtime": 1778264413.1184158
+        },
+        "kdtree_cell=0101100111/0101100111.parquet": {
+          "sha256": "d58c5f0a91646f935ffec9adb4047b4855a5e92aade4751e5692435ffaf6e7f8",
+          "size_bytes": 4198503,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101100111/0101100111.parquet",
+          "mtime": 1778264413.5333085
+        },
+        "kdtree_cell=0101101000/0101101000.parquet": {
+          "sha256": "1093f929a8732d87c5c685b66b2f0b8f759d2ebf69ddc0dd219c6dccaa93cb0e",
+          "size_bytes": 4343201,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101101000/0101101000.parquet",
+          "mtime": 1778264413.8804665
+        },
+        "kdtree_cell=0101101001/0101101001.parquet": {
+          "sha256": "81820f05d4aefcdb5ee96614e77eead637d846d788f104cdb260c8be54c27376",
+          "size_bytes": 4173787,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101101001/0101101001.parquet",
+          "mtime": 1778264414.1323755
+        },
+        "kdtree_cell=0101101010/0101101010.parquet": {
+          "sha256": "0b63d1685970ae0dcf08396c3e057037b03fd2a8dc554289627775781fb7cbec",
+          "size_bytes": 4090029,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101101010/0101101010.parquet",
+          "mtime": 1778264414.6211278
+        },
+        "kdtree_cell=0101101011/0101101011.parquet": {
+          "sha256": "7ffbb2d028b62c40b13ff988d6035420e6d9364829913887e0603b943ffef884",
+          "size_bytes": 4278377,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101101011/0101101011.parquet",
+          "mtime": 1778264414.9667647
+        },
+        "kdtree_cell=0101101100/0101101100.parquet": {
+          "sha256": "ea0d3f2e3d8a26fc23cf2ca74649649e060cf8b165ce8eab9742845d8b5d57a7",
+          "size_bytes": 4336380,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101101100/0101101100.parquet",
+          "mtime": 1778264415.4644246
+        },
+        "kdtree_cell=0101101101/0101101101.parquet": {
+          "sha256": "a8f5338931ebcf3c312abc0730e516389b95a520c5625d5dab1c9e8b6c7cf00a",
+          "size_bytes": 4208704,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101101101/0101101101.parquet",
+          "mtime": 1778264415.8131745
+        },
+        "kdtree_cell=0101101110/0101101110.parquet": {
+          "sha256": "1ba2bf96fed9abd28cddf6ad60a7d63d43587ccb3db72d8bd6cf46bf5a580d5a",
+          "size_bytes": 4058950,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101101110/0101101110.parquet",
+          "mtime": 1778264416.259818
+        },
+        "kdtree_cell=0101101111/0101101111.parquet": {
+          "sha256": "45ca07e37c30d23f061cc68a3caff53589113949ce946c6dda111be437ee0893",
+          "size_bytes": 3726423,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101101111/0101101111.parquet",
+          "mtime": 1778264416.7068236
+        },
+        "kdtree_cell=0101110000/0101110000.parquet": {
+          "sha256": "297deb488b2dbfc343a3a72d1a9d7b0e1f85528e3a3cc6223bd7fc90d684f89f",
+          "size_bytes": 4411766,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101110000/0101110000.parquet",
+          "mtime": 1778264417.1354709
+        },
+        "kdtree_cell=0101110001/0101110001.parquet": {
+          "sha256": "9c4a21b7bed9b5d20c41c6b442cd6f905478e586fc4ab69647dcdff3882de589",
+          "size_bytes": 4274543,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101110001/0101110001.parquet",
+          "mtime": 1778264417.5960896
+        },
+        "kdtree_cell=0101110010/0101110010.parquet": {
+          "sha256": "be96036898ea99f113afe6a2c1722b5f15556c15099a26e786a971b519200ea5",
+          "size_bytes": 4135845,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101110010/0101110010.parquet",
+          "mtime": 1778264417.9294028
+        },
+        "kdtree_cell=0101110011/0101110011.parquet": {
+          "sha256": "078cf232080f5fb27f3fafc36ea967a6e1eb8f0b58feab499e726599cfbef7a8",
+          "size_bytes": 5302474,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101110011/0101110011.parquet",
+          "mtime": 1778264418.407961
+        },
+        "kdtree_cell=0101110100/0101110100.parquet": {
+          "sha256": "2ba473252456282ed95a4bdb39dd8ac4c4a93b073358c226d8668bcad4800753",
+          "size_bytes": 5672358,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101110100/0101110100.parquet",
+          "mtime": 1778264418.9050834
+        },
+        "kdtree_cell=0101110101/0101110101.parquet": {
+          "sha256": "6885163e4a104de2fc4d747abfc6792064c2360ef066a9a1839f0ce6fb29229d",
+          "size_bytes": 4578655,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101110101/0101110101.parquet",
+          "mtime": 1778264419.2078505
+        },
+        "kdtree_cell=0101110110/0101110110.parquet": {
+          "sha256": "6380c93f74b260cc6c75abb18ad273f604ca6853a0e4fa872a92c4abe857346d",
+          "size_bytes": 4572424,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101110110/0101110110.parquet",
+          "mtime": 1778264419.666718
+        },
+        "kdtree_cell=0101110111/0101110111.parquet": {
+          "sha256": "54d8d911cb69405db72ef44375632d3a853a3208ccaf694cc9721e5de5c605c6",
+          "size_bytes": 5139934,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101110111/0101110111.parquet",
+          "mtime": 1778264419.981475
+        },
+        "kdtree_cell=0101111000/0101111000.parquet": {
+          "sha256": "c1d96308d8d8734f1569890ff50e6878e00c16aa0e81366e0bc8a3b96eeb739f",
+          "size_bytes": 4218568,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101111000/0101111000.parquet",
+          "mtime": 1778264420.3203368
+        },
+        "kdtree_cell=0101111001/0101111001.parquet": {
+          "sha256": "420b716fc7ff611780f0ae75bf6c52af928f2b27edfe9d4aacc6f8fc84e00e82",
+          "size_bytes": 4278350,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101111001/0101111001.parquet",
+          "mtime": 1778264420.6877155
+        },
+        "kdtree_cell=0101111010/0101111010.parquet": {
+          "sha256": "bcebe5ca60ce8be7c0a8522555da3e6a7f9b6f36f8112ad28d617f516806265c",
+          "size_bytes": 3767646,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101111010/0101111010.parquet",
+          "mtime": 1778264421.0592158
+        },
+        "kdtree_cell=0101111011/0101111011.parquet": {
+          "sha256": "adf39c8f299e5e4a9cfb6e582318a0a5db05c46a7bf573ce723dd79f8a9a2891",
+          "size_bytes": 4386447,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101111011/0101111011.parquet",
+          "mtime": 1778264421.5204103
+        },
+        "kdtree_cell=0101111100/0101111100.parquet": {
+          "sha256": "b6d79df2ec6285a49690be152be445a7885711381f25a58d4bdf6e19f68c2e0f",
+          "size_bytes": 4551195,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101111100/0101111100.parquet",
+          "mtime": 1778264421.8811352
+        },
+        "kdtree_cell=0101111101/0101111101.parquet": {
+          "sha256": "8451a4605fb537126de864e194e5253f0ee2d52f8fab2e4bb1ba0f7db0d98bbb",
+          "size_bytes": 4350884,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101111101/0101111101.parquet",
+          "mtime": 1778264422.2403696
+        },
+        "kdtree_cell=0101111110/0101111110.parquet": {
+          "sha256": "733de814fed5e5956c216480c5512cd8deb107e8e760d56a3556af7ce1ef4ba5",
+          "size_bytes": 4668331,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101111110/0101111110.parquet",
+          "mtime": 1778264422.7555468
+        },
+        "kdtree_cell=0101111111/0101111111.parquet": {
+          "sha256": "d839d580fc98900ed30b40e5eb8481b3807c50a32e09b3ae89818a37fb733459",
+          "size_bytes": 4030917,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0101111111/0101111111.parquet",
+          "mtime": 1778264423.26963
+        },
+        "kdtree_cell=0110000000/0110000000.parquet": {
+          "sha256": "54bb97634a0796f12ef7efddf9dc9a677c35cdb6489d08d521387da54bca5c53",
+          "size_bytes": 3905296,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110000000/0110000000.parquet",
+          "mtime": 1778264423.7291677
+        },
+        "kdtree_cell=0110000001/0110000001.parquet": {
+          "sha256": "8fcd7db714b89a337803a10effb04b506e8e163b447e1f9fbf3952232d32eef7",
+          "size_bytes": 3727278,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110000001/0110000001.parquet",
+          "mtime": 1778264424.0232093
+        },
+        "kdtree_cell=0110000010/0110000010.parquet": {
+          "sha256": "d847c07122255c447c1cb5ee5f62d56da9f1571e4ba982210e9f4e6b2695ad99",
+          "size_bytes": 4013531,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110000010/0110000010.parquet",
+          "mtime": 1778264424.3739924
+        },
+        "kdtree_cell=0110000011/0110000011.parquet": {
+          "sha256": "08d90ba4598b8f5f0b75930ddf2b95e53d91bf95d633714fb547cb2a439614e7",
+          "size_bytes": 4015770,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110000011/0110000011.parquet",
+          "mtime": 1778264424.7260695
+        },
+        "kdtree_cell=0110000100/0110000100.parquet": {
+          "sha256": "50cc3efd9138de7f597a6eba753e90309d27398b2184492734c7df5b64ebbdd4",
+          "size_bytes": 4057837,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110000100/0110000100.parquet",
+          "mtime": 1778264425.02362
+        },
+        "kdtree_cell=0110000101/0110000101.parquet": {
+          "sha256": "3c9f83e693eefd08e846e9cb57f01a0d0227214c379195d29fda622b96f01345",
+          "size_bytes": 4040129,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110000101/0110000101.parquet",
+          "mtime": 1778264425.3660953
+        },
+        "kdtree_cell=0110000110/0110000110.parquet": {
+          "sha256": "bae4d70ab2a7f10591df632c4ec264a01efb5d8d8379a36c22c9f4a3357a357b",
+          "size_bytes": 4929192,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110000110/0110000110.parquet",
+          "mtime": 1778264425.6894765
+        },
+        "kdtree_cell=0110000111/0110000111.parquet": {
+          "sha256": "3100c875cbb53df75182872fe20c47c9f566bd2e2e83a6506fece0ebd2db5124",
+          "size_bytes": 4025869,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110000111/0110000111.parquet",
+          "mtime": 1778264426.2333453
+        },
+        "kdtree_cell=0110001000/0110001000.parquet": {
+          "sha256": "8bca2368db3a71665973a8be7b91c37f3a9b7c9af6cc9147ba0a43cc982988f8",
+          "size_bytes": 4447699,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110001000/0110001000.parquet",
+          "mtime": 1778264426.6116197
+        },
+        "kdtree_cell=0110001001/0110001001.parquet": {
+          "sha256": "dee53e1266cd546eefae23cb5ae2aa2c0ce6278fb019daeed4bf9e77270c1094",
+          "size_bytes": 5141253,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110001001/0110001001.parquet",
+          "mtime": 1778264427.0040243
+        },
+        "kdtree_cell=0110001010/0110001010.parquet": {
+          "sha256": "63954008091f7d4164912c7f9ce89ecf92433c5b17bf09a7da8267ce81bb1e00",
+          "size_bytes": 4253627,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110001010/0110001010.parquet",
+          "mtime": 1778264427.2736285
+        },
+        "kdtree_cell=0110001011/0110001011.parquet": {
+          "sha256": "cdbc74f817041908c805cc981fadef3a902abfdd6294fd0518bfe94ac6e4b273",
+          "size_bytes": 4897819,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110001011/0110001011.parquet",
+          "mtime": 1778264427.6095185
+        },
+        "kdtree_cell=0110001100/0110001100.parquet": {
+          "sha256": "b5f5ea2dcd7e355f77237e99d8bf70c395a89575128083dc89a0b06108eff7d4",
+          "size_bytes": 3987650,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110001100/0110001100.parquet",
+          "mtime": 1778264428.0569558
+        },
+        "kdtree_cell=0110001101/0110001101.parquet": {
+          "sha256": "87056fe199c6e0a677e5dbaae7a15baa4d26ebd277d9351b33b3a3eeffa8cb19",
+          "size_bytes": 4487366,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110001101/0110001101.parquet",
+          "mtime": 1778264428.4250672
+        },
+        "kdtree_cell=0110001110/0110001110.parquet": {
+          "sha256": "40f8561bc0f2f1c574868cd7e6afc44cababee3dfb8cebf1ca06f8d8d7fbef52",
+          "size_bytes": 3395021,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110001110/0110001110.parquet",
+          "mtime": 1778264428.9888012
+        },
+        "kdtree_cell=0110001111/0110001111.parquet": {
+          "sha256": "5fc44780f6b3843a487a61c0c931e52815d72d92035fec4209824b15ec736aef",
+          "size_bytes": 4029969,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110001111/0110001111.parquet",
+          "mtime": 1778264429.5461917
+        },
+        "kdtree_cell=0110010000/0110010000.parquet": {
+          "sha256": "dc4ff6da7c39627c098c8a2ff91da9461e6a8aaa32b3cea40b963dd848b4c4e9",
+          "size_bytes": 3924464,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110010000/0110010000.parquet",
+          "mtime": 1778264429.8559983
+        },
+        "kdtree_cell=0110010001/0110010001.parquet": {
+          "sha256": "772592ae5c3c04de3545b4827af1486336465e79b01bcf44ee09e52ea771c63f",
+          "size_bytes": 4213181,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110010001/0110010001.parquet",
+          "mtime": 1778264430.227076
+        },
+        "kdtree_cell=0110010010/0110010010.parquet": {
+          "sha256": "c6336cf24d1b4bacc19fc023b694722f68dc46879a81103e3c8b1a4a0d2f675a",
+          "size_bytes": 3886279,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110010010/0110010010.parquet",
+          "mtime": 1778264430.5560532
+        },
+        "kdtree_cell=0110010011/0110010011.parquet": {
+          "sha256": "29e84349d08cac6e9776423e047f6f590a226fb21f7557b017866fe9f02c8a20",
+          "size_bytes": 3471777,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110010011/0110010011.parquet",
+          "mtime": 1778264430.8507626
+        },
+        "kdtree_cell=0110010100/0110010100.parquet": {
+          "sha256": "04d8093316300fe6f313943d00f069ab3046166f453176d1ce97a1106594d6aa",
+          "size_bytes": 3514176,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110010100/0110010100.parquet",
+          "mtime": 1778264431.2623339
+        },
+        "kdtree_cell=0110010101/0110010101.parquet": {
+          "sha256": "c34152ce814cacdeb21256d8a4653b9883dbf9c85bbfa09f79cc92b15b44a273",
+          "size_bytes": 4324966,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110010101/0110010101.parquet",
+          "mtime": 1778264431.5822783
+        },
+        "kdtree_cell=0110010110/0110010110.parquet": {
+          "sha256": "99cdacc0c11191c2f348ff20530fdc05a260688c9fb7239f4f89e19472c6ce77",
+          "size_bytes": 4298408,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110010110/0110010110.parquet",
+          "mtime": 1778264431.847314
+        },
+        "kdtree_cell=0110010111/0110010111.parquet": {
+          "sha256": "55eff0a3aac624e778a4b87b8557d4ae7326b6e5b724e8e5f38ac5de0c59df4a",
+          "size_bytes": 4709858,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110010111/0110010111.parquet",
+          "mtime": 1778264432.2752233
+        },
+        "kdtree_cell=0110011000/0110011000.parquet": {
+          "sha256": "bc50eb5e0669f7e23417499b0b413bc39f81e3063f097a67d7ce961fd2b3b66a",
+          "size_bytes": 3079529,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110011000/0110011000.parquet",
+          "mtime": 1778264432.66784
+        },
+        "kdtree_cell=0110011001/0110011001.parquet": {
+          "sha256": "2ae1026005edf48fc33a0a39217c96774df1227133001f29d42cc633320f12a5",
+          "size_bytes": 4287960,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110011001/0110011001.parquet",
+          "mtime": 1778264432.9575737
+        },
+        "kdtree_cell=0110011010/0110011010.parquet": {
+          "sha256": "4e3dd14c6f4b6a9bc1e5981e9eed677167be865dff257d540d5888980d6da711",
+          "size_bytes": 3944247,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110011010/0110011010.parquet",
+          "mtime": 1778264433.4316094
+        },
+        "kdtree_cell=0110011011/0110011011.parquet": {
+          "sha256": "e530461940db02f141fce92d0fbd6130a4d5011e255f4ddd82d850f134b2b785",
+          "size_bytes": 4232221,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110011011/0110011011.parquet",
+          "mtime": 1778264433.8764443
+        },
+        "kdtree_cell=0110011100/0110011100.parquet": {
+          "sha256": "df2030d4d43587b1f9dc6171d34ad250aadea49948811ed2f59b74b60a531d63",
+          "size_bytes": 3961103,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110011100/0110011100.parquet",
+          "mtime": 1778264434.3055744
+        },
+        "kdtree_cell=0110011101/0110011101.parquet": {
+          "sha256": "8b770ef83fada7dd47464285127556180578e9063f65b9650d7727686ae25ebf",
+          "size_bytes": 4557227,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110011101/0110011101.parquet",
+          "mtime": 1778264434.8987277
+        },
+        "kdtree_cell=0110011110/0110011110.parquet": {
+          "sha256": "e96feb118b69ce5d939234a1dd5d7077e0ffe1aa7649ae648b7b7fbd33e2d290",
+          "size_bytes": 4158454,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110011110/0110011110.parquet",
+          "mtime": 1778264435.2367604
+        },
+        "kdtree_cell=0110011111/0110011111.parquet": {
+          "sha256": "94f7c0b70b2dfe26d9f3ab59b48e0fd50eed3e3a969800ca3c2cecf44da8025b",
+          "size_bytes": 4643512,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110011111/0110011111.parquet",
+          "mtime": 1778264435.79933
+        },
+        "kdtree_cell=0110100000/0110100000.parquet": {
+          "sha256": "ddf996c62e74e07db2f4e10088b6316a00c53cafb8d2f8d37927b225af3e4e63",
+          "size_bytes": 4746721,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110100000/0110100000.parquet",
+          "mtime": 1778264436.2384777
+        },
+        "kdtree_cell=0110100001/0110100001.parquet": {
+          "sha256": "2bc88c3d0c4fe303627e1d3e842931aa15921796de4e08fd0229259ab5fa0228",
+          "size_bytes": 3754742,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110100001/0110100001.parquet",
+          "mtime": 1778264436.6015759
+        },
+        "kdtree_cell=0110100010/0110100010.parquet": {
+          "sha256": "54995614069138ba157bbd8abeafce0e1b6467e039571be3184fa3d670c3c141",
+          "size_bytes": 4322170,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110100010/0110100010.parquet",
+          "mtime": 1778264436.9563313
+        },
+        "kdtree_cell=0110100011/0110100011.parquet": {
+          "sha256": "41ff60f8d0cd825f0ee3da4c8e988759943f49142ae040e2c4a4ba0884a661ab",
+          "size_bytes": 4175852,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110100011/0110100011.parquet",
+          "mtime": 1778264437.2140033
+        },
+        "kdtree_cell=0110100100/0110100100.parquet": {
+          "sha256": "d688f0dc61b224cb5ec99e0fd7b816f4ff89e1bc063b406c4921210f8a7a138f",
+          "size_bytes": 4190340,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110100100/0110100100.parquet",
+          "mtime": 1778264437.6442778
+        },
+        "kdtree_cell=0110100101/0110100101.parquet": {
+          "sha256": "ef134497867baa80839ae528d3847fbf6d79ff6ef9919c44e43ea4afe0846b33",
+          "size_bytes": 4367690,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110100101/0110100101.parquet",
+          "mtime": 1778264437.9658265
+        },
+        "kdtree_cell=0110100110/0110100110.parquet": {
+          "sha256": "046c007b74bc7058fd150db5062fb7649839d0df59b4d782d6d9f46ad38bf607",
+          "size_bytes": 5131202,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110100110/0110100110.parquet",
+          "mtime": 1778264438.474647
+        },
+        "kdtree_cell=0110100111/0110100111.parquet": {
+          "sha256": "0f97e634266778c0b67c42bdf3befbad8ef7036a8c1602e57088bd09c2e67eec",
+          "size_bytes": 4130252,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110100111/0110100111.parquet",
+          "mtime": 1778264438.8166585
+        },
+        "kdtree_cell=0110101000/0110101000.parquet": {
+          "sha256": "3e11d1870d1b6ffdb28fdeef56fff7076ba8fd45fd11097130f037a6e59c898c",
+          "size_bytes": 4756261,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110101000/0110101000.parquet",
+          "mtime": 1778264439.0895135
+        },
+        "kdtree_cell=0110101001/0110101001.parquet": {
+          "sha256": "3544bfbac79430314537c484c8f12e07de4b47a44da93559ad0281977ee9a0e8",
+          "size_bytes": 5759437,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110101001/0110101001.parquet",
+          "mtime": 1778264439.5627792
+        },
+        "kdtree_cell=0110101010/0110101010.parquet": {
+          "sha256": "21eeb9a42b979cef4709dc384055d32e3de8e44179561bd3d7fb397b8dfeb8ca",
+          "size_bytes": 4639699,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110101010/0110101010.parquet",
+          "mtime": 1778264439.7693338
+        },
+        "kdtree_cell=0110101011/0110101011.parquet": {
+          "sha256": "b8bd86c549d4f458df9795b47b31cc2df26ba52bfb4740f51543857f7bf15741",
+          "size_bytes": 4977345,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110101011/0110101011.parquet",
+          "mtime": 1778264440.1382318
+        },
+        "kdtree_cell=0110101100/0110101100.parquet": {
+          "sha256": "019d50aa193a8c37484f141323769fb3454e3bb6aedb6bf817d58383acd25a0c",
+          "size_bytes": 3720070,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110101100/0110101100.parquet",
+          "mtime": 1778264440.512157
+        },
+        "kdtree_cell=0110101101/0110101101.parquet": {
+          "sha256": "f8b65e771c7f54d8b3f443283173380bb8891b189f93863d5aa7583881443397",
+          "size_bytes": 4296361,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110101101/0110101101.parquet",
+          "mtime": 1778264440.9471197
+        },
+        "kdtree_cell=0110101110/0110101110.parquet": {
+          "sha256": "6095e5d62dd34d709fe0673b724863683fc75ad2b9b1d32661c21aa209a2d4b4",
+          "size_bytes": 3799863,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110101110/0110101110.parquet",
+          "mtime": 1778264441.3518891
+        },
+        "kdtree_cell=0110101111/0110101111.parquet": {
+          "sha256": "1a60cb96c383749dc63d3d16b3b51821a5863bd876fcbb0f457baa4adc2ec30b",
+          "size_bytes": 4669795,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110101111/0110101111.parquet",
+          "mtime": 1778264441.75682
+        },
+        "kdtree_cell=0110110000/0110110000.parquet": {
+          "sha256": "07b413de7d210434b8b127e378e201fc852bad26d8786f29dfa6aebda4f25854",
+          "size_bytes": 4194603,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110110000/0110110000.parquet",
+          "mtime": 1778264442.136765
+        },
+        "kdtree_cell=0110110001/0110110001.parquet": {
+          "sha256": "aad79f50101305fcdb24cc5ee21f33fbc0adb287070c2e3ac6f64080fa9b2308",
+          "size_bytes": 3418451,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110110001/0110110001.parquet",
+          "mtime": 1778264442.4644215
+        },
+        "kdtree_cell=0110110010/0110110010.parquet": {
+          "sha256": "d8d1e6b2c2d3a060ec3d5da2bcc2a5b599ef4ccd9929f8e02413c4f8d2849566",
+          "size_bytes": 4138092,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110110010/0110110010.parquet",
+          "mtime": 1778264442.884037
+        },
+        "kdtree_cell=0110110011/0110110011.parquet": {
+          "sha256": "2b6c95398aa83782b0849bef161cd798a5f9caedd94086cba6a1219f06c4899e",
+          "size_bytes": 5423599,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110110011/0110110011.parquet",
+          "mtime": 1778264443.363987
+        },
+        "kdtree_cell=0110110100/0110110100.parquet": {
+          "sha256": "1b957ec7e0f9b0d4f0229256ae321486518decf1eb7270c2ab5c5a322b082d38",
+          "size_bytes": 3774045,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110110100/0110110100.parquet",
+          "mtime": 1778264443.7372255
+        },
+        "kdtree_cell=0110110101/0110110101.parquet": {
+          "sha256": "3ce79325da248ae1e2fd99584c32620beca712cafe5f05310b17490c7ccb6e7d",
+          "size_bytes": 4144840,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110110101/0110110101.parquet",
+          "mtime": 1778264444.1877174
+        },
+        "kdtree_cell=0110110110/0110110110.parquet": {
+          "sha256": "60e76b72e0812535ebedf0464aca28e37d8d69dda95706777cb6a99ab9efd92e",
+          "size_bytes": 4289805,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110110110/0110110110.parquet",
+          "mtime": 1778264444.6362844
+        },
+        "kdtree_cell=0110110111/0110110111.parquet": {
+          "sha256": "5568477b73a7ff414086c8691306fddfcfb816db24b03e0a0d76125d7fe3a383",
+          "size_bytes": 4404636,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110110111/0110110111.parquet",
+          "mtime": 1778264445.0789428
+        },
+        "kdtree_cell=0110111000/0110111000.parquet": {
+          "sha256": "037174849e20310304f53c2fa50a4251b459702fbe259d1ecc71e8e28c46f813",
+          "size_bytes": 4891143,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110111000/0110111000.parquet",
+          "mtime": 1778264445.6933315
+        },
+        "kdtree_cell=0110111001/0110111001.parquet": {
+          "sha256": "33f3929318a99268c1500dde8feb6d3b4dbfad6dc7a13e6e7dd4550db00db9d5",
+          "size_bytes": 4608601,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110111001/0110111001.parquet",
+          "mtime": 1778264446.1106753
+        },
+        "kdtree_cell=0110111010/0110111010.parquet": {
+          "sha256": "0430a35aaabe8d58211ceb0953b69718888f8591f0725da6102bb60ea0db529d",
+          "size_bytes": 4891982,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110111010/0110111010.parquet",
+          "mtime": 1778264446.5023463
+        },
+        "kdtree_cell=0110111011/0110111011.parquet": {
+          "sha256": "bbda64773184636b40823bbd3cf7f048d2b2a42963fc804ed3a39f806028b1e1",
+          "size_bytes": 5156110,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110111011/0110111011.parquet",
+          "mtime": 1778264446.7945426
+        },
+        "kdtree_cell=0110111100/0110111100.parquet": {
+          "sha256": "02d27700e4e809e2932563a27ae29f87650fc83acddde4b96b4118f3501945e2",
+          "size_bytes": 4604098,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110111100/0110111100.parquet",
+          "mtime": 1778264447.2286177
+        },
+        "kdtree_cell=0110111101/0110111101.parquet": {
+          "sha256": "705e98be98d4659381216a1db02c4c16c2e0b09398deab7eca1ff9a1a9c29a3d",
+          "size_bytes": 3876659,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110111101/0110111101.parquet",
+          "mtime": 1778264447.7305524
+        },
+        "kdtree_cell=0110111110/0110111110.parquet": {
+          "sha256": "9f1ccd6d54b9dbe30e34d8d78feed731c317a6c21afa603085845ac7f94ac50e",
+          "size_bytes": 4020454,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110111110/0110111110.parquet",
+          "mtime": 1778264448.0678751
+        },
+        "kdtree_cell=0110111111/0110111111.parquet": {
+          "sha256": "63a6832ef40f7498203a2ee05ab666409d71eacbc5530c4495a1408a42476310",
+          "size_bytes": 3116800,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0110111111/0110111111.parquet",
+          "mtime": 1778264448.4049766
+        },
+        "kdtree_cell=0111000000/0111000000.parquet": {
+          "sha256": "ee830ee37d042f843f0702f350891c86e67e6afb79b6d995994956f389b4653b",
+          "size_bytes": 5706461,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111000000/0111000000.parquet",
+          "mtime": 1778264448.6451225
+        },
+        "kdtree_cell=0111000001/0111000001.parquet": {
+          "sha256": "d1c74d79e41c3d49d86857ea223f71395b8b67aba489b0fdceb96a33e76bc308",
+          "size_bytes": 4310561,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111000001/0111000001.parquet",
+          "mtime": 1778264448.9452593
+        },
+        "kdtree_cell=0111000010/0111000010.parquet": {
+          "sha256": "ad5f54e248d7e8963f9e715777c71ed2871331e2c2cb3a8eaddc502d87f0f4b2",
+          "size_bytes": 5052895,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111000010/0111000010.parquet",
+          "mtime": 1778264449.228182
+        },
+        "kdtree_cell=0111000011/0111000011.parquet": {
+          "sha256": "034529a343c93f468faeaf5cd4458283d5aec9e6d550bdca637ce4c0d7b603e6",
+          "size_bytes": 5157621,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111000011/0111000011.parquet",
+          "mtime": 1778264449.664499
+        },
+        "kdtree_cell=0111000100/0111000100.parquet": {
+          "sha256": "589ef4edabbf32058dee26fbfd4d0ecdb0990457e0efcca63b3583e7634b9ce3",
+          "size_bytes": 5376873,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111000100/0111000100.parquet",
+          "mtime": 1778264449.9670134
+        },
+        "kdtree_cell=0111000101/0111000101.parquet": {
+          "sha256": "ccdc0a60d41d5a05fd8a3b35df91c888b30226f1dacff081bc39dd219bd46453",
+          "size_bytes": 4822518,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111000101/0111000101.parquet",
+          "mtime": 1778264450.3263907
+        },
+        "kdtree_cell=0111000110/0111000110.parquet": {
+          "sha256": "504d9915a6f2659068bd74073211c1e8ba0df0e92306367e1d19635961837421",
+          "size_bytes": 5145991,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111000110/0111000110.parquet",
+          "mtime": 1778264450.6535952
+        },
+        "kdtree_cell=0111000111/0111000111.parquet": {
+          "sha256": "0edfe4f7854ae353234f4d4fddaa615b7fc47ea3434e443eb2a437bc4ccf5d39",
+          "size_bytes": 5281988,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111000111/0111000111.parquet",
+          "mtime": 1778264450.9490294
+        },
+        "kdtree_cell=0111001000/0111001000.parquet": {
+          "sha256": "7114b310591ecd0b7791c27ef61b27db09c51988d7b85626e0e00265917a0b86",
+          "size_bytes": 4821363,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111001000/0111001000.parquet",
+          "mtime": 1778264451.264986
+        },
+        "kdtree_cell=0111001001/0111001001.parquet": {
+          "sha256": "607634e5d8f805b5d4e5165d74841d1e5c7b01823d624e502f1072c92c3f43c2",
+          "size_bytes": 3979816,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111001001/0111001001.parquet",
+          "mtime": 1778264451.6265733
+        },
+        "kdtree_cell=0111001010/0111001010.parquet": {
+          "sha256": "324cf8f2ec38bbed1e65e5fdb3de11d2a63a9778b9bb70c354d8818548a72f6f",
+          "size_bytes": 4107243,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111001010/0111001010.parquet",
+          "mtime": 1778264451.9043384
+        },
+        "kdtree_cell=0111001011/0111001011.parquet": {
+          "sha256": "b73397ff49f218c2d9d87ce5574b7cf4d9c755a9a7fd4b4f8e9bf6bf60435377",
+          "size_bytes": 4568531,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111001011/0111001011.parquet",
+          "mtime": 1778264452.2288342
+        },
+        "kdtree_cell=0111001100/0111001100.parquet": {
+          "sha256": "763c96acdd9719ee717af17d80772bdbc673aa91acca414b30baa01133d8a7ba",
+          "size_bytes": 4033013,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111001100/0111001100.parquet",
+          "mtime": 1778264452.651224
+        },
+        "kdtree_cell=0111001101/0111001101.parquet": {
+          "sha256": "2be1201eeb635082651576149c74e5389f2141b8b1348e6215ff66d1fd416f88",
+          "size_bytes": 4318287,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111001101/0111001101.parquet",
+          "mtime": 1778264452.8799512
+        },
+        "kdtree_cell=0111001110/0111001110.parquet": {
+          "sha256": "646c229985f356cc5dbb1398cfbc2fd39bcbf9f3d19be57cbe282bf0a30fcb43",
+          "size_bytes": 4671495,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111001110/0111001110.parquet",
+          "mtime": 1778264453.1977308
+        },
+        "kdtree_cell=0111001111/0111001111.parquet": {
+          "sha256": "402c79e99cc2f9784f78370ccd605ed06a3868ac4ccc7cff76ce0f899ffd4029",
+          "size_bytes": 4437712,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111001111/0111001111.parquet",
+          "mtime": 1778264453.5181665
+        },
+        "kdtree_cell=0111010000/0111010000.parquet": {
+          "sha256": "f8c6fd30ae421ce71cde56b0e2ee0ecc101163b6f97ad7da87ebdc63031dc892",
+          "size_bytes": 3910741,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111010000/0111010000.parquet",
+          "mtime": 1778264453.894656
+        },
+        "kdtree_cell=0111010001/0111010001.parquet": {
+          "sha256": "44967773ebb6b434d3d206d5d055c90a3808b01a9be5dcfad395587dc256c94c",
+          "size_bytes": 4910541,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111010001/0111010001.parquet",
+          "mtime": 1778264454.714653
+        },
+        "kdtree_cell=0111010010/0111010010.parquet": {
+          "sha256": "a62cb4ca8e406cd32d59690648843d4244516c5727bc45b497ace71ee4e80f0c",
+          "size_bytes": 5510200,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111010010/0111010010.parquet",
+          "mtime": 1778264455.2243142
+        },
+        "kdtree_cell=0111010011/0111010011.parquet": {
+          "sha256": "a3257a9d4fe219f88f2174aa72ad7ac864bc4f3e6bff0d7f75efe2d380579435",
+          "size_bytes": 6201804,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111010011/0111010011.parquet",
+          "mtime": 1778264455.5971806
+        },
+        "kdtree_cell=0111010100/0111010100.parquet": {
+          "sha256": "f4d9075282dfe8385fe017ce622c264220eb89c5289d48ecd527ab6cf0d96c00",
+          "size_bytes": 4271439,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111010100/0111010100.parquet",
+          "mtime": 1778264455.8549814
+        },
+        "kdtree_cell=0111010101/0111010101.parquet": {
+          "sha256": "e300b00c0c1a0debf664f71ca487a7202f782f638c6681f13052cce3442c02ec",
+          "size_bytes": 4167476,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111010101/0111010101.parquet",
+          "mtime": 1778264456.18149
+        },
+        "kdtree_cell=0111010110/0111010110.parquet": {
+          "sha256": "0320ba86034b5dbbe1e78bd3b82701f4e84e351493472e8b6648957e5777614e",
+          "size_bytes": 5278978,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111010110/0111010110.parquet",
+          "mtime": 1778264456.4630919
+        },
+        "kdtree_cell=0111010111/0111010111.parquet": {
+          "sha256": "3bfa41de3d5e18952b51550fa1b6cbbfa4195614ea8768fbf3f2ae325f9ed8ea",
+          "size_bytes": 5191406,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111010111/0111010111.parquet",
+          "mtime": 1778264457.1817315
+        },
+        "kdtree_cell=0111011000/0111011000.parquet": {
+          "sha256": "7b98352f989bc56558d9bd19b7bf564f3da1d7511fad68b608e8e773d3649017",
+          "size_bytes": 4928902,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111011000/0111011000.parquet",
+          "mtime": 1778264457.6198878
+        },
+        "kdtree_cell=0111011001/0111011001.parquet": {
+          "sha256": "38fc7ee9ecad7b31cf9f01f4d5073e86a18989b81e0bda4a649c30f0765a687d",
+          "size_bytes": 5132186,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111011001/0111011001.parquet",
+          "mtime": 1778264457.9395616
+        },
+        "kdtree_cell=0111011010/0111011010.parquet": {
+          "sha256": "856cd1ea1b6075e7ebd10b982bc85dca4afcebb07f39ec52189730eb2937b75b",
+          "size_bytes": 4722736,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111011010/0111011010.parquet",
+          "mtime": 1778264458.4861803
+        },
+        "kdtree_cell=0111011011/0111011011.parquet": {
+          "sha256": "db47adc77874eed66baf36b9afb33b0a6043b2535cda1d8015a09186bc9797f6",
+          "size_bytes": 5435753,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111011011/0111011011.parquet",
+          "mtime": 1778264458.927346
+        },
+        "kdtree_cell=0111011100/0111011100.parquet": {
+          "sha256": "26b3b7143c035cc7813ada64544e4c3ebc99544afbf9513251ab3c8ce5f148be",
+          "size_bytes": 5095379,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111011100/0111011100.parquet",
+          "mtime": 1778264459.3166828
+        },
+        "kdtree_cell=0111011101/0111011101.parquet": {
+          "sha256": "90fe9dedf664b7991070edfe163c9714f185f4d32a3fbf3bb7be48a716e32736",
+          "size_bytes": 5775076,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111011101/0111011101.parquet",
+          "mtime": 1778264459.7700353
+        },
+        "kdtree_cell=0111011110/0111011110.parquet": {
+          "sha256": "78c7a584f796ca02efae419970ab2890b42f8fddc822818846810f99f2379bec",
+          "size_bytes": 5430120,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111011110/0111011110.parquet",
+          "mtime": 1778264460.1019871
+        },
+        "kdtree_cell=0111011111/0111011111.parquet": {
+          "sha256": "4d6f758a07fcee913654db3d2f941cfd4ff424a66747079d37bab64696e3d6b1",
+          "size_bytes": 5198099,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111011111/0111011111.parquet",
+          "mtime": 1778264460.7603219
+        },
+        "kdtree_cell=0111100000/0111100000.parquet": {
+          "sha256": "839b8b126d35bee6274b371bbcae1f685eea39201241f4553a040939444bbc95",
+          "size_bytes": 4288620,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111100000/0111100000.parquet",
+          "mtime": 1778264461.0036633
+        },
+        "kdtree_cell=0111100001/0111100001.parquet": {
+          "sha256": "75176de2f576aab3eb5e29daccf2f9b6a97ff84d9f6ff003dfecc51edbf5a3bf",
+          "size_bytes": 4751683,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111100001/0111100001.parquet",
+          "mtime": 1778264461.4462535
+        },
+        "kdtree_cell=0111100010/0111100010.parquet": {
+          "sha256": "edb7420e0e95f0d5ac62b5de9787eb1710d7ad46cee195e8dd144e5e9afab2ea",
+          "size_bytes": 4506248,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111100010/0111100010.parquet",
+          "mtime": 1778264461.766162
+        },
+        "kdtree_cell=0111100011/0111100011.parquet": {
+          "sha256": "1921c94358cfa19aaa0b67cd85a4a1f34647395e2fe48bac93edc0c6c521e512",
+          "size_bytes": 4465921,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111100011/0111100011.parquet",
+          "mtime": 1778264462.1813715
+        },
+        "kdtree_cell=0111100100/0111100100.parquet": {
+          "sha256": "af01ed9544a7ccb949f7e2d3cbcf79b4796dee3bfa69f0ef06dcd6cfbafafe95",
+          "size_bytes": 4938167,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111100100/0111100100.parquet",
+          "mtime": 1778264462.5555022
+        },
+        "kdtree_cell=0111100101/0111100101.parquet": {
+          "sha256": "a0b84e0c0acafa43a8229dd8660215e962d8e10a8578a8e67b908fd33af1e21f",
+          "size_bytes": 4282534,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111100101/0111100101.parquet",
+          "mtime": 1778264462.820504
+        },
+        "kdtree_cell=0111100110/0111100110.parquet": {
+          "sha256": "6aaf82715f4c2e6446afe290d8522164fc0577d682af78c7dd4a80d052a1e0dc",
+          "size_bytes": 4113307,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111100110/0111100110.parquet",
+          "mtime": 1778264463.1353393
+        },
+        "kdtree_cell=0111100111/0111100111.parquet": {
+          "sha256": "d891da3167bd9f1382be89382bc8e109c934900cb675cbbf46f2f7608fcfbc77",
+          "size_bytes": 5342762,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111100111/0111100111.parquet",
+          "mtime": 1778264463.4579735
+        },
+        "kdtree_cell=0111101000/0111101000.parquet": {
+          "sha256": "0e578e8082faa6f5aee4c3c08d20b8c612a8906a17aad4580d3ac05855132da3",
+          "size_bytes": 4328486,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111101000/0111101000.parquet",
+          "mtime": 1778264463.6833167
+        },
+        "kdtree_cell=0111101001/0111101001.parquet": {
+          "sha256": "2a4cee945cef56bc3365cdd61922f32fd6c1a9aa36ba463867608d8fda091a2d",
+          "size_bytes": 4610349,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111101001/0111101001.parquet",
+          "mtime": 1778264464.2879455
+        },
+        "kdtree_cell=0111101010/0111101010.parquet": {
+          "sha256": "5f3d5948afc7da01dcd145f9d1ebd9f2e032fe306ecb62a6024f02d1a424aa10",
+          "size_bytes": 3300257,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111101010/0111101010.parquet",
+          "mtime": 1778264464.465795
+        },
+        "kdtree_cell=0111101011/0111101011.parquet": {
+          "sha256": "c359bd1697fb04932ef10125e3086bc91fd49ec3b6fd9c583477e36178f5321e",
+          "size_bytes": 3858813,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111101011/0111101011.parquet",
+          "mtime": 1778264464.848028
+        },
+        "kdtree_cell=0111101100/0111101100.parquet": {
+          "sha256": "96964cf3dde4e21ab5030781b8a25433ec35499ed16dfe6cf18f69d61bf76379",
+          "size_bytes": 5293406,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111101100/0111101100.parquet",
+          "mtime": 1778264465.2662654
+        },
+        "kdtree_cell=0111101101/0111101101.parquet": {
+          "sha256": "dd5d406ad719700901c821389d4483e7cf9b6c8b126cb050627e1921cd9d458c",
+          "size_bytes": 3891133,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111101101/0111101101.parquet",
+          "mtime": 1778264465.7163188
+        },
+        "kdtree_cell=0111101110/0111101110.parquet": {
+          "sha256": "8ad1fe6e1be9070f53dfd31c9f22c54f776de7e6fb6c1742543ef2c314df0f88",
+          "size_bytes": 3692198,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111101110/0111101110.parquet",
+          "mtime": 1778264466.0029795
+        },
+        "kdtree_cell=0111101111/0111101111.parquet": {
+          "sha256": "aa44eb70c8742a9d6a73f3bf9fbd55d10e0f64ee6ce05020dac6ec93b2b5794b",
+          "size_bytes": 4813137,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111101111/0111101111.parquet",
+          "mtime": 1778264466.3007612
+        },
+        "kdtree_cell=0111110000/0111110000.parquet": {
+          "sha256": "12c64026480796fb0989d2e3f2fccc03c9e43787e7b49e267223b44a68aa5b17",
+          "size_bytes": 5027858,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111110000/0111110000.parquet",
+          "mtime": 1778264466.7797923
+        },
+        "kdtree_cell=0111110001/0111110001.parquet": {
+          "sha256": "1f2c5802931eac4c96d43f7be8380ea5e36635314ca2f708e075c5a614a293c4",
+          "size_bytes": 5624068,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111110001/0111110001.parquet",
+          "mtime": 1778264467.1956222
+        },
+        "kdtree_cell=0111110010/0111110010.parquet": {
+          "sha256": "43eb20690321ec6760d631a23290c17e40081dd736af4c11582b1b1ea22c5754",
+          "size_bytes": 4434170,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111110010/0111110010.parquet",
+          "mtime": 1778264467.62144
+        },
+        "kdtree_cell=0111110011/0111110011.parquet": {
+          "sha256": "4671d0fd644b66f46c367dd6160852585519f4a0bd73ab75c6254ecfe14dc58c",
+          "size_bytes": 5474350,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111110011/0111110011.parquet",
+          "mtime": 1778264467.8923223
+        },
+        "kdtree_cell=0111110100/0111110100.parquet": {
+          "sha256": "aba40bd2d8671832cfafdccc67c6df138e41b5bec00f26fcfd1317c94a9052c2",
+          "size_bytes": 4683002,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111110100/0111110100.parquet",
+          "mtime": 1778264468.3211415
+        },
+        "kdtree_cell=0111110101/0111110101.parquet": {
+          "sha256": "fd970ffd9e16b5507b2d3a3813a1125c5220c5ce9f2d5d65e3964c2d3fd583a9",
+          "size_bytes": 4548052,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111110101/0111110101.parquet",
+          "mtime": 1778264468.6344733
+        },
+        "kdtree_cell=0111110110/0111110110.parquet": {
+          "sha256": "39a8fdde3c45bd21727e494da66cae0a97341edb7d272913d31cba905f7600b9",
+          "size_bytes": 4511893,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111110110/0111110110.parquet",
+          "mtime": 1778264469.029721
+        },
+        "kdtree_cell=0111110111/0111110111.parquet": {
+          "sha256": "efc6d2da10a6a0c3016da614cee8e5e283c689589a26850106b86da03a380c61",
+          "size_bytes": 4917851,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111110111/0111110111.parquet",
+          "mtime": 1778264469.3285687
+        },
+        "kdtree_cell=0111111000/0111111000.parquet": {
+          "sha256": "ab1eaa2b11b71b16d956f05b20cddfcb26aab9e920522f99f95158a2be6e7414",
+          "size_bytes": 4103502,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111111000/0111111000.parquet",
+          "mtime": 1778264469.7649515
+        },
+        "kdtree_cell=0111111001/0111111001.parquet": {
+          "sha256": "87438ea415a95b35c72f69eb29d2105032ba3d6a0acaaa13cb183d31e2cdd0b4",
+          "size_bytes": 3918023,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111111001/0111111001.parquet",
+          "mtime": 1778264470.126106
+        },
+        "kdtree_cell=0111111010/0111111010.parquet": {
+          "sha256": "f68a76f842cc58a5451870a5dfde4f19d96deee578b388c1d262d7aaed2f5314",
+          "size_bytes": 4062062,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111111010/0111111010.parquet",
+          "mtime": 1778264470.5006406
+        },
+        "kdtree_cell=0111111011/0111111011.parquet": {
+          "sha256": "a995b6f15a3ac9841c5124d24cd88b0184131a77ec5429a68034225c06f03cd4",
+          "size_bytes": 4235320,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111111011/0111111011.parquet",
+          "mtime": 1778264470.7474477
+        },
+        "kdtree_cell=0111111100/0111111100.parquet": {
+          "sha256": "7b47e565e34a94f073fd09e606658fccd6d674266bd25d1cfbfd9c5e033beba4",
+          "size_bytes": 4626756,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111111100/0111111100.parquet",
+          "mtime": 1778264471.0598965
+        },
+        "kdtree_cell=0111111101/0111111101.parquet": {
+          "sha256": "48cbafb7e7bc233d63d4a63e3c657536ab09c0bd1c1043078f0b2dcdc4c0a226",
+          "size_bytes": 4106577,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111111101/0111111101.parquet",
+          "mtime": 1778264471.3516848
+        },
+        "kdtree_cell=0111111110/0111111110.parquet": {
+          "sha256": "51f03c82746cd061f26fbc9fb0d8ed349a4aef5766fb1e86517b19dbaa7177c7",
+          "size_bytes": 3419989,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111111110/0111111110.parquet",
+          "mtime": 1778264471.6272821
+        },
+        "kdtree_cell=0111111111/0111111111.parquet": {
+          "sha256": "8ab396fdb9ec6f218f63f1bf14d124c32abb46be00a8d8d9f60c3c632f489206",
+          "size_bytes": 4459531,
+          "href": "kadaster/inspire_buildings/kdtree_cell=0111111111/0111111111.parquet",
+          "mtime": 1778264471.905838
+        },
+        "llms.txt": {
+          "sha256": "1fb97b59be4f1c8dde2655cd643b7f90b471ef8e849acf35ce2762437d7d6099",
+          "size_bytes": 11939,
+          "href": "kadaster/inspire_buildings/llms.txt",
+          "mtime": 1778185474.0
+        },
+        "thumbnail_.png": {
+          "sha256": "efcaaa18ab60f09ab6065c99ff1f4c2de07a05b48f0db23dab0e7aec523f5ef4",
+          "size_bytes": 149087,
+          "href": "kadaster/inspire_buildings/thumbnail_.png",
+          "mtime": 1778076614.476805
+        },
+        "buildings.pmtiles-journal": {
+          "sha256": "0fe58eb9dff3139749b4551976cd36ab3401983fb692b164f09cbfe55fe99ef1",
+          "size_bytes": 12824,
+          "href": "kadaster/inspire_buildings/buildings.pmtiles-journal",
+          "mtime": 1778077132.0
+        },
+        "README.md": {
+          "sha256": "d2ad6c32bf8e0614f4ba611fb131536847a805290a7bca9de3d1c16a273acd15",
+          "size_bytes": 3848,
+          "href": "kadaster/inspire_buildings/README.md",
+          "mtime": 1778080359.504942
+        },
+        "buildings.pmtiles": {
+          "sha256": "4f9ceb9895ded7e215b5f2021102b9d27c9d5b43dc249cf8be20266e1692cce3",
+          "size_bytes": 719106615,
+          "href": "kadaster/inspire_buildings/buildings.pmtiles",
+          "mtime": 1778078801.9956658
+        },
+        "thumbnail.png": {
+          "sha256": "efcaaa18ab60f09ab6065c99ff1f4c2de07a05b48f0db23dab0e7aec523f5ef4",
+          "size_bytes": 149087,
+          "href": "kadaster/inspire_buildings/thumbnail.png",
+          "mtime": 1778148808.0
+        },
+        "buildings.gml.gz": {
+          "sha256": "4616f54b603bf724ccc00adb91ab24fbd323ce79303359e6316e2c4e1b926d0a",
+          "size_bytes": 2674968107,
+          "href": "kadaster/inspire_buildings/buildings.gml.gz",
+          "mtime": 1778075749.1908317
+        }
+      },
+      "changes": [
+        "kdtree_cell=0000000000/0000000000.parquet",
+        "kdtree_cell=0000000001/0000000001.parquet",
+        "kdtree_cell=0000000010/0000000010.parquet",
+        "kdtree_cell=0000000011/0000000011.parquet",
+        "kdtree_cell=0000000100/0000000100.parquet",
+        "kdtree_cell=0000000101/0000000101.parquet",
+        "kdtree_cell=0000000110/0000000110.parquet",
+        "kdtree_cell=0000000111/0000000111.parquet",
+        "kdtree_cell=0000001000/0000001000.parquet",
+        "kdtree_cell=0000001001/0000001001.parquet",
+        "kdtree_cell=0000001010/0000001010.parquet",
+        "kdtree_cell=0000001011/0000001011.parquet",
+        "kdtree_cell=0000001100/0000001100.parquet",
+        "kdtree_cell=0000001101/0000001101.parquet",
+        "kdtree_cell=0000001110/0000001110.parquet",
+        "kdtree_cell=0000001111/0000001111.parquet",
+        "kdtree_cell=0000010000/0000010000.parquet",
+        "kdtree_cell=0000010001/0000010001.parquet",
+        "kdtree_cell=0000010010/0000010010.parquet",
+        "kdtree_cell=0000010011/0000010011.parquet",
+        "kdtree_cell=0000010100/0000010100.parquet",
+        "kdtree_cell=0000010101/0000010101.parquet",
+        "kdtree_cell=0000010110/0000010110.parquet",
+        "kdtree_cell=0000010111/0000010111.parquet",
+        "kdtree_cell=0000011000/0000011000.parquet",
+        "kdtree_cell=0000011001/0000011001.parquet",
+        "kdtree_cell=0000011010/0000011010.parquet",
+        "kdtree_cell=0000011011/0000011011.parquet",
+        "kdtree_cell=0000011100/0000011100.parquet",
+        "kdtree_cell=0000011101/0000011101.parquet",
+        "kdtree_cell=0000011110/0000011110.parquet",
+        "kdtree_cell=0000011111/0000011111.parquet",
+        "kdtree_cell=0000100000/0000100000.parquet",
+        "kdtree_cell=0000100001/0000100001.parquet",
+        "kdtree_cell=0000100010/0000100010.parquet",
+        "kdtree_cell=0000100011/0000100011.parquet",
+        "kdtree_cell=0000100100/0000100100.parquet",
+        "kdtree_cell=0000100101/0000100101.parquet",
+        "kdtree_cell=0000100110/0000100110.parquet",
+        "kdtree_cell=0000100111/0000100111.parquet",
+        "kdtree_cell=0000101000/0000101000.parquet",
+        "kdtree_cell=0000101001/0000101001.parquet",
+        "kdtree_cell=0000101010/0000101010.parquet",
+        "kdtree_cell=0000101011/0000101011.parquet",
+        "kdtree_cell=0000101100/0000101100.parquet",
+        "kdtree_cell=0000101101/0000101101.parquet",
+        "kdtree_cell=0000101110/0000101110.parquet",
+        "kdtree_cell=0000101111/0000101111.parquet",
+        "kdtree_cell=0000110000/0000110000.parquet",
+        "kdtree_cell=0000110001/0000110001.parquet",
+        "kdtree_cell=0000110010/0000110010.parquet",
+        "kdtree_cell=0000110011/0000110011.parquet",
+        "kdtree_cell=0000110100/0000110100.parquet",
+        "kdtree_cell=0000110101/0000110101.parquet",
+        "kdtree_cell=0000110110/0000110110.parquet",
+        "kdtree_cell=0000110111/0000110111.parquet",
+        "kdtree_cell=0000111000/0000111000.parquet",
+        "kdtree_cell=0000111001/0000111001.parquet",
+        "kdtree_cell=0000111010/0000111010.parquet",
+        "kdtree_cell=0000111011/0000111011.parquet",
+        "kdtree_cell=0000111100/0000111100.parquet",
+        "kdtree_cell=0000111101/0000111101.parquet",
+        "kdtree_cell=0000111110/0000111110.parquet",
+        "kdtree_cell=0000111111/0000111111.parquet",
+        "kdtree_cell=0001000000/0001000000.parquet",
+        "kdtree_cell=0001000001/0001000001.parquet",
+        "kdtree_cell=0001000010/0001000010.parquet",
+        "kdtree_cell=0001000011/0001000011.parquet",
+        "kdtree_cell=0001000100/0001000100.parquet",
+        "kdtree_cell=0001000101/0001000101.parquet",
+        "kdtree_cell=0001000110/0001000110.parquet",
+        "kdtree_cell=0001000111/0001000111.parquet",
+        "kdtree_cell=0001001000/0001001000.parquet",
+        "kdtree_cell=0001001001/0001001001.parquet",
+        "kdtree_cell=0001001010/0001001010.parquet",
+        "kdtree_cell=0001001011/0001001011.parquet",
+        "kdtree_cell=0001001100/0001001100.parquet",
+        "kdtree_cell=0001001101/0001001101.parquet",
+        "kdtree_cell=0001001110/0001001110.parquet",
+        "kdtree_cell=0001001111/0001001111.parquet",
+        "kdtree_cell=0001010000/0001010000.parquet",
+        "kdtree_cell=0001010001/0001010001.parquet",
+        "kdtree_cell=0001010010/0001010010.parquet",
+        "kdtree_cell=0001010011/0001010011.parquet",
+        "kdtree_cell=0001010100/0001010100.parquet",
+        "kdtree_cell=0001010101/0001010101.parquet",
+        "kdtree_cell=0001010110/0001010110.parquet",
+        "kdtree_cell=0001010111/0001010111.parquet",
+        "kdtree_cell=0001011000/0001011000.parquet",
+        "kdtree_cell=0001011001/0001011001.parquet",
+        "kdtree_cell=0001011010/0001011010.parquet",
+        "kdtree_cell=0001011011/0001011011.parquet",
+        "kdtree_cell=0001011100/0001011100.parquet",
+        "kdtree_cell=0001011101/0001011101.parquet",
+        "kdtree_cell=0001011110/0001011110.parquet",
+        "kdtree_cell=0001011111/0001011111.parquet",
+        "kdtree_cell=0001100000/0001100000.parquet",
+        "kdtree_cell=0001100001/0001100001.parquet",
+        "kdtree_cell=0001100010/0001100010.parquet",
+        "kdtree_cell=0001100011/0001100011.parquet",
+        "kdtree_cell=0001100100/0001100100.parquet",
+        "kdtree_cell=0001100101/0001100101.parquet",
+        "kdtree_cell=0001100110/0001100110.parquet",
+        "kdtree_cell=0001100111/0001100111.parquet",
+        "kdtree_cell=0001101000/0001101000.parquet",
+        "kdtree_cell=0001101001/0001101001.parquet",
+        "kdtree_cell=0001101010/0001101010.parquet",
+        "kdtree_cell=0001101011/0001101011.parquet",
+        "kdtree_cell=0001101100/0001101100.parquet",
+        "kdtree_cell=0001101101/0001101101.parquet",
+        "kdtree_cell=0001101110/0001101110.parquet",
+        "kdtree_cell=0001101111/0001101111.parquet",
+        "kdtree_cell=0001110000/0001110000.parquet",
+        "kdtree_cell=0001110001/0001110001.parquet",
+        "kdtree_cell=0001110010/0001110010.parquet",
+        "kdtree_cell=0001110011/0001110011.parquet",
+        "kdtree_cell=0001110100/0001110100.parquet",
+        "kdtree_cell=0001110101/0001110101.parquet",
+        "kdtree_cell=0001110110/0001110110.parquet",
+        "kdtree_cell=0001110111/0001110111.parquet",
+        "kdtree_cell=0001111000/0001111000.parquet",
+        "kdtree_cell=0001111001/0001111001.parquet",
+        "kdtree_cell=0001111010/0001111010.parquet",
+        "kdtree_cell=0001111011/0001111011.parquet",
+        "kdtree_cell=0001111100/0001111100.parquet",
+        "kdtree_cell=0001111101/0001111101.parquet",
+        "kdtree_cell=0001111110/0001111110.parquet",
+        "kdtree_cell=0001111111/0001111111.parquet",
+        "kdtree_cell=0010000000/0010000000.parquet",
+        "kdtree_cell=0010000001/0010000001.parquet",
+        "kdtree_cell=0010000010/0010000010.parquet",
+        "kdtree_cell=0010000011/0010000011.parquet",
+        "kdtree_cell=0010000100/0010000100.parquet",
+        "kdtree_cell=0010000101/0010000101.parquet",
+        "kdtree_cell=0010000110/0010000110.parquet",
+        "kdtree_cell=0010000111/0010000111.parquet",
+        "kdtree_cell=0010001000/0010001000.parquet",
+        "kdtree_cell=0010001001/0010001001.parquet",
+        "kdtree_cell=0010001010/0010001010.parquet",
+        "kdtree_cell=0010001011/0010001011.parquet",
+        "kdtree_cell=0010001100/0010001100.parquet",
+        "kdtree_cell=0010001101/0010001101.parquet",
+        "kdtree_cell=0010001110/0010001110.parquet",
+        "kdtree_cell=0010001111/0010001111.parquet",
+        "kdtree_cell=0010010000/0010010000.parquet",
+        "kdtree_cell=0010010001/0010010001.parquet",
+        "kdtree_cell=0010010010/0010010010.parquet",
+        "kdtree_cell=0010010011/0010010011.parquet",
+        "kdtree_cell=0010010100/0010010100.parquet",
+        "kdtree_cell=0010010101/0010010101.parquet",
+        "kdtree_cell=0010010110/0010010110.parquet",
+        "kdtree_cell=0010010111/0010010111.parquet",
+        "kdtree_cell=0010011000/0010011000.parquet",
+        "kdtree_cell=0010011001/0010011001.parquet",
+        "kdtree_cell=0010011010/0010011010.parquet",
+        "kdtree_cell=0010011011/0010011011.parquet",
+        "kdtree_cell=0010011100/0010011100.parquet",
+        "kdtree_cell=0010011101/0010011101.parquet",
+        "kdtree_cell=0010011110/0010011110.parquet",
+        "kdtree_cell=0010011111/0010011111.parquet",
+        "kdtree_cell=0010100000/0010100000.parquet",
+        "kdtree_cell=0010100001/0010100001.parquet",
+        "kdtree_cell=0010100010/0010100010.parquet",
+        "kdtree_cell=0010100011/0010100011.parquet",
+        "kdtree_cell=0010100100/0010100100.parquet",
+        "kdtree_cell=0010100101/0010100101.parquet",
+        "kdtree_cell=0010100110/0010100110.parquet",
+        "kdtree_cell=0010100111/0010100111.parquet",
+        "kdtree_cell=0010101000/0010101000.parquet",
+        "kdtree_cell=0010101001/0010101001.parquet",
+        "kdtree_cell=0010101010/0010101010.parquet",
+        "kdtree_cell=0010101011/0010101011.parquet",
+        "kdtree_cell=0010101100/0010101100.parquet",
+        "kdtree_cell=0010101101/0010101101.parquet",
+        "kdtree_cell=0010101110/0010101110.parquet",
+        "kdtree_cell=0010101111/0010101111.parquet",
+        "kdtree_cell=0010110000/0010110000.parquet",
+        "kdtree_cell=0010110001/0010110001.parquet",
+        "kdtree_cell=0010110010/0010110010.parquet",
+        "kdtree_cell=0010110011/0010110011.parquet",
+        "kdtree_cell=0010110100/0010110100.parquet",
+        "kdtree_cell=0010110101/0010110101.parquet",
+        "kdtree_cell=0010110110/0010110110.parquet",
+        "kdtree_cell=0010110111/0010110111.parquet",
+        "kdtree_cell=0010111000/0010111000.parquet",
+        "kdtree_cell=0010111001/0010111001.parquet",
+        "kdtree_cell=0010111010/0010111010.parquet",
+        "kdtree_cell=0010111011/0010111011.parquet",
+        "kdtree_cell=0010111100/0010111100.parquet",
+        "kdtree_cell=0010111101/0010111101.parquet",
+        "kdtree_cell=0010111110/0010111110.parquet",
+        "kdtree_cell=0010111111/0010111111.parquet",
+        "kdtree_cell=0011000000/0011000000.parquet",
+        "kdtree_cell=0011000001/0011000001.parquet",
+        "kdtree_cell=0011000010/0011000010.parquet",
+        "kdtree_cell=0011000011/0011000011.parquet",
+        "kdtree_cell=0011000100/0011000100.parquet",
+        "kdtree_cell=0011000101/0011000101.parquet",
+        "kdtree_cell=0011000110/0011000110.parquet",
+        "kdtree_cell=0011000111/0011000111.parquet",
+        "kdtree_cell=0011001000/0011001000.parquet",
+        "kdtree_cell=0011001001/0011001001.parquet",
+        "kdtree_cell=0011001010/0011001010.parquet",
+        "kdtree_cell=0011001011/0011001011.parquet",
+        "kdtree_cell=0011001100/0011001100.parquet",
+        "kdtree_cell=0011001101/0011001101.parquet",
+        "kdtree_cell=0011001110/0011001110.parquet",
+        "kdtree_cell=0011001111/0011001111.parquet",
+        "kdtree_cell=0011010000/0011010000.parquet",
+        "kdtree_cell=0011010001/0011010001.parquet",
+        "kdtree_cell=0011010010/0011010010.parquet",
+        "kdtree_cell=0011010011/0011010011.parquet",
+        "kdtree_cell=0011010100/0011010100.parquet",
+        "kdtree_cell=0011010101/0011010101.parquet",
+        "kdtree_cell=0011010110/0011010110.parquet",
+        "kdtree_cell=0011010111/0011010111.parquet",
+        "kdtree_cell=0011011000/0011011000.parquet",
+        "kdtree_cell=0011011001/0011011001.parquet",
+        "kdtree_cell=0011011010/0011011010.parquet",
+        "kdtree_cell=0011011011/0011011011.parquet",
+        "kdtree_cell=0011011100/0011011100.parquet",
+        "kdtree_cell=0011011101/0011011101.parquet",
+        "kdtree_cell=0011011110/0011011110.parquet",
+        "kdtree_cell=0011011111/0011011111.parquet",
+        "kdtree_cell=0011100000/0011100000.parquet",
+        "kdtree_cell=0011100001/0011100001.parquet",
+        "kdtree_cell=0011100010/0011100010.parquet",
+        "kdtree_cell=0011100011/0011100011.parquet",
+        "kdtree_cell=0011100100/0011100100.parquet",
+        "kdtree_cell=0011100101/0011100101.parquet",
+        "kdtree_cell=0011100110/0011100110.parquet",
+        "kdtree_cell=0011100111/0011100111.parquet",
+        "kdtree_cell=0011101000/0011101000.parquet",
+        "kdtree_cell=0011101001/0011101001.parquet",
+        "kdtree_cell=0011101010/0011101010.parquet",
+        "kdtree_cell=0011101011/0011101011.parquet",
+        "kdtree_cell=0011101100/0011101100.parquet",
+        "kdtree_cell=0011101101/0011101101.parquet",
+        "kdtree_cell=0011101110/0011101110.parquet",
+        "kdtree_cell=0011101111/0011101111.parquet",
+        "kdtree_cell=0011110000/0011110000.parquet",
+        "kdtree_cell=0011110001/0011110001.parquet",
+        "kdtree_cell=0011110010/0011110010.parquet",
+        "kdtree_cell=0011110011/0011110011.parquet",
+        "kdtree_cell=0011110100/0011110100.parquet",
+        "kdtree_cell=0011110101/0011110101.parquet",
+        "kdtree_cell=0011110110/0011110110.parquet",
+        "kdtree_cell=0011110111/0011110111.parquet",
+        "kdtree_cell=0011111000/0011111000.parquet",
+        "kdtree_cell=0011111001/0011111001.parquet",
+        "kdtree_cell=0011111010/0011111010.parquet",
+        "kdtree_cell=0011111011/0011111011.parquet",
+        "kdtree_cell=0011111100/0011111100.parquet",
+        "kdtree_cell=0011111101/0011111101.parquet",
+        "kdtree_cell=0011111110/0011111110.parquet",
+        "kdtree_cell=0011111111/0011111111.parquet",
+        "kdtree_cell=0100000000/0100000000.parquet",
+        "kdtree_cell=0100000001/0100000001.parquet",
+        "kdtree_cell=0100000010/0100000010.parquet",
+        "kdtree_cell=0100000011/0100000011.parquet",
+        "kdtree_cell=0100000100/0100000100.parquet",
+        "kdtree_cell=0100000101/0100000101.parquet",
+        "kdtree_cell=0100000110/0100000110.parquet",
+        "kdtree_cell=0100000111/0100000111.parquet",
+        "kdtree_cell=0100001000/0100001000.parquet",
+        "kdtree_cell=0100001001/0100001001.parquet",
+        "kdtree_cell=0100001010/0100001010.parquet",
+        "kdtree_cell=0100001011/0100001011.parquet",
+        "kdtree_cell=0100001100/0100001100.parquet",
+        "kdtree_cell=0100001101/0100001101.parquet",
+        "kdtree_cell=0100001110/0100001110.parquet",
+        "kdtree_cell=0100001111/0100001111.parquet",
+        "kdtree_cell=0100010000/0100010000.parquet",
+        "kdtree_cell=0100010001/0100010001.parquet",
+        "kdtree_cell=0100010010/0100010010.parquet",
+        "kdtree_cell=0100010011/0100010011.parquet",
+        "kdtree_cell=0100010100/0100010100.parquet",
+        "kdtree_cell=0100010101/0100010101.parquet",
+        "kdtree_cell=0100010110/0100010110.parquet",
+        "kdtree_cell=0100010111/0100010111.parquet",
+        "kdtree_cell=0100011000/0100011000.parquet",
+        "kdtree_cell=0100011001/0100011001.parquet",
+        "kdtree_cell=0100011010/0100011010.parquet",
+        "kdtree_cell=0100011011/0100011011.parquet",
+        "kdtree_cell=0100011100/0100011100.parquet",
+        "kdtree_cell=0100011101/0100011101.parquet",
+        "kdtree_cell=0100011110/0100011110.parquet",
+        "kdtree_cell=0100011111/0100011111.parquet",
+        "kdtree_cell=0100100000/0100100000.parquet",
+        "kdtree_cell=0100100001/0100100001.parquet",
+        "kdtree_cell=0100100010/0100100010.parquet",
+        "kdtree_cell=0100100011/0100100011.parquet",
+        "kdtree_cell=0100100100/0100100100.parquet",
+        "kdtree_cell=0100100101/0100100101.parquet",
+        "kdtree_cell=0100100110/0100100110.parquet",
+        "kdtree_cell=0100100111/0100100111.parquet",
+        "kdtree_cell=0100101000/0100101000.parquet",
+        "kdtree_cell=0100101001/0100101001.parquet",
+        "kdtree_cell=0100101010/0100101010.parquet",
+        "kdtree_cell=0100101011/0100101011.parquet",
+        "kdtree_cell=0100101100/0100101100.parquet",
+        "kdtree_cell=0100101101/0100101101.parquet",
+        "kdtree_cell=0100101110/0100101110.parquet",
+        "kdtree_cell=0100101111/0100101111.parquet",
+        "kdtree_cell=0100110000/0100110000.parquet",
+        "kdtree_cell=0100110001/0100110001.parquet",
+        "kdtree_cell=0100110010/0100110010.parquet",
+        "kdtree_cell=0100110011/0100110011.parquet",
+        "kdtree_cell=0100110100/0100110100.parquet",
+        "kdtree_cell=0100110101/0100110101.parquet",
+        "kdtree_cell=0100110110/0100110110.parquet",
+        "kdtree_cell=0100110111/0100110111.parquet",
+        "kdtree_cell=0100111000/0100111000.parquet",
+        "kdtree_cell=0100111001/0100111001.parquet",
+        "kdtree_cell=0100111010/0100111010.parquet",
+        "kdtree_cell=0100111011/0100111011.parquet",
+        "kdtree_cell=0100111100/0100111100.parquet",
+        "kdtree_cell=0100111101/0100111101.parquet",
+        "kdtree_cell=0100111110/0100111110.parquet",
+        "kdtree_cell=0100111111/0100111111.parquet",
+        "kdtree_cell=0101000000/0101000000.parquet",
+        "kdtree_cell=0101000001/0101000001.parquet",
+        "kdtree_cell=0101000010/0101000010.parquet",
+        "kdtree_cell=0101000011/0101000011.parquet",
+        "kdtree_cell=0101000100/0101000100.parquet",
+        "kdtree_cell=0101000101/0101000101.parquet",
+        "kdtree_cell=0101000110/0101000110.parquet",
+        "kdtree_cell=0101000111/0101000111.parquet",
+        "kdtree_cell=0101001000/0101001000.parquet",
+        "kdtree_cell=0101001001/0101001001.parquet",
+        "kdtree_cell=0101001010/0101001010.parquet",
+        "kdtree_cell=0101001011/0101001011.parquet",
+        "kdtree_cell=0101001100/0101001100.parquet",
+        "kdtree_cell=0101001101/0101001101.parquet",
+        "kdtree_cell=0101001110/0101001110.parquet",
+        "kdtree_cell=0101001111/0101001111.parquet",
+        "kdtree_cell=0101010000/0101010000.parquet",
+        "kdtree_cell=0101010001/0101010001.parquet",
+        "kdtree_cell=0101010010/0101010010.parquet",
+        "kdtree_cell=0101010011/0101010011.parquet",
+        "kdtree_cell=0101010100/0101010100.parquet",
+        "kdtree_cell=0101010101/0101010101.parquet",
+        "kdtree_cell=0101010110/0101010110.parquet",
+        "kdtree_cell=0101010111/0101010111.parquet",
+        "kdtree_cell=0101011000/0101011000.parquet",
+        "kdtree_cell=0101011001/0101011001.parquet",
+        "kdtree_cell=0101011010/0101011010.parquet",
+        "kdtree_cell=0101011011/0101011011.parquet",
+        "kdtree_cell=0101011100/0101011100.parquet",
+        "kdtree_cell=0101011101/0101011101.parquet",
+        "kdtree_cell=0101011110/0101011110.parquet",
+        "kdtree_cell=0101011111/0101011111.parquet",
+        "kdtree_cell=0101100000/0101100000.parquet",
+        "kdtree_cell=0101100001/0101100001.parquet",
+        "kdtree_cell=0101100010/0101100010.parquet",
+        "kdtree_cell=0101100011/0101100011.parquet",
+        "kdtree_cell=0101100100/0101100100.parquet",
+        "kdtree_cell=0101100101/0101100101.parquet",
+        "kdtree_cell=0101100110/0101100110.parquet",
+        "kdtree_cell=0101100111/0101100111.parquet",
+        "kdtree_cell=0101101000/0101101000.parquet",
+        "kdtree_cell=0101101001/0101101001.parquet",
+        "kdtree_cell=0101101010/0101101010.parquet",
+        "kdtree_cell=0101101011/0101101011.parquet",
+        "kdtree_cell=0101101100/0101101100.parquet",
+        "kdtree_cell=0101101101/0101101101.parquet",
+        "kdtree_cell=0101101110/0101101110.parquet",
+        "kdtree_cell=0101101111/0101101111.parquet",
+        "kdtree_cell=0101110000/0101110000.parquet",
+        "kdtree_cell=0101110001/0101110001.parquet",
+        "kdtree_cell=0101110010/0101110010.parquet",
+        "kdtree_cell=0101110011/0101110011.parquet",
+        "kdtree_cell=0101110100/0101110100.parquet",
+        "kdtree_cell=0101110101/0101110101.parquet",
+        "kdtree_cell=0101110110/0101110110.parquet",
+        "kdtree_cell=0101110111/0101110111.parquet",
+        "kdtree_cell=0101111000/0101111000.parquet",
+        "kdtree_cell=0101111001/0101111001.parquet",
+        "kdtree_cell=0101111010/0101111010.parquet",
+        "kdtree_cell=0101111011/0101111011.parquet",
+        "kdtree_cell=0101111100/0101111100.parquet",
+        "kdtree_cell=0101111101/0101111101.parquet",
+        "kdtree_cell=0101111110/0101111110.parquet",
+        "kdtree_cell=0101111111/0101111111.parquet",
+        "kdtree_cell=0110000000/0110000000.parquet",
+        "kdtree_cell=0110000001/0110000001.parquet",
+        "kdtree_cell=0110000010/0110000010.parquet",
+        "kdtree_cell=0110000011/0110000011.parquet",
+        "kdtree_cell=0110000100/0110000100.parquet",
+        "kdtree_cell=0110000101/0110000101.parquet",
+        "kdtree_cell=0110000110/0110000110.parquet",
+        "kdtree_cell=0110000111/0110000111.parquet",
+        "kdtree_cell=0110001000/0110001000.parquet",
+        "kdtree_cell=0110001001/0110001001.parquet",
+        "kdtree_cell=0110001010/0110001010.parquet",
+        "kdtree_cell=0110001011/0110001011.parquet",
+        "kdtree_cell=0110001100/0110001100.parquet",
+        "kdtree_cell=0110001101/0110001101.parquet",
+        "kdtree_cell=0110001110/0110001110.parquet",
+        "kdtree_cell=0110001111/0110001111.parquet",
+        "kdtree_cell=0110010000/0110010000.parquet",
+        "kdtree_cell=0110010001/0110010001.parquet",
+        "kdtree_cell=0110010010/0110010010.parquet",
+        "kdtree_cell=0110010011/0110010011.parquet",
+        "kdtree_cell=0110010100/0110010100.parquet",
+        "kdtree_cell=0110010101/0110010101.parquet",
+        "kdtree_cell=0110010110/0110010110.parquet",
+        "kdtree_cell=0110010111/0110010111.parquet",
+        "kdtree_cell=0110011000/0110011000.parquet",
+        "kdtree_cell=0110011001/0110011001.parquet",
+        "kdtree_cell=0110011010/0110011010.parquet",
+        "kdtree_cell=0110011011/0110011011.parquet",
+        "kdtree_cell=0110011100/0110011100.parquet",
+        "kdtree_cell=0110011101/0110011101.parquet",
+        "kdtree_cell=0110011110/0110011110.parquet",
+        "kdtree_cell=0110011111/0110011111.parquet",
+        "kdtree_cell=0110100000/0110100000.parquet",
+        "kdtree_cell=0110100001/0110100001.parquet",
+        "kdtree_cell=0110100010/0110100010.parquet",
+        "kdtree_cell=0110100011/0110100011.parquet",
+        "kdtree_cell=0110100100/0110100100.parquet",
+        "kdtree_cell=0110100101/0110100101.parquet",
+        "kdtree_cell=0110100110/0110100110.parquet",
+        "kdtree_cell=0110100111/0110100111.parquet",
+        "kdtree_cell=0110101000/0110101000.parquet",
+        "kdtree_cell=0110101001/0110101001.parquet",
+        "kdtree_cell=0110101010/0110101010.parquet",
+        "kdtree_cell=0110101011/0110101011.parquet",
+        "kdtree_cell=0110101100/0110101100.parquet",
+        "kdtree_cell=0110101101/0110101101.parquet",
+        "kdtree_cell=0110101110/0110101110.parquet",
+        "kdtree_cell=0110101111/0110101111.parquet",
+        "kdtree_cell=0110110000/0110110000.parquet",
+        "kdtree_cell=0110110001/0110110001.parquet",
+        "kdtree_cell=0110110010/0110110010.parquet",
+        "kdtree_cell=0110110011/0110110011.parquet",
+        "kdtree_cell=0110110100/0110110100.parquet",
+        "kdtree_cell=0110110101/0110110101.parquet",
+        "kdtree_cell=0110110110/0110110110.parquet",
+        "kdtree_cell=0110110111/0110110111.parquet",
+        "kdtree_cell=0110111000/0110111000.parquet",
+        "kdtree_cell=0110111001/0110111001.parquet",
+        "kdtree_cell=0110111010/0110111010.parquet",
+        "kdtree_cell=0110111011/0110111011.parquet",
+        "kdtree_cell=0110111100/0110111100.parquet",
+        "kdtree_cell=0110111101/0110111101.parquet",
+        "kdtree_cell=0110111110/0110111110.parquet",
+        "kdtree_cell=0110111111/0110111111.parquet",
+        "kdtree_cell=0111000000/0111000000.parquet",
+        "kdtree_cell=0111000001/0111000001.parquet",
+        "kdtree_cell=0111000010/0111000010.parquet",
+        "kdtree_cell=0111000011/0111000011.parquet",
+        "kdtree_cell=0111000100/0111000100.parquet",
+        "kdtree_cell=0111000101/0111000101.parquet",
+        "kdtree_cell=0111000110/0111000110.parquet",
+        "kdtree_cell=0111000111/0111000111.parquet",
+        "kdtree_cell=0111001000/0111001000.parquet",
+        "kdtree_cell=0111001001/0111001001.parquet",
+        "kdtree_cell=0111001010/0111001010.parquet",
+        "kdtree_cell=0111001011/0111001011.parquet",
+        "kdtree_cell=0111001100/0111001100.parquet",
+        "kdtree_cell=0111001101/0111001101.parquet",
+        "kdtree_cell=0111001110/0111001110.parquet",
+        "kdtree_cell=0111001111/0111001111.parquet",
+        "kdtree_cell=0111010000/0111010000.parquet",
+        "kdtree_cell=0111010001/0111010001.parquet",
+        "kdtree_cell=0111010010/0111010010.parquet",
+        "kdtree_cell=0111010011/0111010011.parquet",
+        "kdtree_cell=0111010100/0111010100.parquet",
+        "kdtree_cell=0111010101/0111010101.parquet",
+        "kdtree_cell=0111010110/0111010110.parquet",
+        "kdtree_cell=0111010111/0111010111.parquet",
+        "kdtree_cell=0111011000/0111011000.parquet",
+        "kdtree_cell=0111011001/0111011001.parquet",
+        "kdtree_cell=0111011010/0111011010.parquet",
+        "kdtree_cell=0111011011/0111011011.parquet",
+        "kdtree_cell=0111011100/0111011100.parquet",
+        "kdtree_cell=0111011101/0111011101.parquet",
+        "kdtree_cell=0111011110/0111011110.parquet",
+        "kdtree_cell=0111011111/0111011111.parquet",
+        "kdtree_cell=0111100000/0111100000.parquet",
+        "kdtree_cell=0111100001/0111100001.parquet",
+        "kdtree_cell=0111100010/0111100010.parquet",
+        "kdtree_cell=0111100011/0111100011.parquet",
+        "kdtree_cell=0111100100/0111100100.parquet",
+        "kdtree_cell=0111100101/0111100101.parquet",
+        "kdtree_cell=0111100110/0111100110.parquet",
+        "kdtree_cell=0111100111/0111100111.parquet",
+        "kdtree_cell=0111101000/0111101000.parquet",
+        "kdtree_cell=0111101001/0111101001.parquet",
+        "kdtree_cell=0111101010/0111101010.parquet",
+        "kdtree_cell=0111101011/0111101011.parquet",
+        "kdtree_cell=0111101100/0111101100.parquet",
+        "kdtree_cell=0111101101/0111101101.parquet",
+        "kdtree_cell=0111101110/0111101110.parquet",
+        "kdtree_cell=0111101111/0111101111.parquet",
+        "kdtree_cell=0111110000/0111110000.parquet",
+        "kdtree_cell=0111110001/0111110001.parquet",
+        "kdtree_cell=0111110010/0111110010.parquet",
+        "kdtree_cell=0111110011/0111110011.parquet",
+        "kdtree_cell=0111110100/0111110100.parquet",
+        "kdtree_cell=0111110101/0111110101.parquet",
+        "kdtree_cell=0111110110/0111110110.parquet",
+        "kdtree_cell=0111110111/0111110111.parquet",
+        "kdtree_cell=0111111000/0111111000.parquet",
+        "kdtree_cell=0111111001/0111111001.parquet",
+        "kdtree_cell=0111111010/0111111010.parquet",
+        "kdtree_cell=0111111011/0111111011.parquet",
+        "kdtree_cell=0111111100/0111111100.parquet",
+        "kdtree_cell=0111111101/0111111101.parquet",
+        "kdtree_cell=0111111110/0111111110.parquet",
+        "kdtree_cell=0111111111/0111111111.parquet",
+        "llms.txt",
+        "thumbnail_.png",
+        "buildings.pmtiles-journal",
+        "README.md",
+        "buildings.pmtiles",
+        "thumbnail.png",
+        "buildings.gml.gz"
+      ]
+    }
+  ]
+}

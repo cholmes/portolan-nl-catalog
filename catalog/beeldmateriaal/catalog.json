@@ -1,0 +1,62 @@
+{
+  "type": "Catalog",
+  "id": "beeldmateriaal",
+  "stac_version": "1.1.0",
+  "description": "Open aerial imagery from Beeldmateriaal Nederland, the Dutch national collaboration for aerial photography. Since 2011, this partnership of municipalities, provinces, water boards (waterschappen), Rijkswaterstaat, Het Kadaster, and other government agencies has jointly commissioned nationwide aerial surveys, sharing costs and ensuring uniform quality. Two campaigns fly each year: a summer campaign producing 25 cm RGB orthophotos with full foliage, and a winter/spring campaign capturing 7.5 cm (8 cm from 2025) stereoscopic photography and Color InfraRed (CIR) imagery during the leafless season. The resulting orthophoto mosaics cover the entire Netherlands and are published as open data under CC BY 4.0 via PDOK web services and opendata.beeldmateriaal.nl. Coordinated under the Geo-Informatieberaad (GI-beraad), the programme also produces the Actueel Hoogtebestand Nederland (AHN) LiDAR elevation dataset. From 2023, coverage extends to the Caribbean Netherlands (Bonaire, Sint Eustatius, and Saba).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/beeldmateriaal/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "icon",
+      "href": "./logo-mark.png",
+      "type": "image/png",
+      "title": "Beeldmateriaal Nederland logo"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.beeldmateriaal.nl/",
+      "type": "text/html",
+      "title": "Beeldmateriaal Nederland — official website"
+    },
+    {
+      "rel": "via",
+      "href": "https://opendata.beeldmateriaal.nl/",
+      "type": "text/html",
+      "title": "Open data portal — downloads"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/beeldmateriaal/README.md",
+      "type": "text/html",
+      "title": "Beeldmateriaal Nederland documentation"
+    },
+    {
+      "rel": "child",
+      "href": "./luchtfoto_2024/collection.json",
+      "type": "application/json",
+      "title": "Luchtfoto 2024 — Aerial Orthophotos (356 tiles, central Netherlands)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    }
+  ],
+  "title": "Beeldmateriaal Nederland"
+}

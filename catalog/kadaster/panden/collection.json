@@ -1,0 +1,286 @@
+{
+  "type": "Collection",
+  "id": "panden",
+  "stac_version": "1.1.0",
+  "description": "All 11.4 million buildings (panden) in the Netherlands from the BAG (Basisregistratie Adressen en Gebouwen), the authoritative Dutch national building registry. This is the official BAG GeoPackage 'light' extract from PDOK/Kadaster, containing current buildings only (no version history). Includes building footprints, construction year, lifecycle status, primary usage function (gebruiksdoel), floor area, and number of dwelling units. Native CRS is EPSG:28992 (RD New / Amersfoort). Published monthly by Kadaster via PDOK.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/kadaster/panden/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Het Kadaster"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.pdok.nl/introductie/-/article/basisregistratie-adressen-en-gebouwen-ba-1",
+      "type": "text/html",
+      "title": "PDOK BAG dataset page"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/lv/bag/atom/bag.xml",
+      "type": "application/atom+xml",
+      "title": "BAG ATOM download service"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.kadaster.nl/zakelijk/registraties/basisregistraties/bag",
+      "type": "text/html",
+      "title": "Kadaster BAG overview"
+    },
+    {
+      "rel": "via",
+      "href": "https://bagviewer.kadaster.nl/",
+      "type": "text/html",
+      "title": "BAG Viewer (interactive map)"
+    },
+    {
+      "rel": "via",
+      "href": "https://imbag.github.io/praktijkhandleiding/",
+      "type": "text/html",
+      "title": "BAG Praktijkhandleiding (practice guide)"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://imbag.github.io/praktijkhandleiding/objecttypen/pand",
+      "type": "text/html",
+      "title": "BAG Pand object type documentation"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/kadaster/panden/bag-light.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/kadaster/panden/README.md",
+      "type": "text/html",
+      "title": "Buildings (Panden) documentation"
+    },
+    {
+      "rel": "related",
+      "href": "https://portolan-sdi.github.io/portolan-nl-demo/#/tudelft/3dbag/collection.json",
+      "type": "text/html",
+      "title": "Browse 3D BAG in this catalog — 3D building models with heights, volumes, and roof types (TU Delft)"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "portolan:styles": [
+    "styles/default",
+    "styles/by-age",
+    "styles/by-use"
+  ],
+  "table:row_count": 11367850,
+  "table:primary_geometry": "geom",
+  "table:columns": [
+    {
+      "name": "identificatie",
+      "type": "string",
+      "description": "BAG building identifier (16-char pand ID). First 4 digits encode the municipality code (gemeentecode). Unique per building."
+    },
+    {
+      "name": "bouwjaar",
+      "type": "int64",
+      "description": "Original construction year (oorspronkelijk bouwjaar). Integer year (e.g., 1975). Value of 9999 means unknown. Does not change with renovations."
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "description": "Building lifecycle status (pandstatus). Most common: 'Pand in gebruik'. Other values: 'Bouwvergunning verleend', 'Bouw gestart', 'Verbouwing pand', 'Sloopvergunning verleend', 'Pand in gebruik (niet ingemeten)', 'Pand buiten gebruik'."
+    },
+    {
+      "name": "gebruiksdoel",
+      "type": "string",
+      "description": "Primary usage function of the building, derived from contained dwelling units (verblijfsobjecten). Values include: 'woonfunctie' (residential), 'industriefunctie' (industrial), 'kantoorfunctie' (office), 'winkelfunctie' (retail), 'logiesfunctie' (lodging), 'bijeenkomstfunctie' (assembly), 'onderwijsfunctie' (education), 'gezondheidszorgfunctie' (healthcare), 'sportfunctie' (sports), 'overige gebruiksfunctie' (other). Can be comma-separated for mixed use. NULL when building has no verblijfsobjecten."
+    },
+    {
+      "name": "oppervlakte_min",
+      "type": "int64",
+      "description": "Minimum floor area (m²) of contained dwelling units (verblijfsobjecten). NULL when building has no verblijfsobjecten."
+    },
+    {
+      "name": "oppervlakte_max",
+      "type": "int64",
+      "description": "Maximum floor area (m²) of contained dwelling units. Equals oppervlakte_min when building contains exactly one dwelling unit."
+    },
+    {
+      "name": "aantal_verblijfsobjecten",
+      "type": "int64",
+      "description": "Number of dwelling units (verblijfsobjecten) in the building. 0 = no addressable units (shed, garage). Higher values = apartment building or mixed-use."
+    },
+    {
+      "name": "rdf_seealso",
+      "type": "string",
+      "description": "Linked Data URI for this building in the BAG knowledge graph."
+    },
+    {
+      "name": "geom",
+      "type": "binary",
+      "description": "Building footprint polygon in EPSG:28992 (RD New / Amersfoort), WKB encoded. Coordinates in meters."
+    }
+  ],
+  "proj:epsg": 3857,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 14,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    5.0866699,
+    51.5702409,
+    14
+  ],
+  "pmtiles:layers": [
+    "panden"
+  ],
+  "title": "Buildings (Panden)",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.26,
+          50.73,
+          7.24,
+          53.55
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "CC0-1.0",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "Polygon"
+    ],
+    "geoparquet:feature_count": [
+      11367850
+    ],
+    "vector:geometry_types": [
+      "Polygon"
+    ]
+  },
+  "assets": {
+    "data": {
+      "href": "./bag-light.parquet",
+      "type": "application/x-parquet",
+      "title": "BAG Buildings (GeoParquet)",
+      "description": "11.4M building footprint polygons in EPSG:28992 (RD New), GeoParquet 1.1.0 with bbox covering column and Hilbert spatial sorting. 933 MB.",
+      "roles": [
+        "data"
+      ]
+    },
+    "geopackage": {
+      "href": "./bag-light.gpkg",
+      "type": "application/geopackage+sqlite3",
+      "title": "BAG Buildings (GeoPackage)",
+      "description": "Official BAG GeoPackage from PDOK ATOM download. 7.2 GB. Contains pand, verblijfsobject, nummeraanduiding, openbareruimte, and woonplaats tables.",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./bag-light.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "BAG Buildings (vector tiles)",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail_.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "Default",
+      "description": "Grey building footprints with blue outlines.",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-age": {
+      "href": "./styles/by-age.json",
+      "type": "application/json",
+      "title": "Buildings by Construction Year",
+      "description": "Color ramp from dark brown (pre-1800) through orange to pale yellow (post-2000) based on bouwjaar.",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-use": {
+      "href": "./styles/by-use.json",
+      "type": "application/json",
+      "title": "Buildings by Use",
+      "description": "Categorical colors by gebruiksdoel: red for residential, blue for office/retail, green for healthcare/sports, purple for education.",
+      "roles": [
+        "style"
+      ]
+    },
+    "documentation": {
+      "href": "./llms.txt",
+      "type": "text/plain",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "bag-light": {
+      "href": "./bag-light.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "data"
+      ]
+    },
+    "README": {
+      "href": "./README.md",
+      "type": "text/markdown",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "thumbnail.png": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "bag-light.gpkg": {
+      "href": "./bag-light.gpkg",
+      "type": "application/geopackage+sqlite3",
+      "roles": [
+        "data"
+      ]
+    }
+  }
+}

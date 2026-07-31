@@ -1,0 +1,50 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-05-08T18:16:23.830070Z",
+      "breaking": false,
+      "assets": {
+        "llms.txt": {
+          "sha256": "2c9b03afd9099e7406c8d01db5821af97fb0e76f46fa217a82e693647ceb6298",
+          "size_bytes": 4535,
+          "href": "rijkswaterstaat/sluizen/llms.txt",
+          "mtime": 1778185474.0
+        },
+        "sluizen.pmtiles": {
+          "sha256": "9a0849058b2cffb75fb88361327abee85ea51b316acd9ecb0f9aa148253809cf",
+          "size_bytes": 24306,
+          "href": "rijkswaterstaat/sluizen/sluizen.pmtiles",
+          "mtime": 1778070780.9565513
+        },
+        "thumbnail_.png": {
+          "sha256": "d292a75b51239e709d3e75520d6e2771577359f867612168db6be405576bb5fe",
+          "size_bytes": 268956,
+          "href": "rijkswaterstaat/sluizen/thumbnail_.png",
+          "mtime": 1778070780.9570916
+        },
+        "README.md": {
+          "sha256": "e2f279d302c24e1452b4481b6dc4ff74318d49797f5084278774bd9ddf14b8b2",
+          "size_bytes": 2018,
+          "href": "rijkswaterstaat/sluizen/README.md",
+          "mtime": 1778148808.0
+        },
+        "sluizen.parquet": {
+          "sha256": "1c12349172d50f9e0cf9fe5b63f209261a0f96c7afb4c6d2d5f7fdba88bcd848",
+          "size_bytes": 14154,
+          "href": "rijkswaterstaat/sluizen/sluizen.parquet",
+          "mtime": 1778070780.9597132
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "sluizen.pmtiles",
+        "thumbnail_.png",
+        "README.md",
+        "sluizen.parquet"
+      ]
+    }
+  ]
+}

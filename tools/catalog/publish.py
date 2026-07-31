@@ -58,10 +58,23 @@ def _content_type(p: Path) -> str:
     return _CT_BY_SUFFIX.get(p.suffix, "application/octet-stream")
 
 
+def _is_portolan_internal(rel: str) -> bool:
+    """True for Portolan's own bookkeeping, which is never published.
+
+    Everything under any .portolan/ directory is internal, with one exception:
+    the catalog root's .portolan/metadata.yaml is the hand-authored catalog
+    description and does belong in the published tree. Collection-level
+    .portolan/ dirs (config.yaml, metadata.yaml, extraction-report.json) are
+    tooling state and stay local.
+    """
+    if ".portolan" not in rel.split("/"):
+        return False
+    return rel != ".portolan/metadata.yaml"
+
+
 def collect_uploads(manifest: dict, root: Path) -> list[Upload]:
     write_prefix = manifest["write_prefix"].rstrip("/")
     pub_dir = root / manifest.get("publish_dir", "catalog")
-    skip = {".portolan/config.yaml", ".portolan/state.json"}
 
     uploads = []
     if not pub_dir.is_dir():
@@ -70,7 +83,7 @@ def collect_uploads(manifest: dict, root: Path) -> list[Upload]:
         if not p.is_file():
             continue
         rel = p.relative_to(pub_dir).as_posix()
-        if rel in skip:
+        if _is_portolan_internal(rel):
             continue
         uploads.append(Upload(local=p, s3_uri=f"{write_prefix}/{rel}",
                               content_type=_content_type(p)))

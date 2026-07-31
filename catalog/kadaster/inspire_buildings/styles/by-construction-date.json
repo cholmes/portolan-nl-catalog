@@ -1,0 +1,41 @@
+{
+  "version": 8,
+  "name": "INSPIRE Buildings — By Construction Date",
+  "sources": {
+    "inspire": {
+      "type": "vector",
+      "url": "pmtiles://../buildings.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "buildings-fill",
+      "type": "fill",
+      "source": "inspire",
+      "source-layer": "buildings",
+      "paint": {
+        "fill-color": [
+          "step",
+          ["to-number", ["slice", ["get", "anyPoint"], 0, 4]],
+          "#5C3317",
+          1800, "#8B4513",
+          1900, "#CD6600",
+          1940, "#E8A040",
+          1970, "#F0C060",
+          2000, "#FCE88A"
+        ],
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "buildings-outline",
+      "type": "line",
+      "source": "inspire",
+      "source-layer": "buildings",
+      "paint": {
+        "line-color": "#8B6914",
+        "line-width": 0.4
+      }
+    }
+  ]
+}

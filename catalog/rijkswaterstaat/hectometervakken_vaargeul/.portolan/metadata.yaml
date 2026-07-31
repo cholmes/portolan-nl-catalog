@@ -1,0 +1,29 @@
+contact:
+  name: "Chris Holmes"
+  email: "cholmes@9eo.org"
+
+license: "CC0-1.0"
+
+license_url: "https://creativecommons.org/publicdomain/zero/1.0/"
+citation: ""
+doi: ""
+keywords:
+  - water-depth
+  - rhine
+  - inland-navigation
+  - fairway
+  - rijkswaterstaat
+  - netherlands
+  - shipping
+  - waterway
+attribution: "Rijkswaterstaat"
+
+source_url: "https://services-eu1.arcgis.com/4D1GBrbE6xp1T4YG/arcgis/rest/services/Waterdieptekaarten_Rijntakken/FeatureServer"
+processing_notes: |
+  Extracted from ArcGIS FeatureServer layer 4 (Hectometervakken vaargeul).
+  ~3,600 polygon features representing hectometer sections of the fairway along Rhine branches.
+  Published for the GeoWeb Water Depth Charts (Waterdieptekaarten) viewer.
+  Original CRS: EPSG:28992 (RD New / Amersfoort).
+  Extent: Rhine branches in the Netherlands (Boven-Rijn, Waal, Pannerdensch Kanaal, Neder-Rijn, Lek, IJssel).
+  Fields: vak_ID (section identifier), Shape__Area, Shape__Length.
+known_issues: "Limited attribute data — only section ID and geometry measurements. Depth values may be in related layers or tables not included in this extraction."

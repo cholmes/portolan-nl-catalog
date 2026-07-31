@@ -1,0 +1,113 @@
+{
+  "version": 8,
+  "name": "BRP Gewaspercelen — 2010",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../brp_gewaspercelen_2010.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "background-parcels",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "brp_gewaspercelen",
+      "filter": [
+        "!=",
+        [
+          "get",
+          "category"
+        ],
+        "Landschapselement"
+      ],
+      "paint": {
+        "fill-color": "#E8E8E0",
+        "fill-opacity": 0.3
+      }
+    },
+    {
+      "id": "landscape-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "brp_gewaspercelen",
+      "filter": [
+        "any",
+        [
+          "==",
+          [
+            "get",
+            "category"
+          ],
+          "Landschapselement"
+        ],
+        [
+          "==",
+          [
+            "get",
+            "category"
+          ],
+          "landschapselement"
+        ]
+      ],
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "gewas"
+          ],
+          "Sloot",
+          "#1565C0",
+          "Houtwal en houtsingel",
+          "#2E7D32",
+          "Stroken wild gras",
+          "#7CB342",
+          "Bosje",
+          "#1B5E20",
+          "Knip- of scheerheg",
+          "#43A047",
+          "Elzensingel",
+          "#388E3C",
+          "Boomgroep",
+          "#33691E",
+          "Struweelhaag",
+          "#558B2F",
+          "Poel en klein historisch water",
+          "#1976D2",
+          "#4CAF50"
+        ],
+        "fill-opacity": 0.9
+      }
+    },
+    {
+      "id": "landscape-outline",
+      "type": "line",
+      "source": "data",
+      "source-layer": "brp_gewaspercelen",
+      "filter": [
+        "any",
+        [
+          "==",
+          [
+            "get",
+            "category"
+          ],
+          "Landschapselement"
+        ],
+        [
+          "==",
+          [
+            "get",
+            "category"
+          ],
+          "landschapselement"
+        ]
+      ],
+      "paint": {
+        "line-color": "#1B5E20",
+        "line-width": 1
+      }
+    }
+  ]
+}

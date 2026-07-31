@@ -1,0 +1,242 @@
+{
+  "type": "Collection",
+  "id": "fme_disk_tunnels",
+  "stac_version": "1.1.0",
+  "description": "Locations of 25 road tunnels managed by Rijkswaterstaat across the Netherlands, including name, road number, municipality, and year opened.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/fme_disk_tunnels/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Rijkswaterstaat"
+    },
+    {
+      "rel": "via",
+      "href": "https://services-eu1.arcgis.com/4D1GBrbE6xp1T4YG/arcgis/rest/services/FME_DISK_tunnels_view_locatiekaartjes/FeatureServer/1",
+      "type": "text/html",
+      "title": "Source ArcGIS Feature Layer"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/fme_disk_tunnels/fme_disk_tunnels.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/rijkswaterstaat/fme_disk_tunnels/README.md",
+      "type": "text/html",
+      "title": "Rijkswaterstaat Tunnels documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "table:row_count": 25,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "OBJECTID",
+      "type": "int64"
+    },
+    {
+      "name": "tunnelnaam",
+      "type": "string"
+    },
+    {
+      "name": "wegnummer",
+      "type": "string"
+    },
+    {
+      "name": "gemeente",
+      "type": "string"
+    },
+    {
+      "name": "jaar_openstelling",
+      "type": "string"
+    },
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "url",
+      "type": "string"
+    },
+    {
+      "name": "beheerder",
+      "type": "string"
+    },
+    {
+      "name": "last_update",
+      "type": "timestamp[ms]"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    }
+  ],
+  "portolan:styles": [
+    {
+      "name": "default",
+      "href": "./styles/default.json"
+    }
+  ],
+  "proj:epsg": 3857,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 3,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    6.457107,
+    52.463411,
+    3
+  ],
+  "pmtiles:layers": [
+    "fme_disk_tunnels"
+  ],
+  "title": "Rijkswaterstaat Tunnels",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          4.0065989,
+          50.849348,
+          6.45710753418375,
+          52.4634112028907
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "Point"
+    ],
+    "geoparquet:feature_count": [
+      25
+    ],
+    "table:column_statistics": [
+      {
+        "OBJECTID": {
+          "minimum": 74,
+          "maximum": 98
+        },
+        "tunnelnaam": {
+          "minimum": "Beneluxtunnel",
+          "maximum": "Zuidasdok"
+        },
+        "wegnummer": {
+          "minimum": "A10",
+          "maximum": "N434"
+        },
+        "gemeente": {
+          "minimum": "Alblasserdam/Hendrik-Ido-Ambacht",
+          "maximum": "Vlaardingen"
+        },
+        "jaar_openstelling": {
+          "minimum": "1957",
+          "maximum": "2035 (prognose)"
+        },
+        "status": {
+          "minimum": "Bestaand",
+          "maximum": "Gepland"
+        },
+        "url": {
+          "minimum": "https://www.rijkswaterstaat.nl/wegen/projectenoverzicht/a10-betere-bereikbaarheid-amsterdam-en-noordelijke-randstad",
+          "maximum": "https://www.rijkswaterstaat.nl/wegen/wegenoverzicht/n434/corbulotunnel"
+        },
+        "beheerder": {
+          "minimum": "RWS MN / MN District Zuid",
+          "maximum": "RWS ZN / ZN District Zuid-Oost",
+          "null_count": 2
+        },
+        "last_update": {
+          "minimum": "2025-08-18T11:25:10.601000",
+          "maximum": "2025-08-18T11:25:10.650000",
+          "null_count": 1
+        }
+      }
+    ],
+    "portolan:datetime_provisional": [
+      true
+    ],
+    "vector:geometry_types": [
+      "Point"
+    ]
+  },
+  "assets": {
+    "data": {
+      "href": "./fme_disk_tunnels.parquet",
+      "type": "application/x-parquet",
+      "title": "Tunnel locations",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./fme_disk_tunnels.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Tunnel locations (vector tiles)",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail_.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "Tunnels — Default",
+      "roles": [
+        "style"
+      ]
+    },
+    "documentation": {
+      "href": "./llms.txt",
+      "type": "text/plain",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "fme_disk_tunnels": {
+      "href": "./fme_disk_tunnels.parquet",
+      "type": "application/x-parquet",
+      "roles": [
+        "data"
+      ]
+    },
+    "README": {
+      "href": "./README.md",
+      "type": "text/markdown",
+      "roles": [
+        "documentation"
+      ]
+    }
+  }
+}

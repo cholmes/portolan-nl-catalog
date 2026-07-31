@@ -1,0 +1,317 @@
+{
+  "type": "Collection",
+  "id": "brp_gewaspercelen",
+  "stac_version": "1.1.0",
+  "title": "BRP Gewaspercelen (Agricultural Crop Parcels)",
+  "description": "Every agricultural parcel in the Netherlands with its registered crop type, from the Basisregistratie Gewaspercelen (BRP) — the national crop parcel registration. Published as a **multi-year partitioned collection** covering **2009–2025** (17 years, 18.3 M parcels total): one GeoParquet + PMTiles partition per BRP definitive edition, plus the original source file kept for provenance. Each parcel records the crop category (e.g., Grasland, Aardappelen), specific crop name, and numeric crop code. The BRP is an annual snapshot reflecting what farmers register each May 15 (the CAP registration deadline); each 'definitief' edition is finalized after verification. Published by RVO (Netherlands Enterprise Agency) via PDOK.\n\n**Cross-year analysis** is the main reason this collection is partitioned by year. To query all years at once with DuckDB, GDAL, or PyArrow, use the glob URL in the `data` asset (`./*/brp_gewaspercelen_*.parquet`). Each year is **self-contained in its own subfolder** (`./2009/`, `./2010/`, …, `./2025/`) with its own GeoParquet, PMTiles, original source file, README, llms.txt, and per-year MapLibre styles — usable independently or together via the glob.\n\nExample question this layout answers: *which parcels have not had potatoes planted in the last three years?* — join the partitions on geometry (parcel `id` is not stable across years; the BRP re-registers each May), filter by `gewas` and `jaar`.\n\n**Schema normalization** — partitions 2020–2025 are byte-equivalent to the PDOK source GeoPackages. Partitions 2009–2019 were derived from Esri File Geodatabases (zip archives) with a different upstream schema; columns were renamed (`OGC_FID`→`id`, `CAT_GEWASCATEGORIE`→`category`, `GWS_GEWAS`→`gewas`, `GWS_GEWASCODE`→`gewascode`), `gewascode` was cast varchar→int32, `jaar` was added from the filename, `status` was set to `'Definitief'`, and the source-side `Shape_*`/`GEOMETRIE_*` length/area columns were dropped. The original `.zip` is kept on each historical item as its `source` asset.\n\n🤖 AI/Agent users: See llms.txt for field descriptions, query examples, and usage tips.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Rijksdienst voor Ondernemend Nederland (RVO)"
+    },
+    {
+      "rel": "item",
+      "href": "./2009/brp_gewaspercelen_2009.json",
+      "type": "application/json",
+      "title": "BRP Gewaspercelen 2009"
+    },
+    {
+      "rel": "item",
+      "href": "./2010/brp_gewaspercelen_2010.json",
+      "type": "application/json",
+      "title": "BRP Gewaspercelen 2010"
+    },
+    {
+      "rel": "item",
+      "href": "./2011/brp_gewaspercelen_2011.json",
+      "type": "application/json",
+      "title": "BRP Gewaspercelen 2011"
+    },
+    {
+      "rel": "item",
+      "href": "./2012/brp_gewaspercelen_2012.json",
+      "type": "application/json",
+      "title": "BRP Gewaspercelen 2012"
+    },
+    {
+      "rel": "item",
+      "href": "./2013/brp_gewaspercelen_2013.json",
+      "type": "application/json",
+      "title": "BRP Gewaspercelen 2013"
+    },
+    {
+      "rel": "item",
+      "href": "./2014/brp_gewaspercelen_2014.json",
+      "type": "application/json",
+      "title": "BRP Gewaspercelen 2014"
+    },
+    {
+      "rel": "item",
+      "href": "./2015/brp_gewaspercelen_2015.json",
+      "type": "application/json",
+      "title": "BRP Gewaspercelen 2015"
+    },
+    {
+      "rel": "item",
+      "href": "./2016/brp_gewaspercelen_2016.json",
+      "type": "application/json",
+      "title": "BRP Gewaspercelen 2016"
+    },
+    {
+      "rel": "item",
+      "href": "./2017/brp_gewaspercelen_2017.json",
+      "type": "application/json",
+      "title": "BRP Gewaspercelen 2017"
+    },
+    {
+      "rel": "item",
+      "href": "./2018/brp_gewaspercelen_2018.json",
+      "type": "application/json",
+      "title": "BRP Gewaspercelen 2018"
+    },
+    {
+      "rel": "item",
+      "href": "./2019/brp_gewaspercelen_2019.json",
+      "type": "application/json",
+      "title": "BRP Gewaspercelen 2019"
+    },
+    {
+      "rel": "item",
+      "href": "./2020/brp_gewaspercelen_2020.json",
+      "type": "application/json",
+      "title": "BRP Gewaspercelen 2020"
+    },
+    {
+      "rel": "item",
+      "href": "./2021/brp_gewaspercelen_2021.json",
+      "type": "application/json",
+      "title": "BRP Gewaspercelen 2021"
+    },
+    {
+      "rel": "item",
+      "href": "./2022/brp_gewaspercelen_2022.json",
+      "type": "application/json",
+      "title": "BRP Gewaspercelen 2022"
+    },
+    {
+      "rel": "item",
+      "href": "./2023/brp_gewaspercelen_2023.json",
+      "type": "application/json",
+      "title": "BRP Gewaspercelen 2023"
+    },
+    {
+      "rel": "item",
+      "href": "./2024/brp_gewaspercelen_2024.json",
+      "type": "application/json",
+      "title": "BRP Gewaspercelen 2024"
+    },
+    {
+      "rel": "item",
+      "href": "./2025/brp_gewaspercelen_2025.json",
+      "type": "application/json",
+      "title": "BRP Gewaspercelen 2025"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.pdok.nl/introductie/-/article/basisregistratie-gewaspercelen-brp-",
+      "type": "text/html",
+      "title": "PDOK dataset page"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/2025/brp_gewaspercelen_2025.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/README.md",
+      "type": "text/html",
+      "title": "BRP Gewaspercelen documentation"
+    }
+  ],
+  "portolan:styles": [
+    "styles/default",
+    "styles/by-category",
+    "styles/by-crop",
+    "styles/landscape-elements"
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "table:row_count": 18310341,
+  "table:primary_geometry": "geom",
+  "table:columns": [
+    {
+      "name": "id",
+      "type": "int64",
+      "description": "Feature ID within the year's partition. NOT stable across years — the BRP re-registers parcels each May. For 2009–2019 this was derived from the source FGDB's `OGC_FID`."
+    },
+    {
+      "name": "category",
+      "type": "string",
+      "description": "Broad crop category (e.g., Grasland, Bouwland, Landschapselement, Natuurterrein, Braakland, Overige). Note: Landschapselement was added to the BRP scope in 2023, so this value is absent in 2009–2022."
+    },
+    {
+      "name": "gewas",
+      "type": "string",
+      "description": "Specific crop name within the category (e.g., Grasland blijvend, Aardappelen consumptie, Mais snij-)."
+    },
+    {
+      "name": "gewascode",
+      "type": "int32",
+      "description": "Numeric crop code identifying the specific crop type. Stable across years. (Cast from varchar in the 2009–2019 source FGDB.)"
+    },
+    {
+      "name": "jaar",
+      "type": "int32",
+      "description": "Registration year — also encoded in the partition filename. For 2009–2019 this column was synthesized from the filename, since the source FGDB did not include it."
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "description": "Registration status — 'Definitief' for all rows in this collection (finalized after verification)."
+    },
+    {
+      "name": "geom",
+      "type": "binary",
+      "description": "Parcel boundary polygon in EPSG:28992 (Amersfoort / RD New), WKB encoded."
+    }
+  ],
+  "proj:code": "EPSG:28992",
+  "geoparquet:geometry_type": "Polygon",
+  "geoparquet:feature_count": 18310341,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 15,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    4.7735595,
+    52.445966,
+    15
+  ],
+  "pmtiles:layers": [
+    "brp_gewaspercelen"
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.3597,
+          50.7504,
+          7.2245,
+          53.4989
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2009-05-15T00:00:00Z",
+          "2025-05-15T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "assets": {
+    "data": {
+      "href": "./*/brp_gewaspercelen_*.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "All years — GeoParquet glob (2009–2025)",
+      "description": "Glob URL covering every year's GeoParquet partition. Pass directly to DuckDB (`read_parquet('./*/brp_gewaspercelen_*.parquet')`), GDAL, or PyArrow to read all 17 years as a single dataset. Per the Portolan partition convention — see [formats/vector.md](https://github.com/portolan-sdi/portolan-spec/blob/main/formats/vector.md) in the portolan-spec.",
+      "roles": [
+        "data"
+      ],
+      "portolan:glob": true
+    },
+    "pmtiles": {
+      "href": "./2025/brp_gewaspercelen_2025.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Collection-level vector tiles (latest year — 2025)",
+      "description": "PMTiles for the most recent BRP year, used as the default collection-level visualization. Per-year PMTiles are also available as item assets.",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "BRP Gewaspercelen thumbnail",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "Default",
+      "description": "Canonical base style — agricultural landscape with greens for grassland and landscape elements, yellow for arable crops. References the collection-level (latest year) PMTiles. Per-year copies live alongside the data in YYYY/styles/ are generated by scripts/regen_year_styles.py.",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-category": {
+      "href": "./styles/by-category.json",
+      "type": "application/json",
+      "title": "By Crop Category",
+      "description": "Distinct colors for each broad crop category: green for grassland, orange for arable, blue for landscape elements.",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-crop": {
+      "href": "./styles/by-crop.json",
+      "type": "application/json",
+      "title": "By Crop Type",
+      "description": "Individual colors for the most common specific crops — potatoes, wheat, maize, sugar beets, and more.",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/landscape-elements": {
+      "href": "./styles/landscape-elements.json",
+      "type": "application/json",
+      "title": "Landscape Elements",
+      "description": "Highlights ditches, hedgerows, tree rows, and ponds — the landscape elements registered in the BRP (added to the BRP scope in 2023, so this style is empty for 2009–2022).",
+      "roles": [
+        "style"
+      ]
+    }
+  },
+  "license": "CC0-1.0",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "Polygon"
+    ],
+    "geoparquet:feature_count": [
+      18310341
+    ],
+    "vector:geometry_types": [
+      "Polygon"
+    ],
+    "jaar": {
+      "minimum": 2009,
+      "maximum": 2025
+    }
+  }
+}

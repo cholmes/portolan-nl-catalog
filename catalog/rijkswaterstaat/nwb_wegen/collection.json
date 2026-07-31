@@ -1,0 +1,329 @@
+{
+  "type": "Collection",
+  "id": "nwb_wegen",
+  "stac_version": "1.1.0",
+  "title": "National Road Network (NWB Wegen)",
+  "description": "The complete Dutch National Road Network (Nationaal Wegenbestand, NWB) — 1,626,321 road segments covering every road in the Netherlands. Includes street names, place names, municipality codes, road numbers (A/N-roads), road types, driving directions, road manager information, and kilometer markers. Published by Rijkswaterstaat via PDOK and updated monthly.\n\n🤖 AI/Agent users: See llms.txt for field descriptions, query examples, and usage tips.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/nwb_wegen/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Rijkswaterstaat"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/rws/nationaal-wegenbestand-wegen/atom/downloads/nwb_wegen.gpkg",
+      "type": "application/geopackage+sqlite3",
+      "title": "Source PDOK ATOM download (GeoPackage)"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/rws/nationaal-wegenbestand-wegen/atom/index.xml",
+      "type": "application/atom+xml",
+      "title": "PDOK ATOM feed"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/nwb_wegen/nwb_wegen.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "proj:epsg": 28992,
+  "table:row_count": 1626321,
+  "table:primary_geometry": "geom",
+  "table:columns": [
+    {
+      "name": "wvk_id",
+      "type": "double",
+      "description": "Road segment ID (wegvak ID)"
+    },
+    {
+      "name": "wvk_begdat",
+      "type": "string",
+      "description": "Segment start date (begin datum)"
+    },
+    {
+      "name": "jte_id_beg",
+      "type": "double",
+      "description": "Junction ID at start of segment"
+    },
+    {
+      "name": "jte_id_end",
+      "type": "double",
+      "description": "Junction ID at end of segment"
+    },
+    {
+      "name": "wegbehsrt",
+      "type": "string",
+      "description": "Road manager type (wegbeheerder soort): R=Rijk, P=Provincie, G=Gemeente, W=Waterschap"
+    },
+    {
+      "name": "wegbehcode",
+      "type": "string",
+      "description": "Road manager code (wegbeheerder code)"
+    },
+    {
+      "name": "wegbehnaam",
+      "type": "string",
+      "description": "Road manager name (wegbeheerder naam)"
+    },
+    {
+      "name": "wegnummer",
+      "type": "string",
+      "description": "Road number (e.g. A1, N50, A28)"
+    },
+    {
+      "name": "wegdeelltr",
+      "type": "string",
+      "description": "Road section letter"
+    },
+    {
+      "name": "hession",
+      "type": "int16",
+      "description": "Hectometer session number"
+    },
+    {
+      "name": "begafstand",
+      "type": "int32",
+      "description": "Begin distance in hectometers"
+    },
+    {
+      "name": "endafstand",
+      "type": "int32",
+      "description": "End distance in hectometers"
+    },
+    {
+      "name": "beginkm",
+      "type": "double",
+      "description": "Begin kilometer point"
+    },
+    {
+      "name": "eindkm",
+      "type": "double",
+      "description": "End kilometer point"
+    },
+    {
+      "name": "pos_tv_wol",
+      "type": "string",
+      "description": "Position relative to center line (positie t.o.v. wegas)"
+    },
+    {
+      "name": "rijrichtng",
+      "type": "string",
+      "description": "Driving direction (rijrichting): H=heen, T=terug, B=both, O=unknown"
+    },
+    {
+      "name": "admrichtng",
+      "type": "string",
+      "description": "Administrative direction"
+    },
+    {
+      "name": "wegtype",
+      "type": "string",
+      "description": "Road type code"
+    },
+    {
+      "name": "wgtype_oms",
+      "type": "string",
+      "description": "Road type description (wegtype omschrijving)"
+    },
+    {
+      "name": "routeltr",
+      "type": "string",
+      "description": "Route letter (A, N, etc.)"
+    },
+    {
+      "name": "routenr",
+      "type": "int16",
+      "description": "Route number"
+    },
+    {
+      "name": "subession",
+      "type": "int16",
+      "description": "Sub-session number"
+    },
+    {
+      "name": "gme_id",
+      "type": "int32",
+      "description": "Municipality code (gemeente ID) — links to CBS gebiedsindelingen"
+    },
+    {
+      "name": "gme_naam",
+      "type": "string",
+      "description": "Municipality name (gemeente naam)"
+    },
+    {
+      "name": "hnrstrlnks",
+      "type": "string",
+      "description": "House number street left"
+    },
+    {
+      "name": "hnrstrrhts",
+      "type": "string",
+      "description": "House number street right"
+    },
+    {
+      "name": "e_hnr_lnks",
+      "type": "string",
+      "description": "First house number left"
+    },
+    {
+      "name": "e_hnr_rhts",
+      "type": "string",
+      "description": "First house number right"
+    },
+    {
+      "name": "l_hnr_lnks",
+      "type": "string",
+      "description": "Last house number left"
+    },
+    {
+      "name": "l_hnr_rhts",
+      "type": "string",
+      "description": "Last house number right"
+    },
+    {
+      "name": "beg_opafst",
+      "type": "int32",
+      "description": "Start address distance"
+    },
+    {
+      "name": "end_opafst",
+      "type": "int32",
+      "description": "End address distance"
+    },
+    {
+      "name": "stt_naam",
+      "type": "string",
+      "description": "Street name (straatnaam)"
+    },
+    {
+      "name": "stt_bron",
+      "type": "string",
+      "description": "Street name source"
+    },
+    {
+      "name": "wpsnaam",
+      "type": "string",
+      "description": "Place name (woonplaatsnaam)"
+    },
+    {
+      "name": "wpsbron",
+      "type": "string",
+      "description": "Place name source"
+    },
+    {
+      "name": "gmebron",
+      "type": "string",
+      "description": "Municipality data source"
+    },
+    {
+      "name": "admrichtng_sort",
+      "type": "string",
+      "description": "Administrative direction sort key"
+    },
+    {
+      "name": "rijrichtng_sort",
+      "type": "string",
+      "description": "Driving direction sort key"
+    },
+    {
+      "name": "st_lengthshape",
+      "type": "double",
+      "description": "Segment length in metres"
+    },
+    {
+      "name": "geom",
+      "type": "binary",
+      "description": "Road segment geometry (MultiLineString in EPSG:28992, WKB encoded)"
+    }
+  ],
+  "geoparquet:geometry_type": "MultiLineString",
+  "geoparquet:feature_count": 1626321,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 13,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    5.1196289,
+    52.0930055,
+    13
+  ],
+  "pmtiles:layers": [
+    "nwb_wegen"
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.21,
+          50.73,
+          7.24,
+          53.58
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "assets": {
+    "data": {
+      "href": "./nwb_wegen.parquet",
+      "type": "application/x-parquet",
+      "title": "NWB Wegen (GeoParquet)",
+      "description": "1.6M road segment MultiLineStrings in EPSG:28992 (Amersfoort / RD New), GeoParquet format. 779 MB.",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./nwb_wegen.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "NWB Wegen (vector tiles)",
+      "roles": [
+        "visual"
+      ]
+    }
+  },
+  "license": "CC0-1.0",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "MultiLineString"
+    ],
+    "geoparquet:feature_count": [
+      1626321
+    ],
+    "vector:geometry_types": [
+      "MultiLineString"
+    ]
+  }
+}

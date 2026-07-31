@@ -1,0 +1,32 @@
+{
+  "version": 8,
+  "name": "Fairway Sections — Default",
+  "sources": {
+    "rws": {
+      "type": "vector",
+      "url": "pmtiles://../hectometervakken_vaargeul.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fairway-fill",
+      "type": "fill",
+      "source": "rws",
+      "source-layer": "hectometervakken_vaargeul",
+      "paint": {
+        "fill-color": "#283593",
+        "fill-opacity": 0.4
+      }
+    },
+    {
+      "id": "fairway-outline",
+      "type": "line",
+      "source": "rws",
+      "source-layer": "hectometervakken_vaargeul",
+      "paint": {
+        "line-color": "#1A237E",
+        "line-width": 1
+      }
+    }
+  ]
+}

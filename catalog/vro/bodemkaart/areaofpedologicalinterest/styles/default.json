@@ -1,0 +1,32 @@
+{
+  "version": 8,
+  "name": "Area of pedological interest",
+  "sources": {
+    "areaofpedologicalinterest": {
+      "type": "vector",
+      "url": "pmtiles://../areaofpedologicalinterest.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "areaofpedologicalinterest-fill",
+      "type": "fill",
+      "source": "areaofpedologicalinterest",
+      "source-layer": "areaofpedologicalinterest",
+      "paint": {
+        "fill-color": "#A1887F",
+        "fill-opacity": 0.4
+      }
+    },
+    {
+      "id": "areaofpedologicalinterest-outline",
+      "type": "line",
+      "source": "areaofpedologicalinterest",
+      "source-layer": "areaofpedologicalinterest",
+      "paint": {
+        "line-color": "#6D4C41",
+        "line-width": 0.3
+      }
+    }
+  ]
+}

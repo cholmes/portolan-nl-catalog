@@ -1,0 +1,196 @@
+{
+  "type": "Collection",
+  "id": "grondwatergebruiksysteem",
+  "stac_version": "1.1.0",
+  "title": "BRO Groundwater Use System (GUF / Grondwatergebruiksysteem)",
+  "description": "50,637 groundwater use systems (grondwatergebruiksysteem, GUF) from the BRO — constructions that extract or infiltrate groundwater, including ground-source energy (ATES/bodemenergie). Produced under VRO; bronhouder TNO.\n\n🤖 AI/Agent users: see llms.txt for field descriptions, query examples and usage tips.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/vro/grondwatergebruiksysteem/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/tno/bro-grondwatergebruiksysteem/atom/index.xml",
+      "type": "application/atom+xml",
+      "title": "PDOK Atom download (source GeoPackage)"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/tno/bro-grondwatergebruiksysteem/wms/v1_0?request=GetCapabilities&service=WMS",
+      "type": "application/xml",
+      "title": "PDOK WMS (GetCapabilities)"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/vro/grondwatergebruiksysteem/README.md",
+      "type": "text/html",
+      "title": "BRO Groundwater Use System (GUF / Grondwatergebruiksysteem) documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "table:row_count": 50637,
+  "table:primary_geometry": "standardized_location",
+  "table:columns": [
+    {
+      "name": "groundwater_usage_facility_pk",
+      "type": "int64"
+    },
+    {
+      "name": "bro_id",
+      "type": "string",
+      "description": "BRO registration ID — unique identifier of the object in the Basisregistratie Ondergrond."
+    },
+    {
+      "name": "quality_regime",
+      "type": "string",
+      "description": "BRO quality regime: IMBRO (full assurance) or IMBRO/A (transitional/lower assurance)."
+    },
+    {
+      "name": "delivery_accountable_party",
+      "type": "string",
+      "description": "KvK number of the party accountable for delivery (bronhouder)."
+    },
+    {
+      "name": "delivery_context",
+      "type": "string",
+      "description": "Legal/administrative framework under which the object was registered."
+    },
+    {
+      "name": "applied_transformation",
+      "type": "string",
+      "description": "Whether a coordinate/height transformation was applied (ja/nee)."
+    },
+    {
+      "name": "standardized_location",
+      "type": "binary",
+      "description": "Object location — WKB geometry in EPSG:4258 (ETRS89)."
+    },
+    {
+      "name": "standardized_location_bbox",
+      "type": "struct<xmin: float, ymin: float, xmax: float, ymax: float>",
+      "description": "Per-feature bounding box struct (xmin,ymin,xmax,ymax) for spatial filtering."
+    }
+  ],
+  "geoparquet:geometry_type": "MultiPoint",
+  "geoparquet:feature_count": 50637,
+  "proj:epsg": 4258,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 12,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    5.287807,
+    52.12733,
+    12
+  ],
+  "pmtiles:layers": [
+    "grondwatergebruiksysteem"
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.372981,
+          50.766874,
+          7.202634,
+          53.487785
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "assets": {
+    "grondwatergebruiksysteem": {
+      "href": "./grondwatergebruiksysteem.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "BRO Groundwater Use System (GUF / Grondwatergebruiksysteem) (GeoParquet)",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./grondwatergebruiksysteem.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "BRO Groundwater Use System (GUF / Grondwatergebruiksysteem) (vector tiles)",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Thumbnail (PDOK preview)",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/by-delivery-context": {
+      "href": "./styles/by-delivery-context.json",
+      "type": "application/json",
+      "title": "BRO Groundwater Use System (GUF / Grondwatergebruiksysteem) — By delivery context",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-quality-regime": {
+      "href": "./styles/by-quality-regime.json",
+      "type": "application/json",
+      "title": "BRO Groundwater Use System (GUF / Grondwatergebruiksysteem) — By quality regime",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "BRO Groundwater Use System (GUF / Grondwatergebruiksysteem) — Default",
+      "roles": [
+        "style"
+      ]
+    }
+  },
+  "license": "CC0-1.0",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "MultiPoint"
+    ],
+    "vector:geometry_types": [
+      "MultiPoint"
+    ]
+  },
+  "portolan:styles": [
+    "styles/default",
+    "styles/by-delivery-context",
+    "styles/by-quality-regime"
+  ]
+}

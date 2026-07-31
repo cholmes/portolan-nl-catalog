@@ -1,0 +1,492 @@
+{
+  "id": "rijksmonumenten",
+  "title_nl": "Rijksmonumenten",
+  "title_en": "National Monuments of the Netherlands",
+  "description_nl": "Locaties en contouren van alle rijksmonumenten in Nederland. Rijksmonumenten zijn gebouwen, objecten en terreinen die van nationaal belang zijn vanwege hun schoonheid, betekenis voor de wetenschap of cultuurhistorische waarde, beschermd onder de Erfgoedwet.",
+  "description_en": "Locations and contours of all national listed monuments (rijksmonumenten) in the Netherlands. These are buildings, objects, and sites of national importance due to their beauty, scientific significance, or cultural-historical value, protected under the Heritage Act (Erfgoedwet).",
+  "provider": {
+    "name_nl": "Rijksdienst voor het Cultureel Erfgoed",
+    "name_en": "Cultural Heritage Agency of the Netherlands",
+    "abbreviation": "RCE",
+    "url": "https://www.cultureelerfgoed.nl/",
+    "role": "Custodian of the national monument register (Rijksmonumentenregister)"
+  },
+  "source": {
+    "rce_download_service": {
+      "atom_feed": "https://services.rce.geovoorziening.nl/www/download/nl.xml",
+      "points_zip": "https://services.rce.geovoorziening.nl/www/download/data/Rijksmonumentpunten_28992.zip",
+      "contours_zip": "https://services.rce.geovoorziening.nl/www/download/data/Rijksmonumentcontouren_28992.zip",
+      "notes": "Periodic download service. Files are Shapefile format in EPSG:28992."
+    },
+    "pdok_ogc_api": {
+      "landing_page": "https://api.pdok.nl/rce/beschermde-gebieden-cultuurhistorie/ogc/v1/",
+      "collections": "https://api.pdok.nl/rce/beschermde-gebieden-cultuurhistorie/ogc/v1/collections",
+      "points_collection": "https://api.pdok.nl/rce/beschermde-gebieden-cultuurhistorie/ogc/v1/collections/rijksmonumentpunten/items",
+      "contours_collection": "https://api.pdok.nl/rce/beschermde-gebieden-cultuurhistorie/ogc/v1/collections/rijksmonumentcontouren/items",
+      "notes": "OGC API Features service hosted by PDOK. Returns GeoJSON in EPSG:4326 by default. Paginated (max 1000 per page). May be more current than the download service."
+    },
+    "monument_register": {
+      "url": "https://monumentenregister.cultureelerfgoed.nl/",
+      "notes": "Public web interface for looking up individual monuments by number. Each monument's rijksurl field links directly to its register page."
+    }
+  },
+  "license": {
+    "type": "public_domain",
+    "notes": "No restrictions stated in the Atom download feed. Dutch government open data."
+  },
+  "crs": {
+    "code": "EPSG:28992",
+    "name": "Amersfoort / RD New",
+    "notes": "Standard Dutch national coordinate reference system (Rijksdriehoekstelsel). Uses Oblique Stereographic projection with origin near Amersfoort. Units are metres."
+  },
+  "encoding": "UTF-8",
+  "format": "ESRI Shapefile",
+  "download_date": "2026-05-06",
+  "layers": {
+    "rijksmonumentpunten": {
+      "filename": "Rijksmonumentpunten_28992.shp",
+      "title_nl": "Rijksmonumentpunten",
+      "title_en": "National Monument Points",
+      "description": "Point locations for all nationally listed monuments. Each feature represents one monument with its point location (centroid or address-derived coordinate).",
+      "geometry_type": "Point",
+      "feature_count": 63073,
+      "extent": {
+        "xmin": 13854.0,
+        "ymin": 306993.058,
+        "xmax": 277502.0583,
+        "ymax": 617910.0,
+        "crs": "EPSG:28992"
+      },
+      "columns": [
+        {
+          "name": "gml_parent",
+          "type": "String(254)",
+          "name_en": "GML Parent ID",
+          "description_nl": "GML-identificatie van het bovenliggende object",
+          "description_en": "GML identifier of the parent object. Used in GML source data to establish parent-child relationships. In this Shapefile export, this field is always null.",
+          "nullable": true,
+          "notes": "Always null in the current Shapefile export. Parent-child relationships are represented through the complex_nu field instead."
+        },
+        {
+          "name": "gml_id",
+          "type": "String(254)",
+          "name_en": "GML ID",
+          "description_nl": "Unieke GML-identificatie van het punt",
+          "description_en": "Unique GML identifier for the point feature",
+          "nullable": false,
+          "example": "NationalListedMonumentPoints.10001",
+          "notes": "Format: 'NationalListedMonumentPoints.NNNNN'. The numeric suffix is a sequential feature ID, NOT the monument number."
+        },
+        {
+          "name": "rijksmonum",
+          "type": "Real(20)",
+          "name_en": "Monument Number",
+          "full_name_nl": "Rijksmonumentnummer",
+          "description_nl": "Uniek nummer waarmee het rijksmonument is geregistreerd in het Rijksmonumentenregister",
+          "description_en": "Unique national monument registration number. This is the primary key for looking up a monument in the national register.",
+          "nullable": false,
+          "example": 341971,
+          "notes": "Integer stored as Real due to Shapefile limitations. The key identifier used across all RCE systems. Used in the rijksurl to link to the monument register."
+        },
+        {
+          "name": "complex_nu",
+          "type": "Real(20)",
+          "name_en": "Complex Number",
+          "full_name_nl": "Complexnummer",
+          "description_nl": "Nummer van het complex waartoe dit monument behoort",
+          "description_en": "Number of the complex (group) to which this monument belongs. Multiple monuments can share the same complex number, indicating they form an ensemble (e.g., a church with its rectory, or a farm with its barn).",
+          "nullable": true,
+          "example": 507388,
+          "notes": "About 14,033 of 63,073 monuments (22%) belong to a complex. The complex number is itself a rijksmonumentnummer of one of the constituent monuments. Null for standalone monuments."
+        },
+        {
+          "name": "juridische",
+          "type": "String(254)",
+          "name_en": "Legal Status",
+          "full_name_nl": "Juridische status",
+          "description_nl": "De juridische status van het beschermde object",
+          "description_en": "Legal protection status of the monument",
+          "nullable": false,
+          "values": ["rijksmonument"],
+          "notes": "All features in this dataset have the value 'rijksmonument'. Other statuses (e.g., gemeentelijk monument / municipal monument) are maintained in separate datasets."
+        },
+        {
+          "name": "aard_monum",
+          "type": "String(254)",
+          "name_en": "Monument Nature",
+          "full_name_nl": "Aard van het monument",
+          "description_nl": "De aard van het monument: archeologisch of onroerend gebouwd",
+          "description_en": "Nature/type of the monument: archaeological or built (immovable property)",
+          "nullable": false,
+          "values": {
+            "archeologisch": {
+              "en": "archaeological",
+              "description": "Archaeological sites and terrain monuments (1,461 features)",
+              "count": 1461
+            },
+            "onroerend gebouwd": {
+              "en": "built / immovable property",
+              "description": "Built structures — buildings, infrastructure, objects (61,612 features)",
+              "count": 61612
+            }
+          }
+        },
+        {
+          "name": "herkomst",
+          "type": "String(254)",
+          "name_en": "Geometry Origin",
+          "full_name_nl": "Herkomst van de geometrie",
+          "description_nl": "Bron waaruit de geometrie (puntlocatie) is afgeleid",
+          "description_en": "Source from which the point geometry was derived. Indicates which base registry or method was used to geocode the monument.",
+          "nullable": true,
+          "values": {
+            "BAG": {
+              "en": "BAG (Building & Address Register)",
+              "description": "Derived from the Basisregistratie Adressen en Gebouwen — the authoritative Dutch building and address registry. Most common source.",
+              "count": 45499
+            },
+            "divers": {
+              "en": "Various/miscellaneous",
+              "description": "Mixed or unspecified sources",
+              "count": 4763
+            },
+            "RCE dico": {
+              "en": "RCE geocoder",
+              "description": "Geocoded using the RCE's own 'dico' geocoding tool",
+              "count": 3513
+            },
+            "Bridgis": {
+              "en": "Bridgis geocoding service",
+              "description": "Geocoded using the commercial Bridgis service",
+              "count": 3076
+            },
+            "RCE handmatig": {
+              "en": "RCE manual",
+              "description": "Manually positioned by RCE staff",
+              "count": 1767
+            },
+            "BRK": {
+              "en": "BRK (Cadastral Register)",
+              "description": "Derived from the Basisregistratie Kadaster — the Dutch cadastral registration",
+              "count": 1647
+            },
+            "AMR dico": {
+              "en": "AMR geocoder",
+              "description": "Geocoded using the AMR geocoding tool (related to AMR/Archis archaeological data system)",
+              "count": 1476
+            },
+            "GBKN": {
+              "en": "GBKN (Large-Scale Base Map)",
+              "description": "Derived from the Grootschalige Basiskaart van Nederland (now superseded by BGT)",
+              "count": 1199
+            },
+            "BGT": {
+              "en": "BGT (Large-Scale Topography)",
+              "description": "Derived from the Basisregistratie Grootschalige Topografie",
+              "count": 17
+            },
+            "RCE bulk": {
+              "en": "RCE bulk processing",
+              "description": "Bulk-processed by RCE",
+              "count": 33
+            }
+          },
+          "notes": "83 features have null herkomst. The herkomst value reflects how accurate and current the point location is — BAG-derived points tend to be the most reliable."
+        },
+        {
+          "name": "kwaliteit_",
+          "type": "String(254)",
+          "name_en": "Location Quality",
+          "full_name_nl": "Kwaliteit van de locatie",
+          "description_nl": "Aanduiding van de nauwkeurigheid van de puntlocatie",
+          "description_en": "Quality indicator for the point location accuracy",
+          "nullable": false,
+          "values": {
+            "globaal": {
+              "en": "approximate",
+              "description": "Approximate location — may be off by tens to hundreds of metres (37,881 features, 60%)",
+              "count": 37881
+            },
+            "exact": {
+              "en": "exact",
+              "description": "Exact location — directly on or very close to the monument (21,041 features, 33%)",
+              "count": 21041
+            },
+            "besluit": {
+              "en": "by decree/decision",
+              "description": "Location as specified in the official designation decree. Mainly used for archaeological monuments (4,151 features, 7%)",
+              "count": 4151
+            }
+          },
+          "notes": "The field name is truncated from 'kwaliteit' to 'kwaliteit_' due to the Shapefile 10-character field name limit."
+        },
+        {
+          "name": "hoofdcateg",
+          "type": "String(254)",
+          "name_en": "Main Category",
+          "full_name_nl": "Hoofdcategorie",
+          "description_nl": "Hoofdcategorie van het monument volgens het RCE-classificatiesysteem",
+          "description_en": "Main category of the monument according to the RCE classification system",
+          "nullable": true,
+          "values": {
+            "Woningen en woningbouwcomplexen": { "en": "Residences and housing complexes", "count": 31503 },
+            "Boerderijen, molens en bedrijven": { "en": "Farms, mills, and businesses", "count": 9888 },
+            "Kastelen, landhuizen en parken": { "en": "Castles, country houses, and parks", "count": 5529 },
+            "Religieuze gebouwen": { "en": "Religious buildings", "count": 4351 },
+            "Verdedigingswerken en militaire gebouwen": { "en": "Fortifications and military buildings", "count": 2402 },
+            "Handelsgebouwen, opslag- en transportgebouwen": { "en": "Commercial, storage, and transport buildings", "count": 2204 },
+            "Archeologie (N)": { "en": "Archaeology", "count": 1461 },
+            "Cultuur, gezondheid en wetenschap": { "en": "Culture, health, and science", "count": 1331 },
+            "Voorwerpen op pleinen en dergelijke": { "en": "Objects in public spaces", "count": 1240 },
+            "Weg- en waterbouwkundige werken": { "en": "Road and hydraulic engineering works", "count": 969 },
+            "Uitvaartcentra en begraafplaatsen": { "en": "Funeral centres and cemeteries", "count": 929 },
+            "Bestuursgebouwen, rechtsgebouwen en overheidsgebouwen": { "en": "Government and judicial buildings", "count": 724 },
+            "Sport, recreatie, vereniging en horeca": { "en": "Sports, recreation, clubs, and hospitality", "count": 541 }
+          },
+          "notes": "The (N) suffix on 'Archeologie (N)' is a legacy classification code. 1 feature has null hoofdcategorie. The field name is truncated from 'hoofdcategorie' due to Shapefile limits."
+        },
+        {
+          "name": "subcategor",
+          "type": "String(254)",
+          "name_en": "Subcategory",
+          "full_name_nl": "Subcategorie",
+          "description_nl": "Subcategorie van het monument, nadere specificatie van de hoofdcategorie",
+          "description_en": "Subcategory of the monument, further specifying the main category. Some subcategories include a legacy letter-number code in parentheses.",
+          "nullable": true,
+          "example_values": [
+            "Woonhuis(K)",
+            "Boerderij (M)",
+            "Kerk en kerkonderdeel",
+            "Kasteel, buitenplaats",
+            "Fort, vesting en -onderdelen",
+            "Brug(C)",
+            "Industrie- en poldermolen",
+            "Archeologie (N1)",
+            "Gedenkteken(D)",
+            "Begraafplaats en -onderdelen",
+            "Open verdedigingswerk",
+            "Handel en kantoor",
+            "Tuin, park en plantsoen",
+            "Klooster, kloosteronderdl",
+            "Bomvrij militair object",
+            "Gemaal (M)",
+            "Appartementengebouw"
+          ],
+          "notes": "66 distinct values. The letter-number codes in parentheses (e.g., K, M, C, D, N1) are legacy codes from an older classification system. Field name truncated from 'subcategorie' due to Shapefile limits."
+        },
+        {
+          "name": "rijksurl",
+          "type": "String(254)",
+          "name_en": "Monument Register URL",
+          "full_name_nl": "URL naar het Rijksmonumentenregister",
+          "description_nl": "Directe link naar de pagina van dit monument in het online Rijksmonumentenregister",
+          "description_en": "Direct URL to this monument's page in the online National Monument Register. Provides full details including address, description, images, and designation history.",
+          "nullable": false,
+          "example": "https://monumentenregister.cultureelerfgoed.nl/monumenten/341971",
+          "pattern": "https://monumentenregister.cultureelerfgoed.nl/monumenten/{rijksmonumentnummer}"
+        },
+        {
+          "name": "geom",
+          "type": "String(254)",
+          "name_en": "Extra Geometry Field",
+          "description_en": "An additional geometry field present in the GML source data, stored as a string in the Shapefile export. Always null in this dataset.",
+          "nullable": true,
+          "notes": "Artifact of the GML-to-Shapefile conversion. Can be safely ignored. Not present in the contours layer."
+        }
+      ]
+    },
+    "rijksmonumentcontouren": {
+      "filename": "Rijksmonumentcontouren_28992.shp",
+      "title_nl": "Rijksmonumentcontouren",
+      "title_en": "National Monument Contours",
+      "description": "Contour/outline geometries for a subset of nationally listed monuments. Primarily covers archaeological sites and a subset of built monuments that have surveyed boundary polygons.",
+      "geometry_type_reported": "Point",
+      "geometry_type_expected": "Polygon or MultiPolygon",
+      "feature_count": 4149,
+      "extent_reported": {
+        "xmin": 0.0,
+        "ymin": 0.0,
+        "xmax": 0.0,
+        "ymax": 0.0,
+        "crs": "EPSG:28992"
+      },
+      "data_quality_issue": {
+        "summary": "Geometry appears corrupt or empty in the Shapefile export",
+        "details": "ogrinfo reports the geometry type as Point with an extent of (0,0)-(0,0), despite the gml_id values containing 'NationalListedMonumentPolygons' (e.g., 'NationalListedMonumentPolygons.10001'). The .shp file is only 49 KB for 4,149 features, far too small for polygon data. The attribute data in the .dbf (9.6 MB) appears intact. This suggests the polygon geometries were lost or corrupted during the GML-to-Shapefile conversion by the data provider.",
+        "recommendation": "Use the PDOK OGC API to obtain contour polygons with intact geometry: https://api.pdok.nl/rce/beschermde-gebieden-cultuurhistorie/ogc/v1/collections/rijksmonumentcontouren/items",
+        "workaround": "The points layer covers all 63,073 monuments including those in the contours layer. The rijksmonumentnummer can be used to join contour attributes if polygon geometry is obtained from the PDOK API."
+      },
+      "breakdown_by_type": {
+        "archeologisch": { "en": "archaeological", "count": 1461 },
+        "onroerend gebouwd": { "en": "built / immovable property", "count": 2688 }
+      },
+      "columns": [
+        {
+          "name": "gml_parent",
+          "type": "String(254)",
+          "name_en": "GML Parent ID",
+          "description_en": "GML identifier of the parent object. Always null in this export.",
+          "nullable": true
+        },
+        {
+          "name": "gml_id",
+          "type": "String(254)",
+          "name_en": "GML ID",
+          "description_en": "Unique GML identifier for the contour feature",
+          "example": "NationalListedMonumentPolygons.10001",
+          "notes": "Format: 'NationalListedMonumentPolygons.NNNNN'. Note: 'Polygons' in the ID confirms these should be polygon geometries."
+        },
+        {
+          "name": "rijksmonum",
+          "type": "Real(20)",
+          "name_en": "Monument Number",
+          "description_en": "Unique national monument registration number. Same identifier as in the points layer, can be used for joining."
+        },
+        {
+          "name": "complex_nu",
+          "type": "Real(20)",
+          "name_en": "Complex Number",
+          "description_en": "Complex group number (see points layer documentation)"
+        },
+        {
+          "name": "juridische",
+          "type": "String(254)",
+          "name_en": "Legal Status",
+          "description_en": "Legal protection status — always 'rijksmonument'"
+        },
+        {
+          "name": "aard_monum",
+          "type": "String(254)",
+          "name_en": "Monument Nature",
+          "description_en": "Nature of the monument: 'archeologisch' or 'onroerend gebouwd'"
+        },
+        {
+          "name": "herkomst",
+          "type": "String(254)",
+          "name_en": "Geometry Origin",
+          "description_en": "Source from which the contour geometry was derived"
+        },
+        {
+          "name": "kwaliteit_",
+          "type": "String(254)",
+          "name_en": "Location Quality",
+          "description_en": "Quality indicator for the contour geometry accuracy"
+        },
+        {
+          "name": "hoofdcateg",
+          "type": "String(254)",
+          "name_en": "Main Category",
+          "description_en": "Main category (see points layer for full enumeration)"
+        },
+        {
+          "name": "subcategor",
+          "type": "String(254)",
+          "name_en": "Subcategory",
+          "description_en": "Subcategory (see points layer for full enumeration)"
+        },
+        {
+          "name": "rijksurl",
+          "type": "String(254)",
+          "name_en": "Monument Register URL",
+          "description_en": "Direct URL to the monument's register page"
+        }
+      ],
+      "notes": "The contours layer does NOT have the extra 'geom' string field that appears in the points layer. All 1,461 archaeological monuments have contours; only 2,688 of the ~61,600 built monuments have contours (~4.4%)."
+    }
+  },
+  "category_classification_system": {
+    "description": "The RCE uses a two-level classification system: hoofdcategorie (main category) and subcategorie (subcategory). Some categories and subcategories include legacy alphanumeric codes in parentheses from an older classification system.",
+    "main_categories": [
+      {
+        "nl": "Archeologie (N)",
+        "en": "Archaeology",
+        "subcategories": ["Archeologie (N1)"]
+      },
+      {
+        "nl": "Bestuursgebouwen, rechtsgebouwen en overheidsgebouwen",
+        "en": "Government and judicial buildings",
+        "subcategories": ["Overheidsgebouw", "Bestuursgebouw en onderdl", "Gerechtsgebouw(E)"]
+      },
+      {
+        "nl": "Boerderijen, molens en bedrijven",
+        "en": "Farms, mills, and businesses",
+        "subcategories": ["Boerderij (M)", "Industrie- en poldermolen", "Industrie", "Nijverheid", "Bedrijfs-,fabriekswoning", "Gemaal (M)", "Bedieningsgebouw"]
+      },
+      {
+        "nl": "Cultuur, gezondheid en wetenschap",
+        "en": "Culture, health, and science",
+        "subcategories": ["Sociale zorg, liefdadigheid", "Onderwijs en wetenschap", "Gezondheidszorg", "Welzijn, kunst en cultuur"]
+      },
+      {
+        "nl": "Handelsgebouwen, opslag- en transportgebouwen",
+        "en": "Commercial, storage, and transport buildings",
+        "subcategories": ["Handel en kantoor", "Opslag", "Winkel (G)", "Transport"]
+      },
+      {
+        "nl": "Kastelen, landhuizen en parken",
+        "en": "Castles, country houses, and parks",
+        "subcategories": ["Kasteel, buitenplaats", "Tuin, park en plantsoen", "Bijgebouwen kastelen enz.", "Dierenverblijf (J)"]
+      },
+      {
+        "nl": "Religieuze gebouwen",
+        "en": "Religious buildings",
+        "subcategories": ["Kerk en kerkonderdeel", "Kapel (F)", "Klooster, kloosteronderdl", "Vanwege onderdelen kerk", "Kerkelijke dienstwoning"]
+      },
+      {
+        "nl": "Sport, recreatie, vereniging en horeca",
+        "en": "Sports, recreation, clubs, and hospitality",
+        "subcategories": ["Horeca", "Vergadering en vereniging", "Sport en recreatie"]
+      },
+      {
+        "nl": "Uitvaartcentra en begraafplaatsen",
+        "en": "Funeral centres and cemeteries",
+        "subcategories": ["Begraafplaats en -onderdelen", "Crematorium (H)"]
+      },
+      {
+        "nl": "Verdedigingswerken en militaire gebouwen",
+        "en": "Fortifications and military buildings",
+        "subcategories": ["Open verdedigingswerk", "Fort, vesting en -onderdelen", "Versperring", "Omwalling", "Militair wachtgebouw", "Militaire opslagplaats", "Militair verblijfsgebouw", "Bomvrij militair object", "Voorwerk (B)", "Kazemat (B)", "Waarnemingspost (B)"]
+      },
+      {
+        "nl": "Voorwerpen op pleinen en dergelijke",
+        "en": "Objects in public spaces",
+        "subcategories": ["Gedenkteken(D)", "Straatmeubilair", "Erfscheiding(D)", "Grensafbakening", "Stoep(D)", "Verkeersobject"]
+      },
+      {
+        "nl": "Weg- en waterbouwkundige werken",
+        "en": "Road and hydraulic engineering works",
+        "subcategories": ["Brug(C)", "Waterkering en -doorlaat", "Waterweg, werf en haven", "Gracht (B)", "Weg(C)", "Kust- en oevermarkering", "Scheepshulpmiddel", "Aanlegvoorziening"]
+      },
+      {
+        "nl": "Woningen en woningbouwcomplexen",
+        "en": "Residences and housing complexes",
+        "subcategories": ["Woonhuis(K)", "Werk-woonhuis", "Dienstwoning(K)", "Onderdeel woningen e.d.", "Appartementengebouw", "Bijzondere woonvorm", "Bijgebouwen"]
+      }
+    ]
+  },
+  "context": {
+    "what": "A Rijksmonument (national monument) is a building, object, or site in the Netherlands that has been designated as being of national significance for its beauty, scientific importance, or cultural-historical value. The designation is a legal protection status under the Erfgoedwet (Heritage Act, 2016, succeeding the Monumentenwet 1988).",
+    "scale": "The Netherlands has approximately 63,000 rijksmonumenten. Amsterdam alone has about 8,000. The majority (98%) are 'onroerend gebouwd' (built structures); about 2% are archaeological sites.",
+    "implications": "A Rijksmonument designation means the owner must obtain a permit (omgevingsvergunning) for any modifications to the monument. Owners may be eligible for subsidies and tax benefits for maintenance and restoration. Demolition is generally prohibited.",
+    "governance": "The Rijksdienst voor het Cultureel Erfgoed (RCE) maintains the register and advises on designations. The Minister of Education, Culture and Science makes the formal designation decisions. Municipalities are responsible for enforcement via building permits.",
+    "complexes": "About 22% of monuments belong to a 'complex' — a group of related monuments that together form an ensemble. Examples include a church with its associated rectory and churchyard wall, or a country estate with its main house, gardens, and outbuildings. The complex_nu field links these together.",
+    "related_datasets": [
+      {
+        "name": "Beschermde stads- en dorpsgezichten",
+        "en": "Protected townscapes and village views",
+        "description": "Areas (rather than individual buildings) designated for their historical character. Available from the same RCE/PDOK source.",
+        "pdok_collections": ["beschermdestadsendorpsgezichtpunten", "beschermdestadsendorpsgezichtcontouren"]
+      },
+      {
+        "name": "UNESCO Werelderfgoed",
+        "en": "UNESCO World Heritage Sites",
+        "description": "Sites with international UNESCO designation. Some rijksmonumenten are also part of UNESCO World Heritage Sites (e.g., Canal Ring of Amsterdam, Defence Line of Amsterdam)."
+      },
+      {
+        "name": "Gemeentelijke monumenten",
+        "en": "Municipal monuments",
+        "description": "Monuments protected at the municipal level (estimated 50,000–100,000 nationwide). Maintained by individual municipalities, not available as a single national dataset."
+      }
+    ]
+  }
+}

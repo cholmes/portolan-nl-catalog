@@ -1,0 +1,196 @@
+{
+  "type": "Collection",
+  "id": "nationale_parken",
+  "stac_version": "1.1.0",
+  "title": "National Parks (Nationale Parken)",
+  "description": "Boundaries of all 21 National Parks in the Netherlands. These are large contiguous natural areas of national and international importance, designated for their ecological, landscape, and recreational value. Parks range from coastal dunes and forests to wetlands, heathlands, and tidal estuaries. Managed by the provinces since the 2023 reform. Published by RVO via PDOK.\n\nThis dataset is a complete enumeration — all 21 parks, not a sample.\n\n🤖 AI/Agent users: See llms.txt for field descriptions, query examples, and usage tips.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rvo/nationale_parken/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Rijksdienst voor Ondernemend Nederland (RVO)"
+    },
+    {
+      "rel": "via",
+      "href": "https://api.pdok.nl/rvo/nationale-parken/ogc/v1/collections/nationaleparken",
+      "type": "text/html",
+      "title": "PDOK OGC API collection"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rvo/nationale_parken/nationale_parken.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/rvo/nationale_parken/README.md",
+      "type": "text/html",
+      "title": "National Parks (Nationale Parken) documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "table:row_count": 21,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "id",
+      "type": "string",
+      "description": "Unique identifier (UUID)"
+    },
+    {
+      "name": "naam",
+      "type": "string",
+      "description": "Name of the National Park (Dutch)"
+    },
+    {
+      "name": "nr",
+      "type": "int32",
+      "description": "Sequential park number (chronological designation order, 1–22)"
+    },
+    {
+      "name": "hectares",
+      "type": "float64",
+      "description": "Area of the park in hectares"
+    },
+    {
+      "name": "datum",
+      "type": "string",
+      "description": "Date of designation or establishment (ISO 8601)"
+    },
+    {
+      "name": "bron",
+      "type": "string",
+      "description": "Source of the boundary — organization that supplied it"
+    },
+    {
+      "name": "fiat_secr",
+      "type": "string",
+      "description": "Whether approved by the Secretary of State (Ja/Nee/blank)"
+    },
+    {
+      "name": "instrument",
+      "type": "string",
+      "description": "Protection instrument type (always 'Nationaal Park')"
+    },
+    {
+      "name": "objectid",
+      "type": "int32",
+      "description": "Internal object ID"
+    },
+    {
+      "name": "geometry",
+      "type": "binary",
+      "description": "Park boundary polygon in EPSG:28992 (Amersfoort / RD New), WKB encoded"
+    }
+  ],
+  "geoparquet:geometry_type": "MultiPolygon",
+  "geoparquet:feature_count": 21,
+  "proj:epsg": 28992,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 11,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    6.0644531,
+    52.7495612,
+    11
+  ],
+  "pmtiles:layers": [
+    "nationale_parken"
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.605234,
+          51.130639,
+          6.8432,
+          53.523266
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "assets": {
+    "data": {
+      "href": "./nationale_parken.parquet",
+      "type": "application/x-parquet",
+      "title": "National Parks (GeoParquet)",
+      "description": "21 national park boundary polygons in EPSG:28992 (Amersfoort / RD New).",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./nationale_parken.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "National Parks (vector tiles)",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Thumbnail",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "National Parks — Default",
+      "roles": [
+        "style"
+      ]
+    }
+  },
+  "license": "CC0-1.0",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "MultiPolygon"
+    ],
+    "geoparquet:feature_count": [
+      21
+    ],
+    "vector:geometry_types": [
+      "MultiPolygon"
+    ]
+  },
+  "portolan:styles": [
+    {
+      "name": "default",
+      "href": "./styles/default.json"
+    }
+  ]
+}

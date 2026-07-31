@@ -1,0 +1,236 @@
+{
+  "type": "Collection",
+  "id": "rijksmonumenten",
+  "stac_version": "1.1.0",
+  "title": "National Monuments (Rijksmonumenten)",
+  "description": "Point locations of all 63,073 nationally listed monuments (rijksmonumenten) in the Netherlands. These are buildings, objects, and sites protected under the Heritage Act (Erfgoedwet) for their beauty, scientific significance, or cultural-historical value. Includes classification by category (residences, religious buildings, farms, castles, fortifications, etc.) and direct links to the monument register. Published by the Cultural Heritage Agency (RCE) via PDOK.\n\n98% are built structures; 2% are archaeological sites. About 22% belong to a complex (ensemble of related monuments).\n\n🤖 AI/Agent users: See llms.txt for field descriptions, query examples, and usage tips.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rce/rijksmonumenten/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Rijksdienst voor het Cultureel Erfgoed (RCE)"
+    },
+    {
+      "rel": "via",
+      "href": "https://api.pdok.nl/rce/beschermde-gebieden-cultuurhistorie/ogc/v1/collections/rijksmonumentpunten",
+      "type": "text/html",
+      "title": "PDOK OGC API collection"
+    },
+    {
+      "rel": "via",
+      "href": "https://monumentenregister.cultureelerfgoed.nl/",
+      "type": "text/html",
+      "title": "National Monument Register (web interface)"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rce/rijksmonumenten/rijksmonumenten.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/rce/rijksmonumenten/README.md",
+      "type": "text/html",
+      "title": "National Monuments (Rijksmonumenten) documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "table:row_count": 63073,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "rijksmonum",
+      "type": "float64",
+      "description": "Monument registration number (rijksmonumentnummer) — primary key"
+    },
+    {
+      "name": "complex_nu",
+      "type": "float64",
+      "description": "Complex number — groups related monuments (null for standalone)"
+    },
+    {
+      "name": "juridische",
+      "type": "string",
+      "description": "Legal status (always 'rijksmonument')"
+    },
+    {
+      "name": "aard_monum",
+      "type": "string",
+      "description": "Monument nature: 'archeologisch' or 'onroerend gebouwd'"
+    },
+    {
+      "name": "herkomst",
+      "type": "string",
+      "description": "Source of point geometry: BAG, BRK, RCE handmatig, Bridgis, etc."
+    },
+    {
+      "name": "kwaliteit_",
+      "type": "string",
+      "description": "Location quality: 'exact', 'globaal' (approximate, 60%), 'besluit'"
+    },
+    {
+      "name": "hoofdcateg",
+      "type": "string",
+      "description": "Main category (Dutch): Woningen, Boerderijen, Kastelen, etc. (13 categories)"
+    },
+    {
+      "name": "subcategor",
+      "type": "string",
+      "description": "Subcategory: Woonhuis(K), Boerderij(M), Kerk, etc. (66 values)"
+    },
+    {
+      "name": "rijksurl",
+      "type": "string",
+      "description": "URL to monument register page"
+    },
+    {
+      "name": "gml_id",
+      "type": "string",
+      "description": "GML feature identifier"
+    },
+    {
+      "name": "gml_parent",
+      "type": "string",
+      "description": "GML parent ID (always null)"
+    },
+    {
+      "name": "geometry",
+      "type": "binary",
+      "description": "Monument point in EPSG:28992 (Amersfoort / RD New), WKB encoded"
+    }
+  ],
+  "geoparquet:geometry_type": "Point",
+  "geoparquet:feature_count": 63073,
+  "proj:epsg": 28992,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 12,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    4.8779296,
+    52.348755,
+    12
+  ],
+  "pmtiles:layers": [
+    "rijksmonumenten"
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.25867,
+          50.735583,
+          7.234742,
+          53.547178
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "assets": {
+    "data": {
+      "href": "./rijksmonumenten.parquet",
+      "type": "application/x-parquet",
+      "title": "National Monuments (GeoParquet)",
+      "description": "63,073 monument point locations in EPSG:28992 (Amersfoort / RD New).",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./rijksmonumenten.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "National Monuments (vector tiles)",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Thumbnail",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "National Monuments — Default",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-category": {
+      "href": "./styles/by-category.json",
+      "type": "application/json",
+      "title": "National Monuments — By Category",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-type": {
+      "href": "./styles/by-type.json",
+      "type": "application/json",
+      "title": "National Monuments — Built vs Archaeological",
+      "roles": [
+        "style"
+      ]
+    }
+  },
+  "license": "CC0-1.0",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "Point"
+    ],
+    "geoparquet:feature_count": [
+      63073
+    ],
+    "vector:geometry_types": [
+      "Point"
+    ]
+  },
+  "portolan:styles": [
+    {
+      "name": "default",
+      "href": "./styles/default.json"
+    },
+    {
+      "name": "by-category",
+      "href": "./styles/by-category.json"
+    },
+    {
+      "name": "by-type",
+      "href": "./styles/by-type.json"
+    }
+  ]
+}

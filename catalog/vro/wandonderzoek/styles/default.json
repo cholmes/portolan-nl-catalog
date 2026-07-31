@@ -1,0 +1,39 @@
+{
+  "version": 8,
+  "name": "wandonderzoek \u2014 default",
+  "sources": {
+    "wandonderzoek": {
+      "type": "vector",
+      "url": "pmtiles://../wandonderzoek.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "wandonderzoek-circle",
+      "type": "circle",
+      "source": "wandonderzoek",
+      "source-layer": "wandonderzoek",
+      "paint": {
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          4,
+          1.5,
+          10,
+          3.5,
+          14,
+          6.5
+        ],
+        "circle-color": "#8D6E63",
+        "circle-stroke-color": "#ffffff",
+        "circle-stroke-width": 0.4,
+        "circle-opacity": 0.85
+      }
+    }
+  ]
+}

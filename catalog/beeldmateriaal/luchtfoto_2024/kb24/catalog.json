@@ -1,0 +1,118 @@
+{
+  "type": "Catalog",
+  "id": "luchtfoto_2024_kb24",
+  "stac_version": "1.1.0",
+  "description": "Kaartblad 24 covers the coastal area from IJmuiden south through Bloemendaal to Haarlem and Heemstede. Features include the North Sea dune landscape, the Kennemerduinen national park, the North Sea Canal entrance at IJmuiden, and the historic city of Haarlem. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the Beeldmateriaal Nederland summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/beeldmateriaal/luchtfoto_2024/kb24/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-24en2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 24EN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-24ez2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 24EZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-24fn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 24FN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-24fn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 24FN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-24fz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 24FZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-24fz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 24FZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-24gn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 24GN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-24gz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 24GZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-24hn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 24HN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-24hn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 24HN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-24hz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 24HZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-24hz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 24HZ2"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Luchtfoto 2024 — Aerial Orthophotos"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          4.3567122,
+          52.2585771,
+          4.5816061,
+          52.4849543
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2024-04-01T00:00:00Z",
+          "2024-09-30T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "title": "KB 24 — Haarlem / IJmond"
+}

@@ -1,0 +1,445 @@
+{
+  "type": "Collection",
+  "id": "bevolkingsspreiding",
+  "stac_version": "1.1.0",
+  "description": "INSPIRE-harmonized population distribution dataset from CBS, containing the number of inhabitants per municipality (LAU), province (NUTS2), and 1km² grid cells according to the European ETRS89-LAEA coordinate system (EPSG:3035). This is the Dutch contribution to the European INSPIRE Statistical Units / Population Distribution theme. Three feature types are available: 1km² grid cells (pd-nl-grid-2012), NUTS2 provinces (pd-nl-nuts2-2018), and LAU municipalities (pd-nl-lau-2018). Reference years: grid 2012, NUTS2/LAU 2018.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/cbs/bevolkingsspreiding/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Centraal Bureau voor de Statistiek (CBS)"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.pdok.nl/introductie/-/article/cbs-bevolkingsspreiding-population-distribution-",
+      "type": "text/html",
+      "title": "PDOK CBS Bevolkingsspreiding dataset page"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/cbs/pd/wfs/v1_0",
+      "type": "application/xml",
+      "title": "INSPIRE WFS service"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/cbs/population-distribution/wfs/v1_0",
+      "type": "application/xml",
+      "title": "Harmonized WFS service"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/cbs/pd/atom/v1_0/index.xml",
+      "type": "application/atom+xml",
+      "title": "ATOM download service"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/cbs/bevolkingsspreiding/bevolkingsspreiding.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/cbs/bevolkingsspreiding/README.md",
+      "type": "text/html",
+      "title": "Bevolkingsspreiding (Population Distribution) documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json"
+  ],
+  "table:columns": [
+    {
+      "name": "gml_id",
+      "type": "string"
+    },
+    {
+      "name": "gid",
+      "type": "string"
+    },
+    {
+      "name": "gmsurface",
+      "type": "string"
+    },
+    {
+      "name": "measure",
+      "type": "string"
+    },
+    {
+      "name": "stat",
+      "type": "string"
+    },
+    {
+      "name": "freq",
+      "type": "string"
+    },
+    {
+      "name": "obsvalue",
+      "type": "double"
+    },
+    {
+      "name": "obsstatus",
+      "type": "string"
+    },
+    {
+      "name": "periodofreference",
+      "type": "string"
+    },
+    {
+      "name": "fuuid",
+      "type": "string"
+    },
+    {
+      "name": "geom",
+      "type": "binary"
+    },
+    {
+      "name": "geom_bbox",
+      "type": "struct<xmin: float, ymin: float, xmax: float, ymax: float>"
+    },
+    {
+      "name": "gml_id2",
+      "type": "string"
+    },
+    {
+      "name": "localId",
+      "type": "string"
+    },
+    {
+      "name": "namespace",
+      "type": "string"
+    },
+    {
+      "name": "versionId",
+      "type": "string"
+    },
+    {
+      "name": "identifier",
+      "type": "string"
+    },
+    {
+      "name": "identifierScheme",
+      "type": "string"
+    },
+    {
+      "name": "language",
+      "type": "string"
+    },
+    {
+      "name": "nameStatus",
+      "type": "string"
+    },
+    {
+      "name": "sourceOfName",
+      "type": "string"
+    },
+    {
+      "name": "pronunciation",
+      "type": "string"
+    },
+    {
+      "name": "text",
+      "type": "string"
+    },
+    {
+      "name": "script",
+      "type": "string"
+    },
+    {
+      "name": "beginLifespanVersion",
+      "type": "string"
+    },
+    {
+      "name": "endLifespanVersion",
+      "type": "string"
+    },
+    {
+      "name": "timePosition",
+      "type": "string"
+    },
+    {
+      "name": "referencePeriod_end",
+      "type": "string"
+    },
+    {
+      "name": "leastDetailedScale",
+      "type": "int32"
+    },
+    {
+      "name": "areaValue",
+      "type": "double"
+    },
+    {
+      "name": "areaValue_uom",
+      "type": "string"
+    },
+    {
+      "name": "landAreaValue",
+      "type": "string"
+    },
+    {
+      "name": "livableAreaValue",
+      "type": "string"
+    },
+    {
+      "name": "tesselation_localId",
+      "type": "string"
+    },
+    {
+      "name": "tesselation_namespace",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_LAU_T_STAT",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_LAU_T_MEASURE",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_LAU_PERIOD_OF_REFERENCE",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_LAU_T_OBS_VALUE",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_LAU_D_STAT",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_LAU_D_MEASURE",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_LAU_D_OBS_VALUE",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_LAU_M_STAT",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_LAU_M_MEASURE",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_LAU_M_OBS_VALUE",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_LAU_F_STAT",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_LAU_F_MEASURE",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_LAU_F_OBS_VALUE",
+      "type": "string"
+    },
+    {
+      "name": "validityPeriod",
+      "type": "string"
+    },
+    {
+      "name": "referencePeriod_begin",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_NUTS2_FREQ",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_NUTS2_UNIT",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_NUTS2_SEX",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_NUTS2_AGE",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_NUTS2_STATCODE",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_NUTS2_STANAAM",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_NUTS2_TIME",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_NUTS2_OBS_VALUE",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_NUTS2_OBS_FLAG",
+      "type": "string"
+    },
+    {
+      "name": "PD_NL_NUTS2_OBS_STATUS",
+      "type": "string"
+    }
+  ],
+  "portolan:styles": [
+    {
+      "name": "default",
+      "href": "./styles/default.json"
+    }
+  ],
+  "geoparquet:geometry_type": "Polygon",
+  "geoparquet:feature_count": 12,
+  "table:row_count": 31033,
+  "table:primary_geometry": "geom",
+  "title": "Bevolkingsspreiding (Population Distribution)",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.036574402042959,
+          50.636214707185225,
+          7.371121872347146,
+          53.57365363536551
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2012-01-01T00:00:00Z",
+          "2018-12-31T23:59:59Z"
+        ]
+      ]
+    }
+  },
+  "license": "CC0-1.0",
+  "summaries": {
+    "vector:geometry_types": [
+      "Polygon"
+    ]
+  },
+  "assets": {
+    "grid": {
+      "href": "./grid.parquet",
+      "type": "application/x-parquet",
+      "roles": [
+        "data"
+      ]
+    },
+    "nuts2": {
+      "href": "./nuts2.parquet",
+      "type": "application/x-parquet",
+      "roles": [
+        "data"
+      ]
+    },
+    "lau": {
+      "href": "./lau.parquet",
+      "type": "application/x-parquet",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./bevolkingsspreiding.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Population distribution (vector tiles)",
+      "description": "Grid, provincial, and municipal population as vector tiles for web visualization.",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "Population Distribution — Default",
+      "roles": [
+        "style"
+      ]
+    },
+    "documentation": {
+      "href": "./llms.txt",
+      "type": "text/plain",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "bevolkingsspreiding": {
+      "href": "./bevolkingsspreiding.parquet",
+      "type": "application/x-parquet",
+      "roles": [
+        "data"
+      ]
+    },
+    "README": {
+      "href": "./README.md",
+      "type": "text/markdown",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "metadata": {
+      "href": "./lau.parquet.aux.xml",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ]
+    },
+    "nuts2.parquet.aux": {
+      "href": "./nuts2.parquet.aux.xml",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ]
+    },
+    "grid.parquet.aux": {
+      "href": "./grid.parquet.aux.xml",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ]
+    },
+    "bevolkingsspreiding.parquet": {
+      "href": "./bevolkingsspreiding.parquet",
+      "type": "application/x-parquet",
+      "roles": [
+        "data"
+      ]
+    }
+  }
+}

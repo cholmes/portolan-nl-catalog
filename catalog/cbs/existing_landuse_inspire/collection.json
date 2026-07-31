@@ -1,0 +1,218 @@
+{
+  "type": "Collection",
+  "id": "existing_landuse_inspire",
+  "stac_version": "1.1.0",
+  "description": "INSPIRE-harmonized land use dataset for the Netherlands, based on the Dutch topographic map (BRT) and aerial photography from summer 2015. This is the European INSPIRE version of the CBS Bestand Bodemgebruik (BBG), transformed to conform to the INSPIRE Existing Land Use data specification. Each polygon is classified using the HILUCS (Hierarchical INSPIRE Land Use Classification System) instead of the Dutch national classification. Native CRS is EPSG:3035 (ETRS89-LAEA), the European standard coordinate reference system. Published by CBS (Centraal Bureau voor de Statistiek / Statistics Netherlands) via PDOK.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/cbs/existing_landuse_inspire/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Centraal Bureau voor de Statistiek (CBS)"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.pdok.nl/introductie/-/article/cbs-existing-landuse-inspire-geharmoniseerd-",
+      "type": "text/html",
+      "title": "PDOK dataset page"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/cbs/landuse/wfs/v1_0",
+      "type": "application/xml",
+      "title": "WFS endpoint"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/cbs/landuse/wms/v1_0",
+      "type": "application/xml",
+      "title": "WMS endpoint"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/cbs/existing_landuse_inspire/existing_landuse.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/cbs/existing_landuse_inspire/README.md",
+      "type": "text/html",
+      "title": "Existing Land Use (INSPIRE Harmonized) documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json"
+  ],
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "gml_id",
+      "type": "string"
+    },
+    {
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "localId",
+      "type": "string"
+    },
+    {
+      "name": "namespace",
+      "type": "string"
+    },
+    {
+      "name": "beginLifespanVersion",
+      "type": "string"
+    },
+    {
+      "name": "hilucsPresence",
+      "type": "string"
+    },
+    {
+      "name": "specificPresence",
+      "type": "string"
+    },
+    {
+      "name": "observationDate",
+      "type": "string"
+    },
+    {
+      "name": "validFrom",
+      "type": "string"
+    },
+    {
+      "name": "validTo",
+      "type": "string"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    },
+    {
+      "name": "geometry_bbox",
+      "type": "struct<xmin: float, ymin: float, xmax: float, ymax: float>"
+    }
+  ],
+  "portolan:styles": [
+    {
+      "name": "default",
+      "href": "./styles/default.json"
+    }
+  ],
+  "geoparquet:geometry_type": "MultiPolygon",
+  "geoparquet:feature_count": 171543,
+  "table:row_count": 171543,
+  "title": "Existing Land Use (INSPIRE Harmonized)",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          2.9639410568902065,
+          50.56228344266039,
+          7.422374274109075,
+          53.64144648431984
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "CC0-1.0",
+  "summaries": {
+    "vector:geometry_types": [
+      "MultiPolygon"
+    ]
+  },
+  "assets": {
+    "data": {
+      "href": "./existing_landuse.parquet",
+      "type": "application/x-parquet",
+      "title": "Existing Land Use (GeoParquet)",
+      "description": "171,543 land use polygons with HILUCS classification, EPSG:3035.",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./existing_landuse.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Existing land use (vector tiles)",
+      "description": "INSPIRE land use polygons as vector tiles for web visualization.",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "INSPIRE Land Use — Default",
+      "roles": [
+        "style"
+      ]
+    },
+    "documentation": {
+      "href": "./llms.txt",
+      "type": "text/plain",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "metadata": {
+      "href": "./existing_landuse.parquet.aux.xml",
+      "type": "application/xml",
+      "roles": [
+        "metadata"
+      ]
+    },
+    "existing_landuse": {
+      "href": "./existing_landuse.parquet",
+      "type": "application/x-parquet",
+      "roles": [
+        "data"
+      ]
+    },
+    "README": {
+      "href": "./README.md",
+      "type": "text/markdown",
+      "roles": [
+        "documentation"
+      ]
+    }
+  }
+}

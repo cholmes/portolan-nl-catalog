@@ -1,0 +1,59 @@
+{
+  "version": 8,
+  "name": "Bodemkaart — by survey campaign",
+  "sources": {
+    "soilarea": {
+      "type": "vector",
+      "url": "pmtiles://../soilarea.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "soilarea-fill",
+      "type": "fill",
+      "source": "soilarea",
+      "source-layer": "soilarea",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "maparea_collection"
+          ],
+          "Eerste opname met uitgebreide veldverkenning",
+          "#1B9E77",
+          "Actualisatie met digitale bodemkartering 2013",
+          "#D95F02",
+          "Actualisatie met digitale bodemkartering 2014",
+          "#7570B3",
+          "Actualisatie met uitgebreide veldverkenning 2010",
+          "#E7298A",
+          "Actualistatie slappe klei met DBK 2016",
+          "#66A61E",
+          "Actualisatie met uitgebreide veldverkenning 2024",
+          "#E6AB02",
+          "Revisie met detailbodemkaart 2020",
+          "#A6761D",
+          "Actualisatie met digitale bodemkartering 2022",
+          "#666666",
+          "Actualisatie met digitale bodemkartering 2023",
+          "#1B9E77",
+          "Actualisatie met uitgebreide veldverkenning 2021",
+          "#D95F02",
+          "#E0E0E0"
+        ],
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "soilarea-outline",
+      "type": "line",
+      "source": "soilarea",
+      "source-layer": "soilarea",
+      "paint": {
+        "line-color": "#777777",
+        "line-width": 0.3
+      }
+    }
+  ]
+}

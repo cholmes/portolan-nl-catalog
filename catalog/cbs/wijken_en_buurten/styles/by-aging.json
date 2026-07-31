@@ -1,0 +1,40 @@
+{
+  "version": 8,
+  "name": "Districts & Neighborhoods — Aging Population",
+  "sources": {
+    "wijken": {
+      "type": "vector",
+      "url": "pmtiles://../wijken_en_buurten.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "buurten-fill",
+      "type": "fill",
+      "source": "wijken",
+      "source-layer": "buurten",
+      "paint": {
+        "fill-color": [
+          "step", ["get", "percentagePersonen65JaarEnOuder"],
+          "#F2F0F7",
+          10, "#DADAEB",
+          15, "#BCBDDC",
+          20, "#9E9AC8",
+          25, "#756BB1",
+          35, "#54278F"
+        ],
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "buurten-outline",
+      "type": "line",
+      "source": "wijken",
+      "source-layer": "buurten",
+      "paint": {
+        "line-color": "#333333",
+        "line-width": 0.3
+      }
+    }
+  ]
+}

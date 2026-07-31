@@ -1,0 +1,32 @@
+{
+  "version": 8,
+  "name": "Flood Retention Areas — Default",
+  "sources": {
+    "rws": {
+      "type": "vector",
+      "url": "pmtiles://../bergingsgebieden.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "retention-fill",
+      "type": "fill",
+      "source": "rws",
+      "source-layer": "bergingsgebieden",
+      "paint": {
+        "fill-color": "#6CB4EE",
+        "fill-opacity": 0.5
+      }
+    },
+    {
+      "id": "retention-outline",
+      "type": "line",
+      "source": "rws",
+      "source-layer": "bergingsgebieden",
+      "paint": {
+        "line-color": "#2171B5",
+        "line-width": 1.5
+      }
+    }
+  ]
+}

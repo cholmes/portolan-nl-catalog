@@ -1,0 +1,89 @@
+{
+  "version": 8,
+  "name": "BRP Gewaspercelen — 2011",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../brp_gewaspercelen_2011.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "parcels-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "brp_gewaspercelen",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "gewas"
+          ],
+          "Grasland, blijvend",
+          "#4CAF50",
+          "Grasland, tijdelijk",
+          "#81C784",
+          "Mais, snij-",
+          "#FFEB3B",
+          "Tarwe, winter-",
+          "#FF9800",
+          "Aardappelen, consumptie",
+          "#8D6E63",
+          "Bieten, suiker-",
+          "#E91E63",
+          "Aardappelen, poot NAK",
+          "#A1887F",
+          "Aardappelen, zetmeel",
+          "#795548",
+          "Gerst, zomer-",
+          "#FFB74D",
+          "Luzerne",
+          "#66BB6A",
+          "Sloot",
+          "#42A5F5",
+          "Houtwal en houtsingel",
+          "#1B5E20",
+          "Agrarisch natuurmengsel",
+          "#AED581",
+          "Grasland, natuurlijk. Met landbouwactiviteiten.",
+          "#388E3C",
+          "Groene braak, spontane opkomst",
+          "#C5E1A5",
+          "Natuurterreinen (incl. heide)",
+          "#2E7D32",
+          "Stroken wild gras",
+          "#7CB342",
+          "Bosje",
+          "#33691E",
+          "Knip- of scheerheg",
+          "#43A047",
+          "Elzensingel",
+          "#00695C",
+          "Boomgroep",
+          "#004D40",
+          "Engels raaigras, groenbemesting, vanggewas",
+          "#DCE775",
+          "Struweelhaag",
+          "#558B2F",
+          "Poel en klein historisch water",
+          "#1976D2",
+          "Peren. Aangeplant voorafgaande aan lopende seizoen.",
+          "#CE93D8",
+          "#B0BEC5"
+        ],
+        "fill-opacity": 0.85
+      }
+    },
+    {
+      "id": "parcels-outline",
+      "type": "line",
+      "source": "data",
+      "source-layer": "brp_gewaspercelen",
+      "paint": {
+        "line-color": "#455A64",
+        "line-width": 0.4
+      }
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "id": "bestuurlijke-gebieden",
+  "title_nl": "Bestuurlijke Gebieden",
+  "title_en": "Administrative Areas",
+  "description_nl": "De bestuurlijke indeling van Nederland in gemeenten, provincies en het landsgebied. Jaarlijks bijgewerkt per 1 januari met eventuele gemeentelijke herindelingen.",
+  "description_en": "The administrative division of the Netherlands into municipalities (gemeenten), provinces (provincies), and national territory (landgebied). Updated annually on January 1st to reflect any municipal mergers.",
+  "provider": {
+    "name": "Kadaster",
+    "name_en": "Netherlands Cadastre, Land Registry and Mapping Agency",
+    "url": "https://www.kadaster.nl/"
+  },
+  "source": {
+    "atom_feed": "https://service.pdok.nl/kadaster/bestuurlijkegebieden/atom/v1_0/bestuurlijke_gebieden.xml",
+    "ogc_api": "https://api.pdok.nl/kadaster/brk-bestuurlijke-gebieden/ogc/v1/",
+    "download_url": "https://service.pdok.nl/kadaster/brk-bestuurlijke-gebieden/atom/downloads/BestuurlijkeGebieden_2026.gpkg",
+    "pdok_page": "https://www.pdok.nl/introductie/-/article/0c3b462c-0a5d-463f-b082-51ed7bdf7684"
+  },
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "Kadaster",
+  "format": "GeoPackage",
+  "crs": "EPSG:28992",
+  "crs_name": "Amersfoort / RD New",
+  "extent": {
+    "spatial": {
+      "bbox_rd": [10425, 306846, 278026, 621876],
+      "bbox_wgs84": [3.37, 50.75, 7.21, 53.47]
+    }
+  },
+  "temporal": {
+    "edition": "2026",
+    "reference_date": "2026-01-01",
+    "update_frequency": "annual",
+    "update_month": "January",
+    "historical_editions_available": ["2021", "2022", "2023", "2024", "2025", "2026"]
+  },
+  "layers": [
+    {
+      "name": "gemeentegebied",
+      "title_nl": "Gemeentegebied",
+      "title_en": "Municipal Areas",
+      "description_nl": "Alle gemeentegrenzen van Nederland",
+      "description_en": "All municipal boundaries of the Netherlands",
+      "geometry_type": "MultiPolygon",
+      "feature_count": 342,
+      "columns": [
+        {
+          "name": "identificatie",
+          "type": "String",
+          "description_nl": "CBS gemeentecode (4-cijferig)",
+          "description_en": "CBS municipality code (4-digit, e.g., '0363' for Amsterdam)"
+        },
+        {
+          "name": "naam",
+          "type": "String",
+          "description_nl": "Gemeentenaam",
+          "description_en": "Municipality name"
+        },
+        {
+          "name": "code",
+          "type": "String",
+          "description_nl": "Gemeentecode met GM-prefix",
+          "description_en": "Municipality code with GM prefix (e.g., 'GM0363')"
+        },
+        {
+          "name": "ligt_in_provincie_code",
+          "type": "String",
+          "description_nl": "Code van de provincie waar de gemeente in ligt",
+          "description_en": "Province code that this municipality belongs to"
+        },
+        {
+          "name": "ligt_in_provincie_naam",
+          "type": "String",
+          "description_nl": "Naam van de provincie waar de gemeente in ligt",
+          "description_en": "Province name that this municipality belongs to"
+        }
+      ]
+    },
+    {
+      "name": "provinciegebied",
+      "title_nl": "Provinciegebied",
+      "title_en": "Provincial Areas",
+      "description_nl": "Alle provinciegrenzen van Nederland",
+      "description_en": "All provincial boundaries of the Netherlands",
+      "geometry_type": "MultiPolygon",
+      "feature_count": 12,
+      "columns": [
+        {
+          "name": "identificatie",
+          "type": "String",
+          "description_nl": "Identificatie van de provincie",
+          "description_en": "Province identifier"
+        },
+        {
+          "name": "naam",
+          "type": "String",
+          "description_nl": "Provincienaam",
+          "description_en": "Province name"
+        },
+        {
+          "name": "code",
+          "type": "String",
+          "description_nl": "Provinciecode met PV-prefix (bijv. 'PV27')",
+          "description_en": "Province code with PV prefix (e.g., 'PV27')"
+        },
+        {
+          "name": "ligt_in_land_code",
+          "type": "String",
+          "description_nl": "Landcode",
+          "description_en": "Country code"
+        },
+        {
+          "name": "ligt_in_land_naam",
+          "type": "String",
+          "description_nl": "Landnaam ('Nederland')",
+          "description_en": "Country name ('Nederland')"
+        }
+      ]
+    },
+    {
+      "name": "landgebied",
+      "title_nl": "Landgebied",
+      "title_en": "National Territory",
+      "description_nl": "Het grondgebied van Nederland",
+      "description_en": "The national territory of the Netherlands",
+      "geometry_type": "MultiPolygon",
+      "feature_count": 1,
+      "columns": [
+        {
+          "name": "identificatie",
+          "type": "String",
+          "description_nl": "Identificatie van het land",
+          "description_en": "Country identifier"
+        },
+        {
+          "name": "naam",
+          "type": "String",
+          "description_nl": "Landnaam ('Nederland')",
+          "description_en": "Country name ('Nederland')"
+        },
+        {
+          "name": "code",
+          "type": "String",
+          "description_nl": "Landcode",
+          "description_en": "Country code"
+        }
+      ]
+    }
+  ],
+  "context": {
+    "administrative_structure": "The Netherlands has a three-tier administrative structure: Rijk (national) -> 12 Provincies (provinces) -> 342 Gemeenten (municipalities, as of 2026). Each layer nests within the one above. The gemeentegebied layer includes fields that link each municipality to its parent province.",
+    "merger_history": "The number of Dutch municipalities has been declining for decades through mergers (herindelingen). Recent counts: 2020: 355, 2021: 352, 2022: 345, 2023: 342, 2024: 342, 2025: 342, 2026: 342. Mergers always take effect on January 1st.",
+    "code_system": "CBS (Statistics Netherlands) assigns municipality codes. These are stable numeric codes (4 digits) that do not change. When municipalities merge, the new municipality gets a new code. The 'code' field in this dataset adds a prefix: GM for gemeenten, PV for provincies. These coded identifiers are used across all Dutch government datasets, making this dataset the fundamental reference for spatial joins.",
+    "relationship_to_cbs": "CBS publishes a broader dataset called 'Gebiedsindelingen' (area classifications) which includes many more boundary types: COROP regions, labor market regions (arbeidsmarktregio), safety regions (veiligheidsregio), water boards (waterschappen), and more. The Bestuurlijke Gebieden from Kadaster is the authoritative source for the three core administrative levels."
+  },
+  "notes": [
+    "This dataset covers European Netherlands only (not the Caribbean municipalities Bonaire, Sint Eustatius, Saba).",
+    "The GeoPackage contains all three layers in a single file.",
+    "CRS is EPSG:28992 (Amersfoort / RD New), the standard Dutch national coordinate system.",
+    "For import into the Portolan catalog, each layer should be converted to a separate GeoParquet file and reprojected to EPSG:4326 (WGS84)."
+  ]
+}

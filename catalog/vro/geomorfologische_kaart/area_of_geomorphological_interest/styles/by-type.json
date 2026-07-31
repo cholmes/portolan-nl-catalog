@@ -1,0 +1,43 @@
+{
+  "version": 8,
+  "name": "Area of geomorphological interest — by type",
+  "sources": {
+    "area_of_geomorphological_interest": {
+      "type": "vector",
+      "url": "pmtiles://../area_of_geomorphological_interest.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "area_of_geomorphological_interest-fill",
+      "type": "fill",
+      "source": "area_of_geomorphological_interest",
+      "source-layer": "area_of_geomorphological_interest",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "type"
+          ],
+          "Water",
+          "#4FC3F7",
+          "Dijk",
+          "#FF8A65",
+          "#E0E0E0"
+        ],
+        "fill-opacity": 0.7
+      }
+    },
+    {
+      "id": "area_of_geomorphological_interest-outline",
+      "type": "line",
+      "source": "area_of_geomorphological_interest",
+      "source-layer": "area_of_geomorphological_interest",
+      "paint": {
+        "line-color": "#777777",
+        "line-width": 0.3
+      }
+    }
+  ]
+}

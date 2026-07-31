@@ -1,0 +1,286 @@
+{
+  "type": "Collection",
+  "id": "sluizen",
+  "stac_version": "1.1.0",
+  "description": "Locations of 92 navigation locks (sluizen) on the Dutch recreational waterway network (BRTN), including name, address, operator, number of chambers, and VHF radio channels.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/sluizen/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Rijkswaterstaat"
+    },
+    {
+      "rel": "via",
+      "href": "https://services-eu1.arcgis.com/4D1GBrbE6xp1T4YG/arcgis/rest/services/NWP_Basisrecreatietoervaartnetwerk/FeatureServer/2",
+      "type": "text/html",
+      "title": "Source ArcGIS Feature Layer"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/sluizen/sluizen.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/rijkswaterstaat/sluizen/README.md",
+      "type": "text/html",
+      "title": "Navigation Locks documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "table:row_count": 184,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "OBJECTID",
+      "type": "int64"
+    },
+    {
+      "name": "VRT_CODE",
+      "type": "string"
+    },
+    {
+      "name": "VRTNAAM",
+      "type": "string"
+    },
+    {
+      "name": "MEETPUNT",
+      "type": "double"
+    },
+    {
+      "name": "NAAM",
+      "type": "string"
+    },
+    {
+      "name": "ADRES",
+      "type": "string"
+    },
+    {
+      "name": "POSTCODE",
+      "type": "string"
+    },
+    {
+      "name": "PLAATSNAAM",
+      "type": "string"
+    },
+    {
+      "name": "MARIFOONKA",
+      "type": "string"
+    },
+    {
+      "name": "NR_KOLKEN",
+      "type": "int32"
+    },
+    {
+      "name": "REF_V_BEBU",
+      "type": "string"
+    },
+    {
+      "name": "REF_V_BOBI",
+      "type": "string"
+    },
+    {
+      "name": "TEL_NR",
+      "type": "string"
+    },
+    {
+      "name": "AFST_BED",
+      "type": "string"
+    },
+    {
+      "name": "BHR_NAAM",
+      "type": "string"
+    },
+    {
+      "name": "BHR_AFDELI",
+      "type": "string"
+    },
+    {
+      "name": "BHR_TYPE",
+      "type": "string"
+    },
+    {
+      "name": "BHR_BE_ADR",
+      "type": "string"
+    },
+    {
+      "name": "BHR_B_PLTS",
+      "type": "string"
+    },
+    {
+      "name": "BHR_POSTAD",
+      "type": "string"
+    },
+    {
+      "name": "BHR_POS_PC",
+      "type": "string"
+    },
+    {
+      "name": "BHR_P_PLTS",
+      "type": "string"
+    },
+    {
+      "name": "BHR_TEL_NR",
+      "type": "string"
+    },
+    {
+      "name": "KCP_NAAM",
+      "type": "string"
+    },
+    {
+      "name": "ID",
+      "type": "int32"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    }
+  ],
+  "portolan:styles": [
+    {
+      "name": "default",
+      "href": "./styles/default.json"
+    }
+  ],
+  "geoparquet:geometry_type": "Point",
+  "geoparquet:feature_count": 92,
+  "proj:epsg": 3857,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 4,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    6.9399,
+    50.8673,
+    4
+  ],
+  "pmtiles:layers": [
+    "sluizen"
+  ],
+  "title": "Navigation Locks",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.6847999991513,
+          50.8672999999824,
+          6.9399,
+          53.3198999992115
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "Point"
+    ],
+    "geoparquet:feature_count": [
+      92
+    ],
+    "table:column_statistics": [
+      {
+        "OBJECTID": {
+          "minimum": 1,
+          "maximum": 92
+        },
+        "NAAM": {
+          "minimum": "Algerasluis",
+          "maximum": "sluis Weurt"
+        },
+        "PLAATSNAAM": {
+          "minimum": "'s Hertogenbosch",
+          "maximum": "Zwolle"
+        },
+        "NR_KOLKEN": {
+          "minimum": 1,
+          "maximum": 4
+        }
+      }
+    ],
+    "portolan:datetime_provisional": [
+      true
+    ],
+    "vector:geometry_types": [
+      "Point"
+    ]
+  },
+  "assets": {
+    "data": {
+      "href": "./sluizen.parquet",
+      "type": "application/x-parquet",
+      "title": "Navigation locks",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./sluizen.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Navigation locks (vector tiles)",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail_.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "Navigation Locks — Default",
+      "roles": [
+        "style"
+      ]
+    },
+    "documentation": {
+      "href": "./llms.txt",
+      "type": "text/plain",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "sluizen": {
+      "href": "./sluizen.parquet",
+      "type": "application/x-parquet",
+      "roles": [
+        "data"
+      ]
+    },
+    "README": {
+      "href": "./README.md",
+      "type": "text/markdown",
+      "roles": [
+        "documentation"
+      ]
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-04-17T11:47:09.697584Z",
+      "breaking": false,
+      "assets": {
+        "rijksviswegen_2024/rijksviswegen_2024.parquet": {
+          "sha256": "de5452ca04fb2a787287f7aad37384c628803001257987f06f9beec892f47573",
+          "size_bytes": 320378,
+          "href": "rijksviswegen_2024/rijksviswegen_2024.parquet",
+          "mtime": 1776426429.6869934
+        }
+      },
+      "changes": [
+        "rijksviswegen_2024/rijksviswegen_2024.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-05-08T18:24:04.180219Z",
+      "breaking": false,
+      "assets": {
+        "rijksviswegen_2024/rijksviswegen_2024.parquet": {
+          "sha256": "de5452ca04fb2a787287f7aad37384c628803001257987f06f9beec892f47573",
+          "size_bytes": 320378,
+          "href": "rijksviswegen_2024/rijksviswegen_2024.parquet",
+          "mtime": 1776426429.6869934
+        },
+        "llms.txt": {
+          "sha256": "a203500993c2fac47ed542e54a9402956217571872ee1d4596d6f2177b5ae787",
+          "size_bytes": 5602,
+          "href": "rijkswaterstaat/rijksviswegen_2024/llms.txt",
+          "mtime": 1778185474.0
+        },
+        "thumbnail_.png": {
+          "sha256": "776cc65e5accdbbe2ea42d12bc18ecc070f3dfc7a886725396b35fb8350b312b",
+          "size_bytes": 163457,
+          "href": "rijkswaterstaat/rijksviswegen_2024/thumbnail_.png",
+          "mtime": 1778070780.9494624
+        },
+        "rijksviswegen_2024.parquet": {
+          "sha256": "de5452ca04fb2a787287f7aad37384c628803001257987f06f9beec892f47573",
+          "size_bytes": 320378,
+          "href": "rijkswaterstaat/rijksviswegen_2024/rijksviswegen_2024.parquet",
+          "mtime": 1778070780.9517374
+        },
+        "README.md": {
+          "sha256": "3797edd8a1e0e79469e292ef29ddbda4286e572c97d9d611ea843a44709867e1",
+          "size_bytes": 2581,
+          "href": "rijkswaterstaat/rijksviswegen_2024/README.md",
+          "mtime": 1778070780.9522882
+        },
+        "rijksviswegen_2024.pmtiles": {
+          "sha256": "65245bea797d3be734ad17667d9a64ecb1acf938f7cb45c96342ee06873a32b8",
+          "size_bytes": 522450,
+          "href": "rijkswaterstaat/rijksviswegen_2024/rijksviswegen_2024.pmtiles",
+          "mtime": 1778070780.9528925
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "thumbnail_.png",
+        "rijksviswegen_2024.parquet",
+        "README.md",
+        "rijksviswegen_2024.pmtiles"
+      ]
+    }
+  ]
+}

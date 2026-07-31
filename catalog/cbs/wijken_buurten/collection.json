@@ -1,0 +1,359 @@
+{
+  "type": "Collection",
+  "id": "wijken_buurten",
+  "stac_version": "1.1.0",
+  "title": "Wijken en Buurten 2025 (Neighborhoods and Districts with Demographics)",
+  "description": "The definitive Dutch demographic geodataset. Published annually by CBS (Statistics Netherlands), this dataset provides demographic, socioeconomic, and geographic statistics at three nested administrative levels: buurten (14,823 neighborhoods), wijken (3,423 districts), and gemeenten (424 municipalities). Contains ~42 columns covering population, age distribution, household composition, marital status, migration background, urbanity, and land/water area. Statistics reflect the situation as of 1 January 2025. All three layers share the same column schema and form a strict spatial hierarchy: each buurt belongs to exactly one wijk, each wijk to one gemeente. The sentinel value -99997 means data is not available or privacy-suppressed.\n\n🤖 AI/Agent users: See llms.txt for field descriptions, query examples, and usage tips.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/cbs/wijken_buurten/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Centraal Bureau voor de Statistiek (CBS)"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.pdok.nl/datasets",
+      "type": "text/html",
+      "title": "PDOK datasets page"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/cbs/wijkenbuurten/2025/atom/index.xml",
+      "type": "application/xml",
+      "title": "Source PDOK Atom feed"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/cbs/wijken_buurten/wijken_buurten.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "proj:epsg": 28992,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "buurtcode",
+      "type": "string",
+      "description": "CBS area code with prefix BU (buurt), WK (wijk), or GM (gemeente) followed by digits. Encodes the hierarchical relationship: BU00140000 -> WK001400 -> GM0014."
+    },
+    {
+      "name": "buurtnaam",
+      "type": "string",
+      "description": "Human-readable name of the area (buurtnaam / wijknaam / gemeentenaam depending on layer)."
+    },
+    {
+      "name": "wijkcode",
+      "type": "string",
+      "description": "Parent district code (WK + 6 digits). Present on buurten layer only."
+    },
+    {
+      "name": "gemeentecode",
+      "type": "string",
+      "description": "Municipality code (GM + 4 digits). Present on buurten and wijken layers."
+    },
+    {
+      "name": "gemeentenaam",
+      "type": "string",
+      "description": "Municipality name. Present on buurten and wijken layers."
+    },
+    {
+      "name": "indelingswijziging_wijken_en_buurten",
+      "type": "int32",
+      "description": "Boundary change flag: 1 = boundaries changed vs previous year, 0 = unchanged."
+    },
+    {
+      "name": "water",
+      "type": "string",
+      "description": "Water area indicator: JA = water body, NEE = land area. Water areas have suppressed demographics."
+    },
+    {
+      "name": "meest_voorkomende_postcode",
+      "type": "string",
+      "description": "Most common 4-digit postal code (PC4) in this area."
+    },
+    {
+      "name": "dekkingspercentage",
+      "type": "int32",
+      "description": "Percentage of addresses covered by the most common postal code."
+    },
+    {
+      "name": "omgevingsadressendichtheid",
+      "type": "int32",
+      "description": "Average number of addresses within 1 km radius of each address. Measure of local urbanization."
+    },
+    {
+      "name": "stedelijkheid_adressen_per_km2",
+      "type": "int32",
+      "description": "CBS urbanity class (1-5): 1=very highly urban (>=2500 addr/km2), 5=rural (<500 addr/km2)."
+    },
+    {
+      "name": "bevolkingsdichtheid_inwoners_per_km2",
+      "type": "int32",
+      "description": "Population density: residents per km2 of land area."
+    },
+    {
+      "name": "aantal_inwoners",
+      "type": "int32",
+      "description": "Total population (number of residents)."
+    },
+    {
+      "name": "mannen",
+      "type": "int32",
+      "description": "Number of male residents."
+    },
+    {
+      "name": "vrouwen",
+      "type": "int32",
+      "description": "Number of female residents."
+    },
+    {
+      "name": "percentage_personen_0_tot_15_jaar",
+      "type": "int32",
+      "description": "Percentage of population aged 0-14 (children)."
+    },
+    {
+      "name": "percentage_personen_15_tot_25_jaar",
+      "type": "int32",
+      "description": "Percentage of population aged 15-24 (young adults)."
+    },
+    {
+      "name": "percentage_personen_25_tot_45_jaar",
+      "type": "int32",
+      "description": "Percentage of population aged 25-44 (young working age)."
+    },
+    {
+      "name": "percentage_personen_45_tot_65_jaar",
+      "type": "int32",
+      "description": "Percentage of population aged 45-64 (older working age)."
+    },
+    {
+      "name": "percentage_personen_65_jaar_en_ouder",
+      "type": "int32",
+      "description": "Percentage of population aged 65+ (elderly/retired)."
+    },
+    {
+      "name": "percentage_ongehuwd",
+      "type": "int32",
+      "description": "Percentage never married."
+    },
+    {
+      "name": "percentage_gehuwd",
+      "type": "int32",
+      "description": "Percentage currently married (incl. registered partnerships)."
+    },
+    {
+      "name": "percentage_gescheid",
+      "type": "int32",
+      "description": "Percentage divorced."
+    },
+    {
+      "name": "percentage_verweduwd",
+      "type": "int32",
+      "description": "Percentage widowed."
+    },
+    {
+      "name": "aantal_huishoudens",
+      "type": "int32",
+      "description": "Total number of private households."
+    },
+    {
+      "name": "percentage_eenpersoonshuishoudens",
+      "type": "int32",
+      "description": "Percentage of single-person households."
+    },
+    {
+      "name": "percentage_huishoudens_zonder_kinderen",
+      "type": "int32",
+      "description": "Percentage of multi-person households without children."
+    },
+    {
+      "name": "percentage_huishoudens_met_kinderen",
+      "type": "int32",
+      "description": "Percentage of households with children."
+    },
+    {
+      "name": "gemiddelde_huishoudsgrootte",
+      "type": "float64",
+      "description": "Average household size (persons per household)."
+    },
+    {
+      "name": "percentage_met_herkomstland_nederland",
+      "type": "int32",
+      "description": "Percentage with Dutch migration background (both parents born in NL)."
+    },
+    {
+      "name": "percentage_met_herkomstland_uit_europa_excl_nl",
+      "type": "int32",
+      "description": "Percentage with European migration background (excl. Netherlands)."
+    },
+    {
+      "name": "percentage_met_herkomstland_buiten_europa",
+      "type": "int32",
+      "description": "Percentage with non-European migration background."
+    },
+    {
+      "name": "percentage_geb_in_nl_met_herkomstland_nederland",
+      "type": "int32",
+      "description": "Percentage born in NL with Dutch background (native Dutch)."
+    },
+    {
+      "name": "perc_geb_in_nl_met_herkomstland_in_europa_ex_nl",
+      "type": "int32",
+      "description": "Percentage born in NL with European background (2nd generation European)."
+    },
+    {
+      "name": "perc_geb_in_nl_met_herkomstland_buiten_europa",
+      "type": "int32",
+      "description": "Percentage born in NL with non-European background (2nd generation non-European)."
+    },
+    {
+      "name": "perc_geb_buiten_nl_met_herkomstlnd_in_europa_ex_nl",
+      "type": "int32",
+      "description": "Percentage born abroad with European background (1st generation European immigrant)."
+    },
+    {
+      "name": "perc_geb_buiten_nl_met_herkomstlnd_buiten_europa",
+      "type": "int32",
+      "description": "Percentage born abroad with non-European background (1st generation non-European immigrant)."
+    },
+    {
+      "name": "oppervlakte_totaal_in_ha",
+      "type": "int32",
+      "description": "Total area in hectares (land + water)."
+    },
+    {
+      "name": "oppervlakte_land_in_ha",
+      "type": "int32",
+      "description": "Land area in hectares."
+    },
+    {
+      "name": "oppervlakte_water_in_ha",
+      "type": "int32",
+      "description": "Water area in hectares."
+    },
+    {
+      "name": "jrstatcode",
+      "type": "string",
+      "description": "Composite key: year + area code, e.g. '2025BU00140000'. Unique across multi-year datasets."
+    },
+    {
+      "name": "jaar",
+      "type": "int32",
+      "description": "Reference year (2025 for all records in this edition)."
+    },
+    {
+      "name": "geometry",
+      "type": "binary",
+      "description": "Area boundary polygon in EPSG:28992 (Amersfoort / RD New), WKB encoded."
+    }
+  ],
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 13,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    4.152832,
+    51.3580595,
+    13
+  ],
+  "pmtiles:layers": [
+    "buurten"
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.21,
+          50.73,
+          7.24,
+          53.58
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2025-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "assets": {
+    "buurten": {
+      "href": "./buurten.parquet",
+      "type": "application/x-parquet",
+      "title": "Buurten / Neighborhoods (GeoParquet)",
+      "description": "14,823 neighborhood-level areas with full demographic statistics in EPSG:28992.",
+      "roles": [
+        "data"
+      ]
+    },
+    "wijken": {
+      "href": "./wijken.parquet",
+      "type": "application/x-parquet",
+      "title": "Wijken / Districts (GeoParquet)",
+      "description": "3,423 district-level areas with full demographic statistics in EPSG:28992.",
+      "roles": [
+        "data"
+      ]
+    },
+    "gemeenten": {
+      "href": "./gemeenten.parquet",
+      "type": "application/x-parquet",
+      "title": "Gemeenten / Municipalities (GeoParquet)",
+      "description": "424 municipality-level areas with full demographic statistics in EPSG:28992.",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./wijken_buurten.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Buurten (vector tiles)",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "CBS Wijken en Buurten thumbnail",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "MultiPolygon"
+    ],
+    "vector:geometry_types": [
+      "MultiPolygon"
+    ]
+  }
+}

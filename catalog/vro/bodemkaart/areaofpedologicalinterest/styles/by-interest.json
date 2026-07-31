@@ -1,0 +1,55 @@
+{
+  "version": 8,
+  "name": "Area of pedological interest — by type",
+  "sources": {
+    "areaofpedologicalinterest": {
+      "type": "vector",
+      "url": "pmtiles://../areaofpedologicalinterest.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "areaofpedologicalinterest-fill",
+      "type": "fill",
+      "source": "areaofpedologicalinterest",
+      "source-layer": "areaofpedologicalinterest",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "pedologicalinterest"
+          ],
+          "Water",
+          "#4FC3F7",
+          "Bebouwd gebied",
+          "#BDBDBD",
+          "Terp",
+          "#8D6E63",
+          "Sterk opgehoogd terrein",
+          "#A1887F",
+          "Moeras",
+          "#66BB6A",
+          "Dijk",
+          "#FF8A65",
+          "Sterk afgegraven terrein",
+          "#D7CCC8",
+          "Groeve",
+          "#6D4C41",
+          "#E0E0E0"
+        ],
+        "fill-opacity": 0.7
+      }
+    },
+    {
+      "id": "areaofpedologicalinterest-outline",
+      "type": "line",
+      "source": "areaofpedologicalinterest",
+      "source-layer": "areaofpedologicalinterest",
+      "paint": {
+        "line-color": "#777777",
+        "line-width": 0.3
+      }
+    }
+  ]
+}

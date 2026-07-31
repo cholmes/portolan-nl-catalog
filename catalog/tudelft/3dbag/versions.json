@@ -1,0 +1,57 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-05-10T10:52:05.881790Z",
+      "breaking": false,
+      "assets": {
+        "llms.txt": {
+          "sha256": "93f441a31293d6273f0aa9605cb9f86ab775e24b07ee44bd74cd22f82fc11c68",
+          "size_bytes": 8640,
+          "href": "tudelft/3dbag/llms.txt",
+          "mtime": 1778409825.285374
+        },
+        "3dbag-pand.parquet": {
+          "sha256": "2f7e3f88bdc453132fa15491e84131d0e5144ef244d0ea39bb50d0b245571c29",
+          "size_bytes": 1444081713,
+          "href": "tudelft/3dbag/3dbag-pand.parquet",
+          "mtime": 1777969958.3303344
+        },
+        "3dbag-lod13.pmtiles": {
+          "sha256": "e0027cbbedd10ae00a7ee207c88ba158d731ef6330414896112708f9ae0bf740",
+          "size_bytes": 1332814227,
+          "href": "tudelft/3dbag/3dbag-lod13.pmtiles",
+          "mtime": 1778317942.431603
+        },
+        "README.md": {
+          "sha256": "93d6dff322c364cb632395135dd248a7a3378922eae35f8cc4deb22dcd332450",
+          "size_bytes": 10276,
+          "href": "tudelft/3dbag/README.md",
+          "mtime": 1778409767.5788233
+        },
+        "thumbnail.jpg": {
+          "sha256": "17e863a460d298b2d09ed3308820c638bdb5b4fcfd5546da33f35314c3c92c5b",
+          "size_bytes": 325131,
+          "href": "tudelft/3dbag/thumbnail.jpg",
+          "mtime": 1778409525.405237
+        },
+        "3dbag-lod13.parquet": {
+          "sha256": "4a7971d00e9f5fddb5e9f533190b256e6f61fe115f98aca8a773d508f0a0cb50",
+          "size_bytes": 783421975,
+          "href": "tudelft/3dbag/3dbag-lod13.parquet",
+          "mtime": 1778315989.3804002
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "3dbag-pand.parquet",
+        "3dbag-lod13.pmtiles",
+        "README.md",
+        "thumbnail.jpg",
+        "3dbag-lod13.parquet"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "version": 8,
+  "name": "Fish Migration Routes — By Connectivity Status",
+  "sources": {
+    "rws": {
+      "type": "vector",
+      "url": "pmtiles://../rijksviswegen_2024.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fish-routes",
+      "type": "line",
+      "source": "rws",
+      "source-layer": "rijksviswegen_2024",
+      "paint": {
+        "line-color": [
+          "match", ["get", "Status2024"],
+          "Verbonden", "#2E7D32",
+          "Niet verbonden", "#C62828",
+          "Geen onderdeel visroutenetwerk", "#9E9E9E",
+          "#BDBDBD"
+        ],
+        "line-width": 2.5
+      }
+    }
+  ]
+}

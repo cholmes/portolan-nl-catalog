@@ -1,0 +1,40 @@
+{
+  "version": 8,
+  "name": "Districts & Neighborhoods — Population Density",
+  "sources": {
+    "wijken": {
+      "type": "vector",
+      "url": "pmtiles://../wijken_en_buurten.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "buurten-fill",
+      "type": "fill",
+      "source": "wijken",
+      "source-layer": "buurten",
+      "paint": {
+        "fill-color": [
+          "step", ["get", "bevolkingsdichtheidInwonersPerKm2"],
+          "#FFF5F0",
+          500, "#FEE0D2",
+          1000, "#FC9272",
+          3000, "#EF3B2C",
+          5000, "#CB181D",
+          10000, "#67000D"
+        ],
+        "fill-opacity": 0.75
+      }
+    },
+    {
+      "id": "buurten-outline",
+      "type": "line",
+      "source": "wijken",
+      "source-layer": "buurten",
+      "paint": {
+        "line-color": "#333333",
+        "line-width": 0.3
+      }
+    }
+  ]
+}

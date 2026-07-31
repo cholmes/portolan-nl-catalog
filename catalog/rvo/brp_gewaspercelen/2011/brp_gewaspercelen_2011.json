@@ -1,0 +1,216 @@
+{
+  "type": "Feature",
+  "stac_version": "1.1.0",
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "id": "brp_gewaspercelen_2011",
+  "collection": "brp_gewaspercelen",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          3.3597,
+          50.7504
+        ],
+        [
+          7.2244,
+          50.7504
+        ],
+        [
+          7.2244,
+          53.4954
+        ],
+        [
+          3.3597,
+          53.4954
+        ],
+        [
+          3.3597,
+          50.7504
+        ]
+      ]
+    ]
+  },
+  "bbox": [
+    3.3597,
+    50.7504,
+    7.2244,
+    53.4954
+  ],
+  "properties": {
+    "datetime": "2011-05-15T00:00:00Z",
+    "start_datetime": "2011-05-15T00:00:00Z",
+    "end_datetime": "2011-05-15T00:00:00Z",
+    "title": "BRP Gewaspercelen 2011",
+    "description": "Definitive crop parcel registration for 2011. The BRP is an annual snapshot reflecting what farmers register each May 15 (the CAP deadline); this 'definitief' edition is finalized after verification. Published by RVO via PDOK.",
+    "proj:code": "EPSG:28992",
+    "table:row_count": 779674,
+    "table:primary_geometry": "geom",
+    "geoparquet:geometry_type": "Polygon",
+    "geoparquet:feature_count": 779674,
+    "vector:geometry_types": [
+      "Polygon"
+    ],
+    "portolan:styles": [
+      "styles/default",
+      "styles/by-category",
+      "styles/by-crop",
+      "styles/landscape-elements"
+    ],
+    "table:columns": [
+      {
+        "name": "id",
+        "type": "int64",
+        "description": "Feature ID, mapped from the source FGDB's `OGC_FID`."
+      },
+      {
+        "name": "category",
+        "type": "string",
+        "description": "Broad crop category, mapped from FGDB field `CAT_GEWASCATEGORIE`. Note: Landschapselement was added in 2023; absent in this year."
+      },
+      {
+        "name": "gewas",
+        "type": "string",
+        "description": "Specific crop name, mapped from FGDB field `GWS_GEWAS`."
+      },
+      {
+        "name": "gewascode",
+        "type": "int32",
+        "description": "Numeric crop code, mapped from FGDB field `GWS_GEWASCODE` (cast from varchar to int32)."
+      },
+      {
+        "name": "jaar",
+        "type": "int32",
+        "description": "Registration year — synthesized from the source filename (not present in the original FGDB)."
+      },
+      {
+        "name": "status",
+        "type": "string",
+        "description": "Registration status — set to 'Definitief' (constant; not present in the original FGDB)."
+      },
+      {
+        "name": "geom",
+        "type": "binary",
+        "description": "Parcel boundary polygon in EPSG:28992 (Amersfoort / RD New), WKB-encoded."
+      }
+    ]
+  },
+  "assets": {
+    "data": {
+      "href": "./brp_gewaspercelen_2011.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "BRP Gewaspercelen 2011 (GeoParquet)",
+      "description": "779,674 agricultural parcel polygons for the 2011 BRP definitive edition. EPSG:28992 (Amersfoort / RD New), zstd-compressed, sorted by bbox per OGC Best Practices for Distributing GeoParquet.",
+      "table:row_count": 779674,
+      "roles": [
+        "data"
+      ]
+    },
+    "source": {
+      "href": "./brpgewaspercelen_definitief_2011.zip",
+      "type": "application/zip",
+      "title": "Source Esri File Geodatabase, zipped (PDOK definitive 2011)",
+      "description": "Original PDOK distribution for 2011: an Esri File Geodatabase (.gdb) inside a zip archive. Unzipped contents are readable with GDAL/ogr2ogr (`OpenFileGDB` driver) or ArcGIS. The corresponding GeoParquet in this collection is **schema-normalized** from this source:\n\n- `OGC_FID` → `id`\n- `CAT_GEWASCATEGORIE` → `category`\n- `GWS_GEWAS` → `gewas`\n- `GWS_GEWASCODE` (varchar) → `gewascode` (int32)\n- added `jaar = 2011` (from the filename)\n- added `status = 'Definitief'` (constant for this collection)\n- dropped `Shape_Length`, `Shape_Area`, `GEOMETRIE_Length`, `GEOMETRIE_Area` (recomputable with `ST_Length` / `ST_Area`)\n\nGeometry is kept in EPSG:28992. See README.md for the full normalization pipeline.",
+      "roles": [
+        "source"
+      ]
+    },
+    "pmtiles": {
+      "href": "./brp_gewaspercelen_2011.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "BRP Gewaspercelen 2011 (vector tiles)",
+      "roles": [
+        "visual"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "Default (2011)",
+      "description": "Agricultural landscape — green for grassland, yellow for arable. Points at ./brp_gewaspercelen_2011.pmtiles. Generated from the canonical base style in ../styles/ via ../scripts/regen_year_styles.py.",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-category": {
+      "href": "./styles/by-category.json",
+      "type": "application/json",
+      "title": "By Crop Category (2011)",
+      "description": "Distinct colors for each broad crop category. Points at ./brp_gewaspercelen_2011.pmtiles. Generated from the canonical base style in ../styles/ via ../scripts/regen_year_styles.py.",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-crop": {
+      "href": "./styles/by-crop.json",
+      "type": "application/json",
+      "title": "By Crop Type (2011)",
+      "description": "Individual colors for the most common specific crops. Points at ./brp_gewaspercelen_2011.pmtiles. Generated from the canonical base style in ../styles/ via ../scripts/regen_year_styles.py.",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/landscape-elements": {
+      "href": "./styles/landscape-elements.json",
+      "type": "application/json",
+      "title": "Landscape Elements (2011)",
+      "description": "Highlights ditches, hedgerows, tree rows, and ponds. Points at ./brp_gewaspercelen_2011.pmtiles. Generated from the canonical base style in ../styles/ via ../scripts/regen_year_styles.py.",
+      "roles": [
+        "style"
+      ]
+    }
+  },
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/2011/brp_gewaspercelen_2011.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "collection",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "BRP Gewaspercelen (Agricultural Crop Parcels)"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "BRP Gewaspercelen (Agricultural Crop Parcels)"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/rvo/gewaspercelen/atom/downloads/brpgewaspercelen_definitief_2011.zip",
+      "type": "application/zip",
+      "title": "PDOK source download (2011)"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/2011/brp_gewaspercelen_2011.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/2011/README.md",
+      "type": "text/html",
+      "title": "BRP Gewaspercelen 2011 documentation"
+    }
+  ]
+}

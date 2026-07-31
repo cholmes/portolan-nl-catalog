@@ -1,0 +1,39 @@
+{
+  "version": 8,
+  "name": "Natura 2000 — By EU Directive",
+  "sources": {
+    "rvo": {
+      "type": "vector",
+      "url": "pmtiles://../natura2000.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "natura-fill",
+      "type": "fill",
+      "source": "rvo",
+      "source-layer": "natura2000",
+      "paint": {
+        "fill-color": [
+          "match", ["get", "beschermin"],
+          "VR", "#42A5F5",
+          "HR", "#388E3C",
+          "VR+HR", "#00897B",
+          "HR groeve", "#795548",
+          "#A5D6A7"
+        ],
+        "fill-opacity": 0.55
+      }
+    },
+    {
+      "id": "natura-outline",
+      "type": "line",
+      "source": "rvo",
+      "source-layer": "natura2000",
+      "paint": {
+        "line-color": "#333333",
+        "line-width": 1
+      }
+    }
+  ]
+}

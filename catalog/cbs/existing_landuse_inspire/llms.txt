@@ -1,0 +1,249 @@
+# Existing Land Use (INSPIRE Harmonized) — CBS / Netherlands
+
+## What This Dataset Is
+
+INSPIRE-harmonized land use dataset for the Netherlands, published by **CBS** (Centraal
+Bureau voor de Statistiek / Statistics Netherlands). This is the European INSPIRE version
+of the CBS Bestand Bodemgebruik (BBG), transformed to conform to the INSPIRE Existing
+Land Use data specification.
+
+The dataset is derived from the Dutch topographic map (BRT) and aerial photography from
+summer 2015. Each polygon represents a land use area classified using the **HILUCS**
+(Hierarchical INSPIRE Land Use Classification System) — the EU-standardized classification
+— instead of the original Dutch national classification.
+
+**Source:** https://www.pdok.nl/introductie/-/article/cbs-existing-landuse-inspire-geharmoniseerd-
+**Provider:** CBS (Centraal Bureau voor de Statistiek / Statistics Netherlands)
+**License:** CC0 (public domain)
+**Feature type:** landuse:ExistingLandUse
+
+## Relationship to Bestand Bodemgebruik (BBG) 2017
+
+This dataset and the Bestand Bodemgebruik 2017 share the **same underlying data** — land
+use polygons derived from the BRT topographic map and aerial imagery. The key differences:
+
+| Aspect | BBG 2017 (Dutch) | This dataset (INSPIRE) |
+|--------|-------------------|----------------------|
+| Classification | Dutch national (CBS categories) | HILUCS (EU-standardized) |
+| CRS | EPSG:28992 (RD New / Amersfoort) | EPSG:3035 (ETRS89-LAEA) |
+| Field names | Dutch (`bodemgebruik`, etc.) | INSPIRE standard (`hilucslanduseHref`, etc.) |
+| Interoperability | Netherlands only | Pan-European, comparable across EU member states |
+| Feature IDs | CBS identifiers | INSPIRE-namespaced IDs |
+
+If you need to compare Dutch land use with other EU countries, use this INSPIRE version.
+For domestic Dutch analysis with familiar Dutch categories, use the BBG 2017.
+
+## HILUCS Classification System
+
+The HILUCS (Hierarchical INSPIRE Land Use Classification System) is the European standard
+for classifying land use. It uses a hierarchical numbering scheme:
+
+| Code | Category |
+|------|----------|
+| 1 | Primary production |
+| 1_1 | Agriculture |
+| 1_2 | Forestry |
+| 1_3 | Mining and quarrying |
+| 2 | Secondary production |
+| 2_1 | Industrial manufacturing |
+| 3 | Tertiary production (services) |
+| 3_1 | Commercial services |
+| 3_2 | Financial/professional services |
+| 3_3 | Community services |
+| 3_4 | Cultural/entertainment/recreation |
+| 4 | Transport networks / logistics |
+| 4_1 | Transport networks |
+| 4_1_1 | Road transport |
+| 4_1_2 | Railway transport |
+| 4_1_3 | Air transport |
+| 4_1_4 | Water transport |
+| 5 | Residential use |
+| 5_1 | Permanent residential use |
+| 6 | Other uses |
+| 6_1 | Transitional areas |
+| 6_2 | Abandoned areas |
+| 6_3 | Natural and semi-natural areas |
+| 6_4 | Water bodies |
+| 6_6 | Not known use |
+
+The `existinglanduseobjectName` field contains the code (e.g., "4_1_2") and
+`hilucslanduseHref` contains the full URI (e.g.,
+`http://inspire.ec.europa.eu/codelist/HILUCSValue/4_1_2_RailwayTransport`).
+
+## Schema — Field Meanings
+
+| Field | Type | Meaning |
+|-------|------|---------|
+| `id` | string | **Feature ID** (e.g. `BBG2017_1`). Links back to BBG feature numbering. |
+| `description` | string | **English description** of the land use type (e.g. `Railroad`, `Residential area`). |
+| `inspireidIdentifierLocalid` | string | INSPIRE local identifier for this feature. |
+| `inspireidIdentifierNamespace` | string | Always `NL.CBS.LU.ExistingLandUseObject`. Identifies this as a Dutch CBS land use object. |
+| `observationdate` | string | **Date of observation** (e.g. `2017-10-01`). When the land use was recorded. |
+| `validfrom` | string | Start of the validity period. |
+| `validto` | string | End of the validity period. |
+| `hilucslanduseHref` | string | **HILUCS classification URI**. The key classification field. Full URI linking to the INSPIRE code list. |
+| `specificlanduseHref` | string | Specific (non-HILUCS) land use classification URI. |
+| `specificlanduseTitle` | string | **Dutch land use label** (e.g. `Spoorterrein_Spoorterrein`). Maps to the original BBG classification. |
+| `existinglanduseobjectName` | string | **HILUCS code** (e.g. `4_1_2`). Shorter than the full URI — useful for grouping and filtering. |
+| `geometry` | WKB MultiPolygon | Land use polygon in **EPSG:3035** (ETRS89-LAEA). Coordinates in meters. |
+
+## Important Columns
+
+The columns you'll most often use:
+
+- **`existinglanduseobjectName`** — HILUCS code for classification
+- **`description`** — English description of the land use
+- **`hilucslanduseHref`** — full HILUCS URI (for EU-level interoperability)
+- **`specificlanduseTitle`** — original Dutch classification label
+- **`observationdate`** — when the land use was observed
+- **`geometry`** — land use polygon
+
+## Geometry Notes
+
+- CRS is **EPSG:3035** (ETRS89-LAEA / European Lambert Azimuthal Equal-Area) — coordinates
+  are in **meters**. This is the pan-European standard CRS used for INSPIRE datasets.
+  Unlike most Dutch datasets which use EPSG:28992 (RD New), this dataset is projected in
+  the European coordinate system.
+- To convert to WGS84 (lon/lat) for web mapping:
+  ```sql
+  ST_Transform(geometry, 'EPSG:3035', 'EPSG:4326')
+  ```
+- To convert to Dutch RD New (for combining with other Dutch datasets):
+  ```sql
+  ST_Transform(geometry, 'EPSG:3035', 'EPSG:28992')
+  ```
+- All geometries are MultiPolygon.
+- Bounding box in WGS84: [3.37, 50.73, 7.24, 53.55] (all of Netherlands).
+
+## How to Access
+
+GeoParquet and PMTiles files are available from Source Cooperative. Native CRS is
+**EPSG:3035** (ETRS89-LAEA) — coordinates are in meters.
+
+| File | Features | Size | Contents |
+|------|----------|------|----------|
+| `existing_landuse.parquet` | 171,543 | 1.4 GB | All land use polygons with HILUCS classification |
+| `existing_landuse.pmtiles` | — | 190 MB | Land use polygons as vector tiles |
+
+**Base URL:** `https://data.source.coop/cholmes/portolan-nl/cbs/existing_landuse_inspire/`
+
+```python
+import duckdb
+
+con = duckdb.connect()
+con.execute("INSTALL spatial; LOAD spatial;")
+
+URL = 'https://data.source.coop/cholmes/portolan-nl/cbs/existing_landuse_inspire/existing_landuse.parquet'
+df = con.execute(f"SELECT * FROM read_parquet('{URL}') LIMIT 5").df()
+```
+
+Also available via WFS and WMS from PDOK:
+- **WFS:** `https://service.pdok.nl/cbs/landuse/wfs/v1_0`
+- **WMS:** `https://service.pdok.nl/cbs/landuse/wms/v1_0`
+
+## Useful Query Patterns
+
+### Get features by HILUCS category (WFS filter)
+
+```
+https://service.pdok.nl/cbs/landuse/wfs/v1_0?
+  service=WFS&version=2.0.0&request=GetFeature
+  &typeName=landuse:ExistingLandUse
+  &outputFormat=application/json
+  &CQL_FILTER=existinglanduseobjectName='5_1'
+  &count=100
+```
+
+This returns all residential land use polygons (HILUCS code 5_1 = Permanent residential).
+
+### Count features by HILUCS top-level category
+
+When working with the data locally:
+
+```sql
+SELECT LEFT(existinglanduseobjectName, 1) AS hilucs_category,
+       CASE LEFT(existinglanduseobjectName, 1)
+           WHEN '1' THEN 'Primary production'
+           WHEN '2' THEN 'Secondary production'
+           WHEN '3' THEN 'Tertiary production'
+           WHEN '4' THEN 'Transport'
+           WHEN '5' THEN 'Residential'
+           WHEN '6' THEN 'Other'
+       END AS category_name,
+       COUNT(*) AS cnt
+FROM existing_landuse
+GROUP BY 1
+ORDER BY cnt DESC
+```
+
+### Find specific land use types by description
+
+```sql
+SELECT id, description, existinglanduseobjectName,
+       specificlanduseTitle, observationdate
+FROM existing_landuse
+WHERE description ILIKE '%forest%'
+   OR description ILIKE '%park%'
+LIMIT 20
+```
+
+### Cross-reference HILUCS code with Dutch label
+
+```sql
+SELECT existinglanduseobjectName AS hilucs_code,
+       description AS english_name,
+       specificlanduseTitle AS dutch_label,
+       COUNT(*) AS polygon_count
+FROM existing_landuse
+GROUP BY 1, 2, 3
+ORDER BY hilucs_code
+```
+
+## INSPIRE Context
+
+This dataset is part of the Netherlands' implementation of the **INSPIRE Directive**
+(2007/2/EC), which mandates EU member states to publish spatial data in harmonized formats
+to enable cross-border interoperability. The Land Use theme is defined in Annex III of the
+directive.
+
+Key INSPIRE elements:
+- **Namespace:** `NL.CBS.LU.ExistingLandUseObject` — identifies CBS as the Dutch provider
+  for land use data
+- **HILUCS codelist:** `http://inspire.ec.europa.eu/codelist/HILUCSValue/` — the EU-standard
+  classification
+- **CRS:** EPSG:3035 — the mandatory INSPIRE CRS for pan-European datasets
+
+## Caveats
+
+- **EPSG:3035 coordinates**: Unlike most Dutch datasets (which use EPSG:28992 / RD New),
+  this dataset uses the European ETRS89-LAEA projection. You must transform coordinates
+  when combining with other Dutch data.
+- **Based on 2015 imagery**: The land use classification is derived from summer 2015
+  aerial photography and the BRT topographic map. Land use changes since 2015 are not
+  reflected.
+- **HILUCS mapping is not 1:1**: Some Dutch land use categories map to the same HILUCS
+  code. The `specificlanduseTitle` field preserves the more detailed Dutch classification.
+- **WFS access limits**: PDOK WFS returns a maximum of ~5000 features per request. Use
+  pagination (startIndex) for bulk access.
+- **Large file size**: The GeoParquet file is 1.4 GB due to detailed polygon geometries.
+  Use bbox or spatial filters when querying remotely.
+
+
+## Visualization Styles
+
+One Mapbox GL v8 style is available for interactive map visualization via the PMTiles file.
+
+Style files are Mapbox GL v8 JSON with relative PMTiles source paths. They can be
+used with MapLibre GL JS, OpenLayers (via ol-mapbox-style), or any Mapbox GL v8-compatible renderer.
+
+- **`styles/default.json`** — **INSPIRE land use classification.** Colors by English-language `description` field using European-standard land use categories: green for agriculture, dark green for woodland, pink for residential, gray for transport, blue for water, yellow for recreation. Uses the same CBS data as bestand_bodemgebruik_2017 but harmonized to INSPIRE/HILUCS categories.
+
+Style files are at: `https://data.source.coop/cholmes/portolan-nl/cbs/existing_landuse_inspire/styles/`
+## Also Available As
+
+- **GeoParquet:** `existing_landuse.parquet` (1.4 GB, 171,543 features, EPSG:3035)
+- **PMTiles:** `existing_landuse.pmtiles` (190 MB, for web map visualization)
+- **WFS:** `https://service.pdok.nl/cbs/landuse/wfs/v1_0` — live feature access
+- **WMS:** `https://service.pdok.nl/cbs/landuse/wms/v1_0` — map image service
+- **BBG 2017 (Dutch version):** Same underlying data with Dutch classification and
+  EPSG:28992 CRS — available as `cbs/bestand_bodemgebruik_2017` in this catalog

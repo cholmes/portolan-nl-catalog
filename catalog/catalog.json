@@ -1,0 +1,74 @@
+{
+  "type": "Catalog",
+  "id": "portolan-nl",
+  "stac_version": "1.1.0",
+  "description": "A demonstration of Portolan as cloud-native infrastructure for the disclosure of open geodatasets from Dutch government authorities. Inspired by PDOK (Publieke Dienstverlening Op de Kaart), this catalog provides current and reliable geo-information as GeoParquet, PMTiles, and STAC metadata — open, standards-based, and freely accessible to everyone.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "./catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/README.md",
+      "type": "text/html",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata documentation"
+    },
+    {
+      "rel": "child",
+      "href": "./rijkswaterstaat/catalog.json",
+      "type": "application/json",
+      "title": "Rijkswaterstaat"
+    },
+    {
+      "rel": "child",
+      "href": "./kadaster/catalog.json",
+      "type": "application/json",
+      "title": "Het Kadaster"
+    },
+    {
+      "rel": "child",
+      "href": "./cbs/catalog.json",
+      "type": "application/json",
+      "title": "Centraal Bureau voor de Statistiek (CBS)"
+    },
+    {
+      "rel": "child",
+      "href": "./rvo/catalog.json",
+      "type": "application/json",
+      "title": "Rijksdienst voor Ondernemend Nederland (RVO)"
+    },
+    {
+      "rel": "child",
+      "href": "./rce/catalog.json",
+      "type": "application/json",
+      "title": "Rijksdienst voor het Cultureel Erfgoed (RCE)"
+    },
+    {
+      "rel": "child",
+      "href": "./beeldmateriaal/catalog.json",
+      "type": "application/json",
+      "title": "Beeldmateriaal Nederland"
+    },
+    {
+      "rel": "child",
+      "href": "./tudelft/catalog.json",
+      "type": "application/json",
+      "title": "TU Delft — 3D Geoinformation Research Group"
+    },
+    {
+      "rel": "child",
+      "href": "./vro/catalog.json",
+      "type": "application/json",
+      "title": "Ministerie van Volkshuisvesting en Ruimtelijke Ordening (VRO)"
+    }
+  ],
+  "title": "Portolan NL — Cloud-Native Dutch Geodata"
+}

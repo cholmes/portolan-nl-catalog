@@ -1,0 +1,238 @@
+{
+  "type": "Catalog",
+  "id": "luchtfoto_2024_kb39",
+  "stac_version": "1.1.0",
+  "description": "Kaartblad 39 covers the Betuwe — the fertile river island between the Nederrijn/Lek and the Waal, famous for its fruit orchards (especially cherry and apple). Includes Tiel, Rhenen (with the Grebbeberg), and the southern part of Wageningen. The landscape transitions from river floodplains to the southern edge of the Utrechtse Heuvelrug. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the Beeldmateriaal Nederland summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/beeldmateriaal/luchtfoto_2024/kb39/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39an1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39AN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39an2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39AN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39az1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39AZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39az2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39AZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39bn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39BN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39bn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39BN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39bz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39BZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39bz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39BZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39cn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39CN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39cn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39CN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39cz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39CZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39cz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39CZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39dn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39DN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39dn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39DN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39dz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39DZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39dz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39DZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39en1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39EN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39en2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39EN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39ez1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39EZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39ez2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39EZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39fn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39FN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39fn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39FN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39fz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39FZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39fz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39FZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39gn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39GN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39gn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39GN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39gz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39GZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39gz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39GZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39hn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39HN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39hn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39HN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39hz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39HZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-39hz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 39HZ2"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Luchtfoto 2024 — Aerial Orthophotos"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          5.1685836,
+          51.8130593,
+          5.7515641,
+          52.0383304
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2024-04-01T00:00:00Z",
+          "2024-09-30T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "title": "KB 39 — Tiel / Betuwe"
+}

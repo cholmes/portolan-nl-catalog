@@ -1,0 +1,45 @@
+{
+  "version": 8,
+  "name": "BAG Buildings — By Use",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../bag-light.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "buildings-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "panden",
+      "paint": {
+        "fill-color": [
+          "match", ["get", "gebruiksdoel"],
+          "woonfunctie", "#E07050",
+          "winkelfunctie", "#4A90D9",
+          "kantoorfunctie", "#4A90D9",
+          "industriefunctie", "#888888",
+          "gezondheidszorgfunctie", "#50B060",
+          "onderwijsfunctie", "#9B59B6",
+          "bijeenkomstfunctie", "#E67E22",
+          "logiesfunctie", "#F1C40F",
+          "sportfunctie", "#2ECC71",
+          "overige gebruiksfunctie", "#BDC3C7",
+          "#CCCCCC"
+        ],
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "buildings-outline",
+      "type": "line",
+      "source": "data",
+      "source-layer": "panden",
+      "paint": {
+        "line-color": "#666666",
+        "line-width": 0.5
+      }
+    }
+  ]
+}

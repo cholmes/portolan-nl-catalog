@@ -1,0 +1,50 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-05-08T18:16:27.110264Z",
+      "breaking": false,
+      "assets": {
+        "llms.txt": {
+          "sha256": "c6ac8eda936fe0492a69a05de8809e041d0c811a2f8cbac1edd553b8b10c35ea",
+          "size_bytes": 4860,
+          "href": "rijkswaterstaat/zero_emissiezones/llms.txt",
+          "mtime": 1778185474.0
+        },
+        "thumbnail_.png": {
+          "sha256": "e75a94dc065ee09acc5bd5ea8bffa0c5eb35225f008b8d52c99cf58cb9f077f7",
+          "size_bytes": 260309,
+          "href": "rijkswaterstaat/zero_emissiezones/thumbnail_.png",
+          "mtime": 1778070780.9761822
+        },
+        "zero_emissiezones.pmtiles": {
+          "sha256": "76d183c4673b2c3a5ef1d8935061045dcdf82b37b0c21d2e415b6140a65685a1",
+          "size_bytes": 68377,
+          "href": "rijkswaterstaat/zero_emissiezones/zero_emissiezones.pmtiles",
+          "mtime": 1778070780.977764
+        },
+        "README.md": {
+          "sha256": "582e68c5275e937a4140c9691512de1d209add9f16203f39a2ba50923c1f87b4",
+          "size_bytes": 1932,
+          "href": "rijkswaterstaat/zero_emissiezones/README.md",
+          "mtime": 1778148808.0
+        },
+        "zero_emissiezones.parquet": {
+          "sha256": "5c63ec2a7fd8357401e9f10f3411fb5ba5f54948b3da20ebfa65ca816f3e3b04",
+          "size_bytes": 101894,
+          "href": "rijkswaterstaat/zero_emissiezones/zero_emissiezones.parquet",
+          "mtime": 1778070780.9782612
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "thumbnail_.png",
+        "zero_emissiezones.pmtiles",
+        "README.md",
+        "zero_emissiezones.parquet"
+      ]
+    }
+  ]
+}

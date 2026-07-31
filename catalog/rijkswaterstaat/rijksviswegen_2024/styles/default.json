@@ -1,0 +1,40 @@
+{
+  "version": 8,
+  "name": "Fish Migration Routes — Default",
+  "sources": {
+    "rws": {
+      "type": "vector",
+      "url": "pmtiles://../rijksviswegen_2024.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "fish-routes",
+      "type": "line",
+      "source": "rws",
+      "source-layer": "rijksviswegen_2024",
+      "paint": {
+        "line-color": "#26A69A",
+        "line-width": 2.5
+      }
+    },
+    {
+      "id": "fish-routes-label",
+      "type": "symbol",
+      "source": "rws",
+      "source-layer": "rijksviswegen_2024",
+      "minzoom": 9,
+      "layout": {
+        "text-field": "{NAAM}",
+        "text-size": 11,
+        "symbol-placement": "line",
+        "text-font": ["Open Sans Regular"]
+      },
+      "paint": {
+        "text-color": "#004D40",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 1
+      }
+    }
+  ]
+}

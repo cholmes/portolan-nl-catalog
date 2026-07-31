@@ -1,0 +1,238 @@
+{
+  "id": "natura2000",
+  "title_nl": "Natura 2000-gebieden",
+  "title_en": "Natura 2000 Protected Areas",
+  "description_nl": "Begrenzing van de Natura 2000-gebieden in Nederland, aangewezen onder de Europese Vogel- en Habitatrichtlijn.",
+  "description_en": "Boundaries of Natura 2000 protected areas in the Netherlands, designated under the EU Birds and Habitats Directives. Contains 209 features representing 162 distinct protected areas. Some areas have multiple features due to separate designation types (Birds Directive, Habitats Directive, or both).",
+  "provider": {
+    "name": "Rijksdienst voor Ondernemend Nederland",
+    "abbreviation": "RVO",
+    "url": "https://www.rvo.nl/",
+    "role": "Publisher and maintainer of the Natura 2000 spatial data on behalf of the Ministry of Agriculture, Nature and Food Quality (LNV)."
+  },
+  "source": {
+    "atom_feed": "https://service.pdok.nl/rvo/natura2000/atom/index.xml",
+    "download_url": "https://service.pdok.nl/rvo/natura2000/atom/downloads/natura2000.gpkg",
+    "ogc_api": "https://api.pdok.nl/rvo/natura2000/ogc/v1",
+    "pdok_page": "https://www.pdok.nl/introductie/-/article/natura-2000",
+    "platform": "PDOK"
+  },
+  "license": {
+    "id": "CC0-1.0",
+    "name": "Creative Commons Zero v1.0 Universal",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "format": "GeoPackage",
+  "file_size_mb": 10.2,
+  "crs": {
+    "code": "EPSG:28992",
+    "name": "Amersfoort / RD New",
+    "note": "Dutch national coordinate reference system. Use EPSG:7415 for 3D. Transform to EPSG:4326 (WGS 84) for international use."
+  },
+  "coverage": {
+    "country": "Netherlands",
+    "includes_eez": true,
+    "note": "Extent reaches into the North Sea EEZ (Exclusive Economic Zone) for marine Natura 2000 areas such as the Noordzeekustzone, Voordelta, and Doggerbank.",
+    "extent": {
+      "xmin": -15520.86,
+      "ymin": 307155.14,
+      "xmax": 276784.50,
+      "ymax": 852886.81,
+      "crs": "EPSG:28992"
+    }
+  },
+  "layers": [
+    {
+      "name": "n2000",
+      "geometry_type": "3D Measured Multi Polygon",
+      "geometry_note": "Geometry includes Z and M dimensions but these appear to be unused (typically 0 or NaN). The effective geometry is 2D MultiPolygon.",
+      "feature_count": 209,
+      "unique_areas": 162,
+      "multi_feature_areas": 41,
+      "multi_feature_note": "41 of the 162 areas have multiple features, typically because parts of the area fall under different designation types (VR, HR, or VR+HR). For example, De Wieden (nr=35) has separate VR and VR+HR features.",
+      "fid_column": "id",
+      "geometry_column": "geom",
+      "columns": [
+        {
+          "name": "objectid",
+          "type": "Integer",
+          "description_nl": "Automatisch oplopend object-ID",
+          "description_en": "Auto-incrementing object identifier"
+        },
+        {
+          "name": "naam_n2k",
+          "type": "String(50)",
+          "description_nl": "Naam van het Natura 2000-gebied",
+          "description_en": "Name of the Natura 2000 area",
+          "examples": ["Coepelduynen", "De Bruuk", "Brabantse Wal", "Waddenzee"]
+        },
+        {
+          "name": "vhn_new",
+          "type": "Int16",
+          "description_nl": "Gecodeerde aanwijzingstype: 1=VR, 2=HR, 3=VR+HR, 9=HR groeve",
+          "description_en": "Coded designation type: 1=Birds Directive (VR), 2=Habitats Directive (HR), 3=Both (VR+HR), 9=Habitats Directive quarry (HR groeve)",
+          "values": {
+            "1": "VR (Vogelrichtlijn / Birds Directive)",
+            "2": "HR (Habitatrichtlijn / Habitats Directive)",
+            "3": "VR+HR (Both directives)",
+            "9": "HR groeve (Habitats Directive - quarry designation)"
+          },
+          "distribution": {
+            "1": 39,
+            "2": 108,
+            "3": 58,
+            "9": 4
+          }
+        },
+        {
+          "name": "nr",
+          "type": "Integer",
+          "description_nl": "Officieel Natura 2000-gebiedsnummer (1-166)",
+          "description_en": "Official Natura 2000 area number, as assigned by the Dutch government. Numbers range from 1 to approximately 166. Not all numbers are used (162 distinct areas exist).",
+          "examples": [35, 69, 96, 111, 128]
+        },
+        {
+          "name": "beschermin",
+          "type": "String(50)",
+          "description_nl": "Type bescherming: HR (Habitatrichtlijn), VR (Vogelrichtlijn), VR+HR (beide), HR groeve",
+          "description_en": "Protection type as human-readable text. Maps directly to vhn_new codes.",
+          "values": {
+            "HR": "Habitatrichtlijn (Habitats Directive, 92/43/EEC) - 108 features",
+            "VR": "Vogelrichtlijn (Birds Directive, 2009/147/EC) - 39 features",
+            "VR+HR": "Both directives - 58 features",
+            "HR groeve": "Habitats Directive quarry designation - 4 features"
+          }
+        },
+        {
+          "name": "sitecode_v",
+          "type": "String(16)",
+          "description_nl": "EU-sitecode Vogelrichtlijn (kan leeg zijn als het gebied alleen onder HR valt)",
+          "description_en": "EU site code for the Birds Directive. Empty if the area is designated only under the Habitats Directive.",
+          "examples": ["NL9802054", "NL2003011"]
+        },
+        {
+          "name": "sitecode_h",
+          "type": "String(16)",
+          "description_nl": "EU-sitecode Habitatrichtlijn (kan leeg zijn als het gebied alleen onder VR valt)",
+          "description_en": "EU site code for the Habitats Directive. Empty if the area is designated only under the Birds Directive.",
+          "examples": ["NL1000030", "NL2003011"]
+        },
+        {
+          "name": "status",
+          "type": "String(150)",
+          "description_nl": "Juridische status: aanwijzingsbesluit, wijzigingsbesluit, of EU-uitvoeringsbesluit met datum",
+          "description_en": "Legal designation status. Contains the type and date of the government decision (Natura 2000-besluit) or EU implementing decision. Many areas have been amended (wijzigingsbesluit) since initial designation.",
+          "examples": [
+            "Natura 2000-besluit 2010",
+            "Natura 2000-besluit 7 mei 2013",
+            "Natura 2000-besluit 2010, wijzigingsbesluit 2011",
+            "Uitvoeringsbesluit EU 2019/19 van 14 december 2018"
+          ],
+          "note": "Date formats are inconsistent across features (some use full dates, others only years). This is a free-text field."
+        },
+        {
+          "name": "kadaster",
+          "type": "String(30)",
+          "description_nl": "Kadastrale referentie",
+          "description_en": "Cadastral (land registry) reference number, linking to the Kadaster registration.",
+          "examples": ["OZ4 57913/192"]
+        },
+        {
+          "name": "staatscour",
+          "type": "String(30)",
+          "description_nl": "Referentie naar de Staatscourant (officieel publicatiemedium)",
+          "description_en": "Reference to the Staatscourant (Dutch Government Gazette) publication where the designation decision was published.",
+          "examples": ["2009/19769", "2013/8952"]
+        },
+        {
+          "name": "shape_area",
+          "type": "Real",
+          "description_nl": "Oppervlakte van het deelgebied in vierkante meters",
+          "description_en": "Area of the feature in square meters. Note: this is per-feature, not per Natura 2000 area. To get total area for an area with multiple features, sum by nr.",
+          "statistics": {
+            "min_m2": 29377.88,
+            "max_m2": 4744891912.50,
+            "total_m2": 21972606359.33,
+            "total_km2": 21972.61,
+            "note": "Total includes overlaps from multi-feature areas. The max value (~4745 km2) is likely the Waddenzee or North Sea areas."
+          }
+        },
+        {
+          "name": "shape_len",
+          "type": "Real",
+          "description_nl": "Omtrek van het deelgebied in meters",
+          "description_en": "Perimeter of the feature in meters."
+        },
+        {
+          "name": "puuid",
+          "type": "String",
+          "description_nl": "Persistent unieke identificatie",
+          "description_en": "Persistent unique identifier for the feature."
+        },
+        {
+          "name": "fuuid",
+          "type": "String",
+          "description_nl": "Feature unieke identificatie",
+          "description_en": "Feature unique identifier."
+        }
+      ]
+    }
+  ],
+  "context": {
+    "what_is_it": "Natura 2000 is the largest coordinated network of protected areas in the world, spanning all EU member states. It aims to ensure the long-term survival of Europe's most threatened species and habitats. In the Netherlands, 162 areas are designated under two EU directives: the Birds Directive (Vogelrichtlijn, VR) for bird species and their habitats, and the Habitats Directive (Habitatrichtlijn, HR) for other species and habitat types.",
+    "why_important": "Natura 2000 areas carry the strongest nature protection in Dutch law. Any plan or project that may significantly affect a Natura 2000 area requires a 'voortoets' (preliminary assessment) and potentially a full 'passende beoordeling' (appropriate assessment) under the Wet natuurbescherming. Since 2019, the Dutch nitrogen crisis (stikstofcrisis) has made this dataset politically critical: the Council of State struck down the PAS (Programma Aanpak Stikstof) because nitrogen deposition exceeded critical loads in Natura 2000 areas, effectively halting thousands of construction and farming projects.",
+    "common_uses": [
+      "Environmental impact assessments (MER/PlanMER)",
+      "Nitrogen deposition modeling (AERIUS Calculator)",
+      "Spatial planning and zoning decisions",
+      "Building permit applications near protected areas",
+      "Agricultural policy (e.g., proximity buffers for livestock farms)",
+      "Nature conservation monitoring and reporting to the EU",
+      "Ecological baseline mapping"
+    ],
+    "related_datasets": [
+      {
+        "name": "Nationale Parken",
+        "provider": "RVO",
+        "relationship": "Many Nationale Parken overlap with or are contained within Natura 2000 areas, but they are separate designation systems. Nationale Parken are a Dutch designation; Natura 2000 is EU-level."
+      },
+      {
+        "name": "Natuurnetwerk Nederland (NNN)",
+        "provider": "Provinces",
+        "relationship": "The NNN (formerly Ecologische Hoofdstructuur / EHS) is the broader Dutch ecological network. Natura 2000 areas are generally embedded within the NNN but have stronger legal protection."
+      },
+      {
+        "name": "CDDA (Common Database on Designated Areas)",
+        "provider": "EEA",
+        "relationship": "The European Environment Agency maintains CDDA which includes Dutch Natura 2000 sites along with other nationally designated areas."
+      },
+      {
+        "name": "Habitattypenkaart",
+        "provider": "RVO/Provinces",
+        "relationship": "Detailed mapping of habitat types within each Natura 2000 area, used for conservation objectives."
+      },
+      {
+        "name": "AERIUS",
+        "provider": "RIVM",
+        "relationship": "Nitrogen deposition calculations are performed per Natura 2000 area using AERIUS Calculator. The Natura 2000 boundaries define the receptor areas."
+      }
+    ],
+    "caveats": [
+      "The dataset contains 209 features for 162 distinct Natura 2000 areas. Multiple features per area occur when parts of the area fall under different EU directive designations (VR, HR, or VR+HR). Do not count features to determine the number of protected areas.",
+      "The geometry is typed as '3D Measured Multi Polygon' (has Z and M dimensions), but the Z and M values appear to be unused. Treat as 2D geometry for analysis.",
+      "The 'status' field contains free-text legal status information with inconsistent date formatting. It is not suitable for programmatic date extraction without cleaning.",
+      "The 'HR groeve' (quarry) designation type (4 features) is a special sub-category of the Habitats Directive for limestone quarries (mergelgroeven) in South Limburg.",
+      "shape_area values are per-feature, not per Natura 2000 area. For areas with multiple features under different designations, the geometries may overlap, so summing all shape_area values overestimates the total protected land area.",
+      "The extent extends into the North Sea because several Natura 2000 areas are marine (e.g., Noordzeekustzone, Voordelta, Doggerbank, Klaverbank).",
+      "The CRS is EPSG:28992 (Amersfoort / RD New), which is only valid for the Netherlands and immediate surroundings. For international use or web mapping, transform to EPSG:4326 or EPSG:3857."
+    ]
+  },
+  "processing_notes": {
+    "recommended_output_name": "natura2000",
+    "recommended_layer_name": "natura2000",
+    "geoparquet_conversion": "ogr2ogr -f Parquet natura2000.parquet natura2000.gpkg n2000 -t_srs EPSG:4326",
+    "pmtiles_conversion": "ogr2ogr -f GeoJSONSeq /vsistdout/ natura2000.parquet | tippecanoe -o natura2000.pmtiles -zg --drop-densest-as-needed --extend-zooms-if-still-dropping -l natura2000 --force",
+    "portolan_institution": "rvo",
+    "portolan_collection_id": "natura2000"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "version": 8,
+  "name": "National Monuments — Default",
+  "sources": {
+    "rce": {
+      "type": "vector",
+      "url": "pmtiles://../rijksmonumenten.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "monuments-circle",
+      "type": "circle",
+      "source": "rce",
+      "source-layer": "rijksmonumenten",
+      "paint": {
+        "circle-radius": ["interpolate", ["linear"], ["zoom"], 6, 2, 14, 6],
+        "circle-color": "#F9A825",
+        "circle-stroke-color": "#F57F17",
+        "circle-stroke-width": 0.8
+      }
+    }
+  ]
+}

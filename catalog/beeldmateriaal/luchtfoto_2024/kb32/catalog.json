@@ -1,0 +1,238 @@
+{
+  "type": "Catalog",
+  "id": "luchtfoto_2024_kb32",
+  "stac_version": "1.1.0",
+  "description": "Kaartblad 32 covers Amersfoort and surroundings — the origin of the Dutch national coordinate system (EPSG:28992, RD New). The Onze Lieve Vrouwetoren church tower marks X=155000, Y=463000. Also includes Zeist, Leusden, Woudenberg, and the Utrechtse Heuvelrug forest ridge. This is the only sheet with both RGB and RGBNIR (4-band) COGs. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm orthophotos from the Beeldmateriaal Nederland summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/beeldmateriaal/luchtfoto_2024/kb32/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32an1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32AN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32an2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32AN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32az1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32AZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32az2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32AZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32bn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32BN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32bn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32BN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32bz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32BZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32bz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32BZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32cn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32CN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32cn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32CN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32cz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32CZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32cz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32CZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32dn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32DN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32dn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32DN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32dz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32DZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32dz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32DZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32en1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32EN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32en2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32EN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32ez1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32EZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32ez2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32EZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32fn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32FN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32fn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32FN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32fz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32FZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32fz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32FZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32gn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32GN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32gn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32GN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32gz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32GZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32gz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32GZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32hn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32HN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32hn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32HN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32hz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32HZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-32hz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 32HZ2"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Luchtfoto 2024 — Aerial Orthophotos"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          5.1674811,
+          52.0377616,
+          5.7534039,
+          52.2630287
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2024-04-01T00:00:00Z",
+          "2024-09-30T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "title": "KB 32 — Amersfoort"
+}

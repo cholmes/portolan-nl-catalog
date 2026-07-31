@@ -1,0 +1,54 @@
+{
+  "type": "Catalog",
+  "id": "bodemkaart",
+  "stac_version": "1.1.0",
+  "title": "BRO Soil Map of the Netherlands 1:50,000 (Bodemkaart, SGM)",
+  "description": "The national Soil Map of the Netherlands at scale 1:50,000 (Bodemkaart van Nederland, BRO object SGM), produced by Wageningen Environmental Research. The source GeoPackage holds two distinct polygon layers, published here as separate collections:\n\n- **soilarea** — the soil map itself: 48,025 soil-area polygons, each enriched with its primary soil unit (bodemcode) and main soil class (e.g. Podzolgronden, Zeekleigronden, Veengronden). This is the layer you map and analyse.\n- **areaofpedologicalinterest** — 6,192 polygons delimiting where soil mapping applies (the area of pedological interest); built-up areas and large water bodies are excluded.\n\nCC0 1.0. Provider VRO; bronhouder Wageningen Environmental Research.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Ministerie van Volkshuisvesting en Ruimtelijke Ordening (VRO)"
+    },
+    {
+      "rel": "preview",
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Thumbnail (PDOK preview)"
+    },
+    {
+      "rel": "child",
+      "href": "./soilarea/collection.json",
+      "type": "application/json",
+      "title": "Soil areas (the soil map)"
+    },
+    {
+      "rel": "child",
+      "href": "./areaofpedologicalinterest/collection.json",
+      "type": "application/json",
+      "title": "Area of pedological interest"
+    }
+  ],
+  "assets": {
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Thumbnail (PDOK preview)",
+      "roles": [
+        "thumbnail"
+      ]
+    }
+  }
+}

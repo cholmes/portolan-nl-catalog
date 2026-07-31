@@ -1,0 +1,334 @@
+# Buildings (Panden) — Kadaster / Netherlands
+
+## What This Dataset Is
+
+All 11.4 million buildings (panden) in the Netherlands from the **BAG** (Basisregistratie
+Adressen en Gebouwen), the authoritative Dutch national building and address registry.
+Municipalities maintain the data; Kadaster manages the national facility (LV-BAG) and
+publishes it via PDOK.
+
+This is the **BAG GeoPackage "light" extract** — current buildings only (no version
+history), with the most-used attributes. It is updated monthly (1st of each month).
+
+Compared to the INSPIRE Buildings dataset (also in this catalog), the BAG light has:
+- **More attributes**: usage function (gebruiksdoel), floor area, dwelling unit count
+- **Native Dutch field names** (bouwjaar, status) instead of INSPIRE names (anyPoint)
+- **Current records only** (11.4M rows vs 24.2M with history in INSPIRE)
+- **Native CRS** EPSG:28992 (RD New) instead of ETRS89
+
+**No building heights or floor counts.** BAG records footprints and construction years,
+not heights. For 3D building data with heights, volumes, and roof types, see the
+[3D BAG](../../tudelft/3dbag/) collection in this catalog — produced by [TU Delft's
+3D Geoinformation Research Group](https://3d.bk.tudelft.nl/) by combining this BAG data
+with [AHN](https://www.ahn.nl/) point cloud heights.
+
+**Source:** https://www.pdok.nl/introductie/-/article/basisregistratie-adressen-en-gebouwen-ba-1
+**Provider:** Kadaster (Netherlands Cadastre, Land Registry and Mapping Agency)
+**License:** CC0 (public domain)
+**Update frequency:** Monthly
+
+## How to Access
+
+This is a GeoParquet 1.1.0 file with bbox covering columns and Hilbert spatial sorting.
+The native CRS is **EPSG:28992** (RD New / Amersfoort) — coordinates are in meters.
+
+```python
+import duckdb
+
+con = duckdb.connect()
+con.execute("INSTALL spatial; LOAD spatial;")
+
+URL = 'https://data.source.coop/cholmes/portolan-nl/kadaster/panden/bag-light.parquet'
+
+df = con.execute(f"""
+    SELECT * FROM read_parquet('{URL}')
+    LIMIT 5
+""").df()
+```
+
+The file is 933 MB. DuckDB streams it efficiently using HTTP range requests — you don't
+need to download the full file. The bbox covering columns and Hilbert sorting enable
+DuckDB to skip irrelevant row groups for spatial filters.
+
+## Schema — Field Meanings
+
+| Field | Type | Meaning |
+|-------|------|---------|
+| `identificatie` | string | **BAG pand ID** (16 chars). The key building identifier. First 4 digits encode the municipality code (gemeentecode). |
+| `bouwjaar` | int64 | **Original construction year** (oorspronkelijk bouwjaar). Integer (e.g., 1975). Value of 9999 means unknown. Does not change with renovations — only with demolition and new construction. |
+| `status` | string | **Building lifecycle status** (pandstatus). See "Pandstatus Values" section below. |
+| `gebruiksdoel` | string | **Usage function** of the building, derived from its dwelling units (verblijfsobjecten). See "Gebruiksdoel Values" section below. NULL for buildings without dwelling units. |
+| `oppervlakte_min` | int64 | **Minimum floor area** (m²) across contained dwelling units. NULL when `aantal_verblijfsobjecten = 0`. |
+| `oppervlakte_max` | int64 | **Maximum floor area** (m²) across contained dwelling units. Equals `oppervlakte_min` for single-unit buildings. |
+| `aantal_verblijfsobjecten` | int64 | **Number of dwelling units** (verblijfsobjecten) in the building. 0 = no addressable units (shed, garage, etc.). Higher values = apartment building or mixed-use. |
+| `rdf_seealso` | string | Linked Data URI for this building in the BAG knowledge graph. |
+| `geom` | WKB Polygon | Building footprint in **EPSG:28992** (RD New). Coordinates in meters. |
+
+## Important Columns
+
+The columns you'll most often use:
+
+- **`identificatie`** — BAG building ID (the key identifier, links to other registries)
+- **`bouwjaar`** — construction year (integer, much simpler than INSPIRE's ISO date string)
+- **`status`** — lifecycle status (filter for "Pand in gebruik" for active buildings)
+- **`gebruiksdoel`** — what the building is used for (residential, office, retail, etc.)
+- **`aantal_verblijfsobjecten`** — how many units/apartments the building contains
+- **`geom`** — building footprint polygon
+
+## Pandstatus Values
+
+The `status` field has these possible values, from the BAG Catalogus 2018:
+
+| Status | Count | Meaning |
+|--------|-------|---------|
+| Pand in gebruik | 11,159,692 | Active building with surveyed definitive geometry |
+| Bouwvergunning verleend | 94,054 | Building permit granted, not yet built |
+| Bouw gestart | 46,573 | Construction has started |
+| Verbouwing pand | 36,921 | Under renovation (permit granted) |
+| Sloopvergunning verleend | 16,914 | Demolition permit granted |
+| Pand in gebruik (niet ingemeten) | 13,149 | In use but definitive geometry not yet surveyed |
+| Pand buiten gebruik | 547 | Out of use (poor structural condition) |
+
+Note: demolished buildings ("Pand gesloopt") and cancelled buildings ("Niet gerealiseerd
+pand") do NOT appear in this dataset — the BAG light extract only contains current objects.
+
+## Gebruiksdoel Values
+
+The `gebruiksdoel` field describes the building's usage function. Most common values:
+
+| Gebruiksdoel | Count | English |
+|-------------|-------|---------|
+| woonfunctie | 5,495,547 | Residential |
+| (NULL) | 4,799,995 | No dwelling units (sheds, garages, etc.) |
+| overige gebruiksfunctie | 341,157 | Other function |
+| industriefunctie | 153,936 | Industrial |
+| logiesfunctie | 142,647 | Lodging / hospitality |
+| industriefunctie,woonfunctie | 74,277 | Mixed: industrial + residential |
+| winkelfunctie,woonfunctie | 63,639 | Mixed: retail + residential |
+| bijeenkomstfunctie | 34,383 | Assembly / gathering |
+| kantoorfunctie | 30,385 | Office |
+| winkelfunctie | 27,988 | Retail / shop |
+
+Comma-separated values indicate mixed-use buildings (e.g., ground-floor shop with
+apartments above). There are ~48% residential, ~42% no dwelling units, and ~10% other
+uses.
+
+## Construction Year Distribution
+
+| Era | Count |
+|-----|-------|
+| Pre-1800 | 42,354 |
+| 1800–1899 | 175,758 |
+| 1900–1949 | 1,537,227 |
+| 1950–1999 | 6,414,331 |
+| 2000–2024 | 3,000,593 |
+| 2025–2030 | 197,586 |
+| Unknown (9999) | 1 |
+
+The 1950–1999 period dominates — post-war reconstruction and suburban expansion. Only 1
+record has bouwjaar = 9999 (unknown), compared to ~1 million in the INSPIRE version.
+
+## Geometry Notes
+
+- CRS is **EPSG:28992** (RD New / Amersfoort) — coordinates are in **meters**, NOT
+  degrees. This is the Dutch national coordinate system. X ranges from ~13,600 to
+  ~278,000; Y ranges from ~306,900 to ~617,100.
+- To convert to WGS84 (lon/lat) for web mapping or combining with other datasets:
+  ```sql
+  ST_Transform(geom, 'EPSG:28992', 'EPSG:4326')
+  ```
+- All geometries are simple Polygons (no MultiPolygon)
+- Bounding box in WGS84: [3.37, 50.73, 7.24, 53.55] (all of Netherlands)
+- The file has bbox covering columns and Hilbert spatial sorting for efficient queries
+
+## Useful Query Patterns
+
+### Count buildings by status
+
+```sql
+SELECT status, COUNT(*) as cnt
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/panden/bag-light.parquet')
+GROUP BY status
+ORDER BY cnt DESC
+```
+
+### Construction year distribution by decade
+
+```sql
+SELECT (bouwjaar / 10) * 10 AS decade, COUNT(*) AS buildings
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/panden/bag-light.parquet')
+WHERE bouwjaar < 9999
+GROUP BY 1
+ORDER BY 1
+```
+
+### Find buildings in a specific area (bbox filter in RD New coords)
+
+```sql
+INSTALL spatial; LOAD spatial;
+
+-- Amsterdam city center (RD New coordinates)
+SELECT identificatie, bouwjaar, status, gebruiksdoel
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/panden/bag-light.parquet')
+WHERE bbox.xmin >= 119000 AND bbox.xmax <= 123000
+  AND bbox.ymin >= 484000 AND bbox.ymax <= 488000
+LIMIT 100
+```
+
+This uses the bbox covering columns — DuckDB skips row groups outside the range.
+
+### Find buildings by WGS84 coordinates (convert on the fly)
+
+```sql
+INSTALL spatial; LOAD spatial;
+
+-- Convert a WGS84 point to RD New, then filter
+WITH target AS (
+    SELECT ST_Transform(ST_Point(4.9003, 52.3792), 'EPSG:4326', 'EPSG:28992') AS pt
+)
+SELECT identificatie, bouwjaar, gebruiksdoel
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/panden/bag-light.parquet'), target
+WHERE bbox.xmin <= ST_X(pt) AND bbox.xmax >= ST_X(pt)
+  AND bbox.ymin <= ST_Y(pt) AND bbox.ymax >= ST_Y(pt)
+  AND ST_Intersects(geom, pt)
+```
+
+### Residential buildings built before 1945
+
+```sql
+SELECT identificatie, bouwjaar, gebruiksdoel,
+       oppervlakte_min, oppervlakte_max
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/panden/bag-light.parquet')
+WHERE bouwjaar < 1945
+  AND gebruiksdoel LIKE '%woonfunctie%'
+  AND status = 'Pand in gebruik'
+LIMIT 100
+```
+
+### Largest apartment buildings (by number of dwelling units)
+
+```sql
+SELECT identificatie, bouwjaar, gebruiksdoel,
+       aantal_verblijfsobjecten, oppervlakte_min, oppervlakte_max
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/panden/bag-light.parquet')
+WHERE status = 'Pand in gebruik'
+ORDER BY aantal_verblijfsobjecten DESC
+LIMIT 20
+```
+
+### Buildings per municipality
+
+The first 4 digits of `identificatie` encode the municipality code (gemeentecode).
+
+```sql
+SELECT LEFT(identificatie, 4) AS gemeente_code, COUNT(*) AS buildings
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/panden/bag-light.parquet')
+WHERE status = 'Pand in gebruik'
+GROUP BY 1
+ORDER BY buildings DESC
+LIMIT 20
+```
+
+### Usage function breakdown
+
+```sql
+SELECT
+    CASE
+        WHEN gebruiksdoel IS NULL THEN '(no dwelling units)'
+        WHEN gebruiksdoel LIKE '%,%' THEN 'mixed use'
+        ELSE gebruiksdoel
+    END AS function_type,
+    COUNT(*) AS cnt
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/panden/bag-light.parquet')
+GROUP BY 1
+ORDER BY cnt DESC
+```
+
+### Compute building footprint area (in m², since CRS is already in meters)
+
+```sql
+INSTALL spatial; LOAD spatial;
+
+SELECT identificatie, bouwjaar, ST_Area(geom) AS area_m2
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/panden/bag-light.parquet')
+WHERE status = 'Pand in gebruik'
+ORDER BY area_m2 DESC
+LIMIT 20
+```
+
+Note: Since the CRS is already in meters (RD New), `ST_Area(geom)` gives area in m²
+directly — no need for `ST_Area_Spheroid`.
+
+### Load into GeoPandas
+
+```python
+import geopandas as gpd
+
+gdf = gpd.read_parquet(
+    'https://data.source.coop/cholmes/portolan-nl/kadaster/panden/bag-light.parquet',
+    columns=['identificatie', 'bouwjaar', 'status', 'gebruiksdoel', 'geom']
+)
+print(f"CRS: {gdf.crs}")  # EPSG:28992
+print(f"Rows: {len(gdf):,}")
+
+# Convert to WGS84 for web mapping
+gdf_wgs84 = gdf.to_crs(epsg=4326)
+```
+
+## BAG Context
+
+The BAG is one of 10 Dutch national key registrations ("stelsel van basisregistraties").
+A **pand** (building) in the BAG is defined as "the smallest functionally and structurally
+independent unit that is directly and permanently connected to the earth, accessible,
+and lockable."
+
+Key relationships to other Dutch registrations:
+- **BRK** (Kadaster): parcels and ownership — 94% of BAG addresses link to BRK
+- **BGT** (Grootschalige Topografie): detailed map — BAG pand IDs link to BGT buildings
+- **BRP** (Personen): population registry — uses BAG addresses
+- **WOZ** (Waardering Onroerende Zaken): property tax valuations — uses BAG data
+
+The `identificatie` field is the universal key that connects buildings across these
+registrations. The first 4 digits are the gemeentecode (e.g., 0363 = Amsterdam,
+0518 = Den Haag, 0599 = Rotterdam).
+
+## BAG Light vs Full BAG Extract
+
+| Feature | BAG Light (this dataset) | Full BAG Extract |
+|---------|--------------------------|-----------------|
+| Format | GeoPackage / GeoParquet | XML (3.6 GB zip) |
+| History | Current records only | All historical versions |
+| Addresses | Main address only | All addresses incl. secondary |
+| Update | Monthly | Monthly (LV-BAG itself is daily) |
+| Size | 933 MB (parquet) / 7.2 GB (gpkg) | ~3.6 GB compressed |
+
+## Caveats
+
+- **EPSG:28992 coordinates**: Unlike many datasets, coordinates are in meters (RD New),
+  not degrees. You must transform to WGS84 for web maps or combining with global data.
+- **NULL gebruiksdoel**: ~4.8 million buildings (42%) have no usage function because they
+  contain zero verblijfsobjecten (dwelling units). These are mostly sheds, garages,
+  outbuildings, and other structures without an address.
+- **Mixed-use encoding**: Usage functions are comma-separated strings, not arrays.
+  Use `LIKE '%woonfunctie%'` to find all buildings with a residential component.
+- **Bouwjaar data quality**: Some implausible construction years exist (e.g., year 1000).
+  The year 1900 is over-represented because many years were originally derived from WOZ
+  (property tax) data which often didn't record precise construction dates.
+- **Municipality code extraction**: Use `LEFT(identificatie, 4)` to get the gemeente code
+  (e.g., '0363' = Amsterdam). This is a string operation since identificatie is a string.
+- **Floor area is per dwelling unit, not per building**: `oppervlakte_min/max` describe
+  the range of individual unit sizes, not total building area. For footprint area, compute
+  `ST_Area(geom)` which gives m² directly in this CRS.
+
+## Also Available As
+
+- **GeoPackage**: `bag-light.gpkg` (7.2 GB) — the official PDOK download, contains all 5
+  BAG object types (pand, verblijfsobject, nummeraanduiding, openbareruimte, woonplaats).
+  The GeoParquet only contains the pand (building) table.
+- **PMTiles**: `bag-light.pmtiles` — for web map visualization with MapLibre GL JS.
+  Features are dropped at lower zoom levels for performance.
+- **WFS**: Live access via `https://geodata.nationaalgeoregister.nl/bag/wfs/v1_1`
+  (max 1000 features per request)
+- **OGC API Features**: `https://api.pdok.nl/lv/bag/ogc/v1`
+- **BAG Viewer**: Interactive map at https://bagviewer.kadaster.nl/
+- **Linked Data**: https://bag.basisregistraties.overheid.nl/ (SPARQL endpoint)

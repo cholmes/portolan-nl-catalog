@@ -1,0 +1,248 @@
+{
+  "type": "Collection",
+  "id": "bergingsgebieden",
+  "stac_version": "1.1.0",
+  "description": "Designated flood retention areas (bergingsgebieden) across the Netherlands, where water can be temporarily stored during high water events to protect populated areas.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/bergingsgebieden/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Rijkswaterstaat"
+    },
+    {
+      "rel": "via",
+      "href": "https://services-eu1.arcgis.com/4D1GBrbE6xp1T4YG/arcgis/rest/services/Bergingsgebieden/FeatureServer/32",
+      "type": "text/html",
+      "title": "Source ArcGIS Feature Layer"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/bergingsgebieden/bergingsgebieden.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/rijkswaterstaat/bergingsgebieden/README.md",
+      "type": "text/html",
+      "title": "Flood Retention Areas documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "table:row_count": 3090,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "OBJECTID",
+      "type": "int64"
+    },
+    {
+      "name": "bergendvermogen",
+      "type": "double"
+    },
+    {
+      "name": "code",
+      "type": "string"
+    },
+    {
+      "name": "guid",
+      "type": "string"
+    },
+    {
+      "name": "indicatiewettelijkvastgesteld",
+      "type": "string"
+    },
+    {
+      "name": "naam",
+      "type": "string"
+    },
+    {
+      "name": "nen3610id",
+      "type": "string"
+    },
+    {
+      "name": "objectbegintijd",
+      "type": "string"
+    },
+    {
+      "name": "opmerking",
+      "type": "string"
+    },
+    {
+      "name": "statuslegger",
+      "type": "string"
+    },
+    {
+      "name": "statusobject",
+      "type": "string"
+    },
+    {
+      "name": "tijdstipregistratie",
+      "type": "string"
+    },
+    {
+      "name": "url",
+      "type": "string"
+    },
+    {
+      "name": "Shape__Area",
+      "type": "double"
+    },
+    {
+      "name": "Shape__Length",
+      "type": "double"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    }
+  ],
+  "portolan:styles": [
+    {
+      "name": "default",
+      "href": "./styles/default.json"
+    }
+  ],
+  "geoparquet:geometry_type": "MultiPolygon",
+  "geoparquet:feature_count": 1545,
+  "proj:epsg": 3857,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 13,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    5.2514649,
+    51.631655,
+    13
+  ],
+  "pmtiles:layers": [
+    "bergingsgebieden"
+  ],
+  "title": "Flood Retention Areas",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          4.071981,
+          51.22093,
+          7.216291,
+          53.4144654856782
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "MultiPolygon"
+    ],
+    "geoparquet:feature_count": [
+      1545
+    ],
+    "table:column_statistics": [
+      {
+        "OBJECTID": {
+          "minimum": 1,
+          "maximum": 1545
+        },
+        "bergendvermogen": {
+          "minimum": 0.0,
+          "maximum": 18400000.0,
+          "null_count": 1371
+        },
+        "naam": {
+          "minimum": "",
+          "maximum": "waterberging fietspad Kerkstraat te Druten",
+          "null_count": 295
+        },
+        "Shape__Area": {
+          "minimum": 1.6904678344726562,
+          "maximum": 65324209.557388306
+        }
+      }
+    ],
+    "portolan:datetime_provisional": [
+      true
+    ],
+    "vector:geometry_types": [
+      "MultiPolygon"
+    ]
+  },
+  "assets": {
+    "data": {
+      "href": "./bergingsgebieden.parquet",
+      "type": "application/x-parquet",
+      "title": "Flood retention areas",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./bergingsgebieden.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Flood retention areas (vector tiles)",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail_.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "Flood Retention Areas — Default",
+      "roles": [
+        "style"
+      ]
+    },
+    "documentation": {
+      "href": "./llms.txt",
+      "type": "text/plain",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "bergingsgebieden": {
+      "href": "./bergingsgebieden.parquet",
+      "type": "application/x-parquet",
+      "roles": [
+        "data"
+      ]
+    },
+    "README": {
+      "href": "./README.md",
+      "type": "text/markdown",
+      "roles": [
+        "documentation"
+      ]
+    }
+  }
+}

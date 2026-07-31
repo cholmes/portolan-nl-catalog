@@ -1,0 +1,111 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-05-07T16:00:00Z",
+      "breaking": false,
+      "assets": {
+        "postcode6.parquet": {
+          "sha256": "b6b5c6640f99dc7e0d73bed083be0489ea504b27ebbd06380bdc7ed1e7545a39",
+          "size_bytes": 140206437,
+          "href": "cbs/postcode6/postcode6.parquet",
+          "mtime": 1778162275.570149
+        },
+        "postcode6.pmtiles": {
+          "sha256": "fdef6b55edbb554e88083c49aaa6d02a8d16fff1a44897f48cd6ea3083326601",
+          "size_bytes": 81254029,
+          "href": "cbs/postcode6/postcode6.pmtiles",
+          "mtime": 1778163766.3393216
+        },
+        "collection.json": {
+          "sha256": "9fca249fbbbb62f2ce68636740ac6c3ad951e2a052b3d374200d860c79b60617",
+          "size_bytes": 5503,
+          "href": "cbs/postcode6/collection.json",
+          "mtime": 1778165382.372109
+        },
+        "llms.txt": {
+          "sha256": "c29f44444be397b3da44d4eb15f194ad9fb1c3fe0dc4c93e4811780f9a062446",
+          "size_bytes": 11060,
+          "href": "cbs/postcode6/llms.txt",
+          "mtime": 1778164485.7576156
+        },
+        "README.md": {
+          "sha256": "efda5f2ba023000f70bd646b090a5835b48540844dbdcc582db41aba7a4acf6a",
+          "size_bytes": 2612,
+          "href": "cbs/postcode6/README.md",
+          "mtime": 1778157320.4452665
+        },
+        "thumbnail.png": {
+          "sha256": "1cc73b3d40d767a23d1a33a97bf7de0eb6a45e9327cc6efd011d0ad4ca8e5694",
+          "size_bytes": 413544,
+          "href": "cbs/postcode6/thumbnail.png",
+          "mtime": 1778157059.135848
+        }
+      },
+      "changes": [
+        "postcode6.parquet",
+        "postcode6.pmtiles",
+        "collection.json",
+        "llms.txt",
+        "README.md",
+        "thumbnail.png"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-05-08T18:24:04.160979Z",
+      "breaking": false,
+      "assets": {
+        "postcode6.parquet": {
+          "sha256": "f8dbb44724102da9f7b175f34264aabe7c3dfb3b3e33ac9a6694bd9666635656",
+          "size_bytes": 90249041,
+          "href": "cbs/postcode6/postcode6.parquet",
+          "mtime": 1778166879.0
+        },
+        "postcode6.pmtiles": {
+          "sha256": "fdef6b55edbb554e88083c49aaa6d02a8d16fff1a44897f48cd6ea3083326601",
+          "size_bytes": 81254029,
+          "href": "cbs/postcode6/postcode6.pmtiles",
+          "mtime": 1778165470.0
+        },
+        "collection.json": {
+          "sha256": "9fca249fbbbb62f2ce68636740ac6c3ad951e2a052b3d374200d860c79b60617",
+          "size_bytes": 5503,
+          "href": "cbs/postcode6/collection.json",
+          "mtime": 1778165382.372109
+        },
+        "llms.txt": {
+          "sha256": "0d4996dbea4f0f064844da9ad76bb9ee28e8d936852486de199230a83839dade",
+          "size_bytes": 12367,
+          "href": "cbs/postcode6/llms.txt",
+          "mtime": 1778185473.0
+        },
+        "README.md": {
+          "sha256": "efda5f2ba023000f70bd646b090a5835b48540844dbdcc582db41aba7a4acf6a",
+          "size_bytes": 2612,
+          "href": "cbs/postcode6/README.md",
+          "mtime": 1778165474.0
+        },
+        "thumbnail.png": {
+          "sha256": "1cc73b3d40d767a23d1a33a97bf7de0eb6a45e9327cc6efd011d0ad4ca8e5694",
+          "size_bytes": 413544,
+          "href": "cbs/postcode6/thumbnail.png",
+          "mtime": 1778165474.0
+        },
+        "postcode6.parquet.aux.xml": {
+          "sha256": "d5314d3c7ebeaede9c918a14f417835436cd46778edc6377c2684a4c6c2a144a",
+          "size_bytes": 18587,
+          "href": "cbs/postcode6/postcode6.parquet.aux.xml",
+          "mtime": 1778185111.0
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "postcode6.parquet.aux.xml",
+        "postcode6.parquet"
+      ]
+    }
+  ]
+}

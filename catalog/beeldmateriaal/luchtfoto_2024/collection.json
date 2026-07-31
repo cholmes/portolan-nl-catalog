@@ -1,0 +1,356 @@
+{
+  "type": "Collection",
+  "id": "luchtfoto_2024",
+  "stac_version": "1.1.0",
+  "description": "High-resolution aerial orthophotos from the 2024 Beeldmateriaal Nederland summer campaign, covering 356 tiles across 12 kaartblad sheets in the central Netherlands — from the North Sea coast (Haarlem, IJmuiden) to the Veluwe (Apeldoorn, Harderwijk) and from Alkmaar in the north to Gorinchem and Tiel in the south. Each tile covers one kaartblad (Dutch national map sheet, ~5 x 6.25 km) on the Amersfoort / RD New grid (EPSG:28992) at 25 cm ground sampling distance (GSD), yielding 20,002 x 25,002 pixels per tile. Available as 3-band RGB Cloud-Optimized GeoTIFFs (COGs) with JPEG compression, 512x512 internal tiling, 6 overview levels (AVERAGE resampling), and baked-in per-band statistics. Twelve tiles in kaartblad 32 (Amersfoort) also have 4-band RGBNIR COGs where the NIR band is extracted from band 1 of the Color InfraRed (CIR) winter capture, so RGB and NIR represent different seasons within the same year. Tiles are organized into sub-catalogs by kaartblad sheet number. Source imagery from Beeldmateriaal Nederland — the Dutch government partnership for aerial photography — distributed as GeoTIFF tiles via GeoTiles (TU Delft).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/beeldmateriaal/luchtfoto_2024/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.beeldmateriaal.nl/",
+      "type": "text/html",
+      "title": "Beeldmateriaal Nederland — official website"
+    },
+    {
+      "rel": "via",
+      "href": "https://geotiles.citg.tudelft.nl/",
+      "type": "text/html",
+      "title": "GeoTiles (TU Delft) — source tiles"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/hwh/luchtfotorgb/wmts/v1_0",
+      "type": "application/xml",
+      "title": "PDOK WMTS — official preview service"
+    },
+    {
+      "rel": "via",
+      "href": "https://opendata.beeldmateriaal.nl/",
+      "type": "text/html",
+      "title": "Beeldmateriaal open data — bulk downloads"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/beeldmateriaal/luchtfoto_2024/README.md",
+      "type": "text/html",
+      "title": "Luchtfoto 2024 — Aerial Orthophotos documentation"
+    },
+    {
+      "rel": "child",
+      "href": "./kb19/catalog.json",
+      "type": "application/json",
+      "title": "KB 19 — Alkmaar / Zaandam (32 tiles)"
+    },
+    {
+      "rel": "child",
+      "href": "./kb20/catalog.json",
+      "type": "application/json",
+      "title": "KB 20 — Lelystad / Markermeer (32 tiles)"
+    },
+    {
+      "rel": "child",
+      "href": "./kb24/catalog.json",
+      "type": "application/json",
+      "title": "KB 24 — Haarlem / IJmond (12 tiles)"
+    },
+    {
+      "rel": "child",
+      "href": "./kb25/catalog.json",
+      "type": "application/json",
+      "title": "KB 25 — Amsterdam (32 tiles)"
+    },
+    {
+      "rel": "child",
+      "href": "./kb26/catalog.json",
+      "type": "application/json",
+      "title": "KB 26 — Het Gooi / Hilversum (32 tiles)"
+    },
+    {
+      "rel": "child",
+      "href": "./kb27/catalog.json",
+      "type": "application/json",
+      "title": "KB 27 — Harderwijk / Veluwe West (32 tiles)"
+    },
+    {
+      "rel": "child",
+      "href": "./kb30/catalog.json",
+      "type": "application/json",
+      "title": "KB 30 — Gouda Area (25 tiles)"
+    },
+    {
+      "rel": "child",
+      "href": "./kb31/catalog.json",
+      "type": "application/json",
+      "title": "KB 31 — Utrecht / Vinkeveen (32 tiles)"
+    },
+    {
+      "rel": "child",
+      "href": "./kb32/catalog.json",
+      "type": "application/json",
+      "title": "KB 32 — Amersfoort (32 tiles, RGB + RGBNIR)"
+    },
+    {
+      "rel": "child",
+      "href": "./kb33/catalog.json",
+      "type": "application/json",
+      "title": "KB 33 — Apeldoorn / Veluwe East (31 tiles)"
+    },
+    {
+      "rel": "child",
+      "href": "./kb38/catalog.json",
+      "type": "application/json",
+      "title": "KB 38 — Gorinchem / Rivierenland (32 tiles)"
+    },
+    {
+      "rel": "child",
+      "href": "./kb39/catalog.json",
+      "type": "application/json",
+      "title": "KB 39 — Tiel / Betuwe (32 tiles)"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Beeldmateriaal Nederland"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json",
+    "https://stac-extensions.github.io/raster/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json"
+  ],
+  "item_assets": {
+    "rgb": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "RGB Orthophoto (COG)",
+      "description": "3-band visible-light orthophoto. JPEG compressed (quality 75, YCbCr), 512x512 tiles, 6 overview levels. ~80-97 MB per tile.",
+      "bands": [
+        {
+          "name": "red",
+          "eo:common_name": "red"
+        },
+        {
+          "name": "green",
+          "eo:common_name": "green"
+        },
+        {
+          "name": "blue",
+          "eo:common_name": "blue"
+        }
+      ],
+      "roles": [
+        "data",
+        "visual"
+      ]
+    },
+    "rgbnir": {
+      "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+      "title": "RGBNIR Orthophoto (COG)",
+      "description": "4-band multispectral orthophoto. Bands 1-3 (RGB) from summer capture, band 4 (NIR) from winter CIR capture band 1. JPEG compressed, 512x512 tiles, 6 overview levels. ~293-365 MB per tile. Suitable for vegetation indices (NDVI, SAVI, EVI). Only available for KB 32 (Amersfoort).",
+      "bands": [
+        {
+          "name": "red",
+          "eo:common_name": "red"
+        },
+        {
+          "name": "green",
+          "eo:common_name": "green"
+        },
+        {
+          "name": "blue",
+          "eo:common_name": "blue"
+        },
+        {
+          "name": "nir",
+          "eo:common_name": "nir"
+        }
+      ],
+      "roles": [
+        "data"
+      ]
+    }
+  },
+  "geoparquet:geometry_type": "Polygon",
+  "geoparquet:feature_count": 356,
+  "table:row_count": 356,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "type",
+      "type": "string"
+    },
+    {
+      "name": "stac_version",
+      "type": "string"
+    },
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    },
+    {
+      "name": "bbox",
+      "type": "string"
+    },
+    {
+      "name": "collection",
+      "type": "string"
+    },
+    {
+      "name": "datetime",
+      "type": "string"
+    },
+    {
+      "name": "created",
+      "type": "string"
+    },
+    {
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "gsd",
+      "type": "double"
+    },
+    {
+      "name": "proj:code",
+      "type": "string"
+    },
+    {
+      "name": "beeldmateriaal:kaartblad",
+      "type": "string"
+    },
+    {
+      "name": "assets",
+      "type": "string"
+    },
+    {
+      "name": "links",
+      "type": "string"
+    },
+    {
+      "name": "stac_extensions",
+      "type": "string"
+    }
+  ],
+  "title": "Luchtfoto 2024 — Aerial Orthophotos",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          4.0010827,
+          51.8109102,
+          6.3441012,
+          52.7123953
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2024-04-01T00:00:00Z",
+          "2024-09-30T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "orthophoto",
+    "aerial photography",
+    "luchtfoto",
+    "Netherlands",
+    "COG",
+    "cloud-optimized GeoTIFF",
+    "RGB",
+    "near-infrared",
+    "NDVI",
+    "beeldmateriaal",
+    "remote sensing",
+    "25cm",
+    "kaartblad"
+  ],
+  "providers": [
+    {
+      "name": "Beeldmateriaal Nederland",
+      "description": "Dutch government collaboration for joint acquisition and publication of aerial photographs. Partnership of municipalities, provinces, water boards, Rijkswaterstaat, and Het Kadaster — coordinated under the Geo-Informatieberaad.",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.beeldmateriaal.nl/"
+    },
+    {
+      "name": "GeoTiles (TU Delft)",
+      "description": "Open geospatial tile service from the Faculty of Civil Engineering and Geosciences at Delft University of Technology. Provides Dutch orthophotos and elevation data as downloadable GeoTIFF tiles.",
+      "roles": [
+        "processor"
+      ],
+      "url": "https://geotiles.citg.tudelft.nl/"
+    },
+    {
+      "name": "Portolan / Source Cooperative",
+      "description": "Cloud-native redistribution as COGs with overviews and statistics, organized in a STAC catalog.",
+      "roles": [
+        "host"
+      ],
+      "url": "https://source.coop/cholmes/portolan-nl"
+    }
+  ],
+  "summaries": {
+    "proj:code": [
+      "EPSG:28992"
+    ],
+    "proj:shape": [
+      25002,
+      20002
+    ],
+    "gsd": {
+      "minimum": 0.25,
+      "maximum": 0.25
+    }
+  },
+  "assets": {
+    "documentation": {
+      "href": "./llms.txt",
+      "type": "text/plain",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "items": {
+      "href": "./items.parquet",
+      "type": "application/x-parquet",
+      "roles": [
+        "data"
+      ]
+    },
+    "README": {
+      "href": "./README.md",
+      "type": "text/markdown",
+      "roles": [
+        "documentation"
+      ]
+    }
+  }
+}

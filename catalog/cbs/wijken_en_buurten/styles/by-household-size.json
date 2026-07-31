@@ -1,0 +1,39 @@
+{
+  "version": 8,
+  "name": "Districts & Neighborhoods — Household Size",
+  "sources": {
+    "wijken": {
+      "type": "vector",
+      "url": "pmtiles://../wijken_en_buurten.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "buurten-fill",
+      "type": "fill",
+      "source": "wijken",
+      "source-layer": "buurten",
+      "paint": {
+        "fill-color": [
+          "interpolate", ["linear"], ["get", "gemiddeldeHuishoudsgrootte"],
+          1.0, "#2166AC",
+          1.5, "#67A9CF",
+          2.0, "#F7F7F7",
+          2.5, "#EF8A62",
+          3.0, "#B2182B"
+        ],
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "buurten-outline",
+      "type": "line",
+      "source": "wijken",
+      "source-layer": "buurten",
+      "paint": {
+        "line-color": "#333333",
+        "line-width": 0.3
+      }
+    }
+  ]
+}

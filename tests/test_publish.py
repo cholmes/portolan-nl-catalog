@@ -27,6 +27,12 @@ def build_tree(tmp: Path):
     (cat / ".portolan/state.json").write_text("{}")    # internal, must NOT publish
     c = cat / "rce/rijksmonumenten"
     (c / "styles").mkdir(parents=True)
+    # Collection-level Portolan internals. Unlike the root .portolan/metadata.yaml
+    # these have never been published and must not start being.
+    (c / ".portolan").mkdir(parents=True)
+    (c / ".portolan/config.yaml").write_text("x")
+    (c / ".portolan/metadata.yaml").write_text("x")
+    (c / ".portolan/extraction-report.json").write_text("{}")
     (c / "collection.json").write_text("{}")
     (c / "versions.json").write_text("{}")
     (c / "README.md").write_text("x")
@@ -104,7 +110,12 @@ def main():
             "beeldmateriaal/luchtfoto_2024/kb25/luchtfoto-2024-25bz1.json",
             "beeldmateriaal/logo.svg",
         }
-        forbidden = {".portolan/config.yaml", ".portolan/state.json"}
+        forbidden = {
+            ".portolan/config.yaml", ".portolan/state.json",
+            "rce/rijksmonumenten/.portolan/config.yaml",
+            "rce/rijksmonumenten/.portolan/metadata.yaml",
+            "rce/rijksmonumenten/.portolan/extraction-report.json",
+        }
         assert expected == rels, f"missing: {expected - rels}; leaked: {rels - expected}"
         assert not (forbidden & rels), f"leaked internal: {forbidden & rels}"
 

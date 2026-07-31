@@ -1,0 +1,77 @@
+# CBS — Statistics Netherlands (Centraal Bureau voor de Statistiek) / Netherlands
+
+## What This Is
+
+Open geodata from Statistics Netherlands (CBS), the Dutch national statistics agency.
+CBS publishes geographic statistical data covering population, land use, neighborhoods,
+postcode-level demographics, and health indicators at various administrative levels.
+
+All collections are available as GeoParquet for analytics and PMTiles for instant map
+visualization from Source Cooperative. Every collection has its own `llms.txt` with
+detailed field descriptions and query examples.
+
+**Base URL:** `https://data.source.coop/cholmes/portolan-nl/cbs/`
+
+Built with [Portolan](https://portolan-sdi.org), a framework for cloud-native geodata
+infrastructure. This catalog demonstrates how PDOK's existing CBS services could be
+extended with cloud-native formats — GeoParquet for scalable analytics, PMTiles for
+map visualization from object storage, and STAC+llms.txt for AI/agent access.
+
+CBS data uses two coordinate systems depending on the dataset:
+- **EPSG:28992** (RD New / Amersfoort) — Dutch national CRS, used by Wijken en Buurten,
+  Bodemgebruik, and Postcode6
+- **EPSG:3035** (ETRS89-LAEA) — European standard CRS, used by the INSPIRE-harmonized
+  datasets (Bevolkingsspreiding, Existing Land Use, Gezondheid)
+
+## Collections
+
+### Wijken en Buurten (Districts and Neighborhoods)
+Annual boundaries and statistics for all Dutch neighborhoods (buurten), districts (wijken),
+and municipalities (gemeenten). Includes ~40 demographic, socioeconomic, and urbanity
+indicators per area: population, age distribution, household composition, marital status,
+heritage origin, address density, and land/water area. Updated annually (2021–2025).
+The most widely used CBS geodataset for spatial analysis.
+
+### Bestand Bodemgebruik 2017 (Land Use File)
+Complete land use classification of the Netherlands for 2017. Covers ~40 functional land
+use types organized hierarchically: transportation, residential, commercial, recreation,
+agriculture, forest, water, and nature. Based on Top10NL/BRT topography and summer 2017
+aerial photography. Minimum mapping unit ~1 hectare. Note: this uses the pre-2020 BBG
+methodology; from 2020 onwards CBS produces NBBG with renewed semi-automated methods.
+
+### CBS Postcode6 (Statistics per Postcode)
+Statistical data for individual 6-digit postcodes (e.g., "1011AB") from 2015 onwards.
+Contains 157 attributes across six domains: demographics, housing, energy consumption,
+income, social security, and proximity to facilities. Privacy protected — postcodes with
+fewer than 5 residents or 5 dwellings are suppressed (value -99997). Licensed CC BY 4.0
+(unlike the other CBS datasets which are CC0).
+
+### Bevolkingsspreiding (Population Distribution)
+INSPIRE-harmonized population distribution at three levels: 1km² grid cells, NUTS2
+(provinces), and LAU (municipalities). Uses EPSG:3035 (European LAEA grid). The grid
+layer provides spatially uniform population density — useful for analysis that shouldn't
+be biased by administrative boundary shapes. Reference years: grid 2012, NUTS2/LAU 2018.
+
+### Existing Land Use (INSPIRE Harmonized)
+INSPIRE version of the CBS Bestand Bodemgebruik, using the European HILUCS classification
+instead of the Dutch BBG categories. Based on BRT and summer 2015 aerial photography.
+Uses EPSG:3035. Each polygon carries a HILUCS code linking to the European land use
+codelist. Useful for cross-border European land use comparison.
+
+### Human Health Statistics (Gezondheid)
+INSPIRE-harmonized health indicators at provincial (NUTS2) level: doctor counts and
+mortality rates per 100,000 inhabitants. Small dataset (~24 features: 12 provinces ×
+2 indicators). Reference years: doctors 2017, deaths 2016. Uses EPSG:3035.
+
+## How CBS Data Connects
+
+CBS municipality codes (gemeentecodes) are the universal join key across Dutch government
+data. The `gemeentecode` field in Wijken en Buurten (e.g., "GM0363" for Amsterdam) links
+to the `identificatie` field in kadaster/bestuurlijke_gebieden/. The first 4 digits of
+BAG building IDs (kadaster/bag_light/) also encode the gemeentecode.
+
+Postcode6 data can be spatially joined with Wijken en Buurten to combine postcode-level
+statistics with neighborhood-level statistics.
+
+The two land use datasets (Bodemgebruik 2017 and Existing Land Use INSPIRE) cover the
+same underlying data but in different classifications and coordinate systems.

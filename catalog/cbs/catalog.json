@@ -1,0 +1,73 @@
+{
+  "type": "Catalog",
+  "id": "cbs",
+  "stac_version": "1.1.0",
+  "title": "Centraal Bureau voor de Statistiek (CBS)",
+  "description": "Open geodatasets from Statistics Netherlands (CBS). CBS publishes geographic statistical data including population density, land use, neighborhood boundaries (wijken en buurten), postcode-level statistics, and health indicators at various administrative levels.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/cbs/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "icon",
+      "href": "./logo.png",
+      "type": "image/png",
+      "title": "CBS logo"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/cbs/README.md",
+      "type": "text/html",
+      "title": "Centraal Bureau voor de Statistiek (CBS) documentation"
+    },
+    {
+      "rel": "child",
+      "href": "./wijken_en_buurten/collection.json",
+      "type": "application/json",
+      "title": "Wijken en Buurten (Districts and Neighborhoods)"
+    },
+    {
+      "rel": "child",
+      "href": "./bestand_bodemgebruik_2017/collection.json",
+      "type": "application/json",
+      "title": "Bestand Bodemgebruik 2017 (Land Use File)"
+    },
+    {
+      "rel": "child",
+      "href": "./postcode6/collection.json",
+      "type": "application/json",
+      "title": "CBS Postcode6 (Statistics per Postcode)"
+    },
+    {
+      "rel": "child",
+      "href": "./bevolkingsspreiding/collection.json",
+      "type": "application/json",
+      "title": "Bevolkingsspreiding (Population Distribution)"
+    },
+    {
+      "rel": "child",
+      "href": "./existing_landuse_inspire/collection.json",
+      "type": "application/json",
+      "title": "Existing Land Use (INSPIRE Harmonized)"
+    },
+    {
+      "rel": "child",
+      "href": "./gezondheid/collection.json",
+      "type": "application/json",
+      "title": "Human Health Statistics (Gezondheid)"
+    }
+  ]
+}

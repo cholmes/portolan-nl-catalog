@@ -1,0 +1,50 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-06-07T21:29:44.072679Z",
+      "breaking": false,
+      "assets": {
+        "llms.txt": {
+          "sha256": "031c2e5f7d7154c6995c797f1c77a8e907321ee8d8b25a087c9d14c22b385b49",
+          "size_bytes": 5595,
+          "href": "vro/bodemverontreiniging_besluit/llms.txt",
+          "mtime": 1780867267.7117105
+        },
+        "bodemverontreiniging_besluit.pmtiles": {
+          "sha256": "f73f0edfc74530ae8709cf445664153939f252cd89e659d2c3b1892923c1a5c7",
+          "size_bytes": 123237,
+          "href": "vro/bodemverontreiniging_besluit/bodemverontreiniging_besluit.pmtiles",
+          "mtime": 1780863488.390396
+        },
+        "README.md": {
+          "sha256": "fb11fe13bed7dea04fc2c41bef4cbed0eeb7361060798ee24a208164778e11b2",
+          "size_bytes": 2817,
+          "href": "vro/bodemverontreiniging_besluit/README.md",
+          "mtime": 1780867375.3218532
+        },
+        "bodemverontreiniging_besluit.parquet": {
+          "sha256": "03a843f4537cd7e260774a018d92cc7ef066951cdb1e25152d307b837f6e3a53",
+          "size_bytes": 28667,
+          "href": "vro/bodemverontreiniging_besluit/bodemverontreiniging_besluit.parquet",
+          "mtime": 1780863487.3803556
+        },
+        "thumbnail.png": {
+          "sha256": "21b06955079c6db92d34560099a4c3d3da7196b0b1b562a14a7e02fcee3b1077",
+          "size_bytes": 297865,
+          "href": "vro/bodemverontreiniging_besluit/thumbnail.png",
+          "mtime": 1780866505.7916298
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "bodemverontreiniging_besluit.pmtiles",
+        "README.md",
+        "bodemverontreiniging_besluit.parquet",
+        "thumbnail.png"
+      ]
+    }
+  ]
+}

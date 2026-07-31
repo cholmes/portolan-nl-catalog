@@ -1,0 +1,38 @@
+{
+  "extraction_date": "2026-04-17T11:47:09.691081+00:00",
+  "source_url": "https://services-eu1.arcgis.com/4D1GBrbE6xp1T4YG/arcgis/rest/services/Vismigratie_2025/FeatureServer",
+  "portolan_version": "0.6.0",
+  "gpio_version": "1.0.0",
+  "metadata_extracted": {
+    "source_url": "https://services-eu1.arcgis.com/4D1GBrbE6xp1T4YG/arcgis/rest/services/Vismigratie_2025/FeatureServer",
+    "description": "<h4 style=\"background-color:white;\"><span style=\"font-size:18px;\">Nationale Visroutekaart (NVRK)</span></h4><h4 style=\"background-color:white;\"><span style=\"color:gray; font-family:&quot;Verdana&quot;,sans-serif;\"><strong>Beschrijving</strong></span></h4><ul><li><p><span style=\"color:gray;\"><i>Actualiteit:</i>&nbsp;augustus 2025</span></p></li><li><p><i><span>Omschrijving:</span></i><span>&nbsp;Vismigratieroutes in Nederland i.h.k.v. KRW</span></p></li><li><p><span style=\"color:gray;\"><i>Itembeheerder:</i>&nbsp;Rijkswaterstaat (GIS Competence Center)</span></p></li></ul>",
+    "attribution": null,
+    "keywords": null,
+    "contact_name": null,
+    "processing_notes": "Nationale Visroutekaart NVRK",
+    "known_issues": null,
+    "license_info_raw": null
+  },
+  "layers": [
+    {
+      "id": 29,
+      "name": "Rijksviswegen (2024)",
+      "status": "success",
+      "warnings": [],
+      "attempts": 1,
+      "features": 2122,
+      "size_bytes": 320378,
+      "duration_seconds": 2.432956832984928,
+      "output_path": "rijksviswegen_2024/rijksviswegen_2024.parquet"
+    }
+  ],
+  "summary": {
+    "total_layers": 1,
+    "succeeded": 1,
+    "failed": 0,
+    "skipped": 0,
+    "total_features": 2122,
+    "total_size_bytes": 320378,
+    "total_duration_seconds": 2.432956832984928
+  }
+}

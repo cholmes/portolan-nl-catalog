@@ -1,0 +1,36 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-05-07T16:28:56.958891Z",
+      "breaking": false,
+      "assets": {
+        "llms.txt": {
+          "sha256": "b612ffd5c1441c6390875958918bc76e83e2baf148c0f0f9297c386f74a09d31",
+          "size_bytes": 10733,
+          "href": "rvo/brp_gewaspercelen/llms.txt",
+          "mtime": 1778134223.8081048
+        },
+        "brp_gewaspercelen.pmtiles": {
+          "sha256": "dfd4de01f5683a086c2961671c7f5c891021ee98beefdc64b9f652d16107258a",
+          "size_bytes": 536516834,
+          "href": "rvo/brp_gewaspercelen/brp_gewaspercelen.pmtiles",
+          "mtime": 1778171154.8800693
+        },
+        "brp_gewaspercelen.parquet": {
+          "sha256": "b66b921a828a1de359d3baed1930e1a8618beb40259ae0cbb0cd16106bae2f69",
+          "size_bytes": 1819587445,
+          "href": "rvo/brp_gewaspercelen/brp_gewaspercelen.parquet",
+          "mtime": 1778133796.718831
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "brp_gewaspercelen.pmtiles",
+        "brp_gewaspercelen.parquet"
+      ]
+    }
+  ]
+}

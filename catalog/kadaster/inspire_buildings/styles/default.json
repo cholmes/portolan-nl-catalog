@@ -1,0 +1,32 @@
+{
+  "version": 8,
+  "name": "INSPIRE Buildings — Default",
+  "sources": {
+    "inspire": {
+      "type": "vector",
+      "url": "pmtiles://../buildings.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "buildings-fill",
+      "type": "fill",
+      "source": "inspire",
+      "source-layer": "buildings",
+      "paint": {
+        "fill-color": "#999999",
+        "fill-opacity": 0.7
+      }
+    },
+    {
+      "id": "buildings-outline",
+      "type": "line",
+      "source": "inspire",
+      "source-layer": "buildings",
+      "paint": {
+        "line-color": "#555555",
+        "line-width": 0.5
+      }
+    }
+  ]
+}

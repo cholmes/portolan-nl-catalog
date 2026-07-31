@@ -1,0 +1,43 @@
+{
+  "version": 8,
+  "name": "bodemverontreiniging_besluit — by quality regime",
+  "sources": {
+    "bodemverontreiniging_besluit": {
+      "type": "vector",
+      "url": "pmtiles://../bodemverontreiniging_besluit.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "bodemverontreiniging_besluit-fill",
+      "type": "fill",
+      "source": "bodemverontreiniging_besluit",
+      "source-layer": "bodemverontreiniging_besluit",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "quality_regime"
+          ],
+          "IMBRO",
+          "#1B9E77",
+          "IMBRO/A",
+          "#D95F02",
+          "#BBBBBB"
+        ],
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "bodemverontreiniging_besluit-outline",
+      "type": "line",
+      "source": "bodemverontreiniging_besluit",
+      "source-layer": "bodemverontreiniging_besluit",
+      "paint": {
+        "line-color": "#777777",
+        "line-width": 0.3
+      }
+    }
+  ]
+}

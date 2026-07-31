@@ -1,0 +1,200 @@
+{
+  "type": "Collection",
+  "id": "hectometervakken_vaargeul",
+  "stac_version": "1.1.0",
+  "description": "Hectometer sections of the fairway along Rhine branches in the Netherlands, from the Waterdieptekaarten (Water Depth Charts) viewer.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/hectometervakken_vaargeul/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Rijkswaterstaat"
+    },
+    {
+      "rel": "via",
+      "href": "https://services-eu1.arcgis.com/4D1GBrbE6xp1T4YG/arcgis/rest/services/Waterdieptekaarten_Rijntakken/FeatureServer/4",
+      "type": "text/html",
+      "title": "Source ArcGIS Feature Layer"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/hectometervakken_vaargeul/hectometervakken_vaargeul.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/rijkswaterstaat/hectometervakken_vaargeul/README.md",
+      "type": "text/html",
+      "title": "Water Depth Charts — Rhine Branches documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "table:row_count": 3112,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "OBJECTID",
+      "type": "int64"
+    },
+    {
+      "name": "vak_ID",
+      "type": "string"
+    },
+    {
+      "name": "Shape__Area",
+      "type": "double"
+    },
+    {
+      "name": "Shape__Length",
+      "type": "double"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    }
+  ],
+  "portolan:styles": [
+    {
+      "name": "default",
+      "href": "./styles/default.json"
+    }
+  ],
+  "proj:epsg": 3857,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 12,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    6.108398,
+    52.02545,
+    12
+  ],
+  "pmtiles:layers": [
+    "hectometervakken_vaargeul"
+  ],
+  "title": "Water Depth Charts — Rhine Branches",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          4.877682,
+          51.8031616787728,
+          6.21871713257343,
+          52.583843
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "proprietary",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "Polygon"
+    ],
+    "geoparquet:feature_count": [
+      3112
+    ],
+    "table:column_statistics": [
+      {
+        "OBJECTID": {
+          "minimum": 1,
+          "maximum": 3112
+        },
+        "vak_ID": {
+          "minimum": "ij_8784",
+          "maximum": "wa_9509"
+        },
+        "Shape__Area": {
+          "minimum": 333.34058380126953,
+          "maximum": 26582.761405944824
+        },
+        "Shape__Length": {
+          "minimum": 100.8713830961886,
+          "maximum": 728.8878329409918
+        }
+      }
+    ],
+    "portolan:datetime_provisional": [
+      true
+    ],
+    "vector:geometry_types": [
+      "Polygon"
+    ]
+  },
+  "assets": {
+    "data": {
+      "href": "./hectometervakken_vaargeul.parquet",
+      "type": "application/x-parquet",
+      "title": "Hectometer fairway sections",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./hectometervakken_vaargeul.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Hectometer fairway sections (vector tiles)",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail_.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "Fairway Sections — Default",
+      "roles": [
+        "style"
+      ]
+    },
+    "documentation": {
+      "href": "./llms.txt",
+      "type": "text/plain",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "hectometervakken_vaargeul": {
+      "href": "./hectometervakken_vaargeul.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "data"
+      ]
+    },
+    "README": {
+      "href": "./README.md",
+      "type": "text/markdown",
+      "roles": [
+        "documentation"
+      ]
+    }
+  }
+}

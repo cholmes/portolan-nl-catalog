@@ -1,0 +1,48 @@
+{
+  "version": 8,
+  "name": "Navigation Locks — Default",
+  "sources": {
+    "rws": {
+      "type": "vector",
+      "url": "pmtiles://../sluizen.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "locks-circle",
+      "type": "circle",
+      "source": "rws",
+      "source-layer": "sluizen",
+      "paint": {
+        "circle-radius": [
+          "step", ["get", "NR_KOLKEN"],
+          5,
+          2, 7,
+          3, 10,
+          4, 13
+        ],
+        "circle-color": "#D32F2F",
+        "circle-stroke-color": "#FFFFFF",
+        "circle-stroke-width": 1
+      }
+    },
+    {
+      "id": "locks-label",
+      "type": "symbol",
+      "source": "rws",
+      "source-layer": "sluizen",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{NAAM}",
+        "text-size": 11,
+        "text-offset": [0, 1.5],
+        "text-font": ["Open Sans Regular"]
+      },
+      "paint": {
+        "text-color": "#333333",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 1
+      }
+    }
+  ]
+}

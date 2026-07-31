@@ -1,0 +1,55 @@
+{
+  "version": 8,
+  "name": "BRP Gewaspercelen — 2024",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../brp_gewaspercelen_2024.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "parcels-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "brp_gewaspercelen",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "category"
+          ],
+          "Grasland",
+          "#4CAF50",
+          "Bouwland",
+          "#FF9800",
+          "Landschapselement",
+          "#2196F3",
+          "Natuurterrein",
+          "#8BC34A",
+          "Braakland",
+          "#9E9E9E",
+          "Overige",
+          "#795548",
+          "bouwland",
+          "#FF9800",
+          "landschapselement",
+          "#2196F3",
+          "#BDBDBD"
+        ],
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "parcels-outline",
+      "type": "line",
+      "source": "data",
+      "source-layer": "brp_gewaspercelen",
+      "paint": {
+        "line-color": "#424242",
+        "line-width": 0.5
+      }
+    }
+  ]
+}

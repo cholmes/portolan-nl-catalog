@@ -1,0 +1,54 @@
+{
+  "version": 8,
+  "name": "Geomorfologie \u2014 by relief class",
+  "sources": {
+    "geomorphological_area": {
+      "type": "vector",
+      "url": "pmtiles://../geomorphological_area.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "geomorphological_area-fill",
+      "type": "fill",
+      "source": "geomorphological_area",
+      "source-layer": "geomorphological_area",
+      "paint": {
+        "fill-color": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "to-number",
+            [
+              "get",
+              "relief_code"
+            ]
+          ],
+          1,
+          "#FFFFCC",
+          6,
+          "#A1DAB4",
+          12,
+          "#41B6C4",
+          18,
+          "#2C7FB8",
+          25,
+          "#253494"
+        ],
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "geomorphological_area-outline",
+      "type": "line",
+      "source": "geomorphological_area",
+      "source-layer": "geomorphological_area",
+      "paint": {
+        "line-color": "#777777",
+        "line-width": 0.3
+      }
+    }
+  ]
+}

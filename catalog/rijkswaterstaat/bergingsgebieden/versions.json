@@ -1,0 +1,50 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-05-08T18:16:11.208288Z",
+      "breaking": false,
+      "assets": {
+        "llms.txt": {
+          "sha256": "239af520cba21cd78dd119d0c473688e40da254eda40b74f575fbaa5d5b0045b",
+          "size_bytes": 4436,
+          "href": "rijkswaterstaat/bergingsgebieden/llms.txt",
+          "mtime": 1778185474.0
+        },
+        "thumbnail_.png": {
+          "sha256": "ffb06f8979735137e82bb143d10019398a619966e4707050e1f7be768a7335e5",
+          "size_bytes": 294287,
+          "href": "rijkswaterstaat/bergingsgebieden/thumbnail_.png",
+          "mtime": 1778070780.921057
+        },
+        "bergingsgebieden.pmtiles": {
+          "sha256": "2e7d8443930a8e071b7317b5424b1452cee42a84ca8e3dfcedcf88476ff30996",
+          "size_bytes": 2239178,
+          "href": "rijkswaterstaat/bergingsgebieden/bergingsgebieden.pmtiles",
+          "mtime": 1778070780.9249272
+        },
+        "README.md": {
+          "sha256": "68f9cc00884f98bb4ab471526ab69c1ac4431bb8df9eea0a2d8ac9da6b1cb0b6",
+          "size_bytes": 2103,
+          "href": "rijkswaterstaat/bergingsgebieden/README.md",
+          "mtime": 1778148808.0
+        },
+        "bergingsgebieden.parquet": {
+          "sha256": "80ea63033d1ae31e69d56073f3e0779a74ad7272d9e72b1085c3e9eacd0a74f3",
+          "size_bytes": 3873973,
+          "href": "rijkswaterstaat/bergingsgebieden/bergingsgebieden.parquet",
+          "mtime": 1778070780.9269142
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "thumbnail_.png",
+        "bergingsgebieden.pmtiles",
+        "README.md",
+        "bergingsgebieden.parquet"
+      ]
+    }
+  ]
+}

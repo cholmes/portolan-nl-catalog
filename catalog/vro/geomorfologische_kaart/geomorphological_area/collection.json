@@ -1,0 +1,305 @@
+{
+  "type": "Collection",
+  "id": "geomorphological_area",
+  "stac_version": "1.1.0",
+  "title": "BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM)",
+  "description": "80,148 landform polygons of the national Geomorphological Map of the Netherlands 1:50,000 (Geomorfologische kaart, GMM), classified by genesis, relief and landform subgroup. Produced under VRO; bronhouder Wageningen Environmental Research.\n\n🤖 AI/Agent users: see llms.txt for field descriptions, query examples and usage tips.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/geomorphological_area/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/tno/bro-geomorfologische-kaart/atom/index.xml",
+      "type": "application/atom+xml",
+      "title": "PDOK Atom download (source GeoPackage)"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/tno/bro-geomorfologische-kaart/wms/v1_0?request=GetCapabilities&service=WMS",
+      "type": "application/xml",
+      "title": "PDOK WMS (GetCapabilities)"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/geomorphological_area/README.md",
+      "type": "text/html",
+      "title": "BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "table:row_count": 80148,
+  "table:primary_geometry": "geom",
+  "table:columns": [
+    {
+      "name": "fid",
+      "type": "int64",
+      "description": "Feature ID."
+    },
+    {
+      "name": "collection_id",
+      "type": "string"
+    },
+    {
+      "name": "identification",
+      "type": "string"
+    },
+    {
+      "name": "relief_code",
+      "type": "int64",
+      "description": "Relief-form code."
+    },
+    {
+      "name": "active_process",
+      "type": "string",
+      "description": "Whether the landform process is still active (ja/nee)."
+    },
+    {
+      "name": "genese_code",
+      "type": "string",
+      "description": "Genesis code (1=Glaciaal, 2=Periglaciaal, 3=Denudatief, 4=Fluviatiel, 5=Eolisch, 6=Lacustrien, 7=Marien, 8=Organogeen, 9=Antropogeen, 0=Tectonisch)."
+    },
+    {
+      "name": "landform_subgroup_code",
+      "type": "string",
+      "description": "Landform subgroup code (e.g. B44 = stroomrug/stream ridge)."
+    },
+    {
+      "name": "additional_surface_relief_code",
+      "type": "string",
+      "description": "Additional surface relief code (optional)."
+    },
+    {
+      "name": "additional_surface_cover_code",
+      "type": "string",
+      "description": "Additional surface cover code (optional)."
+    },
+    {
+      "name": "genese_description",
+      "type": "string",
+      "description": "Genesis description (Dutch)."
+    },
+    {
+      "name": "genese_validfrom",
+      "type": "int64"
+    },
+    {
+      "name": "genese_validto",
+      "type": "int64"
+    },
+    {
+      "name": "landform_subgroup_description",
+      "type": "string",
+      "description": "Landform subgroup description (Dutch)."
+    },
+    {
+      "name": "landform_subgroup_url",
+      "type": "string",
+      "description": "URL to the landform legend entry."
+    },
+    {
+      "name": "landform_subgroup_validfrom",
+      "type": "int64"
+    },
+    {
+      "name": "landform_subgroup_validto",
+      "type": "int64"
+    },
+    {
+      "name": "additional_surface_relief_description",
+      "type": "string"
+    },
+    {
+      "name": "additional_surface_relief_validfrom",
+      "type": "int64"
+    },
+    {
+      "name": "additional_surface_relief_validto",
+      "type": "int64"
+    },
+    {
+      "name": "additional_surface_cover_description",
+      "type": "string"
+    },
+    {
+      "name": "additional_surface_cover_validfrom",
+      "type": "int64"
+    },
+    {
+      "name": "additional_surface_cover_validto",
+      "type": "int64"
+    },
+    {
+      "name": "relief_klasse",
+      "type": "string"
+    },
+    {
+      "name": "relief_subklasse",
+      "type": "string"
+    },
+    {
+      "name": "helling",
+      "type": "string"
+    },
+    {
+      "name": "lokaal_maximaal_hoogteverschil",
+      "type": "string"
+    },
+    {
+      "name": "diepte_tov_omgeving",
+      "type": "string"
+    },
+    {
+      "name": "steilste_verhang",
+      "type": "string"
+    },
+    {
+      "name": "maximaal_hoogteverschil",
+      "type": "string"
+    },
+    {
+      "name": "maximaal_verval",
+      "type": "string"
+    },
+    {
+      "name": "relief_validfrom",
+      "type": "int64"
+    },
+    {
+      "name": "relief_validto",
+      "type": "int64"
+    },
+    {
+      "name": "geom",
+      "type": "binary",
+      "description": "Feature geometry (WKB) in EPSG:28992 (Amersfoort / RD New)."
+    },
+    {
+      "name": "geom_bbox",
+      "type": "struct<xmin: float, ymin: float, xmax: float, ymax: float>",
+      "description": "Per-feature bounding box struct for spatial filtering."
+    }
+  ],
+  "geoparquet:geometry_type": "MultiPolygon",
+  "geoparquet:feature_count": 80148,
+  "proj:epsg": 28992,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 12,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    5.293102,
+    52.154484,
+    12
+  ],
+  "pmtiles:layers": [
+    "geomorphological_area"
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.357819,
+          50.750537,
+          7.228386,
+          53.558432
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "assets": {
+    "geomorphological_area": {
+      "href": "./geomorphological_area.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) (GeoParquet)",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./geomorphological_area.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) (vector tiles)",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Thumbnail (PDOK preview)",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/by-landform": {
+      "href": "./styles/by-landform.json",
+      "type": "application/json",
+      "title": "BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) — By landform subgroup",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-relief": {
+      "href": "./styles/by-relief.json",
+      "type": "application/json",
+      "title": "BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) — By relief class",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) — Default",
+      "roles": [
+        "style"
+      ]
+    }
+  },
+  "license": "CC0-1.0",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "MultiPolygon"
+    ],
+    "vector:geometry_types": [
+      "MultiPolygon"
+    ]
+  },
+  "portolan:styles": [
+    "styles/default",
+    "styles/by-landform",
+    "styles/by-relief"
+  ]
+}

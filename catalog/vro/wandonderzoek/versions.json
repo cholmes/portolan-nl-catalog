@@ -1,0 +1,50 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-06-07T21:27:25.830332Z",
+      "breaking": false,
+      "assets": {
+        "llms.txt": {
+          "sha256": "7a89311994d9651e26fff1b7e30f7d23807dbc50bd1380d730b392c77f946f2f",
+          "size_bytes": 6193,
+          "href": "vro/wandonderzoek/llms.txt",
+          "mtime": 1780867267.7108645
+        },
+        "wandonderzoek.pmtiles": {
+          "sha256": "2bbd28989272879dcfa183ea86e8aa2920e971b857108839dc5d7405fe77f7cf",
+          "size_bytes": 208000,
+          "href": "vro/wandonderzoek/wandonderzoek.pmtiles",
+          "mtime": 1780863392.4943168
+        },
+        "README.md": {
+          "sha256": "99f028e08e45094cca83cfd16d249f45a28c3c2ac414d33c6c210db01b50f899",
+          "size_bytes": 3249,
+          "href": "vro/wandonderzoek/README.md",
+          "mtime": 1780867375.3211536
+        },
+        "thumbnail.png": {
+          "sha256": "a8dd139e2a8df29a85301df2896ea4a77cae8c4d70866dcd425a0cdeb758bbac",
+          "size_bytes": 378271,
+          "href": "vro/wandonderzoek/thumbnail.png",
+          "mtime": 1780866505.2677116
+        },
+        "wandonderzoek.parquet": {
+          "sha256": "2222aa3ddf8a839232f01ee56ee3e6283a3c0e752407c197932f5c9048c5664d",
+          "size_bytes": 102561,
+          "href": "vro/wandonderzoek/wandonderzoek.parquet",
+          "mtime": 1780863381.0782428
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "wandonderzoek.pmtiles",
+        "README.md",
+        "thumbnail.png",
+        "wandonderzoek.parquet"
+      ]
+    }
+  ]
+}

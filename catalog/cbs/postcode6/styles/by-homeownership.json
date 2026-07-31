@@ -1,0 +1,32 @@
+{
+  "version": 8,
+  "name": "Postcode 6 — Homeownership Rate",
+  "sources": {
+    "postcode": {
+      "type": "vector",
+      "url": "pmtiles://../postcode6.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "postcode-fill",
+      "type": "fill",
+      "source": "postcode",
+      "source-layer": "postcode6",
+      "filter": [">=", ["get", "percentage_koopwoningen"], 0],
+      "paint": {
+        "fill-color": [
+          "step", ["get", "percentage_koopwoningen"],
+          "#762A83",
+          20, "#9970AB",
+          40, "#C2A5CF",
+          60, "#F7F7F7",
+          80, "#A6DBA0",
+          90, "#5AAE61",
+          95, "#1B7837"
+        ],
+        "fill-opacity": 0.8
+      }
+    }
+  ]
+}

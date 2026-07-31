@@ -1,0 +1,40 @@
+{
+  "version": 8,
+  "name": "National Monuments — By Category",
+  "sources": {
+    "rce": {
+      "type": "vector",
+      "url": "pmtiles://../rijksmonumenten.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "monuments-circle",
+      "type": "circle",
+      "source": "rce",
+      "source-layer": "rijksmonumenten",
+      "paint": {
+        "circle-radius": ["interpolate", ["linear"], ["zoom"], 6, 2, 14, 6],
+        "circle-color": [
+          "match", ["get", "hoofdcateg"],
+          "Woningen en woningbouwcomplexen", "#FFB300",
+          "Boerderijen, molens en bedrijven", "#8D6E63",
+          "Kastelen, landhuizen en parken", "#FDD835",
+          "Religieuze gebouwen", "#FF8F00",
+          "Verdedigingswerken en militaire gebouwen", "#6D4C41",
+          "Handelsgebouwen, opslag- en transportgebouwen", "#FFD54F",
+          "Archeologie (N)", "#795548",
+          "Cultuur, gezondheid en wetenschap", "#FFCA28",
+          "Voorwerpen op pleinen en dergelijke", "#A1887F",
+          "Weg- en waterbouwkundige werken", "#BCAAA4",
+          "Uitvaartcentra en begraafplaatsen", "#78909C",
+          "Bestuursgebouwen, rechtsgebouwen en overheidsgebouwen", "#FFC107",
+          "Sport, recreatie, vereniging en horeca", "#FFE082",
+          "#E0E0E0"
+        ],
+        "circle-stroke-color": "#333333",
+        "circle-stroke-width": 0.5
+      }
+    }
+  ]
+}

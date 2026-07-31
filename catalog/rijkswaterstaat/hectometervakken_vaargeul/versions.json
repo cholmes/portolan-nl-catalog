@@ -1,0 +1,72 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.1",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-04-17T11:46:52.306688Z",
+      "breaking": false,
+      "assets": {
+        "hectometervakken_vaargeul/hectometervakken_vaargeul.parquet": {
+          "sha256": "700751c26d16c5a294e559a0c6fec32d637b35d3b7e6164961baf4bf7bb4b0c7",
+          "size_bytes": 678726,
+          "href": "hectometervakken_vaargeul/hectometervakken_vaargeul.parquet",
+          "mtime": 1776426412.299551
+        }
+      },
+      "changes": [
+        "hectometervakken_vaargeul/hectometervakken_vaargeul.parquet"
+      ]
+    },
+    {
+      "version": "1.0.1",
+      "created": "2026-05-08T18:24:04.177433Z",
+      "breaking": false,
+      "assets": {
+        "hectometervakken_vaargeul/hectometervakken_vaargeul.parquet": {
+          "sha256": "700751c26d16c5a294e559a0c6fec32d637b35d3b7e6164961baf4bf7bb4b0c7",
+          "size_bytes": 678726,
+          "href": "hectometervakken_vaargeul/hectometervakken_vaargeul.parquet",
+          "mtime": 1776426412.299551
+        },
+        "llms.txt": {
+          "sha256": "3f272627410d05c9e76b5f9b4751bce00dfaddd9bb0555964add088b818f54b7",
+          "size_bytes": 3769,
+          "href": "rijkswaterstaat/hectometervakken_vaargeul/llms.txt",
+          "mtime": 1778185474.0
+        },
+        "thumbnail_.png": {
+          "sha256": "86bcf972e067410af9b43b9f2c995ab64d798ea840092f46ba5797586eb59282",
+          "size_bytes": 213433,
+          "href": "rijkswaterstaat/hectometervakken_vaargeul/thumbnail_.png",
+          "mtime": 1778070780.942349
+        },
+        "hectometervakken_vaargeul.parquet": {
+          "sha256": "700751c26d16c5a294e559a0c6fec32d637b35d3b7e6164961baf4bf7bb4b0c7",
+          "size_bytes": 678726,
+          "href": "rijkswaterstaat/hectometervakken_vaargeul/hectometervakken_vaargeul.parquet",
+          "mtime": 1778070780.9431064
+        },
+        "README.md": {
+          "sha256": "ee2f92c978f838a836d47c5c46c679cf9ebb1ec76f8f34e1a186d39dff3e06c2",
+          "size_bytes": 2189,
+          "href": "rijkswaterstaat/hectometervakken_vaargeul/README.md",
+          "mtime": 1778070780.945138
+        },
+        "hectometervakken_vaargeul.pmtiles": {
+          "sha256": "b73d216d164adf3876fbd017f44fa646d047b5ced939c23243a668fce861a8d9",
+          "size_bytes": 755268,
+          "href": "rijkswaterstaat/hectometervakken_vaargeul/hectometervakken_vaargeul.pmtiles",
+          "mtime": 1778070780.9462013
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "thumbnail_.png",
+        "hectometervakken_vaargeul.parquet",
+        "README.md",
+        "hectometervakken_vaargeul.pmtiles"
+      ]
+    }
+  ]
+}

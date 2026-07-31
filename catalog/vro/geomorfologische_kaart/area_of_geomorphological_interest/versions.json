@@ -1,0 +1,50 @@
+{
+  "spec_version": "1.0.0",
+  "current_version": "1.0.0",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "created": "2026-06-07T21:29:51.590514Z",
+      "breaking": false,
+      "assets": {
+        "llms.txt": {
+          "sha256": "771f3171ea44835f5cfeb07418772c7bb5db62199a23253c463d19d30c2ae689",
+          "size_bytes": 4428,
+          "href": "vro/geomorfologische_kaart/area_of_geomorphological_interest/llms.txt",
+          "mtime": 1780867267.713653
+        },
+        "area_of_geomorphological_interest.pmtiles": {
+          "sha256": "34007574c67483ddc714cee844bcac46d5272a0fb704e48747d54c51d67f42c1",
+          "size_bytes": 33267454,
+          "href": "vro/geomorfologische_kaart/area_of_geomorphological_interest/area_of_geomorphological_interest.pmtiles",
+          "mtime": 1780864595.2873268
+        },
+        "README.md": {
+          "sha256": "8ed219b29876eb14ffeeb2c68016c60c715a6d5dede038636763805e42332f30",
+          "size_bytes": 2226,
+          "href": "vro/geomorfologische_kaart/area_of_geomorphological_interest/README.md",
+          "mtime": 1780867375.3234396
+        },
+        "thumbnail.png": {
+          "sha256": "198e7d75b7a8e94d368d40ab963664d0aeaa123adce8595e37e94fb94812c866",
+          "size_bytes": 47431,
+          "href": "vro/geomorfologische_kaart/area_of_geomorphological_interest/thumbnail.png",
+          "mtime": 1780866506.5025454
+        },
+        "area_of_geomorphological_interest.parquet": {
+          "sha256": "17debc89850963824d2f4322eced46da3ffc88eb05f270a68408b69e94320005",
+          "size_bytes": 47560587,
+          "href": "vro/geomorfologische_kaart/area_of_geomorphological_interest/area_of_geomorphological_interest.parquet",
+          "mtime": 1780864561.3608844
+        }
+      },
+      "changes": [
+        "llms.txt",
+        "area_of_geomorphological_interest.pmtiles",
+        "README.md",
+        "thumbnail.png",
+        "area_of_geomorphological_interest.parquet"
+      ]
+    }
+  ]
+}

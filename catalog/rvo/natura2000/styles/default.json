@@ -1,0 +1,48 @@
+{
+  "version": 8,
+  "name": "Natura 2000 — Default",
+  "sources": {
+    "rvo": {
+      "type": "vector",
+      "url": "pmtiles://../natura2000.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "natura-fill",
+      "type": "fill",
+      "source": "rvo",
+      "source-layer": "natura2000",
+      "paint": {
+        "fill-color": "#B5D66A",
+        "fill-opacity": 0.45
+      }
+    },
+    {
+      "id": "natura-outline",
+      "type": "line",
+      "source": "rvo",
+      "source-layer": "natura2000",
+      "paint": {
+        "line-color": "#689F38",
+        "line-width": 1.5
+      }
+    },
+    {
+      "id": "natura-label",
+      "type": "symbol",
+      "source": "rvo",
+      "source-layer": "natura2000",
+      "layout": {
+        "text-field": "{naam_n2k}",
+        "text-size": 11,
+        "text-font": ["Open Sans Regular"]
+      },
+      "paint": {
+        "text-color": "#33691E",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 1
+      }
+    }
+  ]
+}

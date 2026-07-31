@@ -1,0 +1,40 @@
+{
+  "version": 8,
+  "name": "BAG Buildings — By Construction Year",
+  "sources": {
+    "data": {
+      "type": "vector",
+      "url": "pmtiles://../bag-light.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "buildings-fill",
+      "type": "fill",
+      "source": "data",
+      "source-layer": "panden",
+      "paint": {
+        "fill-color": [
+          "step", ["get", "bouwjaar"],
+          "#5C3317",
+          1800, "#8B4513",
+          1900, "#CD6600",
+          1940, "#E8A040",
+          1970, "#F0C060",
+          2000, "#FCE88A"
+        ],
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "buildings-outline",
+      "type": "line",
+      "source": "data",
+      "source-layer": "panden",
+      "paint": {
+        "line-color": "#A04030",
+        "line-width": 0.5
+      }
+    }
+  ]
+}

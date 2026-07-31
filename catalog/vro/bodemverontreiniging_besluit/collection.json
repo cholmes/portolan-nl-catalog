@@ -1,0 +1,196 @@
+{
+  "type": "Collection",
+  "id": "bodemverontreiniging_besluit",
+  "stac_version": "1.1.0",
+  "title": "BRO Government Decision on Soil Contamination (SLD)",
+  "description": "121 formal government decisions on soil contamination (overheidsbesluit bodemverontreiniging, SLD) from the BRO — areas with an authority decision on assessment, remediation or aftercare. Produced under VRO; bronhouder TNO.\n\n🤖 AI/Agent users: see llms.txt for field descriptions, query examples and usage tips.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/vro/bodemverontreiniging_besluit/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/tno/bro-overheidsbesluit-bodemverontreiniging/atom/index.xml",
+      "type": "application/atom+xml",
+      "title": "PDOK Atom download (source GeoPackage)"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/tno/bro-overheidsbesluit-bodemverontreiniging/wms/v1_0?request=GetCapabilities&service=WMS",
+      "type": "application/xml",
+      "title": "PDOK WMS (GetCapabilities)"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/vro/bodemverontreiniging_besluit/README.md",
+      "type": "text/html",
+      "title": "BRO Government Decision on Soil Contamination (SLD) documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "table:row_count": 121,
+  "table:primary_geometry": "standardized_location",
+  "table:columns": [
+    {
+      "name": "soil_legal_decision_pk",
+      "type": "int64"
+    },
+    {
+      "name": "bro_id",
+      "type": "string",
+      "description": "BRO registration ID — unique identifier of the object in the Basisregistratie Ondergrond."
+    },
+    {
+      "name": "quality_regime",
+      "type": "string",
+      "description": "BRO quality regime: IMBRO (full assurance) or IMBRO/A (transitional/lower assurance)."
+    },
+    {
+      "name": "delivery_accountable_party",
+      "type": "string",
+      "description": "KvK number of the party accountable for delivery (bronhouder)."
+    },
+    {
+      "name": "delivery_context",
+      "type": "string",
+      "description": "Legal/administrative framework under which the object was registered."
+    },
+    {
+      "name": "applied_transformation",
+      "type": "string",
+      "description": "Whether a coordinate/height transformation was applied (ja/nee)."
+    },
+    {
+      "name": "standardized_location",
+      "type": "binary",
+      "description": "Object location — WKB geometry in EPSG:4258 (ETRS89)."
+    },
+    {
+      "name": "standardized_location_bbox",
+      "type": "struct<xmin: float, ymin: float, xmax: float, ymax: float>",
+      "description": "Per-feature bounding box struct (xmin,ymin,xmax,ymax) for spatial filtering."
+    }
+  ],
+  "geoparquet:geometry_type": "MultiPolygon",
+  "geoparquet:feature_count": 121,
+  "proj:epsg": 4258,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 13,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    5.635904,
+    52.273614,
+    13
+  ],
+  "pmtiles:layers": [
+    "bodemverontreiniging_besluit"
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          4.274015,
+          51.265245,
+          6.997793,
+          53.281982
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "assets": {
+    "bodemverontreiniging_besluit": {
+      "href": "./bodemverontreiniging_besluit.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "BRO Government Decision on Soil Contamination (SLD) (GeoParquet)",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./bodemverontreiniging_besluit.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "BRO Government Decision on Soil Contamination (SLD) (vector tiles)",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Thumbnail (PDOK preview)",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/by-bronhouder": {
+      "href": "./styles/by-bronhouder.json",
+      "type": "application/json",
+      "title": "BRO Government Decision on Soil Contamination (SLD) — By data owner (bronhouder)",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-quality-regime": {
+      "href": "./styles/by-quality-regime.json",
+      "type": "application/json",
+      "title": "BRO Government Decision on Soil Contamination (SLD) — By quality regime",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "BRO Government Decision on Soil Contamination (SLD) — Default",
+      "roles": [
+        "style"
+      ]
+    }
+  },
+  "license": "CC0-1.0",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "MultiPolygon"
+    ],
+    "vector:geometry_types": [
+      "MultiPolygon"
+    ]
+  },
+  "portolan:styles": [
+    "styles/default",
+    "styles/by-bronhouder",
+    "styles/by-quality-regime"
+  ]
+}

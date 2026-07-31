@@ -1,0 +1,49 @@
+{
+  "version": 8,
+  "name": "Land Use 2017 — Default",
+  "sources": {
+    "bbg": {
+      "type": "vector",
+      "url": "pmtiles://../bbg2017.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "landuse-fill",
+      "type": "fill",
+      "source": "bbg",
+      "source-layer": "bbg2017",
+      "paint": {
+        "fill-color": [
+          "match", ["get", "bodemgebruik"],
+          "Landbouw en overig agrarisch", "#A8D08D",
+          "Bos", "#2E7D32",
+          "Droog natuurlijk terrein", "#8BC34A",
+          "Nat natuurlijk terrein", "#558B2F",
+          "Glastuinbouw", "#C5E1A5",
+          "Bebouwd exclusief bedrijfsterrein", "#BDBDBD",
+          "Bedrijfsterrein", "#9E9E9E",
+          "Semi-bebouwd", "#D7CCC8",
+          "Recreatie", "#FDD835",
+          "Water", "#42A5F5",
+          "Hoofdweg", "#757575",
+          "Spoorterrein", "#616161",
+          "Vliegveld", "#BCAAA4",
+          "Buitenland", "#F5F5F5",
+          "#EEEEEE"
+        ],
+        "fill-opacity": 0.85
+      }
+    },
+    {
+      "id": "landuse-outline",
+      "type": "line",
+      "source": "bbg",
+      "source-layer": "bbg2017",
+      "paint": {
+        "line-color": "#333333",
+        "line-width": 0.3
+      }
+    }
+  ]
+}

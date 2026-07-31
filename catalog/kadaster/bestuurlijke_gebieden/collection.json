@@ -1,0 +1,216 @@
+{
+  "type": "Collection",
+  "id": "bestuurlijke_gebieden",
+  "stac_version": "1.1.0",
+  "title": "Administrative Areas (Bestuurlijke Gebieden)",
+  "description": "The official administrative boundaries of the Netherlands: 342 municipalities (gemeenten), 12 provinces (provincies), and 1 national territory (landgebied). Updated annually on January 1st to reflect municipal mergers. Published by Kadaster via PDOK. This is the authoritative reference dataset for Dutch administrative boundaries — CBS municipality/province codes from this dataset are used across all Dutch government data.\n\n2026 edition. Three separate GeoParquet files: gemeentegebied, provinciegebied, landgebied.\n\n🤖 AI/Agent users: See llms.txt for field descriptions, query examples, and usage tips.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/kadaster/bestuurlijke_gebieden/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Het Kadaster"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.pdok.nl/introductie/-/article/0c3b462c-0a5d-463f-b082-51ed7bdf7684",
+      "type": "text/html",
+      "title": "PDOK dataset page"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/kadaster/brk-bestuurlijke-gebieden/atom/downloads/BestuurlijkeGebieden_2026.gpkg",
+      "type": "application/geopackage+sqlite3",
+      "title": "Source GeoPackage download"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/kadaster/bestuurlijke_gebieden/bestuurlijke_gebieden.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/kadaster/bestuurlijke_gebieden/README.md",
+      "type": "text/html",
+      "title": "Administrative Areas (Bestuurlijke Gebieden) documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "table:row_count": 355,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "fid",
+      "type": "int64",
+      "description": "Internal feature ID"
+    },
+    {
+      "name": "identificatie",
+      "type": "string",
+      "description": "CBS code — 4-digit municipality code, province identifier, or country identifier"
+    },
+    {
+      "name": "naam",
+      "type": "string",
+      "description": "Name of the administrative area"
+    },
+    {
+      "name": "code",
+      "type": "string",
+      "description": "Prefixed code: GM0363 (gemeente), PV27 (provincie), LND6030 (land)"
+    },
+    {
+      "name": "ligt_in_provincie_code",
+      "type": "string",
+      "description": "Province code (gemeentegebied only)"
+    },
+    {
+      "name": "ligt_in_provincie_naam",
+      "type": "string",
+      "description": "Province name (gemeentegebied only)"
+    },
+    {
+      "name": "ligt_in_land_code",
+      "type": "string",
+      "description": "Country code (provinciegebied only)"
+    },
+    {
+      "name": "ligt_in_land_naam",
+      "type": "string",
+      "description": "Country name (provinciegebied only)"
+    },
+    {
+      "name": "geometry",
+      "type": "binary",
+      "description": "Boundary polygon in EPSG:28992 (Amersfoort / RD New), WKB encoded"
+    }
+  ],
+  "geoparquet:geometry_type": "MultiPolygon",
+  "geoparquet:feature_count": 355,
+  "proj:epsg": 28992,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 12,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    6.2841796,
+    52.6697122,
+    12
+  ],
+  "pmtiles:layers": [
+    "gemeenten"
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.205182,
+          50.733413,
+          7.244186,
+          53.582785
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2026-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "assets": {
+    "gemeentegebied": {
+      "href": "./gemeentegebied.parquet",
+      "type": "application/x-parquet",
+      "title": "Municipalities (Gemeenten)",
+      "description": "342 municipal boundaries in EPSG:28992.",
+      "roles": [
+        "data"
+      ]
+    },
+    "provinciegebied": {
+      "href": "./provinciegebied.parquet",
+      "type": "application/x-parquet",
+      "title": "Provinces (Provincies)",
+      "description": "12 provincial boundaries in EPSG:28992.",
+      "roles": [
+        "data"
+      ]
+    },
+    "landgebied": {
+      "href": "./landgebied.parquet",
+      "type": "application/x-parquet",
+      "title": "National Territory (Landgebied)",
+      "description": "1 national territory boundary in EPSG:28992.",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./bestuurlijke_gebieden.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Administrative areas (vector tiles)",
+      "description": "Municipality boundaries as vector tiles for web visualization.",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Thumbnail",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "Administrative Areas — Default",
+      "roles": [
+        "style"
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "MultiPolygon"
+    ],
+    "geoparquet:feature_count": [
+      355
+    ],
+    "vector:geometry_types": [
+      "MultiPolygon"
+    ]
+  },
+  "portolan:styles": [
+    {
+      "name": "default",
+      "href": "./styles/default.json"
+    }
+  ]
+}

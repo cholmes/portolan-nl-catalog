@@ -1,0 +1,73 @@
+{
+  "version": 8,
+  "name": "Land Use 2017 — Detailed",
+  "sources": {
+    "bbg": {
+      "type": "vector",
+      "url": "pmtiles://../bbg2017.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "landuse-fill",
+      "type": "fill",
+      "source": "bbg",
+      "source-layer": "bbg2017",
+      "paint": {
+        "fill-color": [
+          "match", ["get", "categorie"],
+          "Overig agrarisch terrein", "#A8D08D",
+          "Glastuinbouw", "#C5E1A5",
+          "Bos", "#2E7D32",
+          "Open droog natuurlijk terrein", "#8BC34A",
+          "Open nat natuurlijk terrein", "#558B2F",
+          "Woongebied", "#E8A088",
+          "Bedrijfsterrein", "#9E9E9E",
+          "Sociaal-culturele voorziening", "#B07080",
+          "Detailhandel en horeca", "#D4A0A0",
+          "Openbare voorziening", "#C08080",
+          "Bouwterrein", "#D7CCC8",
+          "Semi-verhard overig terrein", "#BCAAA4",
+          "Stortplaats", "#795548",
+          "Wrakkenopslagplaats", "#8D6E63",
+          "Vloei- en/of slibveld", "#A1887F",
+          "Delfstofwinplaats", "#6D4C41",
+          "Begraafplaats", "#78909C",
+          "Sportterrein", "#FDD835",
+          "Park en plantsoen", "#DCEDC8",
+          "Volkstuin", "#FFF176",
+          "Dagrecreatief terrein", "#FFD54F",
+          "Verblijfsrecreatief terrein", "#FFE082",
+          "Water met recreatieve functie", "#4FC3F7",
+          "Overig binnenwater", "#42A5F5",
+          "Rijn & Maas", "#1E88E5",
+          "Afgesloten zeearm", "#1565C0",
+          "Spaarbekken", "#64B5F6",
+          "IJsselmeer & Markermeer", "#1976D2",
+          "Randmeer", "#90CAF9",
+          "Water met delfstofwinningsfunctie", "#0D47A1",
+          "Waddenzee, Eems & Dollard", "#0D47A1",
+          "Westerschelde", "#1565C0",
+          "Oosterschelde", "#1565C0",
+          "Noordzee", "#0D47A1",
+          "Hoofdweg", "#757575",
+          "Spoorterrein", "#616161",
+          "Vliegveld", "#9E9E9E",
+          "Buitenland", "#F5F5F5",
+          "#EEEEEE"
+        ],
+        "fill-opacity": 0.85
+      }
+    },
+    {
+      "id": "landuse-outline",
+      "type": "line",
+      "source": "bbg",
+      "source-layer": "bbg2017",
+      "paint": {
+        "line-color": "#333333",
+        "line-width": 0.2
+      }
+    }
+  ]
+}

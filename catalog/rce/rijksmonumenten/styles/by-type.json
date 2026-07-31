@@ -1,0 +1,29 @@
+{
+  "version": 8,
+  "name": "National Monuments — Built vs Archaeological",
+  "sources": {
+    "rce": {
+      "type": "vector",
+      "url": "pmtiles://../rijksmonumenten.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "monuments-circle",
+      "type": "circle",
+      "source": "rce",
+      "source-layer": "rijksmonumenten",
+      "paint": {
+        "circle-radius": ["interpolate", ["linear"], ["zoom"], 6, 2, 14, 6],
+        "circle-color": [
+          "match", ["get", "aard_monum"],
+          "onroerend gebouwd", "#F9A825",
+          "archeologisch", "#6D4C41",
+          "#E0E0E0"
+        ],
+        "circle-stroke-color": "#333333",
+        "circle-stroke-width": 0.5
+      }
+    }
+  ]
+}

@@ -1,0 +1,279 @@
+{
+  "type": "Collection",
+  "id": "inspire_buildings",
+  "stac_version": "1.1.0",
+  "description": "All buildings in the Netherlands from the BAG (Basisregistratie Adressen en Gebouwen), harmonized to the EU INSPIRE Buildings schema. Contains 24.2 million building footprint polygons with construction dates and BAG identifiers. Includes both current and historical versions \u2014 records with endLifespanVersion = null are the current version. Published by Kadaster via PDOK.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL \u2014 Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/kadaster/inspire_buildings/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json",
+      "title": "Het Kadaster"
+    },
+    {
+      "rel": "via",
+      "href": "https://www.pdok.nl/introductie/-/article/gebouwen-inspire-geharmoniseerd-",
+      "type": "text/html",
+      "title": "PDOK dataset page"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/kadaster/bu/wfs/v1_0",
+      "type": "application/xml",
+      "title": "Source WFS endpoint"
+    },
+    {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/kadaster/inspire_buildings/buildings.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/kadaster/inspire_buildings/README.md",
+      "type": "text/html",
+      "title": "Buildings (INSPIRE Harmonized) documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://portolan-sdi.github.io/stac-partition-extension/v1.0.0/schema.json"
+  ],
+  "table:row_count": 48373522,
+  "table:primary_geometry": "geometry",
+  "table:columns": [
+    {
+      "name": "OGC_FID",
+      "type": "int64"
+    },
+    {
+      "name": "gml_id",
+      "type": "string"
+    },
+    {
+      "name": "beginLifespanVersion",
+      "type": "string"
+    },
+    {
+      "name": "anyPoint",
+      "type": "string"
+    },
+    {
+      "name": "endLifespanVersion",
+      "type": "string"
+    },
+    {
+      "name": "localId",
+      "type": "int64"
+    },
+    {
+      "name": "namespace",
+      "type": "string"
+    },
+    {
+      "name": "referenceGeometry",
+      "type": "bool"
+    },
+    {
+      "name": "horizontalGeometryEstimatedAccuracy",
+      "type": "string"
+    },
+    {
+      "name": "verticalGeometryEstimatedAccuracy",
+      "type": "string"
+    },
+    {
+      "name": "end",
+      "type": "string"
+    },
+    {
+      "name": "beginning",
+      "type": "string"
+    },
+    {
+      "name": "geometry",
+      "type": "binary"
+    },
+    {
+      "name": "bbox",
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
+    },
+    {
+      "name": "kdtree_cell",
+      "type": "string"
+    }
+  ],
+  "portolan:styles": [
+    {
+      "name": "default",
+      "href": "./styles/default.json"
+    },
+    {
+      "name": "by-construction-date",
+      "href": "./styles/by-construction-date.json"
+    }
+  ],
+  "proj:epsg": 3857,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 14,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    5.8117675,
+    53.206032,
+    14
+  ],
+  "pmtiles:layers": [
+    "buildings"
+  ],
+  "partition:scheme": "hive",
+  "partition:strategy": "kdtree",
+  "partition:keys": [
+    {
+      "name": "kdtree_cell",
+      "type": "string",
+      "description": "KDTREE spatial partition cell identifier"
+    }
+  ],
+  "partition:file_count": 512,
+  "title": "Buildings (INSPIRE Harmonized)",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.16,
+          50.750838684,
+          7.226292,
+          53.5418885
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "license": "CC0-1.0",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "Polygon"
+    ],
+    "portolan:datetime_provisional": [
+      true
+    ],
+    "proj:code": [
+      "EPSG:4258"
+    ],
+    "vector:geometry_types": [
+      "Polygon"
+    ]
+  },
+  "assets": {
+    "data": {
+      "href": "./buildings.parquet",
+      "type": "application/x-parquet",
+      "title": "Buildings (GeoParquet)",
+      "description": "24.2M building footprint polygons in EPSG:4258 (ETRS89), GeoParquet 1.1.0 with bbox covering column and Hilbert spatial sorting.",
+      "roles": [
+        "data"
+      ]
+    },
+    "gml": {
+      "href": "./buildings.gml.gz",
+      "type": "application/gml+xml",
+      "title": "Buildings (INSPIRE GML)",
+      "description": "Original INSPIRE-harmonized GML from PDOK ATOM download service. 2.7 GB compressed, ~45 GB uncompressed.",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./buildings.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Buildings (vector tiles)",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail_.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "INSPIRE Buildings \u2014 Default",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-construction-date": {
+      "href": "./styles/by-construction-date.json",
+      "type": "application/json",
+      "title": "INSPIRE Buildings \u2014 By Construction Date",
+      "roles": [
+        "style"
+      ]
+    },
+    "documentation": {
+      "href": "./llms.txt",
+      "type": "text/plain",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "buildings": {
+      "href": "./buildings.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "roles": [
+        "data"
+      ]
+    },
+    "README": {
+      "href": "./README.md",
+      "type": "text/markdown",
+      "roles": [
+        "documentation"
+      ]
+    },
+    "thumbnail.png": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "buildings.gml": {
+      "href": "./buildings.gml.gz",
+      "type": "application/octet-stream",
+      "roles": [
+        "data"
+      ]
+    }
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "type": "Collection",
+  "id": "area_of_geomorphological_interest",
+  "stac_version": "1.1.0",
+  "title": "BRO Geomorphological Map — Area of geomorphological interest",
+  "description": "40,840 polygons delimiting the area of geomorphological interest of the national Geomorphological Map 1:50,000 (GMM). Produced under VRO; bronhouder Wageningen Environmental Research.\n\n🤖 AI/Agent users: see llms.txt for field descriptions, query examples and usage tips.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/area_of_geomorphological_interest/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/tno/bro-geomorfologische-kaart/atom/index.xml",
+      "type": "application/atom+xml",
+      "title": "PDOK Atom download (source GeoPackage)"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/tno/bro-geomorfologische-kaart/wms/v1_0?request=GetCapabilities&service=WMS",
+      "type": "application/xml",
+      "title": "PDOK WMS (GetCapabilities)"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/area_of_geomorphological_interest/README.md",
+      "type": "text/html",
+      "title": "BRO Geomorphological Map — Area of geomorphological interest documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "table:row_count": 40840,
+  "table:primary_geometry": "geom",
+  "table:columns": [
+    {
+      "name": "fid",
+      "type": "int64",
+      "description": "Feature ID."
+    },
+    {
+      "name": "identification",
+      "type": "string"
+    },
+    {
+      "name": "collection_id",
+      "type": "string"
+    },
+    {
+      "name": "type",
+      "type": "string"
+    },
+    {
+      "name": "geom",
+      "type": "binary",
+      "description": "Feature geometry (WKB) in EPSG:28992 (Amersfoort / RD New)."
+    },
+    {
+      "name": "geom_bbox",
+      "type": "struct<xmin: float, ymin: float, xmax: float, ymax: float>",
+      "description": "Per-feature bounding box struct for spatial filtering."
+    }
+  ],
+  "geoparquet:geometry_type": "MultiPolygon",
+  "geoparquet:feature_count": 40840,
+  "proj:epsg": 28992,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 12,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    5.281827,
+    52.182473,
+    12
+  ],
+  "pmtiles:layers": [
+    "area_of_geomorphological_interest"
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.346056,
+          50.754011,
+          7.217599,
+          53.610935
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "assets": {
+    "area_of_geomorphological_interest": {
+      "href": "./area_of_geomorphological_interest.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "BRO Geomorphological Map — Area of geomorphological interest (GeoParquet)",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./area_of_geomorphological_interest.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "BRO Geomorphological Map — Area of geomorphological interest (vector tiles)",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Thumbnail (PDOK preview)",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/by-type": {
+      "href": "./styles/by-type.json",
+      "type": "application/json",
+      "title": "BRO Geomorphological Map — Area of geomorphological interest — By type",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "BRO Geomorphological Map — Area of geomorphological interest — Default",
+      "roles": [
+        "style"
+      ]
+    }
+  },
+  "license": "CC0-1.0",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "MultiPolygon"
+    ],
+    "vector:geometry_types": [
+      "MultiPolygon"
+    ]
+  },
+  "portolan:styles": [
+    "styles/default",
+    "styles/by-type"
+  ]
+}

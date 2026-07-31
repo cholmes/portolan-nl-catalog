@@ -1,0 +1,71 @@
+{
+  "version": 8,
+  "name": "Bodemkaart \u2014 by soil class (hoofdklasse)",
+  "sources": {
+    "soilarea": {
+      "type": "vector",
+      "url": "pmtiles://../soilarea.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "soilarea-fill",
+      "type": "fill",
+      "source": "soilarea",
+      "source-layer": "soilarea",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "hoofdklasse"
+          ],
+          "Podzolgronden",
+          "#EFA9C6",
+          "Zeekleigronden",
+          "#6FB36F",
+          "Kalkloze zandgronden",
+          "#FCE89B",
+          "Moerige gronden",
+          "#CBAEDB",
+          "Veengronden",
+          "#8E63A8",
+          "Dikke eerdgronden",
+          "#8D6E63",
+          "Rivierkleigronden",
+          "#2E8B57",
+          "Gedefinieerde associaties",
+          "#CFCFCF",
+          "Kalkhoudende zandgronden",
+          "#F6D36B",
+          "Oude rivierkleigronden",
+          "#57A773",
+          "Brikgronden",
+          "#E08214",
+          "Leemgronden",
+          "#C2A079",
+          "Niet-gerijpte minerale gronden",
+          "#7FCDC1",
+          "Keileemgronden",
+          "#A98274",
+          "Zeer oude fluviatiele afzettingen",
+          "#9E9D24",
+          "Zeer oude mariene afzettingen",
+          "#C0CA33",
+          "#E0E0E0"
+        ],
+        "fill-opacity": 0.8
+      }
+    },
+    {
+      "id": "soilarea-outline",
+      "type": "line",
+      "source": "soilarea",
+      "source-layer": "soilarea",
+      "paint": {
+        "line-color": "#777777",
+        "line-width": 0.3
+      }
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "type": "Collection",
+  "id": "areaofpedologicalinterest",
+  "stac_version": "1.1.0",
+  "title": "BRO Soil Map — Area of pedological interest",
+  "description": "6,192 polygons delimiting the area of pedological interest of the national Soil Map 1:50,000 (Bodemkaart, SGM) — where soil mapping applies. Produced under VRO; bronhouder Wageningen Environmental Research.\n\n🤖 AI/Agent users: see llms.txt for field descriptions, query examples and usage tips.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/areaofpedologicalinterest/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/tno/bro-bodemkaart/atom/index.xml",
+      "type": "application/atom+xml",
+      "title": "PDOK Atom download (source GeoPackage)"
+    },
+    {
+      "rel": "via",
+      "href": "https://service.pdok.nl/tno/bro-bodemkaart/wms/v1_0?request=GetCapabilities&service=WMS",
+      "type": "application/xml",
+      "title": "PDOK WMS (GetCapabilities)"
+    },
+    {
+      "rel": "llms",
+      "href": "./llms.txt",
+      "type": "text/markdown",
+      "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "describedby",
+      "href": "https://source.coop/cholmes/portolan-nl/vro/bodemkaart/areaofpedologicalinterest/README.md",
+      "type": "text/html",
+      "title": "BRO Soil Map — Area of pedological interest documentation"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+  ],
+  "table:row_count": 6192,
+  "table:primary_geometry": "geom",
+  "table:columns": [
+    {
+      "name": "fid",
+      "type": "int64",
+      "description": "Feature ID."
+    },
+    {
+      "name": "maparea_id",
+      "type": "string"
+    },
+    {
+      "name": "maparea_collection",
+      "type": "string"
+    },
+    {
+      "name": "beginlifespan",
+      "type": "string"
+    },
+    {
+      "name": "endlifespan",
+      "type": "string"
+    },
+    {
+      "name": "pedologicalinterest",
+      "type": "string"
+    },
+    {
+      "name": "geom",
+      "type": "binary",
+      "description": "Feature geometry (WKB) in EPSG:28992 (Amersfoort / RD New)."
+    },
+    {
+      "name": "geom_bbox",
+      "type": "struct<xmin: float, ymin: float, xmax: float, ymax: float>",
+      "description": "Per-feature bounding box struct for spatial filtering."
+    }
+  ],
+  "geoparquet:geometry_type": "MultiPolygon",
+  "geoparquet:feature_count": 6192,
+  "proj:epsg": 28992,
+  "pmtiles:min_zoom": 0,
+  "pmtiles:max_zoom": 12,
+  "pmtiles:tile_type": "mvt",
+  "pmtiles:center": [
+    5.293459,
+    52.153856,
+    12
+  ],
+  "pmtiles:layers": [
+    "areaofpedologicalinterest"
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          3.368324,
+          50.756177,
+          7.218594,
+          53.551534
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          null,
+          null
+        ]
+      ]
+    }
+  },
+  "assets": {
+    "areaofpedologicalinterest": {
+      "href": "./areaofpedologicalinterest.parquet",
+      "type": "application/vnd.apache.parquet",
+      "title": "BRO Soil Map — Area of pedological interest (GeoParquet)",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "./areaofpedologicalinterest.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "BRO Soil Map — Area of pedological interest (vector tiles)",
+      "roles": [
+        "visual"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.png",
+      "type": "image/png",
+      "title": "Thumbnail (PDOK preview)",
+      "roles": [
+        "thumbnail"
+      ]
+    },
+    "styles/by-collection": {
+      "href": "./styles/by-collection.json",
+      "type": "application/json",
+      "title": "BRO Soil Map — Area of pedological interest — By survey campaign",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-interest": {
+      "href": "./styles/by-interest.json",
+      "type": "application/json",
+      "title": "BRO Soil Map — Area of pedological interest — By area type",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/json",
+      "title": "BRO Soil Map — Area of pedological interest — Default",
+      "roles": [
+        "style"
+      ]
+    }
+  },
+  "license": "CC0-1.0",
+  "summaries": {
+    "geoparquet:geometry_type": [
+      "MultiPolygon"
+    ],
+    "vector:geometry_types": [
+      "MultiPolygon"
+    ]
+  },
+  "portolan:styles": [
+    "styles/default",
+    "styles/by-collection",
+    "styles/by-interest"
+  ]
+}

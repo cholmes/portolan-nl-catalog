@@ -1,0 +1,75 @@
+{
+  "version": 8,
+  "name": "mijnbouwconstructie — by legal status",
+  "sources": {
+    "mijnbouwconstructie": {
+      "type": "vector",
+      "url": "pmtiles://../mijnbouwconstructie.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "mijnbouwconstructie-legend",
+      "type": "fill",
+      "source": "mijnbouwconstructie",
+      "source-layer": "mijnbouwconstructie",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "legal_status"
+          ],
+          "onbekend",
+          "#9E9E9E",
+          "buitenGebruikMijnbouw",
+          "#8E24AA",
+          "inGebruikMijnbouw",
+          "#43A047",
+          "#BBBBBB"
+        ],
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "mijnbouwconstructie-circle",
+      "type": "circle",
+      "source": "mijnbouwconstructie",
+      "source-layer": "mijnbouwconstructie",
+      "paint": {
+        "circle-radius": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          4,
+          1.5,
+          10,
+          3.5,
+          14,
+          6.5
+        ],
+        "circle-color": [
+          "match",
+          [
+            "get",
+            "legal_status"
+          ],
+          "onbekend",
+          "#9E9E9E",
+          "buitenGebruikMijnbouw",
+          "#8E24AA",
+          "inGebruikMijnbouw",
+          "#43A047",
+          "#BBBBBB"
+        ],
+        "circle-stroke-color": "#ffffff",
+        "circle-stroke-width": 0.4,
+        "circle-opacity": 0.85
+      }
+    }
+  ]
+}

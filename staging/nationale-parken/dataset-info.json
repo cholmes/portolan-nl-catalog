@@ -1,0 +1,169 @@
+{
+  "id": "nationale-parken",
+  "title_nl": "Nationale Parken",
+  "title_en": "National Parks of the Netherlands",
+  "description_nl": "Begrenzing van de 21 Nationale Parken in Nederland. De Nationale Parken zijn grote aaneengesloten natuurgebieden van nationaal en internationaal belang, beheerd door de provincies.",
+  "description_en": "Boundaries of the 21 National Parks in the Netherlands. National Parks are large contiguous natural areas of national and international importance, managed by the provinces.",
+  "provider": {
+    "name": "RVO",
+    "name_full": "Rijksdienst voor Ondernemend Nederland",
+    "name_en": "Netherlands Enterprise Agency",
+    "url": "https://www.rvo.nl/",
+    "role": "Data publisher via PDOK"
+  },
+  "source": {
+    "pdok_page": "https://www.pdok.nl/introductie/-/cms/nationale-parken",
+    "ogc_api": "https://api.pdok.nl/rvo/nationale-parken/ogc/v1/",
+    "ogc_api_collection": "https://api.pdok.nl/rvo/nationale-parken/ogc/v1/collections/nationaleparken",
+    "ogc_api_items": "https://api.pdok.nl/rvo/nationale-parken/ogc/v1/collections/nationaleparken/items",
+    "download_format": "GeoJSON (via OGC API Features)",
+    "download_date": "2026-05-07",
+    "download_tool": "ogr2ogr with OAPIF driver"
+  },
+  "license": "CC0-1.0",
+  "license_note": "RVO datasets published via PDOK are typically CC0 (public domain). Verify at the PDOK metadata page.",
+  "crs": "EPSG:28992",
+  "crs_name": "Amersfoort / RD New",
+  "coverage": "Netherlands",
+  "feature_count": 21,
+  "update_frequency": "As needed (infrequent — park boundaries change rarely, though 2023-2024 reforms added new parks)",
+  "layers": [
+    {
+      "name": "nationaleparken",
+      "geometry_type": "Multi Polygon",
+      "feature_count": 21,
+      "extent": {
+        "native": {
+          "crs": "EPSG:28992",
+          "xmin": 36781.0195,
+          "ymin": 350383.25,
+          "xmax": 251585.2295,
+          "ymax": 615251.3736
+        }
+      },
+      "columns": [
+        {
+          "name": "id",
+          "type": "String",
+          "description_nl": "Uniek identificatienummer (UUID)",
+          "description_en": "Unique identifier (UUID)"
+        },
+        {
+          "name": "bron",
+          "type": "String",
+          "description_nl": "Bron van de begrenzing — de organisatie die de grens heeft aangeleverd (bijv. provincie, Staatsbosbeheer, Natuurmonumenten)",
+          "description_en": "Source of the boundary — the organization that supplied the boundary (e.g. province, State Forestry Service, Natuurmonumenten)"
+        },
+        {
+          "name": "datum",
+          "type": "Date",
+          "description_nl": "Datum van aanwijzing of vaststelling van het park",
+          "description_en": "Date of designation or establishment of the park"
+        },
+        {
+          "name": "fiat_secr",
+          "type": "String",
+          "description_nl": "Of de aanwijzing is goedgekeurd door de staatssecretaris (Ja/Nee/leeg)",
+          "description_en": "Whether the designation was approved by the Secretary of State (Ja=Yes, Nee=No, or blank)"
+        },
+        {
+          "name": "hectares",
+          "type": "Real",
+          "description_nl": "Oppervlakte van het park in hectare",
+          "description_en": "Area of the park in hectares"
+        },
+        {
+          "name": "instrument",
+          "type": "String",
+          "description_nl": "Type beschermingsinstrument (altijd 'Nationaal Park')",
+          "description_en": "Type of protection instrument (always 'Nationaal Park')"
+        },
+        {
+          "name": "naam",
+          "type": "String",
+          "description_nl": "Naam van het Nationale Park",
+          "description_en": "Name of the National Park"
+        },
+        {
+          "name": "nr",
+          "type": "Integer",
+          "description_nl": "Volgnummer van het park (chronologische nummering)",
+          "description_en": "Sequential number of the park (chronological numbering)"
+        },
+        {
+          "name": "objectid",
+          "type": "Integer",
+          "description_nl": "Intern objectnummer in de brondata",
+          "description_en": "Internal object ID in the source data"
+        }
+      ]
+    }
+  ],
+  "context": {
+    "what_is_it": "The official boundaries of the 21 Nationale Parken (National Parks) of the Netherlands. These are large, contiguous natural areas designated for their ecological, landscape, and recreational value. The dataset is maintained by RVO and published through PDOK. Parks range from coastal dunes (Zuid-Kennemerland, Duinen van Texel) to forests (De Hoge Veluwe, Veluwezoom), wetlands (De Biesbosch, Weerribben-Wieden), heathlands (Dwingelderveld, Sallandse Heuvelrug), and even a tidal estuary (Oosterschelde).",
+    "why_important": "National Parks represent the most important large natural areas in the Netherlands. They serve as anchors for biodiversity conservation, nature-based recreation, and environmental education. Since the 2023 reform, provinces manage the parks with support from the Nationale Parken Bureau, giving parks a stronger governance framework and connecting them to regional spatial planning.",
+    "common_uses": [
+      "Nature conservation planning and spatial analysis",
+      "Tourism and recreation planning — park visitor infrastructure",
+      "Environmental impact assessment — checking proximity to protected areas",
+      "Overlap analysis with Natura 2000 areas and NNN (Natuurnetwerk Nederland)",
+      "Educational and informational mapping products",
+      "Land use and landscape change analysis over time"
+    ],
+    "related_datasets": [
+      {
+        "name": "Natura 2000",
+        "provider": "RVO / Ministry of Agriculture, Nature and Food Quality",
+        "relationship": "EU-level protected nature areas. Many National Parks overlap with Natura 2000 sites, but they are distinct legal designations. Natura 2000 areas are designated under the EU Birds and Habitats Directives.",
+        "pdok_url": "https://www.pdok.nl/introductie/-/cms/natura-2000"
+      },
+      {
+        "name": "Natuurnetwerk Nederland (NNN)",
+        "provider": "Provinces",
+        "relationship": "The national ecological network. NNN includes all National Parks but is much larger, also covering ecological corridors and development areas. NNN boundaries are set by provinces."
+      },
+      {
+        "name": "Beschermde Natuurmonumenten",
+        "provider": "RVO",
+        "relationship": "Legally protected nature monuments under the Wet natuurbescherming. Some overlap with National Parks but are a separate legal category."
+      },
+      {
+        "name": "UNESCO World Heritage Sites (Natural)",
+        "provider": "Various",
+        "relationship": "The Waddenzee is both a World Heritage Site and borders several National Parks (Schiermonnikoog, Duinen van Texel)."
+      }
+    ],
+    "caveats": [
+      "The dataset has only 21 features — it is a complete enumeration, not a sample.",
+      "Some parks have complex multi-polygon boundaries that include water bodies, making area calculations from geometry potentially different from the 'hectares' attribute.",
+      "The 'bron' (source) field shows the organization that supplied each boundary; different sources may have used different digitization methods and precision levels.",
+      "As of 2024, the system is evolving — the newest park (Van Gogh, nr 22, designated 2024-10-15) demonstrates that new parks can be added.",
+      "The oldest parks (Veluwezoom 1930, De Hoge Veluwe 1935) predate the modern National Parks system that was formalized in the 1980s.",
+      "One park (Duinen van Texel) has a blank 'fiat_secr' value, meaning it may not have received formal Secretary of State approval.",
+      "CRS is EPSG:28992 (Dutch RD New) — reprojection to EPSG:4326 is needed for web mapping and GeoParquet in Portolan."
+    ]
+  },
+  "parks_list": [
+    { "nr": 1, "naam": "Veluwezoom", "hectares": 5014.75, "datum": "1930-01-01", "bron": "Natuurmonumenten" },
+    { "nr": 2, "naam": "De Hoge Veluwe", "hectares": 5104.64, "datum": "1935-01-01", "bron": "St. Hoge Veluwe" },
+    { "nr": 3, "naam": "Schiermonnikoog", "hectares": 6838.29, "datum": "1989-07-19", "bron": "Prov. Friesland" },
+    { "nr": 4, "naam": "Dwingelderveld", "hectares": 3765.68, "datum": "1991-08-22", "bron": "NP2002+BIP" },
+    { "nr": 5, "naam": "De Groote Peel", "hectares": 1314.05, "datum": "1993-07-01", "bron": "NP2002+BIP+secr." },
+    { "nr": 6, "naam": "De Biesbosch", "hectares": 8980.20, "datum": "1994-03-10", "bron": "SBB Noord-Brabant" },
+    { "nr": 7, "naam": "De Meinweg", "hectares": 2063.82, "datum": "1995-06-08", "bron": "NP2002+BIP+secr." },
+    { "nr": 8, "naam": "Zuid-Kennemerland", "hectares": 3567.65, "datum": "1995-11-21", "bron": "NP2002+BIP" },
+    { "nr": 9, "naam": "De Maasduinen", "hectares": 4170.53, "datum": "1996-10-30", "bron": "prov. Limburg" },
+    { "nr": 10, "naam": "Drents-Friese Wold", "hectares": 5551.63, "datum": "1999-07-22", "bron": "NP2002+BIP" },
+    { "nr": 11, "naam": "Grenspark De Zoom - Kalmthoutse Heide", "hectares": 3832.79, "datum": "2001-07-17", "bron": "NP1999+JPG secr." },
+    { "nr": 13, "naam": "Duinen van Texel", "hectares": 4685.20, "datum": "2002-05-01", "bron": "NP2002+BIP" },
+    { "nr": 14, "naam": "Oosterschelde", "hectares": 37988.59, "datum": "2002-05-08", "bron": "Prov. Zeeland" },
+    { "nr": 15, "naam": "Drentsche Aa", "hectares": 33122.97, "datum": "2002-12-04", "bron": "Prov. Drenthe" },
+    { "nr": 16, "naam": "Utrechtse Heuvelrug", "hectares": 11342.40, "datum": "2013-10-01", "bron": "prov. Utrecht" },
+    { "nr": 17, "naam": "Lauwersmeer", "hectares": 6009.97, "datum": "2003-11-12", "bron": "Prov. Friesland" },
+    { "nr": 18, "naam": "Sallandse Heuvelrug", "hectares": 2732.68, "datum": "2004-10-16", "bron": "NP2002+BIP+secr." },
+    { "nr": 19, "naam": "De Alde Feanen", "hectares": 3374.27, "datum": "2006-04-26", "bron": "Prov. Friesland" },
+    { "nr": 20, "naam": "Weerribben-Wieden", "hectares": 10269.65, "datum": "2009-01-01", "bron": "Prov. Overijssel" },
+    { "nr": 21, "naam": "Nieuw Land", "hectares": 28903.83, "datum": "2018-10-01", "bron": "Prov. Flevoland" },
+    { "nr": 22, "naam": "Van Gogh", "hectares": 49264.97, "datum": "2024-10-15", "bron": "prov. Noord-Brabant" }
+  ]
+}

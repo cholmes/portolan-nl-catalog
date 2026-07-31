@@ -1,0 +1,42 @@
+{
+  "version": 8,
+  "name": "Tunnels — Default",
+  "sources": {
+    "rws": {
+      "type": "vector",
+      "url": "pmtiles://../fme_disk_tunnels.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "tunnels-circle",
+      "type": "circle",
+      "source": "rws",
+      "source-layer": "fme_disk_tunnels",
+      "paint": {
+        "circle-radius": ["interpolate", ["linear"], ["zoom"], 6, 4, 12, 10],
+        "circle-color": "#D32F2F",
+        "circle-stroke-color": "#FFFFFF",
+        "circle-stroke-width": 1.5
+      }
+    },
+    {
+      "id": "tunnels-label",
+      "type": "symbol",
+      "source": "rws",
+      "source-layer": "fme_disk_tunnels",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{tunnelnaam}",
+        "text-size": 11,
+        "text-offset": [0, 1.5],
+        "text-font": ["Open Sans Regular"]
+      },
+      "paint": {
+        "text-color": "#333333",
+        "text-halo-color": "#FFFFFF",
+        "text-halo-width": 1
+      }
+    }
+  ]
+}

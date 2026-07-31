@@ -1,0 +1,238 @@
+{
+  "type": "Catalog",
+  "id": "luchtfoto_2024_kb20",
+  "stac_version": "1.1.0",
+  "description": "Kaartblad 20 covers the Markermeer lake and the reclaimed polders of south Flevoland, including Almere and the Eemnes area. The landscape is predominantly flat reclaimed land with modern planned cities and open water. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the Beeldmateriaal Nederland summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../../../catalog.json",
+      "type": "application/json",
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "self",
+      "href": "https://data.source.coop/cholmes/portolan-nl/beeldmateriaal/luchtfoto_2024/kb20/catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20an1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20AN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20an2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20AN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20az1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20AZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20az2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20AZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20bn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20BN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20bn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20BN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20bz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20BZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20bz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20BZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20cn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20CN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20cn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20CN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20cz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20CZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20cz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20CZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20dn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20DN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20dn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20DN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20dz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20DZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20dz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20DZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20en1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20EN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20en2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20EN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20ez1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20EZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20ez2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20EZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20fn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20FN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20fn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20FN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20fz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20FZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20fz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20FZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20gn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20GN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20gn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20GN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20gz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20GZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20gz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20GZ2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20hn1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20HN1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20hn2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20HN2"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20hz1.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20HZ1"
+    },
+    {
+      "rel": "item",
+      "href": "./luchtfoto-2024-20hz2.json",
+      "type": "application/geo+json",
+      "title": "Luchtfoto 2024 — Tile 20HZ2"
+    },
+    {
+      "rel": "parent",
+      "href": "../collection.json",
+      "type": "application/json",
+      "title": "Luchtfoto 2024 — Aerial Orthophotos"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          5.1652371,
+          52.4871413,
+          5.7571482,
+          52.7123953
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2024-04-01T00:00:00Z",
+          "2024-09-30T00:00:00Z"
+        ]
+      ]
+    }
+  },
+  "title": "KB 20 — Lelystad / Markermeer"
+}
