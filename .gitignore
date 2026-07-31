@@ -9,6 +9,7 @@
 *.tif
 *.zip
 *.zarr
+*.gz
 
 # Source downloads staged for conversion. Each staging collection has a
 # download.sh that refetches these, so they are never committed.
