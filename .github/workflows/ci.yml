@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # test_stac_valid.py SKIPs without this, so CI is where it is enforced.
+      - name: Install stac-check (STAC validation)
+        run: python -m pip install stac-check
+
+      - name: Run catalog tests
+        run: |
+          python3 tests/test_publish.py
+          python3 tests/test_links.py
+          python3 tests/test_git_ext.py
+          python3 tests/test_thumbnails.py
+          python3 tests/test_stac_valid.py

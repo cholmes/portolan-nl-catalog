@@ -2,8 +2,8 @@
 """Metadata-only publisher for the Portolan NL catalog.
 
 Reads catalog.publish.yaml and syncs everything under the configured publish_dir
-(the catalog/ tree) 1:1 to S3, skipping only .portolan/config.yaml and
-.portolan/state.json. Never uploads data (*.parquet/*.pmtiles/*.gpkg/*.tif),
+(the catalog/ tree) 1:1 to S3, skipping only Portolan's internal bookkeeping (see
+_is_portolan_internal). Never uploads data (*.parquet/*.pmtiles/*.gpkg/*.tif),
 tools/, staging/, or config.
 
 Objects whose bytes already match S3 are skipped. The remote side is read by listing
