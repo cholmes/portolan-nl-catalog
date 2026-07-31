@@ -26,14 +26,24 @@ a git repository that holds catalog **metadata only**, with a clean publish dire
 4. FTW's tests and CI, adapted.
 5. Thumbnails converted to WebP, every file under 50 KB.
 
+## Delivery phases
+
+The work splits into three phases, each landing independently. **This spec details phase 1**;
+phases 2 and 3 are scoped here and get their own plans.
+
+| Phase | Scope | State |
+|---|---|---|
+| **1 — Land the repo** | git repo, `catalog/` + `staging/` split, `publish.py`, tests, CI, WebP thumbnails, scripts **relocated as-is** into `tools/` | this spec |
+| **2 — Refactor `tools/`** | extract the shared `lib/` modules behind a golden-output diff | scoped in §4 |
+| **3 — Portolan spec upgrade** | 0.1 plus spec PRs #97 and #116, bleeding edge | scoped in §7 |
+
+Phase 1 deliberately relocates the eleven generator scripts without touching their internals,
+so the repo can land and be verified against S3 before any behaviour changes.
+
 ## Non-goals
 
 Explicitly deferred, each recorded here so it is not silently lost:
 
-- **Portolan 0.1 conformance.** The catalog is not conformant today: only 1 of 35
-  catalogs/collections declares the Portolan schema URI, and none of the 270 assets carry the
-  `file` extension, `file:size`, or `file:checksum`. Providers are absent. Bringing over
-  `test_portolan_conformance.py` would fail wholesale. This gets its own spec.
 - **`kadaster/inspire_buildings/`.** Built locally (517 item JSONs + 512 parquet), never
   published. Not migrated; it stays in the old working directory.
 - **Consolidating the two metadata trees.** See "Accepted risk" below.
@@ -171,9 +181,13 @@ test suite or to publish.
 
 ### 4. `tools/`
 
-The eleven existing scripts move into `tools/` and the genuinely duplicated logic is extracted.
-Every `lib/` module below is justified by **two or more** existing scripts that currently
-duplicate it — nothing is speculative.
+**Phase 1** relocates the eleven existing scripts into `tools/` unchanged, with a
+`tools/README.md` indexing them. Only two things are new in phase 1: `tools/catalog/publish.py`
+(ported from FTW) and `tools/catalog/make_thumbnails.py` (§3). Scripts keep working because
+each computes its own paths; nothing is rewired.
+
+**Phase 2** extracts the shared logic. Every `lib/` module below is justified by **two or more**
+existing scripts that currently duplicate it — nothing is speculative.
 
 ```
 tools/
@@ -236,7 +250,7 @@ Dropped:
 
 Deferred:
 
-- `test_portolan_conformance.py` — lands with the conformance spec.
+- `test_portolan_conformance.py` — lands in phase 3 (§7).
 
 Tests stay dependency-free and SKIP cleanly when `stac-check` is absent, so local runs are
 zero-setup. CI (`.github/workflows/ci.yml`) mirrors FTW's: Ubuntu, Python 3.11,
@@ -253,6 +267,43 @@ zero-setup. CI (`.github/workflows/ci.yml`) mirrors FTW's: Ubuntu, Python 3.11,
 ```
 
 plus `vcs` and `issues` links. These are non-spec extras; `rashid` ignores them.
+
+### 7. Phase 3 — Portolan spec upgrade (scoped, not detailed here)
+
+Target **Portolan 0.1 plus two in-flight spec PRs**, deliberately bleeding edge:
+
+- **[portolan-spec#97](https://github.com/portolan-sdi/portolan-spec/pull/97)** — the default
+  style is named by a second asset role. When a collection has more than one style, exactly one
+  style asset carries both `style` and `default` in `roles`. `PORTO-CORE-070` moves
+  `SHOULD`/`process` → `MUST`/`validator`. The PR's earlier reserved-key idea (`style-default`)
+  was dropped in review, so **asset keys need no change**. Companion: rashid#63, new
+  `PTL-VIZ-006`.
+- **[portolan-spec#116](https://github.com/portolan-sdi/portolan-spec/pull/116)** —
+  `PORTO-CORE-028` (`file:size`, `file:checksum`) becomes a `SHOULD`. 029/030 stay `MUST` but
+  bind only assets that *declare* the fields: a declared checksum must be multihash and must
+  match the bytes at `href`. The profile schema drops both from asset `required`.
+  Companion: rashid#90.
+
+Both PRs are **open** as of 2026-07-31. Phase 3 must not start until their merge state is
+re-checked, and it needs `rashid` at a revision that includes #63 and #90.
+
+Measured scope against the current catalog:
+
+| Item | Count | Note |
+|---|---|---|
+| Style assets already carrying `roles:["style"]` | 63 / 63 | nothing to do |
+| Collections with >1 style lacking a `default` role | **18** | the #97 work |
+| Collections with exactly 1 style | 11 | #97 does not apply |
+| Catalogs/collections missing the Portolan schema URI | 34 / 35 | |
+| Collections with `portolan:styles` | 29 / 33 | non-standard, retained to drive the browser |
+| Assets lacking `file:size` / `file:checksum` | 270 / 270 | now `SHOULD` under #116 |
+| Collections with `providers` | 0 | needs exactly one `host`, listed last |
+
+#116 is what makes this phase affordable: without it, conformance required sha256 over ~50 GB
+of local data. With it, `file:size` can be filled cheaply from `stat` and checksums deferred —
+so long as nothing declares a value it cannot back up.
+
+Phase 3 brings over FTW's `test_portolan_conformance.py` as the CI gate.
 
 ## Accepted risk: two metadata trees
 
@@ -278,7 +329,7 @@ mode into a loud one without constraining how the working directory is used.
   the `catalog/`/`staging/` split, `tools/`, the tests, the WebP thumbnail rule, and the
   two-trees risk.
 
-## Success criteria
+## Success criteria — phase 1
 
 1. `~/repos/portolan-nl-catalog` exists, is a git repo on `main`, and pushes to
    `github.com/cholmes/portolan-nl-catalog`.
@@ -288,7 +339,18 @@ mode into a loud one without constraining how the working directory is used.
    reproduces what is live. After the WebP conversion the same dry run should report exactly the
    405 new `.webp` objects plus the JSON files whose hrefs changed, and nothing else.
 4. Every thumbnail in `catalog/` is WebP and under 50 KB; repo is under ~35 MB.
-5. Regenerating any relocated generator script produces byte-identical output, or the deviation
-   is documented.
+5. All eleven generator scripts are relocated under `tools/` and indexed in `tools/README.md`;
+   none has had its internals changed.
 6. `tools/catalog/diff_workdir.py` runs against the working directory and reports only the
    known, documented exclusions.
+7. The one-time S3 cleanup has removed `CLAUDE.md`, `context/`, and the superseded `.png`
+   thumbnails from the published prefix.
+
+## Success criteria — phases 2 and 3
+
+Recorded so they are not lost; each gets its own plan.
+
+- **Phase 2:** every extraction produces byte-identical output against the committed originals,
+  or the deviation is documented and the script left unrefactored.
+- **Phase 3:** `rashid check catalog` passes against a build including spec PRs #97 and #116;
+  `test_portolan_conformance.py` is enabled in CI.
