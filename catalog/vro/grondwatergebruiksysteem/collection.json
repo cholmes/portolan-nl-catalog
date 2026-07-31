@@ -34,6 +34,11 @@
       "title": "PDOK WMS (GetCapabilities)"
     },
     {
+      "rel": "pmtiles",
+      "href": "https://data.source.coop/cholmes/portolan-nl/vro/grondwatergebruiksysteem/grondwatergebruiksysteem.pmtiles",
+      "type": "application/vnd.pmtiles"
+    },
+    {
       "rel": "llms",
       "href": "./llms.txt",
       "type": "text/markdown",
