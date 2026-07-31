@@ -1,0 +1,10 @@
+.env
+*.parquet
+*.pmtiles
+*.gpkg
+*.tif
+*.zip
+*.zarr
+__pycache__/
+*.pyc
+.DS_Store
