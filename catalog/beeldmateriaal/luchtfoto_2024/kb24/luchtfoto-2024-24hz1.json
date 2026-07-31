@@ -119,8 +119,8 @@
       ]
     },
     "thumbnail": {
-      "href": "./luchtfoto-2024-24hz1-thumbnail.png",
-      "type": "image/png",
+      "href": "./luchtfoto-2024-24hz1-thumbnail.webp",
+      "type": "image/webp",
       "title": "Thumbnail",
       "roles": [
         "thumbnail"

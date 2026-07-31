@@ -227,8 +227,8 @@
       ]
     },
     "thumbnail": {
-      "href": "./thumbnail_.png",
-      "type": "image/png",
+      "href": "./thumbnail_.webp",
+      "type": "image/webp",
       "roles": [
         "thumbnail"
       ]
@@ -263,8 +263,8 @@
       ]
     },
     "thumbnail.png": {
-      "href": "./thumbnail.png",
-      "type": "image/png",
+      "href": "./thumbnail.webp",
+      "type": "image/webp",
       "roles": [
         "thumbnail"
       ]

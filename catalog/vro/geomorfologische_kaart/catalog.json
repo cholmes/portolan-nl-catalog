@@ -24,8 +24,8 @@
     },
     {
       "rel": "preview",
-      "href": "./thumbnail.png",
-      "type": "image/png",
+      "href": "./thumbnail.webp",
+      "type": "image/webp",
       "title": "Thumbnail (PDOK preview)"
     },
     {
@@ -49,8 +49,8 @@
   ],
   "assets": {
     "thumbnail": {
-      "href": "./thumbnail.png",
-      "type": "image/png",
+      "href": "./thumbnail.webp",
+      "type": "image/webp",
       "title": "Thumbnail (PDOK preview)",
       "roles": [
         "thumbnail"

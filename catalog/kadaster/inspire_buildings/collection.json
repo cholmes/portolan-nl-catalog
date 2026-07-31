@@ -2,13 +2,13 @@
   "type": "Collection",
   "id": "inspire_buildings",
   "stac_version": "1.1.0",
-  "description": "All buildings in the Netherlands from the BAG (Basisregistratie Adressen en Gebouwen), harmonized to the EU INSPIRE Buildings schema. Contains 24.2 million building footprint polygons with construction dates and BAG identifiers. Includes both current and historical versions \u2014 records with endLifespanVersion = null are the current version. Published by Kadaster via PDOK.",
+  "description": "All buildings in the Netherlands from the BAG (Basisregistratie Adressen en Gebouwen), harmonized to the EU INSPIRE Buildings schema. Contains 24.2 million building footprint polygons with construction dates and BAG identifiers. Includes both current and historical versions — records with endLifespanVersion = null are the current version. Published by Kadaster via PDOK.",
   "links": [
     {
       "rel": "root",
       "href": "../../catalog.json",
       "type": "application/json",
-      "title": "Portolan NL \u2014 Cloud-Native Dutch Geodata"
+      "title": "Portolan NL — Cloud-Native Dutch Geodata"
     },
     {
       "rel": "self",
@@ -218,8 +218,8 @@
       ]
     },
     "thumbnail": {
-      "href": "./thumbnail_.png",
-      "type": "image/png",
+      "href": "./thumbnail_.webp",
+      "type": "image/webp",
       "roles": [
         "thumbnail"
       ]
@@ -227,7 +227,7 @@
     "styles/default": {
       "href": "./styles/default.json",
       "type": "application/json",
-      "title": "INSPIRE Buildings \u2014 Default",
+      "title": "INSPIRE Buildings — Default",
       "roles": [
         "style"
       ]
@@ -235,7 +235,7 @@
     "styles/by-construction-date": {
       "href": "./styles/by-construction-date.json",
       "type": "application/json",
-      "title": "INSPIRE Buildings \u2014 By Construction Date",
+      "title": "INSPIRE Buildings — By Construction Date",
       "roles": [
         "style"
       ]
@@ -262,8 +262,8 @@
       ]
     },
     "thumbnail.png": {
-      "href": "./thumbnail.png",
-      "type": "image/png",
+      "href": "./thumbnail.webp",
+      "type": "image/webp",
       "roles": [
         "thumbnail"
       ]

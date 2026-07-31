@@ -185,7 +185,6 @@
     "buildings",
     "buildings-overview"
   ],
-  "title": "3D BAG",
   "extent": {
     "spatial": {
       "bbox": [
@@ -193,7 +192,7 @@
           3.36,
           50.75,
           7.23,
-          53.50
+          53.5
         ]
       ]
     },
@@ -210,12 +209,17 @@
   "providers": [
     {
       "name": "3D Geoinformation Research Group, TU Delft",
-      "roles": ["producer", "licensor"],
+      "roles": [
+        "producer",
+        "licensor"
+      ],
       "url": "https://3d.bk.tudelft.nl/"
     },
     {
       "name": "3DGI",
-      "roles": ["producer"],
+      "roles": [
+        "producer"
+      ],
       "url": "https://3dgi.xyz/"
     }
   ],
@@ -279,8 +283,8 @@
       ]
     },
     "thumbnail": {
-      "href": "./thumbnail.jpg",
-      "type": "image/jpeg",
+      "href": "./thumbnail.webp",
+      "type": "image/webp",
       "roles": [
         "thumbnail"
       ]
