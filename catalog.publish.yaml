@@ -1,0 +1,8 @@
+# What publishes, and where. Everything under publish_dir is uploaded 1:1.
+# Data files are NEVER placed in publish_dir, so they cannot be published.
+write_prefix: s3://us-west-2.opendata.source.coop/cholmes/portolan-nl
+public_base: https://data.source.coop/cholmes/portolan-nl
+region: us-west-2
+
+# The catalog directory, synced 1:1 to write_prefix.
+publish_dir: catalog
