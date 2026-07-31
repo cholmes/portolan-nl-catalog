@@ -2,6 +2,9 @@
   "type": "Catalog",
   "id": "portolan-nl",
   "stac_version": "1.1.0",
+  "git:repository": "https://github.com/cholmes/portolan-nl-catalog",
+  "git:ref": "main",
+  "git:provider": "github",
   "description": "A demonstration of Portolan as cloud-native infrastructure for the disclosure of open geodatasets from Dutch government authorities. Inspired by PDOK (Publieke Dienstverlening Op de Kaart), this catalog provides current and reliable geo-information as GeoParquet, PMTiles, and STAC metadata — open, standards-based, and freely accessible to everyone.",
   "links": [
     {
@@ -20,6 +23,24 @@
       "href": "https://source.coop/cholmes/portolan-nl/README.md",
       "type": "text/html",
       "title": "Portolan NL — Cloud-Native Dutch Geodata documentation"
+    },
+    {
+      "rel": "icon",
+      "href": "https://portolan-sdi.github.io/portolan-nl-demo/rijksoverheid.png",
+      "type": "image/png",
+      "title": "Rijksoverheid logo"
+    },
+    {
+      "rel": "vcs",
+      "href": "https://github.com/cholmes/portolan-nl-catalog",
+      "type": "text/html",
+      "title": "Source repository"
+    },
+    {
+      "rel": "issues",
+      "href": "https://github.com/cholmes/portolan-nl-catalog/issues",
+      "type": "text/html",
+      "title": "Issue tracker"
     },
     {
       "rel": "child",
