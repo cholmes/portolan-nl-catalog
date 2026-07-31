@@ -158,8 +158,11 @@ removed by hand once:
 
 ### 3. Thumbnails → WebP
 
-`tools/catalog/make_thumbnails.py` converts all 405 PNG thumbnails (358 under
-`beeldmateriaal/`, 47 collection-level) to WebP.
+`tools/catalog/make_thumbnails.py` converts every PNG thumbnail to WebP. The selector is exact
+and self-defining: **every asset whose `roles` contains `thumbnail` and whose `href` ends in
+`.png`**. Measured: **390 such assets across 388 JSON files**, all 390 files present on disk,
+and **zero** PNG assets that are not thumbnails. `beeldmateriaal/logo.png` and `logo-mark.png`
+are not referenced as assets and stay PNG.
 
 **Encoding rule**, benchmarked on 120 real files:
 
@@ -172,7 +175,7 @@ Measured across the 120-file sample: **avg 37 KB, max 47 KB**, 38 files needing 
 Native resolution is retained — the byte target does the work, so no detail is lost to resizing.
 
 The script also rewrites every reference: `href` `.png` → `.webp` and `type` → `image/webp`,
-across the 358 beeldmateriaal item JSONs and the 47 `collection.json` files.
+across all 388 affected JSON files.
 
 Expected result: **170 MB → ~14.5 MB**; whole repo ~30 MB.
 
@@ -335,9 +338,11 @@ mode into a loud one without constraining how the working directory is used.
    `github.com/cholmes/portolan-nl-catalog`.
 2. All five tests pass locally and in CI.
 3. **Seeding fidelity**, checked *before* the WebP conversion: `python3 tools/catalog/publish.py`
-   (dry run) reports **zero** changes against the current S3 state, proving the repo faithfully
-   reproduces what is live. After the WebP conversion the same dry run should report exactly the
-   405 new `.webp` objects plus the JSON files whose hrefs changed, and nothing else.
+   (dry run) reports no changes against the current S3 state other than `.portolan/metadata.yaml`,
+   which the working directory holds locally but has never published. Anything else means the copy
+   diverged. After the WebP conversion the same dry run reports exactly the 390 new `.webp`
+   objects, the 388 rewritten JSON files, and `catalog.json` — nothing else. After publishing,
+   a final dry run reports zero changes.
 4. Every thumbnail in `catalog/` is WebP and under 50 KB; repo is under ~35 MB.
 5. All eleven generator scripts are relocated under `tools/` and indexed in `tools/README.md`;
    none has had its internals changed.
