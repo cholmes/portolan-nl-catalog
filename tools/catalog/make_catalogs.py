@@ -81,7 +81,6 @@ bodem = {
         child("./soilarea/collection.json", "Soil areas (the soil map)"),
         child("./areaofpedologicalinterest/collection.json", "Area of pedological interest"),
     ],
-    "assets": {"thumbnail": stac.thumbnail_asset()},
 }
 bodem["links"] += [stac.describedby_link(bodem["title"]), stac.agents_link()]
 bodem["stac_extensions"] = [PORTOLAN_SCHEMA]
@@ -113,7 +112,6 @@ geom = {
               "Area of geomorphological interest"),
         child("./geomorphological_area_collection/collection.json", "Map area collections"),
     ],
-    "assets": {"thumbnail": stac.thumbnail_asset()},
 }
 geom["links"] += [stac.describedby_link(geom["title"]), stac.agents_link()]
 geom["stac_extensions"] = [PORTOLAN_SCHEMA]

@@ -74,9 +74,16 @@
       "rel": "agents",
       "href": "./AGENTS.md",
       "type": "text/markdown"
+    },
+    {
+      "rel": "child",
+      "href": "./nwb_wegen/collection.json",
+      "type": "application/json",
+      "title": "National Road Network (NWB Wegen)"
     }
   ],
   "stac_extensions": [
     "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
-  ]
+  ],
+  "updated": "2026-07-31T23:32:32Z"
 }

@@ -4,12 +4,6 @@ Portolan catalog — `vro/geomorfologische_kaart`
 
 The national Geomorphological Map of the Netherlands at scale 1:50,000 (BRO object GMM), produced by Wageningen Environmental Research. The source GeoPackage holds three distinct polygon layers, published here as separate collections:
 
-## Assets
-
-| Key | File | Type | Roles |
-|---|---|---|---|
-| `thumbnail` | `./thumbnail.webp` | image/webp | thumbnail |
-
 ## Contains
 
 - 3 child catalog(s) or collection(s)

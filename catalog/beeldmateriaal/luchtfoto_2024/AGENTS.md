@@ -13,7 +13,7 @@ Field descriptions, query examples and caveats are in [`llms.txt`](./llms.txt). 
 | Key | File | Type | Roles |
 |---|---|---|---|
 | `documentation` | `./llms.txt` | text/plain | documentation |
-| `items` | `./items.parquet` | application/x-parquet | data |
+| `items` | `./items.parquet` | application/vnd.apache.parquet | data, collection-mirror |
 | `README` | `./README.md` | text/markdown | documentation |
 
 ## Contains

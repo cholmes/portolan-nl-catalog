@@ -123,5 +123,6 @@
   "title": "KB 24 — Haarlem / IJmond",
   "stac_extensions": [
     "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
-  ]
+  ],
+  "updated": "2026-07-31T23:24:06Z"
 }

@@ -10,7 +10,7 @@ Field descriptions, query examples and caveats are in [`llms.txt`](./llms.txt). 
 
 ## Contains
 
-- 6 child catalog(s) or collection(s)
+- 8 child catalog(s) or collection(s)
 
 See the links in [`catalog.json`](./catalog.json).
 

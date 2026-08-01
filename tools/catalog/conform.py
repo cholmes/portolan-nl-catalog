@@ -354,16 +354,128 @@ def _updated(doc, path):
     S3 listing records. Refresh it with:
       aws s3 ls s3://.../cholmes/portolan-nl/ --recursive > /tmp/s3now.txt
     """
-    if doc.get("type") != "Collection" or doc.get("updated"):
+    if doc.get("type") not in ("Collection", "Catalog") or doc.get("updated"):
         return False
     if not _S3_TIMES:
         _load_s3_times()
     base = path.parent.relative_to(CATALOG).as_posix()
-    stamps = [v for k, v in _S3_TIMES.items() if k.startswith(base + "/")]
+    stamps = ([v for k, v in _S3_TIMES.items() if k.startswith(base + "/")]
+              if base != "." else list(_S3_TIMES.values()))
     if not stamps:
         return False
     doc["updated"] = max(stamps)
     return True
+
+
+# --------------------------------------------------------------------------
+# Navigation and structure
+# --------------------------------------------------------------------------
+
+@fix("PTL-LNK-002", "add child links to contained objects the parent never listed")
+def _child_links(doc, path):
+    """Four collections exist on disk and on S3 but nothing links to them.
+
+    They are unreachable by crawling the catalog, which is how every client
+    finds anything. This is a real navigation bug, not a formality.
+    """
+    if doc.get("type") != "Catalog" or path.name != "catalog.json":
+        return False
+    links = doc.setdefault("links", [])
+    have = {str(l.get("href")) for l in links if isinstance(l, dict) and l.get("rel") == "child"}
+    changed = False
+    for child in sorted(path.parent.iterdir()):
+        if not child.is_dir() or child.name.startswith("."):
+            continue
+        for name in ("collection.json", "catalog.json"):
+            target = child / name
+            if not target.is_file():
+                continue
+            href = f"./{child.name}/{name}"
+            if href in have:
+                break
+            cdoc = load(target) or {}
+            links.append({"rel": "child", "href": href, "type": "application/json",
+                          "title": cdoc.get("title") or cdoc.get("id") or child.name})
+            changed = True
+            break
+    return changed
+
+
+@fix("PTL-LNK-006", "rel:parent points at the containing object")
+def _parent_link(doc, path):
+    # Catalogs and collections only. An item's parent is the catalog sitting in
+    # its own directory; walking up from the item finds the grandparent instead
+    # and would repoint all 357 luchtfoto items at the wrong object.
+    if doc.get("type") not in ("Catalog", "Collection"):
+        return False
+    target = None
+    for parent in path.parent.parents:
+        for name in ("catalog.json", "collection.json"):
+            if (parent / name).is_file():
+                target = parent / name
+                break
+        if target or parent == CATALOG:
+            break
+    if target is None:
+        return False
+    href = "./" + os.path.relpath(target, path.parent).replace(os.sep, "/")
+    href = href.replace("./../", "../")
+    changed = False
+    for l in doc.get("links") or []:
+        if isinstance(l, dict) and l.get("rel") == "parent" and l.get("href") != href:
+            l["href"] = href
+            changed = True
+    return changed
+
+
+@fix("PTL-TTL-001", "give every catalog and collection a title")
+def _title(doc, path):
+    # Items carry their title under properties; Portolan asks only catalogs and
+    # collections for a top-level one.
+    if doc.get("type") not in ("Catalog", "Collection"):
+        return False
+    if doc.get("title"):
+        return False
+    ident = doc.get("id") or path.parent.name
+    # Turn an id like inspire_buildings into "Inspire Buildings" -- a placeholder
+    # worth replacing by hand, but better than nothing for a browser's tree.
+    doc["title"] = ident.replace("_", " ").replace("-", " ").title()
+    return True
+
+
+@fix("PTL-AST-005", "move thumbnails off catalogs, which may not declare assets")
+def _catalog_assets(doc, path):
+    """Two vro subcatalogs declare a thumbnail asset.
+
+    Portolan puts assets on collections and items only. Both catalogs already
+    carry a rel:preview link to the same file, so dropping the asset loses no
+    reachability -- the thumbnail is still discoverable and still published.
+    """
+    if doc.get("type") != "Catalog" or not doc.get("assets"):
+        return False
+    previews = {str(l.get("href")) for l in doc.get("links") or []
+                if isinstance(l, dict) and l.get("rel") == "preview"}
+    if not all(str(a.get("href")) in previews for a in doc["assets"].values()
+               if isinstance(a, dict)):
+        return False                 # something other than the previewed thumbnail; leave it
+    del doc["assets"]
+    return True
+
+
+@fix("PTL-MIR-002", "the collection mirror asset carries its role and media type")
+def _mirror_asset(doc, path):
+    a = (doc.get("assets") or {}).get("items")
+    if not isinstance(a, dict):
+        return False
+    changed = False
+    roles = a.get("roles") or []
+    if "collection-mirror" not in roles:
+        a["roles"] = [*roles, "collection-mirror"]
+        changed = True
+    if a.get("type") == "application/x-parquet":
+        a["type"] = "application/vnd.apache.parquet"
+        changed = True
+    return changed
 
 
 # --------------------------------------------------------------------------
