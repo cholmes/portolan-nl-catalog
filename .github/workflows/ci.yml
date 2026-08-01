@@ -25,4 +25,5 @@ jobs:
           python3 tests/test_links.py
           python3 tests/test_git_ext.py
           python3 tests/test_thumbnails.py
+          python3 tests/test_generators.py
           python3 tests/test_stac_valid.py
