@@ -322,6 +322,55 @@
       "roles": [
         "visual"
       ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Road network by authority",
+      "roles": [
+        "style",
+        "default"
+      ]
+    },
+    "styles/by-road-type": {
+      "href": "./styles/by-road-type.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Carriageways, cycle paths and footpaths",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/cycling-network": {
+      "href": "./styles/cycling-network.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Cycle paths only",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-route-class": {
+      "href": "./styles/by-route-class.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Motorways, N-roads and Euroroutes",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-direction": {
+      "href": "./styles/by-direction.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "One-way and two-way segments",
+      "roles": [
+        "style"
+      ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.webp",
+      "type": "image/webp",
+      "title": "National Road Network (NWB Wegen) (preview)",
+      "roles": [
+        "thumbnail"
+      ]
     }
   },
   "license": "CC0-1.0",
@@ -353,5 +402,12 @@
       "url": "https://source.coop/cholmes/portolan-nl"
     }
   ],
-  "updated": "2026-05-08T21:29:35Z"
+  "updated": "2026-05-08T21:29:35Z",
+  "portolan:styles": [
+    "styles/default",
+    "styles/by-road-type",
+    "styles/cycling-network",
+    "styles/by-route-class",
+    "styles/by-direction"
+  ]
 }

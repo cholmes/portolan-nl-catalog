@@ -15,6 +15,7 @@ Field descriptions, query examples and caveats are in [`llms.txt`](./llms.txt). 
 | `documentation` | `./llms.txt` | text/plain | documentation |
 | `items` | `./items.parquet` | application/vnd.apache.parquet | data, collection-mirror |
 | `README` | `./README.md` | text/markdown | documentation |
+| `thumbnail` | `./thumbnail.webp` | image/webp | thumbnail |
 
 ## Contains
 

@@ -17,6 +17,12 @@ Field descriptions, query examples and caveats are in [`llms.txt`](./llms.txt). 
 | `gemeenten` | `./gemeenten.parquet` | application/x-parquet | data |
 | `pmtiles` | `./wijken_buurten.pmtiles` | application/vnd.pmtiles | visual |
 | `thumbnail` | `./thumbnail.webp` | image/webp | thumbnail |
+| `styles/default` | `./styles/default.json` | application/vnd.mapbox.style+json | style, default |
+| `styles/by-population-density` | `./styles/by-population-density.json` | application/vnd.mapbox.style+json | style |
+| `styles/by-urbanity` | `./styles/by-urbanity.json` | application/vnd.mapbox.style+json | style |
+| `styles/by-age-65-plus` | `./styles/by-age-65-plus.json` | application/vnd.mapbox.style+json | style |
+| `styles/by-household-size` | `./styles/by-household-size.json` | application/vnd.mapbox.style+json | style |
+| `styles/by-single-person-households` | `./styles/by-single-person-households.json` | application/vnd.mapbox.style+json | style |
 
 ## Access
 

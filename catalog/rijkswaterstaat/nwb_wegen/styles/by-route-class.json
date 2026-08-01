@@ -1,0 +1,93 @@
+{
+  "version": 8,
+  "name": "Motorways, N-roads and Euroroutes",
+  "sources": {
+    "nwb_wegen": {
+      "type": "vector",
+      "url": "pmtiles://../nwb_wegen.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "nwb_wegen-other",
+      "type": "line",
+      "source": "nwb_wegen",
+      "source-layer": "nwb_wegen",
+      "filter": [
+        "==",
+        [
+          "get",
+          "routeltr"
+        ],
+        ""
+      ],
+      "paint": {
+        "line-color": "#e0e0e0",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          0.2,
+          12,
+          0.6
+        ]
+      }
+    },
+    {
+      "id": "nwb_wegen-routes",
+      "type": "line",
+      "source": "nwb_wegen",
+      "source-layer": "nwb_wegen",
+      "filter": [
+        "!=",
+        [
+          "get",
+          "routeltr"
+        ],
+        ""
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": [
+          "match",
+          [
+            "get",
+            "routeltr"
+          ],
+          "A",
+          "#d73027",
+          "N",
+          "#fdae61",
+          "E",
+          "#4575b4",
+          "S",
+          "#7f8c8d",
+          "#d9d9d9"
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          5,
+          0.6,
+          10,
+          1.8,
+          14,
+          4.0
+        ]
+      }
+    }
+  ]
+}

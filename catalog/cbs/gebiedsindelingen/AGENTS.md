@@ -40,6 +40,10 @@ Field descriptions, query examples and caveats are in [`llms.txt`](./llms.txt). 
 | `toeristengroep` | `./toeristengroep_gegeneraliseerd.parquet` | application/x-parquet | data |
 | `pmtiles` | `./gebiedsindelingen.pmtiles` | application/vnd.pmtiles | visual |
 | `thumbnail` | `./thumbnail.webp` | image/webp | thumbnail |
+| `styles/default` | `./styles/default.json` | application/vnd.mapbox.style+json | style, default |
+| `styles/mosaic` | `./styles/mosaic.json` | application/vnd.mapbox.style+json | style |
+| `styles/boundaries` | `./styles/boundaries.json` | application/vnd.mapbox.style+json | style |
+| `styles/labeled` | `./styles/labeled.json` | application/vnd.mapbox.style+json | style |
 
 ## Access
 

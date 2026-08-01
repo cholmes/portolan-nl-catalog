@@ -276,6 +276,22 @@ def _pmtiles_layers(doc, path):
     return changed
 
 
+@fix("PTL-VIZ-001", "register the collection's thumbnail.webp as a thumbnail asset")
+def _thumbnail_asset(doc, path):
+    if doc.get("type") != "Collection":
+        return False
+    if not (path.parent / "thumbnail.webp").is_file():
+        return False
+    assets = doc.setdefault("assets", {})
+    if any(isinstance(a, dict) and "thumbnail" in (a.get("roles") or [])
+           for a in assets.values()):
+        return False
+    assets["thumbnail"] = {"href": "./thumbnail.webp", "type": "image/webp",
+                           "title": f"{doc.get('title', path.parent.name)} (preview)",
+                           "roles": ["thumbnail"]}
+    return True
+
+
 @fix("PTL-VIZ-006", "the default style asset carries the 'default' role (spec PR #97)")
 def _default_style(doc, path):
     if doc.get("type") != "Collection":

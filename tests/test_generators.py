@@ -31,6 +31,7 @@ GENERATORS = [
     ("tools/catalog/make_catalogs.py", "vro subcatalog catalog.json"),
     ("tools/catalog/make_readmes.py", "vro README.md"),
     ("tools/catalog/make_llms.py", "vro llms.txt"),
+    ("tools/catalog/make_styles.py --confirm", "MapLibre styles for cbs/rws collections"),
     ("tools/catalog/make_docs_files.py --confirm", "AGENTS.md and missing README.md"),
     ("tools/collections/brp_gewaspercelen/generate_items.py", "brp item JSON"),
     ("tools/collections/brp_gewaspercelen/generate_year_docs.py", "brp year docs"),

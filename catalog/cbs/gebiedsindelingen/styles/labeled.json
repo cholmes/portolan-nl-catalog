@@ -1,0 +1,64 @@
+{
+  "version": 8,
+  "name": "Municipalities with names",
+  "sources": {
+    "gemeenten": {
+      "type": "vector",
+      "url": "pmtiles://../gebiedsindelingen.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "gemeenten-fill",
+      "type": "fill",
+      "source": "gemeenten",
+      "source-layer": "gemeenten",
+      "paint": {
+        "fill-color": "#f5f6fa",
+        "fill-opacity": 0.7
+      }
+    },
+    {
+      "id": "gemeenten-outline",
+      "type": "line",
+      "source": "gemeenten",
+      "source-layer": "gemeenten",
+      "paint": {
+        "line-color": "#7f8c8d",
+        "line-width": 0.5
+      }
+    },
+    {
+      "id": "gemeenten-label",
+      "type": "symbol",
+      "source": "gemeenten",
+      "source-layer": "gemeenten",
+      "minzoom": 7,
+      "layout": {
+        "text-field": [
+          "get",
+          "statnaam"
+        ],
+        "text-size": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          7,
+          9,
+          11,
+          14
+        ],
+        "text-allow-overlap": false
+      },
+      "paint": {
+        "text-color": "#2d3436",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1.2
+      }
+    }
+  ]
+}

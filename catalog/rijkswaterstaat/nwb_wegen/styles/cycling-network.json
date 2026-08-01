@@ -1,0 +1,78 @@
+{
+  "version": 8,
+  "name": "Cycle paths only",
+  "sources": {
+    "nwb_wegen": {
+      "type": "vector",
+      "url": "pmtiles://../nwb_wegen.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "nwb_wegen-context",
+      "type": "line",
+      "source": "nwb_wegen",
+      "source-layer": "nwb_wegen",
+      "filter": [
+        "!=",
+        [
+          "get",
+          "bst_code"
+        ],
+        "FP"
+      ],
+      "paint": {
+        "line-color": "#e8e8e8",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          0.2,
+          12,
+          0.8
+        ]
+      }
+    },
+    {
+      "id": "nwb_wegen-cycle",
+      "type": "line",
+      "source": "nwb_wegen",
+      "source-layer": "nwb_wegen",
+      "filter": [
+        "==",
+        [
+          "get",
+          "bst_code"
+        ],
+        "FP"
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": "#e67e22",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          0.4,
+          10,
+          1.2,
+          14,
+          3.0
+        ]
+      }
+    }
+  ]
+}

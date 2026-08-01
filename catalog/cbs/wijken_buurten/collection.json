@@ -355,6 +355,55 @@
       "roles": [
         "thumbnail"
       ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Neighbourhoods",
+      "roles": [
+        "style",
+        "default"
+      ]
+    },
+    "styles/by-population-density": {
+      "href": "./styles/by-population-density.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Population density (inhabitants per km²)",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-urbanity": {
+      "href": "./styles/by-urbanity.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "CBS urbanity class (1 very urban — 5 rural)",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-age-65-plus": {
+      "href": "./styles/by-age-65-plus.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Share of residents aged 65 and over (%)",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-household-size": {
+      "href": "./styles/by-household-size.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Average household size",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/by-single-person-households": {
+      "href": "./styles/by-single-person-households.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Share of single-person households (%)",
+      "roles": [
+        "style"
+      ]
     }
   },
   "license": "CC-BY-4.0",
@@ -383,5 +432,13 @@
       "url": "https://source.coop/cholmes/portolan-nl"
     }
   ],
-  "updated": "2026-07-31T23:32:05Z"
+  "updated": "2026-07-31T23:32:05Z",
+  "portolan:styles": [
+    "styles/default",
+    "styles/by-population-density",
+    "styles/by-urbanity",
+    "styles/by-age-65-plus",
+    "styles/by-household-size",
+    "styles/by-single-person-households"
+  ]
 }

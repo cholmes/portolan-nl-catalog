@@ -14,6 +14,12 @@ Field descriptions, query examples and caveats are in [`llms.txt`](./llms.txt). 
 |---|---|---|---|
 | `data` | `./nwb_wegen.parquet` | application/x-parquet | data |
 | `pmtiles` | `./nwb_wegen.pmtiles` | application/vnd.pmtiles | visual |
+| `styles/default` | `./styles/default.json` | application/vnd.mapbox.style+json | style, default |
+| `styles/by-road-type` | `./styles/by-road-type.json` | application/vnd.mapbox.style+json | style |
+| `styles/cycling-network` | `./styles/cycling-network.json` | application/vnd.mapbox.style+json | style |
+| `styles/by-route-class` | `./styles/by-route-class.json` | application/vnd.mapbox.style+json | style |
+| `styles/by-direction` | `./styles/by-direction.json` | application/vnd.mapbox.style+json | style |
+| `thumbnail` | `./thumbnail.webp` | image/webp | thumbnail |
 
 ## Access
 

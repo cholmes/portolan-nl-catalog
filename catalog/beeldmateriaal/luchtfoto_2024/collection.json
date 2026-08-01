@@ -352,6 +352,14 @@
       "roles": [
         "documentation"
       ]
+    },
+    "thumbnail": {
+      "href": "./thumbnail.webp",
+      "type": "image/webp",
+      "title": "Luchtfoto 2024 — Aerial Orthophotos (preview)",
+      "roles": [
+        "thumbnail"
+      ]
     }
   },
   "updated": "2026-07-31T23:31:49Z"

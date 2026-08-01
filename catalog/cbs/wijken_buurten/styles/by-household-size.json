@@ -1,0 +1,80 @@
+{
+  "version": 8,
+  "name": "Average household size",
+  "sources": {
+    "buurten": {
+      "type": "vector",
+      "url": "pmtiles://../wijken_buurten.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "buurten-water",
+      "type": "fill",
+      "source": "buurten",
+      "source-layer": "buurten",
+      "filter": [
+        "==",
+        [
+          "get",
+          "water"
+        ],
+        "JA"
+      ],
+      "paint": {
+        "fill-color": "#c9dced",
+        "fill-opacity": 0.6
+      }
+    },
+    {
+      "id": "buurten-fill",
+      "type": "fill",
+      "source": "buurten",
+      "source-layer": "buurten",
+      "filter": [
+        "!=",
+        [
+          "get",
+          "water"
+        ],
+        "JA"
+      ],
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "to-number",
+            [
+              "get",
+              "gemiddelde_huishoudsgrootte"
+            ],
+            -1
+          ],
+          "#edf8e9",
+          1.7,
+          "#c7e9c0",
+          2.0,
+          "#a1d99b",
+          2.3,
+          "#74c476",
+          2.5,
+          "#31a354",
+          2.7,
+          "#006d2c"
+        ],
+        "fill-opacity": 0.85
+      }
+    },
+    {
+      "id": "buurten-outline",
+      "type": "line",
+      "source": "buurten",
+      "source-layer": "buurten",
+      "paint": {
+        "line-color": "#ffffff",
+        "line-width": 0.2,
+        "line-opacity": 0.6
+      }
+    }
+  ]
+}

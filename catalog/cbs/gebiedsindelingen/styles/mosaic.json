@@ -1,0 +1,66 @@
+{
+  "version": 8,
+  "name": "Municipalities — distinguishable neighbours",
+  "sources": {
+    "gemeenten": {
+      "type": "vector",
+      "url": "pmtiles://../gebiedsindelingen.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "gemeenten-fill",
+      "type": "fill",
+      "source": "gemeenten",
+      "source-layer": "gemeenten",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "%",
+            [
+              "to-number",
+              [
+                "slice",
+                [
+                  "get",
+                  "statcode"
+                ],
+                2
+              ]
+            ],
+            8
+          ],
+          0,
+          "#66c2a5",
+          1,
+          "#fc8d62",
+          2,
+          "#8da0cb",
+          3,
+          "#e78ac3",
+          4,
+          "#a6d854",
+          5,
+          "#ffd92f",
+          6,
+          "#e5c494",
+          7,
+          "#b3b3b3",
+          "#b3b3b3"
+        ],
+        "fill-opacity": 0.75
+      }
+    },
+    {
+      "id": "gemeenten-outline",
+      "type": "line",
+      "source": "gemeenten",
+      "source-layer": "gemeenten",
+      "paint": {
+        "line-color": "#ffffff",
+        "line-width": 0.5
+      }
+    }
+  ]
+}

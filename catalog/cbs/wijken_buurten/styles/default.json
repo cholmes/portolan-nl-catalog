@@ -1,0 +1,58 @@
+{
+  "version": 8,
+  "name": "Neighbourhoods",
+  "sources": {
+    "buurten": {
+      "type": "vector",
+      "url": "pmtiles://../wijken_buurten.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "buurten-water",
+      "type": "fill",
+      "source": "buurten",
+      "source-layer": "buurten",
+      "filter": [
+        "==",
+        [
+          "get",
+          "water"
+        ],
+        "JA"
+      ],
+      "paint": {
+        "fill-color": "#c9dced",
+        "fill-opacity": 0.6
+      }
+    },
+    {
+      "id": "buurten-fill",
+      "type": "fill",
+      "source": "buurten",
+      "source-layer": "buurten",
+      "filter": [
+        "!=",
+        [
+          "get",
+          "water"
+        ],
+        "JA"
+      ],
+      "paint": {
+        "fill-color": "#dfe6e9",
+        "fill-opacity": 0.85
+      }
+    },
+    {
+      "id": "buurten-outline",
+      "type": "line",
+      "source": "buurten",
+      "source-layer": "buurten",
+      "paint": {
+        "line-color": "#7f8c8d",
+        "line-width": 0.25
+      }
+    }
+  ]
+}

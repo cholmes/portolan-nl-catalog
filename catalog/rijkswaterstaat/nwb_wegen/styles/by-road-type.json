@@ -1,0 +1,63 @@
+{
+  "version": 8,
+  "name": "Carriageways, cycle paths and footpaths",
+  "sources": {
+    "nwb_wegen": {
+      "type": "vector",
+      "url": "pmtiles://../nwb_wegen.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "nwb_wegen-line",
+      "type": "line",
+      "source": "nwb_wegen",
+      "source-layer": "nwb_wegen",
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": [
+          "match",
+          [
+            "get",
+            "bst_code"
+          ],
+          "RB",
+          "#34495e",
+          "HR",
+          "#2c3e50",
+          "NRB",
+          "#7f8c8d",
+          "FP",
+          "#e67e22",
+          "VP",
+          "#27ae60",
+          "ERF",
+          "#95a5a6",
+          "PP",
+          "#8e44ad",
+          "PAR",
+          "#9b59b6",
+          "#bdc3c7"
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          0.3,
+          10,
+          0.9,
+          14,
+          2.4
+        ]
+      }
+    }
+  ]
+}

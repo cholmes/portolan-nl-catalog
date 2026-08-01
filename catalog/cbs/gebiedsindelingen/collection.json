@@ -355,6 +355,39 @@
       "roles": [
         "thumbnail"
       ]
+    },
+    "styles/default": {
+      "href": "./styles/default.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Municipalities",
+      "roles": [
+        "style",
+        "default"
+      ]
+    },
+    "styles/mosaic": {
+      "href": "./styles/mosaic.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Municipalities — distinguishable neighbours",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/boundaries": {
+      "href": "./styles/boundaries.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Municipal boundaries only",
+      "roles": [
+        "style"
+      ]
+    },
+    "styles/labeled": {
+      "href": "./styles/labeled.json",
+      "type": "application/vnd.mapbox.style+json",
+      "title": "Municipalities with names",
+      "roles": [
+        "style"
+      ]
     }
   },
   "license": "CC-BY-4.0",
@@ -385,5 +418,11 @@
       "url": "https://source.coop/cholmes/portolan-nl"
     }
   ],
-  "updated": "2026-07-31T23:31:59Z"
+  "updated": "2026-07-31T23:31:59Z",
+  "portolan:styles": [
+    "styles/default",
+    "styles/mosaic",
+    "styles/boundaries",
+    "styles/labeled"
+  ]
 }

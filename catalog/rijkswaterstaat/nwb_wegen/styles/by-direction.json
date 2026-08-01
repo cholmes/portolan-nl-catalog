@@ -1,0 +1,55 @@
+{
+  "version": 8,
+  "name": "One-way and two-way segments",
+  "sources": {
+    "nwb_wegen": {
+      "type": "vector",
+      "url": "pmtiles://../nwb_wegen.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "nwb_wegen-line",
+      "type": "line",
+      "source": "nwb_wegen",
+      "source-layer": "nwb_wegen",
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": [
+          "match",
+          [
+            "get",
+            "rijrichtng"
+          ],
+          "B",
+          "#4575b4",
+          "H",
+          "#d73027",
+          "O",
+          "#fc8d59",
+          "T",
+          "#7f8c8d",
+          "#bbbbbb"
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          0.3,
+          10,
+          0.9,
+          14,
+          2.2
+        ]
+      }
+    }
+  ]
+}

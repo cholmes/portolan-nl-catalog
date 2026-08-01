@@ -1,10 +1,11 @@
 """Portolan conformance via rashid.
 
-Targets Portolan 0.1 plus two in-flight spec PRs, so it needs a rashid built
+Targets Portolan 0.1 plus three in-flight spec PRs, so it needs a rashid built
 from tools/portolan/build_rashid.sh rather than a released one:
 
   portolan-spec#97  / rashid#63 -- the default style carries a `default` role
   portolan-spec#116 / rashid#90 -- file:size and file:checksum are SHOULD
+  portolan-spec#120 / rashid#91 -- thumbnails may be image/webp
 
 SKIPs (exit 0) when that rashid is not on PATH, so the local suite stays
 zero-setup like the others. Point $RASHID at the built binary, or set
@@ -28,14 +29,13 @@ from pathlib import Path
 CATALOG = Path(__file__).resolve().parents[1] / "catalog"
 RASHID = os.environ.get("RASHID") or shutil.which("rashid")
 
-# Findings knowingly left open, each with its reason. Every entry here is
-# justified at length in docs/phase3-baseline.md. This is not a place to park
-# inconvenient failures: three of these would require the catalog to assert
-# something false, and the fourth is unwritten content, not a metadata defect.
+# Findings knowingly left open, each with its reason, and each justified at
+# length in docs/phase3-baseline.md. This is not a place to park inconvenient
+# failures: satisfying PTL-PRO-001 would mean writing a media type that is
+# false, which is why it is filed upstream rather than worked around.
 ACCEPTED = {
-    "PTL-VIZ-001": "thumbnails are WebP by design; rashid allows only PNG/JPEG",
-    "PTL-PRO-001": "rel:via points at WFS/Atom service endpoints, which are not text/html",
-    "PTL-VIZ-002": "three collections have no MapLibre style written yet",
+    "PTL-PRO-001": "rel:via points at WFS/Atom service endpoints, which are not text/html "
+                   "(portolan-spec#122)",
     "PTL-COL-003": "collection id '3dbag' is its published name; renaming breaks live hrefs",
 }
 
@@ -76,7 +76,7 @@ def main() -> int:
     total = sum(accepted.values())
     extra = f", {total} accepted (see docs/phase3-baseline.md)" if total else ""
     print(f"OK: {report['files_checked']} objects conform to Portolan 0.1 "
-          f"(+ spec PRs #97, #116){extra}")
+          f"(+ spec PRs #97, #116, #120){extra}")
     return 0
 
 

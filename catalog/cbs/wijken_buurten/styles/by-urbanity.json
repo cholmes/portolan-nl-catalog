@@ -1,0 +1,49 @@
+{
+  "version": 8,
+  "name": "CBS urbanity class (1 very urban — 5 rural)",
+  "sources": {
+    "buurten": {
+      "type": "vector",
+      "url": "pmtiles://../wijken_buurten.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "buurten-fill",
+      "type": "fill",
+      "source": "buurten",
+      "source-layer": "buurten",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "stedelijkheid_adressen_per_km2"
+          ],
+          1,
+          "#54278f",
+          2,
+          "#756bb1",
+          3,
+          "#9e9ac8",
+          4,
+          "#cbc9e2",
+          5,
+          "#f2f0f7",
+          "#d9d9d9"
+        ],
+        "fill-opacity": 0.85
+      }
+    },
+    {
+      "id": "buurten-outline",
+      "type": "line",
+      "source": "buurten",
+      "source-layer": "buurten",
+      "paint": {
+        "line-color": "#ffffff",
+        "line-width": 0.2
+      }
+    }
+  ]
+}

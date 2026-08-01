@@ -1,0 +1,80 @@
+{
+  "version": 8,
+  "name": "Population density (inhabitants per km²)",
+  "sources": {
+    "buurten": {
+      "type": "vector",
+      "url": "pmtiles://../wijken_buurten.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "buurten-water",
+      "type": "fill",
+      "source": "buurten",
+      "source-layer": "buurten",
+      "filter": [
+        "==",
+        [
+          "get",
+          "water"
+        ],
+        "JA"
+      ],
+      "paint": {
+        "fill-color": "#c9dced",
+        "fill-opacity": 0.6
+      }
+    },
+    {
+      "id": "buurten-fill",
+      "type": "fill",
+      "source": "buurten",
+      "source-layer": "buurten",
+      "filter": [
+        "!=",
+        [
+          "get",
+          "water"
+        ],
+        "JA"
+      ],
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "to-number",
+            [
+              "get",
+              "bevolkingsdichtheid_inwoners_per_km2"
+            ],
+            -1
+          ],
+          "#ffffb2",
+          30,
+          "#fed976",
+          130,
+          "#feb24c",
+          2100,
+          "#fd8d3c",
+          5200,
+          "#f03b20",
+          8100,
+          "#bd0026"
+        ],
+        "fill-opacity": 0.85
+      }
+    },
+    {
+      "id": "buurten-outline",
+      "type": "line",
+      "source": "buurten",
+      "source-layer": "buurten",
+      "paint": {
+        "line-color": "#ffffff",
+        "line-width": 0.2,
+        "line-opacity": 0.6
+      }
+    }
+  ]
+}

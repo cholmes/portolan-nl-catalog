@@ -1,0 +1,58 @@
+{
+  "version": 8,
+  "name": "Road network by authority",
+  "sources": {
+    "nwb_wegen": {
+      "type": "vector",
+      "url": "pmtiles://../nwb_wegen.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "nwb_wegen-line",
+      "type": "line",
+      "source": "nwb_wegen",
+      "source-layer": "nwb_wegen",
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round"
+      },
+      "paint": {
+        "line-color": [
+          "match",
+          [
+            "get",
+            "wegbehsrt"
+          ],
+          "R",
+          "#d73027",
+          "P",
+          "#fc8d59",
+          "G",
+          "#4575b4",
+          "W",
+          "#91bfdb",
+          "T",
+          "#999999",
+          "#bbbbbb"
+        ],
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          6,
+          0.3,
+          10,
+          0.8,
+          14,
+          2.0
+        ],
+        "line-opacity": 0.9
+      }
+    }
+  ]
+}

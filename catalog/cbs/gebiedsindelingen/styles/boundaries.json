@@ -1,0 +1,46 @@
+{
+  "version": 8,
+  "name": "Municipal boundaries only",
+  "sources": {
+    "gemeenten": {
+      "type": "vector",
+      "url": "pmtiles://../gebiedsindelingen.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "gemeenten-fill",
+      "type": "fill",
+      "source": "gemeenten",
+      "source-layer": "gemeenten",
+      "paint": {
+        "fill-color": "#000000",
+        "fill-opacity": 0
+      }
+    },
+    {
+      "id": "gemeenten-outline",
+      "type": "line",
+      "source": "gemeenten",
+      "source-layer": "gemeenten",
+      "paint": {
+        "line-color": "#2d3436",
+        "line-width": [
+          "interpolate",
+          [
+            "linear"
+          ],
+          [
+            "zoom"
+          ],
+          5,
+          0.4,
+          9,
+          1.2,
+          13,
+          2.0
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "version": 8,
+  "name": "Share of residents aged 65 and over (%)",
+  "sources": {
+    "buurten": {
+      "type": "vector",
+      "url": "pmtiles://../wijken_buurten.pmtiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "buurten-water",
+      "type": "fill",
+      "source": "buurten",
+      "source-layer": "buurten",
+      "filter": [
+        "==",
+        [
+          "get",
+          "water"
+        ],
+        "JA"
+      ],
+      "paint": {
+        "fill-color": "#c9dced",
+        "fill-opacity": 0.6
+      }
+    },
+    {
+      "id": "buurten-fill",
+      "type": "fill",
+      "source": "buurten",
+      "source-layer": "buurten",
+      "filter": [
+        "!=",
+        [
+          "get",
+          "water"
+        ],
+        "JA"
+      ],
+      "paint": {
+        "fill-color": [
+          "step",
+          [
+            "to-number",
+            [
+              "get",
+              "percentage_personen_65_jaar_en_ouder"
+            ],
+            -1
+          ],
+          "#eff3ff",
+          11,
+          "#c6dbef",
+          17,
+          "#9ecae1",
+          22,
+          "#6baed6",
+          27,
+          "#3182bd",
+          33,
+          "#08519c"
+        ],
+        "fill-opacity": 0.85
+      }
+    },
+    {
+      "id": "buurten-outline",
+      "type": "line",
+      "source": "buurten",
+      "source-layer": "buurten",
+      "paint": {
+        "line-color": "#ffffff",
+        "line-width": 0.2,
+        "line-opacity": 0.6
+      }
+    }
+  ]
+}
