@@ -15,8 +15,22 @@ import os
 import geopandas as gpd
 import pyarrow.parquet as pq
 
-ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-DATA_BASE = "https://data.source.coop/cholmes/portolan-nl"
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+from tools.lib import paths
+
+# Generators write into the published tree; paths.py owns where that is.
+ROOT = str(paths.CATALOG)
+
+def data_dir(cdir):
+    """Catalog directory -> the directory holding its data files.
+
+    The repo holds no parquet; it lives in the working directory. Generators
+    still write metadata into cdir, they just read the data from here.
+    """
+    return str(paths.DATA_ROOT / os.path.relpath(cdir, ROOT))
+
+DATA_BASE = paths.DATA_BASE
 
 # shared BRO column descriptions (English real-table columns)
 SHARED_COLS = {
@@ -161,7 +175,7 @@ def arrow_cols(parquet):
 def build(path, cfg):
     cdir = os.path.join(ROOT, "vro", path)
     layer = cfg["layer"]
-    parquet = os.path.join(cdir, f"{layer}.parquet")
+    parquet = os.path.join(data_dir(cdir), f"{layer}.parquet")
     pmtiles = f"./{layer}.pmtiles"
     depth = 2 + path.count("/")  # links back to root catalog.json
     up = "../" * depth

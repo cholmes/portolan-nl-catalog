@@ -13,7 +13,21 @@ import os
 
 import duckdb
 
-ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+from tools.lib import paths
+
+# Generators write into the published tree; paths.py owns where that is.
+ROOT = str(paths.CATALOG)
+
+def data_dir(cdir):
+    """Catalog directory -> the directory holding its data files.
+
+    The repo holds no parquet; it lives in the working directory. Generators
+    still write metadata into cdir, they just read the data from here.
+    """
+    return str(paths.DATA_ROOT / os.path.relpath(cdir, ROOT))
+
 QUAL = ["#1B9E77", "#D95F02", "#7570B3", "#E7298A", "#66A61E", "#E6AB02", "#A6761D",
         "#1F78B4", "#B15928", "#6A3D9A", "#666666"]
 
@@ -92,7 +106,7 @@ JOBS = [
 def go():
     for path, kind, layer, themes in JOBS:
         cdir = os.path.join(ROOT, "vro", path)
-        pq = os.path.join(cdir, f"{layer}.parquet")
+        pq = os.path.join(data_dir(cdir), f"{layer}.parquet")
         for slug, title, field, mapping in themes:
             if distinct(pq, field) < 2:
                 print(f"   skip {path}/{slug} ({field} is uniform)")

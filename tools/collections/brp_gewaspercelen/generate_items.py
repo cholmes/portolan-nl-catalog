@@ -14,7 +14,11 @@ Run after parquet files and bbox stats are available.
 import json
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from tools.lib import paths
+
+ROOT = paths.CATALOG / "rvo" / "brp_gewaspercelen"
 
 # Per-year stats (computed with DuckDB ST_Transform from the per-year parquet).
 # Historical-year stats (2009–2019) are filled in after the normalization pass completes;
@@ -87,6 +91,53 @@ STYLES = [
     ("landscape-elements", "Landscape Elements", "Highlights ditches, hedgerows, tree rows, and ponds."),
 ]
 
+# table:columns. The schema is identical across every year; only the column
+# *descriptions* differ, because the historical years are normalized from an Esri
+# File Geodatabase while 2020+ come straight from PDOK's GeoPackage. Keyed on
+# which of those two sources the year came from.
+_COLUMN_TYPES = [("id", "int64"), ("category", "string"), ("gewas", "string"),
+                 ("gewascode", "int32"), ("jaar", "int32"), ("status", "string"),
+                 ("geom", "binary")]
+
+_GEOM_DESC = ("Parcel boundary polygon in EPSG:28992 (Amersfoort / RD New), WKB-encoded.")
+
+# Landschapselement entered the BRP in 2023, so only earlier years carry the note
+# saying the category is absent. 2023 onward legitimately have it.
+LANDSCAPE_ELEMENT_FROM = 2023
+_CATEGORY_NOTE = " Note: Landschapselement was added in 2023; absent in this year."
+
+COLUMN_DESCRIPTIONS = {
+    "gpkg": {   # 2020+, no schema transformation
+        "id": "Feature ID. Matches the source GeoPackage.",
+        "category": ("Broad crop category (e.g. Grasland, Bouwland, Landschapselement, "
+                     "Natuurterrein, Braakland, Overige)."),
+        "gewas": "Specific crop name (e.g. Grasland blijvend, Aardappelen consumptie, Mais snij-).",
+        "gewascode": "Numeric crop code identifying the specific crop type.",
+        "jaar": "Registration year.",
+        "status": "Registration status — always 'Definitief' in this collection.",
+        "geom": _GEOM_DESC,
+    },
+    "fgdb": {   # 2009-2019, schema-normalized from the Esri File Geodatabase
+        "id": "Feature ID, mapped from the source FGDB's `OGC_FID`.",
+        "category": "Broad crop category, mapped from FGDB field `CAT_GEWASCATEGORIE`.",
+        "gewas": "Specific crop name, mapped from FGDB field `GWS_GEWAS`.",
+        "gewascode": ("Numeric crop code, mapped from FGDB field `GWS_GEWASCODE` "
+                      "(cast from varchar to int32)."),
+        "jaar": ("Registration year — synthesized from the source filename (not present "
+                 "in the original FGDB)."),
+        "status": ("Registration status — set to 'Definitief' (constant; not present in "
+                   "the original FGDB)."),
+        "geom": _GEOM_DESC,
+    },
+}
+
+
+def table_columns(year: int) -> list[dict]:
+    descs = dict(COLUMN_DESCRIPTIONS["gpkg" if year in NEW_YEARS else "fgdb"])
+    if year < LANDSCAPE_ELEMENT_FROM:
+        descs["category"] += _CATEGORY_NOTE
+    return [{"name": n, "type": t, "description": descs[n]} for n, t in _COLUMN_TYPES]
+
 STAC_EXTENSIONS = [
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
@@ -116,7 +167,10 @@ def build_item(year: int) -> dict:
     bbox = stats["bbox"]
     parquet = f"brp_gewaspercelen_{year}.parquet"
     pmtiles = f"brp_gewaspercelen_{year}.pmtiles"
-    pmtiles_path = ROOT / str(year) / pmtiles
+    # The PMTiles file lives in the working directory, not in the repo -- checking
+    # for it under ROOT would find nothing and silently drop the tiles asset and
+    # its link from every item.
+    pmtiles_path = paths.DATA_ROOT / "rvo" / "brp_gewaspercelen" / str(year) / pmtiles
 
     assets: dict[str, dict] = {
         "data": {
@@ -158,18 +212,8 @@ def build_item(year: int) -> dict:
             ),
             "roles": ["style"],
         }
-    assets["readme"] = {
-        "href": "./README.md",
-        "type": "text/markdown",
-        "title": f"BRP Gewaspercelen {year} — README",
-        "roles": ["metadata"],
-    }
-    assets["llms"] = {
-        "href": "./llms.txt",
-        "type": "text/markdown",
-        "title": f"BRP Gewaspercelen {year} — agent/LLM usage guide",
-        "roles": ["metadata"],
-    }
+    # README.md and llms.txt are reached through rel:describedby and rel:llms links
+    # below, not as assets. Assets on an item are the data it describes.
 
     links = [
         {
@@ -214,6 +258,18 @@ def build_item(year: int) -> dict:
             ),
             "type": "application/vnd.pmtiles",
         })
+    links.append({
+        "rel": "llms",
+        "href": "./llms.txt",
+        "type": "text/markdown",
+        "title": "Agent/LLM usage guide",
+    })
+    links.append({
+        "rel": "describedby",
+        "href": f"{paths.SRC_BASE}/rvo/brp_gewaspercelen/{year}/README.md",
+        "type": "text/html",
+        "title": f"BRP Gewaspercelen {year} documentation",
+    })
 
     return {
         "type": "Feature",
@@ -240,6 +296,8 @@ def build_item(year: int) -> dict:
             "geoparquet:geometry_type": "Polygon",
             "geoparquet:feature_count": stats["features"],
             "vector:geometry_types": ["Polygon"],
+            "portolan:styles": [f"styles/{sid}" for sid, _, _ in STYLES],
+            "table:columns": table_columns(year),
         },
         "assets": assets,
         "links": links,

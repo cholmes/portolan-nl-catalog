@@ -19,7 +19,21 @@ from matplotlib.patches import Patch
 import contextily as cx
 
 warnings.filterwarnings("ignore")
-ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+from tools.lib import paths
+
+# Generators write into the published tree; paths.py owns where that is.
+ROOT = str(paths.CATALOG)
+
+def data_dir(cdir):
+    """Catalog directory -> the directory holding its data files.
+
+    The repo holds no parquet; it lives in the working directory. Generators
+    still write metadata into cdir, they just read the data from here.
+    """
+    return str(paths.DATA_ROOT / os.path.relpath(cdir, ROOT))
+
 
 # ---- curated palettes -------------------------------------------------------
 SOIL = {  # hoofdklasse (main soil class) — Dutch bodemkaart-style colours
@@ -156,7 +170,7 @@ def go():
     ]
     for cdir, layer, kind, dcol, field, cmap, ctitle in simple:
         full = os.path.join(ROOT, cdir)
-        pq = os.path.join(full, f"{layer}.parquet")
+        pq = os.path.join(data_dir(full), f"{layer}.parquet")
         # default
         dl = circle_layer(layer, dcol) if kind == "point" else fill_layer(layer, dcol)
         write_style(full, layer, "default.json", f"{layer} — default", dl)
@@ -182,7 +196,7 @@ def go():
     write_style(sa, "soilarea", "by-texture.json", "Bodemkaart — sand / clay / peat",
                 fill_layer("soilarea", match_expr("hoofdklasse", soil_group_map(), SOIL_GROUP_OTHER),
                            opacity=0.8, outline="#777777"))
-    thumb(sa, os.path.join(sa, "soilarea.parquet"), "polygon",
+    thumb(sa, os.path.join(data_dir(sa), "soilarea.parquet"), "polygon",
           ("cat", "hoofdklasse", SOIL, SOIL_OTHER, "Main soil class"))
     print("styles+thumb done: bodemkaart/soilarea")
 
@@ -190,7 +204,7 @@ def go():
     ap = os.path.join(ROOT, "vro/bodemkaart/areaofpedologicalinterest")
     write_style(ap, "areaofpedologicalinterest", "default.json", "Area of pedological interest",
                 fill_layer("areaofpedologicalinterest", "#A1887F", opacity=0.4, outline="#6D4C41"))
-    thumb(ap, os.path.join(ap, "areaofpedologicalinterest.parquet"), "polygon", ("single", "#A1887F"))
+    thumb(ap, os.path.join(data_dir(ap), "areaofpedologicalinterest.parquet"), "polygon", ("single", "#A1887F"))
     print("styles+thumb done: bodemkaart/areaofpedologicalinterest")
 
     # geomorph/geomorphological_area — default by genese, alt by relief
@@ -203,7 +217,7 @@ def go():
                            ["interpolate", ["linear"], ["to-number", ["get", "relief_code"]],
                             1, "#FFFFCC", 6, "#A1DAB4", 12, "#41B6C4", 18, "#2C7FB8", 25, "#253494"],
                            opacity=0.8, outline="#777777"))
-    thumb(ga, os.path.join(ga, "geomorphological_area.parquet"), "polygon",
+    thumb(ga, os.path.join(data_dir(ga), "geomorphological_area.parquet"), "polygon",
           ("cat", "genese_code", GENESE, GENESE_OTHER, "Landform genesis"))
     print("styles+thumb done: geomorph/geomorphological_area")
 
@@ -212,7 +226,7 @@ def go():
                      ("geomorphological_area_collection", "#B0BEC5")]:
         d = os.path.join(ROOT, "vro/geomorfologische_kaart", sub)
         write_style(d, sub, "default.json", sub, fill_layer(sub, col, opacity=0.4, outline="#546E7A"))
-        thumb(d, os.path.join(d, f"{sub}.parquet"), "polygon", ("single", col))
+        thumb(d, os.path.join(data_dir(d), f"{sub}.parquet"), "polygon", ("single", col))
         print("styles+thumb done: geomorph/" + sub)
 
 if __name__ == "__main__":

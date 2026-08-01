@@ -15,7 +15,11 @@ from pathlib import Path
 
 YEARS = list(range(2009, 2026))  # 2009–2025, inclusive
 
-ROOT = Path(__file__).resolve().parent.parent
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from tools.lib import paths
+
+ROOT = paths.CATALOG / "rvo" / "brp_gewaspercelen"
 BASE_DIR = ROOT / "styles"
 
 BASE_STYLES = ["default.json", "by-category.json", "by-crop.json", "landscape-elements.json"]

@@ -3,9 +3,14 @@
 import json
 import os
 
-ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-DATA = "https://data.source.coop/cholmes/portolan-nl"
-SRC = "https://source.coop/cholmes/portolan-nl"
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+from tools.lib import paths
+
+# Generators write into the published tree; paths.py owns where that is.
+ROOT = str(paths.CATALOG)
+DATA = paths.DATA_BASE
+SRC = paths.SRC_BASE
 
 
 def child(href, title):

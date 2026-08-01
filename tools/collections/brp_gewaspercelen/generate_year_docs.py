@@ -12,7 +12,11 @@ from pathlib import Path
 # Reuse the same year stats as generate_items.py — keep the two scripts aligned.
 from generate_items import YEAR_STATS, SOURCES, NEW_YEARS, HISTORICAL_YEARS
 
-ROOT = Path(__file__).resolve().parent.parent
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from tools.lib import paths
+
+ROOT = paths.CATALOG / "rvo" / "brp_gewaspercelen"
 
 PARENT_BASE_URL = "https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen"
 

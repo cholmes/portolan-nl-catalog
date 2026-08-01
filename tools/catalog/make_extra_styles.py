@@ -15,7 +15,21 @@ from matplotlib.patches import Patch
 import contextily as cx
 
 warnings.filterwarnings("ignore")
-ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import sys
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+from tools.lib import paths
+
+# Generators write into the published tree; paths.py owns where that is.
+ROOT = str(paths.CATALOG)
+
+def data_dir(cdir):
+    """Catalog directory -> the directory holding its data files.
+
+    The repo holds no parquet; it lives in the working directory. Generators
+    still write metadata into cdir, they just read the data from here.
+    """
+    return str(paths.DATA_ROOT / os.path.relpath(cdir, ROOT))
+
 
 QUAL = ["#1B9E77", "#D95F02", "#7570B3", "#E7298A", "#66A61E", "#E6AB02", "#A6761D", "#666666"]
 
@@ -81,7 +95,7 @@ def go():
     B = os.path.join(ROOT, "vro")
     # --- areaofpedologicalinterest: +by-interest, +by-collection ; distinct thumbnail
     ap = os.path.join(B, "bodemkaart/areaofpedologicalinterest")
-    appq = os.path.join(ap, "areaofpedologicalinterest.parquet")
+    appq = os.path.join(data_dir(ap), "areaofpedologicalinterest.parquet")
     fill_style(ap, "areaofpedologicalinterest", "by-interest.json",
                "Area of pedological interest — by type", "pedologicalinterest", INTEREST, opacity=0.7)
     fill_style(ap, "areaofpedologicalinterest", "by-collection.json",
@@ -91,14 +105,14 @@ def go():
 
     # --- area_of_geomorphological_interest: +by-type ; distinct thumbnail
     ag = os.path.join(B, "geomorfologische_kaart/area_of_geomorphological_interest")
-    agpq = os.path.join(ag, "area_of_geomorphological_interest.parquet")
+    agpq = os.path.join(data_dir(ag), "area_of_geomorphological_interest.parquet")
     fill_style(ag, "area_of_geomorphological_interest", "by-type.json",
                "Area of geomorphological interest — by type", "type", AOGI_TYPE, opacity=0.7)
     thumb(ag, agpq, "type", AOGI_TYPE, "#E0E0E0", "Area of geomorphological interest")
 
     # --- geomorphological_area_collection: +by-method ; distinct thumbnail
     gc = os.path.join(B, "geomorfologische_kaart/geomorphological_area_collection")
-    gcpq = os.path.join(gc, "geomorphological_area_collection.parquet")
+    gcpq = os.path.join(data_dir(gc), "geomorphological_area_collection.parquet")
     fill_style(gc, "geomorphological_area_collection", "by-method.json",
                "Map area collections — by inventory method", "inventorymethod", METHOD, "#999999", opacity=0.7)
     thumb(gc, gcpq, "inventorymethod", METHOD, "#999999", "Inventory method")
@@ -106,12 +120,12 @@ def go():
     # --- flagship extras: soilarea by-collection, geomorph by-landform (top codes) ---
     sa = os.path.join(B, "bodemkaart/soilarea")
     fill_style(sa, "soilarea", "by-collection.json", "Bodemkaart — by survey campaign",
-               "maparea_collection", top_map(os.path.join(sa, "soilarea.parquet"), "maparea_collection", QUAL),
+               "maparea_collection", top_map(os.path.join(data_dir(sa), "soilarea.parquet"), "maparea_collection", QUAL),
                opacity=0.8)
     ga = os.path.join(B, "geomorfologische_kaart/geomorphological_area")
     fill_style(ga, "geomorphological_area", "by-landform.json", "Geomorfologie — by landform subgroup",
                "landform_subgroup_code",
-               top_map(os.path.join(ga, "geomorphological_area.parquet"), "landform_subgroup_code", QUAL, 12),
+               top_map(os.path.join(data_dir(ga), "geomorphological_area.parquet"), "landform_subgroup_code", QUAL, 12),
                opacity=0.8)
     print("DONE")
 
