@@ -31,7 +31,7 @@
 | grondwatergebruiksysteem.parquet | GeoParquet | 50,637 features (EPSG:4258) |
 | grondwatergebruiksysteem.pmtiles | PMTiles | Vector tiles for web maps |
 | styles/ | Mapbox GL v8 | Visualization styles |
-| thumbnail.png | PNG | Official PDOK preview |
+| thumbnail.webp | WebP | Official PDOK preview |
 
 ## Quick start
 

@@ -21,7 +21,7 @@ import contextily as cx
 warnings.filterwarnings("ignore")
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from tools.lib import paths
+from tools.lib import paths, styles, geoparquet, images
 
 # Generators write into the published tree; paths.py owns where that is.
 ROOT = str(paths.CATALOG)
@@ -74,8 +74,7 @@ QUAL = {"IMBRO": "#1B9E77", "IMBRO/A": "#D95F02"}  # quality_regime
 QUAL_OTHER = "#999999"
 
 # ---- mapbox-gl style builders ----------------------------------------------
-def src(name):
-    return {name: {"type": "vector", "url": f"pmtiles://../{name}.pmtiles"}}
+src = styles.pmtiles_source
 
 def fill_layer(layer, color, opacity=0.75, outline="#555555"):
     return [
@@ -91,12 +90,7 @@ def circle_layer(layer, color, radius=3.5):
                        "circle-color": color, "circle-stroke-color": "#ffffff",
                        "circle-stroke-width": 0.4, "circle-opacity": 0.85}}]
 
-def match_expr(field, mapping, other):
-    expr = ["match", ["get", field]]
-    for k, v in mapping.items():
-        expr += [k, v]
-    expr.append(other)
-    return expr
+match_expr = styles.match_expr
 
 def write_style(coll_dir, layer, fname, name, layers):
     style = {"version": 8, "name": name, "sources": src(layer), "layers": layers}
@@ -130,19 +124,13 @@ def thumb(coll_dir, parquet, kind, color_spec):
             gdf.plot(ax=ax, color=colors, alpha=0.8, edgecolor="#666666", linewidth=0.12)
         items = list(mapping.items())[:10]
         legend_handles = [Patch(facecolor=c, edgecolor="#666", label=(GENESE_NAME.get(k, k))) for k, c in items]
-    try:
-        cx.add_basemap(ax, source=cx.providers.CartoDB.Positron, attribution=False)
-    except Exception as e:
-        print("  basemap skipped:", e)
+    images.add_positron_basemap(ax)
     ax.set_axis_off()
     if legend_handles:
         ax.legend(handles=legend_handles, loc="lower left", fontsize=6, framealpha=0.9,
                   title=color_spec[4], title_fontsize=6)
-    out = os.path.join(coll_dir, "thumbnail.png")
-    plt.tight_layout(pad=0.2)
-    plt.savefig(out, bbox_inches="tight", pad_inches=0.05)
-    plt.close(fig)
-    print("  thumbnail ->", out)
+    out = os.path.join(coll_dir, "thumbnail.webp")
+    print(f"  thumbnail -> {out} ({images.save_webp(fig, out)} bytes)")
 
 # ---- per-collection definitions --------------------------------------------
 def soil_match():
@@ -177,11 +165,8 @@ def go():
         # data-driven alternate
         if cmap is None:
             # build a small qualitative map from data
-            import duckdb
-            vals = [r[0] for r in duckdb.connect().execute(
-                f"SELECT {field} FROM read_parquet('{pq}') WHERE {field} IS NOT NULL GROUP BY 1 ORDER BY COUNT(*) DESC LIMIT 7").fetchall()]
             pal = ["#1B9E77", "#D95F02", "#7570B3", "#E7298A", "#66A61E", "#E6AB02", "#A6761D"]
-            cmap = {v: pal[i % len(pal)] for i, v in enumerate(vals)}
+            cmap = geoparquet.top_map(pq, field, pal, 7)
         al = (circle_layer(layer, match_expr(field, cmap, "#BBBBBB")) if kind == "point"
               else fill_layer(layer, match_expr(field, cmap, "#BBBBBB")))
         slug = "by-" + field.replace("_", "-")

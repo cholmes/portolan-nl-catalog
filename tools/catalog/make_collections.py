@@ -17,7 +17,7 @@ import pyarrow.parquet as pq
 
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from tools.lib import paths, stac
+from tools.lib import paths, stac, geoparquet
 
 # Generators write into the published tree; paths.py owns where that is.
 ROOT = str(paths.CATALOG)
@@ -147,29 +147,8 @@ STYLE_TITLES = {
 }
 
 
-def geo_meta(parquet):
-    md = pq.read_metadata(parquet).metadata
-    geo = json.loads(md[b"geo"].decode())
-    pc = geo["primary_column"]
-    col = geo["columns"][pc]
-    gtype = col.get("geometry_types", ["Unknown"])
-    crs = col.get("crs") or {}
-    epsg = None
-    cid = crs.get("id") if isinstance(crs, dict) else None
-    if cid and str(cid.get("authority", "")).upper() == "EPSG":
-        epsg = int(cid["code"])
-    return pc, (gtype[0] if gtype else "Unknown"), epsg
-
-
-def arrow_cols(parquet):
-    sch = pq.read_schema(parquet)
-    out = []
-    for f in sch:
-        t = str(f.type)
-        tmap = {"int64": "int64", "int32": "int32", "double": "float64",
-                "string": "string", "large_string": "string", "binary": "binary"}
-        out.append((f.name, tmap.get(t, t)))
-    return out
+geo_meta = geoparquet.geo_meta
+arrow_cols = geoparquet.arrow_columns
 
 
 def build(path, cfg):

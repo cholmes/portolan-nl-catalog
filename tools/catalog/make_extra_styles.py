@@ -17,7 +17,7 @@ import contextily as cx
 warnings.filterwarnings("ignore")
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from tools.lib import paths
+from tools.lib import paths, styles, geoparquet, images
 
 # Generators write into the published tree; paths.py owns where that is.
 ROOT = str(paths.CATALOG)
@@ -42,15 +42,9 @@ METHOD = {"Analoog met veldverkenning": "#1B9E77", "Digitaal met veldverificatie
           "Digitaal": "#7570B3", "Digitaal met veldverkenning": "#E7298A"}
 
 
-def src(name):
-    return {name: {"type": "vector", "url": f"pmtiles://../{name}.pmtiles"}}
+src = styles.pmtiles_source
 
-def match_expr(field, mapping, other="#E0E0E0"):
-    e = ["match", ["get", field]]
-    for k, v in mapping.items():
-        e += [k, v]
-    e.append(other)
-    return e
+match_expr = styles.match_expr
 
 def fill_style(cdir, layer, fname, name, field, mapping, other="#E0E0E0", opacity=0.8):
     style = {"version": 8, "name": name, "sources": src(layer), "layers": [
@@ -64,31 +58,19 @@ def fill_style(cdir, layer, fname, name, field, mapping, other="#E0E0E0", opacit
     print("  style", os.path.join(os.path.basename(cdir), "styles", fname))
 
 def top_map(parquet, field, palette, n=10):
-    vals = [r[0] for r in duckdb.connect().execute(
-        f"SELECT {field} FROM read_parquet('{parquet}') WHERE {field} IS NOT NULL "
-        f"GROUP BY 1 ORDER BY COUNT(*) DESC LIMIT {n}").fetchall()]
-    return {v: palette[i % len(palette)] for i, v in enumerate(vals)}
+    return geoparquet.top_map(parquet, field, palette, n)
 
 def thumb(cdir, parquet, field, mapping, other, title):
-    gdf = gpd.read_parquet(parquet)
-    if gdf.crs is None:
-        gdf.set_crs(28992, inplace=True)
-    gdf = gdf.to_crs(3857)
+    gdf = images.load_web_mercator(parquet)
     fig, ax = plt.subplots(figsize=(6, 6.6), dpi=100)
     colors = gdf[field].astype("object").map(lambda v: mapping.get(v, other))
     gdf.plot(ax=ax, color=colors, alpha=0.85, edgecolor="#666666", linewidth=0.1)
-    try:
-        cx.add_basemap(ax, source=cx.providers.CartoDB.Positron, attribution=False)
-    except Exception as e:
-        print("  basemap skipped:", e)
+    images.add_positron_basemap(ax)
     ax.set_axis_off()
     ax.legend(handles=[Patch(facecolor=c, edgecolor="#666", label=k) for k, c in list(mapping.items())[:8]],
               loc="lower left", fontsize=6, framealpha=0.9, title=title, title_fontsize=6)
-    plt.tight_layout(pad=0.2)
-    out = os.path.join(cdir, "thumbnail.png")
-    plt.savefig(out, bbox_inches="tight", pad_inches=0.05)
-    plt.close(fig)
-    print("  thumbnail", out)
+    out = os.path.join(cdir, "thumbnail.webp")
+    print(f"  thumbnail {out} ({images.save_webp(fig, out)} bytes)")
 
 
 def go():

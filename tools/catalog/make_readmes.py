@@ -57,7 +57,7 @@ def coll_readme(path):
 | {layer}.parquet | GeoParquet | {n:,} features (EPSG:{epsg}) |
 | {layer}.pmtiles | PMTiles | Vector tiles for web maps |
 | styles/ | Mapbox GL v8 | Visualization styles |
-| thumbnail.png | PNG | Official PDOK preview |
+| thumbnail.webp | WebP | Official PDOK preview |
 
 ## Quick start
 

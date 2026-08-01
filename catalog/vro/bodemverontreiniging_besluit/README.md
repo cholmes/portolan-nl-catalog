@@ -31,7 +31,7 @@
 | bodemverontreiniging_besluit.parquet | GeoParquet | 121 features (EPSG:4258) |
 | bodemverontreiniging_besluit.pmtiles | PMTiles | Vector tiles for web maps |
 | styles/ | Mapbox GL v8 | Visualization styles |
-| thumbnail.png | PNG | Official PDOK preview |
+| thumbnail.webp | WebP | Official PDOK preview |
 
 ## Quick start
 

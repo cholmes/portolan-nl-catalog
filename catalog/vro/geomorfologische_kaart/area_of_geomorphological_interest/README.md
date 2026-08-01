@@ -29,7 +29,7 @@
 | area_of_geomorphological_interest.parquet | GeoParquet | 40,840 features (EPSG:28992) |
 | area_of_geomorphological_interest.pmtiles | PMTiles | Vector tiles for web maps |
 | styles/ | Mapbox GL v8 | Visualization styles |
-| thumbnail.png | PNG | Official PDOK preview |
+| thumbnail.webp | WebP | Official PDOK preview |
 
 ## Quick start
 

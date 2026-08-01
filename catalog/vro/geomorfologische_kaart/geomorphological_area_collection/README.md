@@ -34,7 +34,7 @@
 | geomorphological_area_collection.parquet | GeoParquet | 70 features (EPSG:28992) |
 | geomorphological_area_collection.pmtiles | PMTiles | Vector tiles for web maps |
 | styles/ | Mapbox GL v8 | Visualization styles |
-| thumbnail.png | PNG | Official PDOK preview |
+| thumbnail.webp | WebP | Official PDOK preview |
 
 ## Quick start
 

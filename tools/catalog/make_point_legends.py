@@ -15,7 +15,7 @@ import duckdb
 
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from tools.lib import paths
+from tools.lib import paths, styles, geoparquet
 
 # Generators write into the published tree; paths.py owns where that is.
 ROOT = str(paths.CATALOG)
@@ -32,24 +32,15 @@ QUAL = ["#1B9E77", "#D95F02", "#7570B3", "#E7298A", "#66A61E", "#E6AB02", "#A676
         "#1F78B4", "#B15928", "#6A3D9A", "#666666"]
 
 
-def match_expr(field, mapping, other):
-    e = ["match", ["get", field]]
-    for k, v in mapping.items():
-        e += [k, v]
-    e.append(other)
-    return e
+match_expr = styles.match_expr
 
 
 def top_map(parquet, field, n=8):
-    vals = [r[0] for r in duckdb.connect().execute(
-        f"SELECT {field} FROM read_parquet('{parquet}') WHERE {field} IS NOT NULL "
-        f"GROUP BY 1 ORDER BY COUNT(*) DESC LIMIT {n}").fetchall()]
-    return {v: QUAL[i % len(QUAL)] for i, v in enumerate(vals)}
+    return geoparquet.top_map(parquet, field, QUAL, n)
 
 
 def distinct(parquet, field):
-    return duckdb.connect().execute(
-        f"SELECT COUNT(DISTINCT {field}) FROM read_parquet('{parquet}')").fetchone()[0]
+    return geoparquet.distinct_count(parquet, field)
 
 
 def write(cdir, layer, fname, name, expr, kind):
