@@ -12,11 +12,6 @@
       "title": "Portolan NL — Cloud-Native Dutch Geodata"
     },
     {
-      "rel": "self",
-      "href": "https://data.source.coop/cholmes/portolan-nl/vro/mijnbouwconstructie/collection.json",
-      "type": "application/json"
-    },
-    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json"
@@ -46,8 +41,8 @@
     },
     {
       "rel": "describedby",
-      "href": "https://source.coop/cholmes/portolan-nl/vro/mijnbouwconstructie/README.md",
-      "type": "text/html",
+      "href": "./README.md",
+      "type": "text/markdown",
       "title": "BRO Mining Construction (EPC / Mijnbouwconstructie) documentation"
     }
   ],
@@ -176,7 +171,7 @@
     },
     "styles/by-legal-status": {
       "href": "./styles/by-legal-status.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "BRO Mining Construction (EPC / Mijnbouwconstructie) — By legal status",
       "roles": [
         "style"
@@ -184,7 +179,7 @@
     },
     "styles/default": {
       "href": "./styles/default.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "BRO Mining Construction (EPC / Mijnbouwconstructie) — Default",
       "roles": [
         "style"

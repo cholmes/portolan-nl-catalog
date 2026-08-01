@@ -12,11 +12,6 @@
       "title": "Portolan NL — Cloud-Native Dutch Geodata"
     },
     {
-      "rel": "self",
-      "href": "https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/geomorphological_area/collection.json",
-      "type": "application/json"
-    },
-    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json"
@@ -46,8 +41,8 @@
     },
     {
       "rel": "describedby",
-      "href": "https://source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/geomorphological_area/README.md",
-      "type": "text/html",
+      "href": "./README.md",
+      "type": "text/markdown",
       "title": "BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) documentation"
     }
   ],
@@ -270,7 +265,7 @@
     },
     "styles/by-landform": {
       "href": "./styles/by-landform.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) — By landform subgroup",
       "roles": [
         "style"
@@ -278,7 +273,7 @@
     },
     "styles/by-relief": {
       "href": "./styles/by-relief.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) — By relief class",
       "roles": [
         "style"
@@ -286,7 +281,7 @@
     },
     "styles/default": {
       "href": "./styles/default.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) — Default",
       "roles": [
         "style"

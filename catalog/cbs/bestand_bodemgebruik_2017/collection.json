@@ -11,11 +11,6 @@
       "title": "Portolan NL — Cloud-Native Dutch Geodata"
     },
     {
-      "rel": "self",
-      "href": "https://data.source.coop/cholmes/portolan-nl/cbs/bestand_bodemgebruik_2017/collection.json",
-      "type": "application/json"
-    },
-    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json",
@@ -52,8 +47,8 @@
     },
     {
       "rel": "describedby",
-      "href": "https://source.coop/cholmes/portolan-nl/cbs/bestand_bodemgebruik_2017/README.md",
-      "type": "text/html",
+      "href": "./README.md",
+      "type": "text/markdown",
       "title": "Bestand Bodemgebruik 2017 (Land Use File) documentation"
     }
   ],
@@ -162,7 +157,7 @@
     },
     "styles/default": {
       "href": "./styles/default.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "Land Use 2017 — Default",
       "roles": [
         "style"
@@ -170,7 +165,7 @@
     },
     "styles/by-detailed-use": {
       "href": "./styles/by-detailed-use.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "Land Use 2017 — Detailed",
       "roles": [
         "style"

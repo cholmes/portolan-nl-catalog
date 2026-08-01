@@ -130,7 +130,7 @@
     },
     "styles/default": {
       "href": "./styles/default.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "Default (2020)",
       "description": "Agricultural landscape — green for grassland, yellow for arable. Points at ./brp_gewaspercelen_2020.pmtiles. Generated from the canonical base style in ../styles/ via ../scripts/regen_year_styles.py.",
       "roles": [
@@ -139,7 +139,7 @@
     },
     "styles/by-category": {
       "href": "./styles/by-category.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "By Crop Category (2020)",
       "description": "Distinct colors for each broad crop category. Points at ./brp_gewaspercelen_2020.pmtiles. Generated from the canonical base style in ../styles/ via ../scripts/regen_year_styles.py.",
       "roles": [
@@ -148,7 +148,7 @@
     },
     "styles/by-crop": {
       "href": "./styles/by-crop.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "By Crop Type (2020)",
       "description": "Individual colors for the most common specific crops. Points at ./brp_gewaspercelen_2020.pmtiles. Generated from the canonical base style in ../styles/ via ../scripts/regen_year_styles.py.",
       "roles": [
@@ -157,7 +157,7 @@
     },
     "styles/landscape-elements": {
       "href": "./styles/landscape-elements.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "Landscape Elements (2020)",
       "description": "Highlights ditches, hedgerows, tree rows, and ponds. Points at ./brp_gewaspercelen_2020.pmtiles. Generated from the canonical base style in ../styles/ via ../scripts/regen_year_styles.py.",
       "roles": [
@@ -171,11 +171,6 @@
       "href": "../../../catalog.json",
       "type": "application/json",
       "title": "Portolan NL — Cloud-Native Dutch Geodata"
-    },
-    {
-      "rel": "self",
-      "href": "https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/2020/brp_gewaspercelen_2020.json",
-      "type": "application/json"
     },
     {
       "rel": "collection",
@@ -208,8 +203,8 @@
     },
     {
       "rel": "describedby",
-      "href": "https://source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/2020/README.md",
-      "type": "text/html",
+      "href": "./README.md",
+      "type": "text/markdown",
       "title": "BRP Gewaspercelen 2020 documentation"
     }
   ]

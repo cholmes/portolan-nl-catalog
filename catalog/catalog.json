@@ -14,14 +14,9 @@
       "title": "Portolan NL — Cloud-Native Dutch Geodata"
     },
     {
-      "rel": "self",
-      "href": "https://data.source.coop/cholmes/portolan-nl/catalog.json",
-      "type": "application/json"
-    },
-    {
       "rel": "describedby",
-      "href": "https://source.coop/cholmes/portolan-nl/README.md",
-      "type": "text/html",
+      "href": "./README.md",
+      "type": "text/markdown",
       "title": "Portolan NL — Cloud-Native Dutch Geodata documentation"
     },
     {

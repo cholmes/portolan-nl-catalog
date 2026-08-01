@@ -41,10 +41,8 @@ vro = {
     ),
     "links": [
         stac.root_link(1),
-        stac.self_link("vro/catalog.json"),
         stac.parent_link(),
-        {"rel": "describedby", "href": f"{SRC}/vro/README.md", "type": "text/html",
-         "title": "VRO subcatalog documentation"},
+        stac.describedby_link("VRO subcatalog"),
         child("./wandonderzoek/collection.json", "BRO Soil Trench Investigation (SFR)"),
         child("./mijnbouwconstructie/collection.json", "BRO Mining Construction (EPC)"),
         child("./bodemverontreiniging_besluit/collection.json",
@@ -74,7 +72,6 @@ bodem = {
     ),
     "links": [
         stac.root_link(2),
-        stac.self_link("vro/bodemkaart/catalog.json"),
         stac.parent_link(title="Ministerie van Volkshuisvesting en Ruimtelijke Ordening (VRO)"),
         stac.preview_link(),
         child("./soilarea/collection.json", "Soil areas (the soil map)"),
@@ -103,7 +100,6 @@ geom = {
     ),
     "links": [
         stac.root_link(2),
-        stac.self_link("vro/geomorfologische_kaart/catalog.json"),
         stac.parent_link(title="Ministerie van Volkshuisvesting en Ruimtelijke Ordening (VRO)"),
         stac.preview_link(),
         child("./geomorphological_area/collection.json", "Geomorphological areas (the map)"),

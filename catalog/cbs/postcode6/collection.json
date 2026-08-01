@@ -11,11 +11,6 @@
       "title": "Portolan NL — Cloud-Native Dutch Geodata"
     },
     {
-      "rel": "self",
-      "href": "https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/collection.json",
-      "type": "application/json"
-    },
-    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json",
@@ -52,8 +47,8 @@
     },
     {
       "rel": "describedby",
-      "href": "https://source.coop/cholmes/portolan-nl/cbs/postcode6/README.md",
-      "type": "text/html",
+      "href": "./README.md",
+      "type": "text/markdown",
       "title": "CBS Postcode6 (Statistics per Postcode) documentation"
     }
   ],
@@ -672,7 +667,7 @@
     },
     "styles/default": {
       "href": "./styles/default.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "Postcode 6 — Population",
       "roles": [
         "style"
@@ -680,7 +675,7 @@
     },
     "styles/by-homeownership": {
       "href": "./styles/by-homeownership.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "Postcode 6 — Homeownership Rate",
       "roles": [
         "style"
@@ -688,7 +683,7 @@
     },
     "styles/by-housing-age": {
       "href": "./styles/by-housing-age.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "Postcode 6 — Pre-1945 Housing",
       "roles": [
         "style"

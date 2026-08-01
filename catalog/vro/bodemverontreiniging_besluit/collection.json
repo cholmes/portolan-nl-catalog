@@ -12,11 +12,6 @@
       "title": "Portolan NL — Cloud-Native Dutch Geodata"
     },
     {
-      "rel": "self",
-      "href": "https://data.source.coop/cholmes/portolan-nl/vro/bodemverontreiniging_besluit/collection.json",
-      "type": "application/json"
-    },
-    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json"
@@ -46,8 +41,8 @@
     },
     {
       "rel": "describedby",
-      "href": "https://source.coop/cholmes/portolan-nl/vro/bodemverontreiniging_besluit/README.md",
-      "type": "text/html",
+      "href": "./README.md",
+      "type": "text/markdown",
       "title": "BRO Government Decision on Soil Contamination (SLD) documentation"
     }
   ],
@@ -161,7 +156,7 @@
     },
     "styles/by-bronhouder": {
       "href": "./styles/by-bronhouder.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "BRO Government Decision on Soil Contamination (SLD) — By data owner (bronhouder)",
       "roles": [
         "style"
@@ -169,7 +164,7 @@
     },
     "styles/by-quality-regime": {
       "href": "./styles/by-quality-regime.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "BRO Government Decision on Soil Contamination (SLD) — By quality regime",
       "roles": [
         "style"
@@ -177,7 +172,7 @@
     },
     "styles/default": {
       "href": "./styles/default.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "BRO Government Decision on Soil Contamination (SLD) — Default",
       "roles": [
         "style"

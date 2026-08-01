@@ -11,11 +11,6 @@
       "title": "Portolan NL — Cloud-Native Dutch Geodata"
     },
     {
-      "rel": "self",
-      "href": "https://data.source.coop/cholmes/portolan-nl/beeldmateriaal/luchtfoto_2024/collection.json",
-      "type": "application/json"
-    },
-    {
       "rel": "via",
       "href": "https://www.beeldmateriaal.nl/",
       "type": "text/html",
@@ -47,8 +42,8 @@
     },
     {
       "rel": "describedby",
-      "href": "https://source.coop/cholmes/portolan-nl/beeldmateriaal/luchtfoto_2024/README.md",
-      "type": "text/html",
+      "href": "./README.md",
+      "type": "text/markdown",
       "title": "Luchtfoto 2024 — Aerial Orthophotos documentation"
     },
     {

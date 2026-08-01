@@ -12,11 +12,6 @@
       "title": "Portolan NL — Cloud-Native Dutch Geodata"
     },
     {
-      "rel": "self",
-      "href": "https://data.source.coop/cholmes/portolan-nl/tudelft/3dbag/collection.json",
-      "type": "application/json"
-    },
-    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json",
@@ -89,8 +84,8 @@
     },
     {
       "rel": "describedby",
-      "href": "https://source.coop/cholmes/portolan-nl/tudelft/3dbag/README.md",
-      "type": "text/html",
+      "href": "./README.md",
+      "type": "text/markdown",
       "title": "3D BAG documentation"
     }
   ],
@@ -291,7 +286,7 @@
     },
     "styles/default": {
       "href": "./styles/default.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "Default (3D Extruded)",
       "description": "Light grey 3D extruded buildings with height-based shading.",
       "roles": [
@@ -300,7 +295,7 @@
     },
     "styles/by-height": {
       "href": "./styles/by-height.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "By Building Height",
       "description": "Color ramp from cool blue (low) to warm red (tall) with 3D extrusion.",
       "roles": [
@@ -309,7 +304,7 @@
     },
     "styles/by-age": {
       "href": "./styles/by-age.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "By Construction Year",
       "description": "Dark brown (pre-1800) through orange to pale yellow (post-2000) with 3D extrusion.",
       "roles": [
@@ -318,7 +313,7 @@
     },
     "styles/by-use": {
       "href": "./styles/by-use.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "By Building Function",
       "description": "Categorical colors by gebruiksdoel with 3D extrusion.",
       "roles": [
@@ -327,7 +322,7 @@
     },
     "styles/by-roof-type": {
       "href": "./styles/by-roof-type.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "By Roof Type",
       "description": "Categorical colors by dak_type with 3D extrusion.",
       "roles": [
@@ -336,7 +331,7 @@
     },
     "styles/flat": {
       "href": "./styles/flat.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "Flat (2D Overview)",
       "description": "2D flat fill view for performance and overview mapping.",
       "roles": [

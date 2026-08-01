@@ -12,11 +12,6 @@
       "title": "Portolan NL — Cloud-Native Dutch Geodata"
     },
     {
-      "rel": "self",
-      "href": "https://data.source.coop/cholmes/portolan-nl/vro/wandonderzoek/collection.json",
-      "type": "application/json"
-    },
-    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json"
@@ -46,8 +41,8 @@
     },
     {
       "rel": "describedby",
-      "href": "https://source.coop/cholmes/portolan-nl/vro/wandonderzoek/README.md",
-      "type": "text/html",
+      "href": "./README.md",
+      "type": "text/markdown",
       "title": "BRO Soil Trench Investigation (SFR / Wandonderzoek) documentation"
     }
   ],
@@ -187,7 +182,7 @@
     },
     "styles/by-litter": {
       "href": "./styles/by-litter.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "BRO Soil Trench Investigation (SFR / Wandonderzoek) — By litter layer investigated",
       "roles": [
         "style"
@@ -195,7 +190,7 @@
     },
     "styles/by-survey-purpose": {
       "href": "./styles/by-survey-purpose.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "BRO Soil Trench Investigation (SFR / Wandonderzoek) — By survey purpose",
       "roles": [
         "style"
@@ -203,7 +198,7 @@
     },
     "styles/default": {
       "href": "./styles/default.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "BRO Soil Trench Investigation (SFR / Wandonderzoek) — Default",
       "roles": [
         "style"

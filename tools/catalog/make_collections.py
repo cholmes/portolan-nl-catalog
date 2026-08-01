@@ -189,8 +189,8 @@ def build(path, cfg):
     for sf in style_files:
         nm = os.path.splitext(os.path.basename(sf))[0]
         key = f"styles/{nm}"
-        assets[key] = stac.asset(f"./styles/{nm}.json", stac.JSON,
-                                 f"{cfg['title']} — {STYLE_TITLES.get(nm, nm)}", ["style"])
+        assets[key] = stac.style_asset(f"./styles/{nm}.json",
+                                       f"{cfg['title']} — {STYLE_TITLES.get(nm, nm)}")
     # default first in manifest
     names = [os.path.splitext(os.path.basename(s))[0] for s in style_files]
     names = (["default"] if "default" in names else []) + [x for x in names if x != "default"]
@@ -206,7 +206,6 @@ def build(path, cfg):
                        "query examples and usage tips.",
         "links": [
             stac.root_link(depth),
-            stac.self_link(f"vro/{path}/collection.json"),
             stac.parent_link(parent),
             stac.link("via", atom, "application/atom+xml",
                       "PDOK Atom download (source GeoPackage)"),
@@ -217,8 +216,7 @@ def build(path, cfg):
             stac.link("pmtiles", f"{paths.DATA_BASE}/vro/{path}/{layer}.pmtiles",
                       "application/vnd.pmtiles"),
             stac.link("llms", "./llms.txt", "text/markdown", "Agent/LLM usage guide"),
-            stac.link("describedby", f"{paths.SRC_BASE}/vro/{path}/README.md",
-                      "text/html", f"{cfg['title']} documentation"),
+            stac.describedby_link(cfg["title"]),
         ],
         "stac_extensions": [
             "https://stac-extensions.github.io/table/v1.2.0/schema.json",

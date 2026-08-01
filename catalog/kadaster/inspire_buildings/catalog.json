@@ -10,19 +10,14 @@
       "type": "application/json"
     },
     {
-      "rel": "self",
-      "href": "https://data.source.coop/cholmes/portolan-nl/kadaster/inspire_buildings/catalog.json",
-      "type": "application/json"
-    },
-    {
       "rel": "parent",
       "href": "../../catalog.json",
       "type": "application/json"
     },
     {
       "rel": "describedby",
-      "href": "https://source.coop/cholmes/portolan-nl/kadaster/inspire_buildings/README.md",
-      "type": "text/html",
+      "href": "./README.md",
+      "type": "text/markdown",
       "title": "kadaster/inspire_buildings documentation"
     }
   ]

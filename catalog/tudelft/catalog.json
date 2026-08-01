@@ -12,11 +12,6 @@
       "title": "Portolan NL — Cloud-Native Dutch Geodata"
     },
     {
-      "rel": "self",
-      "href": "https://data.source.coop/cholmes/portolan-nl/tudelft/catalog.json",
-      "type": "application/json"
-    },
-    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json"
@@ -30,7 +25,7 @@
     {
       "rel": "describedby",
       "href": "https://3d.bk.tudelft.nl/",
-      "type": "text/html",
+      "type": "text/markdown",
       "title": "3D Geoinformation Research Group homepage"
     },
     {

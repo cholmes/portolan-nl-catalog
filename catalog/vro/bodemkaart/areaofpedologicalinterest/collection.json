@@ -12,11 +12,6 @@
       "title": "Portolan NL — Cloud-Native Dutch Geodata"
     },
     {
-      "rel": "self",
-      "href": "https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/areaofpedologicalinterest/collection.json",
-      "type": "application/json"
-    },
-    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json"
@@ -46,8 +41,8 @@
     },
     {
       "rel": "describedby",
-      "href": "https://source.coop/cholmes/portolan-nl/vro/bodemkaart/areaofpedologicalinterest/README.md",
-      "type": "text/html",
+      "href": "./README.md",
+      "type": "text/markdown",
       "title": "BRO Soil Map — Area of pedological interest documentation"
     }
   ],
@@ -157,7 +152,7 @@
     },
     "styles/by-collection": {
       "href": "./styles/by-collection.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "BRO Soil Map — Area of pedological interest — By survey campaign",
       "roles": [
         "style"
@@ -165,7 +160,7 @@
     },
     "styles/by-interest": {
       "href": "./styles/by-interest.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "BRO Soil Map — Area of pedological interest — By area type",
       "roles": [
         "style"
@@ -173,7 +168,7 @@
     },
     "styles/default": {
       "href": "./styles/default.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "BRO Soil Map — Area of pedological interest — Default",
       "roles": [
         "style"

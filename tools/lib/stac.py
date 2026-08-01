@@ -17,6 +17,7 @@ from . import paths
 
 ROOT_TITLE = "Portolan NL — Cloud-Native Dutch Geodata"
 JSON = "application/json"
+STYLE_TYPE = "application/vnd.mapbox.style+json"
 
 
 def write_json(path: Path | str, doc: dict) -> None:
@@ -44,9 +45,18 @@ def parent_link(href: str = "../catalog.json", title: str | None = None) -> dict
     return link("parent", href, JSON, title)
 
 
-def self_link(rel_path: str) -> dict:
-    """rel:self as an absolute published URL, which is how this catalog spells it."""
-    return link("self", f"{paths.DATA_BASE}/{rel_path}", JSON)
+# No self_link. Portolan catalogs are self-contained (PTL-LNK-005): an object
+# does not record where it is served from, so it stays valid wherever it moves.
+
+
+def describedby_link(title: str) -> dict:
+    """rel:describedby, relative (PTL-FIL-003), pointing at the sibling README."""
+    return link("describedby", "./README.md", "text/markdown", f"{title} documentation")
+
+
+def style_asset(href: str, title: str, roles: list[str] | None = None) -> dict:
+    """A MapLibre style asset. PTL-VIZ-005 fixes the media type."""
+    return asset(href, STYLE_TYPE, title, roles or ["style"])
 
 
 def asset(href: str, type: str, title: str, roles: list[str], **extra) -> dict:

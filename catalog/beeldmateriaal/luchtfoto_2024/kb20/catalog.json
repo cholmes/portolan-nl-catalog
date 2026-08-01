@@ -11,11 +11,6 @@
       "title": "Portolan NL — Cloud-Native Dutch Geodata"
     },
     {
-      "rel": "self",
-      "href": "https://data.source.coop/cholmes/portolan-nl/beeldmateriaal/luchtfoto_2024/kb20/catalog.json",
-      "type": "application/json"
-    },
-    {
       "rel": "item",
       "href": "./luchtfoto-2024-20an1.json",
       "type": "application/geo+json",

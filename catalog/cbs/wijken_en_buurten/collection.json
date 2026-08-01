@@ -11,11 +11,6 @@
       "title": "Portolan NL — Cloud-Native Dutch Geodata"
     },
     {
-      "rel": "self",
-      "href": "https://data.source.coop/cholmes/portolan-nl/cbs/wijken_en_buurten/collection.json",
-      "type": "application/json"
-    },
-    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json",
@@ -58,8 +53,8 @@
     },
     {
       "rel": "describedby",
-      "href": "https://source.coop/cholmes/portolan-nl/cbs/wijken_en_buurten/README.md",
-      "type": "text/html",
+      "href": "./README.md",
+      "type": "text/markdown",
       "title": "Wijken en Buurten (Districts and Neighborhoods) documentation"
     }
   ],
@@ -343,7 +338,7 @@
     },
     "styles/default": {
       "href": "./styles/default.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "Districts & Neighborhoods — Population Density",
       "roles": [
         "style"
@@ -351,7 +346,7 @@
     },
     "styles/by-aging": {
       "href": "./styles/by-aging.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "Districts & Neighborhoods — Aging Population",
       "roles": [
         "style"
@@ -359,7 +354,7 @@
     },
     "styles/by-household-size": {
       "href": "./styles/by-household-size.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "Districts & Neighborhoods — Household Size",
       "roles": [
         "style"

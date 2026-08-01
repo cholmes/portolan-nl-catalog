@@ -12,11 +12,6 @@
       "title": "Portolan NL — Cloud-Native Dutch Geodata"
     },
     {
-      "rel": "self",
-      "href": "https://data.source.coop/cholmes/portolan-nl/rvo/natura2000/collection.json",
-      "type": "application/json"
-    },
-    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json",
@@ -47,8 +42,8 @@
     },
     {
       "rel": "describedby",
-      "href": "https://source.coop/cholmes/portolan-nl/rvo/natura2000/README.md",
-      "type": "text/html",
+      "href": "./README.md",
+      "type": "text/markdown",
       "title": "Natura 2000 Protected Areas documentation"
     }
   ],
@@ -204,7 +199,7 @@
     },
     "styles/default": {
       "href": "./styles/default.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "Natura 2000 — Default",
       "roles": [
         "style"
@@ -212,7 +207,7 @@
     },
     "styles/by-directive": {
       "href": "./styles/by-directive.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "Natura 2000 — By EU Directive",
       "roles": [
         "style"

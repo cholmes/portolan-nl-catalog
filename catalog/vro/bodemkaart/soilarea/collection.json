@@ -12,11 +12,6 @@
       "title": "Portolan NL — Cloud-Native Dutch Geodata"
     },
     {
-      "rel": "self",
-      "href": "https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/soilarea/collection.json",
-      "type": "application/json"
-    },
-    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json"
@@ -46,8 +41,8 @@
     },
     {
       "rel": "describedby",
-      "href": "https://source.coop/cholmes/portolan-nl/vro/bodemkaart/soilarea/README.md",
-      "type": "text/html",
+      "href": "./README.md",
+      "type": "text/markdown",
       "title": "BRO Soil Map of the Netherlands 1:50,000 — Soil areas (SGM) documentation"
     }
   ],
@@ -172,7 +167,7 @@
     },
     "styles/by-collection": {
       "href": "./styles/by-collection.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "BRO Soil Map of the Netherlands 1:50,000 — Soil areas (SGM) — By survey campaign",
       "roles": [
         "style"
@@ -180,7 +175,7 @@
     },
     "styles/by-texture": {
       "href": "./styles/by-texture.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "BRO Soil Map of the Netherlands 1:50,000 — Soil areas (SGM) — By texture (sand / clay / peat)",
       "roles": [
         "style"
@@ -188,7 +183,7 @@
     },
     "styles/default": {
       "href": "./styles/default.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "BRO Soil Map of the Netherlands 1:50,000 — Soil areas (SGM) — Default",
       "roles": [
         "style"

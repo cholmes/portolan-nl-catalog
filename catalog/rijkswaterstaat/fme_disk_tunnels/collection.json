@@ -11,11 +11,6 @@
       "title": "Portolan NL — Cloud-Native Dutch Geodata"
     },
     {
-      "rel": "self",
-      "href": "https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/fme_disk_tunnels/collection.json",
-      "type": "application/json"
-    },
-    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json",
@@ -34,9 +29,15 @@
     },
     {
       "rel": "describedby",
-      "href": "https://source.coop/cholmes/portolan-nl/rijkswaterstaat/fme_disk_tunnels/README.md",
-      "type": "text/html",
+      "href": "./README.md",
+      "type": "text/markdown",
       "title": "Rijkswaterstaat Tunnels documentation"
+    },
+    {
+      "rel": "license",
+      "href": "https://www.pdok.nl/gebruiksvoorwaarden",
+      "type": "text/html",
+      "title": "PDOK terms of use"
     }
   ],
   "stac_extensions": [
@@ -128,7 +129,7 @@
       ]
     }
   },
-  "license": "proprietary",
+  "license": "other",
   "summaries": {
     "geoparquet:geometry_type": [
       "Point"
@@ -211,7 +212,7 @@
     },
     "styles/default": {
       "href": "./styles/default.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "Tunnels — Default",
       "roles": [
         "style"

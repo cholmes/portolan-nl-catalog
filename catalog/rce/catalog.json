@@ -12,19 +12,14 @@
       "title": "Portolan NL — Cloud-Native Dutch Geodata"
     },
     {
-      "rel": "self",
-      "href": "https://data.source.coop/cholmes/portolan-nl/rce/catalog.json",
-      "type": "application/json"
-    },
-    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json"
     },
     {
       "rel": "describedby",
-      "href": "https://source.coop/cholmes/portolan-nl/rce/README.md",
-      "type": "text/html",
+      "href": "./README.md",
+      "type": "text/markdown",
       "title": "Rijksdienst voor het Cultureel Erfgoed (RCE) documentation"
     },
     {

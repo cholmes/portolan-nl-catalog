@@ -209,7 +209,7 @@ def build_item(year: int) -> dict:
     for style_id, title, desc in STYLES:
         assets[f"styles/{style_id}"] = {
             "href": f"./styles/{style_id}.json",
-            "type": "application/json",
+            "type": stac.STYLE_TYPE,
             "title": f"{title} ({year})",
             "description": (
                 f"{desc} Points at ./brp_gewaspercelen_{year}.pmtiles. Generated from "
@@ -224,7 +224,6 @@ def build_item(year: int) -> dict:
     coll_title = "BRP Gewaspercelen (Agricultural Crop Parcels)"
     links = [
         stac.root_link(3),
-        stac.self_link(f"{rel_dir}/brp_gewaspercelen_{year}.json"),
         stac.link("collection", "../collection.json", stac.JSON, coll_title),
         stac.parent_link("../collection.json", coll_title),
         stac.link("via", src["via_url"], src["type"], f"PDOK source download ({year})"),
@@ -233,8 +232,7 @@ def build_item(year: int) -> dict:
         links.append(stac.link("pmtiles", f"{paths.DATA_BASE}/{rel_dir}/{pmtiles}",
                                "application/vnd.pmtiles"))
     links.append(stac.link("llms", "./llms.txt", "text/markdown", "Agent/LLM usage guide"))
-    links.append(stac.link("describedby", f"{paths.SRC_BASE}/{rel_dir}/README.md",
-                           "text/html", f"BRP Gewaspercelen {year} documentation"))
+    links.append(stac.describedby_link(f"BRP Gewaspercelen {year}"))
 
     return {
         "type": "Feature",

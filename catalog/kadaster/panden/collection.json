@@ -11,11 +11,6 @@
       "title": "Portolan NL — Cloud-Native Dutch Geodata"
     },
     {
-      "rel": "self",
-      "href": "https://data.source.coop/cholmes/portolan-nl/kadaster/panden/collection.json",
-      "type": "application/json"
-    },
-    {
       "rel": "parent",
       "href": "../catalog.json",
       "type": "application/json",
@@ -53,8 +48,8 @@
     },
     {
       "rel": "describedby",
-      "href": "https://imbag.github.io/praktijkhandleiding/objecttypen/pand",
-      "type": "text/html",
+      "href": "./README.md",
+      "type": "text/markdown",
       "title": "BAG Pand object type documentation"
     },
     {
@@ -70,8 +65,8 @@
     },
     {
       "rel": "describedby",
-      "href": "https://source.coop/cholmes/portolan-nl/kadaster/panden/README.md",
-      "type": "text/html",
+      "href": "https://data.source.coop/cholmes/portolan-nl/kadaster/panden/README.md",
+      "type": "text/markdown",
       "title": "Buildings (Panden) documentation"
     },
     {
@@ -222,7 +217,7 @@
     },
     "styles/default": {
       "href": "./styles/default.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "Default",
       "description": "Grey building footprints with blue outlines.",
       "roles": [
@@ -231,7 +226,7 @@
     },
     "styles/by-age": {
       "href": "./styles/by-age.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "Buildings by Construction Year",
       "description": "Color ramp from dark brown (pre-1800) through orange to pale yellow (post-2000) based on bouwjaar.",
       "roles": [
@@ -240,7 +235,7 @@
     },
     "styles/by-use": {
       "href": "./styles/by-use.json",
-      "type": "application/json",
+      "type": "application/vnd.mapbox.style+json",
       "title": "Buildings by Use",
       "description": "Categorical colors by gebruiksdoel: red for residential, blue for office/retail, green for healthcare/sports, purple for education.",
       "roles": [
