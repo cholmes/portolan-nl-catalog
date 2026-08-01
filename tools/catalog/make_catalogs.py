@@ -7,6 +7,8 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from tools.lib import paths, stac
 
+PORTOLAN_SCHEMA = "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+
 # Generators write into the published tree; paths.py owns where that is.
 ROOT = str(paths.CATALOG)
 DATA = paths.DATA_BASE
@@ -53,6 +55,7 @@ vro = {
               "BRO Geomorphological Map of the Netherlands 1:50,000 (GMM)"),
     ],
 }
+vro["stac_extensions"] = [PORTOLAN_SCHEMA]
 write("vro/catalog.json", vro)
 
 # ---- vro/bodemkaart/catalog.json -------------------------------------------
@@ -79,6 +82,7 @@ bodem = {
     ],
     "assets": {"thumbnail": stac.thumbnail_asset()},
 }
+bodem["stac_extensions"] = [PORTOLAN_SCHEMA]
 write("vro/bodemkaart/catalog.json", bodem)
 
 # ---- vro/geomorfologische_kaart/catalog.json -------------------------------
@@ -109,6 +113,7 @@ geom = {
     ],
     "assets": {"thumbnail": stac.thumbnail_asset()},
 }
+geom["stac_extensions"] = [PORTOLAN_SCHEMA]
 write("vro/geomorfologische_kaart/catalog.json", geom)
 
 # ---- wire root catalog ------------------------------------------------------

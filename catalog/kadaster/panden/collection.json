@@ -55,7 +55,10 @@
     {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/kadaster/panden/bag-light.pmtiles",
-      "type": "application/vnd.pmtiles"
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "panden"
+      ]
     },
     {
       "rel": "llms",
@@ -77,6 +80,7 @@
     }
   ],
   "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
@@ -221,7 +225,8 @@
       "title": "Default",
       "description": "Grey building footprints with blue outlines.",
       "roles": [
-        "style"
+        "style",
+        "default"
       ]
     },
     "styles/by-age": {
@@ -277,5 +282,23 @@
         "data"
       ]
     }
-  }
+  },
+  "providers": [
+    {
+      "name": "Het Kadaster",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.kadaster.nl/"
+    },
+    {
+      "name": "Source Cooperative",
+      "roles": [
+        "host"
+      ],
+      "url": "https://source.coop/cholmes/portolan-nl"
+    }
+  ],
+  "updated": "2026-07-31T23:32:16Z"
 }

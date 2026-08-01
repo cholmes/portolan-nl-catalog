@@ -18,6 +18,13 @@ from . import paths
 ROOT_TITLE = "Portolan NL — Cloud-Native Dutch Geodata"
 JSON = "application/json"
 STYLE_TYPE = "application/vnd.mapbox.style+json"
+PORTOLAN_SCHEMA = "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+
+# PTL-PRV-001/002: a producer, and exactly one host, listed last.
+VRO_PRODUCER = {"name": "Ministerie van Volkshuisvesting en Ruimtelijke Ordening",
+                "roles": ["producer", "licensor"], "url": "https://www.rijksoverheid.nl/"}
+HOST_PROVIDER = {"name": "Source Cooperative", "roles": ["host"],
+                 "url": "https://source.coop/cholmes/portolan-nl"}
 
 
 def write_json(path: Path | str, doc: dict) -> None:

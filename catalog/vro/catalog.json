@@ -58,5 +58,8 @@
       "type": "application/json",
       "title": "BRO Geomorphological Map of the Netherlands 1:50,000 (GMM)"
     }
+  ],
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
   ]
 }

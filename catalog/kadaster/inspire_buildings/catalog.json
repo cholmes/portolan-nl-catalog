@@ -20,5 +20,8 @@
       "type": "text/markdown",
       "title": "kadaster/inspire_buildings documentation"
     }
+  ],
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
   ]
 }

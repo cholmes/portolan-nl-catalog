@@ -229,5 +229,8 @@
       ]
     }
   },
-  "title": "KB 32 — Amersfoort"
+  "title": "KB 32 — Amersfoort",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+  ]
 }

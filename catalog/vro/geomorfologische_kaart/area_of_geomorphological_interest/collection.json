@@ -31,7 +31,10 @@
     {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/area_of_geomorphological_interest/area_of_geomorphological_interest.pmtiles",
-      "type": "application/vnd.pmtiles"
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "area_of_geomorphological_interest"
+      ]
     },
     {
       "rel": "llms",
@@ -47,6 +50,7 @@
     }
   ],
   "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
@@ -155,7 +159,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Geomorphological Map — Area of geomorphological interest — Default",
       "roles": [
-        "style"
+        "style",
+        "default"
       ]
     }
   },
@@ -171,5 +176,23 @@
   "portolan:styles": [
     "styles/default",
     "styles/by-type"
-  ]
+  ],
+  "providers": [
+    {
+      "name": "Ministerie van Volkshuisvesting en Ruimtelijke Ordening",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.rijksoverheid.nl/"
+    },
+    {
+      "name": "Source Cooperative",
+      "roles": [
+        "host"
+      ],
+      "url": "https://source.coop/cholmes/portolan-nl"
+    }
+  ],
+  "updated": "2026-08-01T20:56:33Z"
 }

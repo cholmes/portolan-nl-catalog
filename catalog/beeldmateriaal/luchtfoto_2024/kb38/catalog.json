@@ -229,5 +229,8 @@
       ]
     }
   },
-  "title": "KB 38 — Gorinchem / Rivierenland"
+  "title": "KB 38 — Gorinchem / Rivierenland",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+  ]
 }

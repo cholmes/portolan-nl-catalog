@@ -53,5 +53,8 @@
       "title": "Portolan NL — Cloud-Native Dutch Geodata"
     }
   ],
-  "title": "Beeldmateriaal Nederland"
+  "title": "Beeldmateriaal Nederland",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+  ]
 }

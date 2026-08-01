@@ -25,7 +25,10 @@
     {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/zero_emissiezones/zero_emissiezones.pmtiles",
-      "type": "application/vnd.pmtiles"
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "zero_emissiezones"
+      ]
     },
     {
       "rel": "describedby",
@@ -41,6 +44,7 @@
     }
   ],
   "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
@@ -215,5 +219,23 @@
         "documentation"
       ]
     }
-  }
+  },
+  "providers": [
+    {
+      "name": "Rijkswaterstaat",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.rijkswaterstaat.nl/"
+    },
+    {
+      "name": "Source Cooperative",
+      "roles": [
+        "host"
+      ],
+      "url": "https://source.coop/cholmes/portolan-nl"
+    }
+  ],
+  "updated": "2026-07-31T23:32:32Z"
 }

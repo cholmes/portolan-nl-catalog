@@ -186,11 +186,16 @@ def build(path, cfg):
                               f"{cfg['title']} (vector tiles)", ["visual"]),
         "thumbnail": stac.thumbnail_asset(),
     }
+    multi_style = len(style_files) > 1
     for sf in style_files:
         nm = os.path.splitext(os.path.basename(sf))[0]
         key = f"styles/{nm}"
+        # PTL-VIZ-006 / spec PR #97: where a collection has more than one style,
+        # exactly one names itself the default with a second asset role.
+        roles = ["style", "default"] if (multi_style and nm == "default") else ["style"]
         assets[key] = stac.style_asset(f"./styles/{nm}.json",
-                                       f"{cfg['title']} — {STYLE_TITLES.get(nm, nm)}")
+                                       f"{cfg['title']} — {STYLE_TITLES.get(nm, nm)}",
+                                       roles)
     # default first in manifest
     names = [os.path.splitext(os.path.basename(s))[0] for s in style_files]
     names = (["default"] if "default" in names else []) + [x for x in names if x != "default"]
@@ -214,11 +219,12 @@ def build(path, cfg):
             # without a web-map link is a validation error. Every sibling
             # collection in the catalog carries this link.
             stac.link("pmtiles", f"{paths.DATA_BASE}/vro/{path}/{layer}.pmtiles",
-                      "application/vnd.pmtiles"),
+                      "application/vnd.pmtiles", **{"pmtiles:layers": [layer]}),
             stac.link("llms", "./llms.txt", "text/markdown", "Agent/LLM usage guide"),
             stac.describedby_link(cfg["title"]),
         ],
         "stac_extensions": [
+            stac.PORTOLAN_SCHEMA,
             "https://stac-extensions.github.io/table/v1.2.0/schema.json",
             "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
             "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
@@ -235,8 +241,17 @@ def build(path, cfg):
         "assets": assets, "license": "CC0-1.0",
         "summaries": {"geoparquet:geometry_type": [gtype], "vector:geometry_types": [gtype]},
         "portolan:styles": order,
+        "providers": [dict(stac.VRO_PRODUCER), dict(stac.HOST_PROVIDER)],
     }
     out = os.path.join(cdir, "collection.json")
+    # `updated` records when this collection last synced to the published prefix.
+    # That is a fact about publishing, not about the source data, so the
+    # generator carries forward whatever is already there rather than dropping
+    # it. tools/catalog/conform.py sets it from the S3 listing.
+    if os.path.exists(out):
+        prev = json.load(open(out))
+        if "updated" in prev:
+            coll["updated"] = prev["updated"]
     stac.write_json(out, coll)
     print(f"  {out}  ({gtype}, {n} feats, EPSG:{epsg}, {len(order)} styles)")
 

@@ -28,5 +28,8 @@
       "type": "application/json",
       "title": "National Monuments (Rijksmonumenten)"
     }
+  ],
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
   ]
 }

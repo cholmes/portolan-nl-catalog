@@ -43,7 +43,10 @@
     {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/cbs/existing_landuse_inspire/existing_landuse.pmtiles",
-      "type": "application/vnd.pmtiles"
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "existing_landuse"
+      ]
     },
     {
       "rel": "describedby",
@@ -53,8 +56,10 @@
     }
   ],
   "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
-    "https://stac-extensions.github.io/vector/v0.1.0/schema.json"
+    "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
   ],
   "table:primary_geometry": "geometry",
   "table:columns": [
@@ -209,5 +214,23 @@
         "documentation"
       ]
     }
-  }
+  },
+  "providers": [
+    {
+      "name": "Centraal Bureau voor de Statistiek",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.cbs.nl/"
+    },
+    {
+      "name": "Source Cooperative",
+      "roles": [
+        "host"
+      ],
+      "url": "https://source.coop/cholmes/portolan-nl"
+    }
+  ],
+  "updated": "2026-07-31T23:31:57Z"
 }

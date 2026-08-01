@@ -26,7 +26,10 @@
     {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/rvo/nationale_parken/nationale_parken.pmtiles",
-      "type": "application/vnd.pmtiles"
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "nationale_parken"
+      ]
     },
     {
       "rel": "llms",
@@ -42,6 +45,7 @@
     }
   ],
   "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
@@ -187,5 +191,23 @@
       "name": "default",
       "href": "./styles/default.json"
     }
-  ]
+  ],
+  "providers": [
+    {
+      "name": "Rijksdienst voor Ondernemend Nederland",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.rvo.nl/"
+    },
+    {
+      "name": "Source Cooperative",
+      "roles": [
+        "host"
+      ],
+      "url": "https://source.coop/cholmes/portolan-nl"
+    }
+  ],
+  "updated": "2026-07-31T23:32:36Z"
 }

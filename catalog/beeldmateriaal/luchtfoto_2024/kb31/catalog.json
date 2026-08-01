@@ -229,5 +229,8 @@
       ]
     }
   },
-  "title": "KB 31 — Utrecht / Vinkeveen"
+  "title": "KB 31 — Utrecht / Vinkeveen",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+  ]
 }

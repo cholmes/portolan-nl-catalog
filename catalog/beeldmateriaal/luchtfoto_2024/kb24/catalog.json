@@ -109,5 +109,8 @@
       ]
     }
   },
-  "title": "KB 24 — Haarlem / IJmond"
+  "title": "KB 24 — Haarlem / IJmond",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+  ]
 }

@@ -223,5 +223,8 @@
       ]
     }
   },
-  "title": "KB 33 — Apeldoorn / Veluwe East"
+  "title": "KB 33 — Apeldoorn / Veluwe East",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+  ]
 }

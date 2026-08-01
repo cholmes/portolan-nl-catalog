@@ -32,7 +32,10 @@
     {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/rce/rijksmonumenten/rijksmonumenten.pmtiles",
-      "type": "application/vnd.pmtiles"
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "rijksmonumenten"
+      ]
     },
     {
       "rel": "llms",
@@ -48,6 +51,7 @@
     }
   ],
   "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
@@ -182,7 +186,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "National Monuments — Default",
       "roles": [
-        "style"
+        "style",
+        "default"
       ]
     },
     "styles/by-category": {
@@ -227,5 +232,23 @@
       "name": "by-type",
       "href": "./styles/by-type.json"
     }
-  ]
+  ],
+  "providers": [
+    {
+      "name": "Rijksdienst voor het Cultureel Erfgoed",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.cultureelerfgoed.nl/"
+    },
+    {
+      "name": "Source Cooperative",
+      "roles": [
+        "host"
+      ],
+      "url": "https://source.coop/cholmes/portolan-nl"
+    }
+  ],
+  "updated": "2026-07-31T23:32:18Z"
 }

@@ -62,7 +62,11 @@
     {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/tudelft/3dbag/3dbag-lod13.pmtiles",
-      "type": "application/vnd.pmtiles"
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "buildings",
+        "buildings-overview"
+      ]
     },
     {
       "rel": "tilejson",
@@ -90,6 +94,7 @@
     }
   ],
   "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
@@ -216,6 +221,13 @@
         "producer"
       ],
       "url": "https://3dgi.xyz/"
+    },
+    {
+      "name": "Source Cooperative",
+      "roles": [
+        "host"
+      ],
+      "url": "https://source.coop/cholmes/portolan-nl"
     }
   ],
   "summaries": {
@@ -290,7 +302,8 @@
       "title": "Default (3D Extruded)",
       "description": "Light grey 3D extruded buildings with height-based shading.",
       "roles": [
-        "style"
+        "style",
+        "default"
       ]
     },
     "styles/by-height": {
@@ -352,5 +365,6 @@
         "documentation"
       ]
     }
-  }
+  },
+  "updated": "2026-07-31T23:32:40Z"
 }

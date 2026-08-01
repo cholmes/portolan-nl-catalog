@@ -31,7 +31,10 @@
     {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/kadaster/inspire_buildings/buildings.pmtiles",
-      "type": "application/vnd.pmtiles"
+      "type": "application/vnd.pmtiles",
+      "pmtiles:layers": [
+        "buildings"
+      ]
     },
     {
       "rel": "llms",
@@ -47,6 +50,7 @@
     }
   ],
   "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
@@ -139,16 +143,6 @@
   "pmtiles:layers": [
     "buildings"
   ],
-  "partition:scheme": "hive",
-  "partition:strategy": "kdtree",
-  "partition:keys": [
-    {
-      "name": "kdtree_cell",
-      "type": "string",
-      "description": "KDTREE spatial partition cell identifier"
-    }
-  ],
-  "partition:file_count": 512,
   "title": "Buildings (INSPIRE Harmonized)",
   "extent": {
     "spatial": {
@@ -224,7 +218,8 @@
       "type": "application/vnd.mapbox.style+json",
       "title": "INSPIRE Buildings — Default",
       "roles": [
-        "style"
+        "style",
+        "default"
       ]
     },
     "styles/by-construction-date": {
@@ -270,5 +265,23 @@
         "data"
       ]
     }
-  }
+  },
+  "providers": [
+    {
+      "name": "Het Kadaster",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://www.kadaster.nl/"
+    },
+    {
+      "name": "Source Cooperative",
+      "roles": [
+        "host"
+      ],
+      "url": "https://source.coop/cholmes/portolan-nl"
+    }
+  ],
+  "updated": "2026-07-31T23:32:12Z"
 }

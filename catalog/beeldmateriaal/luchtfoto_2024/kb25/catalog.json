@@ -229,5 +229,8 @@
       ]
     }
   },
-  "title": "KB 25 — Amsterdam"
+  "title": "KB 25 — Amsterdam",
+  "stac_extensions": [
+    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+  ]
 }
