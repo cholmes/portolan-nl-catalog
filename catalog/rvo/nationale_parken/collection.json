@@ -42,6 +42,11 @@
       "href": "./README.md",
       "type": "text/markdown",
       "title": "National Parks (Nationale Parken) documentation"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
     }
   ],
   "stac_extensions": [

@@ -51,6 +51,11 @@
       "href": "../catalog.json",
       "type": "application/json",
       "title": "Portolan NL — Cloud-Native Dutch Geodata"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
     }
   ],
   "title": "Beeldmateriaal Nederland",

@@ -23,6 +23,11 @@
       "title": "VRO subcatalog documentation"
     },
     {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
+    },
+    {
       "rel": "child",
       "href": "./wandonderzoek/collection.json",
       "type": "application/json",

@@ -87,6 +87,17 @@
       "href": "../collection.json",
       "type": "application/json",
       "title": "Luchtfoto 2024 — Aerial Orthophotos"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown",
+      "title": "KB 24 — Haarlem / IJmond documentation"
     }
   ],
   "extent": {

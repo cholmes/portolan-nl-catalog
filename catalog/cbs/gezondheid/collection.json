@@ -59,6 +59,11 @@
       "href": "./README.md",
       "type": "text/markdown",
       "title": "Human Health Statistics (Gezondheid) documentation"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
     }
   ],
   "stac_extensions": [

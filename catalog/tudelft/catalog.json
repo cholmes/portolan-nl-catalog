@@ -24,7 +24,7 @@
     },
     {
       "rel": "describedby",
-      "href": "https://3d.bk.tudelft.nl/",
+      "href": "./README.md",
       "type": "text/markdown",
       "title": "3D Geoinformation Research Group homepage"
     },
@@ -33,6 +33,11 @@
       "href": "./3dbag/collection.json",
       "type": "application/json",
       "title": "3D BAG"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
     }
   ],
   "stac_extensions": [

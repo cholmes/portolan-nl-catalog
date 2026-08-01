@@ -84,6 +84,11 @@
       "href": "./vro/catalog.json",
       "type": "application/json",
       "title": "Ministerie van Volkshuisvesting en Ruimtelijke Ordening (VRO)"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
     }
   ],
   "title": "Portolan NL — Cloud-Native Dutch Geodata",

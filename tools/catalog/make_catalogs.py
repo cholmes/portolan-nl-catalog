@@ -45,6 +45,7 @@ vro = {
         stac.root_link(1),
         stac.parent_link(),
         stac.describedby_link("VRO subcatalog"),
+        stac.agents_link(),
         child("./wandonderzoek/collection.json", "BRO Soil Trench Investigation (SFR)"),
         child("./mijnbouwconstructie/collection.json", "BRO Mining Construction (EPC)"),
         child("./bodemverontreiniging_besluit/collection.json",
@@ -82,6 +83,7 @@ bodem = {
     ],
     "assets": {"thumbnail": stac.thumbnail_asset()},
 }
+bodem["links"] += [stac.describedby_link(bodem["title"]), stac.agents_link()]
 bodem["stac_extensions"] = [PORTOLAN_SCHEMA]
 write("vro/bodemkaart/catalog.json", bodem)
 
@@ -113,6 +115,7 @@ geom = {
     ],
     "assets": {"thumbnail": stac.thumbnail_asset()},
 }
+geom["links"] += [stac.describedby_link(geom["title"]), stac.agents_link()]
 geom["stac_extensions"] = [PORTOLAN_SCHEMA]
 write("vro/geomorfologische_kaart/catalog.json", geom)
 

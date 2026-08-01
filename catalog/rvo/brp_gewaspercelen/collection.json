@@ -144,6 +144,11 @@
       "href": "./README.md",
       "type": "text/markdown",
       "title": "BRP Gewaspercelen documentation"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
     }
   ],
   "portolan:styles": [

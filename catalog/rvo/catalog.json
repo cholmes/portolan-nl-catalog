@@ -45,6 +45,11 @@
       "href": "./brp_gewaspercelen/collection.json",
       "type": "application/json",
       "title": "BRP Gewaspercelen (Agricultural Crop Parcels)"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
     }
   ],
   "stac_extensions": [

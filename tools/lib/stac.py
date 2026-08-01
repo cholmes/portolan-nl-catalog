@@ -61,6 +61,11 @@ def describedby_link(title: str) -> dict:
     return link("describedby", "./README.md", "text/markdown", f"{title} documentation")
 
 
+def agents_link() -> dict:
+    """rel:agents -> the generated AGENTS.md next to the object (PTL-FIL-002)."""
+    return link("agents", "./AGENTS.md", "text/markdown")
+
+
 def style_asset(href: str, title: str, roles: list[str] | None = None) -> dict:
     """A MapLibre style asset. PTL-VIZ-005 fixes the media type."""
     return asset(href, STYLE_TYPE, title, roles or ["style"])

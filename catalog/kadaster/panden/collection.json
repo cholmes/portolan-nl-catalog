@@ -77,6 +77,11 @@
       "href": "https://portolan-sdi.github.io/portolan-nl-demo/#/tudelft/3dbag/collection.json",
       "type": "text/html",
       "title": "Browse 3D BAG in this catalog — 3D building models with heights, volumes, and roof types (TU Delft)"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
     }
   ],
   "stac_extensions": [

@@ -42,6 +42,17 @@
       "href": "./llms.txt",
       "type": "text/markdown",
       "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown",
+      "title": "Wijken en Buurten 2025 (Neighborhoods and Districts with Demographics) documentation"
     }
   ],
   "stac_extensions": [

@@ -91,6 +91,11 @@
       "href": "./README.md",
       "type": "text/markdown",
       "title": "3D BAG documentation"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
     }
   ],
   "stac_extensions": [

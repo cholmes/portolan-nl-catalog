@@ -42,6 +42,17 @@
       "href": "./llms.txt",
       "type": "text/markdown",
       "title": "Agent/LLM usage guide"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
+    },
+    {
+      "rel": "describedby",
+      "href": "./README.md",
+      "type": "text/markdown",
+      "title": "National Road Network (NWB Wegen) documentation"
     }
   ],
   "stac_extensions": [

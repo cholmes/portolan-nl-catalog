@@ -45,6 +45,11 @@
       "href": "./bestuurlijke_gebieden/collection.json",
       "type": "application/json",
       "title": "Administrative Areas (Bestuurlijke Gebieden)"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
     }
   ],
   "stac_extensions": [

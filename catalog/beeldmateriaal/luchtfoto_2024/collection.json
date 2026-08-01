@@ -123,6 +123,11 @@
       "href": "../catalog.json",
       "type": "application/json",
       "title": "Beeldmateriaal Nederland"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
     }
   ],
   "stac_extensions": [

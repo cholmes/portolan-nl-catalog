@@ -41,6 +41,11 @@
       "href": "https://www.pdok.nl/gebruiksvoorwaarden",
       "type": "text/html",
       "title": "PDOK terms of use"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
     }
   ],
   "stac_extensions": [

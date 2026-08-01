@@ -69,6 +69,11 @@
       "href": "./zero_emissiezones/collection.json",
       "type": "application/json",
       "title": "Zero Emission Zones"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
     }
   ],
   "stac_extensions": [

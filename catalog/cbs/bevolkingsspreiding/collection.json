@@ -59,6 +59,11 @@
       "href": "./README.md",
       "type": "text/markdown",
       "title": "Bevolkingsspreiding (Population Distribution) documentation"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
     }
   ],
   "stac_extensions": [

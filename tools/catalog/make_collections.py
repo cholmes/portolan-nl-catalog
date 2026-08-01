@@ -222,6 +222,7 @@ def build(path, cfg):
                       "application/vnd.pmtiles", **{"pmtiles:layers": [layer]}),
             stac.link("llms", "./llms.txt", "text/markdown", "Agent/LLM usage guide"),
             stac.describedby_link(cfg["title"]),
+            stac.agents_link(),
         ],
         "stac_extensions": [
             stac.PORTOLAN_SCHEMA,

@@ -19,6 +19,11 @@
       "href": "./README.md",
       "type": "text/markdown",
       "title": "kadaster/inspire_buildings documentation"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
     }
   ],
   "stac_extensions": [

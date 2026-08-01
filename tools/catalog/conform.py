@@ -116,6 +116,8 @@ def _describedby(doc, path):
     which is better: the catalog stays self-contained and resolves wherever it
     is served from. Only set where README.md is actually there.
     """
+    if doc.get("type") not in ("Catalog", "Collection"):
+        return False          # same reasoning as PTL-FIL-002
     if not (path.parent / "README.md").is_file():
         return False
     changed = False
@@ -134,6 +136,22 @@ def _describedby(doc, path):
     doc.setdefault("links", []).append(
         {"rel": "describedby", "href": "./README.md", "type": "text/markdown",
          "title": f"{title} documentation"})
+    return True
+
+
+@fix("PTL-FIL-002", "add the rel:agents link to AGENTS.md")
+def _agents_link(doc, path):
+    # Catalogs and collections only. An item shares a directory with its
+    # catalog, so applying this to items would add the same link to all 373 of
+    # them for a file that documents their parent, not them.
+    if doc.get("type") not in ("Catalog", "Collection"):
+        return False
+    if not (path.parent / "AGENTS.md").is_file():
+        return False
+    links = doc.setdefault("links", [])
+    if any(isinstance(l, dict) and l.get("rel") == "agents" for l in links):
+        return False
+    links.append({"rel": "agents", "href": "./AGENTS.md", "type": "text/markdown"})
     return True
 
 

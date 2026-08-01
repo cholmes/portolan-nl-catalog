@@ -63,6 +63,11 @@
       "href": "./gezondheid/collection.json",
       "type": "application/json",
       "title": "Human Health Statistics (Gezondheid)"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
     }
   ],
   "stac_extensions": [

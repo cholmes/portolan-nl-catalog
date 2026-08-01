@@ -47,6 +47,11 @@
       "href": "./README.md",
       "type": "text/markdown",
       "title": "BRO Soil Map — Area of pedological interest documentation"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
     }
   ],
   "stac_extensions": [

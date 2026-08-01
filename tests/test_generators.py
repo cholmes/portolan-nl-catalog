@@ -31,6 +31,7 @@ GENERATORS = [
     ("tools/catalog/make_catalogs.py", "vro subcatalog catalog.json"),
     ("tools/catalog/make_readmes.py", "vro README.md"),
     ("tools/catalog/make_llms.py", "vro llms.txt"),
+    ("tools/catalog/make_docs_files.py --confirm", "AGENTS.md and missing README.md"),
     ("tools/collections/brp_gewaspercelen/generate_items.py", "brp item JSON"),
     ("tools/collections/brp_gewaspercelen/generate_year_docs.py", "brp year docs"),
     ("tools/collections/brp_gewaspercelen/regen_year_styles.py", "brp per-year styles"),
@@ -65,7 +66,8 @@ def main() -> int:
                "PORTOLAN_NL_CATALOG": str(work),
                "PORTOLAN_NL_WORKDIR": str(Path(td) / "no-such-workdir")}
         for script, what in GENERATORS:
-            r = subprocess.run([sys.executable, str(REPO / script)],
+            cmd, *flags = script.split()
+            r = subprocess.run([sys.executable, str(REPO / cmd), *flags],
                                cwd=REPO, env=env, capture_output=True, text=True)
             if r.returncode != 0:
                 print(f"FAIL {script} exited {r.returncode} ({what})")

@@ -27,6 +27,11 @@
       "href": "./rijksmonumenten/collection.json",
       "type": "application/json",
       "title": "National Monuments (Rijksmonumenten)"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
     }
   ],
   "stac_extensions": [

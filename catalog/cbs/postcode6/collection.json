@@ -53,6 +53,11 @@
       "href": "./README.md",
       "type": "text/markdown",
       "title": "CBS Postcode6 (Statistics per Postcode) documentation"
+    },
+    {
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
     }
   ],
   "stac_extensions": [
