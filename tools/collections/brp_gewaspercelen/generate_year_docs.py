@@ -14,11 +14,11 @@ from generate_items import YEAR_STATS, SOURCES, NEW_YEARS, HISTORICAL_YEARS
 
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
-from tools.lib import paths
+from tools.lib import paths, docs
 
 ROOT = paths.CATALOG / "rvo" / "brp_gewaspercelen"
 
-PARENT_BASE_URL = "https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen"
+PARENT_BASE_URL = docs.collection_url("rvo/brp_gewaspercelen")
 
 
 def normalization_notes(year: int) -> str:

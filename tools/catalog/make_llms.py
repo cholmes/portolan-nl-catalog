@@ -9,7 +9,7 @@ import os
 
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from tools.lib import paths
+from tools.lib import paths, docs
 
 # Generators write into the published tree; paths.py owns where that is.
 ROOT = str(paths.CATALOG)
@@ -178,10 +178,9 @@ def styles_section(coll, path):
     out = ["## Visualization styles\n",
            "Mapbox GL v8 style files (use with MapLibre GL JS, OpenLayers via ol-mapbox-style, or "
            "any Mapbox GL v8 renderer) live alongside the PMTiles:\n"]
-    base = f"{DATA}/vro/{path}/styles"
-    for key in coll.get("portolan:styles", []):
-        a = coll["assets"].get(key, {})
-        out.append(f"- **`{key}.json`** — {a.get('title','')} ({base}/{os.path.basename(a['href'])})")
+    base = f"{docs.collection_url(f'vro/{path}')}/styles"
+    for key, title, fname in docs.style_entries(coll):
+        out.append(f"- **`{key}.json`** — {title} ({base}/{fname})")
     return "\n".join(out)
 
 

@@ -6,7 +6,7 @@ import os
 
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from tools.lib import paths
+from tools.lib import paths, docs
 
 # Generators write into the published tree; paths.py owns where that is.
 ROOT = str(paths.CATALOG)
@@ -29,11 +29,8 @@ def coll_readme(path):
     epsg = c["proj:epsg"]
     gtype = c["geoparquet:geometry_type"]
     bbox = c["extent"]["spatial"]["bbox"][0]
-    rows = ["| Column | Type | Description |", "|--------|------|-------------|"]
-    for col in c["table:columns"]:
-        rows.append(f"| {col['name']} | {col['type']} | {col.get('description','')} |")
-    styles = "\n".join(
-        f"- `{k}` — {c['assets'][k]['title']}" for k in c.get("portolan:styles", []))
+    rows = docs.column_table(c["table:columns"])
+    styles = "\n".join(f"- `{k}` — {title}" for k, title, _ in docs.style_entries(c))
     depth = path.count("/")
     rooturl = "../" * (depth + 1)
     md = f"""# {c['title']}
