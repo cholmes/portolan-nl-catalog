@@ -41,6 +41,7 @@ gdf = gpd.read_parquet('https://data.source.coop/cholmes/portolan-nl/vro/geomorf
 ## Styles
 
 - `styles/default` — BRO Geomorphological Map — Area of geomorphological interest — Default
+- `styles/by-type` — BRO Geomorphological Map — Area of geomorphological interest — By type
 
 ## Source
 

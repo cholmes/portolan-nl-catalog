@@ -92,6 +92,7 @@ Column names in this collection are the English BRO field names. Common Dutch eq
 Mapbox GL v8 style files (use with MapLibre GL JS, OpenLayers via ol-mapbox-style, or any Mapbox GL v8 renderer) live alongside the PMTiles:
 
 - **`styles/default.json`** — BRO Soil Map of the Netherlands 1:50,000 — Soil areas (SGM) — Default (https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/soilarea/styles/default.json)
+- **`styles/by-collection.json`** — BRO Soil Map of the Netherlands 1:50,000 — Soil areas (SGM) — By survey campaign (https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/soilarea/styles/by-collection.json)
 - **`styles/by-texture.json`** — BRO Soil Map of the Netherlands 1:50,000 — Soil areas (SGM) — By texture (sand / clay / peat) (https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/soilarea/styles/by-texture.json)
 
 ## Also available as

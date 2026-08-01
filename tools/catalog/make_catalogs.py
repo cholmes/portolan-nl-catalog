@@ -19,7 +19,7 @@ def child(href, title):
 
 def write(path, obj):
     with open(os.path.join(ROOT, path), "w") as f:
-        json.dump(obj, f, indent=2, ensure_ascii=False)
+        f.write(json.dumps(obj, indent=2, ensure_ascii=False) + "\n")
     print("  wrote", path)
 
 
@@ -80,11 +80,11 @@ bodem = {
         {"rel": "self", "href": f"{DATA}/vro/bodemkaart/catalog.json", "type": "application/json"},
         {"rel": "parent", "href": "../catalog.json", "type": "application/json",
          "title": "Ministerie van Volkshuisvesting en Ruimtelijke Ordening (VRO)"},
-        {"rel": "preview", "href": "./thumbnail.png", "type": "image/png", "title": "Thumbnail (PDOK preview)"},
+        {"rel": "preview", "href": "./thumbnail.webp", "type": "image/webp", "title": "Thumbnail (PDOK preview)"},
         child("./soilarea/collection.json", "Soil areas (the soil map)"),
         child("./areaofpedologicalinterest/collection.json", "Area of pedological interest"),
     ],
-    "assets": {"thumbnail": {"href": "./thumbnail.png", "type": "image/png",
+    "assets": {"thumbnail": {"href": "./thumbnail.webp", "type": "image/webp",
                              "title": "Thumbnail (PDOK preview)", "roles": ["thumbnail"]}},
 }
 write("vro/bodemkaart/catalog.json", bodem)
@@ -113,13 +113,13 @@ geom = {
          "type": "application/json"},
         {"rel": "parent", "href": "../catalog.json", "type": "application/json",
          "title": "Ministerie van Volkshuisvesting en Ruimtelijke Ordening (VRO)"},
-        {"rel": "preview", "href": "./thumbnail.png", "type": "image/png", "title": "Thumbnail (PDOK preview)"},
+        {"rel": "preview", "href": "./thumbnail.webp", "type": "image/webp", "title": "Thumbnail (PDOK preview)"},
         child("./geomorphological_area/collection.json", "Geomorphological areas (the map)"),
         child("./area_of_geomorphological_interest/collection.json",
               "Area of geomorphological interest"),
         child("./geomorphological_area_collection/collection.json", "Map area collections"),
     ],
-    "assets": {"thumbnail": {"href": "./thumbnail.png", "type": "image/png",
+    "assets": {"thumbnail": {"href": "./thumbnail.webp", "type": "image/webp",
                              "title": "Thumbnail (PDOK preview)", "roles": ["thumbnail"]}},
 }
 write("vro/geomorfologische_kaart/catalog.json", geom)
@@ -133,7 +133,7 @@ if not any(l.get("href") == "./vro/catalog.json" for l in root["links"]):
     root["links"].insert(idx + 1, child("./vro/catalog.json",
                                         "Ministerie van Volkshuisvesting en Ruimtelijke Ordening (VRO)"))
     with open(root_path, "w") as f:
-        json.dump(root, f, indent=2, ensure_ascii=False)
+        f.write(json.dumps(root, indent=2, ensure_ascii=False) + "\n")
     print("  wired root catalog -> vro")
 else:
     print("  root already wired")

@@ -69,6 +69,7 @@ gdf = gpd.read_parquet('https://data.source.coop/cholmes/portolan-nl/vro/geomorf
 ## Styles
 
 - `styles/default` — BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) — Default
+- `styles/by-landform` — BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) — By landform subgroup
 - `styles/by-relief` — BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) — By relief class
 
 ## Source

@@ -85,6 +85,7 @@ Column names in this collection are the English BRO field names. Common Dutch eq
 Mapbox GL v8 style files (use with MapLibre GL JS, OpenLayers via ol-mapbox-style, or any Mapbox GL v8 renderer) live alongside the PMTiles:
 
 - **`styles/default.json`** — BRO Government Decision on Soil Contamination (SLD) — Default (https://data.source.coop/cholmes/portolan-nl/vro/bodemverontreiniging_besluit/styles/default.json)
+- **`styles/by-bronhouder.json`** — BRO Government Decision on Soil Contamination (SLD) — By data owner (bronhouder) (https://data.source.coop/cholmes/portolan-nl/vro/bodemverontreiniging_besluit/styles/by-bronhouder.json)
 - **`styles/by-quality-regime.json`** — BRO Government Decision on Soil Contamination (SLD) — By quality regime (https://data.source.coop/cholmes/portolan-nl/vro/bodemverontreiniging_besluit/styles/by-quality-regime.json)
 
 ## Also available as

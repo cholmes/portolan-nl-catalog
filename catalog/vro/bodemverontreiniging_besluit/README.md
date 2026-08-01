@@ -43,6 +43,7 @@ gdf = gpd.read_parquet('https://data.source.coop/cholmes/portolan-nl/vro/bodemve
 ## Styles
 
 - `styles/default` — BRO Government Decision on Soil Contamination (SLD) — Default
+- `styles/by-bronhouder` — BRO Government Decision on Soil Contamination (SLD) — By data owner (bronhouder)
 - `styles/by-quality-regime` — BRO Government Decision on Soil Contamination (SLD) — By quality regime
 
 ## Source

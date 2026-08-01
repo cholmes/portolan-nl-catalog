@@ -84,6 +84,7 @@ Column names in this collection are the English BRO field names. Common Dutch eq
 Mapbox GL v8 style files (use with MapLibre GL JS, OpenLayers via ol-mapbox-style, or any Mapbox GL v8 renderer) live alongside the PMTiles:
 
 - **`styles/default.json`** — BRO Geomorphological Map — Map area collections — Default (https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/geomorphological_area_collection/styles/default.json)
+- **`styles/by-method.json`** — BRO Geomorphological Map — Map area collections — By inventory method (https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/geomorphological_area_collection/styles/by-method.json)
 
 ## Also available as
 - **PMTiles** (vector tiles): `geomorphological_area_collection.pmtiles`

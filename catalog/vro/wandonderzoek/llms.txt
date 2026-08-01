@@ -93,6 +93,7 @@ Column names in this collection are the English BRO field names. Common Dutch eq
 Mapbox GL v8 style files (use with MapLibre GL JS, OpenLayers via ol-mapbox-style, or any Mapbox GL v8 renderer) live alongside the PMTiles:
 
 - **`styles/default.json`** — BRO Soil Trench Investigation (SFR / Wandonderzoek) — Default (https://data.source.coop/cholmes/portolan-nl/vro/wandonderzoek/styles/default.json)
+- **`styles/by-litter.json`** — BRO Soil Trench Investigation (SFR / Wandonderzoek) — By litter layer investigated (https://data.source.coop/cholmes/portolan-nl/vro/wandonderzoek/styles/by-litter.json)
 - **`styles/by-survey-purpose.json`** — BRO Soil Trench Investigation (SFR / Wandonderzoek) — By survey purpose (https://data.source.coop/cholmes/portolan-nl/vro/wandonderzoek/styles/by-survey-purpose.json)
 
 ## Also available as

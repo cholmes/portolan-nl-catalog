@@ -43,6 +43,7 @@ gdf = gpd.read_parquet('https://data.source.coop/cholmes/portolan-nl/vro/grondwa
 ## Styles
 
 - `styles/default` — BRO Groundwater Use System (GUF / Grondwatergebruiksysteem) — Default
+- `styles/by-delivery-context` — BRO Groundwater Use System (GUF / Grondwatergebruiksysteem) — By delivery context
 - `styles/by-quality-regime` — BRO Groundwater Use System (GUF / Grondwatergebruiksysteem) — By quality regime
 
 ## Source

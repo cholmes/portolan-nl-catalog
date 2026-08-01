@@ -48,6 +48,7 @@ gdf = gpd.read_parquet('https://data.source.coop/cholmes/portolan-nl/vro/wandond
 ## Styles
 
 - `styles/default` — BRO Soil Trench Investigation (SFR / Wandonderzoek) — Default
+- `styles/by-litter` — BRO Soil Trench Investigation (SFR / Wandonderzoek) — By litter layer investigated
 - `styles/by-survey-purpose` — BRO Soil Trench Investigation (SFR / Wandonderzoek) — By survey purpose
 
 ## Source

@@ -81,6 +81,8 @@ Column names in this collection are the English BRO field names. Common Dutch eq
 Mapbox GL v8 style files (use with MapLibre GL JS, OpenLayers via ol-mapbox-style, or any Mapbox GL v8 renderer) live alongside the PMTiles:
 
 - **`styles/default.json`** — BRO Soil Map — Area of pedological interest — Default (https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/areaofpedologicalinterest/styles/default.json)
+- **`styles/by-collection.json`** — BRO Soil Map — Area of pedological interest — By survey campaign (https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/areaofpedologicalinterest/styles/by-collection.json)
+- **`styles/by-interest.json`** — BRO Soil Map — Area of pedological interest — By area type (https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/areaofpedologicalinterest/styles/by-interest.json)
 
 ## Also available as
 - **PMTiles** (vector tiles): `areaofpedologicalinterest.pmtiles`

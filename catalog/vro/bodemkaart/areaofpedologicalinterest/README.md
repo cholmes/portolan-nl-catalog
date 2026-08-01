@@ -43,6 +43,8 @@ gdf = gpd.read_parquet('https://data.source.coop/cholmes/portolan-nl/vro/bodemka
 ## Styles
 
 - `styles/default` — BRO Soil Map — Area of pedological interest — Default
+- `styles/by-collection` — BRO Soil Map — Area of pedological interest — By survey campaign
+- `styles/by-interest` — BRO Soil Map — Area of pedological interest — By area type
 
 ## Source
 

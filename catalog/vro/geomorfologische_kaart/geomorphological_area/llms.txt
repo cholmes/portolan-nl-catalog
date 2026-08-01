@@ -113,6 +113,7 @@ Column names in this collection are the English BRO field names. Common Dutch eq
 Mapbox GL v8 style files (use with MapLibre GL JS, OpenLayers via ol-mapbox-style, or any Mapbox GL v8 renderer) live alongside the PMTiles:
 
 - **`styles/default.json`** — BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) — Default (https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/geomorphological_area/styles/default.json)
+- **`styles/by-landform.json`** — BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) — By landform subgroup (https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/geomorphological_area/styles/by-landform.json)
 - **`styles/by-relief.json`** — BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) — By relief class (https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/geomorphological_area/styles/by-relief.json)
 
 ## Also available as

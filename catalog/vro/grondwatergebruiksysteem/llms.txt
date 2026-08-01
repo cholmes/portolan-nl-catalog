@@ -85,6 +85,7 @@ Column names in this collection are the English BRO field names. Common Dutch eq
 Mapbox GL v8 style files (use with MapLibre GL JS, OpenLayers via ol-mapbox-style, or any Mapbox GL v8 renderer) live alongside the PMTiles:
 
 - **`styles/default.json`** — BRO Groundwater Use System (GUF / Grondwatergebruiksysteem) — Default (https://data.source.coop/cholmes/portolan-nl/vro/grondwatergebruiksysteem/styles/default.json)
+- **`styles/by-delivery-context.json`** — BRO Groundwater Use System (GUF / Grondwatergebruiksysteem) — By delivery context (https://data.source.coop/cholmes/portolan-nl/vro/grondwatergebruiksysteem/styles/by-delivery-context.json)
 - **`styles/by-quality-regime.json`** — BRO Groundwater Use System (GUF / Grondwatergebruiksysteem) — By quality regime (https://data.source.coop/cholmes/portolan-nl/vro/grondwatergebruiksysteem/styles/by-quality-regime.json)
 
 ## Also available as

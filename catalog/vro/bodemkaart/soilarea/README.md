@@ -45,6 +45,7 @@ gdf = gpd.read_parquet('https://data.source.coop/cholmes/portolan-nl/vro/bodemka
 ## Styles
 
 - `styles/default` — BRO Soil Map of the Netherlands 1:50,000 — Soil areas (SGM) — Default
+- `styles/by-collection` — BRO Soil Map of the Netherlands 1:50,000 — Soil areas (SGM) — By survey campaign
 - `styles/by-texture` — BRO Soil Map of the Netherlands 1:50,000 — Soil areas (SGM) — By texture (sand / clay / peat)
 
 ## Source

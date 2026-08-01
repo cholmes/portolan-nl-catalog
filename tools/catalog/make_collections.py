@@ -206,7 +206,7 @@ def build(path, cfg):
                 "title": f"{cfg['title']} (GeoParquet)", "roles": ["data"]},
         "pmtiles": {"href": pmtiles, "type": "application/vnd.pmtiles",
                     "title": f"{cfg['title']} (vector tiles)", "roles": ["visual"]},
-        "thumbnail": {"href": "./thumbnail.png", "type": "image/png",
+        "thumbnail": {"href": "./thumbnail.webp", "type": "image/webp",
                       "title": "Thumbnail (PDOK preview)", "roles": ["thumbnail"]},
     }
     for sf in style_files:
@@ -260,7 +260,7 @@ def build(path, cfg):
     }
     out = os.path.join(cdir, "collection.json")
     with open(out, "w") as f:
-        json.dump(coll, f, indent=2, ensure_ascii=False)
+        f.write(json.dumps(coll, indent=2, ensure_ascii=False) + "\n")
     print(f"  {out}  ({gtype}, {n} feats, EPSG:{epsg}, {len(order)} styles)")
 
 
