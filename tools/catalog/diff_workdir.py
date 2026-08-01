@@ -109,9 +109,11 @@ def main(argv=None) -> int:
           f"{len(only_repo)} repo-only, {len(only_work)} workdir-only, "
           f"{len(differing)} differing.")
     if total:
-        print("Differences are expected right after phase 1: every thumbnail became "
-              "WebP, the root catalog gained the git extension, and 9 vro collections "
-              "gained a pmtiles link. Review before publishing.")
+        print("Large differences are expected: the repo has diverged from the working "
+              "directory across three phases -- WebP thumbnails, the git extension, "
+              "regenerated docs, and the Portolan 0.1 conformance pass (AGENTS.md, "
+              "providers, schema URIs, no self links). The repo is the current one. "
+              "Publishing from the working directory would undo all of it.")
     return 0
 
 
