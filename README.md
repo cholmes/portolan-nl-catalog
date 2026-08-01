@@ -40,6 +40,14 @@ CLAUDE.md   developer / agent guide
 See [CLAUDE.md](./CLAUDE.md) for the full developer guide. Corrections and additions welcome
 via pull request.
 
+## Standards
+
+STAC 1.1.0, and **Portolan 0.1** plus spec PRs
+[#97](https://github.com/portolan-sdi/portolan-spec/pull/97) and
+[#116](https://github.com/portolan-sdi/portolan-spec/pull/116). Conformance is checked
+in CI with [`rashid`](https://github.com/portolan-sdi/rashid); the deviations that
+remain are documented in [`docs/phase3-baseline.md`](./docs/phase3-baseline.md).
+
 ## Institutions
 
 `kadaster` · `rijkswaterstaat` · `rce` · `rvo` · `tudelft` · `cbs` · `vro` · `beeldmateriaal`

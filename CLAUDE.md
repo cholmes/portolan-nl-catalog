@@ -73,10 +73,11 @@ All thumbnails are **WebP under 50 KB**. To regenerate after adding PNGs or JPEG
 python3 tools/catalog/make_thumbnails.py              # dry run
 python3 tools/catalog/make_thumbnails.py --confirm    # needs `brew install webp`
 ```
-Encoding: `cwebp -q 80` at native resolution; above 48 KB it binary-searches the quality
-factor for the highest one still under 46 000 bytes. No resizing. (`cwebp -size` was tried
+Portolan 0.1 does not accept WebP thumbnails; that is a deliberate deviation, see
+`docs/phase3-baseline.md`. Encoding: `cwebp -q 80` at native resolution; above 48 KB it
+binary-searches the quality factor for the highest one still under 46 000 bytes. No resizing. (`cwebp -size` was tried
 first and abandoned — it overshot 50 KB on one thumbnail and, on another, swung from 29 KB at
-one pass to 59 KB at ten.) Measured over the 393 thumbnails in the catalog: avg 35 KB,
+one pass to 59 KB at ten.) Measured over the catalog's 391 thumbnails: avg 35 KB,
 max 48 KB, total 14 MB.
 
 The selector is the thumbnail **role**, not the filename — this catalog spells its thumbnails
@@ -89,24 +90,57 @@ python3 tests/test_publish.py      # publisher selection + change detection
 python3 tests/test_links.py        # every relative link resolves
 python3 tests/test_git_ext.py      # git extension fields on the root catalog
 python3 tests/test_thumbnails.py   # thumbnails are WebP and under 50 KB
+python3 tests/test_generators.py   # regenerating reproduces the committed catalog
 python3 tests/test_stac_valid.py   # per-file stac-check validation
+python3 tests/test_portolan_conformance.py   # Portolan 0.1 (+ spec PRs #97, #116)
 ```
-`test_stac_valid.py` SKIPs when `stac-check` is not installed, so local runs are zero-setup.
-CI installs it and runs all five on push/PR.
+`test_stac_valid.py` SKIPs without `stac-check`, and `test_portolan_conformance.py`
+SKIPs without a purpose-built `rashid`, so local runs stay zero-setup. CI installs
+both and runs all seven on push/PR.
+
+`test_generators.py` is the phase-2 gate: it copies `catalog/` to a temp tree,
+re-runs every data-free generator, and requires byte-identical output. Change
+metadata by hand without changing the generator that emits it and this fails.
+Four generators read parquet and cannot run in CI; `bash tools/catalog/regen_check.sh all`
+covers those against the working directory.
+
+## Portolan conformance
+The catalog targets **Portolan 0.1 plus spec PRs
+[#97](https://github.com/portolan-sdi/portolan-spec/pull/97) and
+[#116](https://github.com/portolan-sdi/portolan-spec/pull/116)**, which were still
+open when this landed. No released `rashid` contains their companion rules, so build
+one:
+
+```
+bash tools/portolan/build_rashid.sh
+RASHID=~/.local/share/portolan-nl/rashid-venv/bin/rashid python3 tests/test_portolan_conformance.py
+```
+
+Conformance fixes are applied by `tools/catalog/conform.py`, one registered fix per
+rashid rule, dry-run by default. Never hand-edit a conformance fix: the generators
+would undo it.
+
+Four rules are knowingly left open, including the thumbnail media type — Portolan
+allows only PNG and JPEG, and these thumbnails are WebP by design. Each is justified
+in [`docs/phase3-baseline.md`](./docs/phase3-baseline.md); `ACCEPTED` in the test must
+never grow without an entry there.
 
 `test_links.py` checks `links` only, not `assets` — asset hrefs point at data files that are
 intentionally absent from the repo.
 
 ## tools/
-See [`tools/README.md`](./tools/README.md). The eleven generator scripts relocated from the
-working directory have **not** been rewired to this layout yet — that is phase 2.
+See [`tools/README.md`](./tools/README.md) for the `lib/` index and, importantly, the order
+the generators must run in — `make_point_legends` rewrites styles `make_styles_thumbnails`
+wrote, and `make_collections` reads whatever `styles/` ends up holding.
 
 ## Roadmap
-- **Phase 2** — extract `tools/lib/`, with byte-identical regenerated output as the gate.
-- **Phase 3** — Portolan 0.1 conformance plus spec PRs
-  [#97](https://github.com/portolan-sdi/portolan-spec/pull/97) (default style as an asset role)
-  and [#116](https://github.com/portolan-sdi/portolan-spec/pull/116) (`file:size`/`file:checksum`
-  become SHOULD). See the design spec in `docs/superpowers/specs/`.
+Phases 1-3 are done: the repo landed, `tools/lib/` was extracted behind the golden
+gate, and the catalog conforms to Portolan 0.1 plus PRs #97 and #116.
+
+Open follow-ups, all recorded in `docs/phase3-baseline.md`:
+- Give the 36 `rel:via` service links a real PDOK landing page, or a service-specific rel.
+- Write MapLibre styles for the three collections that publish tiles without one.
+- Raise the WebP thumbnail gap upstream.
 
 ## STAC terminology
 - **Catalog** — root container or subcatalog (e.g. `kadaster/`)
