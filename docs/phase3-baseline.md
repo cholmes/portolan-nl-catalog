@@ -58,11 +58,68 @@ judged against the wrong enclosing object.
 
 Warnings (not gated): `PTL-AST-003` ×2 224, `PTL-COL-003` ×1, `PTL-PRO-002` ×1 (info).
 
+## Outcome
+
+**3 156 errors → 71**, all of which are deliberately left open (below). Everything
+else was fixed at the source, and every fix is also made in the generator that
+emits it, enforced by `tests/test_generators.py`.
+
+| Stage | Errors |
+|---|---:|
+| Released rashid 0.1.1 | 3 156 |
+| With spec PRs #97/#116 (baseline) | 593 |
+| After mechanical link and type fixes | 348 |
+| After schemas, providers, visualization metadata | 234 |
+| After AGENTS.md, READMEs and their links | 82 |
+| After the structural fixes | **71** |
+
 ## Findings deliberately left open
 
-Recorded here as they are decided. Anything in `ACCEPTED` in
-`tests/test_portolan_conformance.py` must have an entry here.
+Every entry in `ACCEPTED` in `tests/test_portolan_conformance.py` is justified here.
+Three of the four would require the catalog to assert something false; the fourth is
+unwritten content, not a metadata defect.
 
-- **`PTL-COL-003`** — collection id `3dbag` does not match the lowercase-hyphen
-  naming convention. It is a *warning*, and `3dbag` is the collection's published
-  name; renaming it breaks every live href pointing at it. Left as-is.
+### `PTL-VIZ-001` ×32 — thumbnails are WebP, rashid wants PNG or JPEG
+
+rashid hardcodes `_THUMBNAIL_TYPES = ("image/png", "image/jpeg")` (`src/rashid/rules/viz.py`).
+Every thumbnail in this catalog is WebP under 50 KB — a deliberate requirement that
+took the catalog from 169 MB to 14 MB of images, and is enforced by
+`tests/test_thumbnails.py`.
+
+Converting back to PNG to satisfy the rule would undo a 155 MB saving and contradict
+an explicit project requirement, for a format every current browser has supported for
+years. **Worth raising upstream:** the thumbnail allowlist should include `image/webp`.
+
+### `PTL-PRO-001` ×36 — `rel:via` type must be `text/html`
+
+The flagged links point at PDOK **WFS endpoints** (`application/xml`, `text/xml`) and
+**Atom feeds** (`application/atom+xml`). Those are the real media types of what is
+served. Relabelling them `text/html` would put a false content type in the metadata —
+the same trap avoided in `PTL-FIL-003`, where the fix was to repoint the href at
+something that genuinely is markdown rather than to relabel an HTML page.
+
+The honest fix is not a relabel: 39 `via` links across the catalog already point at
+PDOK article pages and are correctly `text/html`. The 36 flagged ones should either
+gain a real landing-page `via` alongside their service links, or the service links
+should move to a service-specific rel. Both need per-collection research into the
+right PDOK page, so this is recorded as follow-up rather than guessed at.
+
+### `PTL-VIZ-002` ×3 — collections with tiles but no style asset
+
+`cbs/gebiedsindelingen`, `cbs/wijken_buurten` and `rijkswaterstaat/nwb_wegen` publish
+PMTiles but have no MapLibre style. No style files exist on disk for them; writing one
+means designing a data-driven style from each layer's attributes, which is authoring
+work, not metadata repair. Left open until the styles are written.
+
+### `PTL-COL-003` ×1 (warning) — collection id `3dbag`
+
+Does not match the lowercase-hyphen naming convention. It is a *warning*, and `3dbag`
+is the collection's published name; renaming breaks every live href pointing at it.
+
+## Left on S3
+
+`publish.py` never deletes, so one object removed from the repo is still published:
+
+- `kadaster/inspire_buildings/catalog.json` — an empty `Catalog` beside the real
+  `collection.json`, with no children and no assets. Remove with
+  `aws s3 rm s3://us-west-2.opendata.source.coop/cholmes/portolan-nl/kadaster/inspire_buildings/catalog.json`.
