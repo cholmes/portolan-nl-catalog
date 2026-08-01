@@ -57,7 +57,13 @@ def main() -> int:
     with tempfile.TemporaryDirectory() as td:
         work = Path(td) / "catalog"
         shutil.copytree(CATALOG, work)
-        env = {**os.environ, "PORTOLAN_NL_CATALOG": str(work)}
+        # Point the data root at a path that does not exist, so a "data-free"
+        # generator that quietly reads the working directory is caught here
+        # rather than in CI. generate_items used to probe for .pmtiles files
+        # this way and dropped every tiles asset wherever they were absent.
+        env = {**os.environ,
+               "PORTOLAN_NL_CATALOG": str(work),
+               "PORTOLAN_NL_WORKDIR": str(Path(td) / "no-such-workdir")}
         for script, what in GENERATORS:
             r = subprocess.run([sys.executable, str(REPO / script)],
                                cwd=REPO, env=env, capture_output=True, text=True)

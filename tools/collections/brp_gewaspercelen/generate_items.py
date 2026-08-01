@@ -48,6 +48,14 @@ YEAR_STATS: dict[int, dict] = {
 NEW_YEARS = (2020, 2021, 2022, 2023, 2024, 2025)
 HISTORICAL_YEARS = tuple(range(2009, 2020))  # 2009..2019
 
+# Which years publish PMTiles. Declared, not probed: this used to test whether
+# the .pmtiles file was on disk, which made the generator depend on the data
+# working directory. Anywhere that directory is absent -- CI, a fresh clone --
+# every item silently lost its tiles asset and its rel:pmtiles link. What an
+# item advertises is a property of the published catalog, not of which files
+# happen to sit on the machine running the generator.
+YEARS_WITH_PMTILES = frozenset(range(2009, 2026))
+
 SOURCES: dict[int, dict] = {}
 for yr in NEW_YEARS:
     SOURCES[yr] = {
@@ -167,10 +175,7 @@ def build_item(year: int) -> dict:
     bbox = stats["bbox"]
     parquet = f"brp_gewaspercelen_{year}.parquet"
     pmtiles = f"brp_gewaspercelen_{year}.pmtiles"
-    # The PMTiles file lives in the working directory, not in the repo -- checking
-    # for it under ROOT would find nothing and silently drop the tiles asset and
-    # its link from every item.
-    pmtiles_path = paths.DATA_ROOT / "rvo" / "brp_gewaspercelen" / str(year) / pmtiles
+    has_pmtiles = year in YEARS_WITH_PMTILES
 
     assets: dict[str, dict] = {
         "data": {
@@ -194,7 +199,7 @@ def build_item(year: int) -> dict:
             "roles": ["source"],
         },
     }
-    if pmtiles_path.exists():
+    if has_pmtiles:
         assets["pmtiles"] = {
             "href": f"./{pmtiles}",
             "type": "application/vnd.pmtiles",
@@ -224,7 +229,7 @@ def build_item(year: int) -> dict:
         stac.parent_link("../collection.json", coll_title),
         stac.link("via", src["via_url"], src["type"], f"PDOK source download ({year})"),
     ]
-    if pmtiles_path.exists():
+    if has_pmtiles:
         links.append(stac.link("pmtiles", f"{paths.DATA_BASE}/{rel_dir}/{pmtiles}",
                                "application/vnd.pmtiles"))
     links.append(stac.link("llms", "./llms.txt", "text/markdown", "Agent/LLM usage guide"))
