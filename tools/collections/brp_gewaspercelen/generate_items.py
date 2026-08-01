@@ -16,7 +16,7 @@ from pathlib import Path
 
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
-from tools.lib import paths
+from tools.lib import paths, stac
 
 ROOT = paths.CATALOG / "rvo" / "brp_gewaspercelen"
 
@@ -215,61 +215,21 @@ def build_item(year: int) -> dict:
     # README.md and llms.txt are reached through rel:describedby and rel:llms links
     # below, not as assets. Assets on an item are the data it describes.
 
+    rel_dir = f"rvo/brp_gewaspercelen/{year}"
+    coll_title = "BRP Gewaspercelen (Agricultural Crop Parcels)"
     links = [
-        {
-            "rel": "root",
-            "href": "../../../catalog.json",
-            "type": "application/json",
-            "title": "Portolan NL — Cloud-Native Dutch Geodata",
-        },
-        {
-            "rel": "self",
-            "href": (
-                "https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/"
-                f"{year}/brp_gewaspercelen_{year}.json"
-            ),
-            "type": "application/json",
-        },
-        {
-            "rel": "collection",
-            "href": "../collection.json",
-            "type": "application/json",
-            "title": "BRP Gewaspercelen (Agricultural Crop Parcels)",
-        },
-        {
-            "rel": "parent",
-            "href": "../collection.json",
-            "type": "application/json",
-            "title": "BRP Gewaspercelen (Agricultural Crop Parcels)",
-        },
-        {
-            "rel": "via",
-            "href": src["via_url"],
-            "type": src["type"],
-            "title": f"PDOK source download ({year})",
-        },
+        stac.root_link(3),
+        stac.self_link(f"{rel_dir}/brp_gewaspercelen_{year}.json"),
+        stac.link("collection", "../collection.json", stac.JSON, coll_title),
+        stac.parent_link("../collection.json", coll_title),
+        stac.link("via", src["via_url"], src["type"], f"PDOK source download ({year})"),
     ]
     if pmtiles_path.exists():
-        links.append({
-            "rel": "pmtiles",
-            "href": (
-                "https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/"
-                f"{year}/{pmtiles}"
-            ),
-            "type": "application/vnd.pmtiles",
-        })
-    links.append({
-        "rel": "llms",
-        "href": "./llms.txt",
-        "type": "text/markdown",
-        "title": "Agent/LLM usage guide",
-    })
-    links.append({
-        "rel": "describedby",
-        "href": f"{paths.SRC_BASE}/rvo/brp_gewaspercelen/{year}/README.md",
-        "type": "text/html",
-        "title": f"BRP Gewaspercelen {year} documentation",
-    })
+        links.append(stac.link("pmtiles", f"{paths.DATA_BASE}/{rel_dir}/{pmtiles}",
+                               "application/vnd.pmtiles"))
+    links.append(stac.link("llms", "./llms.txt", "text/markdown", "Agent/LLM usage guide"))
+    links.append(stac.link("describedby", f"{paths.SRC_BASE}/{rel_dir}/README.md",
+                           "text/html", f"BRP Gewaspercelen {year} documentation"))
 
     return {
         "type": "Feature",
@@ -310,7 +270,7 @@ def main() -> None:
         year_dir.mkdir(parents=True, exist_ok=True)
         item = build_item(year)
         out = year_dir / f"brp_gewaspercelen_{year}.json"
-        out.write_text(json.dumps(item, indent=2, ensure_ascii=False) + "\n")
+        stac.write_json(out, item)
         print(f"wrote {year}/{out.name} ({item['properties']['table:row_count']:,} rows)")
 
 

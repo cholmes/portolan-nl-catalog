@@ -17,7 +17,7 @@ import pyarrow.parquet as pq
 
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from tools.lib import paths
+from tools.lib import paths, stac
 
 # Generators write into the published tree; paths.py owns where that is.
 ROOT = str(paths.CATALOG)
@@ -178,7 +178,6 @@ def build(path, cfg):
     parquet = os.path.join(data_dir(cdir), f"{layer}.parquet")
     pmtiles = f"./{layer}.pmtiles"
     depth = 2 + path.count("/")  # links back to root catalog.json
-    up = "../" * depth
     parent = "../catalog.json"
     pc, gtype, epsg = geo_meta(parquet)
     if cfg.get("crs"):
@@ -202,18 +201,17 @@ def build(path, cfg):
     style_files = sorted(glob.glob(os.path.join(cdir, "styles", "*.json")))
     order = []
     assets = {
-        layer: {"href": f"./{layer}.parquet", "type": "application/vnd.apache.parquet",
-                "title": f"{cfg['title']} (GeoParquet)", "roles": ["data"]},
-        "pmtiles": {"href": pmtiles, "type": "application/vnd.pmtiles",
-                    "title": f"{cfg['title']} (vector tiles)", "roles": ["visual"]},
-        "thumbnail": {"href": "./thumbnail.webp", "type": "image/webp",
-                      "title": "Thumbnail (PDOK preview)", "roles": ["thumbnail"]},
+        layer: stac.asset(f"./{layer}.parquet", "application/vnd.apache.parquet",
+                          f"{cfg['title']} (GeoParquet)", ["data"]),
+        "pmtiles": stac.asset(pmtiles, "application/vnd.pmtiles",
+                              f"{cfg['title']} (vector tiles)", ["visual"]),
+        "thumbnail": stac.thumbnail_asset(),
     }
     for sf in style_files:
         nm = os.path.splitext(os.path.basename(sf))[0]
         key = f"styles/{nm}"
-        assets[key] = {"href": f"./styles/{nm}.json", "type": "application/json",
-                       "title": f"{cfg['title']} — {STYLE_TITLES.get(nm, nm)}", "roles": ["style"]}
+        assets[key] = stac.asset(f"./styles/{nm}.json", stac.JSON,
+                                 f"{cfg['title']} — {STYLE_TITLES.get(nm, nm)}", ["style"])
     # default first in manifest
     names = [os.path.splitext(os.path.basename(s))[0] for s in style_files]
     names = (["default"] if "default" in names else []) + [x for x in names if x != "default"]
@@ -221,7 +219,6 @@ def build(path, cfg):
 
     atom = f"https://service.pdok.nl/tno/{cfg['slug']}/atom/index.xml"
     wms = f"https://service.pdok.nl/tno/{cfg['slug']}/wms/v1_0?request=GetCapabilities&service=WMS"
-    self_href = f"{DATA_BASE}/vro/{path}/collection.json"
 
     coll = {
         "type": "Collection", "id": layer, "stac_version": "1.1.0",
@@ -229,16 +226,20 @@ def build(path, cfg):
         "description": cfg["short"] + "\n\n🤖 AI/Agent users: see llms.txt for field descriptions, "
                        "query examples and usage tips.",
         "links": [
-            {"rel": "root", "href": f"{up}catalog.json", "type": "application/json",
-             "title": "Portolan NL — Cloud-Native Dutch Geodata"},
-            {"rel": "self", "href": self_href, "type": "application/json"},
-            {"rel": "parent", "href": parent, "type": "application/json"},
-            {"rel": "via", "href": atom, "type": "application/atom+xml",
-             "title": "PDOK Atom download (source GeoPackage)"},
-            {"rel": "via", "href": wms, "type": "application/xml", "title": "PDOK WMS (GetCapabilities)"},
-            {"rel": "llms", "href": "./llms.txt", "type": "text/markdown", "title": "Agent/LLM usage guide"},
-            {"rel": "describedby", "href": f"https://source.coop/cholmes/portolan-nl/vro/{path}/README.md",
-             "type": "text/html", "title": f"{cfg['title']} documentation"},
+            stac.root_link(depth),
+            stac.self_link(f"vro/{path}/collection.json"),
+            stac.parent_link(parent),
+            stac.link("via", atom, "application/atom+xml",
+                      "PDOK Atom download (source GeoPackage)"),
+            stac.link("via", wms, "application/xml", "PDOK WMS (GetCapabilities)"),
+            # web-map-links: the extension is declared below, and declaring it
+            # without a web-map link is a validation error. Every sibling
+            # collection in the catalog carries this link.
+            stac.link("pmtiles", f"{paths.DATA_BASE}/vro/{path}/{layer}.pmtiles",
+                      "application/vnd.pmtiles"),
+            stac.link("llms", "./llms.txt", "text/markdown", "Agent/LLM usage guide"),
+            stac.link("describedby", f"{paths.SRC_BASE}/vro/{path}/README.md",
+                      "text/html", f"{cfg['title']} documentation"),
         ],
         "stac_extensions": [
             "https://stac-extensions.github.io/table/v1.2.0/schema.json",
@@ -259,8 +260,7 @@ def build(path, cfg):
         "portolan:styles": order,
     }
     out = os.path.join(cdir, "collection.json")
-    with open(out, "w") as f:
-        f.write(json.dumps(coll, indent=2, ensure_ascii=False) + "\n")
+    stac.write_json(out, coll)
     print(f"  {out}  ({gtype}, {n} feats, EPSG:{epsg}, {len(order)} styles)")
 
 

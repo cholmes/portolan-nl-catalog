@@ -5,7 +5,7 @@ import os
 
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from tools.lib import paths
+from tools.lib import paths, stac
 
 # Generators write into the published tree; paths.py owns where that is.
 ROOT = str(paths.CATALOG)
@@ -14,12 +14,11 @@ SRC = paths.SRC_BASE
 
 
 def child(href, title):
-    return {"rel": "child", "href": href, "type": "application/json", "title": title}
+    return stac.link("child", href, stac.JSON, title)
 
 
 def write(path, obj):
-    with open(os.path.join(ROOT, path), "w") as f:
-        f.write(json.dumps(obj, indent=2, ensure_ascii=False) + "\n")
+    stac.write_json(os.path.join(ROOT, path), obj)
     print("  wrote", path)
 
 
@@ -41,10 +40,9 @@ vro = {
         "one collection per layer."
     ),
     "links": [
-        {"rel": "root", "href": "../catalog.json", "type": "application/json",
-         "title": "Portolan NL — Cloud-Native Dutch Geodata"},
-        {"rel": "self", "href": f"{DATA}/vro/catalog.json", "type": "application/json"},
-        {"rel": "parent", "href": "../catalog.json", "type": "application/json"},
+        stac.root_link(1),
+        stac.self_link("vro/catalog.json"),
+        stac.parent_link(),
         {"rel": "describedby", "href": f"{SRC}/vro/README.md", "type": "text/html",
          "title": "VRO subcatalog documentation"},
         child("./wandonderzoek/collection.json", "BRO Soil Trench Investigation (SFR)"),
@@ -75,17 +73,14 @@ bodem = {
         "CC0 1.0. Provider VRO; bronhouder Wageningen Environmental Research."
     ),
     "links": [
-        {"rel": "root", "href": "../../catalog.json", "type": "application/json",
-         "title": "Portolan NL — Cloud-Native Dutch Geodata"},
-        {"rel": "self", "href": f"{DATA}/vro/bodemkaart/catalog.json", "type": "application/json"},
-        {"rel": "parent", "href": "../catalog.json", "type": "application/json",
-         "title": "Ministerie van Volkshuisvesting en Ruimtelijke Ordening (VRO)"},
-        {"rel": "preview", "href": "./thumbnail.webp", "type": "image/webp", "title": "Thumbnail (PDOK preview)"},
+        stac.root_link(2),
+        stac.self_link("vro/bodemkaart/catalog.json"),
+        stac.parent_link(title="Ministerie van Volkshuisvesting en Ruimtelijke Ordening (VRO)"),
+        stac.preview_link(),
         child("./soilarea/collection.json", "Soil areas (the soil map)"),
         child("./areaofpedologicalinterest/collection.json", "Area of pedological interest"),
     ],
-    "assets": {"thumbnail": {"href": "./thumbnail.webp", "type": "image/webp",
-                             "title": "Thumbnail (PDOK preview)", "roles": ["thumbnail"]}},
+    "assets": {"thumbnail": stac.thumbnail_asset()},
 }
 write("vro/bodemkaart/catalog.json", bodem)
 
@@ -107,20 +102,16 @@ geom = {
         "CC0 1.0. Provider VRO; bronhouder Wageningen Environmental Research."
     ),
     "links": [
-        {"rel": "root", "href": "../../catalog.json", "type": "application/json",
-         "title": "Portolan NL — Cloud-Native Dutch Geodata"},
-        {"rel": "self", "href": f"{DATA}/vro/geomorfologische_kaart/catalog.json",
-         "type": "application/json"},
-        {"rel": "parent", "href": "../catalog.json", "type": "application/json",
-         "title": "Ministerie van Volkshuisvesting en Ruimtelijke Ordening (VRO)"},
-        {"rel": "preview", "href": "./thumbnail.webp", "type": "image/webp", "title": "Thumbnail (PDOK preview)"},
+        stac.root_link(2),
+        stac.self_link("vro/geomorfologische_kaart/catalog.json"),
+        stac.parent_link(title="Ministerie van Volkshuisvesting en Ruimtelijke Ordening (VRO)"),
+        stac.preview_link(),
         child("./geomorphological_area/collection.json", "Geomorphological areas (the map)"),
         child("./area_of_geomorphological_interest/collection.json",
               "Area of geomorphological interest"),
         child("./geomorphological_area_collection/collection.json", "Map area collections"),
     ],
-    "assets": {"thumbnail": {"href": "./thumbnail.webp", "type": "image/webp",
-                             "title": "Thumbnail (PDOK preview)", "roles": ["thumbnail"]}},
+    "assets": {"thumbnail": stac.thumbnail_asset()},
 }
 write("vro/geomorfologische_kaart/catalog.json", geom)
 
@@ -132,8 +123,7 @@ if not any(l.get("href") == "./vro/catalog.json" for l in root["links"]):
     idx = max(i for i, l in enumerate(root["links"]) if l.get("rel") == "child")
     root["links"].insert(idx + 1, child("./vro/catalog.json",
                                         "Ministerie van Volkshuisvesting en Ruimtelijke Ordening (VRO)"))
-    with open(root_path, "w") as f:
-        f.write(json.dumps(root, indent=2, ensure_ascii=False) + "\n")
+    stac.write_json(root_path, root)
     print("  wired root catalog -> vro")
 else:
     print("  root already wired")
