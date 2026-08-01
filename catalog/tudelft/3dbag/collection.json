@@ -81,12 +81,6 @@
       "title": "XYZ vector tile endpoint for 3D BAG"
     },
     {
-      "rel": "llms",
-      "href": "./llms.txt",
-      "type": "text/markdown",
-      "title": "Agent/LLM usage guide"
-    },
-    {
       "rel": "describedby",
       "href": "./README.md",
       "type": "text/markdown",
@@ -354,13 +348,6 @@
       "description": "2D flat fill view for performance and overview mapping.",
       "roles": [
         "style"
-      ]
-    },
-    "documentation": {
-      "href": "./llms.txt",
-      "type": "text/plain",
-      "roles": [
-        "documentation"
       ]
     },
     "README": {

@@ -4,7 +4,7 @@ Every agricultural parcel in the Netherlands with its registered crop type, from
 
 The BRP is an annual snapshot reflecting what farmers register each May 15 for Common Agricultural Policy (CAP) subsidy applications; each 'definitief' edition is finalized after verification.
 
-> **AI/Agent users:** See [llms.txt](./llms.txt) for field descriptions, query examples, and usage tips.
+> **AI/Agent users:** See [AGENTS.md](./AGENTS.md) for field descriptions, query examples, and usage tips.
 
 ![netherlands](https://img.shields.io/badge/netherlands-blue) ![agriculture](https://img.shields.io/badge/agriculture-green) ![open-data](https://img.shields.io/badge/open--data-blue) ![pdok](https://img.shields.io/badge/pdok-blue) ![geoparquet](https://img.shields.io/badge/geoparquet-blue) ![pmtiles](https://img.shields.io/badge/pmtiles-blue) ![multi-year](https://img.shields.io/badge/multi--year-blue)
 
@@ -44,14 +44,14 @@ Each year is **self-contained in its own subfolder** — download only what you 
 brp_gewaspercelen/
 ├── collection.json                                 STAC Collection (multi-year, parent)
 ├── README.md                                       this file (overall guide)
-├── llms.txt                                        agent/LLM usage guide (cross-year)
+├── AGENTS.md                                        agent/LLM usage guide (cross-year)
 ├── thumbnail.png
 ├── versions.json
 ├── styles/                                         canonical base styles (latest-year PMTiles)
 │   └── default.json, by-category.json, by-crop.json, landscape-elements.json
 ├── scripts/
 │   ├── generate_items.py                           rebuild STAC items from per-year stats
-│   ├── generate_year_docs.py                       rebuild per-year README + llms.txt
+│   ├── generate_year_docs.py                       rebuild per-year README + AGENTS.md
 │   └── regen_year_styles.py                        propagate base style tweaks to per-year copies
 │
 ├── 2009/                                           ────────────────────────────────────
@@ -60,7 +60,7 @@ brp_gewaspercelen/
 │   ├── brp_gewaspercelen_2009.pmtiles              vector tiles
 │   ├── brpgewaspercelen_definitief_2009.zip        original Esri FGDB (zip), schema normalized
 │   ├── README.md                                   year-specific overview
-│   ├── llms.txt                                    year-specific agent guide
+│   ├── AGENTS.md                                    year-specific agent guide
 │   └── styles/                                     per-year style copies pointing at this PMTiles
 │
 ├── 2010/  …  2019/                                 same layout, all from FGDB zip sources
@@ -71,7 +71,7 @@ brp_gewaspercelen/
 │   ├── brp_gewaspercelen_2020.pmtiles
 │   ├── brpgewaspercelen_definitief_2020.gpkg       original PDOK GeoPackage (no transformation)
 │   ├── README.md
-│   ├── llms.txt
+│   ├── AGENTS.md
 │   └── styles/
 │
 └── 2021/ … 2025/                                   same layout, all from GeoPackage sources
@@ -199,7 +199,7 @@ GROUP BY pid
 HAVING COUNT(*) = 17 AND COUNT(*) FILTER (WHERE category = 'Grasland') = 17;
 ```
 
-See [llms.txt](./llms.txt) for more cross-year examples (crop rotation, land-use trajectories, year-over-year volatility, Grasland → Bouwland conversions).
+See [AGENTS.md](./AGENTS.md) for more cross-year examples (crop rotation, land-use trajectories, year-over-year volatility, Grasland → Bouwland conversions).
 
 ## Source Files
 
@@ -215,13 +215,13 @@ Each year keeps its original source file alongside the derived GeoParquet + PMTi
 | `YYYY/brp_gewaspercelen_YYYY.parquet` | GeoParquet (zstd, bbox covering, spatially sorted). 200 MB–1.6 GB per year. |
 | `YYYY/brp_gewaspercelen_YYYY.pmtiles` | PMTiles for web mapping. ~220 MB–~640 MB per year. |
 | `YYYY/brp_gewaspercelen_YYYY.json` | STAC Item per year. |
-| `YYYY/README.md` + `YYYY/llms.txt` | Year-specific docs (each year folder stands alone). |
+| `YYYY/README.md` + `YYYY/AGENTS.md` | Year-specific docs (each year folder stands alone). |
 | `YYYY/styles/*.json` | Per-year MapLibre style copies of the canonical base. |
 | `YYYY/brpgewaspercelen_definitief_YYYY.gpkg` | Original PDOK GeoPackage (2020–2025). |
 | `YYYY/brpgewaspercelen_definitief_YYYY.zip` | Original PDOK Esri File Geodatabase, zipped (2009–2019). |
 | `2025/brp_gewaspercelen_2025.pmtiles` | Also the **collection-level** PMTiles asset (latest year). |
 | `thumbnail.png` | Map preview. |
-| `llms.txt` | Agent/LLM usage guide. |
+| `AGENTS.md` | Agent/LLM usage guide. |
 
 ## STAC Metadata
 

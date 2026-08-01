@@ -2,7 +2,7 @@
 
 80,148 landform polygons of the national Geomorphological Map of the Netherlands 1:50,000 (Geomorfologische kaart, GMM), classified by genesis, relief and landform subgroup. Produced under VRO; bronhouder Wageningen Environmental Research.
 
-> AI/Agent users: see [llms.txt](./llms.txt) for field meanings, query examples and caveats.
+> AI/Agent users: see [AGENTS.md](./AGENTS.md) for field meanings, query examples and caveats.
 
 ![netherlands](https://img.shields.io/badge/netherlands-blue) ![bro](https://img.shields.io/badge/BRO-subsurface-blue) ![vro](https://img.shields.io/badge/provider-VRO-blue) ![cc0](https://img.shields.io/badge/license-CC0--1.0-green)
 

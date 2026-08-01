@@ -2,7 +2,7 @@
 
 Statistical data for all 6-digit postcodes in the Netherlands from CBS (Statistics Netherlands). Contains 157 attributes covering demographics, housing, energy consumption, income, social security, and proximity to facilities. Data available from 2015 to 2024, measured as of January 1st annually. Privacy protected: postcodes with fewer than 5 residents or 5 housing units are suppressed (value -99997). Published via PDOK.
 
-> AI/Agent users: See [llms.txt](./llms.txt) for field descriptions, query examples, and usage tips.
+> AI/Agent users: See [AGENTS.md](./AGENTS.md) for field descriptions, query examples, and usage tips.
 
 ![netherlands](https://img.shields.io/badge/netherlands-blue) ![statistics](https://img.shields.io/badge/statistics-blue) ![postcode](https://img.shields.io/badge/postcode-blue) ![demographics](https://img.shields.io/badge/demographics-blue) ![cbs](https://img.shields.io/badge/cbs-blue)
 

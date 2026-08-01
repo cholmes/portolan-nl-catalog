@@ -207,7 +207,7 @@ def build(path, cfg):
     coll = {
         "type": "Collection", "id": layer, "stac_version": "1.1.0",
         "title": cfg["title"],
-        "description": cfg["short"] + "\n\n🤖 AI/Agent users: see llms.txt for field descriptions, "
+        "description": cfg["short"] + "\n\n🤖 AI/Agent users: see AGENTS.md for field descriptions, "
                        "query examples and usage tips.",
         "links": [
             stac.root_link(depth),
@@ -220,7 +220,6 @@ def build(path, cfg):
             # collection in the catalog carries this link.
             stac.link("pmtiles", f"{paths.DATA_BASE}/vro/{path}/{layer}.pmtiles",
                       "application/vnd.pmtiles", **{"pmtiles:layers": [layer]}),
-            stac.link("llms", "./llms.txt", "text/markdown", "Agent/LLM usage guide"),
             stac.describedby_link(cfg["title"]),
             stac.agents_link(),
         ],

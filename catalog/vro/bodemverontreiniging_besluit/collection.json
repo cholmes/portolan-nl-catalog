@@ -3,7 +3,7 @@
   "id": "bodemverontreiniging_besluit",
   "stac_version": "1.1.0",
   "title": "BRO Government Decision on Soil Contamination (SLD)",
-  "description": "121 formal government decisions on soil contamination (overheidsbesluit bodemverontreiniging, SLD) from the BRO — areas with an authority decision on assessment, remediation or aftercare. Produced under VRO; bronhouder TNO.\n\n🤖 AI/Agent users: see llms.txt for field descriptions, query examples and usage tips.",
+  "description": "121 formal government decisions on soil contamination (overheidsbesluit bodemverontreiniging, SLD) from the BRO — areas with an authority decision on assessment, remediation or aftercare. Produced under VRO; bronhouder TNO.\n\n🤖 AI/Agent users: see AGENTS.md for field descriptions, query examples and usage tips.",
   "links": [
     {
       "rel": "root",
@@ -35,12 +35,6 @@
       "pmtiles:layers": [
         "bodemverontreiniging_besluit"
       ]
-    },
-    {
-      "rel": "llms",
-      "href": "./llms.txt",
-      "type": "text/markdown",
-      "title": "Agent/LLM usage guide"
     },
     {
       "rel": "describedby",

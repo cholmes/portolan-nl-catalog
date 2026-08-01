@@ -2,7 +2,7 @@
 
 The 2014 edition of the Basisregistratie Gewaspercelen (BRP) — every agricultural parcel in the Netherlands with its registered crop type, as recorded by farmers for CAP subsidy on **2014-05-15** (the 'definitief' finalized edition).
 
-> This folder is **one partition** of a multi-year collection. For the cross-year story and queries spanning 2009–2025, see the [parent collection](https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/) (README + llms.txt at the parent level).
+> This folder is **one partition** of a multi-year collection. For the cross-year story and queries spanning 2009–2025, see the [parent collection](https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/) (README + AGENTS.md at the parent level).
 
 ## Key numbers
 
@@ -80,7 +80,7 @@ For "fields without potatoes in the last three years"-style queries that need ma
 https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/*/brp_gewaspercelen_*.parquet
 ```
 
-See [`../llms.txt`](../llms.txt) and the parent [collection.json](https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/collection.json) for full multi-year examples.
+See [`../AGENTS.md`](../AGENTS.md) and the parent [collection.json](https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/collection.json) for full multi-year examples.
 
 ## Source
 

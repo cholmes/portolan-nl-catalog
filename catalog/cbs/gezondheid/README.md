@@ -2,7 +2,7 @@
 
 INSPIRE-harmonized health statistics for the Netherlands, providing doctor counts (2017) and mortality rates (2016) per 100,000 inhabitants at the NUTS2 (province) level. A small dataset of ~24 features (12 provinces x 2 indicators) representing the Dutch contribution to the European INSPIRE Human Health theme. Published by CBS (Statistics Netherlands) via PDOK.
 
-> AI/Agent users: See [llms.txt](./llms.txt) for field descriptions, query examples, and usage tips.
+> AI/Agent users: See [AGENTS.md](./AGENTS.md) for field descriptions, query examples, and usage tips.
 
 ![netherlands](https://img.shields.io/badge/netherlands-blue) ![health](https://img.shields.io/badge/health-blue) ![inspire](https://img.shields.io/badge/inspire-blue) ![cbs](https://img.shields.io/badge/cbs-blue)
 

@@ -2,6 +2,8 @@
 
 All 26 types of regional area classifications for the Netherlands, published by CBS (Statistics Netherlands) via PDOK. Contains generalized polygon boundaries for every administrative, statistical, and functional region used in Dutch governance: gemeenten (342), provincies (12), wijken (3,423), buurten (14,729), COROP regions, safety regions, GGD health regions, labour market regions, energy strategy regions, court districts, and more. Each classification type is a separate GeoParquet file in EPSG:28992 (Amersfoort / RD New). These are generalized (simplified) boundaries suitable for thematic mapping and statistical visualization, not precision boundary work.
 
+> Agents: the machine-oriented guide for this data is [`AGENTS.md`](./AGENTS.md).
+
 ## Extent
 
 - **Bounding box** (WGS84): 3.21, 50.73 → 7.24, 53.58
@@ -12,7 +14,13 @@ All 26 types of regional area classifications for the Netherlands, published by 
 curl -s https://data.source.coop/cholmes/portolan-nl/cbs/gebiedsindelingen/collection.json | jq .
 ```
 
-See [`AGENTS.md`](./AGENTS.md) for the machine-readable summary.
+## License
+
+`CC-BY-4.0` — see the object metadata for any per-asset terms.
+
+## Provenance
+
+Produced and served by [Centraal Bureau voor de Statistiek](https://www.cbs.nl/) (producer, licensor); [Source Cooperative](https://source.coop/cholmes/portolan-nl) (host).
 
 ---
 

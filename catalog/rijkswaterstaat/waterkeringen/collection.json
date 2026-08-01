@@ -258,13 +258,6 @@
         "data"
       ]
     },
-    "documentation": {
-      "href": "./llms.txt",
-      "type": "text/plain",
-      "roles": [
-        "documentation"
-      ]
-    },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",

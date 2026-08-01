@@ -37,12 +37,6 @@
       ]
     },
     {
-      "rel": "llms",
-      "href": "./llms.txt",
-      "type": "text/markdown",
-      "title": "Agent/LLM usage guide"
-    },
-    {
       "rel": "describedby",
       "href": "./README.md",
       "type": "text/markdown",
@@ -233,13 +227,6 @@
       "title": "INSPIRE Buildings — By Construction Date",
       "roles": [
         "style"
-      ]
-    },
-    "documentation": {
-      "href": "./llms.txt",
-      "type": "text/plain",
-      "roles": [
-        "documentation"
       ]
     },
     "buildings": {

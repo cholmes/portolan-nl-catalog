@@ -1,4 +1,4 @@
-"""Prose generation shared by the README and llms.txt generators.
+"""Prose generation shared by the README and agent-guide generators.
 
 The style listing is the important one. Both generators enumerate a
 collection's styles from its `portolan:styles` manifest and take the display

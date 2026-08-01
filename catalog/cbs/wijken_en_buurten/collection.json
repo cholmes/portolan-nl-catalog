@@ -41,12 +41,6 @@
       "title": "WMS service (2025)"
     },
     {
-      "rel": "llms",
-      "href": "./llms.txt",
-      "type": "text/markdown",
-      "title": "Agent/LLM usage guide"
-    },
-    {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/cbs/wijken_en_buurten/wijken_en_buurten.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -368,13 +362,6 @@
       "title": "Districts & Neighborhoods — Household Size",
       "roles": [
         "style"
-      ]
-    },
-    "documentation": {
-      "href": "./llms.txt",
-      "type": "text/plain",
-      "roles": [
-        "documentation"
       ]
     },
     "wijken_en_buurten": {

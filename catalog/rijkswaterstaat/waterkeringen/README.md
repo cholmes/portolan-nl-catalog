@@ -2,7 +2,7 @@
 
 Primary water barriers (primaire keringen) across the Netherlands — 238 dike sections that form the backbone of Dutch flood protection under the Water Act (Waterwet). LineString features with safety norms per section.
 
-> AI/Agent users: See [llms.txt](./llms.txt) for field descriptions, query examples, and usage tips.
+> AI/Agent users: See [AGENTS.md](./AGENTS.md) for field descriptions, query examples, and usage tips.
 
 ![netherlands](https://img.shields.io/badge/netherlands-blue) ![flood-protection](https://img.shields.io/badge/flood--protection-blue) ![dikes](https://img.shields.io/badge/dikes-blue) ![rijkswaterstaat](https://img.shields.io/badge/rijkswaterstaat-blue)
 

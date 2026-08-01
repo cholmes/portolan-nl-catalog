@@ -18,7 +18,7 @@ collections/  generators specific to one collection
 |---|---|---|
 | `paths.py` | the three roots (repo, catalog, data working dir) and the published URL bases, read from `catalog.publish.yaml` | all generators |
 | `stac.py` | link and asset builders, and the one `write_json` convention | `make_catalogs`, `make_collections`, `generate_items` |
-| `docs.py` | style enumeration, published URLs, the column table | `make_readmes`, `make_llms`, `generate_year_docs` |
+| `docs.py` | style enumeration, published URLs, the column table | `make_readmes`, `make_vro_agents`, `generate_year_docs` |
 | `styles.py` | `match_expr`, `pmtiles_source` | `make_styles_thumbnails`, `make_extra_styles`, `make_point_legends` |
 | `geoparquet.py` | parquet footer reads, and the top-N-values query | `make_collections`, and the three style generators |
 | `images.py` | reproject, basemap, and **WebP** output | `make_styles_thumbnails`, `make_extra_styles` |
@@ -34,7 +34,7 @@ three different conventions and one writer would change bytes.
 - `make_thumbnails.py` — PNG/JPEG → WebP conversion, and the encoder `lib/images.py` calls.
 - `diff_workdir.py` — report drift against the data working directory.
 - `regen_check.sh` — verify the data-reading generators (below).
-- `make_catalogs.py`, `make_collections.py`, `make_llms.py`, `make_readmes.py`,
+- `make_catalogs.py`, `make_collections.py`, `make_vro_agents.py`, `make_readmes.py`,
   `make_styles_thumbnails.py`, `make_extra_styles.py`, `make_point_legends.py` — the VRO/BRO generators.
 
 ### `collections/brp_gewaspercelen/`

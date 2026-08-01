@@ -1,23 +1,112 @@
-# Het Kadaster
+# Kadaster — Netherlands Cadastre, Land Registry & Mapping Agency
 
-Portolan catalog — `kadaster`
+## What This Is
 
-Open geodatasets from Het Kadaster (the Netherlands' Cadastre, Land Registry and Mapping Agency). Kadaster manages key registrations including addresses (BAG), topography (BRT/BGT), cadastral parcels, and administrative boundaries.
+Three collections from Kadaster, the Dutch government agency responsible for land registry,
+cadastral mapping, and geographic data infrastructure. Kadaster maintains several national
+key registrations (basisregistraties) and publishes them via PDOK.
 
-## Start here
+## Collections
 
-Field descriptions, query examples and caveats are in [`llms.txt`](./llms.txt). It is hand-written and more useful than anything this file would repeat.
+### bag_light/ — BAG Buildings (Light Extract)
+11.4 million buildings (panden) from the BAG (Basisregistratie Adressen en Gebouwen),
+the authoritative Dutch building and address registry. Current records only, with
+construction year, usage function, floor area, and dwelling unit count. This is the
+recommended starting point for building analysis.
 
-## Contains
+- File: `bag-light.parquet` (933 MB)
+- CRS: EPSG:28992 (RD New)
+- Key fields: `identificatie` (BAG ID), `bouwjaar` (construction year), `gebruiksdoel` (usage), `status`
 
-- 3 child catalog(s) or collection(s)
+### bestuurlijke_gebieden/ — Administrative Boundaries
+342 municipalities (gemeenten), 12 provinces (provincies), and 1 national territory
+(landgebied) — the 2026 edition. Three separate GeoParquet files. The municipality codes
+(`identificatie`) are CBS codes used as join keys across all Dutch government data.
 
-See the links in [`catalog.json`](./catalog.json).
+- Files: `gemeentegebied.parquet` (8 MB), `provinciegebied.parquet` (1.6 MB), `landgebied.parquet` (0.4 MB)
+- CRS: EPSG:28992 (RD New)
+- Key fields: `identificatie` (CBS code), `naam` (name), `code` (prefixed code like GM0363)
 
-## Access
+### inspire_buildings/ — INSPIRE Harmonized Buildings
+24.2 million building footprints harmonized to the EU INSPIRE Buildings schema. Includes
+version history (current + superseded records). Filter `endLifespanVersion IS NULL` for
+current buildings only (~12.6M).
 
-All assets are public. Relative hrefs resolve against this directory on <https://data.source.coop/cholmes/portolan-nl/>.
+- File: `buildings.parquet` (2.1 GB)
+- CRS: EPSG:4258 (ETRS89, near-identical to WGS84)
+- Key fields: `localId` (BAG ID), `anyPoint` (construction date as ISO string), `endLifespanVersion` (null = current)
+
+## BAG Light vs INSPIRE Buildings
+
+Both datasets come from the same BAG source, but serve different purposes:
+
+| | BAG Light | INSPIRE Buildings |
+|---|-----------|-------------------|
+| Rows | 11.4M (current only) | 24.2M (current + history) |
+| Attributes | Rich: usage, floor area, dwelling count | Minimal: date + ID only |
+| Field names | Dutch native (bouwjaar, status) | INSPIRE names (anyPoint) |
+| CRS | EPSG:28992 (metres) | EPSG:4258 (degrees) |
+| Construction year | Integer (1975) | ISO string (1975-01-01T00:00:00) |
+| File size | 933 MB | 2.1 GB |
+
+**Use BAG Light** for most analysis — it has more attributes, cleaner data, and is smaller.
+**Use INSPIRE Buildings** only when you need version history or EU-standard coordinates.
+
+## CBS Municipality Codes
+
+The `identificatie` field in bestuurlijke_gebieden contains CBS municipality codes (e.g.,
+`0363` for Amsterdam). These 4-digit codes are the universal key across all Dutch government
+data. They appear in:
+- BAG building IDs (first 4 digits of `identificatie`)
+- CBS statistics (Wijken en Buurten, StatLine)
+- BRP (population registry), WOZ (property valuations), and more
+
+Use bestuurlijke_gebieden as the reference geometry for any municipality-level analysis.
+
+## Example Queries
+
+### Count buildings per municipality (joining BAG Light with admin boundaries)
+
+```sql
+INSTALL spatial; LOAD spatial;
+
+SELECT g.naam AS gemeente, COUNT(*) AS buildings
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/bag_light/bag-light.parquet') b
+JOIN read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/bestuurlijke_gebieden/gemeentegebied.parquet') g
+  ON LEFT(b.identificatie, 4) = g.identificatie
+WHERE b.status = 'Pand in gebruik'
+GROUP BY g.naam
+ORDER BY buildings DESC
+LIMIT 10
+```
+
+### Compare building counts between BAG Light and INSPIRE
+
+```sql
+SELECT 'BAG Light' AS source, COUNT(*) AS buildings
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/bag_light/bag-light.parquet')
+UNION ALL
+SELECT 'INSPIRE (current)', COUNT(*)
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/inspire_buildings/buildings.parquet')
+WHERE endLifespanVersion IS NULL
+```
+
+### List all provinces with municipality count
+
+```sql
+SELECT ligt_in_provincie_naam AS province, COUNT(*) AS municipalities
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/bestuurlijke_gebieden/gemeentegebied.parquet')
+GROUP BY 1
+ORDER BY municipalities DESC
+```
+
+## See Also
+
+Each collection has its own `AGENTS.md` with detailed field descriptions, value distributions,
+and query patterns:
+- `bag_light/AGENTS.md`
+- `bestuurlijke_gebieden/AGENTS.md`
+- `inspire_buildings/AGENTS.md`
 
 ---
-
-This file is generated by `tools/catalog/make_docs_files.py` from `catalog.json`. Edit the metadata, not this file.
+*Hand-maintained agent guide (ported from this collection's llms.txt in August 2026). Update it alongside collection.json.*

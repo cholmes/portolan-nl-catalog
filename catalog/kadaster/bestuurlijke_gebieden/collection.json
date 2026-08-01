@@ -3,7 +3,7 @@
   "id": "bestuurlijke_gebieden",
   "stac_version": "1.1.0",
   "title": "Administrative Areas (Bestuurlijke Gebieden)",
-  "description": "The official administrative boundaries of the Netherlands: 342 municipalities (gemeenten), 12 provinces (provincies), and 1 national territory (landgebied). Updated annually on January 1st to reflect municipal mergers. Published by Kadaster via PDOK. This is the authoritative reference dataset for Dutch administrative boundaries — CBS municipality/province codes from this dataset are used across all Dutch government data.\n\n2026 edition. Three separate GeoParquet files: gemeentegebied, provinciegebied, landgebied.\n\n🤖 AI/Agent users: See llms.txt for field descriptions, query examples, and usage tips.",
+  "description": "The official administrative boundaries of the Netherlands: 342 municipalities (gemeenten), 12 provinces (provincies), and 1 national territory (landgebied). Updated annually on January 1st to reflect municipal mergers. Published by Kadaster via PDOK. This is the authoritative reference dataset for Dutch administrative boundaries — CBS municipality/province codes from this dataset are used across all Dutch government data.\n\n2026 edition. Three separate GeoParquet files: gemeentegebied, provinciegebied, landgebied.\n\n🤖 AI/Agent users: See AGENTS.md for field descriptions, query examples, and usage tips.",
   "links": [
     {
       "rel": "root",
@@ -36,12 +36,6 @@
       "pmtiles:layers": [
         "gemeenten"
       ]
-    },
-    {
-      "rel": "llms",
-      "href": "./llms.txt",
-      "type": "text/markdown",
-      "title": "Agent/LLM usage guide"
     },
     {
       "rel": "describedby",

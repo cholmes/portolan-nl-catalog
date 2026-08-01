@@ -41,12 +41,6 @@
       "title": "ATOM download service"
     },
     {
-      "rel": "llms",
-      "href": "./llms.txt",
-      "type": "text/markdown",
-      "title": "Agent/LLM usage guide"
-    },
-    {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/cbs/gezondheid/gezondheid.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -292,13 +286,6 @@
       "title": "Health Statistics — Default",
       "roles": [
         "style"
-      ]
-    },
-    "documentation": {
-      "href": "./llms.txt",
-      "type": "text/plain",
-      "roles": [
-        "documentation"
       ]
     },
     "metadata": {

@@ -2,7 +2,7 @@
 
 The official administrative boundaries of the Netherlands: 342 municipalities (gemeenten), 12 provinces (provincies), and 1 national territory (landgebied). Updated annually on January 1st to reflect municipal mergers. Published by Kadaster via PDOK. This is the authoritative reference dataset for Dutch administrative boundaries — CBS municipality/province codes from this dataset are used across all Dutch government data. 2026 edition.
 
-> AI/Agent users: See [llms.txt](./llms.txt) for field descriptions, query examples, and usage tips.
+> AI/Agent users: See [AGENTS.md](./AGENTS.md) for field descriptions, query examples, and usage tips.
 
 ![netherlands](https://img.shields.io/badge/netherlands-blue) ![administrative-boundaries](https://img.shields.io/badge/administrative--boundaries-blue) ![municipalities](https://img.shields.io/badge/municipalities-blue) ![provinces](https://img.shields.io/badge/provinces-blue) ![kadaster](https://img.shields.io/badge/kadaster-blue)
 

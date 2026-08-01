@@ -2,7 +2,7 @@
 
 Geometry of all municipalities (gemeenten), districts (wijken), and neighborhoods (buurten) in the Netherlands with statistical key figures (kerncijfers) as attributes. Contains demographic, household, and area statistics at three geographic levels. Updated annually by CBS (Centraal Bureau voor de Statistiek / Statistics Netherlands). Boundaries derived from BRK (municipalities), municipality submissions (neighborhoods), and Bestand Bodemgebruik (water/land borders). Versions available for 2021-2025.
 
-> AI/Agent users: See [llms.txt](./llms.txt) for field descriptions, query examples, and usage tips.
+> AI/Agent users: See [AGENTS.md](./AGENTS.md) for field descriptions, query examples, and usage tips.
 
 ![netherlands](https://img.shields.io/badge/netherlands-blue) ![statistics](https://img.shields.io/badge/statistics-blue) ![demographics](https://img.shields.io/badge/demographics-blue) ![neighborhoods](https://img.shields.io/badge/neighborhoods-blue) ![cbs](https://img.shields.io/badge/cbs-blue)
 

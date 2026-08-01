@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Generate per-year README.md and llms.txt for each BRP year folder.
+"""Generate per-year README.md and AGENTS.md for each BRP year folder.
 
 Each year subdirectory is intended to stand alone — someone can download just
-YYYY/ and have everything they need to use that year's data. README and llms.txt
+YYYY/ and have everything they need to use that year's data. README and AGENTS.md
 both link back to the parent collection for cross-year context.
 """
 
@@ -63,7 +63,7 @@ def readme(year: int) -> str:
 
 The {year} edition of the Basisregistratie Gewaspercelen (BRP) — every agricultural parcel in the Netherlands with its registered crop type, as recorded by farmers for CAP subsidy on **{year}-05-15** (the 'definitief' finalized edition).
 
-> This folder is **one partition** of a multi-year collection. For the cross-year story and queries spanning 2009–2025, see the [parent collection]({PARENT_BASE_URL}/) (README + llms.txt at the parent level).
+> This folder is **one partition** of a multi-year collection. For the cross-year story and queries spanning 2009–2025, see the [parent collection]({PARENT_BASE_URL}/) (README + AGENTS.md at the parent level).
 
 ## Key numbers
 
@@ -131,7 +131,7 @@ For "fields without potatoes in the last three years"-style queries that need ma
 {PARENT_BASE_URL}/*/brp_gewaspercelen_*.parquet
 ```
 
-See [`../llms.txt`](../llms.txt) and the parent [collection.json]({PARENT_BASE_URL}/collection.json) for full multi-year examples.
+See [`../AGENTS.md`](../AGENTS.md) and the parent [collection.json]({PARENT_BASE_URL}/collection.json) for full multi-year examples.
 
 ## Source
 
@@ -163,7 +163,7 @@ after verification.
 - **All years (2009–2025) at once:** point your tool at the collection's `portolan:glob`
   asset, `{glob_url}` — every year becomes a single virtual dataset, distinguished by the
   `jaar` column. Use this for crop-rotation, trajectory, and "what was here last year?"
-  queries. The parent [`llms.txt`]({PARENT_BASE_URL}/llms.txt) has the cross-year examples.
+  queries. The parent [`AGENTS.md`]({PARENT_BASE_URL}/AGENTS.md) has the cross-year examples.
 
 ## Quick start
 
@@ -241,7 +241,7 @@ EPSG:28992 is in metres, so the buffer is in metres.
 ## Related
 
 - Parent collection (all 17 years): {PARENT_BASE_URL}/collection.json
-- Parent `llms.txt` with cross-year SQL examples: {PARENT_BASE_URL}/llms.txt
+- Parent `AGENTS.md` with cross-year SQL examples: {PARENT_BASE_URL}/AGENTS.md
 """
 
 
@@ -250,8 +250,8 @@ def main() -> None:
         year_dir = ROOT / str(year)
         year_dir.mkdir(parents=True, exist_ok=True)
         (year_dir / "README.md").write_text(readme(year))
-        (year_dir / "llms.txt").write_text(llms(year))
-        print(f"wrote {year}/README.md + {year}/llms.txt")
+        (year_dir / "AGENTS.md").write_text(llms(year))
+        print(f"wrote {year}/README.md + {year}/AGENTS.md")
 
 
 if __name__ == "__main__":

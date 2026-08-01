@@ -2,7 +2,7 @@
 
 Locations of 92 navigation locks (sluizen) on the Dutch recreational waterway network (BRTN), including name, address, operator, number of chambers, and VHF radio channels.
 
-> AI/Agent users: See [llms.txt](./llms.txt) for field descriptions, query examples, and usage tips.
+> AI/Agent users: See [AGENTS.md](./AGENTS.md) for field descriptions, query examples, and usage tips.
 
 ![netherlands](https://img.shields.io/badge/netherlands-blue) ![waterways](https://img.shields.io/badge/waterways-blue) ![navigation](https://img.shields.io/badge/navigation-blue) ![rijkswaterstaat](https://img.shields.io/badge/rijkswaterstaat-blue)
 

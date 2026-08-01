@@ -3,7 +3,7 @@
   "id": "wijken_buurten",
   "stac_version": "1.1.0",
   "title": "Wijken en Buurten 2025 (Neighborhoods and Districts with Demographics)",
-  "description": "The definitive Dutch demographic geodataset. Published annually by CBS (Statistics Netherlands), this dataset provides demographic, socioeconomic, and geographic statistics at three nested administrative levels: buurten (14,823 neighborhoods), wijken (3,423 districts), and gemeenten (424 municipalities). Contains ~42 columns covering population, age distribution, household composition, marital status, migration background, urbanity, and land/water area. Statistics reflect the situation as of 1 January 2025. All three layers share the same column schema and form a strict spatial hierarchy: each buurt belongs to exactly one wijk, each wijk to one gemeente. The sentinel value -99997 means data is not available or privacy-suppressed.\n\n🤖 AI/Agent users: See llms.txt for field descriptions, query examples, and usage tips.",
+  "description": "The definitive Dutch demographic geodataset. Published annually by CBS (Statistics Netherlands), this dataset provides demographic, socioeconomic, and geographic statistics at three nested administrative levels: buurten (14,823 neighborhoods), wijken (3,423 districts), and gemeenten (424 municipalities). Contains ~42 columns covering population, age distribution, household composition, marital status, migration background, urbanity, and land/water area. Statistics reflect the situation as of 1 January 2025. All three layers share the same column schema and form a strict spatial hierarchy: each buurt belongs to exactly one wijk, each wijk to one gemeente. The sentinel value -99997 means data is not available or privacy-suppressed.\n\n🤖 AI/Agent users: See AGENTS.md for field descriptions, query examples, and usage tips.",
   "links": [
     {
       "rel": "root",
@@ -36,12 +36,6 @@
       "pmtiles:layers": [
         "buurten"
       ]
-    },
-    {
-      "rel": "llms",
-      "href": "./llms.txt",
-      "type": "text/markdown",
-      "title": "Agent/LLM usage guide"
     },
     {
       "rel": "agents",

@@ -1,23 +1,110 @@
-# Beeldmateriaal Nederland
+# Beeldmateriaal Nederland — Dutch National Aerial Photography
 
-Portolan catalog — `beeldmateriaal`
+## What This Is
 
-Open aerial imagery from Beeldmateriaal Nederland, the Dutch national collaboration for aerial photography. Since 2011, this partnership of municipalities, provinces, water boards (waterschappen), Rijkswaterstaat, Het Kadaster, and other government agencies has jointly commissioned nationwide aerial surveys, sharing costs and ensuring uniform quality. Two campaigns fly each year: a summer campaign producing 25 cm RGB orthophotos with full foliage, and a winter/spring campaign capturing 7.5 cm (8 cm from 2025) stereoscopic photography and Color InfraRed (CIR) imagery during the leafless season. The resulting orthophoto mosaics cover the entire Netherlands and are published as open data under CC BY 4.0 via PDOK web services and opendata.beeldmateriaal.nl. Coordinated under the Geo-Informatieberaad (GI-beraad), the programme also produces the Actueel Hoogtebestand Nederland (AHN) LiDAR elevation dataset. From 2023, coverage extends to the Caribbean Netherlands (Bonaire, Sint Eustatius, and Saba).
+Open aerial imagery from Beeldmateriaal Nederland, the Dutch national collaboration for
+aerial photography. Since 2011, this partnership of municipalities, provinces, water boards
+(waterschappen), Rijkswaterstaat, Het Kadaster, and other government agencies has jointly
+commissioned nationwide aerial surveys, sharing costs and ensuring uniform quality.
 
-## Start here
+Two campaigns fly each year:
+- **Summer (May–September):** 25 cm RGB orthophotos with full foliage
+- **Winter/Spring (February–April):** 7.5 cm (8 cm from 2025) high-resolution stereoscopic
+  imagery and Color InfraRed (CIR) during the leafless season
 
-Field descriptions, query examples and caveats are in [`llms.txt`](./llms.txt). It is hand-written and more useful than anything this file would repeat.
+The resulting orthophoto mosaics cover the entire Netherlands and are published as open data
+under CC BY 4.0. Coordinated under the Geo-Informatieberaad (GI-beraad), the programme
+also produces the Actueel Hoogtebestand Nederland (AHN) LiDAR elevation dataset. From 2023,
+coverage extends to the Caribbean Netherlands (Bonaire, Sint Eustatius, and Saba).
 
-## Contains
+Headquartered in Amersfoort — the origin of the Dutch national coordinate system (EPSG:28992).
 
-- 1 child catalog(s) or collection(s)
+**Website:** https://www.beeldmateriaal.nl/
+**Open data portal:** https://opendata.beeldmateriaal.nl/
+**License:** CC BY 4.0
 
-See the links in [`catalog.json`](./catalog.json).
+## Collections in This Catalog
 
-## Access
+### luchtfoto_2024/ — Aerial Orthophotos (Amersfoort Region)
 
-All assets are public. Relative hrefs resolve against this directory on <https://data.source.coop/cholmes/portolan-nl/>.
+12 tiles from the 2024 summer campaign covering ~450 km² around Amersfoort at 25 cm GSD.
+Each tile covers one kaartblad (Dutch map sheet, ~5 × 6.25 km) on the Amersfoort / RD New
+grid (EPSG:28992).
+
+Two assets per tile:
+- **RGB COG** — 3-band natural colour (Red, Green, Blue). ~80–97 MB per tile.
+- **RGBNIR COG** — 4-band multispectral (Red, Green, Blue, Near-Infrared). ~293–365 MB per tile.
+  NIR extracted from winter CIR capture band 1. Suitable for vegetation indices (NDVI).
+
+All files are Cloud-Optimized GeoTIFFs with JPEG compression, 512×512 internal tiling,
+6 overview levels, and baked-in per-band statistics.
+
+See `luchtfoto_2024/AGENTS.md` for detailed band descriptions, code examples, interactive
+map recipes, and cross-dataset analysis patterns.
+
+**Base URL:** `https://data.source.coop/cholmes/portolan-nl/beeldmateriaal/luchtfoto_2024/`
+
+**Quick start:**
+```python
+import rasterio
+
+url = 'https://data.source.coop/cholmes/portolan-nl/beeldmateriaal/luchtfoto_2024/luchtfoto-2024-32dn1-rgb.tif'
+with rasterio.open(url) as src:
+    window = rasterio.windows.Window(10000, 12000, 1000, 1000)
+    data = src.read(window=window)  # (3, 1000, 1000) — 250m × 250m area
+```
+
+## About the Imagery
+
+### Orthophoto Mosaics
+
+The published products are orthophoto mosaics — stitched from the central portions of
+individual aerial photographs to minimize building lean and perspective distortion. Two
+types are produced each year:
+
+- **LR (Low Resolution):** 25 cm GSD, RGB, summer capture. The primary visual product.
+  Available as open data since 2016.
+- **HR (High Resolution):** 7.5 cm GSD (5–8 cm from 2025), stereoscopic + CIR, winter
+  capture during leafless season. Available as open data since 2021.
+
+### Quick vs Definitive Products
+
+Shortly after each campaign, a "quick" variant is released — usable for orientation but
+not yet meeting all geometric and radiometric quality requirements. The definitive product
+replaces it after the full quality control process.
+
+### Color InfraRed (CIR)
+
+The winter CIR capture provides near-infrared reflectance data useful for vegetation
+analysis. In this catalog, CIR band 1 (NIR) is combined with summer RGB to create
+4-band RGBNIR COGs. Note that RGB and NIR are from different seasons.
+
+### Dutch Kaartblad (Map Sheet) System
+
+Tiles follow the Dutch national kaartblad grid. Each sheet is identified by a number
+(e.g., 32) and a combination of letters indicating the block and position (e.g., DN1).
+The full tile code (e.g., 32DN1) locates a specific ~5 × 6.25 km area.
+
+## Related Datasets
+
+Other collections in this Portolan catalog pair well with the orthophotos:
+
+- **BAG Light** (kadaster/bag_light) — 11.4M building footprints for overlay analysis
+- **Bestuurlijke Gebieden** (kadaster/bestuurlijke_gebieden) — Administrative boundaries
+- **Rijksmonumenten** (rce/rijksmonumenten) — 63K national monument locations
+- **Nationale Parken** (rvo/nationale_parken) — 21 national park boundaries
+- **Natura 2000** (rvo/natura2000) — 162 protected nature areas
+- **Wijken en Buurten** (cbs/wijken_en_buurten) — Neighbourhood demographics
+- **Bestand Bodemgebruik** (cbs/bestand_bodemgebruik_2017) — Land use classification
+
+## Source URLs
+
+- **Beeldmateriaal Nederland:** https://www.beeldmateriaal.nl/
+- **Open data downloads:** https://opendata.beeldmateriaal.nl/
+- **GeoTiles (TU Delft):** https://geotiles.citg.tudelft.nl/
+- **PDOK WMTS:** https://service.pdok.nl/hwh/luchtfotorgb/wmts/v1_0
+- **Google Earth Engine:** `ee.ImageCollection("Netherlands/Beeldmateriaal/LUCHTFOTO_RGB")`
+- **Data Overheid:** https://data.overheid.nl/ (search "luchtfoto beeldmateriaal")
 
 ---
-
-This file is generated by `tools/catalog/make_docs_files.py` from `catalog.json`. Edit the metadata, not this file.
+*Hand-maintained agent guide (ported from this collection's llms.txt in August 2026). Update it alongside collection.json.*

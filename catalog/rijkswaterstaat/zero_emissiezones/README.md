@@ -2,7 +2,7 @@
 
 Zero emission zones (zero-emissiezones) in Dutch cities where only emission-free vehicles are allowed. 42 MultiPolygon features covering Low Emission Zones (LEZ) and Zero Emission Stadslogistiek (ZES) areas.
 
-> AI/Agent users: See [llms.txt](./llms.txt) for field descriptions, query examples, and usage tips.
+> AI/Agent users: See [AGENTS.md](./AGENTS.md) for field descriptions, query examples, and usage tips.
 
 ![netherlands](https://img.shields.io/badge/netherlands-blue) ![emissions](https://img.shields.io/badge/emissions-blue) ![transport](https://img.shields.io/badge/transport-blue) ![rijkswaterstaat](https://img.shields.io/badge/rijkswaterstaat-blue)
 

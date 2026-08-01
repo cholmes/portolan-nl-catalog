@@ -34,7 +34,6 @@ _CT_BY_NAME = {"catalog.json": "application/json", "collection.json": "applicati
 _CT_BY_SUFFIX = {
     ".json": "application/geo+json",  # items; catalog/collection overridden by name
     ".md": "text/markdown; charset=utf-8",
-    ".txt": "text/markdown; charset=utf-8",  # llms.txt
     ".png": "image/png",
     ".webp": "image/webp",
     ".svg": "image/svg+xml",

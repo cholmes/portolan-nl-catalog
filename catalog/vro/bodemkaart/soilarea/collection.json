@@ -3,7 +3,7 @@
   "id": "soilarea",
   "stac_version": "1.1.0",
   "title": "BRO Soil Map of the Netherlands 1:50,000 — Soil areas (SGM)",
-  "description": "48,025 soil-area polygons of the national Soil Map of the Netherlands 1:50,000 (Bodemkaart, SGM), enriched here with the primary soil unit and main soil class. Produced under VRO; bronhouder Wageningen Environmental Research.\n\n🤖 AI/Agent users: see llms.txt for field descriptions, query examples and usage tips.",
+  "description": "48,025 soil-area polygons of the national Soil Map of the Netherlands 1:50,000 (Bodemkaart, SGM), enriched here with the primary soil unit and main soil class. Produced under VRO; bronhouder Wageningen Environmental Research.\n\n🤖 AI/Agent users: see AGENTS.md for field descriptions, query examples and usage tips.",
   "links": [
     {
       "rel": "root",
@@ -35,12 +35,6 @@
       "pmtiles:layers": [
         "soilarea"
       ]
-    },
-    {
-      "rel": "llms",
-      "href": "./llms.txt",
-      "type": "text/markdown",
-      "title": "Agent/LLM usage guide"
     },
     {
       "rel": "describedby",

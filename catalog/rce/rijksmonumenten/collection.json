@@ -3,7 +3,7 @@
   "id": "rijksmonumenten",
   "stac_version": "1.1.0",
   "title": "National Monuments (Rijksmonumenten)",
-  "description": "Point locations of all 63,073 nationally listed monuments (rijksmonumenten) in the Netherlands. These are buildings, objects, and sites protected under the Heritage Act (Erfgoedwet) for their beauty, scientific significance, or cultural-historical value. Includes classification by category (residences, religious buildings, farms, castles, fortifications, etc.) and direct links to the monument register. Published by the Cultural Heritage Agency (RCE) via PDOK.\n\n98% are built structures; 2% are archaeological sites. About 22% belong to a complex (ensemble of related monuments).\n\n🤖 AI/Agent users: See llms.txt for field descriptions, query examples, and usage tips.",
+  "description": "Point locations of all 63,073 nationally listed monuments (rijksmonumenten) in the Netherlands. These are buildings, objects, and sites protected under the Heritage Act (Erfgoedwet) for their beauty, scientific significance, or cultural-historical value. Includes classification by category (residences, religious buildings, farms, castles, fortifications, etc.) and direct links to the monument register. Published by the Cultural Heritage Agency (RCE) via PDOK.\n\n98% are built structures; 2% are archaeological sites. About 22% belong to a complex (ensemble of related monuments).\n\n🤖 AI/Agent users: See AGENTS.md for field descriptions, query examples, and usage tips.",
   "links": [
     {
       "rel": "root",
@@ -36,12 +36,6 @@
       "pmtiles:layers": [
         "rijksmonumenten"
       ]
-    },
-    {
-      "rel": "llms",
-      "href": "./llms.txt",
-      "type": "text/markdown",
-      "title": "Agent/LLM usage guide"
     },
     {
       "rel": "describedby",

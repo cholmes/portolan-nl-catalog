@@ -203,13 +203,6 @@
         "style"
       ]
     },
-    "documentation": {
-      "href": "./llms.txt",
-      "type": "text/plain",
-      "roles": [
-        "documentation"
-      ]
-    },
     "zero_emissiezones": {
       "href": "./zero_emissiezones.parquet",
       "type": "application/x-parquet",

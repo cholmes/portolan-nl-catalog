@@ -1,29 +1,109 @@
-# Rijkswaterstaat Tunnels
+# Rijkswaterstaat Tunnels — Rijkswaterstaat / Netherlands
 
-Portolan collection — `rijkswaterstaat/fme_disk_tunnels`
+## What This Dataset Is
 
-Locations of 25 road tunnels managed by Rijkswaterstaat across the Netherlands, including name, road number, municipality, and year opened.
+Point locations of **25 road tunnels** managed by Rijkswaterstaat in the Netherlands. Includes
+both existing tunnels and planned future tunnels. Each record contains the tunnel name, road
+number, municipality, year of opening, and a link to the tunnel's information page.
 
-## Start here
+**Provider:** Rijkswaterstaat (Directorate-General for Public Works and Water Management)
+**License:** Public domain (Dutch government open data)
 
-Field descriptions, query examples and caveats are in [`llms.txt`](./llms.txt). It is hand-written and more useful than anything this file would repeat.
+## How to Access
 
-## Assets
+The data is a GeoParquet file in **EPSG:28992** (Amersfoort / RD New). Use DuckDB with the
+spatial extension.
 
-| Key | File | Type | Roles |
-|---|---|---|---|
-| `data` | `./fme_disk_tunnels.parquet` | application/x-parquet | data |
-| `pmtiles` | `./fme_disk_tunnels.pmtiles` | application/vnd.pmtiles | visual |
-| `thumbnail` | `./thumbnail_.webp` | image/webp | thumbnail |
-| `styles/default` | `./styles/default.json` | application/vnd.mapbox.style+json | style |
-| `documentation` | `./llms.txt` | text/plain | documentation |
-| `fme_disk_tunnels` | `./fme_disk_tunnels.parquet` | application/x-parquet | data |
-| `README` | `./README.md` | text/markdown | documentation |
+```python
+import duckdb
 
-## Access
+con = duckdb.connect()
+con.execute("INSTALL spatial; LOAD spatial;")
 
-All assets are public. Relative hrefs resolve against this directory on <https://data.source.coop/cholmes/portolan-nl/>.
+URL = 'https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/fme_disk_tunnels/fme_disk_tunnels.parquet'
+
+df = con.execute(f"""
+    SELECT * FROM read_parquet('{URL}')
+    LIMIT 5
+""").df()
+```
+
+The file is tiny (25 features) — loads instantly.
+
+## Schema — Field Meanings
+
+| Field | Type | Meaning |
+|-------|------|---------|
+| `geometry` | WKB Point | Tunnel location in **EPSG:28992**. |
+| `tunnelnaam` | string | **Tunnel name** (e.g., "Coentunnel", "Westerscheldetunnel"). |
+| `wegnummer` | string | **Road number** (e.g., "A10", "A4", "N62"). |
+| `gemeente` | string | Municipality where the tunnel is located. |
+| `jaar_openstelling` | string | **Year opened.** String, not integer — some values are future prognoses like `"2035 (prognose)"`. |
+| `status` | string | `Bestaand` (existing) or `Gepland` (planned). |
+| `url` | string | URL to tunnel information page on Rijkswaterstaat website. |
+| `beheerder` | string | Operator / manager of the tunnel. |
+
+## Useful Query Patterns
+
+### List all tunnels
+
+```sql
+SELECT tunnelnaam, wegnummer, gemeente, jaar_openstelling, status
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/fme_disk_tunnels/fme_disk_tunnels.parquet')
+ORDER BY tunnelnaam
+```
+
+### Group tunnels by road number
+
+```sql
+SELECT wegnummer, COUNT(*) AS tunnel_count,
+       STRING_AGG(tunnelnaam, ', ') AS tunnels
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/fme_disk_tunnels/fme_disk_tunnels.parquet')
+GROUP BY wegnummer
+ORDER BY tunnel_count DESC
+```
+
+### Find planned (future) tunnels
+
+```sql
+SELECT tunnelnaam, wegnummer, gemeente, jaar_openstelling
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/fme_disk_tunnels/fme_disk_tunnels.parquet')
+WHERE status = 'Gepland'
+```
+
+### Tunnels by municipality
+
+```sql
+SELECT gemeente, COUNT(*) AS tunnels
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/fme_disk_tunnels/fme_disk_tunnels.parquet')
+GROUP BY gemeente
+ORDER BY tunnels DESC
+```
+
+## Geometry Notes
+
+- CRS is **EPSG:28992** (Amersfoort / RD New). Coordinates are in metres.
+- All geometries are Point — representing tunnel locations, not extents.
+- Reproject to EPSG:4326 for web maps.
+
+
+## Visualization Styles
+
+One Mapbox GL v8 style is available for interactive map visualization via the PMTiles file.
+
+Style files are Mapbox GL v8 JSON with relative PMTiles source paths. They can be
+used with MapLibre GL JS, OpenLayers (via ol-mapbox-style), or any Mapbox GL v8-compatible renderer.
+
+- **`styles/default.json`** — Red circles with white borders, sized by zoom level. Labels show tunnel names at higher zoom. Shows the spatial distribution of road tunnels across the Netherlands.
+
+Style files are at: `https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/fme_disk_tunnels/styles/`
+## Caveats
+
+- **`jaar_openstelling` is a string**, not an integer — some values include prognosis text
+  like `"2035 (prognose)"`. Do not cast directly to integer without cleaning.
+- Small dataset (25 features) — only tunnels managed by Rijkswaterstaat on the national
+  road network, not all tunnels in the Netherlands.
+- Status values are in Dutch: `Bestaand` = existing, `Gepland` = planned.
 
 ---
-
-This file is generated by `tools/catalog/make_docs_files.py` from `collection.json`. Edit the metadata, not this file.
+*Hand-maintained agent guide (ported from this collection's llms.txt in August 2026). Update it alongside collection.json.*

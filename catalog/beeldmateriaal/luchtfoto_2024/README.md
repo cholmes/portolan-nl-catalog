@@ -6,7 +6,7 @@ The NIR band is extracted from the Color InfraRed (CIR) winter capture (band 1).
 
 Source imagery from [Beeldmateriaal Nederland](https://www.beeldmateriaal.nl/) via [GeoTiles (TU Delft)](https://geotiles.citg.tudelft.nl/).
 
-> AI/Agent users: See [llms.txt](./llms.txt) for band descriptions, code examples, interactive map recipes, and cross-dataset analysis patterns.
+> AI/Agent users: See [AGENTS.md](./AGENTS.md) for band descriptions, code examples, interactive map recipes, and cross-dataset analysis patterns.
 
 ## Spatial Coverage
 

@@ -3,7 +3,7 @@
   "id": "nationale_parken",
   "stac_version": "1.1.0",
   "title": "National Parks (Nationale Parken)",
-  "description": "Boundaries of all 21 National Parks in the Netherlands. These are large contiguous natural areas of national and international importance, designated for their ecological, landscape, and recreational value. Parks range from coastal dunes and forests to wetlands, heathlands, and tidal estuaries. Managed by the provinces since the 2023 reform. Published by RVO via PDOK.\n\nThis dataset is a complete enumeration — all 21 parks, not a sample.\n\n🤖 AI/Agent users: See llms.txt for field descriptions, query examples, and usage tips.",
+  "description": "Boundaries of all 21 National Parks in the Netherlands. These are large contiguous natural areas of national and international importance, designated for their ecological, landscape, and recreational value. Parks range from coastal dunes and forests to wetlands, heathlands, and tidal estuaries. Managed by the provinces since the 2023 reform. Published by RVO via PDOK.\n\nThis dataset is a complete enumeration — all 21 parks, not a sample.\n\n🤖 AI/Agent users: See AGENTS.md for field descriptions, query examples, and usage tips.",
   "links": [
     {
       "rel": "root",
@@ -30,12 +30,6 @@
       "pmtiles:layers": [
         "nationale_parken"
       ]
-    },
-    {
-      "rel": "llms",
-      "href": "./llms.txt",
-      "type": "text/markdown",
-      "title": "Agent/LLM usage guide"
     },
     {
       "rel": "describedby",
