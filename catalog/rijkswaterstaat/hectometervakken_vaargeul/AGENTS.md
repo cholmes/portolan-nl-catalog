@@ -1,29 +1,103 @@
-# Water Depth Charts — Rhine Branches
+# Water Depth Charts — Rhine Branches — Rijkswaterstaat / Netherlands
 
-Portolan collection — `rijkswaterstaat/hectometervakken_vaargeul`
+## What This Dataset Is
 
-Hectometer sections of the fairway along Rhine branches in the Netherlands, from the Waterdieptekaarten (Water Depth Charts) viewer.
+A spatial reference grid of **3,112 hectometer sections** (hectometervakken) along the fairway
+(vaargeul) of the Rhine branches in the Netherlands. Each polygon represents a section of the
+navigable channel, identified by a section ID.
 
-## Start here
+This is primarily a **spatial indexing grid** — it provides the spatial framework for referencing
+locations along the Rhine waterways. The attribute data is minimal; the value lies in the
+spatial geometry itself.
 
-Field descriptions, query examples and caveats are in [`llms.txt`](./llms.txt). It is hand-written and more useful than anything this file would repeat.
+**Provider:** Rijkswaterstaat (Directorate-General for Public Works and Water Management)
+**License:** Public domain (Dutch government open data)
 
-## Assets
+## How to Access
 
-| Key | File | Type | Roles |
-|---|---|---|---|
-| `data` | `./hectometervakken_vaargeul.parquet` | application/x-parquet | data |
-| `pmtiles` | `./hectometervakken_vaargeul.pmtiles` | application/vnd.pmtiles | visual |
-| `thumbnail` | `./thumbnail_.webp` | image/webp | thumbnail |
-| `styles/default` | `./styles/default.json` | application/vnd.mapbox.style+json | style |
-| `documentation` | `./llms.txt` | text/plain | documentation |
-| `hectometervakken_vaargeul` | `./hectometervakken_vaargeul.pmtiles` | application/vnd.pmtiles | data |
-| `README` | `./README.md` | text/markdown | documentation |
+The data is a GeoParquet file in **EPSG:28992** (Amersfoort / RD New). Use DuckDB with the
+spatial extension.
 
-## Access
+```python
+import duckdb
 
-All assets are public. Relative hrefs resolve against this directory on <https://data.source.coop/cholmes/portolan-nl/>.
+con = duckdb.connect()
+con.execute("INSTALL spatial; LOAD spatial;")
+
+URL = 'https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/hectometervakken_vaargeul/hectometervakken_vaargeul.parquet'
+
+df = con.execute(f"""
+    SELECT * FROM read_parquet('{URL}')
+    LIMIT 5
+""").df()
+```
+
+## Schema — Field Meanings
+
+| Field | Type | Meaning |
+|-------|------|---------|
+| `geometry` | WKB Polygon | Fairway section boundary in **EPSG:28992**. |
+| `vak_ID` | string | **Section identifier** — prefix indicates the waterway branch (e.g., `"ij_8784"`, `"wa_9509"`). |
+| `Shape__Area` | float64 | Section area in m². |
+| `Shape__Length` | float64 | Section perimeter in metres. |
+
+## Useful Query Patterns
+
+### List sections by waterway branch
+
+The `vak_ID` prefix identifies the waterway. Extract it to group sections.
+
+```sql
+SELECT SPLIT_PART(vak_ID, '_', 1) AS waterway_prefix,
+       COUNT(*) AS sections,
+       SUM(Shape__Area) / 1e6 AS total_area_km2
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/hectometervakken_vaargeul/hectometervakken_vaargeul.parquet')
+GROUP BY waterway_prefix
+ORDER BY sections DESC
+```
+
+### Find a specific section
+
+```sql
+SELECT vak_ID, Shape__Area, Shape__Length
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/hectometervakken_vaargeul/hectometervakken_vaargeul.parquet')
+WHERE vak_ID = 'wa_9509'
+```
+
+### Summary statistics
+
+```sql
+SELECT COUNT(*) AS total_sections,
+       SUM(Shape__Area) / 1e6 AS total_area_km2,
+       AVG(Shape__Area) AS avg_section_area_m2
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/hectometervakken_vaargeul/hectometervakken_vaargeul.parquet')
+```
+
+## Geometry Notes
+
+- CRS is **EPSG:28992** (Amersfoort / RD New). Coordinates are in metres.
+- All geometries are Polygon.
+- Reproject to EPSG:4326 for web maps.
+
+
+## Visualization Styles
+
+One Mapbox GL v8 style is available for interactive map visualization via the PMTiles file.
+
+Style files are Mapbox GL v8 JSON with relative PMTiles source paths. They can be
+used with MapLibre GL JS, OpenLayers (via ol-mapbox-style), or any Mapbox GL v8-compatible renderer.
+
+- **`styles/default.json`** — Dark navy blue fill with darker outlines. Shows fairway channel sections along major Dutch waterways. Navigational-chart appearance.
+
+Style files are at: `https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/hectometervakken_vaargeul/styles/`
+## Caveats
+
+- **Minimal attribute data** — this is primarily a spatial reference grid. The main value
+  is the geometry itself and the `vak_ID` for cross-referencing with other Rijkswaterstaat
+  datasets (e.g., depth measurements, water quality).
+- The `vak_ID` prefix encodes the waterway branch but the exact mapping (e.g., `ij` = IJssel,
+  `wa` = Waal) is not included in the dataset.
+- `Shape__Area` uses double underscores (ArcGIS convention).
 
 ---
-
-This file is generated by `tools/catalog/make_docs_files.py` from `collection.json`. Edit the metadata, not this file.
+*Hand-maintained agent guide (ported from this collection's llms.txt in August 2026). Update it alongside collection.json.*

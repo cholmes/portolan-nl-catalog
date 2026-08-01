@@ -4,7 +4,7 @@ Boundaries of all 162 Natura 2000 protected areas in the Netherlands, designated
 
 Natura 2000 areas carry the strongest nature protection in Dutch law — any plan or project that may affect them requires assessment under the Wet natuurbescherming.
 
-> AI/Agent users: See [llms.txt](./llms.txt) for field descriptions, query examples, and usage tips.
+> AI/Agent users: See [AGENTS.md](./AGENTS.md) for field descriptions, query examples, and usage tips.
 
 ![netherlands](https://img.shields.io/badge/netherlands-blue) ![nature](https://img.shields.io/badge/nature-blue) ![natura2000](https://img.shields.io/badge/natura2000-blue) ![eu-directives](https://img.shields.io/badge/eu--directives-blue) ![rvo](https://img.shields.io/badge/rvo-blue)
 

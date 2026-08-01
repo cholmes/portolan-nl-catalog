@@ -227,13 +227,6 @@
         "style"
       ]
     },
-    "documentation": {
-      "href": "./llms.txt",
-      "type": "text/plain",
-      "roles": [
-        "documentation"
-      ]
-    },
     "fme_disk_tunnels": {
       "href": "./fme_disk_tunnels.parquet",
       "type": "application/x-parquet",

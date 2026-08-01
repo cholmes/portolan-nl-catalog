@@ -196,10 +196,9 @@
       "type": "application/vnd.pmtiles"
     },
     {
-      "rel": "llms",
-      "href": "./llms.txt",
-      "type": "text/markdown",
-      "title": "Agent/LLM usage guide"
+      "rel": "agents",
+      "href": "./AGENTS.md",
+      "type": "text/markdown"
     },
     {
       "rel": "describedby",

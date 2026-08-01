@@ -2,6 +2,8 @@
 
 The national Geomorphological Map of the Netherlands at scale 1:50,000 (BRO object GMM), produced by Wageningen Environmental Research. The source GeoPackage holds three distinct polygon layers, published here as separate collections:
 
+> Agents: the machine-oriented guide for this data is [`AGENTS.md`](./AGENTS.md).
+
 ## Contents
 
 3 child object(s). See [`catalog.json`](./catalog.json).
@@ -11,8 +13,6 @@ The national Geomorphological Map of the Netherlands at scale 1:50,000 (BRO obje
 ```bash
 curl -s https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/catalog.json | jq .
 ```
-
-See [`AGENTS.md`](./AGENTS.md) for the machine-readable summary.
 
 ---
 

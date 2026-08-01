@@ -1,29 +1,129 @@
-# Navigation Locks
+# Navigation Locks — Rijkswaterstaat / Netherlands
 
-Portolan collection — `rijkswaterstaat/sluizen`
+## What This Dataset Is
 
-Locations of 92 navigation locks (sluizen) on the Dutch recreational waterway network (BRTN), including name, address, operator, number of chambers, and VHF radio channels.
+Point locations of **92 navigation locks** (sluizen) on the Dutch recreational waterway network.
+Each lock includes its name, location, number of chambers, VHF radio channel, operator
+information, and contact details.
 
-## Start here
+Locks are essential infrastructure in the Netherlands, allowing vessels to move between
+waterways at different water levels. This dataset covers locks on the recreational network
+managed by various authorities including Rijkswaterstaat, provinces, and municipalities.
 
-Field descriptions, query examples and caveats are in [`llms.txt`](./llms.txt). It is hand-written and more useful than anything this file would repeat.
+**Provider:** Rijkswaterstaat (Directorate-General for Public Works and Water Management)
+**License:** Public domain (Dutch government open data)
 
-## Assets
+## How to Access
 
-| Key | File | Type | Roles |
-|---|---|---|---|
-| `data` | `./sluizen.parquet` | application/x-parquet | data |
-| `pmtiles` | `./sluizen.pmtiles` | application/vnd.pmtiles | visual |
-| `thumbnail` | `./thumbnail_.webp` | image/webp | thumbnail |
-| `styles/default` | `./styles/default.json` | application/vnd.mapbox.style+json | style |
-| `documentation` | `./llms.txt` | text/plain | documentation |
-| `sluizen` | `./sluizen.parquet` | application/x-parquet | data |
-| `README` | `./README.md` | text/markdown | documentation |
+The data is a GeoParquet file in **EPSG:28992** (Amersfoort / RD New). Use DuckDB with the
+spatial extension.
 
-## Access
+```python
+import duckdb
 
-All assets are public. Relative hrefs resolve against this directory on <https://data.source.coop/cholmes/portolan-nl/>.
+con = duckdb.connect()
+con.execute("INSTALL spatial; LOAD spatial;")
+
+URL = 'https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/sluizen/sluizen.parquet'
+
+df = con.execute(f"""
+    SELECT * FROM read_parquet('{URL}')
+    LIMIT 5
+""").df()
+```
+
+The file is tiny (92 features) — loads instantly.
+
+## Schema — Field Meanings
+
+| Field | Type | Meaning |
+|-------|------|---------|
+| `geometry` | WKB Point | Lock location in **EPSG:28992**. |
+| `NAAM` | string | **Lock name** (e.g., "Sluis Maasbracht", "Beatrixsluis"). |
+| `PLAATSNAAM` | string | **City/town** where the lock is located. |
+| `NR_KOLKEN` | int/float | **Number of chambers** (1–4). More chambers = higher capacity. |
+| `MARIFOONKA` | string | **VHF radio channel** for contacting the lock operator. |
+| `VRT_CODE` | string | Waterway code (vaarweg code). |
+| `VRTNAAM` | string | **Waterway name** (vaarweg naam). |
+| `BHR_NAAM` | string | **Operator name** — the organization that manages the lock. |
+| `BHR_TYPE` | string | **Operator type** (e.g., government, province, municipality). |
+| `TEL_NR` | string | Phone number for the lock operator. |
+
+## Useful Query Patterns
+
+### List all locks with their waterways
+
+```sql
+SELECT NAAM, PLAATSNAAM, VRTNAAM, NR_KOLKEN
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/sluizen/sluizen.parquet')
+ORDER BY NAAM
+```
+
+### Group locks by operator
+
+```sql
+SELECT BHR_NAAM, BHR_TYPE, COUNT(*) AS locks
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/sluizen/sluizen.parquet')
+GROUP BY BHR_NAAM, BHR_TYPE
+ORDER BY locks DESC
+```
+
+### Find multi-chamber locks (highest capacity)
+
+```sql
+SELECT NAAM, PLAATSNAAM, VRTNAAM, NR_KOLKEN
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/sluizen/sluizen.parquet')
+WHERE NR_KOLKEN >= 2
+ORDER BY NR_KOLKEN DESC
+```
+
+### Locks by waterway
+
+```sql
+SELECT VRTNAAM, COUNT(*) AS locks,
+       STRING_AGG(NAAM, ', ') AS lock_names
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/sluizen/sluizen.parquet')
+GROUP BY VRTNAAM
+ORDER BY locks DESC
+```
+
+### Find locks near a location (within 10 km)
+
+```sql
+INSTALL spatial; LOAD spatial;
+
+SELECT NAAM, PLAATSNAAM, VRTNAAM,
+       ST_Distance(ST_GeomFromWKB(geometry),
+           ST_Transform(ST_Point(5.69, 51.44), 'EPSG:4326', 'EPSG:28992')
+       ) / 1000 AS distance_km
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/sluizen/sluizen.parquet')
+WHERE distance_km < 10
+ORDER BY distance_km
+```
+
+## Geometry Notes
+
+- CRS is **EPSG:28992** (Amersfoort / RD New). Coordinates are in metres.
+- All geometries are Point — representing lock locations, not the full lock structure.
+- Reproject to EPSG:4326 for web maps.
+
+
+## Visualization Styles
+
+One Mapbox GL v8 style is available for interactive map visualization via the PMTiles file.
+
+Style files are Mapbox GL v8 JSON with relative PMTiles source paths. They can be
+used with MapLibre GL JS, OpenLayers (via ol-mapbox-style), or any Mapbox GL v8-compatible renderer.
+
+- **`styles/default.json`** — Red circles sized by `NR_KOLKEN` (number of lock chambers). Larger circles = more chambers = higher-capacity locks. Labels show lock names at higher zoom.
+
+Style files are at: `https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/sluizen/styles/`
+## Caveats
+
+- Column names use uppercase (e.g., `NAAM`, `PLAATSNAAM`, `NR_KOLKEN`).
+- This covers the **recreational waterway network** — not all locks in the Netherlands.
+- `NR_KOLKEN` may be stored as float due to null handling; cast to int for display.
+- Phone numbers (`TEL_NR`) may be outdated.
 
 ---
-
-This file is generated by `tools/catalog/make_docs_files.py` from `collection.json`. Edit the metadata, not this file.
+*Hand-maintained agent guide (ported from this collection's llms.txt in August 2026). Update it alongside collection.json.*

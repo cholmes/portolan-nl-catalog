@@ -20,7 +20,7 @@ def build_tree(tmp: Path):
     cat = tmp / "catalog"
     (cat / ".portolan").mkdir(parents=True)
     (cat / "catalog.json").write_text("{}")
-    (cat / "llms.txt").write_text("x")
+    (cat / "AGENTS.md").write_text("x")
     (cat / "README.md").write_text("x")
     (cat / ".portolan/metadata.yaml").write_text("x")
     (cat / ".portolan/config.yaml").write_text("x")   # internal, must NOT publish
@@ -100,7 +100,7 @@ def main():
         check_change_detection(tmp, manifest)  # needs the files to still exist
 
         expected = {
-            "catalog.json", "llms.txt", "README.md",
+            "catalog.json", "AGENTS.md", "README.md",
             ".portolan/metadata.yaml",
             "rce/rijksmonumenten/collection.json",
             "rce/rijksmonumenten/versions.json",

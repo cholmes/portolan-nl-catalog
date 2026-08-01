@@ -1,29 +1,122 @@
-# Flood Retention Areas
+# Flood Retention Areas — Rijkswaterstaat / Netherlands
 
-Portolan collection — `rijkswaterstaat/bergingsgebieden`
+## What This Dataset Is
 
-Designated flood retention areas (bergingsgebieden) across the Netherlands, where water can be temporarily stored during high water events to protect populated areas.
+Boundaries of **1,545 flood retention areas** (bergingsgebieden) in the Netherlands — areas where
+water can be temporarily stored during high water events. These are part of the Dutch flood risk
+management system, which uses controlled water storage to reduce peak water levels and prevent
+uncontrolled flooding.
 
-## Start here
+Some areas are legally established (wettelijk vastgesteld) under Dutch water law; others are
+designated but not yet formally codified. The dataset includes storage capacity figures for some
+areas, though many have null values.
 
-Field descriptions, query examples and caveats are in [`llms.txt`](./llms.txt). It is hand-written and more useful than anything this file would repeat.
+**Provider:** Rijkswaterstaat (Directorate-General for Public Works and Water Management)
+**License:** Public domain (Dutch government open data)
 
-## Assets
+## How to Access
 
-| Key | File | Type | Roles |
-|---|---|---|---|
-| `data` | `./bergingsgebieden.parquet` | application/x-parquet | data |
-| `pmtiles` | `./bergingsgebieden.pmtiles` | application/vnd.pmtiles | visual |
-| `thumbnail` | `./thumbnail_.webp` | image/webp | thumbnail |
-| `styles/default` | `./styles/default.json` | application/vnd.mapbox.style+json | style |
-| `documentation` | `./llms.txt` | text/plain | documentation |
-| `bergingsgebieden` | `./bergingsgebieden.parquet` | application/x-parquet | data |
-| `README` | `./README.md` | text/markdown | documentation |
+The data is a GeoParquet file in **EPSG:28992** (Amersfoort / RD New). Use DuckDB with the
+spatial extension.
 
-## Access
+```python
+import duckdb
 
-All assets are public. Relative hrefs resolve against this directory on <https://data.source.coop/cholmes/portolan-nl/>.
+con = duckdb.connect()
+con.execute("INSTALL spatial; LOAD spatial;")
+
+URL = 'https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/bergingsgebieden/bergingsgebieden.parquet'
+
+df = con.execute(f"""
+    SELECT * FROM read_parquet('{URL}')
+    LIMIT 5
+""").df()
+```
+
+## Schema — Field Meanings
+
+| Field | Type | Meaning |
+|-------|------|---------|
+| `geometry` | WKB MultiPolygon | Retention area boundary in **EPSG:28992**. |
+| `naam` | string | Name of the retention area. |
+| `code` | string | Identifier code. |
+| `bergendvermogen` | float64 | **Storage capacity in m³.** Often null. |
+| `indicatiewettelijkvastgesteld` | string | Whether legally established: `Ja` (yes) or `Nee` (no). |
+| `statuslegger` | string | Status in the water authority register. |
+| `statusobject` | string | Object status (e.g., operational state). |
+| `Shape__Area` | float64 | Area in m². |
+| `Shape__Length` | float64 | Perimeter in metres. |
+
+## Useful Query Patterns
+
+### Count retention areas by legal status
+
+```sql
+SELECT indicatiewettelijkvastgesteld, COUNT(*) AS count
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/bergingsgebieden/bergingsgebieden.parquet')
+GROUP BY indicatiewettelijkvastgesteld
+ORDER BY count DESC
+```
+
+### Find the largest retention areas
+
+```sql
+SELECT naam, code, Shape__Area / 1e6 AS area_km2, bergendvermogen AS storage_m3
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/bergingsgebieden/bergingsgebieden.parquet')
+ORDER BY Shape__Area DESC
+LIMIT 20
+```
+
+### Find areas with known storage capacity
+
+```sql
+SELECT naam, code, bergendvermogen AS storage_m3, Shape__Area / 1e4 AS area_ha
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/bergingsgebieden/bergingsgebieden.parquet')
+WHERE bergendvermogen IS NOT NULL
+ORDER BY bergendvermogen DESC
+```
+
+### Count by object status
+
+```sql
+SELECT statusobject, COUNT(*) AS count
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/bergingsgebieden/bergingsgebieden.parquet')
+GROUP BY statusobject
+ORDER BY count DESC
+```
+
+### Total storage capacity and area
+
+```sql
+SELECT COUNT(*) AS total_areas,
+       SUM(Shape__Area) / 1e6 AS total_area_km2,
+       SUM(bergendvermogen) AS total_storage_m3,
+       COUNT(bergendvermogen) AS areas_with_storage_data
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/bergingsgebieden/bergingsgebieden.parquet')
+```
+
+## Geometry Notes
+
+- CRS is **EPSG:28992** (Amersfoort / RD New). Coordinates are in metres.
+- All geometries are MultiPolygon.
+- Reproject to EPSG:4326 for web maps.
+
+
+## Visualization Styles
+
+One Mapbox GL v8 style is available for interactive map visualization via the PMTiles file.
+
+Style files are Mapbox GL v8 JSON with relative PMTiles source paths. They can be
+used with MapLibre GL JS, OpenLayers (via ol-mapbox-style), or any Mapbox GL v8-compatible renderer.
+
+- **`styles/default.json`** — Light blue flood retention area fills with darker blue outlines. Shows the spatial distribution of water storage areas along Dutch rivers and coast.
+
+Style files are at: `https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/bergingsgebieden/styles/`
+## Caveats
+
+- **`bergendvermogen` is often null** — storage capacity data is not available for all areas.
+- Field names use full Dutch words (e.g., `indicatiewettelijkvastgesteld`) rather than abbreviations.
+- `Shape__Area` uses double underscores (ArcGIS convention).
 
 ---
-
-This file is generated by `tools/catalog/make_docs_files.py` from `collection.json`. Edit the metadata, not this file.
+*Hand-maintained agent guide (ported from this collection's llms.txt in August 2026). Update it alongside collection.json.*

@@ -41,12 +41,6 @@
       "title": "ATOM download service"
     },
     {
-      "rel": "llms",
-      "href": "./llms.txt",
-      "type": "text/markdown",
-      "title": "Agent/LLM usage guide"
-    },
-    {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/cbs/bevolkingsspreiding/bevolkingsspreiding.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -395,13 +389,6 @@
       "title": "Population Distribution — Default",
       "roles": [
         "style"
-      ]
-    },
-    "documentation": {
-      "href": "./llms.txt",
-      "type": "text/plain",
-      "roles": [
-        "documentation"
       ]
     },
     "bevolkingsspreiding": {

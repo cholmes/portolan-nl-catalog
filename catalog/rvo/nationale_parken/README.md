@@ -2,7 +2,7 @@
 
 Boundaries of all 21 National Parks in the Netherlands. Large contiguous natural areas of national and international importance, designated for their ecological, landscape, and recreational value. Parks range from coastal dunes and forests to wetlands, heathlands, and tidal estuaries. Managed by the provinces since the 2023 reform. Published by RVO via PDOK.
 
-> AI/Agent users: See [llms.txt](./llms.txt) for field descriptions, query examples, and usage tips.
+> AI/Agent users: See [AGENTS.md](./AGENTS.md) for field descriptions, query examples, and usage tips.
 
 ![netherlands](https://img.shields.io/badge/netherlands-blue) ![nature](https://img.shields.io/badge/nature-blue) ![national-parks](https://img.shields.io/badge/national--parks-blue) ![rvo](https://img.shields.io/badge/rvo-blue)
 

@@ -271,13 +271,6 @@
         "style"
       ]
     },
-    "documentation": {
-      "href": "./llms.txt",
-      "type": "text/plain",
-      "roles": [
-        "documentation"
-      ]
-    },
     "sluizen": {
       "href": "./sluizen.parquet",
       "type": "application/x-parquet",

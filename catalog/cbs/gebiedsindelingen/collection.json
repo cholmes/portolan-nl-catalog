@@ -3,7 +3,7 @@
   "id": "gebiedsindelingen",
   "stac_version": "1.1.0",
   "title": "CBS Gebiedsindelingen (Area Classifications)",
-  "description": "All 26 types of regional area classifications for the Netherlands, published by CBS (Statistics Netherlands) via PDOK. Contains generalized polygon boundaries for every administrative, statistical, and functional region used in Dutch governance: gemeenten (342), provincies (12), wijken (3,423), buurten (14,729), COROP regions, safety regions, GGD health regions, labour market regions, energy strategy regions, court districts, and more. Each classification type is a separate GeoParquet file in EPSG:28992 (Amersfoort / RD New). These are generalized (simplified) boundaries suitable for thematic mapping and statistical visualization, not precision boundary work.\n\n🤖 AI/Agent users: See llms.txt for field descriptions, query examples, and usage tips.",
+  "description": "All 26 types of regional area classifications for the Netherlands, published by CBS (Statistics Netherlands) via PDOK. Contains generalized polygon boundaries for every administrative, statistical, and functional region used in Dutch governance: gemeenten (342), provincies (12), wijken (3,423), buurten (14,729), COROP regions, safety regions, GGD health regions, labour market regions, energy strategy regions, court districts, and more. Each classification type is a separate GeoParquet file in EPSG:28992 (Amersfoort / RD New). These are generalized (simplified) boundaries suitable for thematic mapping and statistical visualization, not precision boundary work.\n\n🤖 AI/Agent users: See AGENTS.md for field descriptions, query examples, and usage tips.",
   "links": [
     {
       "rel": "root",
@@ -36,12 +36,6 @@
       "pmtiles:layers": [
         "gemeenten"
       ]
-    },
-    {
-      "rel": "llms",
-      "href": "./llms.txt",
-      "type": "text/markdown",
-      "title": "Agent/LLM usage guide"
     },
     {
       "rel": "agents",

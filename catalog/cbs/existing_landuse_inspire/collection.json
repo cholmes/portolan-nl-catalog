@@ -35,12 +35,6 @@
       "title": "WMS endpoint"
     },
     {
-      "rel": "llms",
-      "href": "./llms.txt",
-      "type": "text/markdown",
-      "title": "Agent/LLM usage guide"
-    },
-    {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/cbs/existing_landuse_inspire/existing_landuse.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -189,13 +183,6 @@
       "title": "INSPIRE Land Use — Default",
       "roles": [
         "style"
-      ]
-    },
-    "documentation": {
-      "href": "./llms.txt",
-      "type": "text/plain",
-      "roles": [
-        "documentation"
       ]
     },
     "metadata": {

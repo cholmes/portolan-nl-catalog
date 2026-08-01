@@ -2,7 +2,7 @@
 
 INSPIRE-harmonized land use dataset for the Netherlands, based on the Dutch topographic map (BRT) and aerial photography from summer 2015. Each polygon is classified using the HILUCS (Hierarchical INSPIRE Land Use Classification System) for pan-European interoperability. This is the European INSPIRE version of the CBS Bestand Bodemgebruik (BBG) 2017. Published by CBS via PDOK.
 
-> AI/Agent users: See [llms.txt](./llms.txt) for field descriptions, query examples, and usage tips.
+> AI/Agent users: See [AGENTS.md](./AGENTS.md) for field descriptions, query examples, and usage tips.
 
 ![netherlands](https://img.shields.io/badge/netherlands-blue) ![land-use](https://img.shields.io/badge/land--use-blue) ![inspire](https://img.shields.io/badge/inspire-blue) ![cbs](https://img.shields.io/badge/cbs-blue)
 

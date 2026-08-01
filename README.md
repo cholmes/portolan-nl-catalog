@@ -11,7 +11,7 @@ by this repo.
 
 - 🇳🇱 **Live catalog & data:** <https://data.source.coop/cholmes/portolan-nl/>
 - 🧭 **Browse the STAC catalog:** [Portolan browser](https://browser.portolan-sdi.org/#/external/data.source.coop/cholmes/portolan-nl/catalog.json)
-- 🤖 **For AI agents:** [`llms.txt`](https://data.source.coop/cholmes/portolan-nl/llms.txt)
+- 🤖 **For AI agents:** [`AGENTS.md`](https://data.source.coop/cholmes/portolan-nl/AGENTS.md)
 
 ## How this repo works
 

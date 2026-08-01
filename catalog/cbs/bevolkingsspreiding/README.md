@@ -2,7 +2,7 @@
 
 INSPIRE-harmonized population distribution dataset from CBS (Statistics Netherlands). Contains the number of inhabitants at three geographic levels: 1km squared grid cells (2012), NUTS2 provinces (2018), and LAU municipalities (2018). Uses the European ETRS89-LAEA coordinate system (EPSG:3035) for cross-border comparability. This is the Dutch contribution to the European INSPIRE Population Distribution theme.
 
-> AI/Agent users: See [llms.txt](./llms.txt) for field descriptions, query examples, and usage tips.
+> AI/Agent users: See [AGENTS.md](./AGENTS.md) for field descriptions, query examples, and usage tips.
 
 ![netherlands](https://img.shields.io/badge/netherlands-blue) ![population](https://img.shields.io/badge/population-blue) ![inspire](https://img.shields.io/badge/inspire-blue) ![cbs](https://img.shields.io/badge/cbs-blue)
 

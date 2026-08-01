@@ -2,7 +2,7 @@
 
 Designated flood retention areas (bergingsgebieden) across the Netherlands, where water can be temporarily stored during high water events to protect populated areas. 1,545 MultiPolygon features.
 
-> AI/Agent users: See [llms.txt](./llms.txt) for field descriptions, query examples, and usage tips.
+> AI/Agent users: See [AGENTS.md](./AGENTS.md) for field descriptions, query examples, and usage tips.
 
 ![netherlands](https://img.shields.io/badge/netherlands-blue) ![water-management](https://img.shields.io/badge/water--management-blue) ![flooding](https://img.shields.io/badge/flooding-blue) ![rijkswaterstaat](https://img.shields.io/badge/rijkswaterstaat-blue)
 

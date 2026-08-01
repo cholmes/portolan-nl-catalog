@@ -2,7 +2,7 @@
 
 50,637 groundwater use systems (grondwatergebruiksysteem, GUF) from the BRO — constructions that extract or infiltrate groundwater, including ground-source energy (ATES/bodemenergie). Produced under VRO; bronhouder TNO.
 
-> AI/Agent users: see [llms.txt](./llms.txt) for field meanings, query examples and caveats.
+> AI/Agent users: see [AGENTS.md](./AGENTS.md) for field meanings, query examples and caveats.
 
 ![netherlands](https://img.shields.io/badge/netherlands-blue) ![bro](https://img.shields.io/badge/BRO-subsurface-blue) ![vro](https://img.shields.io/badge/provider-VRO-blue) ![cc0](https://img.shields.io/badge/license-CC0--1.0-green)
 

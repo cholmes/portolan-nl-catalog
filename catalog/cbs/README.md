@@ -24,9 +24,9 @@ Statistics Netherlands. CBS publishes geographic statistical data including neig
 
 ## About This Catalog
 
-All data is available as GeoParquet for analytics and PMTiles for instant map visualization from [Source Cooperative](https://source.coop/cholmes/portolan-nl). Every collection includes an `llms.txt` with field descriptions and query examples for AI/agent access.
+All data is available as GeoParquet for analytics and PMTiles for instant map visualization from [Source Cooperative](https://source.coop/cholmes/portolan-nl). Every collection includes an `AGENTS.md` with field descriptions and query examples for AI/agent access.
 
-This cloud-native infrastructure demonstrates how [PDOK](https://www.pdok.nl/)'s existing CBS services could be extended — GeoParquet for scalable analytics, PMTiles for map visualization directly from object storage, and STAC+llms.txt for AI-friendly discovery and querying.
+This cloud-native infrastructure demonstrates how [PDOK](https://www.pdok.nl/)'s existing CBS services could be extended — GeoParquet for scalable analytics, PMTiles for map visualization directly from object storage, and STAC+AGENTS.md for AI-friendly discovery and querying.
 
 ---
 

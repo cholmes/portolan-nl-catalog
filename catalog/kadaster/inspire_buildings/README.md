@@ -2,7 +2,7 @@
 
 All buildings in the Netherlands from the BAG (Basisregistratie Adressen en Gebouwen), harmonized to the EU INSPIRE Buildings schema. Contains 24.2 million building footprint polygons with construction dates and BAG identifiers. Includes both current and historical versions — records with endLifespanVersion = null are the current version. Published by Kadaster via PDOK.
 
-> 🤖 **AI/Agent users:** See [llms.txt](./llms.txt) for field descriptions, 
+> 🤖 **AI/Agent users:** See [AGENTS.md](./AGENTS.md) for field descriptions, 
 > query examples, and usage tips.
 
 ![netherlands](https://img.shields.io/badge/netherlands-blue) ![dutch-government](https://img.shields.io/badge/dutch--government-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![geodata](https://img.shields.io/badge/geodata-blue) ![pdok](https://img.shields.io/badge/pdok-blue) ![cloud-native](https://img.shields.io/badge/cloud--native-blue) ![geoparquet](https://img.shields.io/badge/geoparquet-blue) ![stac](https://img.shields.io/badge/stac-blue) ![pmtiles](https://img.shields.io/badge/pmtiles-blue)

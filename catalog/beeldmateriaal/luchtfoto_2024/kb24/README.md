@@ -2,6 +2,8 @@
 
 Kaartblad 24 covers the coastal area from IJmuiden south through Bloemendaal to Haarlem and Heemstede. Features include the North Sea dune landscape, the Kennemerduinen national park, the North Sea Canal entrance at IJmuiden, and the historic city of Haarlem. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the Beeldmateriaal Nederland summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
 
+> Agents: the machine-oriented guide for this data is [`AGENTS.md`](./AGENTS.md).
+
 ## Extent
 
 - **Bounding box** (WGS84): 4.3567122, 52.2585771 → 4.5816061, 52.4849543
@@ -17,7 +19,13 @@ Kaartblad 24 covers the coastal area from IJmuiden south through Bloemendaal to 
 curl -s https://data.source.coop/cholmes/portolan-nl/beeldmateriaal/luchtfoto_2024/kb24/catalog.json | jq .
 ```
 
-See [`AGENTS.md`](./AGENTS.md) for the machine-readable summary.
+## License
+
+`CC-BY-4.0` — see the object metadata for any per-asset terms.
+
+## Provenance
+
+Produced and served by [Beeldmateriaal Nederland](https://www.beeldmateriaal.nl/) (producer, licensor); [GeoTiles (TU Delft)](https://geotiles.citg.tudelft.nl/) (processor); [Portolan / Source Cooperative](https://source.coop/cholmes/portolan-nl) (host).
 
 ---
 

@@ -185,13 +185,6 @@
         "style"
       ]
     },
-    "documentation": {
-      "href": "./llms.txt",
-      "type": "text/plain",
-      "roles": [
-        "documentation"
-      ]
-    },
     "hectometervakken_vaargeul": {
       "href": "./hectometervakken_vaargeul.pmtiles",
       "type": "application/vnd.pmtiles",

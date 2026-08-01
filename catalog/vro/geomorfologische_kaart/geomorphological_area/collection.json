@@ -3,7 +3,7 @@
   "id": "geomorphological_area",
   "stac_version": "1.1.0",
   "title": "BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM)",
-  "description": "80,148 landform polygons of the national Geomorphological Map of the Netherlands 1:50,000 (Geomorfologische kaart, GMM), classified by genesis, relief and landform subgroup. Produced under VRO; bronhouder Wageningen Environmental Research.\n\n🤖 AI/Agent users: see llms.txt for field descriptions, query examples and usage tips.",
+  "description": "80,148 landform polygons of the national Geomorphological Map of the Netherlands 1:50,000 (Geomorfologische kaart, GMM), classified by genesis, relief and landform subgroup. Produced under VRO; bronhouder Wageningen Environmental Research.\n\n🤖 AI/Agent users: see AGENTS.md for field descriptions, query examples and usage tips.",
   "links": [
     {
       "rel": "root",
@@ -35,12 +35,6 @@
       "pmtiles:layers": [
         "geomorphological_area"
       ]
-    },
-    {
-      "rel": "llms",
-      "href": "./llms.txt",
-      "type": "text/markdown",
-      "title": "Agent/LLM usage guide"
     },
     {
       "rel": "describedby",

@@ -61,12 +61,6 @@
       ]
     },
     {
-      "rel": "llms",
-      "href": "./llms.txt",
-      "type": "text/markdown",
-      "title": "Agent/LLM usage guide"
-    },
-    {
       "rel": "describedby",
       "href": "https://data.source.coop/cholmes/portolan-nl/kadaster/panden/README.md",
       "type": "text/markdown",
@@ -250,13 +244,6 @@
       "description": "Categorical colors by gebruiksdoel: red for residential, blue for office/retail, green for healthcare/sports, purple for education.",
       "roles": [
         "style"
-      ]
-    },
-    "documentation": {
-      "href": "./llms.txt",
-      "type": "text/plain",
-      "roles": [
-        "documentation"
       ]
     },
     "bag-light": {

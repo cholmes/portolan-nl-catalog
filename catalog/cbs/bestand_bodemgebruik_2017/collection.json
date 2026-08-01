@@ -35,12 +35,6 @@
       "title": "WFS service endpoint"
     },
     {
-      "rel": "llms",
-      "href": "./llms.txt",
-      "type": "text/markdown",
-      "title": "Agent/LLM usage guide"
-    },
-    {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/cbs/bestand_bodemgebruik_2017/bbg2017.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -179,13 +173,6 @@
       "title": "Land Use 2017 — Detailed",
       "roles": [
         "style"
-      ]
-    },
-    "documentation": {
-      "href": "./llms.txt",
-      "type": "text/plain",
-      "roles": [
-        "documentation"
       ]
     },
     "bbg2017": {

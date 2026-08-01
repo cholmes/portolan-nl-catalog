@@ -13,7 +13,7 @@ Cooperative and is never stored in or uploaded by this repo.
 - AWS profile: **`default`**. (Older docs said `source`; that is wrong.)
 
 ## Layout
-- `catalog/` — the published catalog (STAC JSON, README.md, llms.txt, WebP thumbnails,
+- `catalog/` — the published catalog (STAC JSON, README.md, AGENTS.md, WebP thumbnails,
   MapLibre styles, the root `.portolan/metadata.yaml`). Synced 1:1 to S3.
 - `staging/` — collections being prepared; git-tracked but NOT published.
 - `tools/`, `tests/`, `docs/`, `CLAUDE.md`, root `README.md`, `catalog.publish.yaml` —

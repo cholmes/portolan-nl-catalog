@@ -17,12 +17,6 @@
       "title": "Beeldmateriaal Nederland logo"
     },
     {
-      "rel": "llms",
-      "href": "./llms.txt",
-      "type": "text/markdown",
-      "title": "Agent/LLM usage guide"
-    },
-    {
       "rel": "via",
       "href": "https://www.beeldmateriaal.nl/",
       "type": "text/html",

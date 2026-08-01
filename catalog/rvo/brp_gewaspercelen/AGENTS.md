@@ -1,35 +1,372 @@
-# BRP Gewaspercelen (Agricultural Crop Parcels)
+# BRP Gewaspercelen (Agricultural Crop Parcels) — RVO / Netherlands
 
-Portolan collection — `rvo/brp_gewaspercelen`
+## What This Dataset Is
 
-Every agricultural parcel in the Netherlands with its registered crop type, from the Basisregistratie Gewaspercelen (BRP) — the national crop parcel registration. Published as a **multi-year partitioned collection** covering **2009–2025** (17 years, 18.3 M parcels total): one GeoParquet + PMTiles partition per BRP definitive edition, plus the original source file kept for provenance. Each parcel records the crop category (e.g., Grasland, Aardappelen), specific crop name, and numeric crop code. The BRP is an annual snapshot reflecting what farmers register each May 15 (the CAP registration deadline); each 'definitief' edition is finalized after verification. Published by RVO (Netherlands Enterprise Agency) via PDOK.
+Every agricultural parcel in the Netherlands with its registered crop type, from the
+Basisregistratie Gewaspercelen (BRP) — the Dutch national crop parcel registration.
+Published as a **multi-year partitioned collection**, one GeoParquet + PMTiles partition
+per BRP definitive edition. Covers **2009–2025** — 17 years, **18.3 M parcels total**.
 
-## Start here
+The BRP is an annual snapshot reflecting what farmers register each May 15, the deadline
+for Common Agricultural Policy (CAP) subsidy applications. It is the authoritative record
+of agricultural land use in the Netherlands: which crop is grown on which parcel, in which
+year.
 
-Field descriptions, query examples and caveats are in [`llms.txt`](./llms.txt). It is hand-written and more useful than anything this file would repeat.
+**Key concepts:**
+- **category** = broad crop group (e.g., "Grasland", "Bouwland", "Landschapselement")
+- **gewas** = specific crop within that group (e.g., "Grasland blijvend", "Aardappelen
+  consumptie", "Mais snij-")
+- **gewascode** = numeric code for the specific crop (links to RVO's official crop code list).
+  Stable across years — safest field for cross-year crop-type filters.
+- **jaar** = registration year (also encoded in the partition filename)
+- **definitief** = the edition is finalized after verification (vs. "voorlopig" = preliminary)
+- **`id`** is *not stable across years* — the BRP re-registers parcels each May. To follow
+  a parcel through time, use a spatial join (e.g., centroid intersect).
 
-## Assets
+**Source:** RVO via PDOK ATOM service. Per-year URL pattern:
+`https://service.pdok.nl/rvo/gewaspercelen/atom/downloads/brpgewaspercelen_definitief_YYYY.gpkg`
+**License:** CC0 (public domain)
 
-| Key | File | Type | Roles |
-|---|---|---|---|
-| `data` | `./*/brp_gewaspercelen_*.parquet` | application/vnd.apache.parquet | data |
-| `pmtiles` | `./2025/brp_gewaspercelen_2025.pmtiles` | application/vnd.pmtiles | visual |
-| `thumbnail` | `./thumbnail.webp` | image/webp | thumbnail |
-| `styles/default` | `./styles/default.json` | application/vnd.mapbox.style+json | style, default |
-| `styles/by-category` | `./styles/by-category.json` | application/vnd.mapbox.style+json | style |
-| `styles/by-crop` | `./styles/by-crop.json` | application/vnd.mapbox.style+json | style |
-| `styles/landscape-elements` | `./styles/landscape-elements.json` | application/vnd.mapbox.style+json | style |
+## Per-Year Stats
 
-## Contains
+| Year | Parcels | GeoParquet size | Source format |
+|------|--------:|----------------:|---------------|
+| 2009 |   819,146 | ~225 MB | Esri FGDB (zip), normalized |
+| 2010 |   782,837 | ~190 MB | Esri FGDB (zip), normalized |
+| 2011 |   779,674 | ~195 MB | Esri FGDB (zip), normalized |
+| 2012 |   772,865 | ~195 MB | Esri FGDB (zip), normalized |
+| 2013 |   762,725 | ~195 MB | Esri FGDB (zip), normalized |
+| 2014 |   765,006 | ~200 MB | Esri FGDB (zip), normalized |
+| 2015 |   790,930 | ~225 MB | Esri FGDB (zip), normalized |
+| 2016 |   786,572 | ~240 MB | Esri FGDB (zip), normalized |
+| 2017 |   785,710 | ~250 MB | Esri FGDB (zip), normalized |
+| 2018 |   774,822 | ~250 MB | Esri FGDB (zip), normalized |
+| 2019 |   772,565 | ~250 MB | Esri FGDB (zip), normalized |
+| 2020 |   773,139 | ~300 MB | GeoPackage (PDOK), as-is |
+| 2021 |   772,539 | ~320 MB | GeoPackage (PDOK), as-is |
+| 2022 |   758,504 | ~530 MB | GeoPackage (PDOK), as-is |
+| 2023 | 2,588,592 | ~1.6 GB | GeoPackage (PDOK), as-is |
+| 2024 | 2,493,631 | ~1.5 GB | GeoPackage (PDOK), as-is |
+| 2025 | 2,331,084 | ~1.3 GB | GeoPackage (PDOK), as-is |
 
-- 17 item(s)
+The big jump in 2023 is the addition of **Landschapselementen** (ditches, hedgerows, tree
+rows, ponds) to the BRP scope. Before 2023 those category values are absent. See the
+"Provenance & Transformations" section for what was changed when normalizing 2009–2019
+from the upstream Esri File Geodatabase schema.
 
-See the links in [`collection.json`](./collection.json).
+## How to Access — Single Year
 
-## Access
+GeoParquet files in EPSG:28992 (Amersfoort / RD New), the Dutch national CRS (metres).
 
-All assets are public. Relative hrefs resolve against this directory on <https://data.source.coop/cholmes/portolan-nl/>.
+```python
+import duckdb
+con = duckdb.connect()
+con.execute("INSTALL spatial; LOAD spatial;")
+
+URL = 'https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/2025/brp_gewaspercelen_2025.parquet'
+
+df = con.execute(f"SELECT * FROM read_parquet('{URL}') LIMIT 5").df()
+```
+
+DuckDB streams via HTTP range requests — no full download needed.
+
+## How to Access — All Years (the `portolan:glob` asset)
+
+The collection's `data` asset uses a **glob URL**: pass it straight to DuckDB, GDAL, or
+PyArrow and every year is treated as a single dataset. The `jaar` column distinguishes them.
+
+```python
+GLOB = 'https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/*/brp_gewaspercelen_*.parquet'
+
+# Grassland hectares per year
+df = con.execute(f"""
+    SELECT jaar, COUNT(*) parcels, ROUND(SUM(ST_Area(geom))/10000, 0) hectares
+    FROM read_parquet('{GLOB}')
+    WHERE category = 'Grasland'
+    GROUP BY jaar ORDER BY jaar
+""").df()
+```
+
+This is the **primary entry point for cross-year analysis** — see the partitioning section
+of [portolan-spec / formats/vector.md](https://github.com/portolan-sdi/portolan-spec/blob/main/formats/vector.md).
+
+## Schema — Field Meanings
+
+| Field | Type | Meaning |
+|-------|------|---------|
+| `geom` | WKB Polygon | Parcel boundary in **EPSG:28992** (Amersfoort / RD New). Coordinates in metres. |
+| `id` | int64 | Feature ID *within that year's partition*. NOT stable across years. |
+| `category` | string | Broad crop category (Grasland, Bouwland, Landschapselement, Natuurterrein, Braakland, Overige). |
+| `gewas` | string | Specific crop name within the category. 300+ distinct values. |
+| `gewascode` | int32 | Numeric crop code. Stable across years — use this for cross-year crop filters. |
+| `jaar` | int32 | Registration year. Also encoded in the partition filename. |
+| `status` | string | Always "Definitief" in this collection (finalized after verification). |
+
+Each GeoParquet also carries a `geom_bbox` struct (xmin/ymin/xmax/ymax) per row from the
+GeoParquet covering-bbox metadata, for spatial pushdown.
+
+## How to Think About Cross-Year Queries
+
+Two facts shape every multi-year query:
+
+1. **Parcel `id` is reissued each May.** Don't join across years on `id`. Use a spatial join, normally on the centroid (`ST_Centroid(geom)`), which is much cheaper than full polygon-intersect and accurate enough since parcels usually overlap themselves year-to-year.
+2. **The data is partitioned by year.** Predicate-push on `jaar` first to prune partitions before any spatial work:
+
+   ```sql
+   FROM read_parquet('…/*/brp_gewaspercelen_*.parquet')
+   WHERE jaar BETWEEN 2020 AND 2025          -- prunes other partitions immediately
+     AND gewascode IN (2014, 2015, 2016, 2017)
+   ```
+
+For production cross-year workflows, build a **one-time parcel-identity table** by spatial-joining all 17 years' centroids — then subsequent rotation queries are an INNER JOIN on that, not a fresh spatial join each time.
+
+```sql
+CREATE TABLE parcel_identity AS
+SELECT row_number() OVER () AS pid,
+       ST_Centroid(geom) AS pt
+FROM read_parquet('…/2025/brp_gewaspercelen_2025.parquet');   -- universe = 2025 parcels
+
+-- Now every year's parcel-by-pid:
+CREATE TABLE parcel_history AS
+SELECT pi.pid, p.jaar, p.gewas, p.gewascode, p.category
+FROM read_parquet('…/*/brp_gewaspercelen_*.parquet') p
+JOIN parcel_identity pi ON ST_Intersects(p.geom, pi.pt);
+```
+
+`parcel_history` is then keyed by `(pid, jaar)` — trivial to pivot, window-function over, or aggregate.
+
+## Useful Query Patterns
+
+### Crop distribution per category, for a given year
+
+```sql
+SELECT category, COUNT(*) parcels,
+       ROUND(SUM(ST_Area(geom))/10000, 0) area_ha
+FROM read_parquet('…/2025/brp_gewaspercelen_2025.parquet')
+GROUP BY category ORDER BY area_ha DESC
+```
+
+Since EPSG:28992 is in metres, `ST_Area` returns square metres — divide by 10,000 for hectares.
+
+### How crop areas have changed year-over-year
+
+```sql
+SELECT jaar, category,
+       ROUND(SUM(ST_Area(geom))/10000, 0) ha
+FROM read_parquet('…/*/brp_gewaspercelen_*.parquet')
+WHERE category IN ('Grasland', 'Bouwland', 'Landschapselement')
+GROUP BY jaar, category
+ORDER BY jaar, category
+```
+
+### "Fields that haven't had potatoes in the last three years"
+
+`id` isn't stable, so identify parcels by geometry (centroid intersect is the cheap
+proxy). Use the latest year as the parcel universe; check 2023–2025 for any potato crops.
+
+```sql
+WITH potato_years AS (   -- centroids of every potato parcel 2023–2025
+    SELECT ST_Centroid(geom) AS pt
+    FROM read_parquet('…/*/brp_gewaspercelen_*.parquet')
+    WHERE jaar BETWEEN 2023 AND 2025
+      AND gewascode IN (2014, 2015, 2016, 2017)  -- consumption / seed / starch potatoes
+)
+SELECT p.id, p.gewas
+FROM read_parquet('…/2025/brp_gewaspercelen_2025.parquet') p
+LEFT JOIN potato_years py
+       ON ST_Intersects(p.geom, py.pt)
+WHERE py.pt IS NULL
+LIMIT 100
+```
+
+For production cross-year tracking, build a **parcel-identity table** as described in the "How to Think About Cross-Year Queries" section above.
+
+### Crop rotation — what crop is most often planted *after* potatoes?
+
+Uses `parcel_history` from the cross-year section. For each parcel that grew potatoes in year *Y*, look at what was planted in year *Y+1*.
+
+```sql
+WITH potato_then AS (
+    SELECT pid, jaar AS potato_year
+    FROM parcel_history
+    WHERE gewascode IN (2014, 2015, 2016, 2017)        -- any potato variety
+)
+SELECT next_yr.gewas, COUNT(*) AS following_potato
+FROM potato_then pt
+JOIN parcel_history next_yr
+       ON next_yr.pid = pt.pid
+      AND next_yr.jaar = pt.potato_year + 1
+GROUP BY next_yr.gewas
+ORDER BY following_potato DESC
+LIMIT 20
+```
+
+### Land-use trajectory — total hectares per category, every year (2009–2025)
+
+```sql
+SELECT jaar, category,
+       ROUND(SUM(ST_Area(geom)) / 10000, 0) AS hectares
+FROM read_parquet('…/*/brp_gewaspercelen_*.parquet')
+GROUP BY jaar, category
+ORDER BY category, jaar
+```
+
+Useful as input to a pivot/heatmap showing the 2023 jump when Landschapselementen entered the BRP scope and grassland's gradual decline.
+
+### "Permanently arable" parcels — same Bouwland for ≥10 years in a row
+
+```sql
+WITH cat_per_year AS (
+    SELECT pid, jaar, category
+    FROM parcel_history
+)
+SELECT pid,
+       COUNT(*) FILTER (WHERE category = 'Bouwland') AS bouwland_years,
+       MIN(jaar) FILTER (WHERE category = 'Bouwland') AS first_year,
+       MAX(jaar) FILTER (WHERE category = 'Bouwland') AS last_year
+FROM cat_per_year
+GROUP BY pid
+HAVING COUNT(*) FILTER (WHERE category = 'Bouwland') >= 10
+   AND MAX(jaar) FILTER (WHERE category = 'Bouwland')
+     - MIN(jaar) FILTER (WHERE category = 'Bouwland') + 1
+     = COUNT(*) FILTER (WHERE category = 'Bouwland')   -- contiguous
+```
+
+### Crop diversity — how many distinct crops per parcel over 2009–2025?
+
+```sql
+SELECT diversity, COUNT(*) AS parcels
+FROM (
+    SELECT pid, COUNT(DISTINCT gewascode) AS diversity
+    FROM parcel_history
+    GROUP BY pid
+) GROUP BY diversity
+ORDER BY diversity
+```
+
+Most parcels rotate among 2–6 distinct crops over 17 years; outliers (single-crop or highly diverse) are usually permanent pasture or experimental fields respectively.
+
+### Year-over-year volatility — fraction of parcels that changed crop
+
+```sql
+WITH lagged AS (
+    SELECT pid, jaar, gewascode,
+           LAG(gewascode) OVER (PARTITION BY pid ORDER BY jaar) AS prev_code,
+           LAG(jaar)      OVER (PARTITION BY pid ORDER BY jaar) AS prev_year
+    FROM parcel_history
+)
+SELECT jaar,
+       SUM(CASE WHEN gewascode <> prev_code THEN 1 ELSE 0 END) * 1.0 / COUNT(*) AS pct_changed
+FROM lagged
+WHERE prev_year = jaar - 1
+GROUP BY jaar
+ORDER BY jaar
+```
+
+### Land-use *change* hotspots — parcels that turned from Grasland to Bouwland after 2015
+
+```sql
+SELECT a.pid
+FROM parcel_history a
+JOIN parcel_history b
+  ON a.pid = b.pid
+ AND b.jaar = a.jaar + 1
+WHERE a.jaar >= 2015
+  AND a.category = 'Grasland'
+  AND b.category = 'Bouwland'
+```
+
+Join the result back to a year's parquet to visualize where these conversions clustered.
+
+### Find parcels near a location (Wageningen ≈ x=173600, y=443600 in RD New)
+
+```sql
+SELECT id, category, gewas, jaar
+FROM read_parquet('…/*/brp_gewaspercelen_*.parquet')
+WHERE ST_DWithin(geom, ST_Point(173600, 443600), 1000)  -- metres
+```
+
+### Spatial join with municipalities
+
+```sql
+SELECT g.naam municipality, b.jaar, b.category, COUNT(*) parcels
+FROM read_parquet('…/cbs/bestuurlijke_gebieden/gemeentegebied.parquet') g
+JOIN read_parquet('…/brp_gewaspercelen/*/brp_gewaspercelen_*.parquet') b
+  ON ST_Intersects(g.geom, ST_Centroid(b.geom))
+GROUP BY g.naam, b.jaar, b.category
+ORDER BY g.naam, b.jaar
+```
+
+Heavy across 18.3 M parcels — filter to a single year or municipality first.
+
+### Load one year into GeoPandas
+
+```python
+import geopandas as gpd
+gdf = gpd.read_parquet('…/2025/brp_gewaspercelen_2025.parquet',
+                       columns=['id', 'category', 'gewas', 'gewascode', 'jaar', 'geom'])
+# native CRS is EPSG:28992; to_crs(4326) for WGS84
+```
+
+## Related Datasets in This Catalog
+
+- `rvo/natura2000/` — protected nature areas. Useful for "crops near protected habitats".
+- `cbs/bestuurlijke_gebieden/` — municipality / province / country boundaries.
+- `rvo/nationale_parken/` — national park boundaries.
+- `kadaster/bag_light/` — building footprints (compare farm buildings to crop parcels).
+
+## Use Cases
+
+- **17-year crop-rotation history** — every parcel's planting record back to 2009. Build a
+  parcel-identity table once, then query rotations, fallow gaps, and switches with simple
+  SQL (see examples above).
+- **Annual crop maps** — what is grown where, in which year? Single-partition queries are
+  cheap and don't require the spatial-join trick.
+- **Land-use change detection** — Grasland → Bouwland conversions, "permanently arable"
+  blocks, single-year fallows. The 2009–2022 baseline is especially useful since
+  Landschapselementen only entered the BRP in 2023.
+- **CAP subsidy auditing** — the BRP underpins EU CAP payments; cross-year queries flag
+  parcels that switch crop type unusually often or have inconsistent registration.
+- **Environmental monitoring** — multi-year grassland vs arable ratios, agricultural
+  intensification trends, nitrogen deposition modelling driven by per-year crop mixes.
+- **Nature-impact assessment** — which crops are grown near Natura 2000 areas, and how has
+  that mix changed over time? Critical for Dutch nitrogen policy.
+
+## Caveats
+
+- **EPSG:28992 coordinates** (metres) — transform to EPSG:4326 for web mapping or joining
+  with WGS84 datasets.
+- **Annual snapshot** — state as of May 15 each year. Crop registration may differ from
+  what is actually grown (discrepancies can lead to subsidy sanctions).
+- **`id` is not stable across years** — re-issued each May. Use spatial joins for
+  cross-year parcel identity.
+- **Landschapselementen category** only exists from 2023 onward (added to the BRP scope).
+- **No yield or economic data** — only what crop is registered, not yields, revenues, or
+  farming practices.
+- **Geometry column is named `geom`** (not `geometry`).
+
+## Provenance & Transformations
+
+- **2020–2025** — GeoPackages from PDOK (per-year ATOM URLs above). Schema preserved
+  verbatim from the GPKG; geometry kept in EPSG:28992; written to GeoParquet with
+  `ogr2ogr -f Parquet COMPRESSION=ZSTD SORT_BY_BBOX=YES WRITE_COVERING_BBOX=YES`. The 2025
+  GPKG had mixed-dimension geometries; flattened to 2D with `-dim XY`.
+- **2009–2019** (when added) — Esri File Geodatabases in zip archives from PDOK. Source
+  schema differs: `OGC_FID`, `CAT_GEWASCATEGORIE`, `GWS_GEWAS`, `GWS_GEWASCODE` (varchar),
+  `Shape_Length`, `Shape_Area`. The historical parquets will be **normalized** to the same
+  schema as 2020+: columns renamed, `gewascode` cast varchar → int32, `jaar` added from the
+  filename, `status` set to `'Definitief'`, `Shape_*` dropped. The original zip stays as the
+  item's `source` asset for full provenance.
+
+## Also Available As
+
+- **PMTiles** (`YYYY/brp_gewaspercelen_YYYY.pmtiles`) — per-year vector tiles for web maps.
+  `brp_gewaspercelen_2025.pmtiles` is also the collection-level PMTiles asset.
+- **Original source files** — each year keeps its source as an item asset
+  (`brpgewaspercelen_definitief_YYYY.gpkg` for 2020+, `brpgewaspercelen_definitief_YYYY.zip`
+  Esri FGDB for 2009–2019).
+- **MapLibre styles** in `styles/` (canonical base) and `YYYY/styles/` (per-year
+  copies generated from the base via `scripts/regen_year_styles.py`).
 
 ---
-
-This file is generated by `tools/catalog/make_docs_files.py` from `collection.json`. Edit the metadata, not this file.
+*Hand-maintained agent guide (ported from this collection's llms.txt in August 2026). Update it alongside collection.json.*

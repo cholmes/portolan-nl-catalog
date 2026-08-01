@@ -2,6 +2,8 @@
 
 The national Soil Map of the Netherlands at scale 1:50,000 (Bodemkaart van Nederland, BRO object SGM), produced by Wageningen Environmental Research. The source GeoPackage holds two distinct polygon layers, published here as separate collections:
 
+> Agents: the machine-oriented guide for this data is [`AGENTS.md`](./AGENTS.md).
+
 ## Contents
 
 2 child object(s). See [`catalog.json`](./catalog.json).
@@ -11,8 +13,6 @@ The national Soil Map of the Netherlands at scale 1:50,000 (Bodemkaart van Neder
 ```bash
 curl -s https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/catalog.json | jq .
 ```
-
-See [`AGENTS.md`](./AGENTS.md) for the machine-readable summary.
 
 ---
 

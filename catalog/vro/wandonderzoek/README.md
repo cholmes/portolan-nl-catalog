@@ -2,7 +2,7 @@
 
 2,806 soil-profile pit/trench investigations (wandonderzoek, SFR) from the Dutch Key Registry of the Subsurface (BRO). Each point is a described soil face used for soil mapping, agriculture and nature management. Produced under VRO; bronhouder TNO.
 
-> AI/Agent users: see [llms.txt](./llms.txt) for field meanings, query examples and caveats.
+> AI/Agent users: see [AGENTS.md](./AGENTS.md) for field meanings, query examples and caveats.
 
 ![netherlands](https://img.shields.io/badge/netherlands-blue) ![bro](https://img.shields.io/badge/BRO-subsurface-blue) ![vro](https://img.shields.io/badge/provider-VRO-blue) ![cc0](https://img.shields.io/badge/license-CC0--1.0-green)
 

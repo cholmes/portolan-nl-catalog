@@ -4,7 +4,7 @@ All ~10.8 million buildings in the Netherlands as 3D models, produced by the [3D
 
 The [3D BAG](https://3dbag.nl/) enriches the official [BAG building registry](https://www.pdok.nl/introductie/-/article/basisregistratie-adressen-en-gebouwen-ba-1) — maintained by [Kadaster](https://www.kadaster.nl/) — with building heights, roof types, volumes, and surface areas derived from the [AHN](https://www.ahn.nl/) (Actueel Hoogtebestand Nederland) national point cloud survey. The source BAG footprints and attributes are available in this catalog as [Buildings (Panden)](../../kadaster/panden/).
 
-> AI/Agent users: See [llms.txt](./llms.txt) for field descriptions, query examples, and usage tips.
+> AI/Agent users: See [AGENTS.md](./AGENTS.md) for field descriptions, query examples, and usage tips.
 
 ![netherlands](https://img.shields.io/badge/netherlands-blue) ![3d-buildings](https://img.shields.io/badge/3d--buildings-blue) ![open-data](https://img.shields.io/badge/open--data-blue) ![geodata](https://img.shields.io/badge/geodata-blue) ![cloud-native](https://img.shields.io/badge/cloud--native-blue) ![geoparquet](https://img.shields.io/badge/geoparquet-blue) ![stac](https://img.shields.io/badge/stac-blue) ![pmtiles](https://img.shields.io/badge/pmtiles-blue) ![tu-delft](https://img.shields.io/badge/tu--delft-blue)
 

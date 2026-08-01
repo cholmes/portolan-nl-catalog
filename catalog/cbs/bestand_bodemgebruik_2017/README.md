@@ -2,7 +2,7 @@
 
 Digital geometry of land use in the Netherlands (2017). Covers all functional land use at ground level: transportation, buildings, recreation, agriculture, forest, water. Uses a hierarchical classification with approximately 40 land use types. Boundaries largely based on Top10NL/BRT topographic map; aerial photographs from summer 2017 are the primary interpretation source. This is the BBG 2017 (old methodology); from 2020 onwards CBS produces the NBBG (renewed methodology). Published by CBS via PDOK.
 
-> AI/Agent users: See [llms.txt](./llms.txt) for field descriptions, query examples, and usage tips.
+> AI/Agent users: See [AGENTS.md](./AGENTS.md) for field descriptions, query examples, and usage tips.
 
 ![netherlands](https://img.shields.io/badge/netherlands-blue) ![land--use](https://img.shields.io/badge/land--use-blue) ![cbs](https://img.shields.io/badge/cbs-blue) ![bodemgebruik](https://img.shields.io/badge/bodemgebruik-blue)
 

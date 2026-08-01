@@ -44,7 +44,7 @@ Organized by the Dutch government institution that produces the data:
 
 ## Getting Started
 
-**Use AI to explore the data.** Point [Claude Code](https://docs.anthropic.com/en/docs/claude-code) or [Gemini CLI](https://github.com/google-gemini/gemini-cli) at any collection's `llms.txt` and ask it to query the data, build interactive maps, or generate charts. Every collection includes an `llms.txt` with field descriptions, query examples, and usage context.
+**Use AI to explore the data.** Point [Claude Code](https://docs.anthropic.com/en/docs/claude-code) or [Gemini CLI](https://github.com/google-gemini/gemini-cli) at any collection's `AGENTS.md` and ask it to query the data, build interactive maps, or generate charts. Every collection includes an `AGENTS.md` with field descriptions, query examples, and usage context.
 
 **Browse and download.** Navigate to any collection above to find GeoParquet files for analytics and PMTiles for instant map visualization. All files are on [Source Cooperative](https://source.coop/cholmes/portolan-nl) and can be accessed directly via HTTP — no account or API key required.
 
@@ -69,11 +69,11 @@ Most datasets use **EPSG:28992** (RD New / Amersfoort), the Dutch national coord
 
 ## Complementing PDOK
 
-This catalog demonstrates how [PDOK](https://www.pdok.nl/)'s existing geodata services could be extended with cloud-native formats. Instead of running WFS/WMS servers, data can be served as GeoParquet for scalable analytics and PMTiles for instant map visualization — both work directly from object storage via HTTP range requests, with no server infrastructure. Adding STAC metadata and `llms.txt` files makes the data discoverable and queryable by AI agents, opening geodata to a much broader audience.
+This catalog demonstrates how [PDOK](https://www.pdok.nl/)'s existing geodata services could be extended with cloud-native formats. Instead of running WFS/WMS servers, data can be served as GeoParquet for scalable analytics and PMTiles for instant map visualization — both work directly from object storage via HTTP range requests, with no server infrastructure. Adding STAC metadata and `AGENTS.md` files makes the data discoverable and queryable by AI agents, opening geodata to a much broader audience.
 
 ## AI / Agent Friendly
 
-Every collection includes an `llms.txt` file with field descriptions, query examples, and usage context — designed for AI agents to understand and work with the data effectively. Built with [Portolan](https://portolan-sdi.org), a framework for cloud-native geodata infrastructure.
+Every collection includes an `AGENTS.md` file with field descriptions, query examples, and usage context — designed for AI agents to understand and work with the data effectively. Built with [Portolan](https://portolan-sdi.org), a framework for cloud-native geodata infrastructure.
 
 ## License
 

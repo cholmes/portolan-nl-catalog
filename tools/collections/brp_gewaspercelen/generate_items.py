@@ -217,8 +217,8 @@ def build_item(year: int) -> dict:
             ),
             "roles": ["style"],
         }
-    # README.md and llms.txt are reached through rel:describedby and rel:llms links
-    # below, not as assets. Assets on an item are the data it describes.
+    # README.md and AGENTS.md are reached through rel:describedby and rel:agents
+    # links below, not as assets. Assets on an item are the data it describes.
 
     rel_dir = f"rvo/brp_gewaspercelen/{year}"
     coll_title = "BRP Gewaspercelen (Agricultural Crop Parcels)"
@@ -231,7 +231,7 @@ def build_item(year: int) -> dict:
     if has_pmtiles:
         links.append(stac.link("pmtiles", f"{paths.DATA_BASE}/{rel_dir}/{pmtiles}",
                                "application/vnd.pmtiles"))
-    links.append(stac.link("llms", "./llms.txt", "text/markdown", "Agent/LLM usage guide"))
+    links.append(stac.agents_link())
     links.append(stac.describedby_link(f"BRP Gewaspercelen {year}"))
 
     return {

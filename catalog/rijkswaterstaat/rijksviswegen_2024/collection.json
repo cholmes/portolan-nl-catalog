@@ -302,13 +302,6 @@
         "style"
       ]
     },
-    "documentation": {
-      "href": "./llms.txt",
-      "type": "text/plain",
-      "roles": [
-        "documentation"
-      ]
-    },
     "rijksviswegen_2024": {
       "href": "./rijksviswegen_2024.pmtiles",
       "type": "application/vnd.pmtiles",

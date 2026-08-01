@@ -2,7 +2,7 @@
 
 Point locations of all 63,073 nationally listed monuments (rijksmonumenten) in the Netherlands. These are buildings, objects, and sites protected under the Heritage Act (Erfgoedwet) for their beauty, scientific significance, or cultural-historical value. 98% are built structures; 2% are archaeological sites. About 22% belong to a complex (ensemble of related monuments). Published by the Cultural Heritage Agency (RCE) via PDOK.
 
-> AI/Agent users: See [llms.txt](./llms.txt) for field descriptions, query examples, and usage tips.
+> AI/Agent users: See [AGENTS.md](./AGENTS.md) for field descriptions, query examples, and usage tips.
 
 ![netherlands](https://img.shields.io/badge/netherlands-blue) ![cultural-heritage](https://img.shields.io/badge/cultural--heritage-blue) ![monuments](https://img.shields.io/badge/monuments-blue) ![rce](https://img.shields.io/badge/rce-blue)
 

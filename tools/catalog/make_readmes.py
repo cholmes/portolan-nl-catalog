@@ -37,7 +37,7 @@ def coll_readme(path):
 
 {c['description'].split(chr(10))[0]}
 
-> AI/Agent users: see [llms.txt](./llms.txt) for field meanings, query examples and caveats.
+> AI/Agent users: see [AGENTS.md](./AGENTS.md) for field meanings, query examples and caveats.
 
 ![netherlands](https://img.shields.io/badge/netherlands-blue) ![bro](https://img.shields.io/badge/BRO-subsurface-blue) ![vro](https://img.shields.io/badge/provider-VRO-blue) ![cc0](https://img.shields.io/badge/license-CC0--1.0-green)
 

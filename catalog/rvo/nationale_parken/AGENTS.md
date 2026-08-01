@@ -1,26 +1,183 @@
-# National Parks (Nationale Parken)
+# National Parks (Nationale Parken) — RVO / Netherlands
 
-Portolan collection — `rvo/nationale_parken`
+## What This Dataset Is
 
-Boundaries of all 21 National Parks in the Netherlands. These are large contiguous natural areas of national and international importance, designated for their ecological, landscape, and recreational value. Parks range from coastal dunes and forests to wetlands, heathlands, and tidal estuaries. Managed by the provinces since the 2023 reform. Published by RVO via PDOK.
+Boundaries of all 21 National Parks in the Netherlands — large contiguous natural areas
+designated for their ecological, landscape, and recreational value. Parks range from coastal
+dunes (Zuid-Kennemerland, Duinen van Texel) to forests (De Hoge Veluwe, Veluwezoom),
+wetlands (De Biesbosch, Weerribben-Wieden), heathlands (Dwingelderveld), and a tidal
+estuary (Oosterschelde, the largest at ~38,000 ha).
 
-## Start here
+This is a **complete enumeration** — all 21 parks, not a sample. The oldest park (Veluwezoom)
+dates to 1930; the newest (Van Gogh) was designated in October 2024.
 
-Field descriptions, query examples and caveats are in [`llms.txt`](./llms.txt). It is hand-written and more useful than anything this file would repeat.
+Since the 2023 reform, provinces manage the parks with support from the Nationale Parken
+Bureau, giving parks a stronger governance framework.
 
-## Assets
+**Source:** https://api.pdok.nl/rvo/nationale-parken/ogc/v1/
+**Provider:** RVO (Rijksdienst voor Ondernemend Nederland / Netherlands Enterprise Agency)
+**License:** CC0 (public domain)
 
-| Key | File | Type | Roles |
-|---|---|---|---|
-| `data` | `./nationale_parken.parquet` | application/x-parquet | data |
-| `pmtiles` | `./nationale_parken.pmtiles` | application/vnd.pmtiles | visual |
-| `thumbnail` | `./thumbnail.webp` | image/webp | thumbnail |
-| `styles/default` | `./styles/default.json` | application/vnd.mapbox.style+json | style |
+## How to Access
 
-## Access
+The data is a GeoParquet file in **EPSG:28992** (Amersfoort / RD New), the Dutch national
+coordinate system. Use DuckDB with the spatial extension.
 
-All assets are public. Relative hrefs resolve against this directory on <https://data.source.coop/cholmes/portolan-nl/>.
+```python
+import duckdb
+
+con = duckdb.connect()
+con.execute("INSTALL spatial; LOAD spatial;")
+
+URL = 'https://data.source.coop/cholmes/portolan-nl/rvo/nationale_parken/nationale_parken.parquet'
+
+df = con.execute(f"""
+    SELECT * FROM read_parquet('{URL}')
+    LIMIT 5
+""").df()
+```
+
+The file is tiny (~800 KB, 21 features) — you can load it entirely into memory.
+
+## Schema — Field Meanings
+
+| Field | Type | Meaning |
+|-------|------|---------|
+| `geometry` | WKB MultiPolygon | Park boundary in **EPSG:28992** (Amersfoort / RD New). Units are metres. |
+| `naam` | string | **Park name** (Dutch). The key human-readable identifier. |
+| `nr` | int32 | Sequential park number in chronological designation order (1–22, with 12 skipped). |
+| `hectares` | float64 | **Area in hectares** from the official registration. May differ from computed geometry area due to complex boundaries including water. |
+| `datum` | string | Date of designation (ISO 8601, e.g. `1930-01-01`). |
+| `bron` | string | Source organization that supplied the boundary (e.g. `Natuurmonumenten`, `Prov. Friesland`). |
+| `fiat_secr` | string | Whether the Secretary of State approved the designation (`Ja`, `Nee`, or blank). |
+| `instrument` | string | Always `Nationaal Park`. |
+| `id` | string | UUID identifier. |
+| `objectid` | int32 | Internal object ID. Not meaningful. |
+
+## Important Columns
+
+The columns you'll actually use:
+
+- **`naam`** — park name
+- **`hectares`** — park area
+- **`datum`** — designation date
+- **`geometry`** — park boundary polygon
+
+## Geometry Notes
+
+- CRS is **EPSG:28992** (Amersfoort / RD New) — the Dutch national coordinate system. Units are metres. To get WGS84 coordinates for web maps, reproject to EPSG:4326.
+- All geometries are MultiPolygon (some parks have disjoint parts).
+- Bounding box (RD): X 36,781–251,585, Y 350,383–615,251.
+- For area calculations, use the `hectares` attribute rather than computing from geometry — it accounts for boundary conventions around water bodies.
+
+## The 21 Parks
+
+| Nr | Name | Hectares | Designated |
+|----|------|----------|------------|
+| 1 | Veluwezoom | 5,015 | 1930 |
+| 2 | De Hoge Veluwe | 5,105 | 1935 |
+| 3 | Schiermonnikoog | 6,838 | 1989 |
+| 4 | Dwingelderveld | 3,766 | 1991 |
+| 5 | De Groote Peel | 1,314 | 1993 |
+| 6 | De Biesbosch | 8,980 | 1994 |
+| 7 | De Meinweg | 2,064 | 1995 |
+| 8 | Zuid-Kennemerland | 3,568 | 1995 |
+| 9 | De Maasduinen | 4,171 | 1996 |
+| 10 | Drents-Friese Wold | 5,552 | 1999 |
+| 11 | Grenspark De Zoom - Kalmthoutse Heide | 3,833 | 2001 |
+| 13 | Duinen van Texel | 4,685 | 2002 |
+| 14 | Oosterschelde | 37,989 | 2002 |
+| 15 | Drentsche Aa | 33,123 | 2002 |
+| 16 | Utrechtse Heuvelrug | 11,342 | 2013 |
+| 17 | Lauwersmeer | 6,010 | 2003 |
+| 18 | Sallandse Heuvelrug | 2,733 | 2004 |
+| 19 | De Alde Feanen | 3,374 | 2006 |
+| 20 | Weerribben-Wieden | 10,270 | 2009 |
+| 21 | Nieuw Land | 28,904 | 2018 |
+| 22 | Van Gogh | 49,265 | 2024 |
+
+Note: Nr 12 does not exist in the dataset (skipped in the numbering).
+
+## Useful Query Patterns
+
+### List all parks sorted by size
+
+```sql
+SELECT naam, hectares, datum
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rvo/nationale_parken/nationale_parken.parquet')
+ORDER BY hectares DESC
+```
+
+### Find parks designated after 2000
+
+```sql
+SELECT naam, hectares, datum
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rvo/nationale_parken/nationale_parken.parquet')
+WHERE datum >= '2000-01-01'
+ORDER BY datum
+```
+
+### Total protected area
+
+```sql
+SELECT SUM(hectares) AS total_hectares,
+       SUM(hectares) / 100 AS total_km2
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rvo/nationale_parken/nationale_parken.parquet')
+```
+
+### Reproject to WGS84 and get centroids
+
+```sql
+INSTALL spatial; LOAD spatial;
+
+SELECT naam,
+       ST_X(ST_Centroid(ST_Transform(ST_GeomFromWKB(geometry), 'EPSG:28992', 'EPSG:4326'))) AS lon,
+       ST_Y(ST_Centroid(ST_Transform(ST_GeomFromWKB(geometry), 'EPSG:28992', 'EPSG:4326'))) AS lat
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rvo/nationale_parken/nationale_parken.parquet')
+```
+
+### Load into GeoPandas
+
+```python
+import geopandas as gpd
+
+gdf = gpd.read_parquet(
+    'https://data.source.coop/cholmes/portolan-nl/rvo/nationale_parken/nationale_parken.parquet'
+)
+# Reproject to WGS84 for web mapping:
+gdf_wgs = gdf.to_crs(epsg=4326)
+```
+
+## Related Datasets
+
+- **Natura 2000** (also in this catalog): EU-level protected nature areas. Many National Parks
+  overlap with Natura 2000 sites, but they are separate legal designations.
+- **Natuurnetwerk Nederland (NNN)**: The national ecological network, includes all National
+  Parks but is much larger, also covering ecological corridors.
+
+## Caveats
+
+- The `hectares` attribute may differ from area computed from geometry because park boundaries
+  can include water bodies with complex digitization.
+- Different boundary sources (`bron`) used different digitization precision levels.
+- One park (Duinen van Texel) has a blank `fiat_secr` value.
+- The system is evolving — the newest park (Van Gogh, 2024) shows new parks can still be added.
+
+
+## Visualization Styles
+
+One Mapbox GL v8 style is available for interactive map visualization via the PMTiles file.
+
+Style files are Mapbox GL v8 JSON with relative PMTiles source paths. They can be
+used with MapLibre GL JS, OpenLayers (via ol-mapbox-style), or any Mapbox GL v8-compatible renderer.
+
+- **`styles/default.json`** — Deep green fill with darker borders and park name labels. Shows the 21 Dutch National Parks with clear boundaries.
+
+Style files are at: `https://data.source.coop/cholmes/portolan-nl/rvo/nationale_parken/styles/`
+## Also Available As
+
+- **PMTiles (vector tiles):** `nationale_parken.pmtiles` — for web map visualization.
+- **OGC API Features:** Live access via `https://api.pdok.nl/rvo/nationale-parken/ogc/v1/`.
 
 ---
-
-This file is generated by `tools/catalog/make_docs_files.py` from `collection.json`. Edit the metadata, not this file.
+*Hand-maintained agent guide (ported from this collection's llms.txt in August 2026). Update it alongside collection.json.*

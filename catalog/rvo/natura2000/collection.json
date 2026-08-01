@@ -3,7 +3,7 @@
   "id": "natura2000",
   "stac_version": "1.1.0",
   "title": "Natura 2000 Protected Areas",
-  "description": "Boundaries of all 162 Natura 2000 protected areas in the Netherlands, designated under the EU Birds Directive (Vogelrichtlijn) and Habitats Directive (Habitatrichtlijn). Contains 209 features because some areas have separate features for different designation types (VR, HR, or VR+HR). Includes terrestrial and marine areas extending into the North Sea EEZ. Published by RVO via PDOK.\n\nNatura 2000 areas carry the strongest nature protection in Dutch law — any plan or project that may affect them requires assessment under the Wet natuurbescherming.\n\n🤖 AI/Agent users: See llms.txt for field descriptions, query examples, and usage tips.",
+  "description": "Boundaries of all 162 Natura 2000 protected areas in the Netherlands, designated under the EU Birds Directive (Vogelrichtlijn) and Habitats Directive (Habitatrichtlijn). Contains 209 features because some areas have separate features for different designation types (VR, HR, or VR+HR). Includes terrestrial and marine areas extending into the North Sea EEZ. Published by RVO via PDOK.\n\nNatura 2000 areas carry the strongest nature protection in Dutch law — any plan or project that may affect them requires assessment under the Wet natuurbescherming.\n\n🤖 AI/Agent users: See AGENTS.md for field descriptions, query examples, and usage tips.",
   "links": [
     {
       "rel": "root",
@@ -36,12 +36,6 @@
       "pmtiles:layers": [
         "natura2000"
       ]
-    },
-    {
-      "rel": "llms",
-      "href": "./llms.txt",
-      "type": "text/markdown",
-      "title": "Agent/LLM usage guide"
     },
     {
       "rel": "describedby",

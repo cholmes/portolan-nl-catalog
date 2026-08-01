@@ -3,7 +3,7 @@
   "id": "areaofpedologicalinterest",
   "stac_version": "1.1.0",
   "title": "BRO Soil Map — Area of pedological interest",
-  "description": "6,192 polygons delimiting the area of pedological interest of the national Soil Map 1:50,000 (Bodemkaart, SGM) — where soil mapping applies. Produced under VRO; bronhouder Wageningen Environmental Research.\n\n🤖 AI/Agent users: see llms.txt for field descriptions, query examples and usage tips.",
+  "description": "6,192 polygons delimiting the area of pedological interest of the national Soil Map 1:50,000 (Bodemkaart, SGM) — where soil mapping applies. Produced under VRO; bronhouder Wageningen Environmental Research.\n\n🤖 AI/Agent users: see AGENTS.md for field descriptions, query examples and usage tips.",
   "links": [
     {
       "rel": "root",
@@ -35,12 +35,6 @@
       "pmtiles:layers": [
         "areaofpedologicalinterest"
       ]
-    },
-    {
-      "rel": "llms",
-      "href": "./llms.txt",
-      "type": "text/markdown",
-      "title": "Agent/LLM usage guide"
     },
     {
       "rel": "describedby",

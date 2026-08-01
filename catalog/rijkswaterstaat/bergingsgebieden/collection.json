@@ -233,13 +233,6 @@
         "style"
       ]
     },
-    "documentation": {
-      "href": "./llms.txt",
-      "type": "text/plain",
-      "roles": [
-        "documentation"
-      ]
-    },
     "bergingsgebieden": {
       "href": "./bergingsgebieden.parquet",
       "type": "application/x-parquet",

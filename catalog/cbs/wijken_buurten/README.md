@@ -2,6 +2,8 @@
 
 The definitive Dutch demographic geodataset. Published annually by CBS (Statistics Netherlands), this dataset provides demographic, socioeconomic, and geographic statistics at three nested administrative levels: buurten (14,823 neighborhoods), wijken (3,423 districts), and gemeenten (424 municipalities). Contains ~42 columns covering population, age distribution, household composition, marital status, migration background, urbanity, and land/water area. Statistics reflect the situation as of 1 January 2025. All three layers share the same column schema and form a strict spatial hierarchy: each buurt belongs to exactly one wijk, each wijk to one gemeente. The sentinel value -99997 means data is not available or privacy-suppressed.
 
+> Agents: the machine-oriented guide for this data is [`AGENTS.md`](./AGENTS.md).
+
 ## Extent
 
 - **Bounding box** (WGS84): 3.21, 50.73 → 7.24, 53.58
@@ -13,7 +15,13 @@ The definitive Dutch demographic geodataset. Published annually by CBS (Statisti
 curl -s https://data.source.coop/cholmes/portolan-nl/cbs/wijken_buurten/collection.json | jq .
 ```
 
-See [`AGENTS.md`](./AGENTS.md) for the machine-readable summary.
+## License
+
+`CC-BY-4.0` — see the object metadata for any per-asset terms.
+
+## Provenance
+
+Produced and served by [Centraal Bureau voor de Statistiek](https://www.cbs.nl/) (producer, licensor); [Source Cooperative](https://source.coop/cholmes/portolan-nl) (host).
 
 ---
 
