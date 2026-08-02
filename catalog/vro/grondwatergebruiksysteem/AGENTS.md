@@ -89,7 +89,7 @@ Mapbox GL v8 style files (use with MapLibre GL JS, OpenLayers via ol-mapbox-styl
 - **`styles/by-quality-regime.json`** — BRO Groundwater Use System (GUF / Grondwatergebruiksysteem) — By quality regime (https://data.source.coop/cholmes/portolan-nl/vro/grondwatergebruiksysteem/styles/by-quality-regime.json)
 
 ## Also available as
-- **PMTiles** (vector tiles): `grondwatergebruiksysteem.pmtiles`
+- **PMTiles** (vector tiles): [`grondwatergebruiksysteem.pmtiles`](https://data.source.coop/cholmes/portolan-nl/vro/grondwatergebruiksysteem/grondwatergebruiksysteem.pmtiles)
 - **GeoPackage** (full relational model): PDOK Atom download for BRO object — see the `via` links in
   `collection.json`.
 

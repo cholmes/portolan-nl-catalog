@@ -1,6 +1,6 @@
 # BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM)
 
-80,148 landform polygons of the national Geomorphological Map of the Netherlands 1:50,000 (Geomorfologische kaart, GMM), classified by genesis, relief and landform subgroup. Produced under VRO; bronhouder Wageningen Environmental Research.
+80,148 landform polygons of the national Geomorphological Map of the Netherlands 1:50,000 (Geomorfologische kaart, GMM), classified by genesis, relief and landform subgroup. Produced under VRO; bronhouder [Wageningen Environmental Research](https://www.wur.nl/).
 
 > AI/Agent users: see [AGENTS.md](./AGENTS.md) for field meanings, query examples and caveats.
 
@@ -54,10 +54,10 @@
 
 | File | Format | Description |
 |------|--------|-------------|
-| geomorphological_area.parquet | GeoParquet | 80,148 features (EPSG:28992) |
-| geomorphological_area.pmtiles | PMTiles | Vector tiles for web maps |
+| [geomorphological_area.parquet](https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/geomorphological_area/geomorphological_area.parquet) | GeoParquet | 80,148 features (EPSG:28992) |
+| [geomorphological_area.pmtiles](https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/geomorphological_area/geomorphological_area.pmtiles) | PMTiles | Vector tiles for web maps |
 | styles/ | Mapbox GL v8 | Visualization styles |
-| thumbnail.webp | WebP | Official PDOK preview |
+| [thumbnail.webp](https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/geomorphological_area/thumbnail.webp) | WebP | Official PDOK preview |
 
 ## Quick start
 

@@ -87,7 +87,7 @@ Mapbox GL v8 style files (use with MapLibre GL JS, OpenLayers via ol-mapbox-styl
 - **`styles/by-method.json`** — BRO Geomorphological Map — Map area collections — By inventory method (https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/geomorphological_area_collection/styles/by-method.json)
 
 ## Also available as
-- **PMTiles** (vector tiles): `geomorphological_area_collection.pmtiles`
+- **PMTiles** (vector tiles): [`geomorphological_area_collection.pmtiles`](https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/geomorphological_area_collection/geomorphological_area_collection.pmtiles)
 - **GeoPackage** (full relational model): PDOK Atom download for BRO object — see the `via` links in
   `collection.json`.
 

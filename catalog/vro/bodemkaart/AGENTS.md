@@ -2,7 +2,7 @@
 
 Portolan catalog — `vro/bodemkaart`
 
-The national Soil Map of the Netherlands at scale 1:50,000 (Bodemkaart van Nederland, BRO object SGM), produced by Wageningen Environmental Research. The source GeoPackage holds two distinct polygon layers, published here as separate collections:
+The national Soil Map of the Netherlands at scale 1:50,000 (Bodemkaart van Nederland, [BRO](https://basisregistratieondergrond.nl/) object SGM), produced by [Wageningen Environmental Research](https://www.wur.nl/). The source GeoPackage holds two distinct polygon layers, published here as separate collections:
 
 ## Contains
 

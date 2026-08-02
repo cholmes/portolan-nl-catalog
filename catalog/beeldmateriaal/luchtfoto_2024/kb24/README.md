@@ -1,6 +1,6 @@
 # KB 24 — Haarlem / IJmond
 
-Kaartblad 24 covers the coastal area from IJmuiden south through Bloemendaal to Haarlem and Heemstede. Features include the North Sea dune landscape, the Kennemerduinen national park, the North Sea Canal entrance at IJmuiden, and the historic city of Haarlem. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the Beeldmateriaal Nederland summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
+Kaartblad 24 covers the coastal area from IJmuiden south through Bloemendaal to Haarlem and Heemstede. Features include the North Sea dune landscape, the Kennemerduinen national park, the North Sea Canal entrance at IJmuiden, and the historic city of Haarlem. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the [Beeldmateriaal Nederland](https://www.beeldmateriaal.nl/) summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
 
 > Agents: the machine-oriented guide for this data is [`AGENTS.md`](./AGENTS.md).
 

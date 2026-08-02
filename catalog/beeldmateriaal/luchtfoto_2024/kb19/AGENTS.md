@@ -2,7 +2,7 @@
 
 Portolan catalog — `beeldmateriaal/luchtfoto_2024/kb19`
 
-Kaartblad 19 covers the area from Alkmaar and Castricum on the North Sea coast east to Zaandam and Purmerend, encompassing coastal dune landscapes, polder farmland, and the northern edge of the Amsterdam metropolitan region. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the Beeldmateriaal Nederland summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
+Kaartblad 19 covers the area from Alkmaar and Castricum on the North Sea coast east to Zaandam and Purmerend, encompassing coastal dune landscapes, polder farmland, and the northern edge of the Amsterdam metropolitan region. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the [Beeldmateriaal Nederland](https://www.beeldmateriaal.nl/) summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
 
 ## Contains
 

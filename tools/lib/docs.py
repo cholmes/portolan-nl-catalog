@@ -49,3 +49,37 @@ def column_table(columns: list[dict]) -> list[str]:
     for col in columns:
         rows.append(f"| {col['name']} | {col['type']} | {col.get('description', '')} |")
     return rows
+
+
+# Organizations named in collection descriptions, each URL checked for a 200.
+# Longest names first so "Beeldmateriaal Nederland" wins over any substring.
+ORG_LINKS = [
+    ("Wageningen Environmental Research", "https://www.wur.nl/"),
+    ("Beeldmateriaal Nederland", "https://www.beeldmateriaal.nl/"),
+    ("Source Cooperative", "https://source.coop/"),
+    ("Rijkswaterstaat", "https://www.rijkswaterstaat.nl/"),
+    ("Kadaster", "https://www.kadaster.nl/"),
+    ("TU Delft", "https://www.tudelft.nl/"),
+    ("PDOK", "https://www.pdok.nl/"),
+    ("RVO", "https://www.rvo.nl/"),
+    ("RCE", "https://www.cultureelerfgoed.nl/"),
+    ("CBS", "https://www.cbs.nl/"),
+    ("TNO", "https://www.tno.nl/"),
+    ("BRO", "https://basisregistratieondergrond.nl/"),
+]
+
+
+def linkify_orgs(text: str) -> str:
+    """Turn the first mention of each known organization into a markdown link.
+
+    First mention only, whole words only, and never inside an existing link --
+    "Published by RVO via PDOK" should carry both links without turning every
+    later RVO in the prose into one.
+    """
+    import re
+    for name, url in ORG_LINKS:
+        if f"[{name}]" in text or url in text:
+            continue
+        text = re.sub(rf"(?<![\w\[/]){re.escape(name)}(?![\w\]])",
+                      f"[{name}]({url})", text, count=1)
+    return text

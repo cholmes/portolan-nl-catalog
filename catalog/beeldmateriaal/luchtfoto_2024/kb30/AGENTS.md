@@ -2,7 +2,7 @@
 
 Portolan catalog — `beeldmateriaal/luchtfoto_2024/kb30`
 
-Kaartblad 30 covers the Gouda area in the Green Heart (Groene Hart) of the Randstad — the open peat meadow landscape between the major cities. Features include the historic cheese city of Gouda, polder farmland with characteristic long narrow parcels, and the Oude Rijn river valley. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the Beeldmateriaal Nederland summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
+Kaartblad 30 covers the Gouda area in the Green Heart (Groene Hart) of the Randstad — the open peat meadow landscape between the major cities. Features include the historic cheese city of Gouda, polder farmland with characteristic long narrow parcels, and the Oude Rijn river valley. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the [Beeldmateriaal Nederland](https://www.beeldmateriaal.nl/) summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
 
 ## Contains
 

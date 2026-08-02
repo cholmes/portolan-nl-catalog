@@ -1,6 +1,6 @@
 # BRO Geomorphological Map of the Netherlands 1:50,000 (Geomorfologische kaart, GMM)
 
-The national Geomorphological Map of the Netherlands at scale 1:50,000 (BRO object GMM), produced by Wageningen Environmental Research. The source GeoPackage holds three distinct polygon layers, published here as separate collections:
+The national Geomorphological Map of the Netherlands at scale 1:50,000 ([BRO](https://basisregistratieondergrond.nl/) object GMM), produced by [Wageningen Environmental Research](https://www.wur.nl/). The source GeoPackage holds three distinct polygon layers, published here as separate collections:
 
 > Agents: the machine-oriented guide for this data is [`AGENTS.md`](./AGENTS.md).
 

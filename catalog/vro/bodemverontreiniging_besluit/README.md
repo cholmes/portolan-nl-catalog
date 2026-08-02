@@ -1,6 +1,6 @@
 # BRO Government Decision on Soil Contamination (SLD)
 
-121 formal government decisions on soil contamination (overheidsbesluit bodemverontreiniging, SLD) from the BRO — areas with an authority decision on assessment, remediation or aftercare. Produced under VRO; bronhouder TNO.
+121 formal government decisions on soil contamination (overheidsbesluit bodemverontreiniging, SLD) from the [BRO](https://basisregistratieondergrond.nl/) — areas with an authority decision on assessment, remediation or aftercare. Produced under VRO; bronhouder [TNO](https://www.tno.nl/).
 
 > AI/Agent users: see [AGENTS.md](./AGENTS.md) for field meanings, query examples and caveats.
 
@@ -28,10 +28,10 @@
 
 | File | Format | Description |
 |------|--------|-------------|
-| bodemverontreiniging_besluit.parquet | GeoParquet | 121 features (EPSG:4258) |
-| bodemverontreiniging_besluit.pmtiles | PMTiles | Vector tiles for web maps |
+| [bodemverontreiniging_besluit.parquet](https://data.source.coop/cholmes/portolan-nl/vro/bodemverontreiniging_besluit/bodemverontreiniging_besluit.parquet) | GeoParquet | 121 features (EPSG:4258) |
+| [bodemverontreiniging_besluit.pmtiles](https://data.source.coop/cholmes/portolan-nl/vro/bodemverontreiniging_besluit/bodemverontreiniging_besluit.pmtiles) | PMTiles | Vector tiles for web maps |
 | styles/ | Mapbox GL v8 | Visualization styles |
-| thumbnail.webp | WebP | Official PDOK preview |
+| [thumbnail.webp](https://data.source.coop/cholmes/portolan-nl/vro/bodemverontreiniging_besluit/thumbnail.webp) | WebP | Official PDOK preview |
 
 ## Quick start
 

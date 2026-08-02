@@ -1,6 +1,6 @@
 # BRO Geomorphological Map — Map area collections
 
-70 map-area collection polygons grouping the national Geomorphological Map 1:50,000 (GMM) by survey/publication. Produced under VRO; bronhouder Wageningen Environmental Research.
+70 map-area collection polygons grouping the national Geomorphological Map 1:50,000 (GMM) by survey/publication. Produced under VRO; bronhouder [Wageningen Environmental Research](https://www.wur.nl/).
 
 > AI/Agent users: see [AGENTS.md](./AGENTS.md) for field meanings, query examples and caveats.
 
@@ -31,10 +31,10 @@
 
 | File | Format | Description |
 |------|--------|-------------|
-| geomorphological_area_collection.parquet | GeoParquet | 70 features (EPSG:28992) |
-| geomorphological_area_collection.pmtiles | PMTiles | Vector tiles for web maps |
+| [geomorphological_area_collection.parquet](https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/geomorphological_area_collection/geomorphological_area_collection.parquet) | GeoParquet | 70 features (EPSG:28992) |
+| [geomorphological_area_collection.pmtiles](https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/geomorphological_area_collection/geomorphological_area_collection.pmtiles) | PMTiles | Vector tiles for web maps |
 | styles/ | Mapbox GL v8 | Visualization styles |
-| thumbnail.webp | WebP | Official PDOK preview |
+| [thumbnail.webp](https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/geomorphological_area_collection/thumbnail.webp) | WebP | Official PDOK preview |
 
 ## Quick start
 

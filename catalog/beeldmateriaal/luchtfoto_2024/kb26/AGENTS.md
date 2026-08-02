@@ -2,7 +2,7 @@
 
 Portolan catalog — `beeldmateriaal/luchtfoto_2024/kb26`
 
-Kaartblad 26 covers the Gooi region east of Amsterdam — Hilversum (media capital), the historic fortress town of Naarden, Huizen on the former Zuiderzee coast, and the Loosdrecht lakes. Varied landscape of heath, forest, lakes, and affluent residential areas. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the Beeldmateriaal Nederland summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
+Kaartblad 26 covers the Gooi region east of Amsterdam — Hilversum (media capital), the historic fortress town of Naarden, Huizen on the former Zuiderzee coast, and the Loosdrecht lakes. Varied landscape of heath, forest, lakes, and affluent residential areas. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the [Beeldmateriaal Nederland](https://www.beeldmateriaal.nl/) summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
 
 ## Contains
 

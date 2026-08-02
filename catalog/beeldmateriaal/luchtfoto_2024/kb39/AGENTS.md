@@ -2,7 +2,7 @@
 
 Portolan catalog — `beeldmateriaal/luchtfoto_2024/kb39`
 
-Kaartblad 39 covers the Betuwe — the fertile river island between the Nederrijn/Lek and the Waal, famous for its fruit orchards (especially cherry and apple). Includes Tiel, Rhenen (with the Grebbeberg), and the southern part of Wageningen. The landscape transitions from river floodplains to the southern edge of the Utrechtse Heuvelrug. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the Beeldmateriaal Nederland summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
+Kaartblad 39 covers the Betuwe — the fertile river island between the Nederrijn/Lek and the Waal, famous for its fruit orchards (especially cherry and apple). Includes Tiel, Rhenen (with the Grebbeberg), and the southern part of Wageningen. The landscape transitions from river floodplains to the southern edge of the Utrechtse Heuvelrug. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the [Beeldmateriaal Nederland](https://www.beeldmateriaal.nl/) summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
 
 ## Contains
 

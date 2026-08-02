@@ -96,7 +96,7 @@ Mapbox GL v8 style files (use with MapLibre GL JS, OpenLayers via ol-mapbox-styl
 - **`styles/by-texture.json`** — BRO Soil Map of the Netherlands 1:50,000 — Soil areas (SGM) — By texture (sand / clay / peat) (https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/soilarea/styles/by-texture.json)
 
 ## Also available as
-- **PMTiles** (vector tiles): `soilarea.pmtiles`
+- **PMTiles** (vector tiles): [`soilarea.pmtiles`](https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/soilarea/soilarea.pmtiles)
 - **GeoPackage** (full relational model): PDOK Atom download for BRO object — see the `via` links in
   `collection.json`.
 

@@ -1,6 +1,6 @@
 # KB 32 — Amersfoort
 
-Kaartblad 32 covers Amersfoort and surroundings — the origin of the Dutch national coordinate system (EPSG:28992, RD New). The Onze Lieve Vrouwetoren church tower marks X=155000, Y=463000. Also includes Zeist, Leusden, Woudenberg, and the Utrechtse Heuvelrug forest ridge. This is the only sheet with both RGB and RGBNIR (4-band) COGs. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm orthophotos from the Beeldmateriaal Nederland summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
+Kaartblad 32 covers Amersfoort and surroundings — the origin of the Dutch national coordinate system (EPSG:28992, RD New). The Onze Lieve Vrouwetoren church tower marks X=155000, Y=463000. Also includes Zeist, Leusden, Woudenberg, and the Utrechtse Heuvelrug forest ridge. This is the only sheet with both RGB and RGBNIR (4-band) COGs. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm orthophotos from the [Beeldmateriaal Nederland](https://www.beeldmateriaal.nl/) summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
 
 > Agents: the machine-oriented guide for this data is [`AGENTS.md`](./AGENTS.md).
 

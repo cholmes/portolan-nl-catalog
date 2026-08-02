@@ -1,6 +1,6 @@
 # BRO Mining Construction (EPC / Mijnbouwconstructie)
 
-4,975 mining-law subsurface constructions (mijnbouwconstructie, EPC) from the BRO — deep boreholes, mine systems and salt caverns for oil, gas, geothermal energy and storage. Produced under VRO; bronhouder TNO.
+4,975 mining-law subsurface constructions (mijnbouwconstructie, EPC) from the [BRO](https://basisregistratieondergrond.nl/) — deep boreholes, mine systems and salt caverns for oil, gas, geothermal energy and storage. Produced under VRO; bronhouder [TNO](https://www.tno.nl/).
 
 > AI/Agent users: see [AGENTS.md](./AGENTS.md) for field meanings, query examples and caveats.
 
@@ -31,10 +31,10 @@
 
 | File | Format | Description |
 |------|--------|-------------|
-| mijnbouwconstructie.parquet | GeoParquet | 4,975 features (EPSG:4258) |
-| mijnbouwconstructie.pmtiles | PMTiles | Vector tiles for web maps |
+| [mijnbouwconstructie.parquet](https://data.source.coop/cholmes/portolan-nl/vro/mijnbouwconstructie/mijnbouwconstructie.parquet) | GeoParquet | 4,975 features (EPSG:4258) |
+| [mijnbouwconstructie.pmtiles](https://data.source.coop/cholmes/portolan-nl/vro/mijnbouwconstructie/mijnbouwconstructie.pmtiles) | PMTiles | Vector tiles for web maps |
 | styles/ | Mapbox GL v8 | Visualization styles |
-| thumbnail.webp | WebP | Official PDOK preview |
+| [thumbnail.webp](https://data.source.coop/cholmes/portolan-nl/vro/mijnbouwconstructie/thumbnail.webp) | WebP | Official PDOK preview |
 
 ## Quick start
 

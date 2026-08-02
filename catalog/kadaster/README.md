@@ -8,7 +8,7 @@ Netherlands' Cadastre, Land Registry and Mapping Agency. Kadaster manages key na
 
 | Collection | Features | Geometry | Description |
 |---|---|---|---|
-| [BAG Light — Buildings](./bag_light/) | 11,367,850 | Polygon | All buildings from the national building registry (BAG). Includes footprints, construction year, usage function, floor area. |
+| [Buildings (Panden)](./panden/) | 11,367,850 | Polygon | All buildings from the national building registry (BAG). Includes footprints, construction year, usage function, floor area. |
 | [INSPIRE Buildings](./inspire_buildings/) | 24,186,761 | Polygon | BAG buildings harmonized to the EU INSPIRE schema. Includes current and historical versions. |
 | [Administrative Areas](./bestuurlijke_gebieden/) | 355 | MultiPolygon | Official boundaries: 342 municipalities, 12 provinces, 1 national territory (2026 edition). |
 

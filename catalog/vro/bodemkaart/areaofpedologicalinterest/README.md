@@ -1,6 +1,6 @@
 # BRO Soil Map — Area of pedological interest
 
-6,192 polygons delimiting the area of pedological interest of the national Soil Map 1:50,000 (Bodemkaart, SGM) — where soil mapping applies. Produced under VRO; bronhouder Wageningen Environmental Research.
+6,192 polygons delimiting the area of pedological interest of the national Soil Map 1:50,000 (Bodemkaart, SGM) — where soil mapping applies. Produced under VRO; bronhouder [Wageningen Environmental Research](https://www.wur.nl/).
 
 > AI/Agent users: see [AGENTS.md](./AGENTS.md) for field meanings, query examples and caveats.
 
@@ -28,10 +28,10 @@
 
 | File | Format | Description |
 |------|--------|-------------|
-| areaofpedologicalinterest.parquet | GeoParquet | 6,192 features (EPSG:28992) |
-| areaofpedologicalinterest.pmtiles | PMTiles | Vector tiles for web maps |
+| [areaofpedologicalinterest.parquet](https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/areaofpedologicalinterest/areaofpedologicalinterest.parquet) | GeoParquet | 6,192 features (EPSG:28992) |
+| [areaofpedologicalinterest.pmtiles](https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/areaofpedologicalinterest/areaofpedologicalinterest.pmtiles) | PMTiles | Vector tiles for web maps |
 | styles/ | Mapbox GL v8 | Visualization styles |
-| thumbnail.webp | WebP | Official PDOK preview |
+| [thumbnail.webp](https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/areaofpedologicalinterest/thumbnail.webp) | WebP | Official PDOK preview |
 
 ## Quick start
 

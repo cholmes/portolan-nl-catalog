@@ -265,7 +265,7 @@ WHERE ST_DWithin(
 {styles_section(coll, path)}
 
 ## Also available as
-- **PMTiles** (vector tiles): `{layer}.pmtiles`
+- **PMTiles** (vector tiles): [`{layer}.pmtiles`]({DATA}/vro/{path}/{layer}.pmtiles)
 - **GeoPackage** (full relational model): PDOK Atom download for BRO object — see the `via` links in
   `collection.json`.
 

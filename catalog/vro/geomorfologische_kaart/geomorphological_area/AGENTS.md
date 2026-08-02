@@ -117,7 +117,7 @@ Mapbox GL v8 style files (use with MapLibre GL JS, OpenLayers via ol-mapbox-styl
 - **`styles/by-relief.json`** — BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) — By relief class (https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/geomorphological_area/styles/by-relief.json)
 
 ## Also available as
-- **PMTiles** (vector tiles): `geomorphological_area.pmtiles`
+- **PMTiles** (vector tiles): [`geomorphological_area.pmtiles`](https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/geomorphological_area/geomorphological_area.pmtiles)
 - **GeoPackage** (full relational model): PDOK Atom download for BRO object — see the `via` links in
   `collection.json`.
 

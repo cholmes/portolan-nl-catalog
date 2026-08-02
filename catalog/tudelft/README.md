@@ -1,6 +1,6 @@
 # TU Delft — 3D Geoinformation Research Group
 
-Open geodatasets from the [3D Geoinformation Research Group](https://3d.bk.tudelft.nl/) at Delft University of Technology (TU Delft). The group specializes in 3D modelling of the built environment, combining authoritative Dutch government registrations with nation-wide elevation surveys to produce detailed 3D building models and urban datasets.
+Open geodatasets from the [3D Geoinformation Research Group](https://3d.bk.tudelft.nl/) at Delft University of Technology ([TU Delft](https://www.tudelft.nl/)). The group specializes in 3D modelling of the built environment, combining authoritative Dutch government registrations with nation-wide elevation surveys to produce detailed 3D building models and urban datasets.
 
 > Agents: the machine-oriented guide for this data is [`AGENTS.md`](./AGENTS.md).
 

@@ -22,7 +22,7 @@ Organized by the Dutch government institution that produces the data:
 
 | Collection | Provider | Features | Geometry | Format | Description |
 |---|---|---|---|---|---|
-| [BAG Light](./kadaster/bag_light/) | Kadaster | 11.4M | Polygon | GeoParquet, PMTiles | All buildings in the Netherlands from the national building registry |
+| [Buildings (Panden)](./kadaster/panden/) | Kadaster | 11.4M | Polygon | GeoParquet, PMTiles | All buildings in the Netherlands from the national building registry |
 | [INSPIRE Buildings](./kadaster/inspire_buildings/) | Kadaster | 24.2M | Polygon | GeoParquet, PMTiles | BAG buildings harmonized to EU INSPIRE schema (incl. history) |
 | [Administrative Areas](./kadaster/bestuurlijke_gebieden/) | Kadaster | 355 | MultiPolygon | GeoParquet, PMTiles | Municipalities, provinces, and national boundary (2026) |
 | [Flood Retention Areas](./rijkswaterstaat/bergingsgebieden/) | RWS | 1,545 | MultiPolygon | GeoParquet, PMTiles | Designated areas for temporary water storage during floods |
