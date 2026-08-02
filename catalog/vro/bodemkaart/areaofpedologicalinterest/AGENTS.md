@@ -85,7 +85,7 @@ Mapbox GL v8 style files (use with MapLibre GL JS, OpenLayers via ol-mapbox-styl
 - **`styles/by-interest.json`** — BRO Soil Map — Area of pedological interest — By area type (https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/areaofpedologicalinterest/styles/by-interest.json)
 
 ## Also available as
-- **PMTiles** (vector tiles): `areaofpedologicalinterest.pmtiles`
+- **PMTiles** (vector tiles): [`areaofpedologicalinterest.pmtiles`](https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/areaofpedologicalinterest/areaofpedologicalinterest.pmtiles)
 - **GeoPackage** (full relational model): PDOK Atom download for BRO object — see the `via` links in
   `collection.json`.
 

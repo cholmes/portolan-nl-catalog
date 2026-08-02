@@ -2,7 +2,7 @@
 
 Portolan catalog — `vro`
 
-Open geodata for which the Ministry of Housing and Spatial Planning (VRO) is the responsible provider on PDOK, drawn from the **Basisregistratie Ondergrond (BRO)** — the Dutch Key Registry of the Subsurface. These are the BRO datasets flagged as EU **High Value Data**: soil and geological boreholes, groundwater systems, soil-contamination decisions, mining constructions, and the national Soil Map and Geomorphological Map. The underlying data is produced by **TNO – Geologische Dienst Nederland** (subsurface objects) and **Wageningen Environmental Research** (the soil and geomorphological maps). All data is CC0 1.0 (public domain).
+Open geodata for which the Ministry of Housing and Spatial Planning (VRO) is the responsible provider on [PDOK](https://www.pdok.nl/), drawn from the **Basisregistratie Ondergrond ([BRO](https://basisregistratieondergrond.nl/))** — the Dutch Key Registry of the Subsurface. These are the BRO datasets flagged as EU **High Value Data**: soil and geological boreholes, groundwater systems, soil-contamination decisions, mining constructions, and the national Soil Map and Geomorphological Map. The underlying data is produced by **[TNO](https://www.tno.nl/) – Geologische Dienst Nederland** (subsurface objects) and **[Wageningen Environmental Research](https://www.wur.nl/)** (the soil and geomorphological maps). All data is CC0 1.0 (public domain).
 
 ## Contains
 

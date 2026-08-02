@@ -2,7 +2,7 @@
 
 Portolan catalog — `beeldmateriaal/luchtfoto_2024/kb38`
 
-Kaartblad 38 covers the Rivierenland — the area between the great rivers (Rhine, Waal, Lek, Merwede). Features the fortified towns of Gorinchem and Vianen, dike villages along the rivers, brick-making areas, and the characteristic river landscape with floodplains and fruit orchards. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the Beeldmateriaal Nederland summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
+Kaartblad 38 covers the Rivierenland — the area between the great rivers (Rhine, Waal, Lek, Merwede). Features the fortified towns of Gorinchem and Vianen, dike villages along the rivers, brick-making areas, and the characteristic river landscape with floodplains and fruit orchards. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the [Beeldmateriaal Nederland](https://www.beeldmateriaal.nl/) summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
 
 ## Contains
 

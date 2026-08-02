@@ -1,6 +1,6 @@
 # National Road Network (NWB Wegen)
 
-The complete Dutch National Road Network (Nationaal Wegenbestand, NWB) — 1,626,321 road segments covering every road in the Netherlands. Includes street names, place names, municipality codes, road numbers (A/N-roads), road types, driving directions, road manager information, and kilometer markers. Published by Rijkswaterstaat via PDOK and updated monthly.
+The complete Dutch National Road Network (Nationaal Wegenbestand, NWB) — 1,626,321 road segments covering every road in the Netherlands. Includes street names, place names, municipality codes, road numbers (A/N-roads), road types, driving directions, road manager information, and kilometer markers. Published by [Rijkswaterstaat](https://www.rijkswaterstaat.nl/) via [PDOK](https://www.pdok.nl/) and updated monthly.
 
 > Agents: the machine-oriented guide for this data is [`AGENTS.md`](./AGENTS.md).
 

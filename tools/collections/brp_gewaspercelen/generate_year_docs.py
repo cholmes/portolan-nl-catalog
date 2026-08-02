@@ -63,7 +63,7 @@ def readme(year: int) -> str:
 
 The {year} edition of the Basisregistratie Gewaspercelen (BRP) — every agricultural parcel in the Netherlands with its registered crop type, as recorded by farmers for CAP subsidy on **{year}-05-15** (the 'definitief' finalized edition).
 
-> This folder is **one partition** of a multi-year collection. For the cross-year story and queries spanning 2009–2025, see the [parent collection]({PARENT_BASE_URL}/) (README + AGENTS.md at the parent level).
+> This folder is **one partition** of a multi-year collection. For the cross-year story and queries spanning 2009–2025, see the [parent collection](../README.md) (README + AGENTS.md at the parent level).
 
 ## Key numbers
 
@@ -79,10 +79,10 @@ The {year} edition of the Basisregistratie Gewaspercelen (BRP) — every agricul
 
 | File | Description |
 |---|---|
-| `brp_gewaspercelen_{year}.parquet` | GeoParquet, zstd, bbox-covering, spatially sorted |
-| `brp_gewaspercelen_{year}.pmtiles` | Vector tiles for web maps |
-| `brp_gewaspercelen_{year}.json` | STAC Item |
-| `{src['filename']}` | Original PDOK source download |
+| [`brp_gewaspercelen_{year}.parquet`]({PARENT_BASE_URL}/{year}/brp_gewaspercelen_{year}.parquet) | GeoParquet, zstd, bbox-covering, spatially sorted |
+| [`brp_gewaspercelen_{year}.pmtiles`]({PARENT_BASE_URL}/{year}/brp_gewaspercelen_{year}.pmtiles) | Vector tiles for web maps |
+| [`brp_gewaspercelen_{year}.json`]({PARENT_BASE_URL}/{year}/brp_gewaspercelen_{year}.json) | STAC Item |
+| [`{src['filename']}`]({PARENT_BASE_URL}/{year}/{src['filename']}) | Original PDOK source download |
 | `styles/` | MapLibre styles (default, by-category, by-crop, landscape-elements) |
 
 ## Quick start
@@ -140,7 +140,7 @@ See [`../AGENTS.md`](../AGENTS.md) and the parent [collection.json]({PARENT_BASE
 
 ---
 
-*Part of [Portolan NL]({PARENT_BASE_URL.rsplit('/', 3)[0]}) — Cloud-Native Dutch Geodata.*
+*Part of [Portolan NL](https://source.coop/cholmes/portolan-nl) — Cloud-Native Dutch Geodata.*
 """
 
 

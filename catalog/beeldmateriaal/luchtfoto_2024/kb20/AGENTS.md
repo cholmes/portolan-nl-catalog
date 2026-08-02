@@ -2,7 +2,7 @@
 
 Portolan catalog — `beeldmateriaal/luchtfoto_2024/kb20`
 
-Kaartblad 20 covers the Markermeer lake and the reclaimed polders of south Flevoland, including Almere and the Eemnes area. The landscape is predominantly flat reclaimed land with modern planned cities and open water. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the Beeldmateriaal Nederland summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
+Kaartblad 20 covers the Markermeer lake and the reclaimed polders of south Flevoland, including Almere and the Eemnes area. The landscape is predominantly flat reclaimed land with modern planned cities and open water. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the [Beeldmateriaal Nederland](https://www.beeldmateriaal.nl/) summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
 
 ## Contains
 

@@ -1,6 +1,6 @@
 # KB 33 — Apeldoorn / Veluwe East
 
-Kaartblad 33 covers the eastern Veluwe and the Gelderse Vallei — Apeldoorn (with Het Loo palace), Ede, Wageningen (university city and agricultural research centre), and Barneveld. Landscape ranges from dense Veluwe forest and heathland to intensive agriculture in the valley. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the Beeldmateriaal Nederland summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
+Kaartblad 33 covers the eastern Veluwe and the Gelderse Vallei — Apeldoorn (with Het Loo palace), Ede, Wageningen (university city and agricultural research centre), and Barneveld. Landscape ranges from dense Veluwe forest and heathland to intensive agriculture in the valley. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the [Beeldmateriaal Nederland](https://www.beeldmateriaal.nl/) summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
 
 > Agents: the machine-oriented guide for this data is [`AGENTS.md`](./AGENTS.md).
 

@@ -2,7 +2,7 @@
 
 Portolan catalog — `beeldmateriaal/luchtfoto_2024/kb27`
 
-Kaartblad 27 covers the western Veluwe — Harderwijk and Ermelo on the former Zuiderzee coast, the forested ice-pushed ridges of the Veluwe, and the agricultural fringe around Nijkerk and Putten. Dominated by extensive forests and heathland interspersed with small towns. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the Beeldmateriaal Nederland summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
+Kaartblad 27 covers the western Veluwe — Harderwijk and Ermelo on the former Zuiderzee coast, the forested ice-pushed ridges of the Veluwe, and the agricultural fringe around Nijkerk and Putten. Dominated by extensive forests and heathland interspersed with small towns. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the [Beeldmateriaal Nederland](https://www.beeldmateriaal.nl/) summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
 
 ## Contains
 

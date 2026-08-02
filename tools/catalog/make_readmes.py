@@ -35,7 +35,7 @@ def coll_readme(path):
     rooturl = "../" * (depth + 1)
     md = f"""# {c['title']}
 
-{c['description'].split(chr(10))[0]}
+{docs.linkify_orgs(c['description'].split(chr(10))[0])}
 
 > AI/Agent users: see [AGENTS.md](./AGENTS.md) for field meanings, query examples and caveats.
 
@@ -54,10 +54,10 @@ def coll_readme(path):
 
 | File | Format | Description |
 |------|--------|-------------|
-| {layer}.parquet | GeoParquet | {n:,} features (EPSG:{epsg}) |
-| {layer}.pmtiles | PMTiles | Vector tiles for web maps |
+| [{layer}.parquet]({DATA}/vro/{path}/{layer}.parquet) | GeoParquet | {n:,} features (EPSG:{epsg}) |
+| [{layer}.pmtiles]({DATA}/vro/{path}/{layer}.pmtiles) | PMTiles | Vector tiles for web maps |
 | styles/ | Mapbox GL v8 | Visualization styles |
-| thumbnail.webp | WebP | Official PDOK preview |
+| [thumbnail.webp]({DATA}/vro/{path}/thumbnail.webp) | WebP | Official PDOK preview |
 
 ## Quick start
 

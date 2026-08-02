@@ -82,7 +82,7 @@ Mapbox GL v8 style files (use with MapLibre GL JS, OpenLayers via ol-mapbox-styl
 - **`styles/by-type.json`** — BRO Geomorphological Map — Area of geomorphological interest — By type (https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/area_of_geomorphological_interest/styles/by-type.json)
 
 ## Also available as
-- **PMTiles** (vector tiles): `area_of_geomorphological_interest.pmtiles`
+- **PMTiles** (vector tiles): [`area_of_geomorphological_interest.pmtiles`](https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/area_of_geomorphological_interest/area_of_geomorphological_interest.pmtiles)
 - **GeoPackage** (full relational model): PDOK Atom download for BRO object — see the `via` links in
   `collection.json`.
 

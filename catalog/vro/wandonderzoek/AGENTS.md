@@ -97,7 +97,7 @@ Mapbox GL v8 style files (use with MapLibre GL JS, OpenLayers via ol-mapbox-styl
 - **`styles/by-survey-purpose.json`** — BRO Soil Trench Investigation (SFR / Wandonderzoek) — By survey purpose (https://data.source.coop/cholmes/portolan-nl/vro/wandonderzoek/styles/by-survey-purpose.json)
 
 ## Also available as
-- **PMTiles** (vector tiles): `wandonderzoek.pmtiles`
+- **PMTiles** (vector tiles): [`wandonderzoek.pmtiles`](https://data.source.coop/cholmes/portolan-nl/vro/wandonderzoek/wandonderzoek.pmtiles)
 - **GeoPackage** (full relational model): PDOK Atom download for BRO object — see the `via` links in
   `collection.json`.
 

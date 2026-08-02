@@ -1,6 +1,6 @@
 # KB 25 — Amsterdam
 
-Kaartblad 25 covers the Amsterdam metropolitan area including the city centre, Amstelveen, Schiphol Airport, Aalsmeer (flower auctions), and Weesp. The most densely urbanised sheet in the collection, featuring the historic canal ring, harbour areas, and suburban development. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the Beeldmateriaal Nederland summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
+Kaartblad 25 covers the Amsterdam metropolitan area including the city centre, Amstelveen, Schiphol Airport, Aalsmeer (flower auctions), and Weesp. The most densely urbanised sheet in the collection, featuring the historic canal ring, harbour areas, and suburban development. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the [Beeldmateriaal Nederland](https://www.beeldmateriaal.nl/) summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
 
 > Agents: the machine-oriented guide for this data is [`AGENTS.md`](./AGENTS.md).
 

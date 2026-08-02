@@ -1,6 +1,6 @@
 # BRO Soil Trench Investigation (SFR / Wandonderzoek)
 
-2,806 soil-profile pit/trench investigations (wandonderzoek, SFR) from the Dutch Key Registry of the Subsurface (BRO). Each point is a described soil face used for soil mapping, agriculture and nature management. Produced under VRO; bronhouder TNO.
+2,806 soil-profile pit/trench investigations (wandonderzoek, SFR) from the Dutch Key Registry of the Subsurface ([BRO](https://basisregistratieondergrond.nl/)). Each point is a described soil face used for soil mapping, agriculture and nature management. Produced under VRO; bronhouder [TNO](https://www.tno.nl/).
 
 > AI/Agent users: see [AGENTS.md](./AGENTS.md) for field meanings, query examples and caveats.
 
@@ -33,10 +33,10 @@
 
 | File | Format | Description |
 |------|--------|-------------|
-| wandonderzoek.parquet | GeoParquet | 2,806 features (EPSG:4258) |
-| wandonderzoek.pmtiles | PMTiles | Vector tiles for web maps |
+| [wandonderzoek.parquet](https://data.source.coop/cholmes/portolan-nl/vro/wandonderzoek/wandonderzoek.parquet) | GeoParquet | 2,806 features (EPSG:4258) |
+| [wandonderzoek.pmtiles](https://data.source.coop/cholmes/portolan-nl/vro/wandonderzoek/wandonderzoek.pmtiles) | PMTiles | Vector tiles for web maps |
 | styles/ | Mapbox GL v8 | Visualization styles |
-| thumbnail.webp | WebP | Official PDOK preview |
+| [thumbnail.webp](https://data.source.coop/cholmes/portolan-nl/vro/wandonderzoek/thumbnail.webp) | WebP | Official PDOK preview |
 
 ## Quick start
 

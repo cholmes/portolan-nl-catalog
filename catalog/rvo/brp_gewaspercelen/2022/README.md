@@ -2,7 +2,7 @@
 
 The 2022 edition of the Basisregistratie Gewaspercelen (BRP) — every agricultural parcel in the Netherlands with its registered crop type, as recorded by farmers for CAP subsidy on **2022-05-15** (the 'definitief' finalized edition).
 
-> This folder is **one partition** of a multi-year collection. For the cross-year story and queries spanning 2009–2025, see the [parent collection](https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/) (README + AGENTS.md at the parent level).
+> This folder is **one partition** of a multi-year collection. For the cross-year story and queries spanning 2009–2025, see the [parent collection](../README.md) (README + AGENTS.md at the parent level).
 
 ## Key numbers
 
@@ -18,10 +18,10 @@ The 2022 edition of the Basisregistratie Gewaspercelen (BRP) — every agricultu
 
 | File | Description |
 |---|---|
-| `brp_gewaspercelen_2022.parquet` | GeoParquet, zstd, bbox-covering, spatially sorted |
-| `brp_gewaspercelen_2022.pmtiles` | Vector tiles for web maps |
-| `brp_gewaspercelen_2022.json` | STAC Item |
-| `brpgewaspercelen_definitief_2022.gpkg` | Original PDOK source download |
+| [`brp_gewaspercelen_2022.parquet`](https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/2022/brp_gewaspercelen_2022.parquet) | GeoParquet, zstd, bbox-covering, spatially sorted |
+| [`brp_gewaspercelen_2022.pmtiles`](https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/2022/brp_gewaspercelen_2022.pmtiles) | Vector tiles for web maps |
+| [`brp_gewaspercelen_2022.json`](https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/2022/brp_gewaspercelen_2022.json) | STAC Item |
+| [`brpgewaspercelen_definitief_2022.gpkg`](https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/2022/brpgewaspercelen_definitief_2022.gpkg) | Original PDOK source download |
 | `styles/` | MapLibre styles (default, by-category, by-crop, landscape-elements) |
 
 ## Quick start
@@ -79,4 +79,4 @@ See [`../AGENTS.md`](../AGENTS.md) and the parent [collection.json](https://data
 
 ---
 
-*Part of [Portolan NL](https://data.source.coop/cholmes) — Cloud-Native Dutch Geodata.*
+*Part of [Portolan NL](https://source.coop/cholmes/portolan-nl) — Cloud-Native Dutch Geodata.*

@@ -1,6 +1,6 @@
 # BRO Geomorphological Map — Area of geomorphological interest
 
-40,840 polygons delimiting the area of geomorphological interest of the national Geomorphological Map 1:50,000 (GMM). Produced under VRO; bronhouder Wageningen Environmental Research.
+40,840 polygons delimiting the area of geomorphological interest of the national Geomorphological Map 1:50,000 (GMM). Produced under VRO; bronhouder [Wageningen Environmental Research](https://www.wur.nl/).
 
 > AI/Agent users: see [AGENTS.md](./AGENTS.md) for field meanings, query examples and caveats.
 
@@ -26,10 +26,10 @@
 
 | File | Format | Description |
 |------|--------|-------------|
-| area_of_geomorphological_interest.parquet | GeoParquet | 40,840 features (EPSG:28992) |
-| area_of_geomorphological_interest.pmtiles | PMTiles | Vector tiles for web maps |
+| [area_of_geomorphological_interest.parquet](https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/area_of_geomorphological_interest/area_of_geomorphological_interest.parquet) | GeoParquet | 40,840 features (EPSG:28992) |
+| [area_of_geomorphological_interest.pmtiles](https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/area_of_geomorphological_interest/area_of_geomorphological_interest.pmtiles) | PMTiles | Vector tiles for web maps |
 | styles/ | Mapbox GL v8 | Visualization styles |
-| thumbnail.webp | WebP | Official PDOK preview |
+| [thumbnail.webp](https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/area_of_geomorphological_interest/thumbnail.webp) | WebP | Official PDOK preview |
 
 ## Quick start
 

@@ -89,7 +89,7 @@ Mapbox GL v8 style files (use with MapLibre GL JS, OpenLayers via ol-mapbox-styl
 - **`styles/by-quality-regime.json`** — BRO Government Decision on Soil Contamination (SLD) — By quality regime (https://data.source.coop/cholmes/portolan-nl/vro/bodemverontreiniging_besluit/styles/by-quality-regime.json)
 
 ## Also available as
-- **PMTiles** (vector tiles): `bodemverontreiniging_besluit.pmtiles`
+- **PMTiles** (vector tiles): [`bodemverontreiniging_besluit.pmtiles`](https://data.source.coop/cholmes/portolan-nl/vro/bodemverontreiniging_besluit/bodemverontreiniging_besluit.pmtiles)
 - **GeoPackage** (full relational model): PDOK Atom download for BRO object — see the `via` links in
   `collection.json`.
 

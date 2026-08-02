@@ -1,6 +1,6 @@
 # KB 31 — Utrecht / Vinkeveen
 
-Kaartblad 31 covers Utrecht — the fourth-largest city in the Netherlands — and its surroundings including Nieuwegein, IJsselstein, Woerden, and the Vinkeveen lakes. Features the medieval Dom Tower, the Utrecht Science Park, and extensive polder landscapes of De Ronde Venen. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the Beeldmateriaal Nederland summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
+Kaartblad 31 covers Utrecht — the fourth-largest city in the Netherlands — and its surroundings including Nieuwegein, IJsselstein, Woerden, and the Vinkeveen lakes. Features the medieval Dom Tower, the Utrecht Science Park, and extensive polder landscapes of De Ronde Venen. Part of the [Luchtfoto 2024](../collection.json) collection — 25 cm RGB orthophotos from the [Beeldmateriaal Nederland](https://www.beeldmateriaal.nl/) summer campaign, served as Cloud-Optimized GeoTIFFs (COGs).
 
 > Agents: the machine-oriented guide for this data is [`AGENTS.md`](./AGENTS.md).
 

@@ -1,6 +1,6 @@
 # BRO Groundwater Use System (GUF / Grondwatergebruiksysteem)
 
-50,637 groundwater use systems (grondwatergebruiksysteem, GUF) from the BRO — constructions that extract or infiltrate groundwater, including ground-source energy (ATES/bodemenergie). Produced under VRO; bronhouder TNO.
+50,637 groundwater use systems (grondwatergebruiksysteem, GUF) from the [BRO](https://basisregistratieondergrond.nl/) — constructions that extract or infiltrate groundwater, including ground-source energy (ATES/bodemenergie). Produced under VRO; bronhouder [TNO](https://www.tno.nl/).
 
 > AI/Agent users: see [AGENTS.md](./AGENTS.md) for field meanings, query examples and caveats.
 
@@ -28,10 +28,10 @@
 
 | File | Format | Description |
 |------|--------|-------------|
-| grondwatergebruiksysteem.parquet | GeoParquet | 50,637 features (EPSG:4258) |
-| grondwatergebruiksysteem.pmtiles | PMTiles | Vector tiles for web maps |
+| [grondwatergebruiksysteem.parquet](https://data.source.coop/cholmes/portolan-nl/vro/grondwatergebruiksysteem/grondwatergebruiksysteem.parquet) | GeoParquet | 50,637 features (EPSG:4258) |
+| [grondwatergebruiksysteem.pmtiles](https://data.source.coop/cholmes/portolan-nl/vro/grondwatergebruiksysteem/grondwatergebruiksysteem.pmtiles) | PMTiles | Vector tiles for web maps |
 | styles/ | Mapbox GL v8 | Visualization styles |
-| thumbnail.webp | WebP | Official PDOK preview |
+| [thumbnail.webp](https://data.source.coop/cholmes/portolan-nl/vro/grondwatergebruiksysteem/thumbnail.webp) | WebP | Official PDOK preview |
 
 ## Quick start
 

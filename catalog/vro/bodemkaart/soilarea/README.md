@@ -1,6 +1,6 @@
 # BRO Soil Map of the Netherlands 1:50,000 — Soil areas (SGM)
 
-48,025 soil-area polygons of the national Soil Map of the Netherlands 1:50,000 (Bodemkaart, SGM), enriched here with the primary soil unit and main soil class. Produced under VRO; bronhouder Wageningen Environmental Research.
+48,025 soil-area polygons of the national Soil Map of the Netherlands 1:50,000 (Bodemkaart, SGM), enriched here with the primary soil unit and main soil class. Produced under VRO; bronhouder [Wageningen Environmental Research](https://www.wur.nl/).
 
 > AI/Agent users: see [AGENTS.md](./AGENTS.md) for field meanings, query examples and caveats.
 
@@ -30,10 +30,10 @@
 
 | File | Format | Description |
 |------|--------|-------------|
-| soilarea.parquet | GeoParquet | 48,025 features (EPSG:28992) |
-| soilarea.pmtiles | PMTiles | Vector tiles for web maps |
+| [soilarea.parquet](https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/soilarea/soilarea.parquet) | GeoParquet | 48,025 features (EPSG:28992) |
+| [soilarea.pmtiles](https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/soilarea/soilarea.pmtiles) | PMTiles | Vector tiles for web maps |
 | styles/ | Mapbox GL v8 | Visualization styles |
-| thumbnail.webp | WebP | Official PDOK preview |
+| [thumbnail.webp](https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/soilarea/thumbnail.webp) | WebP | Official PDOK preview |
 
 ## Quick start
 

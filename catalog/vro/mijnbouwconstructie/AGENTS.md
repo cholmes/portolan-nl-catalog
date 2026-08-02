@@ -92,7 +92,7 @@ Mapbox GL v8 style files (use with MapLibre GL JS, OpenLayers via ol-mapbox-styl
 - **`styles/by-legal-status.json`** — BRO Mining Construction (EPC / Mijnbouwconstructie) — By legal status (https://data.source.coop/cholmes/portolan-nl/vro/mijnbouwconstructie/styles/by-legal-status.json)
 
 ## Also available as
-- **PMTiles** (vector tiles): `mijnbouwconstructie.pmtiles`
+- **PMTiles** (vector tiles): [`mijnbouwconstructie.pmtiles`](https://data.source.coop/cholmes/portolan-nl/vro/mijnbouwconstructie/mijnbouwconstructie.pmtiles)
 - **GeoPackage** (full relational model): PDOK Atom download for BRO object — see the `via` links in
   `collection.json`.
 
