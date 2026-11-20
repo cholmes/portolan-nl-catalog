@@ -4,17 +4,17 @@
 
 Statistical data for all 6-digit postcodes (e.g. "1011AB") in the Netherlands, published
 by **CBS** (Centraal Bureau voor de Statistiek / Statistics Netherlands) via PDOK. Contains
-**157 attributes** covering six domains: demographics, housing, energy consumption, income,
-social security, and proximity to facilities. Data is available from 2015 onwards, with
-each year measured as of January 1st. Some variables (energy, income) reflect full-year
-figures rather than point-in-time snapshots.
+**130 statistical variables** covering demographics, households, housing, energy
+consumption, social security, and proximity to facilities, from the CBS publication
+'Statistische gegevens per vierkant en postcode 2022-2023-2024'. Counts are measured
+on 1 January; energy figures cover a calendar year. Income is not published at PC6
+level. See the CBS documentation for the reference year per variable.
 
 **Source:** https://www.pdok.nl/introductie/-/article/cbspostcode6
 **CBS documentation:** https://www.cbs.nl/nl-nl/longread/diversen/2025/statistische-gegevens-per-vierkant-en-postcode-2022-2023-2024
 **OGC API Features:** https://api.pdok.nl/cbs/postcode6/ogc/v1_0/
 **Provider:** CBS (Statistics Netherlands)
 **License:** CC BY 4.0
-**Available years:** 2015 to 2024
 **Geometry type:** MultiPolygon
 
 ## How to Access
@@ -24,7 +24,7 @@ GeoParquet and PMTiles files are available from Source Cooperative. Native CRS i
 
 | File | Features | Size | Contents |
 |------|----------|------|----------|
-| `postcode6.parquet` | 464,964 | 134 MB | All postcodes with 157 statistical attributes |
+| `postcode6.parquet` | 464,964 | 134 MB | All postcodes with 130 statistical variables |
 | `postcode6.pmtiles` | — | 77 MB | Postcode area polygons as vector tiles |
 
 **Base URL:** `https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/`
@@ -38,106 +38,117 @@ con.execute("INSTALL spatial; LOAD spatial;")
 URL = 'https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/postcode6.parquet'
 
 df = con.execute(f"""
-    SELECT * FROM read_parquet('{URL}')
-    LIMIT 5
+    SELECT * EXCLUDE (geom) FROM read_parquet('{URL}')
+    LIMIT 5    -- EXCLUDE skips the large geometry column chunk
 """).df()
 ```
 
 Also available via OGC API Features from PDOK:
 - **OGC API:** `https://api.pdok.nl/cbs/postcode6/ogc/v1_0/`
 
-## Statistical Domains and Key Fields
+## Statistical Domains and Fields
 
-The 157 fields are organized into six statistical domains. The value **-99997** means
-data is suppressed for privacy protection.
+The file has **134 columns**: `postcode6`, three technical columns (`fid`, `geom`,
+`geom_bbox`) and **130 statistical variables**. Every column carries a sourced
+description in `collection.json` (`table:columns`), grounded in the CBS
+documentation linked above.
 
-### 1. Demographics (~20 fields)
+**Measured completeness (2026-11-20):** 34 of the 130 variables carry values in the
+published file (demographics, households, housing stock, and the benefits count).
+The other 96 — energy, WOZ value, and all facility-proximity variables — hold the
+CBS sentinel **-99995** on every row: CBS publishes those for this edition in a
+later release. Check `MAX(column) >= 0` before relying on a variable. Counts are rounded to multiples of 5 and percentages to tens of percent; areas with fewer than 5 inhabitants, households or dwellings are suppressed with sentinel -99997 ('0 t/m 4 / geheim / niet aanwezig'), and -99995 marks a topic to be published in a later version.
 
-| Field | Meaning |
-|-------|---------|
-| `aantal_inwoners` | Total inhabitants |
-| `aantal_mannen` / `aantal_vrouwen` | Male / female inhabitants |
-| `percentage_inwoners_0_tot_15_jaar` | % aged 0-14 |
-| `percentage_inwoners_15_tot_25_jaar` | % aged 15-24 |
-| `percentage_inwoners_25_tot_45_jaar` | % aged 25-44 |
-| `percentage_inwoners_45_tot_65_jaar` | % aged 45-64 |
-| `percentage_inwoners_65_jaar_en_ouder` | % aged 65+ |
-| `percentage_westerse_migratieachtergr` | % Western migration background |
-| `percentage_niet_westerse_migratieach` | % Non-Western migration background |
-
-### 2. Housing (~30 fields)
+### 1. Demographics (14 fields)
 
 | Field | Meaning |
 |-------|---------|
-| `aantal_woningen` | Total dwellings |
-| `aantal_meergezins_woningen` | Multi-family dwellings (apartments) |
-| `aantal_eengezins_woningen` | Single-family dwellings |
-| `aantal_niet_bewoonde_woningen` | Unoccupied dwellings |
-| `aantal_woningen_bouwjaar_voor_1945` | Built before 1945 |
-| `aantal_woningen_bouwjaar_1945_1964` | Built 1945-1964 |
-| `aantal_woningen_bouwjaar_1965_1974` | Built 1965-1974 |
-| `aantal_woningen_bouwjaar_1975_1984` | Built 1975-1984 |
-| `aantal_woningen_bouwjaar_1985_1994` | Built 1985-1994 |
-| `aantal_woningen_bouwjaar_1995_2004` | Built 1995-2004 |
-| `aantal_woningen_bouwjaar_2005_en_later` | Built 2005+ |
-| `percentage_koopwoning` | % owner-occupied |
-| `percentage_huurwoning` | % rental |
-| `gemiddelde_woningwaarde` | Average property value (WOZ) |
+| `aantal_inwoners` | Number of inhabitants on 1 January (registered population); rounded to multiples of 5, -99997 if fewer than 5. |
+| `aantal_mannen` | Number of male inhabitants on 1 January; rounded to multiples of 5. |
+| `aantal_vrouwen` | Number of female inhabitants on 1 January; rounded to multiples of 5. |
+| `aantal_inwoners_0_tot_15_jaar` | Inhabitants younger than 15 on 1 January; rounded to multiples of 5. |
+| `aantal_inwoners_15_tot_25_jaar` | Inhabitants aged 15 up to 25 on 1 January; rounded to multiples of 5. |
+| `aantal_inwoners_25_tot_45_jaar` | Inhabitants aged 25 up to 45 on 1 January; rounded to multiples of 5. |
+| `aantal_inwoners_45_tot_65_jaar` | Inhabitants aged 45 up to 65 on 1 January; rounded to multiples of 5. |
+| `aantal_inwoners_65_jaar_en_ouder` | Inhabitants aged 65 or older on 1 January; rounded to multiples of 5. |
+| `aantal_geboorten` | Live births during the calendar year (1 January through 31 December); rounded to multiples of 5. |
+| `percentage_geb_nederland_herkomst_nederland` | Share of inhabitants born in the Netherlands with both parents born in the Netherlands; rounded to tens of percent. |
+| `percentage_geb_nederland_herkomst_overig_europa` | Share of inhabitants born in the Netherlands whose origin (parental birth country) is elsewhere in Europe; rounded to tens of percent. |
+| `percentage_geb_nederland_herkomst_buiten_europa` | Share of inhabitants born in the Netherlands whose origin (parental birth country) is outside Europe; rounded to tens of percent. |
+| `percentage_geb_buiten_nederland_herkomst_europa` | Share of inhabitants born abroad in another European country; rounded to tens of percent. |
+| `percentage_geb_buiten_nederland_herkmst_buiten_europa` | Share of inhabitants born outside Europe (Africa, Americas, Asia, Oceania); rounded to tens of percent. |
 
-### 3. Energy Consumption (~10 fields)
-
-| Field | Meaning |
-|-------|---------|
-| `gemiddeld_aardgasverbruik_totaal` | Avg. total gas consumption (m3) |
-| `gemiddeld_aardgasverbruik_appartement` | Avg. gas — apartments |
-| `gemiddeld_aardgasverbruik_tussenwoning` | Avg. gas — terraced houses |
-| `gemiddeld_aardgasverbruik_hoekwoning` | Avg. gas — corner houses |
-| `gemiddeld_aardgasverbruik_twee_onder_een_kap_woning` | Avg. gas — semi-detached |
-| `gemiddeld_aardgasverbruik_vrijstaande_woning` | Avg. gas — detached houses |
-| `gemiddeld_elektriciteitsverbruik_totaal` | Avg. total electricity (kWh) |
-| `gemiddeld_elektriciteitsverbruik_appartement` | Avg. electricity — apartments |
-
-### 4. Income (~5 fields)
+### 2. Households (6 fields)
 
 | Field | Meaning |
 |-------|---------|
-| `mediaan_inkomen_huishouden` | Median household income (x1000 EUR) |
-| `gemiddeld_inkomen_per_inkomensontvanger` | Avg. income per income recipient |
-| `percentage_huishoudens_met_laag_inkomen` | % low-income households |
-| `percentage_huishoudens_met_hoog_inkomen` | % high-income households |
+| `aantal_part_huishoudens` | Private households on 1 January (institutional households excluded); rounded to multiples of 5, -99997 if fewer than 5. |
+| `aantal_eenpersoonshuishoudens` | Private households consisting of one person, on 1 January. |
+| `aantal_meerpersoonshuishoudens_zonder_kind` | Multi-person private households without children (couples without children and other households), on 1 January. |
+| `aantal_eenouderhuishoudens` | Private households of one parent with children living at home, on 1 January. |
+| `aantal_tweeouderhuishoudens` | Private households of two parents with at least one child living at home, on 1 January. |
+| `gemiddelde_huishoudensgrootte` | Average household size: persons living in private households divided by the number of private households, on 1 January. |
 
-### 5. Social Security (~10 fields)
-
-| Field | Meaning |
-|-------|---------|
-| `percentage_personen_met_uitkering_onder_aowleeftijd` | % receiving benefits (under AOW age) |
-| `percentage_personen_met_ww_uitkering` | % receiving unemployment (WW) |
-| `percentage_personen_met_bijstandsuitkering` | % receiving social assistance |
-
-### 6. Facility Proximity (~80 fields)
-
-Distance to nearest facility and count within radius. There are 40+ facility types
-with metrics at 1km, 3km, 5km, 10km, and 20km radii.
-
-| Field Pattern | Meaning |
-|---------------|---------|
-| `afstand_tot_huisartsenpraktijk` | Distance to nearest GP practice (km) |
-| `afstand_tot_ziekenhuis_excl_buitenpoli` | Distance to nearest hospital (km) |
-| `afstand_tot_basisonderwijs` | Distance to nearest primary school (km) |
-| `afstand_tot_supermarkt` | Distance to nearest supermarket (km) |
-| `afstand_tot_oprit_hoofdverkeersweg` | Distance to nearest highway on-ramp (km) |
-| `afstand_tot_treinstation` | Distance to nearest train station (km) |
-| `aantal_huisartsenpraktijken_binnen_3_km` | GP practices within 3 km |
-| `aantal_supermarkten_binnen_3_km` | Supermarkets within 3 km |
-
-### General / Temporal Fields
+### 3. Housing (15 fields)
 
 | Field | Meaning |
 |-------|---------|
-| `postcode6` | 6-digit postcode (e.g. "1011AB") — primary identifier |
-| `jaarcode` | Reference year (e.g. 2024) |
-| `startdatum` / `einddatum` | Validity period |
-| `geom` | Postcode area polygon in EPSG:28992 |
+| `aantal_woningen` | Total dwellings on 1 January: BAG residence objects with a residential function; rounded to multiples of 5, -99997 if fewer than 5. |
+| `aantal_woningen_bouwjaar_voor_1945` | Dwellings with construction year before 1945, on 1 January. |
+| `aantal_woningen_bouwjaar_45_tot_65` | Dwellings with construction year 1945 up to 1965, on 1 January. |
+| `aantal_woningen_bouwjaar_65_tot_75` | Dwellings with construction year 1965 up to 1975, on 1 January. |
+| `aantal_woningen_bouwjaar_75_tot_85` | Dwellings with construction year 1975 up to 1985, on 1 January. |
+| `aantal_woningen_bouwjaar_85_tot_95` | Dwellings with construction year 1985 up to 1995, on 1 January. |
+| `aantal_woningen_bouwjaar_95_tot_05` | Dwellings with construction year 1995 up to 2005, on 1 January. |
+| `aantal_woningen_bouwjaar_05_tot_15` | Dwellings with construction year 2005 up to 2015, on 1 January. |
+| `aantal_woningen_bouwjaar_15_en_later` | Dwellings with construction year 2015 or later, on 1 January. |
+| `aantal_meergezins_woningen` | Multi-family dwellings: flats, gallery/porch flats, upstairs/downstairs units, apartments and dwellings above business premises, 1 January. |
+| `percentage_koopwoningen` | Share of dwellings owned by the (future) occupants or used as second homes; rounded to tens of percent; needs >=10 dwellings, <=50% unknown ownership. |
+| `percentage_huurwoningen` | Share of rental dwellings (not owner-occupied; vacant dwellings counted to the rental market); rounded to tens of percent, same thresholds as koop. |
+| `aantal_huurwoningen_in_bezit_woningcorporaties` | Rental dwellings owned by housing corporations (toegelaten instellingen volkshuisvesting); ownership status, not social-rent price level. |
+| `aantal_niet_bewoonde_woningen` | Dwellings with nobody registered in the population register (BRP) on reference date 1 January. |
+| `gemiddelde_woz_waarde_woning` | Average provisional WOZ value of dwellings with a known WOZ value, in 1,000 euro; values below 10,000 or above 5 million euro excluded (since 2022). |
+
+### 4. Energy (2 fields)
+
+| Field | Meaning |
+|-------|---------|
+| `gemiddeld_gasverbruik_woning` | Average annual natural gas consumption of private dwellings (m3), calendar year; rounded to multiples of 50, published at 6+ occupied dwellings. |
+| `gemiddeld_elektriciteitsverbruik_woning` | Average annual electricity use on individual connections of private dwellings (kWh); excl. collective use and own solar generation; rounded to 50s. |
+
+### 5. Social security (1 field)
+
+| Field | Meaning |
+|-------|---------|
+| `aantal_personen_met_uitkering_onder_aowlft` | Residents below AOW (state pension) age receiving unemployment (WW), social assistance or disability benefits on 1 January; each person counted once. |
+
+### 6. Facility proximity (92 fields)
+
+Average distance by road to the nearest facility, and average counts within
+1/3/5/10/20 km radii, computed over all residents ("berekend over de weg").
+Representative fields (all 92 are described in `collection.json`):
+
+| Field | Meaning |
+|-------|---------|
+| `dichtstbijzijnde_grote_supermarkt_afstand_in_km` | Average distance by road (km) for all residents to the nearest large supermarket (daily-goods shop of at least 150 m2). |
+| `grote_supermarkt_aantal_binnen_1_km` | Average number of large supermarkets (>=150 m2) within 1 km by road, averaged over all residents. |
+| `grote_supermarkt_aantal_binnen_3_km` | Average number of large supermarkets (>=150 m2) within 3 km by road, averaged over all residents. |
+| `grote_supermarkt_aantal_binnen_5_km` | Average number of large supermarkets (>=150 m2) within 5 km by road, averaged over all residents. |
+| `dichtstbijzijnde_winkels_ov_dagel_levensm_afst_in_km` | Average distance by road (km) for all residents to the nearest other shop for daily food (baker, butcher, greengrocer, delicatessen, mini-supermarket, etc.). |
+| `winkels_ov_dagel_levensm_aantal_binnen_1_km` | Average number of other daily-food shops within 1 km by road, averaged over all residents. |
+| `winkels_ov_dagel_levensm_aantal_binnen_3_km` | Average number of other daily-food shops within 3 km by road, averaged over all residents. |
+| `winkels_ov_dagel_levensm_aantal_binnen_5_km` | Average number of other daily-food shops within 5 km by road, averaged over all residents. |
+| `dichtstbijzijnde_warenhuis_afstand_in_km` | Average distance by road (km) for all residents to the nearest department store. |
+| `warenhuis_aantal_binnen_5_km` | Average number of department stores within 5 km by road, averaged over all residents. |
+
+### Identifier and technical fields
+
+| Field | Meaning |
+|-------|---------|
+| `postcode6` | Full 6-position Dutch postal code (4 digits + 2 letters) identifying the PC6 area the statistics describe. |
+| `fid` | Technical: sequential feature id added in the cloud-native conversion; not a CBS variable. |
+| `geom` | Technical: PC6 area polygon geometry (CBS source data in EPSG:28992 RD New); mirror geometry column, not a CBS statistical variable. |
+| `geom_bbox` | Technical: per-feature bounding box struct added in the GeoParquet conversion for spatial indexing; not a CBS variable. |
 
 ## Privacy Suppression
 
@@ -148,9 +159,8 @@ always filter out -99997 before computing averages or aggregations.
 ```sql
 -- Correct: exclude suppressed values
 SELECT AVG(aantal_inwoners)
-FROM read_parquet(URL)
-WHERE aantal_inwoners != -99997
-  AND jaarcode = 2024
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/postcode6.parquet')
+WHERE aantal_inwoners >= 0
 ```
 
 ## Geometry Notes
@@ -160,54 +170,47 @@ WHERE aantal_inwoners != -99997
 - Geometry type is **MultiPolygon**
 - To convert to WGS84 (lon/lat) for web mapping:
   ```sql
-  ST_Transform(geom, 'EPSG:28992', 'EPSG:4326')
+  ST_Transform(geom, 'EPSG:28992', 'EPSG:4326', always_xy := true)
   ```
 - Bounding box in WGS84: [3.37, 50.73, 7.24, 53.55] (all of Netherlands)
 
 ## Useful Query Patterns
 
-### Count postcodes per year
-
-```sql
-SELECT jaarcode, COUNT(*) AS postcodes
-FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/postcode6.parquet')
-GROUP BY jaarcode
-ORDER BY jaarcode
-```
-
-### Average household income by year (excluding suppressed)
-
-```sql
-SELECT jaarcode, AVG(CAST(mediaan_inkomen_huishouden AS DOUBLE)) AS avg_median_income
-FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/postcode6.parquet')
-WHERE mediaan_inkomen_huishouden != '-99997'
-GROUP BY jaarcode
-ORDER BY jaarcode
-```
-
-### Postcodes with highest population (latest year)
+### Postcodes with highest population
 
 ```sql
 SELECT postcode6, aantal_inwoners, aantal_woningen
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/postcode6.parquet')
-WHERE jaarcode = 2024
-  AND aantal_inwoners != -99997
+WHERE aantal_inwoners >= 0
 ORDER BY aantal_inwoners DESC
 LIMIT 20
 ```
 
-### Energy consumption comparison by dwelling type
+### Housing stock age profile
 
 ```sql
-SELECT
-    AVG(gemiddeld_aardgasverbruik_appartement) AS avg_gas_apartment,
-    AVG(gemiddeld_aardgasverbruik_vrijstaande_woning) AS avg_gas_detached,
-    AVG(gemiddeld_elektriciteitsverbruik_totaal) AS avg_elec_total
+-- Every count column carries its own sentinels, so filter per column,
+-- not only on the total.
+SELECT ROUND(100.0 * SUM(aantal_woningen_bouwjaar_voor_1945) / SUM(aantal_woningen), 1) AS pct_pre_1945,
+       ROUND(100.0 * SUM(aantal_woningen_bouwjaar_15_en_later) / SUM(aantal_woningen), 1) AS pct_2015_plus
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/postcode6.parquet')
-WHERE jaarcode = 2024
-  AND gemiddeld_aardgasverbruik_appartement != -99997
-  AND gemiddeld_aardgasverbruik_vrijstaande_woning != -99997
+WHERE aantal_woningen >= 0
+  AND aantal_woningen_bouwjaar_voor_1945 >= 0
+  AND aantal_woningen_bouwjaar_15_en_later >= 0
 ```
+
+### Rental share where published
+
+```sql
+SELECT postcode6, percentage_huurwoningen
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/postcode6.parquet')
+WHERE percentage_huurwoningen >= 0
+ORDER BY percentage_huurwoningen DESC
+LIMIT 20
+```
+
+The energy, WOZ and proximity variables hold -99995 throughout this edition
+(not yet published by CBS); queries on them return no rows with `>= 0` filters.
 
 ### Find postcodes near a specific location (bbox filter)
 
