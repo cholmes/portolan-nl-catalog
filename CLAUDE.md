@@ -73,16 +73,20 @@ All thumbnails are **WebP under 50 KB**. To regenerate after adding PNGs or JPEG
 python3 tools/catalog/make_thumbnails.py              # dry run
 python3 tools/catalog/make_thumbnails.py --confirm    # needs `brew install webp`
 ```
-Portolan 0.1 does not accept WebP thumbnails; that is a deliberate deviation, see
-`docs/phase3-baseline.md`. Encoding: `cwebp -q 80` at native resolution; above 48 KB it
+Portolan v0.3 accepts WebP thumbnails (upstreamed from this catalog via
+portolan-spec#121), so the old WebP deviation is closed. Encoding: `cwebp -q 80` at native resolution; above 48 KB it
 binary-searches the quality factor for the highest one still under 46 000 bytes. No resizing. (`cwebp -size` was tried
 first and abandoned — it overshot 50 KB on one thumbnail and, on another, swung from 29 KB at
-one pass to 59 KB at ten.) Measured over the catalog's 391 thumbnails: avg 35 KB,
-max 48 KB, total 14 MB.
+one pass to 59 KB at ten.) Measured over the catalog's 395 thumbnails: avg 35 KB,
+max 48 KB, total 13.5 MB.
 
 The selector is the thumbnail **role**, not the filename — this catalog spells its thumbnails
 three ways and one is a `.jpg`. The seven institution logos hang off `icon` links, carry no
 thumbnail role, and stay PNG.
+
+Of the 395 WebP files, 393 are thumbnail-role assets; the other two are the `rel:preview` links
+on the `vro/bodemkaart` and `vro/geomorfologische_kaart` subcatalogs, which `make_thumbnails.py`
+retargets and `test_thumbnails.py` counts as referenced.
 
 ## Tests (dependency-free; run with python3)
 ```
@@ -91,6 +95,7 @@ python3 tests/test_links.py        # every relative link resolves
 python3 tests/test_git_ext.py      # git extension fields on the root catalog
 python3 tests/test_thumbnails.py   # thumbnails are WebP and under 50 KB
 python3 tests/test_generators.py   # regenerating reproduces the committed catalog
+python3 tests/test_file_metadata.py # file:size/file:checksum match the committed files
 python3 tests/test_stac_valid.py   # per-file stac-check validation
 python3 tests/test_portolan_conformance.py   # Portolan 0.1 (+ spec PRs #97, #116)
 ```
@@ -105,25 +110,22 @@ Four generators read parquet and cannot run in CI; `bash tools/catalog/regen_che
 covers those against the working directory.
 
 ## Portolan conformance
-The catalog targets **Portolan 0.1 plus spec PRs
-[#97](https://github.com/portolan-sdi/portolan-spec/pull/97) and
-[#116](https://github.com/portolan-sdi/portolan-spec/pull/116)**, which were still
-open when this landed. No released `rashid` contains their companion rules, so build
-one:
+The catalog targets **Portolan v0.3.0**, checked by released **rashid >= 0.4.0**
+(`uv tool install rashid`). The purpose-built rashid and
+`tools/portolan/build_rashid.sh` are retired: every spec PR this catalog once
+tracked ahead of release (#97, #116, #120) is in the released spec.
 
 ```
-bash tools/portolan/build_rashid.sh
-RASHID=~/.local/share/portolan-nl/rashid-venv/bin/rashid python3 tests/test_portolan_conformance.py
+python3 tests/test_portolan_conformance.py
 ```
 
 Conformance fixes are applied by `tools/catalog/conform.py`, one registered fix per
 rashid rule, dry-run by default. Never hand-edit a conformance fix: the generators
 would undo it.
 
-Four rules are knowingly left open, including the thumbnail media type — Portolan
-allows only PNG and JPEG, and these thumbnails are WebP by design. Each is justified
-in [`docs/phase3-baseline.md`](./docs/phase3-baseline.md); `ACCEPTED` in the test must
-never grow without an entry there.
+No rules are left open under v0.3: `ACCEPTED` in the test is empty and must
+never grow without a justification in
+[`docs/phase3-baseline.md`](./docs/phase3-baseline.md).
 
 `test_links.py` checks `links` only, not `assets` — asset hrefs point at data files that are
 intentionally absent from the repo.
