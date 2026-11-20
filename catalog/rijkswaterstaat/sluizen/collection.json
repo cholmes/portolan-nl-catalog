@@ -172,7 +172,7 @@
   ],
   "geoparquet:geometry_type": "Point",
   "geoparquet:feature_count": 92,
-  "proj:epsg": 3857,
+  "proj:epsg": 4326,
   "pmtiles:min_zoom": 0,
   "pmtiles:max_zoom": 4,
   "pmtiles:tile_type": "mvt",
@@ -293,8 +293,8 @@
       ],
       "title": "Documentation",
       "description": "Human-readable documentation for Navigation Locks.",
-      "file:size": 2020,
-      "file:checksum": "1220ca775b10cfd023f59b7619d5cc317612768ff15a3ce7c74e4ebf3eb8e9d9ceef"
+      "file:size": 2104,
+      "file:checksum": "122033e21f235fd1e4180e61bfb51fb9ed05fa32740f007abf7ce2b44f2842148b14"
     }
   },
   "providers": [

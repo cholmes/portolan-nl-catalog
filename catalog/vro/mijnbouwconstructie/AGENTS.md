@@ -66,7 +66,7 @@ INSTALL spatial; LOAD spatial;
 SELECT bro_id
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/vro/mijnbouwconstructie/mijnbouwconstructie.parquet')
 WHERE ST_DWithin(
-    ST_GeomFromWKB(standardized_location),
+    standardized_location,
     ST_Point(5.12, 52.09),            -- lon, lat (transform if data is EPSG:28992)
     0.05);
 ```

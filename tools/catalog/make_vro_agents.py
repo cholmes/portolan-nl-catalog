@@ -250,7 +250,7 @@ INSTALL spatial; LOAD spatial;
 SELECT bro_id{', ' + cat if cat else ''}
 FROM read_parquet('{url}')
 WHERE ST_DWithin(
-    ST_GeomFromWKB({geomcol}),
+    {geomcol},
     ST_Point(5.12, 52.09),            -- lon, lat (transform if data is EPSG:28992)
     0.05);
 ```

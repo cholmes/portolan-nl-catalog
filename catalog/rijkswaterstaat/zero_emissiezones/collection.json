@@ -100,7 +100,7 @@
   ],
   "geoparquet:geometry_type": "MultiPolygon",
   "geoparquet:feature_count": 42,
-  "proj:epsg": 3857,
+  "proj:epsg": 4326,
   "pmtiles:min_zoom": 0,
   "pmtiles:max_zoom": 11,
   "pmtiles:tile_type": "mvt",
@@ -225,8 +225,8 @@
       ],
       "title": "Documentation",
       "description": "Human-readable documentation for Zero Emission Zones.",
-      "file:size": 1934,
-      "file:checksum": "1220a6c475f87f6d384cafe17a4371ba5cc8f7824dcd31bbcdbbf50a64af493d010f"
+      "file:size": 2028,
+      "file:checksum": "1220b3984105c491eb0885ba07a1c88ce4c1dc3d5237c1ccc49fd35097e7e35dc7db"
     }
   },
   "providers": [

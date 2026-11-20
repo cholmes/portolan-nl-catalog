@@ -152,7 +152,7 @@
   ],
   "geoparquet:geometry_type": "LineString",
   "geoparquet:feature_count": 238,
-  "proj:epsg": 3857,
+  "proj:epsg": 4326,
   "pmtiles:min_zoom": 0,
   "pmtiles:max_zoom": 13,
   "pmtiles:tile_type": "mvt",
@@ -273,8 +273,8 @@
       ],
       "title": "Documentation",
       "description": "Human-readable documentation for Primary Flood Defenses.",
-      "file:size": 2159,
-      "file:checksum": "1220dc853a7b1e330b7e69631cfe6e3c41dc63d9aa938ee455292e7e64afec230069"
+      "file:size": 2249,
+      "file:checksum": "1220d235ff24959f0cfde728c79f342b2f3a59e138481ffbee72f32d68a39db04a6b"
     },
     "thumbnail.png": {
       "href": "./thumbnail.webp",

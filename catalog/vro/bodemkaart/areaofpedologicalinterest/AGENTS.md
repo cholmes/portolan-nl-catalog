@@ -60,7 +60,7 @@ INSTALL spatial; LOAD spatial;
 SELECT bro_id
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/areaofpedologicalinterest/areaofpedologicalinterest.parquet')
 WHERE ST_DWithin(
-    ST_GeomFromWKB(geom),
+    geom,
     ST_Point(5.12, 52.09),            -- lon, lat (transform if data is EPSG:28992)
     0.05);
 ```

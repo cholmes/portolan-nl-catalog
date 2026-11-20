@@ -93,15 +93,12 @@ INSTALL spatial; LOAD spatial;
 
 SELECT Naam, Soort, Startdatum, Einddatum
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/zero_emissiezones/zero_emissiezones.parquet')
-WHERE ST_Intersects(
-    ST_GeomFromWKB(geometry),
-    ST_Transform(ST_Point(4.9003, 52.3676), 'EPSG:4326', 'EPSG:28992')
-)
+WHERE ST_Intersects(geometry, ST_Point(4.9003, 52.3676))
 ```
 
 ## Geometry Notes
 
-- CRS is **EPSG:28992** (Amersfoort / RD New). Coordinates are in metres.
+- CRS is **WGS84** (EPSG:4326). Coordinates are lon/lat degrees; use ST_Distance_Sphere for metres.
 - All geometries are MultiPolygon.
 - Reproject to EPSG:4326 for web maps.
 

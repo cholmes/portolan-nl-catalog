@@ -132,7 +132,7 @@
   ],
   "geoparquet:geometry_type": "MultiPolygon",
   "geoparquet:feature_count": 1545,
-  "proj:epsg": 3857,
+  "proj:epsg": 4326,
   "pmtiles:min_zoom": 0,
   "pmtiles:max_zoom": 13,
   "pmtiles:tile_type": "mvt",
@@ -255,8 +255,8 @@
       ],
       "title": "Documentation",
       "description": "Human-readable documentation for Flood Retention Areas.",
-      "file:size": 2105,
-      "file:checksum": "12209db66c6847c5bcccf7ba10e57c9330eb0deafac523dd3749b9a37458004ba3ff"
+      "file:size": 2198,
+      "file:checksum": "1220075f36ad7904d1667e7a2b50fb73a1b2ee351d55a75b506dc24f5b4c2faa9697"
     }
   },
   "providers": [

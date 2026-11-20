@@ -23,7 +23,7 @@ Digital geometry of land use in the Netherlands (2017). Covers all functional la
 
 ```python
 import geopandas as gpd
-gdf = gpd.read_parquet('bestand_bodemgebruik_2017.parquet')
+gdf = gpd.read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/bestand_bodemgebruik_2017/bestand_bodemgebruik_2017.parquet')
 print(gdf[['bodemgebruik', 'categorie']].value_counts().head(20))
 ```
 

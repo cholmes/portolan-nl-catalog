@@ -26,7 +26,7 @@ Designated flood retention areas (bergingsgebieden) across the Netherlands, wher
 | url | string | Reference URL |
 | Shape__Area | double | Area in m² |
 | Shape__Length | double | Perimeter in m |
-| geometry | binary | MultiPolygon in EPSG:28992 (RD New), WKB encoded |
+| geometry | binary | MultiPolygon in WGS84 (EPSG:4326, lon/lat degrees), WKB encoded |
 
 ## Files
 
@@ -39,7 +39,7 @@ Designated flood retention areas (bergingsgebieden) across the Netherlands, wher
 
 ```python
 import geopandas as gpd
-gdf = gpd.read_parquet('bergingsgebieden.parquet')
+gdf = gpd.read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/bergingsgebieden/bergingsgebieden.parquet')
 ```
 
 ## STAC Metadata

@@ -94,7 +94,7 @@ df = con.execute(f"""
 ```
 
 This is the **primary entry point for cross-year analysis** — see the partitioning section
-of [portolan-spec / formats/vector.md](https://github.com/portolan-sdi/portolan-spec/blob/main/formats/vector.md).
+of [portolan-spec / specs/portolan/formats.md](https://github.com/portolan-sdi/portolan-spec/blob/main/specs/portolan/formats.md).
 
 ## Schema — Field Meanings
 

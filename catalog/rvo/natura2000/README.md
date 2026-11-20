@@ -39,7 +39,7 @@ Natura 2000 areas carry the strongest nature protection in Dutch law — any pla
 
 ```python
 import geopandas as gpd
-gdf = gpd.read_parquet('natura2000.parquet')
+gdf = gpd.read_parquet('https://data.source.coop/cholmes/portolan-nl/rvo/natura2000/natura2000.parquet')
 birds = gdf[gdf['vhn_new'].isin([1, 3])]  # Areas under Birds Directive
 ```
 

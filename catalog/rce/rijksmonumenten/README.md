@@ -36,7 +36,7 @@ Point locations of all 63,073 nationally listed monuments (rijksmonumenten) in t
 
 ```python
 import geopandas as gpd
-gdf = gpd.read_parquet('rijksmonumenten.parquet')
+gdf = gpd.read_parquet('https://data.source.coop/cholmes/portolan-nl/rce/rijksmonumenten/rijksmonumenten.parquet')
 castles = gdf[gdf['hoofdcateg'] == 'Kastelen, landhuizen en buitenplaatsen']
 ```
 

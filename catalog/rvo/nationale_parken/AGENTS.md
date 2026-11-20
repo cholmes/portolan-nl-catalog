@@ -131,8 +131,8 @@ FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rvo/nationale_pa
 INSTALL spatial; LOAD spatial;
 
 SELECT naam,
-       ST_X(ST_Centroid(ST_Transform(ST_GeomFromWKB(geometry), 'EPSG:28992', 'EPSG:4326'))) AS lon,
-       ST_Y(ST_Centroid(ST_Transform(ST_GeomFromWKB(geometry), 'EPSG:28992', 'EPSG:4326'))) AS lat
+       ST_X(ST_Centroid(ST_Transform(geometry, 'EPSG:28992', 'EPSG:4326'))) AS lon,
+       ST_Y(ST_Centroid(ST_Transform(geometry, 'EPSG:28992', 'EPSG:4326'))) AS lat
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rvo/nationale_parken/nationale_parken.parquet')
 ```
 

@@ -39,7 +39,7 @@ df = con.execute(f"""
 ```
 
 **Important:** The geometry is in EPSG:28992 (metres), not WGS84. For lat/lon coordinates,
-transform with `ST_Transform(ST_GeomFromWKB(geom), 'EPSG:28992', 'EPSG:4326')` in DuckDB.
+transform with `ST_Transform(geom, 'EPSG:28992', 'EPSG:4326', always_xy := true)` in DuckDB.
 
 ## Schema — Field Meanings (Dutch to English)
 
@@ -235,8 +235,8 @@ INSTALL spatial; LOAD spatial;
 SELECT stt_naam, wpsnaam, wgtype_oms, st_lengthshape
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/nwb_wegen/nwb_wegen.parquet')
 WHERE ST_Distance(
-    ST_GeomFromWKB(geom),
-    ST_Transform(ST_Point(4.9003, 52.3792), 'EPSG:4326', 'EPSG:28992')
+    geom,
+    ST_Transform(ST_Point(4.9003, 52.3792), 'EPSG:4326', 'EPSG:28992', always_xy := true)
 ) < 500
 ```
 

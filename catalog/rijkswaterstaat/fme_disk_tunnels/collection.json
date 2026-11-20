@@ -106,7 +106,7 @@
       "href": "./styles/default.json"
     }
   ],
-  "proj:epsg": 3857,
+  "proj:epsg": 4326,
   "pmtiles:min_zoom": 0,
   "pmtiles:max_zoom": 3,
   "pmtiles:tile_type": "mvt",
@@ -249,8 +249,8 @@
       ],
       "title": "Documentation",
       "description": "Human-readable documentation for Rijkswaterstaat Tunnels.",
-      "file:size": 2133,
-      "file:checksum": "12202c5f712b37c70a99ef6b996338b4686e05f06798d7338911804d67df92dd0d3b"
+      "file:size": 2183,
+      "file:checksum": "12209a925a9dd738e947260345b6914d0ba4b54d2864e2f0814814e13265b67ecc7b"
     }
   },
   "providers": [

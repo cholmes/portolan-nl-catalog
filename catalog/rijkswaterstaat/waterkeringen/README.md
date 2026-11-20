@@ -24,7 +24,7 @@ Primary water barriers (primaire keringen) across the Netherlands — 238 dike s
 | WET_JN | string | Under Water Act (Ja/Nee) |
 | VERSIE | string | Version |
 | Shape__Length | double | Section length in metres |
-| geometry | binary | LineString in EPSG:28992 (RD New), WKB encoded |
+| geometry | binary | LineString in WGS84 (EPSG:4326, lon/lat degrees), WKB encoded |
 
 ## Files
 
@@ -37,7 +37,7 @@ Primary water barriers (primaire keringen) across the Netherlands — 238 dike s
 
 ```python
 import geopandas as gpd
-gdf = gpd.read_parquet('waterkeringen.parquet')
+gdf = gpd.read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/waterkeringen/waterkeringen.parquet')
 ```
 
 ## STAC Metadata

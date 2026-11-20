@@ -86,7 +86,7 @@
       "href": "./styles/default.json"
     }
   ],
-  "proj:epsg": 3857,
+  "proj:epsg": 4326,
   "pmtiles:min_zoom": 0,
   "pmtiles:max_zoom": 12,
   "pmtiles:tile_type": "mvt",
@@ -207,8 +207,8 @@
       ],
       "title": "Documentation",
       "description": "Human-readable documentation for Water Depth Charts — Rhine Branches.",
-      "file:size": 2189,
-      "file:checksum": "1220ee2f92c978f838a836d47c5c46c679cf9ebb1ec76f8f34e1a186d39dff3e06c2"
+      "file:size": 2239,
+      "file:checksum": "12207b50f91b345fb7666da828c1578c31381af1152328f8ad266fa6babf8fa05d59"
     }
   },
   "providers": [

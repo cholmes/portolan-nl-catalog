@@ -26,7 +26,7 @@ Locations of 92 navigation locks (sluizen) on the Dutch recreational waterway ne
 | TEL_NR | string | Phone number |
 | VRT_CODE | string | Waterway route code |
 | VRTNAAM | string | Waterway route name |
-| geometry | binary | Point in EPSG:28992 (RD New), WKB encoded |
+| geometry | binary | Point in WGS84 (EPSG:4326, lon/lat degrees), WKB encoded |
 
 ## Files
 
@@ -39,7 +39,7 @@ Locations of 92 navigation locks (sluizen) on the Dutch recreational waterway ne
 
 ```python
 import geopandas as gpd
-gdf = gpd.read_parquet('sluizen.parquet')
+gdf = gpd.read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/sluizen/sluizen.parquet')
 ```
 
 ## STAC Metadata

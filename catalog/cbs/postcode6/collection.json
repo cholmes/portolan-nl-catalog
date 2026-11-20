@@ -718,8 +718,8 @@
       ],
       "title": "Documentation",
       "description": "Human-readable documentation for CBS Postcode6 (Statistics per Postcode).",
-      "file:size": 2614,
-      "file:checksum": "12206ae594401aee477a0703a29638632677b317c080eddcdc25001875e064bff6cc"
+      "file:size": 2673,
+      "file:checksum": "1220b32efea68eaaa409f2689e0ecba66b71e8f49587f9d881b49c034b72e17264a7"
     },
     "metadata": {
       "href": "./postcode6.parquet.aux.xml",
