@@ -49,11 +49,12 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "table:row_count": 3112,
   "table:primary_geometry": "geometry",
@@ -156,11 +157,14 @@
   "assets": {
     "data": {
       "href": "./hectometervakken_vaargeul.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Hectometer fairway sections",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "Water Depth Charts — Rhine Branches as cloud-native GeoParquet.",
+      "file:size": 678726,
+      "file:checksum": "1220700751c26d16c5a294e559a0c6fec32d637b35d3b7e6164961baf4bf7bb4b0c7"
     },
     "pmtiles": {
       "href": "./hectometervakken_vaargeul.pmtiles",
@@ -168,14 +172,21 @@
       "title": "Hectometer fairway sections (vector tiles)",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "PMTiles vector tiles of Water Depth Charts — Rhine Branches for web-map display.",
+      "file:size": 755268,
+      "file:checksum": "1220b73d216d164adf3876fbd017f44fa646d047b5ced939c23243a668fce861a8d9"
     },
     "thumbnail": {
       "href": "./thumbnail_.webp",
       "type": "image/webp",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "title": "Thumbnail",
+      "description": "WebP preview rendering of Water Depth Charts — Rhine Branches for catalog browsing.",
+      "file:size": 21826,
+      "file:checksum": "1220ae403c060c50f1a2febebb4524465f3fcad0286b4513c8cb71f946ebf822aa31"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -183,21 +194,21 @@
       "title": "Fairway Sections — Default",
       "roles": [
         "style"
-      ]
-    },
-    "hectometervakken_vaargeul": {
-      "href": "./hectometervakken_vaargeul.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "roles": [
-        "data"
-      ]
+      ],
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
+      "file:size": 649,
+      "file:checksum": "1220af857c3f1a492aa59eabcc7840777f377ae7cec485cb7691bd9690552336fd03"
     },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",
       "roles": [
         "documentation"
-      ]
+      ],
+      "title": "Documentation",
+      "description": "Human-readable documentation for Water Depth Charts — Rhine Branches.",
+      "file:size": 2189,
+      "file:checksum": "1220ee2f92c978f838a836d47c5c46c679cf9ebb1ec76f8f34e1a186d39dff3e06c2"
     }
   },
   "providers": [

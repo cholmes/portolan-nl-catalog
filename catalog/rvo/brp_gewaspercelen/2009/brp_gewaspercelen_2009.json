@@ -2,6 +2,7 @@
   "type": "Feature",
   "stac_version": "1.1.0",
   "stac_extensions": [
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
@@ -124,6 +125,7 @@
       "href": "./brp_gewaspercelen_2009.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "BRP Gewaspercelen 2009 (vector tiles)",
+      "description": "PMTiles vector tiles of the 2009 BRP edition for web-map display.",
       "roles": [
         "visual"
       ]
@@ -135,7 +137,9 @@
       "description": "Agricultural landscape — green for grassland, yellow for arable. Points at ./brp_gewaspercelen_2009.pmtiles. Generated from the canonical base style in ../styles/ via ../scripts/regen_year_styles.py.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1109,
+      "file:checksum": "12200ae4f92c45217c25b9f28b72f544be5e5f08357197fd8720ef462a467f8d4c12"
     },
     "styles/by-category": {
       "href": "./styles/by-category.json",
@@ -144,7 +148,9 @@
       "description": "Distinct colors for each broad crop category. Points at ./brp_gewaspercelen_2009.pmtiles. Generated from the canonical base style in ../styles/ via ../scripts/regen_year_styles.py.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1108,
+      "file:checksum": "1220e0c08a4ca5e11bba042ac3f7e9b1dacc9672c72b7a9608476491df18e669efef"
     },
     "styles/by-crop": {
       "href": "./styles/by-crop.json",
@@ -153,7 +159,9 @@
       "description": "Individual colors for the most common specific crops. Points at ./brp_gewaspercelen_2009.pmtiles. Generated from the canonical base style in ../styles/ via ../scripts/regen_year_styles.py.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 2125,
+      "file:checksum": "1220d5dfa8e66e4f4c6e6c6a1e50ba118a7e07073538fc1d36967e527fce5b2e58de"
     },
     "styles/landscape-elements": {
       "href": "./styles/landscape-elements.json",
@@ -162,7 +170,9 @@
       "description": "Highlights ditches, hedgerows, tree rows, and ponds. Points at ./brp_gewaspercelen_2009.pmtiles. Generated from the canonical base style in ../styles/ via ../scripts/regen_year_styles.py.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 2151,
+      "file:checksum": "12202147a11774cfd483661aff239e9590d26e67902d08ef873030a15160171611b5"
     }
   },
   "links": [

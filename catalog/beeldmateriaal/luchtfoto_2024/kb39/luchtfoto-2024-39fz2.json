@@ -3,7 +3,8 @@
   "stac_version": "1.1.0",
   "stac_extensions": [
     "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "id": "luchtfoto-2024-39fz2",
   "geometry": {
@@ -116,7 +117,8 @@
       "roles": [
         "data",
         "visual"
-      ]
+      ],
+      "file:size": 91918435
     },
     "thumbnail": {
       "href": "./luchtfoto-2024-39fz2-thumbnail.webp",
@@ -124,7 +126,10 @@
       "title": "Thumbnail",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "description": "WebP preview rendering of luchtfoto-2024-39fz2 for catalog browsing.",
+      "file:size": 45266,
+      "file:checksum": "1220a98e88d5afa5fa2cad4c2a771c5b2d84f7c16d53e48444fd4aef3cfad7a1d689"
     }
   },
   "collection": "luchtfoto_2024"

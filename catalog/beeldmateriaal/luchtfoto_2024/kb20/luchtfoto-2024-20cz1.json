@@ -3,7 +3,8 @@
   "stac_version": "1.1.0",
   "stac_extensions": [
     "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "id": "luchtfoto-2024-20cz1",
   "geometry": {
@@ -116,7 +117,8 @@
       "roles": [
         "data",
         "visual"
-      ]
+      ],
+      "file:size": 12703885
     },
     "thumbnail": {
       "href": "./luchtfoto-2024-20cz1-thumbnail.webp",
@@ -124,7 +126,10 @@
       "title": "Thumbnail",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "description": "WebP preview rendering of luchtfoto-2024-20cz1 for catalog browsing.",
+      "file:size": 644,
+      "file:checksum": "1220403bbedf700a557f8272f881961bb8c6081b3ec1bbdb2a9c74503cb7e2f463cd"
     }
   },
   "collection": "luchtfoto_2024"

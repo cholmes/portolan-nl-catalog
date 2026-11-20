@@ -29,6 +29,12 @@
       "title": "PDOK WMS (GetCapabilities)"
     },
     {
+      "rel": "via",
+      "href": "https://www.pdok.nl/introductie/-/article/bro-geomorfologische-kaart-gmm-",
+      "type": "text/html",
+      "title": "PDOK dataset page: BRO Geomorfologische kaart (GMM)"
+    },
+    {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/geomorphological_area/geomorphological_area.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -49,7 +55,8 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
@@ -246,50 +253,66 @@
       "href": "./geomorphological_area.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) (GeoParquet)",
+      "description": "BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) as cloud-native GeoParquet.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 63309631
     },
     "pmtiles": {
       "href": "./geomorphological_area.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) (vector tiles)",
+      "description": "PMTiles vector tiles of BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) for web-map display.",
       "roles": [
         "visual"
-      ]
+      ],
+      "file:size": 71995120
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
       "type": "image/webp",
       "title": "Thumbnail (PDOK preview)",
+      "description": "WebP preview rendering of BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) for catalog browsing.",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "file:size": 9914,
+      "file:checksum": "122050ce4425c7d7147efafe426c2c1ec38e74ff61504072d84d9fc94ba65e340c52"
     },
     "styles/by-landform": {
       "href": "./styles/by-landform.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) — By landform subgroup",
+      "description": "MapLibre style 'by-landform' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1308,
+      "file:checksum": "122037cac1946d2f0b9efe6bf435608ac92721d0ea61edce02785f295c35bb4e869a"
     },
     "styles/by-relief": {
       "href": "./styles/by-relief.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) — By relief class",
+      "description": "MapLibre style 'by-relief' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1100,
+      "file:checksum": "1220ae8d9400011f8c6c56d8da1fca0f9fba1ba377e9b0522ffd887c0a0b7901655a"
     },
     "styles/default": {
       "href": "./styles/default.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM) — Default",
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
       "roles": [
         "style",
         "default"
-      ]
+      ],
+      "file:size": 1203,
+      "file:checksum": "1220e0bac0c908d5151bae8a691fe18acea1cefdfad08df70fe837fa026693481418"
     }
   },
   "license": "CC0-1.0",

@@ -51,6 +51,8 @@ SHARED_COLS = {
 # key = path under vro/ ; fields drive titles, descriptions, source links, columns
 C = {
     "wandonderzoek": dict(
+        landing=("https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/6cbbecc1-753b-416d-ad72-1621695ec356",
+                 "NGR metadata page: BRO Wandonderzoek bodemkunde (SFR)"),
         title="BRO Soil Trench Investigation (SFR / Wandonderzoek)",
         layer="wandonderzoek", slug="bro-wandonderzoek", maxzoom=6,
         short="2,806 soil-profile pit/trench investigations (wandonderzoek, SFR) from the Dutch "
@@ -62,6 +64,8 @@ C = {
               "fieldwork_date": "Date of fieldwork (YYYY-MM-DD, free text).",
               "litter_layer_investigated": "Whether the litter layer was investigated (ja/nee)."}),
     "mijnbouwconstructie": dict(
+        landing=("https://www.pdok.nl/introductie/-/article/bro-mijnbouwconstructie-epc-",
+                 "PDOK dataset page: BRO Mijnbouwconstructie (EPC)"),
         title="BRO Mining Construction (EPC / Mijnbouwconstructie)",
         layer="mijnbouwconstructie", slug="bro-mijnbouwconstructie", maxzoom=11,
         short="4,975 mining-law subsurface constructions (mijnbouwconstructie, EPC) from the BRO — "
@@ -71,6 +75,8 @@ C = {
               "owner": "Owner / operator of the mining construction.",
               "source_reference": "Reference to the source document."}),
     "bodemverontreiniging_besluit": dict(
+        landing=("https://www.pdok.nl/introductie/-/article/bro-overheidsbesluit-bodemverontreiniging-sld-",
+                 "PDOK dataset page: BRO Overheidsbesluit bodemverontreiniging (SLD)"),
         title="BRO Government Decision on Soil Contamination (SLD)",
         layer="bodemverontreiniging_besluit", slug="bro-overheidsbesluit-bodemverontreiniging", maxzoom=13,
         short="121 formal government decisions on soil contamination (overheidsbesluit "
@@ -78,6 +84,8 @@ C = {
               "assessment, remediation or aftercare. Produced under VRO; bronhouder TNO.",
         cols={}),
     "grondwatergebruiksysteem": dict(
+        landing=("https://www.pdok.nl/introductie/-/article/bro-grondwatergebruiksysteem-guf-",
+                 "PDOK dataset page: BRO Grondwatergebruiksysteem (GUF)"),
         title="BRO Groundwater Use System (GUF / Grondwatergebruiksysteem)",
         layer="grondwatergebruiksysteem", slug="bro-grondwatergebruiksysteem", maxzoom=12,
         short="50,637 groundwater use systems (grondwatergebruiksysteem, GUF) from the BRO — "
@@ -85,6 +93,8 @@ C = {
               "energy (ATES/bodemenergie). Produced under VRO; bronhouder TNO.",
         cols={}),
     "bodemkaart/soilarea": dict(
+        landing=("https://www.pdok.nl/introductie/-/article/bro-bodemkaart-sgm-",
+                 "PDOK dataset page: BRO Bodemkaart (SGM)"),
         title="BRO Soil Map of the Netherlands 1:50,000 — Soil areas (SGM)",
         layer="soilarea", slug="bro-bodemkaart", maxzoom=12, crs=28992,
         short="48,025 soil-area polygons of the national Soil Map of the Netherlands 1:50,000 "
@@ -98,6 +108,8 @@ C = {
               "bodemklasse": "Full soil classification text of the primary soil unit.",
               "legenda_url": "URL to the official soil-class legend entry."}),
     "bodemkaart/areaofpedologicalinterest": dict(
+        landing=("https://www.pdok.nl/introductie/-/article/bro-bodemkaart-sgm-",
+                 "PDOK dataset page: BRO Bodemkaart (SGM)"),
         title="BRO Soil Map — Area of pedological interest",
         layer="areaofpedologicalinterest", slug="bro-bodemkaart", maxzoom=12, crs=28992,
         short="6,192 polygons delimiting the area of pedological interest of the national Soil Map "
@@ -105,6 +117,8 @@ C = {
               "bronhouder Wageningen Environmental Research.",
         cols={}),
     "geomorfologische_kaart/geomorphological_area": dict(
+        landing=("https://www.pdok.nl/introductie/-/article/bro-geomorfologische-kaart-gmm-",
+                 "PDOK dataset page: BRO Geomorfologische kaart (GMM)"),
         title="BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM)",
         layer="geomorphological_area", slug="bro-geomorfologische-kaart", maxzoom=12, crs=28992,
         short="80,148 landform polygons of the national Geomorphological Map of the Netherlands "
@@ -121,6 +135,8 @@ C = {
               "additional_surface_relief_code": "Additional surface relief code (optional).",
               "additional_surface_cover_code": "Additional surface cover code (optional)."}),
     "geomorfologische_kaart/area_of_geomorphological_interest": dict(
+        landing=("https://www.pdok.nl/introductie/-/article/bro-geomorfologische-kaart-gmm-",
+                 "PDOK dataset page: BRO Geomorfologische kaart (GMM)"),
         title="BRO Geomorphological Map — Area of geomorphological interest",
         layer="area_of_geomorphological_interest", slug="bro-geomorfologische-kaart", maxzoom=12, crs=28992,
         short="40,840 polygons delimiting the area of geomorphological interest of the national "
@@ -128,6 +144,8 @@ C = {
               "Environmental Research.",
         cols={}),
     "geomorfologische_kaart/geomorphological_area_collection": dict(
+        landing=("https://www.pdok.nl/introductie/-/article/bro-geomorfologische-kaart-gmm-",
+                 "PDOK dataset page: BRO Geomorfologische kaart (GMM)"),
         title="BRO Geomorphological Map — Map area collections",
         layer="geomorphological_area_collection", slug="bro-geomorfologische-kaart", maxzoom=12, crs=28992,
         short="70 map-area collection polygons grouping the national Geomorphological Map 1:50,000 "
@@ -181,11 +199,19 @@ def build(path, cfg):
     order = []
     assets = {
         layer: stac.asset(f"./{layer}.parquet", "application/vnd.apache.parquet",
-                          f"{cfg['title']} (GeoParquet)", ["data"]),
+                          f"{cfg['title']} (GeoParquet)", ["data"],
+                          description=f"{cfg['title']} as cloud-native GeoParquet."),
         "pmtiles": stac.asset(pmtiles, "application/vnd.pmtiles",
-                              f"{cfg['title']} (vector tiles)", ["visual"]),
-        "thumbnail": stac.thumbnail_asset(),
+                              f"{cfg['title']} (vector tiles)", ["visual"],
+                              description=f"PMTiles vector tiles of {cfg['title']}"
+                                          " for web-map display."),
+        "thumbnail": stac.thumbnail_asset(
+            description=f"WebP preview rendering of {cfg['title']}"
+                        " for catalog browsing."),
     }
+    # file:size / file:checksum for the files the repo itself publishes
+    # (PTL-AST-003). Data files live on S3 and are not hashed here.
+    assets["thumbnail"].update(stac.file_meta(os.path.join(cdir, "thumbnail.webp")))
     multi_style = len(style_files) > 1
     for sf in style_files:
         nm = os.path.splitext(os.path.basename(sf))[0]
@@ -195,7 +221,10 @@ def build(path, cfg):
         roles = ["style", "default"] if (multi_style and nm == "default") else ["style"]
         assets[key] = stac.style_asset(f"./styles/{nm}.json",
                                        f"{cfg['title']} — {STYLE_TITLES.get(nm, nm)}",
-                                       roles)
+                                       roles,
+                                       description=f"MapLibre style '{nm}' for the"
+                                                   " PMTiles visual asset.")
+        assets[key].update(stac.file_meta(sf))
     # default first in manifest
     names = [os.path.splitext(os.path.basename(s))[0] for s in style_files]
     names = (["default"] if "default" in names else []) + [x for x in names if x != "default"]
@@ -203,6 +232,7 @@ def build(path, cfg):
 
     atom = f"https://service.pdok.nl/tno/{cfg['slug']}/atom/index.xml"
     wms = f"https://service.pdok.nl/tno/{cfg['slug']}/wms/v1_0?request=GetCapabilities&service=WMS"
+    landing_url, landing_title = cfg["landing"]
 
     coll = {
         "type": "Collection", "id": layer, "stac_version": "1.1.0",
@@ -215,6 +245,9 @@ def build(path, cfg):
             stac.link("via", atom, "application/atom+xml",
                       "PDOK Atom download (source GeoPackage)"),
             stac.link("via", wms, "application/xml", "PDOK WMS (GetCapabilities)"),
+            # PORTO-CORE-053/-084: at least one via link is the source's own
+            # HTML page; the service links above keep their real media types.
+            stac.link("via", landing_url, "text/html", landing_title),
             # web-map-links: the extension is declared below, and declaring it
             # without a web-map link is a validation error. Every sibling
             # collection in the catalog carries this link.
@@ -225,6 +258,7 @@ def build(path, cfg):
         ],
         "stac_extensions": [
             stac.PORTOLAN_SCHEMA,
+            stac.FILE_SCHEMA,
             "https://stac-extensions.github.io/table/v1.2.0/schema.json",
             "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
             "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
@@ -252,6 +286,17 @@ def build(path, cfg):
         prev = json.load(open(out))
         if "updated" in prev:
             coll["updated"] = prev["updated"]
+        # file:size/file:checksum of the published data files are measured
+        # against S3 (see the v0.3 upgrade PR), not derivable from the
+        # working directory, so they carry forward like 'updated' -- but only
+        # while the asset still points at the same file.
+        for key, a in coll["assets"].items():
+            pa = (prev.get("assets") or {}).get(key)
+            if isinstance(pa, dict) and pa.get("href") == a.get("href") \
+                    and "file:size" not in a:
+                for fk in ("file:size", "file:checksum"):
+                    if fk in pa:
+                        a[fk] = pa[fk]
     stac.write_json(out, coll)
     print(f"  {out}  ({gtype}, {n} feats, EPSG:{epsg}, {len(order)} styles)")
 

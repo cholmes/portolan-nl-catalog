@@ -50,11 +50,12 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "table:row_count": 355,
   "table:primary_geometry": "geometry",
@@ -142,30 +143,35 @@
   "assets": {
     "gemeentegebied": {
       "href": "./gemeentegebied.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Municipalities (Gemeenten)",
       "description": "342 municipal boundaries in EPSG:28992.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 8163901
     },
     "provinciegebied": {
       "href": "./provinciegebied.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Provinces (Provincies)",
       "description": "12 provincial boundaries in EPSG:28992.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 1647247,
+      "file:checksum": "12205c50f78bf884338b931610393855bc89059c33bae2a47471f0ad88b89a1aa78c"
     },
     "landgebied": {
       "href": "./landgebied.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "National Territory (Landgebied)",
       "description": "1 national territory boundary in EPSG:28992.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 435243,
+      "file:checksum": "1220bd676f1df06affe5baab07b76de8f2250f3ad3b29b5a2ad62203bae5a1fe4fc1"
     },
     "pmtiles": {
       "href": "./bestuurlijke_gebieden.pmtiles",
@@ -174,7 +180,9 @@
       "description": "Municipality boundaries as vector tiles for web visualization.",
       "roles": [
         "visual"
-      ]
+      ],
+      "file:size": 1705191,
+      "file:checksum": "1220fa3f427d7c80b5c664ebc2179a00cc037fce86c6e2382e934f4c45bf4b715cda"
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
@@ -182,7 +190,10 @@
       "title": "Thumbnail",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "description": "WebP preview rendering of Administrative Areas (Bestuurlijke Gebieden) for catalog browsing.",
+      "file:size": 45628,
+      "file:checksum": "12203703f42eb55950c35c87fa30802194b74de80b6ad3d0e35c4521e372f51cb8d7"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -190,7 +201,10 @@
       "title": "Administrative Areas — Default",
       "roles": [
         "style"
-      ]
+      ],
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
+      "file:size": 1021,
+      "file:checksum": "1220dcbbb12fc31aade739a125fa12d16d28063487b092b243e04c8a22f7f8236a2f"
     }
   },
   "license": "CC-BY-4.0",

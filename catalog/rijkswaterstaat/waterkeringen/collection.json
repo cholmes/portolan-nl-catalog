@@ -49,11 +49,12 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "table:row_count": 476,
   "table:primary_geometry": "geometry",
@@ -222,11 +223,14 @@
   "assets": {
     "data": {
       "href": "./waterkeringen.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Primary flood defenses",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "Primary Flood Defenses as cloud-native GeoParquet.",
+      "file:size": 4069926,
+      "file:checksum": "1220b89a92a8752869a3c79a3d1310a07565a8356a76fcc060af7d5bec782deda9f3"
     },
     "pmtiles": {
       "href": "./waterkeringen.pmtiles",
@@ -234,14 +238,21 @@
       "title": "Primary flood defenses (vector tiles)",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "PMTiles vector tiles of Primary Flood Defenses for web-map display.",
+      "file:size": 1280986,
+      "file:checksum": "1220f6abc0659327dcde042dde5381e759895f653be81200015c77c7c67a2f0b3778"
     },
     "thumbnail": {
       "href": "./thumbnail_.webp",
       "type": "image/webp",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "title": "Thumbnail",
+      "description": "WebP preview rendering of Primary Flood Defenses for catalog browsing.",
+      "file:size": 30898,
+      "file:checksum": "1220c8c4eb11dffef09c9c0664a890734da3ca0309a8cb792f2fb2dc8178426fa910"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -249,28 +260,32 @@
       "title": "Flood Defenses — Default",
       "roles": [
         "style"
-      ]
-    },
-    "waterkeringen": {
-      "href": "./waterkeringen.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "roles": [
-        "data"
-      ]
+      ],
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
+      "file:size": 449,
+      "file:checksum": "12202d5eb70db488b134f8337ff6ce3d193a1b07aea860970aea5348bc3d57b25639"
     },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",
       "roles": [
         "documentation"
-      ]
+      ],
+      "title": "Documentation",
+      "description": "Human-readable documentation for Primary Flood Defenses.",
+      "file:size": 2159,
+      "file:checksum": "1220dc853a7b1e330b7e69631cfe6e3c41dc63d9aa938ee455292e7e64afec230069"
     },
     "thumbnail.png": {
       "href": "./thumbnail.webp",
       "type": "image/webp",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "title": "Thumbnail",
+      "description": "WebP preview rendering of Primary Flood Defenses for catalog browsing.",
+      "file:size": 45922,
+      "file:checksum": "12204ee3b2e8e9662d929360b11f274a763a292ab9bc05a9e3336979f03b394bb87b"
     }
   },
   "providers": [

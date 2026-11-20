@@ -49,11 +49,12 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "table:row_count": 184,
   "table:primary_geometry": "geometry",
@@ -242,11 +243,14 @@
   "assets": {
     "data": {
       "href": "./sluizen.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Navigation locks",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "Navigation Locks as cloud-native GeoParquet.",
+      "file:size": 14154,
+      "file:checksum": "12201c12349172d50f9e0cf9fe5b63f209261a0f96c7afb4c6d2d5f7fdba88bcd848"
     },
     "pmtiles": {
       "href": "./sluizen.pmtiles",
@@ -254,14 +258,21 @@
       "title": "Navigation locks (vector tiles)",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "PMTiles vector tiles of Navigation Locks for web-map display.",
+      "file:size": 24306,
+      "file:checksum": "12209a0849058b2cffb75fb88361327abee85ea51b316acd9ecb0f9aa148253809cf"
     },
     "thumbnail": {
       "href": "./thumbnail_.webp",
       "type": "image/webp",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "title": "Thumbnail",
+      "description": "WebP preview rendering of Navigation Locks for catalog browsing.",
+      "file:size": 22086,
+      "file:checksum": "122061208e7db6e74cabb4e6386b96cadc4ab4226e35cee5365d049f92ee04e8afa5"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -269,21 +280,32 @@
       "title": "Navigation Locks — Default",
       "roles": [
         "style"
-      ]
+      ],
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
+      "file:size": 1007,
+      "file:checksum": "1220a98ab7ed87ece08d2587821a1a0125565cf0bc82c02b7ad0262ff240ec0b6a1c"
     },
     "sluizen": {
       "href": "./sluizen.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "roles": [
         "data"
-      ]
+      ],
+      "title": "Navigation Locks (GeoParquet)",
+      "description": "Navigation Locks as cloud-native GeoParquet.",
+      "file:size": 14154,
+      "file:checksum": "12201c12349172d50f9e0cf9fe5b63f209261a0f96c7afb4c6d2d5f7fdba88bcd848"
     },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",
       "roles": [
         "documentation"
-      ]
+      ],
+      "title": "Documentation",
+      "description": "Human-readable documentation for Navigation Locks.",
+      "file:size": 2020,
+      "file:checksum": "1220ca775b10cfd023f59b7619d5cc317612768ff15a3ce7c74e4ebf3eb8e9d9ceef"
     }
   },
   "providers": [

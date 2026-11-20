@@ -18,7 +18,8 @@ from . import paths
 ROOT_TITLE = "Portolan NL — Cloud-Native Dutch Geodata"
 JSON = "application/json"
 STYLE_TYPE = "application/vnd.mapbox.style+json"
-PORTOLAN_SCHEMA = "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+FILE_SCHEMA = "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+PORTOLAN_SCHEMA = "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json"
 
 # PTL-PRV-001/002: a producer, and exactly one host, listed last.
 VRO_PRODUCER = {"name": "Ministerie van Volkshuisvesting en Ruimtelijke Ordening",
@@ -66,21 +67,42 @@ def agents_link() -> dict:
     return link("agents", "./AGENTS.md", "text/markdown")
 
 
-def style_asset(href: str, title: str, roles: list[str] | None = None) -> dict:
+def style_asset(href: str, title: str, roles: list[str] | None = None,
+                description: str | None = None) -> dict:
     """A MapLibre style asset. PTL-VIZ-005 fixes the media type."""
-    return asset(href, STYLE_TYPE, title, roles or ["style"])
+    return asset(href, STYLE_TYPE, title, roles or ["style"], description=description)
 
 
-def asset(href: str, type: str, title: str, roles: list[str], **extra) -> dict:
-    out = {"href": href, "type": type, "title": title, "roles": roles}
+def asset(href: str, type: str, title: str, roles: list[str],
+          description: str | None = None, **extra) -> dict:
+    """Key order is href, type, title, description, roles -- match the committed files."""
+    out = {"href": href, "type": type, "title": title}
+    if description:
+        out["description"] = description
+    out["roles"] = roles
     out.update(extra)
     return out
 
 
 def thumbnail_asset(title: str = "Thumbnail (PDOK preview)",
-                    href: str = "./thumbnail.webp") -> dict:
+                    href: str = "./thumbnail.webp",
+                    description: str = "WebP preview rendering of this collection"
+                                       " for catalog browsing.") -> dict:
     """Thumbnails are WebP under 50 KB; tests/test_thumbnails.py enforces it."""
-    return asset(href, "image/webp", title, ["thumbnail"])
+    return asset(href, "image/webp", title, ["thumbnail"], description=description)
+
+
+def file_meta(path: Path | str) -> dict:
+    """file:size and file:checksum for a file that lives in the catalog tree.
+
+    The checksum is a multihash: 0x12 (sha2-256) + 0x20 (32 bytes) + the
+    sha-256 digest, hex-encoded, per the STAC file extension. Only call this
+    for files the repo holds -- data files live on S3 and are not hashed here.
+    """
+    import hashlib
+    p = Path(path)
+    digest = hashlib.sha256(p.read_bytes()).hexdigest()
+    return {"file:size": p.stat().st_size, "file:checksum": "1220" + digest}
 
 
 def preview_link(title: str = "Thumbnail (PDOK preview)",

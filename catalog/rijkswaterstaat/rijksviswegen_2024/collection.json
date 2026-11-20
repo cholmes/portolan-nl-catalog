@@ -49,11 +49,12 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "table:row_count": 2122,
   "table:primary_geometry": "geometry",
@@ -264,11 +265,14 @@
   "assets": {
     "data": {
       "href": "./rijksviswegen_2024.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Fish migration routes (2024)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "Fish Migration Routes (2024) as cloud-native GeoParquet.",
+      "file:size": 320378,
+      "file:checksum": "1220de5452ca04fb2a787287f7aad37384c628803001257987f06f9beec892f47573"
     },
     "pmtiles": {
       "href": "./rijksviswegen_2024.pmtiles",
@@ -276,14 +280,21 @@
       "title": "Fish migration routes (vector tiles)",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "PMTiles vector tiles of Fish Migration Routes (2024) for web-map display.",
+      "file:size": 522450,
+      "file:checksum": "122065245bea797d3be734ad17667d9a64ecb1acf938f7cb45c96342ee06873a32b8"
     },
     "thumbnail": {
       "href": "./thumbnail_.webp",
       "type": "image/webp",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "title": "Thumbnail",
+      "description": "WebP preview rendering of Fish Migration Routes (2024) for catalog browsing.",
+      "file:size": 15786,
+      "file:checksum": "122044d471ea52de7be1da53413ba6f7d11660b48cbb6180995555ed631d67e0d1ea"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -292,7 +303,10 @@
       "roles": [
         "style",
         "default"
-      ]
+      ],
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
+      "file:size": 860,
+      "file:checksum": "1220a7c36bbb4122c5d51c02fc18fc7ac3ddbb200cb9bfcf28dd5a824e0fbc95dca5"
     },
     "styles/by-status": {
       "href": "./styles/by-status.json",
@@ -300,21 +314,21 @@
       "title": "Fish Migration Routes — By Connectivity Status",
       "roles": [
         "style"
-      ]
-    },
-    "rijksviswegen_2024": {
-      "href": "./rijksviswegen_2024.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "roles": [
-        "data"
-      ]
+      ],
+      "description": "MapLibre style 'by-status' for the PMTiles visual asset.",
+      "file:size": 622,
+      "file:checksum": "1220a4d41188229bd17f04f6f684d0bcce038a5871c9dc89ab8ad7be11c43ad7683f"
     },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",
       "roles": [
         "documentation"
-      ]
+      ],
+      "title": "Documentation",
+      "description": "Human-readable documentation for Fish Migration Routes (2024).",
+      "file:size": 2581,
+      "file:checksum": "12203797edd8a1e0e79469e292ef29ddbda4286e572c97d9d611ea843a44709867e1"
     }
   },
   "providers": [

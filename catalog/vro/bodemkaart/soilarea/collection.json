@@ -29,6 +29,12 @@
       "title": "PDOK WMS (GetCapabilities)"
     },
     {
+      "rel": "via",
+      "href": "https://www.pdok.nl/introductie/-/article/bro-bodemkaart-sgm-",
+      "type": "text/html",
+      "title": "PDOK dataset page: BRO Bodemkaart (SGM)"
+    },
+    {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/soilarea/soilarea.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -49,7 +55,8 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
@@ -148,50 +155,66 @@
       "href": "./soilarea.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "BRO Soil Map of the Netherlands 1:50,000 — Soil areas (SGM) (GeoParquet)",
+      "description": "BRO Soil Map of the Netherlands 1:50,000 — Soil areas (SGM) as cloud-native GeoParquet.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 43840527
     },
     "pmtiles": {
       "href": "./soilarea.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "BRO Soil Map of the Netherlands 1:50,000 — Soil areas (SGM) (vector tiles)",
+      "description": "PMTiles vector tiles of BRO Soil Map of the Netherlands 1:50,000 — Soil areas (SGM) for web-map display.",
       "roles": [
         "visual"
-      ]
+      ],
+      "file:size": 51838354
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
       "type": "image/webp",
       "title": "Thumbnail (PDOK preview)",
+      "description": "WebP preview rendering of BRO Soil Map of the Netherlands 1:50,000 — Soil areas (SGM) for catalog browsing.",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "file:size": 48344,
+      "file:checksum": "122005a4f200417fa26bcdff9c2cbc254bd8fb90e1d564202cc0fedb209f960539cb"
     },
     "styles/by-collection": {
       "href": "./styles/by-collection.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Soil Map of the Netherlands 1:50,000 — Soil areas (SGM) — By survey campaign",
+      "description": "MapLibre style 'by-collection' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1528,
+      "file:checksum": "12206c83b7e4cd37c181825596bd6c616f4776ac00873018cb5f869bb531dd78a50a"
     },
     "styles/by-texture": {
       "href": "./styles/by-texture.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Soil Map of the Netherlands 1:50,000 — Soil areas (SGM) — By texture (sand / clay / peat)",
+      "description": "MapLibre style 'by-texture' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1489,
+      "file:checksum": "1220125acbe64976487df2c1b9ca4e207e881ddc64ebbed3dcb5047743caa80278df"
     },
     "styles/default": {
       "href": "./styles/default.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Soil Map of the Netherlands 1:50,000 — Soil areas (SGM) — Default",
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
       "roles": [
         "style",
         "default"
-      ]
+      ],
+      "file:size": 1610,
+      "file:checksum": "1220583a0fc7bdfe20262ca8d81fa096d67786359ea742a91f224e0611affd70d8b6"
     }
   },
   "license": "CC0-1.0",

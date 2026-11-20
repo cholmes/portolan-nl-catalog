@@ -29,6 +29,12 @@
       "title": "PDOK WMS (GetCapabilities)"
     },
     {
+      "rel": "via",
+      "href": "https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/6cbbecc1-753b-416d-ad72-1621695ec356",
+      "type": "text/html",
+      "title": "NGR metadata page: BRO Wandonderzoek bodemkunde (SFR)"
+    },
+    {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/vro/wandonderzoek/wandonderzoek.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -49,7 +55,8 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
@@ -163,50 +170,68 @@
       "href": "./wandonderzoek.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "BRO Soil Trench Investigation (SFR / Wandonderzoek) (GeoParquet)",
+      "description": "BRO Soil Trench Investigation (SFR / Wandonderzoek) as cloud-native GeoParquet.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 102561,
+      "file:checksum": "12202222aa3ddf8a839232f01ee56ee3e6283a3c0e752407c197932f5c9048c5664d"
     },
     "pmtiles": {
       "href": "./wandonderzoek.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "BRO Soil Trench Investigation (SFR / Wandonderzoek) (vector tiles)",
+      "description": "PMTiles vector tiles of BRO Soil Trench Investigation (SFR / Wandonderzoek) for web-map display.",
       "roles": [
         "visual"
-      ]
+      ],
+      "file:size": 208000,
+      "file:checksum": "12202bbd28989272879dcfa183ea86e8aa2920e971b857108839dc5d7405fe77f7cf"
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
       "type": "image/webp",
       "title": "Thumbnail (PDOK preview)",
+      "description": "WebP preview rendering of BRO Soil Trench Investigation (SFR / Wandonderzoek) for catalog browsing.",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "file:size": 35074,
+      "file:checksum": "1220bcddebf1654417eccc448e3b09d4ff1f547c57f927e41790ff6d1fd5a4ebc7df"
     },
     "styles/by-litter": {
       "href": "./styles/by-litter.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Soil Trench Investigation (SFR / Wandonderzoek) — By litter layer investigated",
+      "description": "MapLibre style 'by-litter' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1398,
+      "file:checksum": "1220fa96ca9863b797993c295cf19840f0861ae55bc4cf0425c517d5d01a36951e52"
     },
     "styles/by-survey-purpose": {
       "href": "./styles/by-survey-purpose.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Soil Trench Investigation (SFR / Wandonderzoek) — By survey purpose",
+      "description": "MapLibre style 'by-survey-purpose' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1909,
+      "file:checksum": "1220f84625a7df48f0c2e9cc103a01f146c71d84e1b30f3574280c213ce64a3758ef"
     },
     "styles/default": {
       "href": "./styles/default.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Soil Trench Investigation (SFR / Wandonderzoek) — Default",
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
       "roles": [
         "style",
         "default"
-      ]
+      ],
+      "file:size": 753,
+      "file:checksum": "122057ccb8be3b495ee9b9af812815ebca4294fa29cba5d7956b7cd0bb56e076b2c3"
     }
   },
   "license": "CC0-1.0",

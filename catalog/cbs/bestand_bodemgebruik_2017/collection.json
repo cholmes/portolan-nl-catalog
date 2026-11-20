@@ -55,11 +55,12 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "table:primary_geometry": "geom",
   "table:columns": [
@@ -135,12 +136,13 @@
   "assets": {
     "data": {
       "href": "./bbg2017.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Bestand Bodemgebruik 2017 (GeoParquet)",
       "description": "171,543 land use polygons with ~40-type classification, EPSG:28992.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 833535768
     },
     "pmtiles": {
       "href": "./bbg2017.pmtiles",
@@ -149,14 +151,19 @@
       "description": "BBG 2017 land use polygons as vector tiles for web visualization.",
       "roles": [
         "visual"
-      ]
+      ],
+      "file:size": 197668793
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
       "type": "image/webp",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "title": "Thumbnail",
+      "description": "WebP preview rendering of Bestand Bodemgebruik 2017 (Land Use File) for catalog browsing.",
+      "file:size": 39938,
+      "file:checksum": "12208358ff179d51920e2fbdc379bf4b3d8c3189550771d80812402ca54cef288dcb"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -165,7 +172,10 @@
       "roles": [
         "style",
         "default"
-      ]
+      ],
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
+      "file:size": 1213,
+      "file:checksum": "12209d33ff4a7c2de1fcf7912bd5a117ab9e431a1f23ae65028fc6c264c9b3726800"
     },
     "styles/by-detailed-use": {
       "href": "./styles/by-detailed-use.json",
@@ -173,28 +183,32 @@
       "title": "Land Use 2017 — Detailed",
       "roles": [
         "style"
-      ]
-    },
-    "bbg2017": {
-      "href": "./bbg2017.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "roles": [
-        "data"
-      ]
+      ],
+      "description": "MapLibre style 'by-detailed-use' for the PMTiles visual asset.",
+      "file:size": 2253,
+      "file:checksum": "12202d531e34f4b06d8b2d61c9ce05f9ae0e595d8e8b62078790c0e361c4ce4de778"
     },
     "metadata": {
       "href": "./bbg2017.parquet.aux.xml",
       "type": "application/xml",
       "roles": [
         "metadata"
-      ]
+      ],
+      "title": "Source metadata",
+      "description": "Metadata sidecar from the source service for Bestand Bodemgebruik 2017 (Land Use File).",
+      "file:size": 19842,
+      "file:checksum": "122091d38ab5dcdc606e0d5db3ec6f4987d67fb43a56ceb76727977e7430bdfa17d2"
     },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",
       "roles": [
         "documentation"
-      ]
+      ],
+      "title": "Documentation",
+      "description": "Human-readable documentation for Bestand Bodemgebruik 2017 (Land Use File).",
+      "file:size": 2144,
+      "file:checksum": "12207d6acb4f4ae7b3617f8b29bba3fa9cb873d867ab5c471a8e68fa440d0d9944a1"
     }
   },
   "providers": [

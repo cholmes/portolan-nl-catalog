@@ -29,6 +29,12 @@
       "title": "PDOK WMS (GetCapabilities)"
     },
     {
+      "rel": "via",
+      "href": "https://www.pdok.nl/introductie/-/article/bro-grondwatergebruiksysteem-guf-",
+      "type": "text/html",
+      "title": "PDOK dataset page: BRO Grondwatergebruiksysteem (GUF)"
+    },
+    {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/vro/grondwatergebruiksysteem/grondwatergebruiksysteem.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -49,7 +55,8 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
@@ -137,50 +144,68 @@
       "href": "./grondwatergebruiksysteem.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "BRO Groundwater Use System (GUF / Grondwatergebruiksysteem) (GeoParquet)",
+      "description": "BRO Groundwater Use System (GUF / Grondwatergebruiksysteem) as cloud-native GeoParquet.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 1733173,
+      "file:checksum": "122098908103a418bf818537dd9f6afbe0dbfb9491acf303733b138ccc33c9c9f96d"
     },
     "pmtiles": {
       "href": "./grondwatergebruiksysteem.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "BRO Groundwater Use System (GUF / Grondwatergebruiksysteem) (vector tiles)",
+      "description": "PMTiles vector tiles of BRO Groundwater Use System (GUF / Grondwatergebruiksysteem) for web-map display.",
       "roles": [
         "visual"
-      ]
+      ],
+      "file:size": 4246857,
+      "file:checksum": "1220c8ee02e8e5506da6a10771c8a34055374e017722769bc6a6ba999b488955e87c"
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
       "type": "image/webp",
       "title": "Thumbnail (PDOK preview)",
+      "description": "WebP preview rendering of BRO Groundwater Use System (GUF / Grondwatergebruiksysteem) for catalog browsing.",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "file:size": 45422,
+      "file:checksum": "1220e056cb274807672618346f6e2960cd4b8be19d8afe0afaef9cd10e804ce4c7ce"
     },
     "styles/by-delivery-context": {
       "href": "./styles/by-delivery-context.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Groundwater Use System (GUF / Grondwatergebruiksysteem) — By delivery context",
+      "description": "MapLibre style 'by-delivery-context' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1570,
+      "file:checksum": "1220298bb45fbc08f722fb620003ec4f9924e8c5b9e58595717210ecd58a04bb53a3"
     },
     "styles/by-quality-regime": {
       "href": "./styles/by-quality-regime.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Groundwater Use System (GUF / Grondwatergebruiksysteem) — By quality regime",
+      "description": "MapLibre style 'by-quality-regime' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1478,
+      "file:checksum": "122064b76cdfbe5cd360e0a5359c82a2dface8815d6bc64b4e379dd6bd56a3d3432f"
     },
     "styles/default": {
       "href": "./styles/default.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Groundwater Use System (GUF / Grondwatergebruiksysteem) — Default",
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
       "roles": [
         "style",
         "default"
-      ]
+      ],
+      "file:size": 819,
+      "file:checksum": "12202e1ccd5bf917e56e63a836fcdf95e6e11e89124703f6d60828b54b1f16a1797a"
     }
   },
   "license": "CC0-1.0",

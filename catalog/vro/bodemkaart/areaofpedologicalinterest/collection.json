@@ -29,6 +29,12 @@
       "title": "PDOK WMS (GetCapabilities)"
     },
     {
+      "rel": "via",
+      "href": "https://www.pdok.nl/introductie/-/article/bro-bodemkaart-sgm-",
+      "type": "text/html",
+      "title": "PDOK dataset page: BRO Bodemkaart (SGM)"
+    },
+    {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/areaofpedologicalinterest/areaofpedologicalinterest.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -49,7 +55,8 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
@@ -133,50 +140,68 @@
       "href": "./areaofpedologicalinterest.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "BRO Soil Map — Area of pedological interest (GeoParquet)",
+      "description": "BRO Soil Map — Area of pedological interest as cloud-native GeoParquet.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 5150133,
+      "file:checksum": "12204ce64927b139f51ade90a58b4903bde9d68856722061eb2d99153de922717172"
     },
     "pmtiles": {
       "href": "./areaofpedologicalinterest.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "BRO Soil Map — Area of pedological interest (vector tiles)",
+      "description": "PMTiles vector tiles of BRO Soil Map — Area of pedological interest for web-map display.",
       "roles": [
         "visual"
-      ]
+      ],
+      "file:size": 4556596,
+      "file:checksum": "1220c96ad0840b371f2dd6cccdfd0acb9d2afc9577d22d7270647aeb8f7296aaa2db"
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
       "type": "image/webp",
       "title": "Thumbnail (PDOK preview)",
+      "description": "WebP preview rendering of BRO Soil Map — Area of pedological interest for catalog browsing.",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "file:size": 47106,
+      "file:checksum": "1220a7e6d969bf88cfbbc3afb21046b776919e882da0c406edf333be0bce80f94e65"
     },
     "styles/by-collection": {
       "href": "./styles/by-collection.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Soil Map — Area of pedological interest — By survey campaign",
+      "description": "MapLibre style 'by-collection' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1670,
+      "file:checksum": "122061e8d5137052815efb06aeff4010ab8ca00e95db7a4823dc4f15857f2f53a23c"
     },
     "styles/by-interest": {
       "href": "./styles/by-interest.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Soil Map — Area of pedological interest — By area type",
+      "description": "MapLibre style 'by-interest' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1249,
+      "file:checksum": "122067696cb1051d629ece5a9ef4c5660f1fe8c33efc77087b4b11791cc84c6a2f8d"
     },
     "styles/default": {
       "href": "./styles/default.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Soil Map — Area of pedological interest — Default",
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
       "roles": [
         "style",
         "default"
-      ]
+      ],
+      "file:size": 752,
+      "file:checksum": "1220569afbb244710c59056ad3fdbbc2d8726641f04933e5a36cb124a27e7d036d9a"
     }
   },
   "license": "CC0-1.0",

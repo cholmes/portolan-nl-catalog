@@ -112,3 +112,47 @@ is the collection's published name; renaming breaks every live href pointing at 
   `tools/catalog/make_styles.py` from measured class breaks.
 - **The stray S3 object** — `kadaster/inspire_buildings/catalog.json` has been removed
   with `aws s3 rm`; the repo and the published prefix agree again.
+
+## v0.3.0 upgrade (2026-11-20)
+
+The catalog moved from Portolan 0.1 (+ PRs #97/#116/#120) to released v0.3.0,
+checked by released rashid 0.4.0. `tools/portolan/build_rashid.sh` is retired.
+Baseline under rashid 0.4.0 before the upgrade: 55 errors, 2,906 warnings.
+After: **0 errors**, and warnings reduced to the set below.
+
+Fixes, each registered in `tools/catalog/conform.py` or made in the generator
+that owns the file:
+
+- The profile URI moved to `v0.3.0` on all 57 declaring objects (PTL-CNF-002).
+- 23 collections' GeoParquet assets moved from `application/x-parquet` to the
+  registered `application/vnd.apache.parquet` (PTL-AST-009). rashid recognizes
+  the PMTiles-to-GeoParquet reference only under the registered type.
+- 8 duplicate PMTiles assets carrying a bare `data` role were removed; v0.3
+  forbids PMTiles as a data asset (PORTO-FMT-062).
+- The 10 mirrors that had only service-endpoint `via` links gained a verified
+  text/html landing page each (PORTO-CORE-084 now allows service links their
+  real media types beside one HTML link, closing the old PTL-PRO-001 entry).
+- `brp_gewaspercelen` moved its cross-year glob from a data-asset href to
+  `partition:glob` as an S3 URL (PORTO-FMT-064/-065), declaring the partition
+  extension with `scheme: directory`, `strategy: temporal`, key `jaar`. The
+  documented DuckDB cross-year query was re-tested against the live bucket.
+- The three vro mirror catalogs now carry `updated`, derived by
+  `make_catalogs.py` as the max of their collections' sync times.
+- 3dbag dropped its raw `{z}/{x}/{y}` link and asset; the endpoint stays
+  reachable through the tilejson asset (PTL-LNK-006).
+- Every asset now has a title and a description (PTL-AST-010), written by the
+  owning generators and `conform.py` for unowned files.
+- `file:size`/`file:checksum` (PTL-AST-003): computed from the repo for the
+  554 assets the repo itself publishes, gated by `tests/test_file_metadata.py`;
+  for published data files, sizes came from S3 HEAD requests and checksums
+  only where the working-directory copy's md5 matched a single-part ETag.
+- The root logo is served from the catalog itself (PTL-LNK-009).
+
+### Warnings left open under v0.3
+
+| Count | Rule | Why it stays |
+|---:|---|---|
+| ~513 | `PTL-AST-003` | Published data files uploaded multipart: the ETag is not an md5, so a checksum cannot be verified without downloading ~14 GB. Sizes are set. |
+| 11 | `PTL-CAT-001` | Grouping 20+ children into subcatalogs changes published URLs; a publisher decision. |
+| 1 | `PTL-VIZ-007` | luchtfoto_2024 wants an overview COG mosaicking 356 rasters; needs imagery generation, tracked as follow-up. |
+| 1 | `PTL-COL-003` | Collection id `3dbag` is its published name; renaming breaks live hrefs. |

@@ -44,11 +44,12 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "table:row_count": 21,
   "table:primary_geometry": "geometry",
@@ -141,12 +142,14 @@
   "assets": {
     "data": {
       "href": "./nationale_parken.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "National Parks (GeoParquet)",
       "description": "21 national park boundary polygons in EPSG:28992 (Amersfoort / RD New).",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 806078,
+      "file:checksum": "12202d460a7c044141d3d4d9dc0b5e1256b601d75ba8f8e731bac640ad5797a10c0a"
     },
     "pmtiles": {
       "href": "./nationale_parken.pmtiles",
@@ -154,7 +157,10 @@
       "title": "National Parks (vector tiles)",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "PMTiles vector tiles of National Parks (Nationale Parken) for web-map display.",
+      "file:size": 204408,
+      "file:checksum": "122073083007e0fcaf6e96321869494a1072b5b29c6fd334c9ad28c4e802401d6559"
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
@@ -162,7 +168,10 @@
       "title": "Thumbnail",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "description": "WebP preview rendering of National Parks (Nationale Parken) for catalog browsing.",
+      "file:size": 24602,
+      "file:checksum": "1220a2bc928741133950186b56238471f6acaa3d0bff1caef65b171d2dd9e5da3c8c"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -170,7 +179,10 @@
       "title": "National Parks — Default",
       "roles": [
         "style"
-      ]
+      ],
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
+      "file:size": 1000,
+      "file:checksum": "12208d533b123385b77b5e0f92d633668b9afa222d412f10c105ddae948184644262"
     }
   },
   "license": "CC0-1.0",

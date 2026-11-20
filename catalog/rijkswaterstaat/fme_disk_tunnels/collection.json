@@ -49,11 +49,12 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "table:row_count": 25,
   "table:primary_geometry": "geometry",
@@ -198,11 +199,14 @@
   "assets": {
     "data": {
       "href": "./fme_disk_tunnels.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Tunnel locations",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "Rijkswaterstaat Tunnels as cloud-native GeoParquet.",
+      "file:size": 4220,
+      "file:checksum": "12205d545ab2b0a3f7a17ae55cab596522bb04cdb3911a250c9e896854611d6e4774"
     },
     "pmtiles": {
       "href": "./fme_disk_tunnels.pmtiles",
@@ -210,14 +214,21 @@
       "title": "Tunnel locations (vector tiles)",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "PMTiles vector tiles of Rijkswaterstaat Tunnels for web-map display.",
+      "file:size": 5483,
+      "file:checksum": "12209115a41786eb49247ad9b293e66ab7209e2c0ad78d1324d375217778ddf2fea0"
     },
     "thumbnail": {
       "href": "./thumbnail_.webp",
       "type": "image/webp",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "title": "Thumbnail",
+      "description": "WebP preview rendering of Rijkswaterstaat Tunnels for catalog browsing.",
+      "file:size": 15456,
+      "file:checksum": "122039d102b651f701a488c0de51ea5d94d982a94b52bd575bbdc463f72a14baac95"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -225,21 +236,32 @@
       "title": "Tunnels — Default",
       "roles": [
         "style"
-      ]
+      ],
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
+      "file:size": 975,
+      "file:checksum": "122053cc63b22fbc02c3d7d413d9ac360d8cd9de62b11feaaa4fa321a36155038d50"
     },
     "fme_disk_tunnels": {
       "href": "./fme_disk_tunnels.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "roles": [
         "data"
-      ]
+      ],
+      "title": "Rijkswaterstaat Tunnels (GeoParquet)",
+      "description": "Rijkswaterstaat Tunnels as cloud-native GeoParquet.",
+      "file:size": 4220,
+      "file:checksum": "12205d545ab2b0a3f7a17ae55cab596522bb04cdb3911a250c9e896854611d6e4774"
     },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",
       "roles": [
         "documentation"
-      ]
+      ],
+      "title": "Documentation",
+      "description": "Human-readable documentation for Rijkswaterstaat Tunnels.",
+      "file:size": 2133,
+      "file:checksum": "12202c5f712b37c70a99ef6b996338b4686e05f06798d7338911804d67df92dd0d3b"
     }
   },
   "providers": [

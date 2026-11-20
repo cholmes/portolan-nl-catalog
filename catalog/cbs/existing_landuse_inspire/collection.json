@@ -55,10 +55,11 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
-    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "table:primary_geometry": "geometry",
   "table:columns": [
@@ -154,12 +155,13 @@
   "assets": {
     "data": {
       "href": "./existing_landuse.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Existing Land Use (GeoParquet)",
       "description": "171,543 land use polygons with HILUCS classification, EPSG:3035.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 1002512944
     },
     "pmtiles": {
       "href": "./existing_landuse.pmtiles",
@@ -168,14 +170,19 @@
       "description": "INSPIRE land use polygons as vector tiles for web visualization.",
       "roles": [
         "visual"
-      ]
+      ],
+      "file:size": 199037294
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
       "type": "image/webp",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "title": "Thumbnail",
+      "description": "WebP preview rendering of Existing Land Use (INSPIRE Harmonized) for catalog browsing.",
+      "file:size": 45666,
+      "file:checksum": "122069e8d0e54f52c82dd1d6ec1d7eb22595180f72bda174bb795cc0c1351a8b23ee"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -183,28 +190,42 @@
       "title": "INSPIRE Land Use — Default",
       "roles": [
         "style"
-      ]
+      ],
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
+      "file:size": 1715,
+      "file:checksum": "12201c1433bad5e99240ed8e672b3f9f02a9f96af238375e73f35b1591facb77f4b6"
     },
     "metadata": {
       "href": "./existing_landuse.parquet.aux.xml",
       "type": "application/xml",
       "roles": [
         "metadata"
-      ]
+      ],
+      "title": "Source metadata",
+      "description": "Metadata sidecar from the source service for Existing Land Use (INSPIRE Harmonized).",
+      "file:size": 19033,
+      "file:checksum": "1220159abc881039052db009c51e5e26013f27a31c5ee408000b0a719d07b24b7c57"
     },
     "existing_landuse": {
       "href": "./existing_landuse.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "roles": [
         "data"
-      ]
+      ],
+      "title": "Existing Land Use (INSPIRE Harmonized) (GeoParquet)",
+      "description": "Existing Land Use (INSPIRE Harmonized) as cloud-native GeoParquet.",
+      "file:size": 1002512944
     },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",
       "roles": [
         "documentation"
-      ]
+      ],
+      "title": "Documentation",
+      "description": "Human-readable documentation for Existing Land Use (INSPIRE Harmonized).",
+      "file:size": 2296,
+      "file:checksum": "1220ecfdab583013493227203f89680bc5c346a2df235f188fabbef19649e41d9d55"
     }
   },
   "providers": [

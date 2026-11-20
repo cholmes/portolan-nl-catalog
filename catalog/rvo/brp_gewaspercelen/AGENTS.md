@@ -70,13 +70,19 @@ df = con.execute(f"SELECT * FROM read_parquet('{URL}') LIMIT 5").df()
 
 DuckDB streams via HTTP range requests — no full download needed.
 
-## How to Access — All Years (the `portolan:glob` asset)
+## How to Access — All Years (the `partition:glob`)
 
-The collection's `data` asset uses a **glob URL**: pass it straight to DuckDB, GDAL, or
-PyArrow and every year is treated as a single dataset. The `jaar` column distinguishes them.
+The collection declares its per-year files with `partition:glob`: pass that S3 URL to
+DuckDB, GDAL, or PyArrow and every year is treated as a single dataset. The `jaar`
+column distinguishes them.
 
 ```python
-GLOB = 'https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/*/brp_gewaspercelen_*.parquet'
+# Globbing needs a file listing, which plain HTTPS does not provide, so the
+# cross-year glob is the S3 form of the published prefix (anonymous access,
+# path-style addressing because the bucket name contains dots):
+#   CREATE SECRET src (TYPE s3, PROVIDER config,
+#                      REGION 'us-west-2', URL_STYLE 'path');
+GLOB = 's3://us-west-2.opendata.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/*/brp_gewaspercelen_*.parquet'
 
 # Grassland hectares per year
 df = con.execute(f"""

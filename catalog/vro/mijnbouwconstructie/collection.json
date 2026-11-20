@@ -29,6 +29,12 @@
       "title": "PDOK WMS (GetCapabilities)"
     },
     {
+      "rel": "via",
+      "href": "https://www.pdok.nl/introductie/-/article/bro-mijnbouwconstructie-epc-",
+      "type": "text/html",
+      "title": "PDOK dataset page: BRO Mijnbouwconstructie (EPC)"
+    },
+    {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/vro/mijnbouwconstructie/mijnbouwconstructie.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -49,7 +55,8 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
@@ -152,42 +159,57 @@
       "href": "./mijnbouwconstructie.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "BRO Mining Construction (EPC / Mijnbouwconstructie) (GeoParquet)",
+      "description": "BRO Mining Construction (EPC / Mijnbouwconstructie) as cloud-native GeoParquet.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 154692,
+      "file:checksum": "122090e67c2310df1797c045defbd1e44e3119d62b036bf23f35f215a985a5473a1a"
     },
     "pmtiles": {
       "href": "./mijnbouwconstructie.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "BRO Mining Construction (EPC / Mijnbouwconstructie) (vector tiles)",
+      "description": "PMTiles vector tiles of BRO Mining Construction (EPC / Mijnbouwconstructie) for web-map display.",
       "roles": [
         "visual"
-      ]
+      ],
+      "file:size": 641774,
+      "file:checksum": "122077faf347480f135f919617dbc8ca9efba23470f460835e5a18aa63ef642febff"
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
       "type": "image/webp",
       "title": "Thumbnail (PDOK preview)",
+      "description": "WebP preview rendering of BRO Mining Construction (EPC / Mijnbouwconstructie) for catalog browsing.",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "file:size": 30972,
+      "file:checksum": "1220e68e6f1fc03abea481dd8fc2bc37b3d83de9e4f73f047926b935dd220fb2b8c0"
     },
     "styles/by-legal-status": {
       "href": "./styles/by-legal-status.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Mining Construction (EPC / Mijnbouwconstructie) — By legal status",
+      "description": "MapLibre style 'by-legal-status' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1565,
+      "file:checksum": "1220efa595265316cac243452b0c429bb169bb27d53e57a20a8a05a8da1f760514d6"
     },
     "styles/default": {
       "href": "./styles/default.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Mining Construction (EPC / Mijnbouwconstructie) — Default",
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
       "roles": [
         "style",
         "default"
-      ]
+      ],
+      "file:size": 789,
+      "file:checksum": "1220e30abf11be6d7bcc6d9c4242bc8831f65f400c4567d106c5c42478213d0b0a9b"
     }
   },
   "license": "CC0-1.0",

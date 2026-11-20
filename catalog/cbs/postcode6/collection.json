@@ -55,10 +55,11 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
-    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "table:primary_geometry": "geom",
   "table:columns": [
@@ -646,12 +647,13 @@
   "assets": {
     "data": {
       "href": "./postcode6.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Postcode6 Statistics 2024 (GeoParquet)",
       "description": "464,964 postcode areas with 157 statistical attributes, EPSG:28992.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 91471293
     },
     "pmtiles": {
       "href": "./postcode6.pmtiles",
@@ -660,14 +662,19 @@
       "description": "Postcode area polygons as vector tiles for web visualization.",
       "roles": [
         "visual"
-      ]
+      ],
+      "file:size": 81254029
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
       "type": "image/webp",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "title": "Thumbnail",
+      "description": "WebP preview rendering of CBS Postcode6 (Statistics per Postcode) for catalog browsing.",
+      "file:size": 45798,
+      "file:checksum": "1220ae78b08ed19ce6e29642cfe8dff2e06bb8f73e584fccf4df83d3e1e4854deba0"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -676,7 +683,10 @@
       "roles": [
         "style",
         "default"
-      ]
+      ],
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
+      "file:size": 659,
+      "file:checksum": "1220540b8236cfe9f82818230dd05b33b599148df426e7f8b3653e5e51aefa9b6073"
     },
     "styles/by-homeownership": {
       "href": "./styles/by-homeownership.json",
@@ -684,7 +694,10 @@
       "title": "Postcode 6 — Homeownership Rate",
       "roles": [
         "style"
-      ]
+      ],
+      "description": "MapLibre style 'by-homeownership' for the PMTiles visual asset.",
+      "file:size": 700,
+      "file:checksum": "1220d043b6e7dee944df0888509162e0f7cf830805331797da05d3d8dd3a8ad9bdc6"
     },
     "styles/by-housing-age": {
       "href": "./styles/by-housing-age.json",
@@ -692,28 +705,42 @@
       "title": "Postcode 6 — Pre-1945 Housing",
       "roles": [
         "style"
-      ]
+      ],
+      "description": "MapLibre style 'by-housing-age' for the PMTiles visual asset.",
+      "file:size": 701,
+      "file:checksum": "122041f683c63ea875ba260234a7d438fa40f3c5f04828ec76a88e26525da38e3912"
     },
     "postcode6": {
       "href": "./postcode6.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "roles": [
         "data"
-      ]
+      ],
+      "title": "CBS Postcode6 (Statistics per Postcode) (GeoParquet)",
+      "description": "CBS Postcode6 (Statistics per Postcode) as cloud-native GeoParquet.",
+      "file:size": 91471293
     },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",
       "roles": [
         "documentation"
-      ]
+      ],
+      "title": "Documentation",
+      "description": "Human-readable documentation for CBS Postcode6 (Statistics per Postcode).",
+      "file:size": 2614,
+      "file:checksum": "12206ae594401aee477a0703a29638632677b317c080eddcdc25001875e064bff6cc"
     },
     "metadata": {
       "href": "./postcode6.parquet.aux.xml",
       "type": "application/xml",
       "roles": [
         "metadata"
-      ]
+      ],
+      "title": "Source metadata",
+      "description": "Metadata sidecar from the source service for CBS Postcode6 (Statistics per Postcode).",
+      "file:size": 18587,
+      "file:checksum": "1220d5314d3c7ebeaede9c918a14f417835436cd46778edc6377c2684a4c6c2a144a"
     }
   },
   "providers": [

@@ -61,10 +61,11 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
-    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "table:row_count": 48,
   "table:primary_geometry": "geometry",
@@ -252,17 +253,25 @@
   "assets": {
     "doctors": {
       "href": "./doctors.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "roles": [
         "data"
-      ]
+      ],
+      "title": "Human Health Statistics (Gezondheid) (GeoParquet)",
+      "description": "Human Health Statistics (Gezondheid) as cloud-native GeoParquet.",
+      "file:size": 150512,
+      "file:checksum": "1220fce85d92382ef5e48d5beed2e48fa3c5932f6b53c5f25daca1b92852c7f525dc"
     },
     "deaths": {
       "href": "./deaths.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "roles": [
         "data"
-      ]
+      ],
+      "title": "Human Health Statistics (Gezondheid) (GeoParquet)",
+      "description": "Human Health Statistics (Gezondheid) as cloud-native GeoParquet.",
+      "file:size": 150487,
+      "file:checksum": "12205b28c8881b1e64fe1711096ec1b03dba26c347838512273768c07d507616d0f7"
     },
     "pmtiles": {
       "href": "./gezondheid.pmtiles",
@@ -271,14 +280,19 @@
       "description": "Provincial health indicators as vector tiles for web visualization.",
       "roles": [
         "visual"
-      ]
+      ],
+      "file:size": 5246260
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
       "type": "image/webp",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "title": "Thumbnail",
+      "description": "WebP preview rendering of Human Health Statistics (Gezondheid) for catalog browsing.",
+      "file:size": 14184,
+      "file:checksum": "12204ba0b21f048f93b244395073cf5f3b2c8f26d37e019f8d9ac7c10d2b18a251c8"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -286,35 +300,43 @@
       "title": "Health Statistics — Default",
       "roles": [
         "style"
-      ]
+      ],
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
+      "file:size": 802,
+      "file:checksum": "1220b106e79b527700fa182917dadca126b7f6ce40b8f2efd1940214a781f1e14c9e"
     },
     "metadata": {
       "href": "./doctors.parquet.aux.xml",
       "type": "application/xml",
       "roles": [
         "metadata"
-      ]
+      ],
+      "title": "Source metadata",
+      "description": "Metadata sidecar from the source service for Human Health Statistics (Gezondheid).",
+      "file:size": 20502,
+      "file:checksum": "1220746d6169e99a29cc36b8b8434a5e5182b97664c1c4bd355344ac6b5be783a235"
     },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",
       "roles": [
         "documentation"
-      ]
+      ],
+      "title": "Documentation",
+      "description": "Human-readable documentation for Human Health Statistics (Gezondheid).",
+      "file:size": 2328,
+      "file:checksum": "1220b2715f0878826e8dcb3965212fdeaf9952d46a22bdef908a00e52727b39d44ce"
     },
     "deaths.parquet.aux": {
       "href": "./deaths.parquet.aux.xml",
       "type": "application/xml",
       "roles": [
         "metadata"
-      ]
-    },
-    "gezondheid": {
-      "href": "./gezondheid.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "roles": [
-        "data"
-      ]
+      ],
+      "title": "Source metadata",
+      "description": "Metadata sidecar from the source service for Human Health Statistics (Gezondheid).",
+      "file:size": 20502,
+      "file:checksum": "1220746d6169e99a29cc36b8b8434a5e5182b97664c1c4bd355344ac6b5be783a235"
     }
   },
   "providers": [

@@ -1,14 +1,12 @@
 """Portolan conformance via rashid.
 
-Targets Portolan 0.1 plus three in-flight spec PRs, so it needs a rashid built
-from tools/portolan/build_rashid.sh rather than a released one:
+Targets Portolan v0.3.0, which released rashid >= 0.4.0 implements, so the
+purpose-built rashid from tools/portolan/build_rashid.sh is no longer needed.
+All three spec PRs this catalog once tracked ahead of release (#97, #116,
+#120) are part of the released specification.
 
-  portolan-spec#97  / rashid#63 -- the default style carries a `default` role
-  portolan-spec#116 / rashid#90 -- file:size and file:checksum are SHOULD
-  portolan-spec#120 / rashid#91 -- thumbnails may be image/webp
-
-SKIPs (exit 0) when that rashid is not on PATH, so the local suite stays
-zero-setup like the others. Point $RASHID at the built binary, or set
+SKIPs (exit 0) when rashid is not on PATH, so the local suite stays
+zero-setup like the others. Point $RASHID at a specific binary, or set
 $PORTOLAN_STRICT=1 to make a missing rashid a failure (CI does).
 
 --no-data is deliberate: the data pass reads every asset's bytes, and this repo
@@ -29,15 +27,13 @@ from pathlib import Path
 CATALOG = Path(__file__).resolve().parents[1] / "catalog"
 RASHID = os.environ.get("RASHID") or shutil.which("rashid")
 
-# Findings knowingly left open, each with its reason, and each justified at
-# length in docs/phase3-baseline.md. This is not a place to park inconvenient
-# failures: satisfying PTL-PRO-001 would mean writing a media type that is
-# false, which is why it is filed upstream rather than worked around.
-ACCEPTED = {
-    "PTL-PRO-001": "rel:via points at WFS/Atom service endpoints, which are not text/html "
-                   "(portolan-spec#122)",
-    "PTL-COL-003": "collection id '3dbag' is its published name; renaming breaks live hrefs",
-}
+# Findings knowingly left open, each with its reason, and each justified in
+# docs/phase3-baseline.md. This is not a place to park inconvenient failures.
+# The v0.3 upgrade closed both former entries: every mirror now carries a
+# text/html via link beside its service links (PORTO-CORE-084 allows the
+# service links their real media types), and PTL-COL-003 is a warning under
+# v0.3, which this gate does not fail on.
+ACCEPTED: dict[str, str] = {}
 
 
 def main() -> int:
@@ -75,8 +71,7 @@ def main() -> int:
         print(f"ACCEPTED {rule} x{n}: {ACCEPTED[rule]}")
     total = sum(accepted.values())
     extra = f", {total} accepted (see docs/phase3-baseline.md)" if total else ""
-    print(f"OK: {report['files_checked']} objects conform to Portolan 0.1 "
-          f"(+ spec PRs #97, #116, #120){extra}")
+    print(f"OK: {report['files_checked']} objects conform to Portolan v0.3.0{extra}")
     return 0
 
 

@@ -26,17 +26,15 @@ jobs:
           python3 tests/test_git_ext.py
           python3 tests/test_thumbnails.py
           python3 tests/test_generators.py
+          python3 tests/test_file_metadata.py
           python3 tests/test_stac_valid.py
 
-      # No release contains spec PRs #97 and #116 yet, so rashid is built from
-      # the two companion PR branches. This step tracks unmerged upstream work
-      # and can break when those branches move: that is the accepted cost of
-      # targeting the spec ahead of its release.
-      - name: Build rashid with spec PRs #97 and #116
-        run: bash tools/portolan/build_rashid.sh "$HOME/rashid-venv"
+      # Spec v0.3.0 is released and rashid 0.4.0 implements it, so the
+      # purpose-built rashid from tools/portolan/build_rashid.sh is retired.
+      - name: Install rashid (Portolan validator)
+        run: python -m pip install rashid==0.4.0
 
       - name: Portolan conformance
         env:
-          RASHID: /home/runner/rashid-venv/bin/rashid
           PORTOLAN_STRICT: "1"
         run: python3 tests/test_portolan_conformance.py

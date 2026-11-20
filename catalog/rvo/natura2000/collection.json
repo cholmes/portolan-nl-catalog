@@ -50,11 +50,12 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "table:row_count": 209,
   "table:primary_geometry": "geometry",
@@ -177,12 +178,13 @@
   "assets": {
     "data": {
       "href": "./natura2000.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Natura 2000 areas (GeoParquet)",
       "description": "209 features representing 162 Natura 2000 protected areas in EPSG:28992.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 7543501
     },
     "pmtiles": {
       "href": "./natura2000.pmtiles",
@@ -190,7 +192,10 @@
       "title": "Natura 2000 areas (vector tiles)",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "PMTiles vector tiles of Natura 2000 Protected Areas for web-map display.",
+      "file:size": 2297994,
+      "file:checksum": "122065ee0150fc06aae3949296831d2bab13989777cde2a2cf02e138f26ff6f2670d"
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
@@ -198,7 +203,10 @@
       "title": "Thumbnail",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "description": "WebP preview rendering of Natura 2000 Protected Areas for catalog browsing.",
+      "file:size": 32758,
+      "file:checksum": "1220a25721015c6aa494c701e6c38f8fa107f63db1160c38f2c96d3a146340e4b158"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -207,7 +215,10 @@
       "roles": [
         "style",
         "default"
-      ]
+      ],
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
+      "file:size": 980,
+      "file:checksum": "1220c6c67b2092de8961d5d88a3c7e0bfa370cbd027790d928f73bffc2c8127bf994"
     },
     "styles/by-directive": {
       "href": "./styles/by-directive.json",
@@ -215,7 +226,10 @@
       "title": "Natura 2000 — By EU Directive",
       "roles": [
         "style"
-      ]
+      ],
+      "description": "MapLibre style 'by-directive' for the PMTiles visual asset.",
+      "file:size": 788,
+      "file:checksum": "1220554280804720453263dd4058f854d96380fc31c229e3e73232c18157474c8a60"
     }
   },
   "license": "CC0-1.0",
