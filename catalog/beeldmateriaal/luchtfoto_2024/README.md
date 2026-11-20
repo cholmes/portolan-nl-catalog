@@ -4,7 +4,7 @@ High-resolution aerial orthophotos from the 2024 [Beeldmateriaal Nederland](http
 
 The NIR band is extracted from the Color InfraRed (CIR) winter capture (band 1). RGB and NIR represent different seasons within the same year — summer (full foliage) and winter (leafless) respectively.
 
-Source imagery from [Beeldmateriaal Nederland](https://www.beeldmateriaal.nl/) via [GeoTiles (TU Delft)](https://geotiles.citg.tudelft.nl/).
+Source imagery from [Beeldmateriaal Nederland](https://www.beeldmateriaal.nl/) via [GeoTiles (TU Delft)](https://geotiles.citg.tudelft.nl/) (the GeoTiles site is offline as of 2026-11-20; [archived copy](http://web.archive.org/web/20260811130027/https://geotiles.citg.tudelft.nl/)).
 
 > AI/Agent users: See [AGENTS.md](./AGENTS.md) for band descriptions, code examples, interactive map recipes, and cross-dataset analysis patterns.
 
