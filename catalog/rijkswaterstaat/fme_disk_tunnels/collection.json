@@ -241,17 +241,6 @@
       "file:size": 975,
       "file:checksum": "122053cc63b22fbc02c3d7d413d9ac360d8cd9de62b11feaaa4fa321a36155038d50"
     },
-    "fme_disk_tunnels": {
-      "href": "./fme_disk_tunnels.parquet",
-      "type": "application/vnd.apache.parquet",
-      "roles": [
-        "data"
-      ],
-      "title": "Rijkswaterstaat Tunnels (GeoParquet)",
-      "description": "Rijkswaterstaat Tunnels as cloud-native GeoParquet.",
-      "file:size": 4220,
-      "file:checksum": "12205d545ab2b0a3f7a17ae55cab596522bb04cdb3911a250c9e896854611d6e4774"
-    },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",

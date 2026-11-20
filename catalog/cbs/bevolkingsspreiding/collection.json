@@ -466,17 +466,6 @@
       "description": "Metadata sidecar from the source service for Bevolkingsspreiding (Population Distribution).",
       "file:size": 22232,
       "file:checksum": "12200f5402ff01ffc943c2b3822181d6b892f7cf47a7c96ba91ea2d370e2bcc4174d"
-    },
-    "bevolkingsspreiding.parquet": {
-      "href": "./bevolkingsspreiding.parquet",
-      "type": "application/vnd.apache.parquet",
-      "roles": [
-        "data"
-      ],
-      "title": "Bevolkingsspreiding (Population Distribution) (GeoParquet)",
-      "description": "Bevolkingsspreiding (Population Distribution) as cloud-native GeoParquet.",
-      "file:size": 4490816,
-      "file:checksum": "12203c47b575febdf4b9d5e508ba09ef5ae030f231520e3ad71195e0724a3a8bd7a2"
     }
   },
   "providers": [

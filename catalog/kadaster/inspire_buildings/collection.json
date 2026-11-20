@@ -56,7 +56,7 @@
     "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
-  "table:row_count": 48373522,
+  "table:row_count": 24186761,
   "table:primary_geometry": "geometry",
   "table:columns": [
     {
@@ -251,8 +251,8 @@
       ],
       "title": "Documentation",
       "description": "Human-readable documentation for Buildings (INSPIRE Harmonized).",
-      "file:size": 3850,
-      "file:checksum": "1220497f7f69295fc26a136f1a446b1cbafbcb96f27cbbaf40da896be7993fca0fe5"
+      "file:size": 4001,
+      "file:checksum": "1220ceff124caf0554191a862c3b9f3b9548bac7db506149ef8ae21b097f7ce8dc0e"
     },
     "thumbnail.png": {
       "href": "./thumbnail.webp",

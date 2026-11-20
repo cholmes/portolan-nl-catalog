@@ -56,7 +56,7 @@
     "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
-  "table:row_count": 184,
+  "table:row_count": 92,
   "table:primary_geometry": "geometry",
   "table:columns": [
     {
@@ -284,17 +284,6 @@
       "description": "MapLibre style 'default' for the PMTiles visual asset.",
       "file:size": 1007,
       "file:checksum": "1220a98ab7ed87ece08d2587821a1a0125565cf0bc82c02b7ad0262ff240ec0b6a1c"
-    },
-    "sluizen": {
-      "href": "./sluizen.parquet",
-      "type": "application/vnd.apache.parquet",
-      "roles": [
-        "data"
-      ],
-      "title": "Navigation Locks (GeoParquet)",
-      "description": "Navigation Locks as cloud-native GeoParquet.",
-      "file:size": 14154,
-      "file:checksum": "12201c12349172d50f9e0cf9fe5b63f209261a0f96c7afb4c6d2d5f7fdba88bcd848"
     },
     "README": {
       "href": "./README.md",

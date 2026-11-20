@@ -269,8 +269,8 @@
       ],
       "title": "Documentation",
       "description": "Human-readable documentation for Buildings (Panden).",
-      "file:size": 4668,
-      "file:checksum": "1220a7bcef8b9bcdbdca315fa7e69d5bc1f8f40d041caa9e06903f4b989a16d21bdf"
+      "file:size": 4801,
+      "file:checksum": "122060fa5ce1e895fab76d36d6737b008ad56925c6998625b5ccbddb38646f9ece7f"
     },
     "thumbnail.png": {
       "href": "./thumbnail.webp",
@@ -282,16 +282,6 @@
       "description": "WebP preview rendering of Buildings (Panden) for catalog browsing.",
       "file:size": 18680,
       "file:checksum": "1220b18a83dd5eac88236a32417a70f97a28c676982d02285f4940bca350c125d99a"
-    },
-    "bag-light.gpkg": {
-      "href": "./bag-light.gpkg",
-      "type": "application/geopackage+sqlite3",
-      "roles": [
-        "data"
-      ],
-      "title": "Buildings (Panden) (GeoPackage)",
-      "description": "Buildings (Panden) as a GeoPackage, matching the source format.",
-      "file:size": 7769759744
     }
   },
   "providers": [

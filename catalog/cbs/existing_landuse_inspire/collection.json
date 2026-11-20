@@ -206,16 +206,6 @@
       "file:size": 19033,
       "file:checksum": "1220159abc881039052db009c51e5e26013f27a31c5ee408000b0a719d07b24b7c57"
     },
-    "existing_landuse": {
-      "href": "./existing_landuse.parquet",
-      "type": "application/vnd.apache.parquet",
-      "roles": [
-        "data"
-      ],
-      "title": "Existing Land Use (INSPIRE Harmonized) (GeoParquet)",
-      "description": "Existing Land Use (INSPIRE Harmonized) as cloud-native GeoParquet.",
-      "file:size": 1002512944
-    },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",

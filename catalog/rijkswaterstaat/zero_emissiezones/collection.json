@@ -56,7 +56,7 @@
     "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
-  "table:row_count": 84,
+  "table:row_count": 42,
   "table:primary_geometry": "geometry",
   "table:columns": [
     {
@@ -216,17 +216,6 @@
       "description": "MapLibre style 'default' for the PMTiles visual asset.",
       "file:size": 1218,
       "file:checksum": "1220a4fe4157a5b1f63225e09921c77c8d0d2d40aa7683a23f70c52f6ae96e78753e"
-    },
-    "zero_emissiezones": {
-      "href": "./zero_emissiezones.parquet",
-      "type": "application/vnd.apache.parquet",
-      "roles": [
-        "data"
-      ],
-      "title": "Zero Emission Zones (GeoParquet)",
-      "description": "Zero Emission Zones as cloud-native GeoParquet.",
-      "file:size": 101894,
-      "file:checksum": "12205c63ec2a7fd8357401e9f10f3411fb5ba5f54948b3da20ebfa65ca816f3e3b04"
     },
     "README": {
       "href": "./README.md",

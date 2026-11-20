@@ -28,16 +28,16 @@ Feature counts come from each collection's metadata (`table:row_count`).
 | Collection | Provider | Features | Geometry | Format | Description |
 |---|---|---|---|---|---|
 | [Buildings (Panden)](./kadaster/panden/) | Kadaster | 11.4M | Polygon | GeoParquet, PMTiles | All buildings in the Netherlands from the national building registry |
-| [INSPIRE Buildings](./kadaster/inspire_buildings/) | Kadaster | 48.4M | Polygon | GeoParquet, PMTiles | BAG buildings harmonized to EU INSPIRE schema (incl. history) |
+| [INSPIRE Buildings](./kadaster/inspire_buildings/) | Kadaster | 24.2M | Polygon | GeoParquet, PMTiles | BAG buildings harmonized to EU INSPIRE schema (incl. history) |
 | [Administrative Areas](./kadaster/bestuurlijke_gebieden/) | Kadaster | 355 | MultiPolygon | GeoParquet, PMTiles | Municipalities, provinces, and national boundary (2026) |
 | [National Road Network](./rijkswaterstaat/nwb_wegen/) | RWS | 1.6M | MultiLineString | GeoParquet, PMTiles | Every public road in the Netherlands (NWB) |
-| [Flood Retention Areas](./rijkswaterstaat/bergingsgebieden/) | RWS | 3,090 | MultiPolygon | GeoParquet, PMTiles | Designated areas for temporary water storage during floods |
+| [Flood Retention Areas](./rijkswaterstaat/bergingsgebieden/) | RWS | 1,545 | MultiPolygon | GeoParquet, PMTiles | Designated areas for temporary water storage during floods |
 | [Tunnels](./rijkswaterstaat/fme_disk_tunnels/) | RWS | 25 | Point | GeoParquet, PMTiles | Road tunnels managed by Rijkswaterstaat |
 | [Fairway Depth Charts](./rijkswaterstaat/hectometervakken_vaargeul/) | RWS | 3,112 | Polygon | GeoParquet, PMTiles | Hectometer sections of Rhine branch fairways |
 | [Fish Migration Routes](./rijkswaterstaat/rijksviswegen_2024/) | RWS | 2,122 | LineString | GeoParquet, PMTiles | National fish migration routes (2024) |
-| [Navigation Locks](./rijkswaterstaat/sluizen/) | RWS | 184 | Point | GeoParquet, PMTiles | Locks on the recreational waterway network |
-| [Flood Defenses](./rijkswaterstaat/waterkeringen/) | RWS | 476 | LineString | GeoParquet, PMTiles | Primary dike sections under the Water Act |
-| [Zero Emission Zones](./rijkswaterstaat/zero_emissiezones/) | RWS | 84 | MultiPolygon | GeoParquet, PMTiles | Urban zones restricted to emission-free vehicles |
+| [Navigation Locks](./rijkswaterstaat/sluizen/) | RWS | 92 | Point | GeoParquet, PMTiles | Locks on the recreational waterway network |
+| [Flood Defenses](./rijkswaterstaat/waterkeringen/) | RWS | 238 | LineString | GeoParquet, PMTiles | Primary dike sections under the Water Act |
+| [Zero Emission Zones](./rijkswaterstaat/zero_emissiezones/) | RWS | 42 | MultiPolygon | GeoParquet, PMTiles | Urban zones restricted to emission-free vehicles |
 | [National Monuments](./rce/rijksmonumenten/) | RCE | 63,073 | Point | GeoParquet, PMTiles | Protected buildings and sites under the Heritage Act |
 | [Crop Parcels (BRP)](./rvo/brp_gewaspercelen/) | RVO | 18.3M | Polygon | GeoParquet, PMTiles | Agricultural crop parcels, 17 yearly editions (2009-2025) |
 | [National Parks](./rvo/nationale_parken/) | RVO | 21 | MultiPolygon | GeoParquet, PMTiles | All 21 National Parks of the Netherlands |
@@ -49,7 +49,7 @@ Feature counts come from each collection's metadata (`table:row_count`).
 | [Land Use 2017](./cbs/bestand_bodemgebruik_2017/) | CBS | 171,543 | MultiPolygon | GeoParquet, PMTiles | Complete land use classification (~40 types) |
 | [Land Use INSPIRE](./cbs/existing_landuse_inspire/) | CBS | 171,543 | MultiPolygon | GeoParquet, PMTiles | INSPIRE-harmonized land use (HILUCS classification) |
 | [Population Distribution](./cbs/bevolkingsspreiding/) | CBS | 31,033 | Polygon | GeoParquet, PMTiles | Population per 1km grid, province, and municipality |
-| [Health Statistics](./cbs/gezondheid/) | CBS | 48 | MultiPolygon | GeoParquet, PMTiles | Doctors and deaths per 100K by province |
+| [Health Statistics](./cbs/gezondheid/) | CBS | 24 | MultiPolygon | GeoParquet, PMTiles | Doctors and deaths per 100K by province |
 | [Soil Map (SGM)](./vro/bodemkaart/) | VRO | 54,217 | MultiPolygon | GeoParquet, PMTiles | National Soil Map 1:50,000, two layers (BRO) |
 | [Geomorphological Map (GMM)](./vro/geomorfologische_kaart/) | VRO | 121,058 | MultiPolygon | GeoParquet, PMTiles | National Geomorphological Map 1:50,000, three layers (BRO) |
 | [Soil Trench Investigations](./vro/wandonderzoek/) | VRO | 2,806 | Point | GeoParquet, PMTiles | Described soil faces for soil mapping (SFR, BRO) |

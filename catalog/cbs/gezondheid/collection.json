@@ -67,7 +67,7 @@
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
     "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
-  "table:row_count": 48,
+  "table:row_count": 24,
   "table:primary_geometry": "geometry",
   "table:columns": [
     {
@@ -222,7 +222,7 @@
     }
   ],
   "geoparquet:geometry_type": "Polygon",
-  "geoparquet:feature_count": 12,
+  "geoparquet:feature_count": 24,
   "title": "Human Health Statistics (Gezondheid)",
   "extent": {
     "spatial": {

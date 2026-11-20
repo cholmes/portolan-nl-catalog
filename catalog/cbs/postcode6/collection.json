@@ -710,16 +710,6 @@
       "file:size": 701,
       "file:checksum": "122041f683c63ea875ba260234a7d438fa40f3c5f04828ec76a88e26525da38e3912"
     },
-    "postcode6": {
-      "href": "./postcode6.parquet",
-      "type": "application/vnd.apache.parquet",
-      "roles": [
-        "data"
-      ],
-      "title": "CBS Postcode6 (Statistics per Postcode) (GeoParquet)",
-      "description": "CBS Postcode6 (Statistics per Postcode) as cloud-native GeoParquet.",
-      "file:size": 91471293
-    },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",
