@@ -30,22 +30,21 @@ All 11.4 million buildings (panden) in the Netherlands from the BAG (Basisregist
 | rdf_seealso | string | Linked Data URI for this building in the BAG knowledge graph. |
 | geom | binary | Building footprint polygon in EPSG:28992 (RD New / Amersfoort), WKB encoded. Coordinates in meters. |
 
-## Files
-
-| File | Size | Checksum |
-|------|------|----------|
-| ./bag-light.parquet | - | - |
-| ./bag-light.gpkg | - | - |
-| ./bag-light.pmtiles | - | - |
-| ./thumbnail_.png | - | - |
-
 ## Quick Start
 
-```python
-import geopandas as gpd
+DuckDB streams the columns a query needs over HTTP range requests, so this
+works without downloading the file:
 
-gdf = gpd.read_parquet("./bag-light.parquet")
-print(gdf.head())
+```python
+import duckdb
+con = duckdb.connect()
+con.execute("INSTALL spatial; LOAD spatial;")
+df = con.execute("""
+    SELECT status, COUNT(*) AS n
+    FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/panden/bag-light.parquet')
+    GROUP BY status ORDER BY n DESC
+""").df()
+print(df)
 ```
 
 ## STAC Metadata

@@ -54,7 +54,7 @@
   ],
   "title": "Beeldmateriaal Nederland",
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json"
   ],
   "updated": "2026-07-31T23:31:49Z"
 }

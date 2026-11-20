@@ -49,14 +49,14 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
     "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
-    "https://portolan-sdi.github.io/stac-partition-extension/v1.0.0/schema.json"
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
-  "table:row_count": 48373522,
+  "table:row_count": 24186761,
   "table:primary_geometry": "geometry",
   "table:columns": [
     {
@@ -181,12 +181,13 @@
   "assets": {
     "data": {
       "href": "./buildings.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Buildings (GeoParquet)",
       "description": "24.2M building footprint polygons in EPSG:4258 (ETRS89), GeoParquet 1.1.0 with bbox covering column and Hilbert spatial sorting.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 2243654372
     },
     "gml": {
       "href": "./buildings.gml.gz",
@@ -195,7 +196,8 @@
       "description": "Original INSPIRE-harmonized GML from PDOK ATOM download service. 2.7 GB compressed, ~45 GB uncompressed.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 2674968107
     },
     "pmtiles": {
       "href": "./buildings.pmtiles",
@@ -203,14 +205,20 @@
       "title": "Buildings (vector tiles)",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "PMTiles vector tiles of Buildings (INSPIRE Harmonized) for web-map display.",
+      "file:size": 719106615
     },
     "thumbnail": {
       "href": "./thumbnail_.webp",
       "type": "image/webp",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "title": "Thumbnail",
+      "description": "WebP preview rendering of Buildings (INSPIRE Harmonized) for catalog browsing.",
+      "file:size": 24508,
+      "file:checksum": "12200ee124c98e1535e381c09ff40210e1ff7f0d5076a8da863238b9d8de20816aea"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -219,7 +227,10 @@
       "roles": [
         "style",
         "default"
-      ]
+      ],
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
+      "file:size": 620,
+      "file:checksum": "1220a8d31371e148a34316bbca2312aafa21bfc96ac2859f3c2e2e5261909f7a7aef"
     },
     "styles/by-construction-date": {
       "href": "./styles/by-construction-date.json",
@@ -227,35 +238,42 @@
       "title": "INSPIRE Buildings — By Construction Date",
       "roles": [
         "style"
-      ]
-    },
-    "buildings": {
-      "href": "./buildings.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "roles": [
-        "data"
-      ]
+      ],
+      "description": "MapLibre style 'by-construction-date' for the PMTiles visual asset.",
+      "file:size": 871,
+      "file:checksum": "1220f5f18343b1305568680f7acf0626f6eee2b800def3323e86f4b6b24107f94d11"
     },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",
       "roles": [
         "documentation"
-      ]
+      ],
+      "title": "Documentation",
+      "description": "Human-readable documentation for Buildings (INSPIRE Harmonized).",
+      "file:size": 4001,
+      "file:checksum": "1220ceff124caf0554191a862c3b9f3b9548bac7db506149ef8ae21b097f7ce8dc0e"
     },
     "thumbnail.png": {
       "href": "./thumbnail.webp",
       "type": "image/webp",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "title": "Thumbnail",
+      "description": "WebP preview rendering of Buildings (INSPIRE Harmonized) for catalog browsing.",
+      "file:size": 24508,
+      "file:checksum": "12200ee124c98e1535e381c09ff40210e1ff7f0d5076a8da863238b9d8de20816aea"
     },
     "buildings.gml": {
       "href": "./buildings.gml.gz",
       "type": "application/octet-stream",
       "roles": [
-        "data"
-      ]
+        "source"
+      ],
+      "title": "Source GML (INSPIRE Buildings)",
+      "description": "The upstream INSPIRE GML download this mirror was converted from.",
+      "file:size": 2674968107
     }
   },
   "providers": [

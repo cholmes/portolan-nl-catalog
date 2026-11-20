@@ -50,11 +50,12 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "proj:epsg": 28992,
   "table:primary_geometry": "geom",
@@ -124,215 +125,289 @@
   "assets": {
     "gemeente": {
       "href": "./gemeente_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Gemeenten / Municipalities (342)",
       "description": "342 municipalities — the fundamental building block of Dutch administrative geography.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 600597,
+      "file:checksum": "122051f71695cc63dc5fa56f1237a35c4055cb5c8434c0f1f69c89639e4f14275d84"
     },
     "provincie": {
       "href": "./provincie_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Provincies / Provinces (12)",
       "description": "The 12 Dutch provinces.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 204855,
+      "file:checksum": "122003a3a433405564d280240e6c04aee6c1c9b2128a583d13a41051c692dc283557"
     },
     "wijk": {
       "href": "./wijk_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Wijken / Districts (3,423)",
       "description": "Sub-municipal districts for statistical purposes.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 1423441,
+      "file:checksum": "1220c500f5877ff393f7f751b31979f330e1a0b86a3f268eb32f5b629c0edb1dfabd"
     },
     "buurt": {
       "href": "./buurt_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Buurten / Neighborhoods (14,729)",
       "description": "Neighborhoods — the finest-grained CBS statistical unit.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 3024156,
+      "file:checksum": "1220867091fdf0debfcdc36615f1ce6d3b8019b5c5251922009d9ebba92300d2143e"
     },
     "landsdeel": {
       "href": "./landsdeel_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Landsdelen / Country parts (4)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "CBS Gebiedsindelingen (Area Classifications) as cloud-native GeoParquet.",
+      "file:size": 170060,
+      "file:checksum": "12209a94929bfd1a71cf5c6a7d2a8de8a18a88d7dea0055a864a245544e016313f88"
     },
     "coropgebied": {
       "href": "./coropgebied_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "COROP-gebieden / COROP regions (40)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "CBS Gebiedsindelingen (Area Classifications) as cloud-native GeoParquet.",
+      "file:size": 253530,
+      "file:checksum": "122035d71666aee017603ee86cfc94bad717bd730273696e115cd8068e74d4a72268"
     },
     "coropplusgebied": {
       "href": "./coropplusgebied_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "COROP-plus-gebieden (24)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "CBS Gebiedsindelingen (Area Classifications) as cloud-native GeoParquet.",
+      "file:size": 290891,
+      "file:checksum": "1220c2fa15527c8e606aed81759aa9872136cdd5fe476d57072cb4893e9bcdc76820"
     },
     "coropsubgebied": {
       "href": "./coropsubgebied_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "COROP-subgebieden (84)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "CBS Gebiedsindelingen (Area Classifications) as cloud-native GeoParquet.",
+      "file:size": 265932,
+      "file:checksum": "122091c6cceb345acfaffb3e877e72fac41f0dd90843b90e47b284c3333f03f691f0"
     },
     "veiligheidsregio": {
       "href": "./veiligheidsregio_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Veiligheidsregio's / Safety regions (25)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "CBS Gebiedsindelingen (Area Classifications) as cloud-native GeoParquet.",
+      "file:size": 228759,
+      "file:checksum": "12202dfc4b78ee6ab9f18464ee4196d3563ece48268290489e3102cf048058ef0dd6"
     },
     "arbeidsmarktregio": {
       "href": "./arbeidsmarktregio_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Arbeidsmarktregio's / Labour market regions (35)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "CBS Gebiedsindelingen (Area Classifications) as cloud-native GeoParquet.",
+      "file:size": 269799,
+      "file:checksum": "12208f2e667b7498b3a3cef56f8bdad3dcdab7aa3e84e6f9b4ac08ee1aff38cc4e2a"
     },
     "regioplus_arbeidsmarktregio": {
       "href": "./regioplus_arbeidsmarktregio_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Regioplus Arbeidsmarktregio's (7)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "CBS Gebiedsindelingen (Area Classifications) as cloud-native GeoParquet.",
+      "file:size": 239145,
+      "file:checksum": "1220230380705832e24ff9800f6baf1b268ea67ec1b017639dfa2a89c0f06427ef13"
     },
     "ggdregio": {
       "href": "./ggdregio_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "GGD-regio's / Public health regions (25)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "CBS Gebiedsindelingen (Area Classifications) as cloud-native GeoParquet.",
+      "file:size": 235923,
+      "file:checksum": "1220e07c187fb475cfb3cd5c38313b2d606be9e53df28640ed262b6c57538a0bbb56"
     },
     "jeugdregio": {
       "href": "./jeugdregio_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Jeugdregio's / Youth care regions (42)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "CBS Gebiedsindelingen (Area Classifications) as cloud-native GeoParquet.",
+      "file:size": 257475,
+      "file:checksum": "1220348e9b50e8dfdc08b96133578963f4fffb55b87775964c2183755d8c959303bc"
     },
     "regionale_eenheid": {
       "href": "./regionale_eenheid_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Regionale Eenheden / Police regions (10)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "CBS Gebiedsindelingen (Area Classifications) as cloud-native GeoParquet.",
+      "file:size": 230809,
+      "file:checksum": "122020d239f8352749d9f215d332e02a3a0f9351b6468ea3d6ab772b8360a7ef3b07"
     },
     "arrondissementsgebied": {
       "href": "./arrondissementsgebied_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Arrondissementen / Court districts (11)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "CBS Gebiedsindelingen (Area Classifications) as cloud-native GeoParquet.",
+      "file:size": 211471,
+      "file:checksum": "122046f29eff8ec2ab84184dd0ba603319ee1bde198c9d720911b847951cf9bbe2f9"
     },
     "ressort": {
       "href": "./ressort_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Ressorten / Court of appeal areas (4)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "CBS Gebiedsindelingen (Area Classifications) as cloud-native GeoParquet.",
+      "file:size": 163142,
+      "file:checksum": "1220e4130178b30ae73b7894ffde4e8df317ea4e8e21da0037fd44c30da95b4b83a0"
     },
     "regionale_energiestrategie": {
       "href": "./regionale_energiestrategie_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "RES-regio's / Energy strategy regions (30)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "CBS Gebiedsindelingen (Area Classifications) as cloud-native GeoParquet.",
+      "file:size": 231541,
+      "file:checksum": "12200d00f41c84bbe67eaa8c4de47c7c457e94fc9f7817218fea01b723d7a5ba3f19"
     },
     "zorgkantoorregio": {
       "href": "./zorgkantoorregio_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Zorgkantoorregio's / Health office regions (31)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "CBS Gebiedsindelingen (Area Classifications) as cloud-native GeoParquet.",
+      "file:size": 270775,
+      "file:checksum": "1220f768e11bb3a9732a850dc97343cb966776f86c3d6518eaab077aef9349d78e52"
     },
     "veiligthuisregio": {
       "href": "./veiligthuisregio_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Veilig Thuis-regio's / Domestic safety regions (26)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "CBS Gebiedsindelingen (Area Classifications) as cloud-native GeoParquet.",
+      "file:size": 247707,
+      "file:checksum": "1220755685bbd9f1aec54be892c3fa75e78c9e179c40c973b5a087f886146350780a"
     },
     "subres_regio": {
       "href": "./subres_regio_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Sub-RES regio's (59)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "CBS Gebiedsindelingen (Area Classifications) as cloud-native GeoParquet.",
+      "file:size": 254475,
+      "file:checksum": "122045af09027af82422a54083efaf0d2b7bdf7663824221ba8173bceb9dc700af57"
     },
     "regionaalmeld_coordinatiepunt": {
       "href": "./regionaalmeld_coordinatiepunt_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "RMC-regio's (39)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "CBS Gebiedsindelingen (Area Classifications) as cloud-native GeoParquet.",
+      "file:size": 254901,
+      "file:checksum": "12203ac9231d3e8afcb1ec7e11adb76aaf71328ff91f720fa64306486d3bd4527cf6"
     },
     "kamervankoophandelregio": {
       "href": "./kamervankoophandelregio_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "KvK-regio's (5)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "CBS Gebiedsindelingen (Area Classifications) as cloud-native GeoParquet.",
+      "file:size": 179958,
+      "file:checksum": "1220682603f57e9ba2033e385e18e60d3228d5cb068662130c0967f79846a7eb4900"
     },
     "landbouwgebied": {
       "href": "./landbouwgebied_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Landbouwgebieden / Agricultural areas (66)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "CBS Gebiedsindelingen (Area Classifications) as cloud-native GeoParquet.",
+      "file:size": 315488,
+      "file:checksum": "1220f6131e018f9e0048cde0bf534c427ab152727ca7fd855752080786c85a73114d"
     },
     "landbouwgroep": {
       "href": "./landbouwgroep_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Landbouwgroepen / Agricultural groups (14)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "CBS Gebiedsindelingen (Area Classifications) as cloud-native GeoParquet.",
+      "file:size": 237206,
+      "file:checksum": "122060c0c40a434c909e1d462ad1a08eb9436ac01957b68d4e581e1481accf243e71"
     },
     "toeristengebied": {
       "href": "./toeristengebied_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Toeristengebieden / Tourist areas (26)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "CBS Gebiedsindelingen (Area Classifications) as cloud-native GeoParquet.",
+      "file:size": 297986,
+      "file:checksum": "12205a8cc5bdab2d71a2b90ed1478bdfe06c97d62ee79b4dcc5506582264f9daef83"
     },
     "toeristengroep": {
       "href": "./toeristengroep_gegeneraliseerd.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Toeristengroepen / Tourist groups (6)",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "CBS Gebiedsindelingen (Area Classifications) as cloud-native GeoParquet.",
+      "file:size": 258565,
+      "file:checksum": "1220b6219b18a82c19b7ec68735e85e4d10b644b6d9c31182e49f3f2337447f9a76f"
     },
     "pmtiles": {
       "href": "./gebiedsindelingen.pmtiles",
@@ -340,7 +415,10 @@
       "title": "Gemeente boundaries (vector tiles)",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "PMTiles vector tiles of CBS Gebiedsindelingen (Area Classifications) for web-map display.",
+      "file:size": 220101,
+      "file:checksum": "12207caf62e03f68414d7cbe58859d94d3c47297c34884741a922203e996ac0d2cd7"
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
@@ -348,40 +426,55 @@
       "title": "CBS Gebiedsindelingen thumbnail",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "description": "WebP preview rendering of CBS Gebiedsindelingen (Area Classifications) for catalog browsing.",
+      "file:size": 45440,
+      "file:checksum": "12207073c6f802f1e9ed58a9bd8d7f25a43553fc41d8da0b4f491a6597c1165a4996"
     },
     "styles/default": {
       "href": "./styles/default.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "Municipalities",
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
       "roles": [
         "style",
         "default"
-      ]
+      ],
+      "file:size": 620,
+      "file:checksum": "12202d44cb1a5a35a964f495fee302049dfe18f4afcdffcbf5c43b27ba70c39dff45"
     },
     "styles/mosaic": {
       "href": "./styles/mosaic.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "Municipalities — distinguishable neighbours",
+      "description": "MapLibre style 'mosaic' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1242,
+      "file:checksum": "12206ddad093aeb29dc4015fac2ae3cf4605918d16516e46533a51ae7e2d04154587"
     },
     "styles/boundaries": {
       "href": "./styles/boundaries.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "Municipal boundaries only",
+      "description": "MapLibre style 'boundaries' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 835,
+      "file:checksum": "1220341c945177a48279390008eed7dbd14db5dfc0476504ac9619987e60bbee363b"
     },
     "styles/labeled": {
       "href": "./styles/labeled.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "Municipalities with names",
+      "description": "MapLibre style 'labeled' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1247,
+      "file:checksum": "122043cbc4cf6b896ceffd2c3cb95b17f9b20ccbf73d2a7ca04a40717222c919b726"
     }
   },
   "license": "CC-BY-4.0",

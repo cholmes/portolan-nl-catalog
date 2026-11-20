@@ -50,11 +50,12 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "table:row_count": 63073,
   "table:primary_geometry": "geometry",
@@ -157,12 +158,14 @@
   "assets": {
     "data": {
       "href": "./rijksmonumenten.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "National Monuments (GeoParquet)",
       "description": "63,073 monument point locations in EPSG:28992 (Amersfoort / RD New).",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 3683793,
+      "file:checksum": "122090cebfb5e3c3409a734fb0a2b8d1ad0da931db1ba1982753829ccd869894baf6"
     },
     "pmtiles": {
       "href": "./rijksmonumenten.pmtiles",
@@ -170,7 +173,9 @@
       "title": "National Monuments (vector tiles)",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "PMTiles vector tiles of National Monuments (Rijksmonumenten) for web-map display.",
+      "file:size": 13290128
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
@@ -178,7 +183,10 @@
       "title": "Thumbnail",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "description": "WebP preview rendering of National Monuments (Rijksmonumenten) for catalog browsing.",
+      "file:size": 31424,
+      "file:checksum": "12204bf9010674e7cf8fd8379c58a009eca991d1fb15b98d93367833aa724d4da8fb"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -187,7 +195,10 @@
       "roles": [
         "style",
         "default"
-      ]
+      ],
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
+      "file:size": 543,
+      "file:checksum": "1220bc28c45820437773b996996d1ae7458ba17d35b7fdaaab9e92ac126893a1a956"
     },
     "styles/by-category": {
       "href": "./styles/by-category.json",
@@ -195,7 +206,10 @@
       "title": "National Monuments — By Category",
       "roles": [
         "style"
-      ]
+      ],
+      "description": "MapLibre style 'by-category' for the PMTiles visual asset.",
+      "file:size": 1371,
+      "file:checksum": "1220b07bc4bd07c1dbdc01646ba05fc75f56f66a4937aee6aa73971a7afdd44cc7c4"
     },
     "styles/by-type": {
       "href": "./styles/by-type.json",
@@ -203,7 +217,10 @@
       "title": "National Monuments — Built vs Archaeological",
       "roles": [
         "style"
-      ]
+      ],
+      "description": "MapLibre style 'by-type' for the PMTiles visual asset.",
+      "file:size": 703,
+      "file:checksum": "12205a036eeed932da1c51cc62e529140b75cf822eecd135e532c978258c7536afc3"
     }
   },
   "license": "CC0-1.0",

@@ -174,8 +174,27 @@ def _license(doc, path):
 # Schema declarations
 # --------------------------------------------------------------------------
 
-PORTOLAN_SCHEMA = "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+PORTOLAN_SCHEMA = "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json"
 PARTITION_SCHEMA = "https://schemas.portolan-sdi.org/incubating/partition/v1.0.0/schema.json"
+
+
+@fix("PTL-CNF-002", "every object declares the same Portolan profile version as the root")
+def _portolan_schema_version(doc, path):
+    """Spec v0.3.0 upgrade: replace any older profile URI with the current one.
+
+    rashid reads the profile version from the root and flags every object whose
+    URI differs (PTL-CNF-002), so the bump has to land everywhere at once.
+    """
+    ext = doc.get("stac_extensions")
+    if not isinstance(ext, list):
+        return False
+    changed = False
+    for i, e in enumerate(ext):
+        if isinstance(e, str) and "schemas.portolan-sdi.org/portolan/" in e \
+                and e != PORTOLAN_SCHEMA:
+            ext[i] = PORTOLAN_SCHEMA
+            changed = True
+    return changed
 
 
 @fix("PTL-CNF-001", "declare the Portolan profile schema in stac_extensions")
@@ -491,6 +510,241 @@ def _mirror_asset(doc, path):
     if a.get("type") == "application/x-parquet":
         a["type"] = "application/vnd.apache.parquet"
         changed = True
+    return changed
+
+
+# --------------------------------------------------------------------------
+# Spec v0.3.0 fixes (2026-11). Each closes a rule rashid 0.4.0 reports.
+# --------------------------------------------------------------------------
+
+@fix("PTL-AST-009p", "GeoParquet data assets use the registered parquet media type")
+def _parquet_type(doc, path):
+    """'application/x-parquet' predates the IANA registration. rashid 0.4.0
+    recognises a collection's GeoParquet only under the registered type, so
+    the old spelling breaks the PMTiles-to-GeoParquet reference (PORTO-FMT-062).
+    """
+    changed = False
+    for a in (doc.get("assets") or {}).values():
+        if isinstance(a, dict) and a.get("type") == "application/x-parquet":
+            a["type"] = "application/vnd.apache.parquet"
+            changed = True
+    return changed
+
+
+@fix("PTL-AST-009d", "remove PMTiles assets that duplicate the visual asset under a data role")
+def _pmtiles_dupes(doc, path):
+    """Eight collections register the same .pmtiles twice: once as the visual
+    asset and once under a filename key with a bare data role. v0.3 forbids
+    PMTiles as a data asset (PORTO-FMT-062), and the second registration adds
+    nothing the visual asset does not already say.
+    """
+    assets = doc.get("assets")
+    if not isinstance(assets, dict):
+        return False
+    pmtiles_hrefs = {}
+    for key, a in assets.items():
+        if isinstance(a, dict) and a.get("type") == "application/vnd.pmtiles" \
+                and "visual" in (a.get("roles") or []):
+            pmtiles_hrefs[a.get("href")] = key
+    drop = [key for key, a in assets.items()
+            if isinstance(a, dict) and a.get("type") == "application/vnd.pmtiles"
+            and "visual" not in (a.get("roles") or [])
+            and a.get("href") in pmtiles_hrefs and pmtiles_hrefs[a["href"]] != key]
+    for key in drop:
+        del assets[key]
+    return bool(drop)
+
+
+# Landing pages for the ten mirrors that had only service-endpoint via links.
+# Every URL was fetched on 2026-11-20 and verified to serve the dataset's own
+# page (the PDOK articles render "Dataset: <name>"; the NGR page is the
+# text/html describedby the wandonderzoek Atom feed itself declares).
+LANDING = {
+    "rijkswaterstaat/nwb_wegen":
+        ("https://www.pdok.nl/introductie/-/article/nationaal-wegen-bestand-nwb-wegen",
+         "PDOK dataset page: Nationaal Wegen Bestand (NWB) - Wegen"),
+    "vro/bodemkaart/soilarea":
+        ("https://www.pdok.nl/introductie/-/article/bro-bodemkaart-sgm-",
+         "PDOK dataset page: BRO Bodemkaart (SGM)"),
+    "vro/bodemkaart/areaofpedologicalinterest":
+        ("https://www.pdok.nl/introductie/-/article/bro-bodemkaart-sgm-",
+         "PDOK dataset page: BRO Bodemkaart (SGM)"),
+    "vro/geomorfologische_kaart/geomorphological_area":
+        ("https://www.pdok.nl/introductie/-/article/bro-geomorfologische-kaart-gmm-",
+         "PDOK dataset page: BRO Geomorfologische kaart (GMM)"),
+    "vro/geomorfologische_kaart/geomorphological_area_collection":
+        ("https://www.pdok.nl/introductie/-/article/bro-geomorfologische-kaart-gmm-",
+         "PDOK dataset page: BRO Geomorfologische kaart (GMM)"),
+    "vro/geomorfologische_kaart/area_of_geomorphological_interest":
+        ("https://www.pdok.nl/introductie/-/article/bro-geomorfologische-kaart-gmm-",
+         "PDOK dataset page: BRO Geomorfologische kaart (GMM)"),
+    "vro/bodemverontreiniging_besluit":
+        ("https://www.pdok.nl/introductie/-/article/bro-overheidsbesluit-bodemverontreiniging-sld-",
+         "PDOK dataset page: BRO Overheidsbesluit bodemverontreiniging (SLD)"),
+    "vro/grondwatergebruiksysteem":
+        ("https://www.pdok.nl/introductie/-/article/bro-grondwatergebruiksysteem-guf-",
+         "PDOK dataset page: BRO Grondwatergebruiksysteem (GUF)"),
+    "vro/mijnbouwconstructie":
+        ("https://www.pdok.nl/introductie/-/article/bro-mijnbouwconstructie-epc-",
+         "PDOK dataset page: BRO Mijnbouwconstructie (EPC)"),
+    "vro/wandonderzoek":
+        ("https://www.nationaalgeoregister.nl/geonetwork/srv/dut/catalog.search#/metadata/"
+         "6cbbecc1-753b-416d-ad72-1621695ec356",
+         "NGR metadata page: BRO Wandonderzoek bodemkunde (SFR)"),
+}
+
+
+@fix("PTL-PRO-001", "every mirror carries one text/html via link to its source page")
+def _via_landing(doc, path):
+    """v0.3 (PORTO-CORE-084) wants at least one HTML via link per mirror; the
+    service-endpoint via links keep their real media types beside it.
+    """
+    rel = path.parent.relative_to(CATALOG).as_posix()
+    if rel not in LANDING:
+        return False
+    links = doc.setdefault("links", [])
+    if any(isinstance(l, dict) and l.get("rel") == "via"
+           and l.get("type") == "text/html" for l in links):
+        return False
+    url, title = LANDING[rel]
+    after = max((i for i, l in enumerate(links)
+                 if isinstance(l, dict) and l.get("rel") == "via"), default=len(links) - 1)
+    links.insert(after + 1, {"rel": "via", "href": url, "type": "text/html",
+                             "title": title})
+    return True
+
+
+@fix("PTL-AST-012", "brp_gewaspercelen: the cross-year glob moves to partition:glob")
+def _brp_partition(doc, path):
+    """v0.3 forbids globs in data asset hrefs (PORTO-FMT-065) and requires
+    partition globs to be absolute bucket URLs that clients can list
+    (PORTO-FMT-064). The 17 per-year files are a directory partition on the
+    'jaar' column, so the collection declares the partition extension and the
+    glob moves there as the bucket URL. The per-year items keep their
+    single-file data assets.
+    """
+    if path.parent.relative_to(CATALOG).as_posix() != "rvo/brp_gewaspercelen":
+        return False
+    assets = doc.get("assets") or {}
+    data = assets.get("data")
+    if not (isinstance(data, dict) and "*" in str(data.get("href", ""))):
+        return False
+    del assets["data"]
+    ext = doc.setdefault("stac_extensions", [])
+    if PARTITION_SCHEMA not in ext:
+        ext.append(PARTITION_SCHEMA)
+    doc["partition:scheme"] = "directory"
+    doc["partition:strategy"] = "temporal"
+    doc["partition:keys"] = [{"name": "jaar", "type": "int32",
+                              "description": "Harvest year; one subdirectory per year."}]
+    doc["partition:glob"] = ("s3://us-west-2.opendata.source.coop/cholmes/portolan-nl/"
+                             "rvo/brp_gewaspercelen/*/brp_gewaspercelen_*.parquet")
+    doc["partition:file_count"] = 17
+    return True
+
+
+@fix("PTL-LNK-006", "3dbag: drop the raw XYZ-template link and asset")
+def _xyz_template(doc, path):
+    """A literal {z}/{x}/{y} template is not a valid URI reference, so the
+    rel:xyz link and its twin asset fail link validation. The same endpoint
+    stays reachable through the tilejson asset, whose document carries the
+    template where a template is legal.
+    """
+    if doc.get("id") != "3dbag":
+        return False
+    changed = False
+    links = doc.get("links") or []
+    keep = [l for l in links
+            if not (isinstance(l, dict) and "{z}" in str(l.get("href", "")))]
+    if len(keep) != len(links):
+        doc["links"] = keep
+        changed = True
+    assets = doc.get("assets") or {}
+    for key in [k for k, a in assets.items()
+                if isinstance(a, dict) and "{z}" in str(a.get("href", ""))]:
+        del assets[key]
+        changed = True
+    return changed
+
+
+# Standard texts for the asset kinds this catalog repeats everywhere. The
+# per-collection meaning lives in the collection title these templates cite.
+def _title_of(doc):
+    return doc.get("title") or doc.get("id") or "this collection"
+
+
+def _ast010_texts(key, a, doc):
+    """(title, description) templates per asset kind; None leaves it alone."""
+    roles = a.get("roles") or []
+    t = _title_of(doc)
+    if "thumbnail" in roles:
+        return ("Thumbnail", f"WebP preview rendering of {t} for catalog browsing.")
+    if "style" in roles:
+        name = key.split("/", 1)[-1]
+        return (f"{t} — {name}", f"MapLibre style '{name}' for the PMTiles visual asset.")
+    if key == "README" or "documentation" in roles:
+        return ("Documentation", f"Human-readable documentation for {t}.")
+    if "collection-mirror" in roles:
+        return ("STAC items (GeoParquet)",
+                "All item metadata as one GeoParquet table (collection mirror).")
+    if a.get("type") == "application/vnd.pmtiles":
+        return (f"{t} (vector tiles)",
+                f"PMTiles vector tiles of {t} for web-map display.")
+    if a.get("type") == "application/vnd.apache.parquet":
+        return (f"{t} (GeoParquet)", f"{t} as cloud-native GeoParquet.")
+    if a.get("type") == "application/geopackage+sqlite3":
+        return (f"{t} (GeoPackage)", f"{t} as a GeoPackage, matching the source format.")
+    if "source" in roles:
+        return ("Source download", f"The upstream source file for {t}, as downloaded.")
+    if "metadata" in roles:
+        return ("Source metadata", f"Metadata sidecar from the source service for {t}.")
+    return (None, None)
+
+
+@fix("PTL-AST-010", "every asset carries a title and a description")
+def _asset_titles(doc, path):
+    changed = False
+    for key, a in (doc.get("assets") or {}).items():
+        if not isinstance(a, dict):
+            continue
+        title, desc = _ast010_texts(key, a, doc)
+        if title and not a.get("title"):
+            a["title"] = title
+            changed = True
+        if desc and not a.get("description"):
+            a["description"] = desc
+            changed = True
+    return changed
+
+
+@fix("PTL-AST-003", "assets whose file is in the repo carry file:size and file:checksum")
+def _file_meta(doc, path):
+    """Data files live on S3 and are hashed by their own pipelines; this covers
+    the files the repo itself publishes (thumbnails, styles, READMEs). The
+    hash is multihash sha2-256. tests/test_file_metadata.py keeps these honest.
+    """
+    import hashlib
+    FILE_SCHEMA = "https://stac-extensions.github.io/file/v2.1.0/schema.json"
+    changed = False
+    for key, a in (doc.get("assets") or {}).items():
+        if not isinstance(a, dict):
+            continue
+        href = str(a.get("href") or "")
+        if not href.startswith("./"):
+            continue        # absolute hrefs point at S3, which this cannot hash
+        target = (path.parent / href).resolve()
+        if not target.is_file() or target == path.resolve():
+            continue        # absent locally, or a self-reference (PORTO-CORE-085)
+        if "file:size" not in a:
+            a["file:size"] = target.stat().st_size
+            changed = True
+        if "file:checksum" not in a:
+            a["file:checksum"] = "1220" + hashlib.sha256(target.read_bytes()).hexdigest()
+            changed = True
+    if changed and doc.get("type") in ("Catalog", "Collection", "Feature"):
+        ext = doc.setdefault("stac_extensions", [])
+        if FILE_SCHEMA not in ext:
+            ext.append(FILE_SCHEMA)
     return changed
 
 

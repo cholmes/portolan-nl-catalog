@@ -22,11 +22,12 @@ The catalog follows a nested STAC structure:
 ## Institutions and Collections
 
 ### Kadaster (Cadastre, Land Registry & Mapping Agency)
-- **bag_light/** — 11.4 million buildings with construction year, usage, floor area
+- **panden/** — 11.4 million buildings with construction year, usage, floor area
 - **bestuurlijke_gebieden/** — 342 municipalities, 12 provinces, 1 national territory (2026)
-- **inspire_buildings/** — 24.2 million INSPIRE-harmonized building records
+- **inspire_buildings/** — 24.2 million INSPIRE-harmonized building records (incl. history)
 
 ### Rijkswaterstaat (Public Works & Water Management)
+- **nwb_wegen/** — 1.6 million road segments: every public road in the Netherlands (NWB)
 - **bergingsgebieden/** — 1,545 flood retention areas
 - **fme_disk_tunnels/** — 25 road tunnels
 - **hectometervakken_vaargeul/** — 3,112 fairway depth sections (Rhine branches)
@@ -39,16 +40,33 @@ The catalog follows a nested STAC structure:
 - **rijksmonumenten/** — 63,073 nationally listed monuments with category and register links
 
 ### RVO (Netherlands Enterprise Agency)
+- **brp_gewaspercelen/** — 18.3 million agricultural crop parcels, 17 yearly editions (2009-2025)
 - **nationale_parken/** — All 21 National Parks with boundaries
 - **natura2000/** — 162 Natura 2000 EU-protected areas (209 features)
 
 ### CBS (Statistics Netherlands)
 - **wijken_en_buurten/** — 18,752 neighborhood/district/municipality boundaries with ~40 demographic indicators
+- **wijken_buurten/** — the 2025 vintage with extended demographic attributes
+- **gebiedsindelingen/** — CBS area classifications (municipal, regional, national)
 - **postcode6/** — 464,964 postcodes with 157 statistical attributes (demographics, housing, energy, income)
 - **bestand_bodemgebruik_2017/** — 171,543 land use polygons (~40 types) for all of Netherlands
 - **existing_landuse_inspire/** — 171,543 INSPIRE-harmonized land use polygons (HILUCS classification)
 - **bevolkingsspreiding/** — 31,033 population distribution features (1km grid, provinces, municipalities)
 - **gezondheid/** — 24 provincial health indicators (doctors and deaths per 100K)
+
+### VRO (Housing & Spatial Planning — BRO subsurface registry)
+- **bodemkaart/** — National Soil Map 1:50,000: 48,025 soil areas + 6,192 interest areas
+- **geomorfologische_kaart/** — Geomorphological Map 1:50,000: 80,148 landforms in three layers
+- **wandonderzoek/** — 2,806 described soil faces (SFR)
+- **mijnbouwconstructie/** — 4,975 mining-law constructions (EPC)
+- **grondwatergebruiksysteem/** — 50,637 groundwater use systems (GUF)
+- **bodemverontreiniging_besluit/** — 121 soil-contamination decisions (SLD)
+
+### Beeldmateriaal (nationwide aerial imagery programme)
+- **luchtfoto_2024/** — 356 aerial orthophoto scenes (25cm RGB COGs) covering the country
+
+### TU Delft (3D geoinformation research group)
+- **3dbag/** — 14.1 million building parts with height attributes (3D BAG)
 
 ## Getting Started
 

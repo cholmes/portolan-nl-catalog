@@ -147,7 +147,7 @@ ORDER BY 1
 INSTALL spatial; LOAD spatial;
 
 SELECT localId, anyPoint,
-       ST_AsText(ST_GeomFromWKB(geometry)) AS wkt
+       ST_AsText(geometry) AS wkt
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/inspire_buildings/buildings.parquet')
 WHERE endLifespanVersion IS NULL
   AND bbox.xmin >= 4.88 AND bbox.xmax <= 4.92
@@ -168,7 +168,7 @@ WHERE endLifespanVersion IS NULL
   AND bbox.xmin <= 4.9003 AND bbox.xmax >= 4.9003
   AND bbox.ymin <= 52.3792 AND bbox.ymax >= 52.3792
   AND ST_Intersects(
-      ST_GeomFromWKB(geometry),
+      geometry,
       ST_Point(4.9003, 52.3792)
   )
 ```
@@ -176,7 +176,7 @@ WHERE endLifespanVersion IS NULL
 ### Buildings constructed before 1800 (still standing)
 
 ```sql
-SELECT localId, anyPoint, ST_AsText(ST_Centroid(ST_GeomFromWKB(geometry))) AS center
+SELECT localId, anyPoint, ST_AsText(ST_Centroid(geometry)) AS center
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/inspire_buildings/buildings.parquet')
 WHERE endLifespanVersion IS NULL
   AND LEFT(anyPoint, 4) < '1800'
@@ -215,7 +215,7 @@ LIMIT 20
 INSTALL spatial; LOAD spatial;
 
 SELECT localId, anyPoint,
-       ST_Area_Spheroid(ST_GeomFromWKB(geometry)) AS area_m2
+       ST_Area_Spheroid(geometry) AS area_m2
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/inspire_buildings/buildings.parquet')
 WHERE endLifespanVersion IS NULL
 ORDER BY area_m2 DESC

@@ -41,8 +41,8 @@ The official administrative boundaries of the Netherlands: 342 municipalities (g
 
 ```python
 import geopandas as gpd
-gemeenten = gpd.read_parquet('gemeentegebied.parquet')
-provincies = gpd.read_parquet('provinciegebied.parquet')
+gemeenten = gpd.read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/bestuurlijke_gebieden/gemeentegebied.parquet')
+provincies = gpd.read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/bestuurlijke_gebieden/provinciegebied.parquet')
 ```
 
 ## STAC Metadata

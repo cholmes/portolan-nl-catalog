@@ -152,11 +152,13 @@
     "styles/landscape-elements"
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://schemas.portolan-sdi.org/incubating/partition/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "table:row_count": 18310341,
   "table:primary_geometry": "geom",
@@ -232,16 +234,6 @@
     }
   },
   "assets": {
-    "data": {
-      "href": "./*/brp_gewaspercelen_*.parquet",
-      "type": "application/vnd.apache.parquet",
-      "title": "All years — GeoParquet glob (2009–2025)",
-      "description": "Glob URL covering every year's GeoParquet partition. Pass directly to DuckDB (`read_parquet('./*/brp_gewaspercelen_*.parquet')`), GDAL, or PyArrow to read all 17 years as a single dataset. Per the Portolan partition convention — see [formats/vector.md](https://github.com/portolan-sdi/portolan-spec/blob/main/formats/vector.md) in the portolan-spec.",
-      "roles": [
-        "data"
-      ],
-      "portolan:glob": true
-    },
     "pmtiles": {
       "href": "./2025/brp_gewaspercelen_2025.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -249,7 +241,8 @@
       "description": "PMTiles for the most recent BRP year, used as the default collection-level visualization. Per-year PMTiles are also available as item assets.",
       "roles": [
         "visual"
-      ]
+      ],
+      "file:size": 615469626
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
@@ -257,7 +250,10 @@
       "title": "BRP Gewaspercelen thumbnail",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "description": "WebP preview rendering of BRP Gewaspercelen (Agricultural Crop Parcels) for catalog browsing.",
+      "file:size": 48796,
+      "file:checksum": "12206fc03cf30da402a35f17dad7d94cf5a815ce9587d45d36a109da2c70a80b073a"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -267,7 +263,9 @@
       "roles": [
         "style",
         "default"
-      ]
+      ],
+      "file:size": 986,
+      "file:checksum": "1220cd665c1c028fb3b331c1e37ecc70eebe3f060d5c8be3859d50556a552744602a"
     },
     "styles/by-category": {
       "href": "./styles/by-category.json",
@@ -276,7 +274,9 @@
       "description": "Distinct colors for each broad crop category: green for grassland, orange for arable, blue for landscape elements.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 989,
+      "file:checksum": "12202e7c32d4e2b2371268d5980fd9fe07629c83ab603839f5fcb28799cdf68429e6"
     },
     "styles/by-crop": {
       "href": "./styles/by-crop.json",
@@ -285,7 +285,9 @@
       "description": "Individual colors for the most common specific crops — potatoes, wheat, maize, sugar beets, and more.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1837,
+      "file:checksum": "1220bda0e5b8dfc347b452f57d5e9c33ee1537fcfc086a9db8c3891c0771c7ffdd83"
     },
     "styles/landscape-elements": {
       "href": "./styles/landscape-elements.json",
@@ -294,7 +296,9 @@
       "description": "Highlights ditches, hedgerows, tree rows, and ponds — the landscape elements registered in the BRP (added to the BRP scope in 2023, so this style is empty for 2009–2022).",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1663,
+      "file:checksum": "1220d96b0b71a07a1799065b9797e6e16e6929ee303606bd0cd69f6e5c9d4c2a8e59"
     }
   },
   "license": "CC0-1.0",
@@ -330,5 +334,16 @@
       "url": "https://source.coop/cholmes/portolan-nl"
     }
   ],
-  "updated": "2026-07-31T23:32:34Z"
+  "updated": "2026-07-31T23:32:34Z",
+  "partition:scheme": "directory",
+  "partition:strategy": "temporal",
+  "partition:keys": [
+    {
+      "name": "jaar",
+      "type": "int32",
+      "description": "Harvest year; one subdirectory per year."
+    }
+  ],
+  "partition:glob": "s3://us-west-2.opendata.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/*/brp_gewaspercelen_*.parquet",
+  "partition:file_count": 17
 }

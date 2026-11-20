@@ -30,6 +30,12 @@
       "title": "PDOK ATOM feed"
     },
     {
+      "rel": "via",
+      "href": "https://www.pdok.nl/introductie/-/article/nationaal-wegen-bestand-nwb-wegen",
+      "type": "text/html",
+      "title": "PDOK dataset page: Nationaal Wegen Bestand (NWB) - Wegen"
+    },
+    {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/nwb_wegen/nwb_wegen.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -50,11 +56,12 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "proj:epsg": 28992,
   "table:row_count": 1626321,
@@ -302,12 +309,13 @@
   "assets": {
     "data": {
       "href": "./nwb_wegen.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "NWB Wegen (GeoParquet)",
       "description": "1.6M road segment MultiLineStrings in EPSG:28992 (Amersfoort / RD New), GeoParquet format. 779 MB.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 536603495
     },
     "pmtiles": {
       "href": "./nwb_wegen.pmtiles",
@@ -315,48 +323,65 @@
       "title": "NWB Wegen (vector tiles)",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "PMTiles vector tiles of National Road Network (NWB Wegen) for web-map display.",
+      "file:size": 280708928
     },
     "styles/default": {
       "href": "./styles/default.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "Road network by authority",
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
       "roles": [
         "style",
         "default"
-      ]
+      ],
+      "file:size": 1015,
+      "file:checksum": "122065f8045e8fbc4914e6f9a3cd275acce5cbecd0a92a9ecb24af178163631eb343"
     },
     "styles/by-road-type": {
       "href": "./styles/by-road-type.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "Carriageways, cycle paths and footpaths",
+      "description": "MapLibre style 'by-road-type' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1118,
+      "file:checksum": "12205f2fb77d9279eb0f418a48db125ccaaaa81f1354cd8494a0bd9538927d912823"
     },
     "styles/cycling-network": {
       "href": "./styles/cycling-network.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "Cycle paths only",
+      "description": "MapLibre style 'cycling-network' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1310,
+      "file:checksum": "12201b81e0c9569bab91d10b50d3f14fc690f35101fcc3eacc2b918daf58198f2e27"
     },
     "styles/by-route-class": {
       "href": "./styles/by-route-class.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "Motorways, N-roads and Euroroutes",
+      "description": "MapLibre style 'by-route-class' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1574,
+      "file:checksum": "12205dcb183699a9c22debe1bdedb567d20409cf2230956cfee9ae0af5b01a1d9340"
     },
     "styles/by-direction": {
       "href": "./styles/by-direction.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "One-way and two-way segments",
+      "description": "MapLibre style 'by-direction' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 954,
+      "file:checksum": "12206a8a6978516b727e890d87e5fba920610be74b3378742ca89bbdc35deb2a2729"
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
@@ -364,7 +389,10 @@
       "title": "National Road Network (NWB Wegen) (preview)",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "description": "WebP preview rendering of National Road Network (NWB Wegen) for catalog browsing.",
+      "file:size": 45382,
+      "file:checksum": "12206a4785a9c4ed1b58e44154759ec0b733574b164caa556485f48475e67d60cc64"
     }
   },
   "license": "CC0-1.0",

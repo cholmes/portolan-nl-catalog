@@ -49,13 +49,14 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
-  "table:row_count": 3090,
+  "table:row_count": 1545,
   "table:primary_geometry": "geometry",
   "table:columns": [
     {
@@ -131,7 +132,7 @@
   ],
   "geoparquet:geometry_type": "MultiPolygon",
   "geoparquet:feature_count": 1545,
-  "proj:epsg": 3857,
+  "proj:epsg": 4326,
   "pmtiles:min_zoom": 0,
   "pmtiles:max_zoom": 13,
   "pmtiles:tile_type": "mvt",
@@ -204,11 +205,14 @@
   "assets": {
     "data": {
       "href": "./bergingsgebieden.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Flood retention areas",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "Flood Retention Areas as cloud-native GeoParquet.",
+      "file:size": 3873973,
+      "file:checksum": "122080ea63033d1ae31e69d56073f3e0779a74ad7272d9e72b1085c3e9eacd0a74f3"
     },
     "pmtiles": {
       "href": "./bergingsgebieden.pmtiles",
@@ -216,14 +220,21 @@
       "title": "Flood retention areas (vector tiles)",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "PMTiles vector tiles of Flood Retention Areas for web-map display.",
+      "file:size": 2239178,
+      "file:checksum": "12202e7d8443930a8e071b7317b5424b1452cee42a84ca8e3dfcedcf88476ff30996"
     },
     "thumbnail": {
       "href": "./thumbnail_.webp",
       "type": "image/webp",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "title": "Thumbnail",
+      "description": "WebP preview rendering of Flood Retention Areas for catalog browsing.",
+      "file:size": 26392,
+      "file:checksum": "122022666e2a83ff1deac328b6928a56d4244e285caee18e425e53178f025487f12a"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -231,21 +242,21 @@
       "title": "Flood Retention Areas — Default",
       "roles": [
         "style"
-      ]
-    },
-    "bergingsgebieden": {
-      "href": "./bergingsgebieden.parquet",
-      "type": "application/x-parquet",
-      "roles": [
-        "data"
-      ]
+      ],
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
+      "file:size": 633,
+      "file:checksum": "122096ed61bfba6c7b38a7baf257352a4e8a4e9126813b81a4348883ca36d5010dbe"
     },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",
       "roles": [
         "documentation"
-      ]
+      ],
+      "title": "Documentation",
+      "description": "Human-readable documentation for Flood Retention Areas.",
+      "file:size": 2198,
+      "file:checksum": "1220075f36ad7904d1667e7a2b50fb73a1b2ee351d55a75b506dc24f5b4c2faa9697"
     }
   },
   "providers": [

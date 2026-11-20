@@ -37,7 +37,7 @@ Collection: hectometervakken_vaargeul
 Extracted from ArcGIS FeatureServer layer 4 (Hectometervakken vaargeul).
 ~3,600 polygon features representing hectometer sections of the fairway along Rhine branches.
 Published for the GeoWeb Water Depth Charts (Waterdieptekaarten) viewer.
-Original CRS: EPSG:28992 (RD New / Amersfoort).
+Published CRS: WGS84 (EPSG:4326, lon/lat degrees); the upstream ArcGIS service serves EPSG:28992.
 Extent: Rhine branches in the Netherlands (Boven-Rijn, Waal, Pannerdensch Kanaal, Neder-Rijn, Lek, IJssel).
 Fields: vak_ID (section identifier), Shape__Area, Shape__Length.
 

@@ -34,22 +34,21 @@ All buildings in the Netherlands from the BAG (Basisregistratie Adressen en Gebo
 | beginning | string | dateOfConstruction.beginning — start of construction period (not populated; use anyPoint instead) |
 | geometry | binary | Building footprint polygon in EPSG:4258 (ETRS89), WKB encoded |
 
-## Files
-
-| File | Size | Checksum |
-|------|------|----------|
-| ./buildings.parquet | - | - |
-| ./buildings.gml.gz | - | - |
-| ./buildings.pmtiles | - | - |
-| ./thumbnail_.png | - | - |
-
 ## Quick Start
 
-```python
-import geopandas as gpd
+DuckDB streams the columns a query needs over HTTP range requests, so this
+works without downloading the file:
 
-gdf = gpd.read_parquet("./buildings.parquet")
-print(gdf.head())
+```python
+import duckdb
+con = duckdb.connect()
+con.execute("INSTALL spatial; LOAD spatial;")
+df = con.execute("""
+    SELECT COUNT(*) AS current_buildings
+    FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/inspire_buildings/buildings.parquet')
+    WHERE endLifespanVersion IS NULL
+""").df()
+print(df)
 ```
 
 ## STAC Metadata

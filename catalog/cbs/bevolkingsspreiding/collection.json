@@ -61,10 +61,11 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
-    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "table:columns": [
     {
@@ -348,24 +349,36 @@
   "assets": {
     "grid": {
       "href": "./grid.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "roles": [
         "data"
-      ]
+      ],
+      "title": "Bevolkingsspreiding (Population Distribution) (GeoParquet)",
+      "description": "Bevolkingsspreiding (Population Distribution) as cloud-native GeoParquet.",
+      "file:size": 2223784,
+      "file:checksum": "1220440f3226357dc7e1506276080a4b36a2f3a2b7ff919673708489a7d8988fcc1f"
     },
     "nuts2": {
       "href": "./nuts2.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "roles": [
         "data"
-      ]
+      ],
+      "title": "Bevolkingsspreiding (Population Distribution) (GeoParquet)",
+      "description": "Bevolkingsspreiding (Population Distribution) as cloud-native GeoParquet.",
+      "file:size": 152250,
+      "file:checksum": "1220c5734830a832178345444c8c0bddb9aeeb3da7f844dc7aa8967aa1c2a43fdfa1"
     },
     "lau": {
       "href": "./lau.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "roles": [
         "data"
-      ]
+      ],
+      "title": "Bevolkingsspreiding (Population Distribution) (GeoParquet)",
+      "description": "Bevolkingsspreiding (Population Distribution) as cloud-native GeoParquet.",
+      "file:size": 385624,
+      "file:checksum": "12207e7f334997f9ad0efa859e8cc6d26a1bb38ad5f0afce56b64c88bda350922672"
     },
     "pmtiles": {
       "href": "./bevolkingsspreiding.pmtiles",
@@ -374,14 +387,19 @@
       "description": "Grid, provincial, and municipal population as vector tiles for web visualization.",
       "roles": [
         "visual"
-      ]
+      ],
+      "file:size": 63586955
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
       "type": "image/webp",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "title": "Thumbnail",
+      "description": "WebP preview rendering of Bevolkingsspreiding (Population Distribution) for catalog browsing.",
+      "file:size": 44030,
+      "file:checksum": "1220be05697f0b81c60675f8b26b3cbada39a50bed52508383703507c80a824e5a2c"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -389,49 +407,65 @@
       "title": "Population Distribution — Default",
       "roles": [
         "style"
-      ]
+      ],
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
+      "file:size": 637,
+      "file:checksum": "12206c1802c456a9ab4eeaec713365cd9076b9a70640d746c0a624e626c9dd9af3bf"
     },
     "bevolkingsspreiding": {
       "href": "./bevolkingsspreiding.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "roles": [
         "data"
-      ]
+      ],
+      "title": "Bevolkingsspreiding (Population Distribution) (GeoParquet)",
+      "description": "Bevolkingsspreiding (Population Distribution) as cloud-native GeoParquet.",
+      "file:size": 4490816,
+      "file:checksum": "12203c47b575febdf4b9d5e508ba09ef5ae030f231520e3ad71195e0724a3a8bd7a2"
     },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",
       "roles": [
         "documentation"
-      ]
+      ],
+      "title": "Documentation",
+      "description": "Human-readable documentation for Bevolkingsspreiding (Population Distribution).",
+      "file:size": 2685,
+      "file:checksum": "1220fc16a67dc4127e6f078c13185dba3ea993f24c7e68857014bd28577fec6818f3"
     },
     "metadata": {
       "href": "./lau.parquet.aux.xml",
       "type": "application/xml",
       "roles": [
         "metadata"
-      ]
+      ],
+      "title": "Source metadata",
+      "description": "Metadata sidecar from the source service for Bevolkingsspreiding (Population Distribution).",
+      "file:size": 22232,
+      "file:checksum": "12200f5402ff01ffc943c2b3822181d6b892f7cf47a7c96ba91ea2d370e2bcc4174d"
     },
     "nuts2.parquet.aux": {
       "href": "./nuts2.parquet.aux.xml",
       "type": "application/xml",
       "roles": [
         "metadata"
-      ]
+      ],
+      "title": "Source metadata",
+      "description": "Metadata sidecar from the source service for Bevolkingsspreiding (Population Distribution).",
+      "file:size": 22232,
+      "file:checksum": "12200f5402ff01ffc943c2b3822181d6b892f7cf47a7c96ba91ea2d370e2bcc4174d"
     },
     "grid.parquet.aux": {
       "href": "./grid.parquet.aux.xml",
       "type": "application/xml",
       "roles": [
         "metadata"
-      ]
-    },
-    "bevolkingsspreiding.parquet": {
-      "href": "./bevolkingsspreiding.parquet",
-      "type": "application/x-parquet",
-      "roles": [
-        "data"
-      ]
+      ],
+      "title": "Source metadata",
+      "description": "Metadata sidecar from the source service for Bevolkingsspreiding (Population Distribution).",
+      "file:size": 22232,
+      "file:checksum": "12200f5402ff01ffc943c2b3822181d6b892f7cf47a7c96ba91ea2d370e2bcc4174d"
     }
   },
   "providers": [

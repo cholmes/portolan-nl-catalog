@@ -79,11 +79,12 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "portolan:styles": [
     "styles/default",
@@ -187,12 +188,13 @@
   "assets": {
     "data": {
       "href": "./bag-light.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "BAG Buildings (GeoParquet)",
       "description": "11.4M building footprint polygons in EPSG:28992 (RD New), GeoParquet 1.1.0 with bbox covering column and Hilbert spatial sorting. 933 MB.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 977876688
     },
     "geopackage": {
       "href": "./bag-light.gpkg",
@@ -201,7 +203,8 @@
       "description": "Official BAG GeoPackage from PDOK ATOM download. 7.2 GB. Contains pand, verblijfsobject, nummeraanduiding, openbareruimte, and woonplaats tables.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 7769759744
     },
     "pmtiles": {
       "href": "./bag-light.pmtiles",
@@ -209,14 +212,20 @@
       "title": "BAG Buildings (vector tiles)",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "PMTiles vector tiles of Buildings (Panden) for web-map display.",
+      "file:size": 599272946
     },
     "thumbnail": {
       "href": "./thumbnail_.webp",
       "type": "image/webp",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "title": "Thumbnail",
+      "description": "WebP preview rendering of Buildings (Panden) for catalog browsing.",
+      "file:size": 18680,
+      "file:checksum": "1220b18a83dd5eac88236a32417a70f97a28c676982d02285f4940bca350c125d99a"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -226,7 +235,9 @@
       "roles": [
         "style",
         "default"
-      ]
+      ],
+      "file:size": 601,
+      "file:checksum": "1220221c4c15acbe7e87f6cb5e47ef96df78450c9d99bc20464339561032c9efb0ed"
     },
     "styles/by-age": {
       "href": "./styles/by-age.json",
@@ -235,7 +246,9 @@
       "description": "Color ramp from dark brown (pre-1800) through orange to pale yellow (post-2000) based on bouwjaar.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 810,
+      "file:checksum": "1220b5d1b998dc40bb3d6b21589b23bb3fcf274a1ea673aabf81a8cd42ebb230f0e7"
     },
     "styles/by-use": {
       "href": "./styles/by-use.json",
@@ -244,35 +257,31 @@
       "description": "Categorical colors by gebruiksdoel: red for residential, blue for office/retail, green for healthcare/sports, purple for education.",
       "roles": [
         "style"
-      ]
-    },
-    "bag-light": {
-      "href": "./bag-light.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "roles": [
-        "data"
-      ]
+      ],
+      "file:size": 1074,
+      "file:checksum": "122041842205209d77b59f20d0f153559364bd57176cb3c96d38bc510e2bac04574a"
     },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",
       "roles": [
         "documentation"
-      ]
+      ],
+      "title": "Documentation",
+      "description": "Human-readable documentation for Buildings (Panden).",
+      "file:size": 4801,
+      "file:checksum": "122060fa5ce1e895fab76d36d6737b008ad56925c6998625b5ccbddb38646f9ece7f"
     },
     "thumbnail.png": {
       "href": "./thumbnail.webp",
       "type": "image/webp",
       "roles": [
         "thumbnail"
-      ]
-    },
-    "bag-light.gpkg": {
-      "href": "./bag-light.gpkg",
-      "type": "application/geopackage+sqlite3",
-      "roles": [
-        "data"
-      ]
+      ],
+      "title": "Thumbnail",
+      "description": "WebP preview rendering of Buildings (Panden) for catalog browsing.",
+      "file:size": 18680,
+      "file:checksum": "1220b18a83dd5eac88236a32417a70f97a28c676982d02285f4940bca350c125d99a"
     }
   },
   "providers": [

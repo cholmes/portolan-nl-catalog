@@ -49,13 +49,14 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
-  "table:row_count": 84,
+  "table:row_count": 42,
   "table:primary_geometry": "geometry",
   "table:columns": [
     {
@@ -99,7 +100,7 @@
   ],
   "geoparquet:geometry_type": "MultiPolygon",
   "geoparquet:feature_count": 42,
-  "proj:epsg": 3857,
+  "proj:epsg": 4326,
   "pmtiles:min_zoom": 0,
   "pmtiles:max_zoom": 11,
   "pmtiles:tile_type": "mvt",
@@ -174,11 +175,14 @@
   "assets": {
     "data": {
       "href": "./zero_emissiezones.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Zero emission zones",
       "roles": [
         "data"
-      ]
+      ],
+      "description": "Zero Emission Zones as cloud-native GeoParquet.",
+      "file:size": 101894,
+      "file:checksum": "12205c63ec2a7fd8357401e9f10f3411fb5ba5f54948b3da20ebfa65ca816f3e3b04"
     },
     "pmtiles": {
       "href": "./zero_emissiezones.pmtiles",
@@ -186,14 +190,21 @@
       "title": "Zero emission zones (vector tiles)",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "PMTiles vector tiles of Zero Emission Zones for web-map display.",
+      "file:size": 68377,
+      "file:checksum": "122076d183c4673b2c3a5ef1d8935061045dcdf82b37b0c21d2e415b6140a65685a1"
     },
     "thumbnail": {
       "href": "./thumbnail_.webp",
       "type": "image/webp",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "title": "Thumbnail",
+      "description": "WebP preview rendering of Zero Emission Zones for catalog browsing.",
+      "file:size": 18458,
+      "file:checksum": "1220927a13872b092b7dbb8aa9042ab1f0a59bcd3056b8eb4057e77ebddbe069ea5f"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -201,21 +212,21 @@
       "title": "Zero Emission Zones — Default",
       "roles": [
         "style"
-      ]
-    },
-    "zero_emissiezones": {
-      "href": "./zero_emissiezones.parquet",
-      "type": "application/x-parquet",
-      "roles": [
-        "data"
-      ]
+      ],
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
+      "file:size": 1218,
+      "file:checksum": "1220a4fe4157a5b1f63225e09921c77c8d0d2d40aa7683a23f70c52f6ae96e78753e"
     },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",
       "roles": [
         "documentation"
-      ]
+      ],
+      "title": "Documentation",
+      "description": "Human-readable documentation for Zero Emission Zones.",
+      "file:size": 2028,
+      "file:checksum": "1220b3984105c491eb0885ba07a1c88ce4c1dc3d5237c1ccc49fd35097e7e35dc7db"
     }
   },
   "providers": [

@@ -77,7 +77,7 @@ brp_gewaspercelen/
 └── 2021/ … 2025/                                   same layout, all from GeoPackage sources
 ```
 
-The collection-level `data` asset uses the **`portolan:glob` syntax** (per [portolan-spec / formats/vector.md](https://github.com/portolan-sdi/portolan-spec/blob/main/formats/vector.md)) — `href: "./*/brp_gewaspercelen_*.parquet"` — so DuckDB, GDAL, and PyArrow can read every year as a single dataset from one URL.
+The collection declares the per-year files as a partition (`partition:glob`, per [Portolan v0.3](https://github.com/portolan-sdi/portolan-spec)): `s3://us-west-2.opendata.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/*/brp_gewaspercelen_*.parquet`. A glob needs a file listing, which plain HTTPS does not provide, so cross-year reads go through the S3 URL (anonymous access; see the cross-year quick start). Single-year reads use the per-item HTTPS URLs.
 
 ## Schema
 
@@ -122,15 +122,22 @@ print(df)
 
 DuckDB streams via HTTP range requests — no full download needed.
 
-## Quick Start — Cross-Year (the partitioned glob)
+## Quick Start — Cross-Year (the partition glob)
 
 ```python
 import duckdb
 con = duckdb.connect()
 con.execute("INSTALL spatial; LOAD spatial;")
+con.execute("INSTALL httpfs; LOAD httpfs;")
 
-# The collection's `data` asset is a glob — pass it straight through.
-GLOB = 'https://data.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/*/brp_gewaspercelen_*.parquet'
+# The collection's partition:glob. Globbing needs a listing, so this is the
+# S3 form of the published prefix: anonymous access, path-style addressing
+# (the bucket name contains dots, so virtual-host TLS fails).
+con.execute("""
+    CREATE SECRET src (TYPE s3, PROVIDER config,
+                       REGION 'us-west-2', URL_STYLE 'path')
+""")
+GLOB = 's3://us-west-2.opendata.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/*/brp_gewaspercelen_*.parquet'
 
 # How much grassland each year?
 df = con.execute(f"""
@@ -228,7 +235,7 @@ Each year keeps its original source file alongside the derived GeoParquet + PMTi
 - **Root**: `../../catalog.json` (Portolan NL)
 - **Parent**: `../catalog.json` (RVO)
 - **Items**: `brp_gewaspercelen_2020.json` … `brp_gewaspercelen_2025.json`
-- **Collection-level data asset** is a `portolan:glob` (`./*/brp_gewaspercelen_*.parquet`) — primary entry point for cross-year analysis.
+- **Cross-year access** is the collection's `partition:glob` (S3 URL; see the cross-year quick start) — primary entry point for cross-year analysis.
 
 ## Source
 

@@ -75,12 +75,6 @@
       "title": "TileJSON for 3D BAG vector tiles"
     },
     {
-      "rel": "xyz",
-      "href": "https://d5ombmw12oj5f.cloudfront.net/tudelft/3dbag/3dbag-lod13/{z}/{x}/{y}.mvt",
-      "type": "application/vnd.mapbox-vector-tile",
-      "title": "XYZ vector tile endpoint for 3D BAG"
-    },
-    {
       "rel": "describedby",
       "href": "./README.md",
       "type": "text/markdown",
@@ -93,11 +87,12 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "portolan:styles": [
     "styles/default",
@@ -243,21 +238,23 @@
   "assets": {
     "lod13-data": {
       "href": "./3dbag-lod13.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "3D BAG LOD 1.3 Building Parts (GeoParquet)",
       "description": "14.1M building-part polygons with height and base_height fields for 3D extrusion, plus BAG attributes. EPSG:7415 (RD New + NAP height). 747 MB.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 783421975
     },
     "pand-data": {
       "href": "./3dbag-pand.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "3D BAG Whole Buildings (GeoParquet)",
       "description": "10.8M whole-building polygons with 62 attributes including volumes, surface areas, floor counts, roof types, and AHN quality metrics. EPSG:7415. 1.3 GB. Join to LOD 1.3 parts on identificatie.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 1444081713
     },
     "pmtiles": {
       "href": "./3dbag-lod13.pmtiles",
@@ -266,7 +263,8 @@
       "description": "Vector tiles of building parts with height data for 3D extrusion rendering. EPSG:4326. 1.2 GB.",
       "roles": [
         "visual"
-      ]
+      ],
+      "file:size": 1228575430
     },
     "tilejson": {
       "href": "https://d5ombmw12oj5f.cloudfront.net/tudelft/3dbag/3dbag-lod13.json",
@@ -278,22 +276,16 @@
         "metadata"
       ]
     },
-    "xyz": {
-      "href": "https://d5ombmw12oj5f.cloudfront.net/tudelft/3dbag/3dbag-lod13/{z}/{x}/{y}.mvt",
-      "type": "application/vnd.mapbox-vector-tile",
-      "title": "XYZ vector tile endpoint (CloudFront)",
-      "description": "Direct {z}/{x}/{y} MVT endpoint served via AWS CloudFront. Min zoom 0, max zoom 15. Layers: 'buildings' (z10–15, full attributes) and 'buildings-overview' (z0–12, simplified).",
-      "roles": [
-        "tiles",
-        "visual"
-      ]
-    },
     "thumbnail": {
       "href": "./thumbnail.webp",
       "type": "image/webp",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "title": "Thumbnail",
+      "description": "WebP preview rendering of 3D BAG for catalog browsing.",
+      "file:size": 45794,
+      "file:checksum": "1220cb71b0f1a86a80762baf42fb97a273573bab9126ace48eb62984c295d035e582"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -303,7 +295,9 @@
       "roles": [
         "style",
         "default"
-      ]
+      ],
+      "file:size": 1513,
+      "file:checksum": "1220a879ef257f1b815473f3329b5558563b22c35d9635d2bf454d78dc55ddce5153"
     },
     "styles/by-height": {
       "href": "./styles/by-height.json",
@@ -312,7 +306,9 @@
       "description": "Color ramp from cool blue (low) to warm red (tall) with 3D extrusion.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 2584,
+      "file:checksum": "1220c547d9ce3b9ce2cec070025c19625e824c9ed36e29d4f620c8be487572c75b08"
     },
     "styles/by-age": {
       "href": "./styles/by-age.json",
@@ -321,7 +317,9 @@
       "description": "Dark brown (pre-1800) through orange to pale yellow (post-2000) with 3D extrusion.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 2604,
+      "file:checksum": "1220a5690bc3d159bbe05e2b895f0d730a0a8f42fd703f9ca8bf0673a390779e351e"
     },
     "styles/by-use": {
       "href": "./styles/by-use.json",
@@ -330,7 +328,9 @@
       "description": "Categorical colors by gebruiksdoel with 3D extrusion.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 3372,
+      "file:checksum": "1220c058a2a12350f4d33e9b21bd1aa80825d2c7da2674ec708f47a92db55e8f8ea8"
     },
     "styles/by-roof-type": {
       "href": "./styles/by-roof-type.json",
@@ -339,7 +339,9 @@
       "description": "Categorical colors by dak_type with 3D extrusion.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 2377,
+      "file:checksum": "12203115b3e1b7cf0399d94ebf80bbb3877ca5f26c17381d5c25a65233003b0bd2a2"
     },
     "styles/flat": {
       "href": "./styles/flat.json",
@@ -348,14 +350,20 @@
       "description": "2D flat fill view for performance and overview mapping.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1581,
+      "file:checksum": "1220a9df530fc1f599dac16fde3a53e0669a1d71ba31ee98419291cb4327c3cf19f3"
     },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",
       "roles": [
         "documentation"
-      ]
+      ],
+      "title": "Documentation",
+      "description": "Human-readable documentation for 3D BAG.",
+      "file:size": 10278,
+      "file:checksum": "1220d831036ab92c4dee067bc3ec9586ae40c3c63959d8419f25160a673e7c727730"
     }
   },
   "updated": "2026-07-31T23:32:40Z"

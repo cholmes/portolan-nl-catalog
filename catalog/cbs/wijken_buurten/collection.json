@@ -50,11 +50,12 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
-    "https://stac-extensions.github.io/projection/v2.0.0/schema.json"
+    "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "proj:epsg": 28992,
   "table:primary_geometry": "geometry",
@@ -309,30 +310,33 @@
   "assets": {
     "buurten": {
       "href": "./buurten.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Buurten / Neighborhoods (GeoParquet)",
       "description": "14,823 neighborhood-level areas with full demographic statistics in EPSG:28992.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 63275262
     },
     "wijken": {
       "href": "./wijken.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Wijken / Districts (GeoParquet)",
       "description": "3,423 district-level areas with full demographic statistics in EPSG:28992.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 43986483
     },
     "gemeenten": {
       "href": "./gemeenten.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "title": "Gemeenten / Municipalities (GeoParquet)",
       "description": "424 municipality-level areas with full demographic statistics in EPSG:28992.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 30014800
     },
     "pmtiles": {
       "href": "./wijken_buurten.pmtiles",
@@ -340,7 +344,9 @@
       "title": "Buurten (vector tiles)",
       "roles": [
         "visual"
-      ]
+      ],
+      "description": "PMTiles vector tiles of Wijken en Buurten 2025 (Neighborhoods and Districts with Demographics) for web-map display.",
+      "file:size": 34064969
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
@@ -348,56 +354,77 @@
       "title": "CBS Wijken en Buurten thumbnail",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "description": "WebP preview rendering of Wijken en Buurten 2025 (Neighborhoods and Districts with Demographics) for catalog browsing.",
+      "file:size": 45396,
+      "file:checksum": "1220f696bcf97a6a5ae1135fe4f7df3c40a8bcd06e007c1f18f11f28deb830c0050c"
     },
     "styles/default": {
       "href": "./styles/default.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "Neighbourhoods",
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
       "roles": [
         "style",
         "default"
-      ]
+      ],
+      "file:size": 1034,
+      "file:checksum": "1220e2581b8017c7024d7c168d014cfbf276d0a7d26d30bd04bcbd089c1603717c7e"
     },
     "styles/by-population-density": {
       "href": "./styles/by-population-density.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "Population density (inhabitants per km²)",
+      "description": "MapLibre style 'by-population-density' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1479,
+      "file:checksum": "12209188fdac2d6fed80c4028ed235cd3b1b8a2f749568a83381aca702913621306a"
     },
     "styles/by-urbanity": {
       "href": "./styles/by-urbanity.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "CBS urbanity class (1 very urban — 5 rural)",
+      "description": "MapLibre style 'by-urbanity' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 934,
+      "file:checksum": "12203f75d0c44826c7f09ac90f97e28052444a97d1233c926291966a7874577decef"
     },
     "styles/by-age-65-plus": {
       "href": "./styles/by-age-65-plus.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "Share of residents aged 65 and over (%)",
+      "description": "MapLibre style 'by-age-65-plus' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1470,
+      "file:checksum": "12209d5c3fa9aa7502cbca581aa8ec26506d12c2ac37026a03224f4611ea8052ebf6"
     },
     "styles/by-household-size": {
       "href": "./styles/by-household-size.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "Average household size",
+      "description": "MapLibre style 'by-household-size' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1449,
+      "file:checksum": "1220210dee1bb76ae66c9f51d019c1e47d482a7b409262aa5f180c279b2951f7c669"
     },
     "styles/by-single-person-households": {
       "href": "./styles/by-single-person-households.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "Share of single-person households (%)",
+      "description": "MapLibre style 'by-single-person-households' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1465,
+      "file:checksum": "122072d6eb582f79b68ab16ea4f9568770875d079333b3fe1fb5002d6081b68172fd"
     }
   },
   "license": "CC-BY-4.0",

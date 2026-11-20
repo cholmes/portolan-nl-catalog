@@ -49,7 +49,7 @@ Collection: rijksviswegen_2024
 Extracted from ArcGIS FeatureServer layer 29 (Rijksviswegen 2024).
 ~2,100 polyline features representing national fish migration routes (Rijksviswegen)
 from the Nationale Visroutekaart (NVRK), under the EU Water Framework Directive (KRW).
-Original CRS: EPSG:28992 (RD New / Amersfoort).
+Published CRS: WGS84 (EPSG:4326, lon/lat degrees); the upstream ArcGIS service serves EPSG:28992.
 Coverage: entire Netherlands waterway network.
 Fields: BEHEERDER (operator), CODE, MIGR_TYPE (migration type), OPMERKING (remarks),
 NAAM (name), BRON (source), Status2009 through Status2033 (status per reference year),

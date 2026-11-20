@@ -106,7 +106,7 @@ LIMIT 20
 
 ## Geometry Notes
 
-- CRS is **EPSG:28992** (Amersfoort / RD New). Coordinates are in metres.
+- CRS is **WGS84** (EPSG:4326). Coordinates are lon/lat degrees; use ST_Distance_Sphere for metres.
 - All geometries are LineString.
 - Reproject to EPSG:4326 for web maps.
 

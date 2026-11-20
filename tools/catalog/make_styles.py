@@ -251,7 +251,10 @@ def register(rel: str, defs: dict) -> dict | None:
         key = f"styles/{slug}"
         order.append(key)
         roles = ["style", "default"] if slug == "default" else ["style"]
-        assets[key] = stac.style_asset(f"./styles/{slug}.json", title, roles)
+        assets[key] = stac.style_asset(
+            f"./styles/{slug}.json", title, roles,
+            description=f"MapLibre style '{slug}' for the PMTiles visual asset.")
+        assets[key].update(stac.file_meta(CATALOG / rel / "styles" / f"{slug}.json"))
     doc["portolan:styles"] = order
     return doc
 

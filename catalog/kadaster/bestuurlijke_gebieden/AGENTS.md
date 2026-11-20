@@ -146,7 +146,7 @@ INSTALL spatial; LOAD spatial;
 SELECT naam, code
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/bestuurlijke_gebieden/gemeentegebied.parquet')
 WHERE ST_Intersects(
-    ST_GeomFromWKB(geometry),
+    geometry,
     ST_Transform(ST_Point(4.9003, 52.3792), 'EPSG:4326', 'EPSG:28992')
 )
 ```
@@ -157,7 +157,7 @@ WHERE ST_Intersects(
 INSTALL spatial; LOAD spatial;
 
 SELECT naam, code,
-       ST_Area(ST_GeomFromWKB(geometry)) / 1e6 AS area_km2
+       ST_Area(geometry) / 1e6 AS area_km2
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/bestuurlijke_gebieden/gemeentegebied.parquet')
 ORDER BY area_km2 DESC
 LIMIT 10

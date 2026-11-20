@@ -88,7 +88,7 @@ INSTALL spatial; LOAD spatial;
 
 SELECT CAST(rijksmonum AS INT) AS nr, hoofdcateg, subcategor, rijksurl,
        ST_Distance(
-           ST_GeomFromWKB(geometry),
+           geometry,
            ST_Transform(ST_Point(5.1214, 52.0907), 'EPSG:4326', 'EPSG:28992')
        ) AS distance_m
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rce/rijksmonumenten/rijksmonumenten.parquet')

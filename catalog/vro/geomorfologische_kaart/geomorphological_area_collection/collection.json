@@ -29,6 +29,12 @@
       "title": "PDOK WMS (GetCapabilities)"
     },
     {
+      "rel": "via",
+      "href": "https://www.pdok.nl/introductie/-/article/bro-geomorfologische-kaart-gmm-",
+      "type": "text/html",
+      "title": "PDOK dataset page: BRO Geomorfologische kaart (GMM)"
+    },
+    {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/geomorphological_area_collection/geomorphological_area_collection.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -49,7 +55,8 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
@@ -145,42 +152,57 @@
       "href": "./geomorphological_area_collection.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "BRO Geomorphological Map — Map area collections (GeoParquet)",
+      "description": "BRO Geomorphological Map — Map area collections as cloud-native GeoParquet.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 9972,
+      "file:checksum": "122086104daa391dc9fae4eba2da58004506ab053de4c8876c4633ce7718794dde74"
     },
     "pmtiles": {
       "href": "./geomorphological_area_collection.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "BRO Geomorphological Map — Map area collections (vector tiles)",
+      "description": "PMTiles vector tiles of BRO Geomorphological Map — Map area collections for web-map display.",
       "roles": [
         "visual"
-      ]
+      ],
+      "file:size": 17707,
+      "file:checksum": "12203568420eddd5f9e2f290bfd01016bb622c774dcdbc5a1da6dba68b7ae337ea8e"
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
       "type": "image/webp",
       "title": "Thumbnail (PDOK preview)",
+      "description": "WebP preview rendering of BRO Geomorphological Map — Map area collections for catalog browsing.",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "file:size": 11060,
+      "file:checksum": "1220e8c9444a8e99b4ee343b52a801ce40ac0efb615e5d60d1096e210fc84b5c063a"
     },
     "styles/by-method": {
       "href": "./styles/by-method.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Geomorphological Map — Map area collections — By inventory method",
+      "description": "MapLibre style 'by-method' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1168,
+      "file:checksum": "1220140af118ced7175c4caa411696756c6431305ca3e157fd2e68ce0125ea151a7a"
     },
     "styles/default": {
       "href": "./styles/default.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Geomorphological Map — Map area collections — Default",
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
       "roles": [
         "style",
         "default"
-      ]
+      ],
+      "file:size": 812,
+      "file:checksum": "12203f0b7a6dfe484919215868f8ba8b59b29af7abe672364fea44857e6154f0f019"
     }
   },
   "license": "CC0-1.0",

@@ -7,7 +7,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from tools.lib import paths, stac
 
-PORTOLAN_SCHEMA = "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json"
+PORTOLAN_SCHEMA = stac.PORTOLAN_SCHEMA
 
 # Generators write into the published tree; paths.py owns where that is.
 ROOT = str(paths.CATALOG)
@@ -19,7 +19,25 @@ def child(href, title):
     return stac.link("child", href, stac.JSON, title)
 
 
+def catalog_updated(subdir):
+    """A mirror catalog's 'updated' is the latest sync of what it holds
+    (PORTO-CORE-057 / PTL-PRO-003). The collections carry the real sync times,
+    set from the S3 listing by conform.py, so the catalog reports their max.
+    Data-free: reads only committed collection.json files.
+    """
+    import glob
+    stamps = []
+    for p in glob.glob(os.path.join(ROOT, subdir, "**", "collection.json"), recursive=True):
+        u = json.load(open(p)).get("updated")
+        if u:
+            stamps.append(u)
+    return max(stamps) if stamps else None
+
+
 def write(path, obj):
+    u = catalog_updated(os.path.dirname(path))
+    if u:
+        obj["updated"] = u
     stac.write_json(os.path.join(ROOT, path), obj)
     print("  wrote", path)
 

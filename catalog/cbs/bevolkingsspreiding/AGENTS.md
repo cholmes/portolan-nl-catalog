@@ -126,7 +126,7 @@ If you download the GML files from the ATOM service:
 INSTALL spatial; LOAD spatial;
 
 SELECT gid, obsvalue, periodofreference,
-       ST_GeomFromWKB(geom) AS geometry
+       geom AS geometry
 FROM ST_Read('pd-nl-grid-2012.gml')
 ORDER BY obsvalue DESC
 LIMIT 20

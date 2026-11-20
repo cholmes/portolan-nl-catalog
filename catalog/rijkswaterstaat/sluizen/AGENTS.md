@@ -93,9 +93,7 @@ ORDER BY locks DESC
 INSTALL spatial; LOAD spatial;
 
 SELECT NAAM, PLAATSNAAM, VRTNAAM,
-       ST_Distance(ST_GeomFromWKB(geometry),
-           ST_Transform(ST_Point(5.69, 51.44), 'EPSG:4326', 'EPSG:28992')
-       ) / 1000 AS distance_km
+       ST_Distance_Sphere(geometry, ST_Point(5.69, 51.44)) / 1000 AS distance_km
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/sluizen/sluizen.parquet')
 WHERE distance_km < 10
 ORDER BY distance_km
@@ -103,7 +101,7 @@ ORDER BY distance_km
 
 ## Geometry Notes
 
-- CRS is **EPSG:28992** (Amersfoort / RD New). Coordinates are in metres.
+- CRS is **WGS84** (EPSG:4326). Coordinates are lon/lat degrees; use ST_Distance_Sphere for metres.
 - All geometries are Point — representing lock locations, not the full lock structure.
 - Reproject to EPSG:4326 for web maps.
 

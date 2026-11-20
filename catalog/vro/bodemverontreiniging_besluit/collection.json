@@ -29,6 +29,12 @@
       "title": "PDOK WMS (GetCapabilities)"
     },
     {
+      "rel": "via",
+      "href": "https://www.pdok.nl/introductie/-/article/bro-overheidsbesluit-bodemverontreiniging-sld-",
+      "type": "text/html",
+      "title": "PDOK dataset page: BRO Overheidsbesluit bodemverontreiniging (SLD)"
+    },
+    {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/vro/bodemverontreiniging_besluit/bodemverontreiniging_besluit.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -49,7 +55,8 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
@@ -137,50 +144,68 @@
       "href": "./bodemverontreiniging_besluit.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "BRO Government Decision on Soil Contamination (SLD) (GeoParquet)",
+      "description": "BRO Government Decision on Soil Contamination (SLD) as cloud-native GeoParquet.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 28667,
+      "file:checksum": "122003a843f4537cd7e260774a018d92cc7ef066951cdb1e25152d307b837f6e3a53"
     },
     "pmtiles": {
       "href": "./bodemverontreiniging_besluit.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "BRO Government Decision on Soil Contamination (SLD) (vector tiles)",
+      "description": "PMTiles vector tiles of BRO Government Decision on Soil Contamination (SLD) for web-map display.",
       "roles": [
         "visual"
-      ]
+      ],
+      "file:size": 123237,
+      "file:checksum": "1220f73f0edfc74530ae8709cf445664153939f252cd89e659d2c3b1892923c1a5c7"
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
       "type": "image/webp",
       "title": "Thumbnail (PDOK preview)",
+      "description": "WebP preview rendering of BRO Government Decision on Soil Contamination (SLD) for catalog browsing.",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "file:size": 34842,
+      "file:checksum": "12209a8887d94a3a038c398c87035dd046ea7c2c8ca86ff36648abd5f513511ae5e3"
     },
     "styles/by-bronhouder": {
       "href": "./styles/by-bronhouder.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Government Decision on Soil Contamination (SLD) — By data owner (bronhouder)",
+      "description": "MapLibre style 'by-bronhouder' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1277,
+      "file:checksum": "122060a93c621f1f90ca5c103a3942f05e1c467a895760a45bee6c5bd0b5106fc5dc"
     },
     "styles/by-quality-regime": {
       "href": "./styles/by-quality-regime.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Government Decision on Soil Contamination (SLD) — By quality regime",
+      "description": "MapLibre style 'by-quality-regime' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 994,
+      "file:checksum": "12206f39fdd869cd1f3c250e634f3380d92d43bd6e11c8796aee883f261da1eaf42c"
     },
     "styles/default": {
       "href": "./styles/default.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Government Decision on Soil Contamination (SLD) — Default",
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
       "roles": [
         "style",
         "default"
-      ]
+      ],
+      "file:size": 792,
+      "file:checksum": "1220a15d52e7cad5aef93430a607e67472cb2bc0520c37ec7c4fb11fe304a4443f38"
     }
   },
   "license": "CC0-1.0",

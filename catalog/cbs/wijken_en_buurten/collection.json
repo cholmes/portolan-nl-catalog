@@ -61,10 +61,11 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
-    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json"
+    "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "table:primary_geometry": "geom",
   "table:columns": [
@@ -304,24 +305,33 @@
   "assets": {
     "buurten": {
       "href": "./buurten.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "roles": [
         "data"
-      ]
+      ],
+      "title": "Wijken en Buurten (Districts and Neighborhoods) (GeoParquet)",
+      "description": "Wijken en Buurten (Districts and Neighborhoods) as cloud-native GeoParquet.",
+      "file:size": 39758471
     },
     "wijken": {
       "href": "./wijken.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "roles": [
         "data"
-      ]
+      ],
+      "title": "Wijken en Buurten (Districts and Neighborhoods) (GeoParquet)",
+      "description": "Wijken en Buurten (Districts and Neighborhoods) as cloud-native GeoParquet.",
+      "file:size": 28146090
     },
     "gemeenten": {
       "href": "./gemeenten.parquet",
-      "type": "application/x-parquet",
+      "type": "application/vnd.apache.parquet",
       "roles": [
         "data"
-      ]
+      ],
+      "title": "Wijken en Buurten (Districts and Neighborhoods) (GeoParquet)",
+      "description": "Wijken en Buurten (Districts and Neighborhoods) as cloud-native GeoParquet.",
+      "file:size": 20381655
     },
     "pmtiles": {
       "href": "./wijken_en_buurten.pmtiles",
@@ -330,14 +340,19 @@
       "description": "Buurten, wijken, and gemeenten boundaries as vector tiles for web visualization.",
       "roles": [
         "visual"
-      ]
+      ],
+      "file:size": 104062201
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
       "type": "image/webp",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "title": "Thumbnail",
+      "description": "WebP preview rendering of Wijken en Buurten (Districts and Neighborhoods) for catalog browsing.",
+      "file:size": 45396,
+      "file:checksum": "1220f696bcf97a6a5ae1135fe4f7df3c40a8bcd06e007c1f18f11f28deb830c0050c"
     },
     "styles/default": {
       "href": "./styles/default.json",
@@ -346,7 +361,10 @@
       "roles": [
         "style",
         "default"
-      ]
+      ],
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
+      "file:size": 858,
+      "file:checksum": "12207329590099c5d16788e43588e445b8f410a8ef2e00ea6057b62b125bc1dd3d90"
     },
     "styles/by-aging": {
       "href": "./styles/by-aging.json",
@@ -354,7 +372,10 @@
       "title": "Districts & Neighborhoods — Aging Population",
       "roles": [
         "style"
-      ]
+      ],
+      "description": "MapLibre style 'by-aging' for the PMTiles visual asset.",
+      "file:size": 843,
+      "file:checksum": "12209a315f3f75c6b88c99ae442a346905f4a1abc56f61ab3f90b488835658b147cd"
     },
     "styles/by-household-size": {
       "href": "./styles/by-household-size.json",
@@ -362,42 +383,54 @@
       "title": "Districts & Neighborhoods — Household Size",
       "roles": [
         "style"
-      ]
-    },
-    "wijken_en_buurten": {
-      "href": "./wijken_en_buurten.pmtiles",
-      "type": "application/vnd.pmtiles",
-      "roles": [
-        "data"
-      ]
+      ],
+      "description": "MapLibre style 'by-household-size' for the PMTiles visual asset.",
+      "file:size": 839,
+      "file:checksum": "12205bbee79f591c1aa739a2ab00a9628cd93acebc9cd1052590494848bb562f5dd8"
     },
     "metadata": {
       "href": "./gemeenten.parquet.aux.xml",
       "type": "application/xml",
       "roles": [
         "metadata"
-      ]
+      ],
+      "title": "Source metadata",
+      "description": "Metadata sidecar from the source service for Wijken en Buurten (Districts and Neighborhoods).",
+      "file:size": 23968,
+      "file:checksum": "122027c6f967c3f9c38d2aca91085a055aef3af0849c021ea7ebbff7b5f684332504"
     },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",
       "roles": [
         "documentation"
-      ]
+      ],
+      "title": "Documentation",
+      "description": "Human-readable documentation for Wijken en Buurten (Districts and Neighborhoods).",
+      "file:size": 2650,
+      "file:checksum": "1220276a8c2a9f9b6e5558fbbf8d419c1cfc113df5020cb95e32834f27e208ac4f88"
     },
     "wijken.parquet.aux": {
       "href": "./wijken.parquet.aux.xml",
       "type": "application/xml",
       "roles": [
         "metadata"
-      ]
+      ],
+      "title": "Source metadata",
+      "description": "Metadata sidecar from the source service for Wijken en Buurten (Districts and Neighborhoods).",
+      "file:size": 23968,
+      "file:checksum": "122027c6f967c3f9c38d2aca91085a055aef3af0849c021ea7ebbff7b5f684332504"
     },
     "buurten.parquet.aux": {
       "href": "./buurten.parquet.aux.xml",
       "type": "application/xml",
       "roles": [
         "metadata"
-      ]
+      ],
+      "title": "Source metadata",
+      "description": "Metadata sidecar from the source service for Wijken en Buurten (Districts and Neighborhoods).",
+      "file:size": 23968,
+      "file:checksum": "122027c6f967c3f9c38d2aca91085a055aef3af0849c021ea7ebbff7b5f684332504"
     }
   },
   "providers": [

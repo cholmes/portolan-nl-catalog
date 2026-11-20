@@ -41,7 +41,7 @@ Collection: fme_disk_tunnels
 
 Extracted from ArcGIS FeatureServer layer 1 (FME_DISK_tunnels).
 25 point features representing tunnel locations managed by Rijkswaterstaat.
-Original CRS: EPSG:28992 (RD New / Amersfoort).
+Published CRS: WGS84 (EPSG:4326, lon/lat degrees); the upstream ArcGIS service serves EPSG:28992.
 Fields: tunnelnaam (tunnel name), wegnummer (road number), gemeente (municipality),
 jaar_openstelling (year opened), status, url (info page), beheerder (operator),
 last_update (last modified date).

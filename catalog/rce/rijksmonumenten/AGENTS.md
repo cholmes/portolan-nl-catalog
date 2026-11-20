@@ -130,7 +130,7 @@ WHERE subcategor LIKE '%Kerk%'
 INSTALL spatial; LOAD spatial;
 
 SELECT CAST(rijksmonum AS INT) AS nr, hoofdcateg, subcategor, rijksurl,
-       ST_Distance(ST_GeomFromWKB(geometry),
+       ST_Distance(geometry,
            ST_Transform(ST_Point(4.9003, 52.3792), 'EPSG:4326', 'EPSG:28992')
        ) AS distance_m
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rce/rijksmonumenten/rijksmonumenten.parquet')
@@ -157,7 +157,7 @@ INSTALL spatial; LOAD spatial;
 SELECT g.naam AS gemeente, COUNT(*) AS monuments
 FROM read_parquet('.../rce/rijksmonumenten/rijksmonumenten.parquet') m
 JOIN read_parquet('.../kadaster/bestuurlijke_gebieden/gemeentegebied.parquet') g
-  ON ST_Intersects(ST_GeomFromWKB(g.geometry), ST_GeomFromWKB(m.geometry))
+  ON ST_Intersects(g.geometry, m.geometry)
 GROUP BY g.naam
 ORDER BY monuments DESC
 LIMIT 20

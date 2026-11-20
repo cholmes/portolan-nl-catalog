@@ -1,6 +1,6 @@
-# Luchtfoto 2024 — Aerial Orthophotos (Amersfoort Region)
+# Luchtfoto 2024 — Aerial Orthophotos (Central Netherlands)
 
-High-resolution aerial orthophotos from the 2024 [Beeldmateriaal Nederland](https://www.beeldmateriaal.nl/) summer campaign. 12 tiles at 25 cm ground sampling distance covering ~450 km² around Amersfoort, each approximately 5 × 6.25 km. Available as 3-band RGB and 4-band RGBNIR Cloud-Optimized GeoTIFFs (COGs) with JPEG compression, overviews, and per-band statistics.
+High-resolution aerial orthophotos from the 2024 [Beeldmateriaal Nederland](https://www.beeldmateriaal.nl/) summer campaign. 356 tiles at 25 cm ground sampling distance across 12 kaartblad sheets in the central Netherlands — from the North Sea coast to the Veluwe — each approximately 5 × 6.25 km. Available as 3-band RGB and 4-band RGBNIR Cloud-Optimized GeoTIFFs (COGs) with JPEG compression, overviews, and per-band statistics.
 
 The NIR band is extracted from the Color InfraRed (CIR) winter capture (band 1). RGB and NIR represent different seasons within the same year — summer (full foliage) and winter (leafless) respectively.
 
@@ -11,7 +11,7 @@ Source imagery from [Beeldmateriaal Nederland](https://www.beeldmateriaal.nl/) v
 ## Spatial Coverage
 
 - **Bounding Box:** [4.07, 52.03, 5.75, 52.37] (WGS 84)
-- **Region:** Amersfoort and surroundings (kaartblad sheet 32)
+- **Region:** Central Netherlands (kaartblad sheets 19, 20, 24-27, 30-33, 38, 39)
 - **CRS:** EPSG:28992 (Amersfoort / RD New)
 - **GSD:** 0.25 m (25 cm)
 - **Tile dimensions:** 20,002 × 25,002 pixels (~5 km × 6.25 km)
@@ -21,7 +21,7 @@ Source imagery from [Beeldmateriaal Nederland](https://www.beeldmateriaal.nl/) v
 | Asset | Bands | Compression | Size | Use |
 |-------|-------|-------------|------|-----|
 | RGB COG | Red, Green, Blue | JPEG (YCbCr, Q75) | ~80–97 MB | Visual inspection, basemap |
-| RGBNIR COG | Red, Green, Blue, NIR | JPEG (Q75) | ~293–365 MB | Vegetation indices (NDVI) |
+| RGBNIR COG | Red, Green, Blue, NIR | JPEG (Q75) | ~293–365 MB | Vegetation indices (NDVI). Only the 12 kaartblad-32 (Amersfoort) tiles carry this asset. |
 
 ## Tiles
 

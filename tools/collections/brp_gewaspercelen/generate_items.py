@@ -147,6 +147,7 @@ def table_columns(year: int) -> list[dict]:
     return [{"name": n, "type": t, "description": descs[n]} for n, t in _COLUMN_TYPES]
 
 STAC_EXTENSIONS = [
+    stac.FILE_SCHEMA,
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
@@ -204,6 +205,9 @@ def build_item(year: int) -> dict:
             "href": f"./{pmtiles}",
             "type": "application/vnd.pmtiles",
             "title": f"BRP Gewaspercelen {year} (vector tiles)",
+            "description": (
+                f"PMTiles vector tiles of the {year} BRP edition for web-map display."
+            ),
             "roles": ["visual"],
         }
     for style_id, title, desc in STYLES:
@@ -216,6 +220,9 @@ def build_item(year: int) -> dict:
                 "the canonical base style in ../styles/ via ../scripts/regen_year_styles.py."
             ),
             "roles": ["style"],
+            # file:size/file:checksum (PTL-AST-003): the style is one of the
+            # files this repo itself publishes, so it is hashed here.
+            **stac.file_meta(ROOT / str(year) / "styles" / f"{style_id}.json"),
         }
     # README.md and AGENTS.md are reached through rel:describedby and rel:agents
     # links below, not as assets. Assets on an item are the data it describes.

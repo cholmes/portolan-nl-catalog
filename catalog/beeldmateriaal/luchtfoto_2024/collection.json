@@ -125,10 +125,11 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
     "https://stac-extensions.github.io/eo/v2.0.0-beta.1/schema.json",
     "https://stac-extensions.github.io/projection/v2.0.0/schema.json",
-    "https://stac-extensions.github.io/table/v1.2.0/schema.json"
+    "https://stac-extensions.github.io/table/v1.2.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "item_assets": {
     "rgb": {
@@ -331,14 +332,22 @@
       "roles": [
         "data",
         "collection-mirror"
-      ]
+      ],
+      "title": "STAC items (GeoParquet)",
+      "description": "All item metadata as one GeoParquet table (collection mirror).",
+      "file:size": 75053,
+      "file:checksum": "122031f914c5e91ab6c3c7f0e1e133bcbdabaebfc54090bd9581758a086c937b26c3"
     },
     "README": {
       "href": "./README.md",
       "type": "text/markdown",
       "roles": [
         "documentation"
-      ]
+      ],
+      "title": "Documentation",
+      "description": "Human-readable documentation for Luchtfoto 2024 — Aerial Orthophotos.",
+      "file:size": 4261,
+      "file:checksum": "1220b5a56e3adfe31d3f1938364a390fc3692741d854ef4d0d0e175b868c8d403d1a"
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
@@ -346,7 +355,10 @@
       "title": "Luchtfoto 2024 — Aerial Orthophotos (preview)",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "description": "WebP preview rendering of Luchtfoto 2024 — Aerial Orthophotos for catalog browsing.",
+      "file:size": 16492,
+      "file:checksum": "1220b2d94f02b940ef09c6daf576994ce70d29ff482993dd3c8962adbbfc7c98afd5"
     }
   },
   "updated": "2026-07-31T23:31:49Z"

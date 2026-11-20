@@ -29,6 +29,12 @@
       "title": "PDOK WMS (GetCapabilities)"
     },
     {
+      "rel": "via",
+      "href": "https://www.pdok.nl/introductie/-/article/bro-geomorfologische-kaart-gmm-",
+      "type": "text/html",
+      "title": "PDOK dataset page: BRO Geomorfologische kaart (GMM)"
+    },
+    {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/area_of_geomorphological_interest/area_of_geomorphological_interest.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -49,7 +55,8 @@
     }
   ],
   "stac_extensions": [
-    "https://schemas.portolan-sdi.org/portolan/v0.1.0/schema.json",
+    "https://schemas.portolan-sdi.org/portolan/v0.3.0/schema.json",
+    "https://stac-extensions.github.io/file/v2.1.0/schema.json",
     "https://stac-extensions.github.io/table/v1.2.0/schema.json",
     "https://stac-extensions.github.io/vector/v0.1.0/schema.json",
     "https://stac-extensions.github.io/web-map-links/v1.3.0/schema.json",
@@ -125,42 +132,55 @@
       "href": "./area_of_geomorphological_interest.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "BRO Geomorphological Map — Area of geomorphological interest (GeoParquet)",
+      "description": "BRO Geomorphological Map — Area of geomorphological interest as cloud-native GeoParquet.",
       "roles": [
         "data"
-      ]
+      ],
+      "file:size": 47560587
     },
     "pmtiles": {
       "href": "./area_of_geomorphological_interest.pmtiles",
       "type": "application/vnd.pmtiles",
       "title": "BRO Geomorphological Map — Area of geomorphological interest (vector tiles)",
+      "description": "PMTiles vector tiles of BRO Geomorphological Map — Area of geomorphological interest for web-map display.",
       "roles": [
         "visual"
-      ]
+      ],
+      "file:size": 33267454
     },
     "thumbnail": {
       "href": "./thumbnail.webp",
       "type": "image/webp",
       "title": "Thumbnail (PDOK preview)",
+      "description": "WebP preview rendering of BRO Geomorphological Map — Area of geomorphological interest for catalog browsing.",
       "roles": [
         "thumbnail"
-      ]
+      ],
+      "file:size": 44260,
+      "file:checksum": "1220e06f9029d0ca5f63ecb2fba2f3f4062d7f7f7104922eb33a5b89eeb1452f7343"
     },
     "styles/by-type": {
       "href": "./styles/by-type.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Geomorphological Map — Area of geomorphological interest — By type",
+      "description": "MapLibre style 'by-type' for the PMTiles visual asset.",
       "roles": [
         "style"
-      ]
+      ],
+      "file:size": 1016,
+      "file:checksum": "122022d4a6f823faecc37d4d47133e3744152912c49f95636dcafb5df3caf5f687f2"
     },
     "styles/default": {
       "href": "./styles/default.json",
       "type": "application/vnd.mapbox.style+json",
       "title": "BRO Geomorphological Map — Area of geomorphological interest — Default",
+      "description": "MapLibre style 'default' for the PMTiles visual asset.",
       "roles": [
         "style",
         "default"
-      ]
+      ],
+      "file:size": 821,
+      "file:checksum": "1220c21191a90806bae93bc303c6336ce865f90e42d91f4d4b1c7878d26a9e615f4a"
     }
   },
   "license": "CC0-1.0",

@@ -136,7 +136,7 @@ INSTALL spatial; LOAD spatial;
 SELECT naam_n2k, beschermin
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rvo/natura2000/natura2000.parquet')
 WHERE ST_Intersects(
-    ST_GeomFromWKB(geometry),
+    geometry,
     ST_Transform(ST_Point(5.39, 52.16), 'EPSG:4326', 'EPSG:28992')
 )
 ```

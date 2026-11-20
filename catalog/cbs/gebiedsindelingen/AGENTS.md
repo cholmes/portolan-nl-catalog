@@ -121,7 +121,7 @@ ORDER BY statnaam
 ### Find a specific municipality
 
 ```sql
-SELECT statcode, statnaam, ST_AsText(ST_GeomFromWKB(geom)) AS wkt
+SELECT statcode, statnaam, ST_AsText(geom) AS wkt
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/gebiedsindelingen/gemeente_gegeneraliseerd.parquet')
 WHERE statnaam = 'Amsterdam'
 ```
@@ -166,7 +166,7 @@ ORDER BY count DESC
 INSTALL spatial; LOAD spatial;
 
 SELECT statnaam,
-       ROUND(ST_Area(ST_GeomFromWKB(geom)) / 1e6, 1) AS area_km2
+       ROUND(ST_Area(geom) / 1e6, 1) AS area_km2
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/gebiedsindelingen/provincie_gegeneraliseerd.parquet')
 ORDER BY area_km2 DESC
 ```
@@ -183,7 +183,7 @@ INSTALL spatial; LOAD spatial;
 SELECT statcode, statnaam
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/gebiedsindelingen/coropgebied_gegeneraliseerd.parquet')
 WHERE ST_Contains(
-    ST_GeomFromWKB(geom),
+    geom,
     ST_Point(121687, 487357)
 )
 ```
@@ -256,7 +256,7 @@ veiligheidsregio even though both are groupings of the same gemeenten.
 
 - **CRS is EPSG:28992 (RD New), not WGS84:** Coordinates are in meters (Dutch national
   grid), not degrees. You must transform to EPSG:4326 for web maps or lat/lon queries.
-  In DuckDB: `ST_Transform(ST_GeomFromWKB(geom), 'EPSG:28992', 'EPSG:4326')`.
+  In DuckDB: `ST_Transform(geom, 'EPSG:28992', 'EPSG:4326')`.
   In GeoPandas: `gdf.to_crs(epsg=4326)`.
 
 - **Year-specific boundaries:** These are 2025 boundaries. Dutch gemeente boundaries

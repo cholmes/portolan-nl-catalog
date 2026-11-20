@@ -32,7 +32,7 @@ Plus ~146 additional fields across demographics, housing, energy, income, social
 
 ```python
 import geopandas as gpd
-gdf = gpd.read_parquet('postcode6.parquet')
+gdf = gpd.read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/postcode6.parquet')
 # Filter to latest year
 gdf_2024 = gdf[gdf['jaarcode'] == 2024]
 print(gdf_2024[['postcode6', 'aantal_inwoners', 'aantal_woningen']].head())

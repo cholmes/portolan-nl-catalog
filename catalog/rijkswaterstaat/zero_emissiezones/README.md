@@ -21,7 +21,7 @@ Zero emission zones (zero-emissiezones) in Dutch cities where only emission-free
 | Soort | string | Zone type: LEZ or ZES |
 | Shape__Area | double | Area in m² |
 | Shape__Length | double | Perimeter in m |
-| geometry | binary | MultiPolygon in EPSG:28992 (RD New), WKB encoded |
+| geometry | binary | MultiPolygon in WGS84 (EPSG:4326, lon/lat degrees), WKB encoded |
 
 ## Files
 
@@ -34,7 +34,7 @@ Zero emission zones (zero-emissiezones) in Dutch cities where only emission-free
 
 ```python
 import geopandas as gpd
-gdf = gpd.read_parquet('zero_emissiezones.parquet')
+gdf = gpd.read_parquet('https://data.source.coop/cholmes/portolan-nl/rijkswaterstaat/zero_emissiezones/zero_emissiezones.parquet')
 lez = gdf[gdf['Soort'] == 'LEZ']
 ```
 

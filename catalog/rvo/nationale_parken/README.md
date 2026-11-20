@@ -35,7 +35,7 @@ Boundaries of all 21 National Parks in the Netherlands. Large contiguous natural
 
 ```python
 import geopandas as gpd
-gdf = gpd.read_parquet('nationale_parken.parquet')
+gdf = gpd.read_parquet('https://data.source.coop/cholmes/portolan-nl/rvo/nationale_parken/nationale_parken.parquet')
 print(gdf[['naam', 'hectares']].sort_values('hectares', ascending=False))
 ```
 
