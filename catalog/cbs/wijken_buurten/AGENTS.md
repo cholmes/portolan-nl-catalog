@@ -51,8 +51,8 @@ WIJKEN   = BASE + 'wijken.parquet'     # 42 MB, 3,423 features
 GEMEENTEN = BASE + 'gemeenten.parquet' # 29 MB, 424 features
 
 df = con.execute(f"""
-    SELECT * FROM read_parquet('{BUURTEN}')
-    LIMIT 5
+    SELECT * EXCLUDE (geom) FROM read_parquet('{BUURTEN}')
+    LIMIT 5    -- EXCLUDE skips the large geometry column chunk
 """).df()
 ```
 

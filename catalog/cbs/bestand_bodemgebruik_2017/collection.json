@@ -35,6 +35,12 @@
       "title": "WFS service endpoint"
     },
     {
+      "rel": "via",
+      "href": "https://www.cbs.nl/-/media/cbs/dossiers/nederland-regionaal/geografische-data/productbeschrijving-bestand-bodemgebruik-2017-bbg2017-2017nlv2.pdf",
+      "type": "text/html",
+      "title": "Column definitions: CBS, Bestand Bodemgebruik 2017 (BBG2017) — Productbeschrijving V2 (classification ch. 3, PDOK aggregation Bijlage 2)"
+    },
+    {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/cbs/bestand_bodemgebruik_2017/bbg2017.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -66,27 +72,33 @@
   "table:columns": [
     {
       "name": "fid",
-      "type": "int64"
+      "type": "int64",
+      "description": "Meaningless unique identifier per polygon object (FID in the BBG2017 publication file)."
     },
     {
       "name": "bg2017",
-      "type": "int32"
+      "type": "int32",
+      "description": "Numeric BBG2017 land-use code (10-90): dominant land use at ground level in 2017, e.g. 11 main road, 20 residential, 60 forest; min. unit mostly 1 ha."
     },
     {
       "name": "bodemgebruik",
-      "type": "string"
+      "type": "string",
+      "description": "Aggregated land-use class of the PDOK INSPIRE edition (14 classes, Bijlage 2), e.g. 'Bebouwd exclusief bedrijfsterrein', 'Recreatie', 'Water'."
     },
     {
       "name": "categorie",
-      "type": "string"
+      "type": "string",
+      "description": "Detailed BBG2017 category name for the bg2017 code (38 categories + Buitenland), e.g. 'Woongebied', 'Sportterrein', 'Bos', 'Overig binnenwater'."
     },
     {
       "name": "geom",
-      "type": "binary"
+      "type": "binary",
+      "description": "Technical: PC6 area polygon geometry (CBS source data in EPSG:28992 RD New); mirror geometry column, not a CBS statistical variable."
     },
     {
       "name": "geom_bbox",
-      "type": "struct<xmin: float, ymin: float, xmax: float, ymax: float>"
+      "type": "struct<xmin: float, ymin: float, xmax: float, ymax: float>",
+      "description": "Technical: per-feature bounding box struct added in the GeoParquet conversion for spatial indexing; not a CBS variable."
     }
   ],
   "proj:epsg": 28992,
