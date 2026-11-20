@@ -16,14 +16,14 @@
 | Column | Type | Description |
 |--------|------|-------------|
 | fid | int64 | Feature ID. |
-| version | string |  |
-| collection_id | string |  |
-| name | string |  |
-| inventorymethod | string |  |
-| source | string |  |
-| beginlifespan | int64 |  |
-| endlifespan | int64 |  |
-| citation_id | string |  |
+| version | string | Version of the delivered GMM map model (e.g. GEOM50000-V2025-1); model version management per GMM cat. 6.3.1. |
+| collection_id | string | Unique identifier (identificatie) of the geomorphological area collection in the GMM registration object (GMM cat. 4.3.2.1). |
+| name | string | Name of the (sub)collection: the map sheet number or project name, e.g. Bergen_op_Zoom (GMM cat. 4.3.1.1 naam). |
+| inventorymethod | string | Inventory method (inventarisatiemethode): analogue mapping with field survey or digital mapping with field verification (GMM cat. 4.3.2.5, 6.5). |
+| source | string | Elevation source (bron/Bestand): name and version of the height data file used to delineate and classify the areas, e.g. AHN4 (GMM cat. 4.3.2.8, 4.3.6). |
+| beginlifespan | int64 | Date (yyyymmdd) this version of the spatial object was inserted or changed in the dataset (begin levensduur, GMM cat. 4.3.2.6). |
+| endlifespan | int64 | Date (yyyymmdd) this version of the spatial object was superseded or retired; empty while current (einde levensduur, GMM cat. 4.3.2.7). |
+| citation_id | string | Reference to the CI_Citation record documenting this collection, e.g. the descriptive report of the survey or update (GMM cat. 4.3.2.4). |
 | geom | binary | Feature geometry (WKB) in EPSG:28992 (Amersfoort / RD New). |
 | geom_bbox | struct<xmin: float, ymin: float, xmax: float, ymax: float> | Per-feature bounding box struct for spatial filtering. |
 

@@ -37,8 +37,8 @@ con.execute("INSTALL spatial; LOAD spatial;")
 URL = 'https://data.source.coop/cholmes/portolan-nl/kadaster/inspire_buildings/buildings.parquet'
 
 df = con.execute(f"""
-    SELECT * FROM read_parquet('{URL}')
-    LIMIT 5
+    SELECT * EXCLUDE (geometry) FROM read_parquet('{URL}')
+    LIMIT 5    -- EXCLUDE skips the large geometry column chunk
 """).df()
 ```
 

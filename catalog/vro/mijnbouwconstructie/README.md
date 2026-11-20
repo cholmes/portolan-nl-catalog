@@ -15,7 +15,7 @@
 
 | Column | Type | Description |
 |--------|------|-------------|
-| mining_construction_pk | int64 |  |
+| mining_construction_pk | int64 | Technical surrogate key from the PDOK GeoPackage delivery (sequential integer, unique per row); not defined in the EPC catalogus. |
 | bro_id | string | BRO registration ID — unique identifier of the object in the Basisregistratie Ondergrond. |
 | quality_regime | string | BRO quality regime: IMBRO (full assurance) or IMBRO/A (transitional/lower assurance). |
 | delivery_accountable_party | string | KvK number of the party accountable for delivery (bronhouder). |

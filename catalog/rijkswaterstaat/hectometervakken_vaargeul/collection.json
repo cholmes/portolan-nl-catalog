@@ -61,23 +61,28 @@
   "table:columns": [
     {
       "name": "OBJECTID",
-      "type": "int64"
+      "type": "int64",
+      "description": "Esri row id (see generic)."
     },
     {
       "name": "vak_ID",
-      "type": "string"
+      "type": "string",
+      "description": "Section id: branch prefix wa (Boven-Rijn/Waal), nr (Pannerdensch Kanaal/Neder-Rijn/Lek) or ij (IJssel) plus the river hectometre (km x 10): wa_8591 = km 859.1."
     },
     {
       "name": "Shape__Area",
-      "type": "double"
+      "type": "double",
+      "description": "See generic."
     },
     {
       "name": "Shape__Length",
-      "type": "double"
+      "type": "double",
+      "description": "See generic."
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry, WKB encoded; see proj:epsg for the CRS."
     }
   ],
   "portolan:styles": [

@@ -60,7 +60,7 @@ Also available via WFS and WMS from PDOK:
 | `wijkcode` | string | **District code** (e.g. "WK099899"). Unique ID for each wijk. Prefix "WK" + 6 digits. |
 | `gemeentecode` | string | **Municipality code** (e.g. "GM0998"). Unique ID for each gemeente. Prefix "GM" + 4 digits. |
 | `gemeentenaam` | string | **Municipality name** (Dutch). |
-| `water` | string | Water classification. "B" indicates a water body area. |
+| `water` | string | Land/water flag: JA = water polygon, NEE = land, B = Belgian enclave territory (Baarle-Nassau area). |
 | `meestVoorkomendePostcode` | string | Most common 4-digit postcode in the area. |
 | `omgevingsadressendichtheid` | int | **Address density**: average number of addresses within 1 km radius per address. |
 | `stedelijkheidAdressenPerKm2` | int | **Urbanity**: addresses per km². Basis for the CBS urbanity classification. |

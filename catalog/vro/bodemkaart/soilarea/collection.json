@@ -35,6 +35,12 @@
       "title": "PDOK dataset page: BRO Bodemkaart (SGM)"
     },
     {
+      "rel": "via",
+      "href": "https://docs.geostandaarden.nl/bro/def-im-SGM-20230607/",
+      "type": "text/html",
+      "title": "Column definitions: BRO Catalogus bodemkaart (SGM) v1.2"
+    },
+    {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/soilarea/soilarea.pmtiles",
       "type": "application/vnd.pmtiles",

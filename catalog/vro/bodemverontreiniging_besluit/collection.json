@@ -67,7 +67,8 @@
   "table:columns": [
     {
       "name": "soil_legal_decision_pk",
-      "type": "int64"
+      "type": "int64",
+      "description": "Technical surrogate key from the PDOK GeoPackage delivery (sequential integer, unique per row); not defined in the SLD catalogus."
     },
     {
       "name": "bro_id",

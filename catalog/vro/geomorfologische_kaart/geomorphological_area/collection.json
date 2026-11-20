@@ -24,7 +24,7 @@
     },
     {
       "rel": "via",
-      "href": "https://service.pdok.nl/tno/bro-geomorfologische-kaart/wms/v1_0?request=GetCapabilities&service=WMS",
+      "href": "https://service.pdok.nl/tno/bro-geomorfologische-kaart/wms/v2_0?request=GetCapabilities&service=WMS",
       "type": "application/xml",
       "title": "PDOK WMS (GetCapabilities)"
     },
@@ -33,6 +33,12 @@
       "href": "https://www.pdok.nl/introductie/-/article/bro-geomorfologische-kaart-gmm-",
       "type": "text/html",
       "title": "PDOK dataset page: BRO Geomorfologische kaart (GMM)"
+    },
+    {
+      "rel": "via",
+      "href": "https://docs.geostandaarden.nl/bro/def-im-GMM-20230607/",
+      "type": "text/html",
+      "title": "Column definitions: BRO Catalogus geomorfologische kaart (GMM) v1.1"
     },
     {
       "rel": "pmtiles",
@@ -72,11 +78,13 @@
     },
     {
       "name": "collection_id",
-      "type": "string"
+      "type": "string",
+      "description": "ID of the geomorphological area collection (Geomorfologische vlakcollectie) this polygon belongs to (GMM cat. 4.3.2.1 identificatie)."
     },
     {
       "name": "identification",
-      "type": "string"
+      "type": "string",
+      "description": "Unique ID of the map polygon (Kaartvlak identificatie), a published spatial-object identifier for external reference (GMM cat. 4.3.3.1)."
     },
     {
       "name": "relief_code",
@@ -115,11 +123,13 @@
     },
     {
       "name": "genese_validfrom",
-      "type": "int64"
+      "type": "int64",
+      "description": "Start date (yyyymmdd) from which the recorded genesis (ontstaanswijze) value is valid; material history per GMM cat. 2.5, 4.3.8.3."
     },
     {
       "name": "genese_validto",
-      "type": "int64"
+      "type": "int64",
+      "description": "End date (yyyymmdd) of validity of the recorded genesis value; empty while current (material history, GMM cat. 2.5)."
     },
     {
       "name": "landform_subgroup_description",
@@ -133,75 +143,93 @@
     },
     {
       "name": "landform_subgroup_validfrom",
-      "type": "int64"
+      "type": "int64",
+      "description": "Start date (yyyymmdd) from which the recorded landform subgroup (landvormsubgroep) value is valid (material history, GMM cat. 2.5, 4.3.7.5)."
     },
     {
       "name": "landform_subgroup_validto",
-      "type": "int64"
+      "type": "int64",
+      "description": "End date (yyyymmdd) of validity of the recorded landform subgroup value; empty while current (material history, GMM cat. 2.5)."
     },
     {
       "name": "additional_surface_relief_description",
-      "type": "string"
+      "type": "string",
+      "description": "Relief addition (toevoeging relief): further typing of the relief and/or relative elevation of the landform unit (GMM cat. 4.3.7.1, list 5.4)."
     },
     {
       "name": "additional_surface_relief_validfrom",
-      "type": "int64"
+      "type": "int64",
+      "description": "Start date (yyyymmdd) from which the recorded relief addition is valid (material history, GMM cat. 2.5)."
     },
     {
       "name": "additional_surface_relief_validto",
-      "type": "int64"
+      "type": "int64",
+      "description": "End date (yyyymmdd) of validity of the recorded relief addition; empty while current (material history, GMM cat. 2.5)."
     },
     {
       "name": "additional_surface_cover_description",
-      "type": "string"
+      "type": "string",
+      "description": "Cover addition (toevoeging bedekking): typing of the deviating sediment layer covering the landform subgroup (GMM cat. 4.3.7.3, 6.3.6)."
     },
     {
       "name": "additional_surface_cover_validfrom",
-      "type": "int64"
+      "type": "int64",
+      "description": "Start date (yyyymmdd) from which the recorded cover addition is valid (material history, GMM cat. 2.5)."
     },
     {
       "name": "additional_surface_cover_validto",
-      "type": "int64"
+      "type": "int64",
+      "description": "End date (yyyymmdd) of validity of the recorded cover addition; empty while current (material history, GMM cat. 2.5)."
     },
     {
       "name": "relief_klasse",
-      "type": "string"
+      "type": "string",
+      "description": "Relief class (reliefklasse): whether the relief code is for valley-shaped (dalvormige) or non-valley landform groups (GMM cat. 4.3.9.2, 4.3.10)."
     },
     {
       "name": "relief_subklasse",
-      "type": "string"
+      "type": "string",
+      "description": "Relief description (relief) of the non-valley relief code, e.g. 'Vrij vlak, laaggelegen relief'; empty for valleys (GMM cat. list 5.3)."
     },
     {
       "name": "helling",
-      "type": "string"
+      "type": "string",
+      "description": "Slope: class of the angle of the steepest slope of the landform; non-valley relief codes only (GMM cat. list 5.3, 6.3.3)."
     },
     {
       "name": "lokaal_maximaal_hoogteverschil",
-      "type": "string"
+      "type": "string",
+      "description": "Local maximum height difference within the landform, in metres; non-valley relief codes only (GMM cat. list 5.3, 6.3.3)."
     },
     {
       "name": "diepte_tov_omgeving",
-      "type": "string"
+      "type": "string",
+      "description": "Depth of the valley incision relative to the surroundings, in metres; valley relief codes only (GMM cat. list 5.2 diepte)."
     },
     {
       "name": "steilste_verhang",
-      "type": "string"
+      "type": "string",
+      "description": "Steepest gradient (steilste verhang) of the valley form; valley relief codes only (GMM cat. list 5.2)."
     },
     {
       "name": "maximaal_hoogteverschil",
-      "type": "string"
+      "type": "string",
+      "description": "Maximum height difference within the form, in metres; valley relief codes only (GMM cat. list 5.2)."
     },
     {
       "name": "maximaal_verval",
-      "type": "string"
+      "type": "string",
+      "description": "Maximum drop (maximaal verval) of the valley, in metres; valley relief codes only (GMM cat. list 5.2)."
     },
     {
       "name": "relief_validfrom",
-      "type": "int64"
+      "type": "int64",
+      "description": "Start date (yyyymmdd) from which the recorded relief typing is valid (material history, GMM cat. 2.5, 4.3.7.4)."
     },
     {
       "name": "relief_validto",
-      "type": "int64"
+      "type": "int64",
+      "description": "End date (yyyymmdd) of validity of the recorded relief typing; empty while current (material history, GMM cat. 2.5)."
     },
     {
       "name": "geom",

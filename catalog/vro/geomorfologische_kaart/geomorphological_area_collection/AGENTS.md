@@ -12,11 +12,7 @@ Use to understand provenance/version groupings of the geomorphological map.
 
 ## About the BRO
 
-This collection comes from the **Basisregistratie Ondergrond (BRO)** — the Dutch Key Registry of the Subsurface, a statutory base registry in force since 1 January 2018. Government bodies must register subsurface data in the BRO and may only use registered data for public tasks. Data is published openly via PDOK, usually within ~1 day of registration. The Ministry of Housing and Spatial Planning (**VRO**) is the system-responsible provider; the data here is produced by **TNO – Geologische Dienst Nederland** (subsurface objects) or **Wageningen Environmental Research** (the soil and geomorphological maps).
-
-Two BRO concepts appear in almost every dataset:
-- **`bro_id`** — the unique registration identifier of each object (e.g. `GMW000000012345`).
-- **`quality_regime`** — `IMBRO` (full quality assurance) or `IMBRO/A` (transitional data delivered under a lighter regime; treat with slightly more caution).
+Part of the **Basisregistratie Ondergrond (BRO)**, the Dutch Key Registry of the Subsurface; see the [VRO catalog](../../catalog.json) description and [../../AGENTS.md](../../AGENTS.md) for the registry context. The schema table below defines the shared BRO fields (`bro_id`, `quality_regime`).
 
 ## How to access
 
@@ -42,14 +38,14 @@ gdf = gpd.read_parquet('https://data.source.coop/cholmes/portolan-nl/vro/geomorf
 | Column | Type | Meaning |
 |--------|------|---------|
 | `fid` | int64 | Feature ID. |
-| `version` | string |  |
-| `collection_id` | string |  |
-| `name` | string |  |
-| `inventorymethod` | string |  |
-| `source` | string |  |
-| `beginlifespan` | int64 |  |
-| `endlifespan` | int64 |  |
-| `citation_id` | string |  |
+| `version` | string | Version of the delivered GMM map model (e.g. GEOM50000-V2025-1); model version management per GMM cat. 6.3.1. |
+| `collection_id` | string | Unique identifier (identificatie) of the geomorphological area collection in the GMM registration object (GMM cat. 4.3.2.1). |
+| `name` | string | Name of the (sub)collection: the map sheet number or project name, e.g. Bergen_op_Zoom (GMM cat. 4.3.1.1 naam). |
+| `inventorymethod` | string | Inventory method (inventarisatiemethode): analogue mapping with field survey or digital mapping with field verification (GMM cat. 4.3.2.5, 6.5). |
+| `source` | string | Elevation source (bron/Bestand): name and version of the height data file used to delineate and classify the areas, e.g. AHN4 (GMM cat. 4.3.2.8, 4.3.6). |
+| `beginlifespan` | int64 | Date (yyyymmdd) this version of the spatial object was inserted or changed in the dataset (begin levensduur, GMM cat. 4.3.2.6). |
+| `endlifespan` | int64 | Date (yyyymmdd) this version of the spatial object was superseded or retired; empty while current (einde levensduur, GMM cat. 4.3.2.7). |
+| `citation_id` | string | Reference to the CI_Citation record documenting this collection, e.g. the descriptive report of the survey or update (GMM cat. 4.3.2.4). |
 | `geom` | binary | Feature geometry (WKB) in EPSG:28992 (Amersfoort / RD New). |
 | `geom_bbox` | struct<xmin: float, ymin: float, xmax: float, ymax: float> | Per-feature bounding box struct for spatial filtering. |
 
