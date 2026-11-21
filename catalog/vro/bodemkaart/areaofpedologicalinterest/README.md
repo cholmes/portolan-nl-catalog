@@ -16,11 +16,11 @@
 | Column | Type | Description |
 |--------|------|-------------|
 | fid | int64 | Feature ID. |
-| maparea_id | string |  |
-| maparea_collection | string |  |
-| beginlifespan | string |  |
-| endlifespan | string |  |
-| pedologicalinterest | string |  |
+| maparea_id | string | Unique ID of this map polygon in the delivered SGM model version (e.g. V2025-1.areaofpedologicalinterrest.NNN). |
+| maparea_collection | string | Soil area collection (bodemvlakcollectie) this polygon belongs to, given by collection kind (SGM cat. 4.3.6.2). |
+| beginlifespan | string | Date/time this version of the spatial object was inserted or changed in the dataset (INSPIRE lifespan; not in SGM catalogus v1.2; null in data). |
+| endlifespan | string | Date/time this version of the spatial object was superseded or retired (INSPIRE lifespan; not in SGM catalogus v1.2; null in data). |
+| pedologicalinterest | string | Pedological interest (bodemkundig belang): area type where soil cannot be typed, relevant for interpreting surrounding soils (SGM cat. 4.3.8). |
 | geom | binary | Feature geometry (WKB) in EPSG:28992 (Amersfoort / RD New). |
 | geom_bbox | struct<xmin: float, ymin: float, xmax: float, ymax: float> | Per-feature bounding box struct for spatial filtering. |
 

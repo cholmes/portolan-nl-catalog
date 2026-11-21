@@ -61,71 +61,88 @@
   "table:columns": [
     {
       "name": "OBJECTID",
-      "type": "int64"
+      "type": "int64",
+      "description": "Esri row id (see generic)."
     },
     {
       "name": "BEHEERDER",
-      "type": "string"
+      "type": "string",
+      "description": "Water manager of the route segment; empty/null throughout this layer."
     },
     {
       "name": "CODE",
-      "type": "string"
+      "type": "string",
+      "description": "Water/route code; null throughout this layer."
     },
     {
       "name": "MIGR_TYPE",
-      "type": "string"
+      "type": "string",
+      "description": "Level of the fish migration route, coded domain: rijk (national), regionaal (regional), lokaal (local)."
     },
     {
       "name": "OPMERKING",
-      "type": "string"
+      "type": "string",
+      "description": "Free-text remark."
     },
     {
       "name": "NAAM",
-      "type": "string"
+      "type": "string",
+      "description": "Name of the water(way) the route segment follows, e.g. Amsterdam-Rijnkanaal."
     },
     {
       "name": "BRON",
-      "type": "string"
+      "type": "string",
+      "description": "Data source; 'Rijkswaterstaat' on all rows."
     },
     {
       "name": "Status2009",
-      "type": "string"
+      "type": "string",
+      "description": "Fish-passage connectivity status in 2009. Domain: Verbonden, Nog niet verbonden, Niet verbonden, Geisoleerd, Niet aanwezig, Geen onderdeel visroutenetwerk."
     },
     {
       "name": "Status2015",
-      "type": "string"
+      "type": "string",
+      "description": "Fish-passage connectivity status in 2015 (same domain as Status2009)."
     },
     {
       "name": "Status2019",
-      "type": "string"
+      "type": "string",
+      "description": "Fish-passage connectivity status in 2019 (same domain as Status2009)."
     },
     {
       "name": "Status2021",
-      "type": "string"
+      "type": "string",
+      "description": "Fish-passage connectivity status in 2021 (same domain as Status2009)."
     },
     {
       "name": "Status2024",
-      "type": "string"
+      "type": "string",
+      "description": "Fish-passage connectivity status in 2024 (same domain as Status2009)."
     },
     {
       "name": "Status2027",
-      "type": "string"
+      "type": "string",
+      "description": "Expected fish-passage connectivity for target year 2027 (same domain as Status2009)."
     },
     {
       "name": "Status2030",
-      "type": "string"
+      "type": "string",
+      "description": "Expected fish-passage connectivity for target year 2030 (same domain as Status2009)."
     },
     {
       "name": "Status2033",
-      "type": "string"
+      "type": "string",
+      "description": "Expected fish-passage connectivity for target year 2033 (same domain as Status2009)."
     },
     {
       "name": "Shape__Length",
-      "type": "double"
+      "type": "double",
+      "description": "See generic."
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry, WKB encoded; see proj:epsg for the CRS."
     }
   ],
   "portolan:styles": [

@@ -24,7 +24,7 @@
     },
     {
       "rel": "via",
-      "href": "https://service.pdok.nl/tno/bro-grondwatergebruiksysteem/wms/v1_0?request=GetCapabilities&service=WMS",
+      "href": "https://service.pdok.nl/tno/bro-grondwatergebruiksysteem-geharmoniseerd/wms/v2_0?request=GetCapabilities&service=WMS",
       "type": "application/xml",
       "title": "PDOK WMS (GetCapabilities)"
     },
@@ -67,7 +67,8 @@
   "table:columns": [
     {
       "name": "groundwater_usage_facility_pk",
-      "type": "int64"
+      "type": "int64",
+      "description": "Technical surrogate key from the PDOK GeoPackage delivery (sequential integer, unique per row); not defined in the GUF catalogus."
     },
     {
       "name": "bro_id",

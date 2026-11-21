@@ -61,107 +61,133 @@
   "table:columns": [
     {
       "name": "OBJECTID",
-      "type": "int64"
+      "type": "int64",
+      "description": "Esri row id (see generic)."
     },
     {
       "name": "VRT_CODE",
-      "type": "string"
+      "type": "string",
+      "description": "Route code of the waterway in the RWS 'Vaarwegen in Nederland' (ViN) directory the lock lies on (e.g. 060 = Lemmer-Delfzijl)."
     },
     {
       "name": "VRTNAAM",
-      "type": "string"
+      "type": "string",
+      "description": "Name of the ViN waterway/route the lock lies on."
     },
     {
       "name": "MEETPUNT",
-      "type": "double"
+      "type": "double",
+      "description": "Kilometre reading of the lock along the ViN route (distance from the start of the waterway description, in km)."
     },
     {
       "name": "NAAM",
-      "type": "string"
+      "type": "string",
+      "description": "Name of the lock."
     },
     {
       "name": "ADRES",
-      "type": "string"
+      "type": "string",
+      "description": "Street address of the lock."
     },
     {
       "name": "POSTCODE",
-      "type": "string"
+      "type": "string",
+      "description": "Postal code of the lock's address."
     },
     {
       "name": "PLAATSNAAM",
-      "type": "string"
+      "type": "string",
+      "description": "Town where the lock is located."
     },
     {
       "name": "MARIFOONKA",
-      "type": "string"
+      "type": "string",
+      "description": "VHF marine radio (marifoon) channel(s) for calling the lock, stored as a list-style string, e.g. [\"18\"]; blank if none."
     },
     {
       "name": "NR_KOLKEN",
-      "type": "int32"
+      "type": "int32",
+      "description": "Number of lock chambers (kolken); cf. NumberOfChambers in the RWS FIS Lock schema."
     },
     {
       "name": "REF_V_BEBU",
-      "type": "string"
+      "type": "string",
+      "description": "Reference water level on the lower/outer side of the lock: KP=kanaalpeil, MP=meerpeil, SP=stuwpeil or NAP (FIS ReferenceLevelBeBu)."
     },
     {
       "name": "REF_V_BOBI",
-      "type": "string"
+      "type": "string",
+      "description": "Reference water level on the upper/inner side of the lock: KP=kanaalpeil, MP=meerpeil, SP=stuwpeil or NAP (FIS ReferenceLevelBoBi)."
     },
     {
       "name": "TEL_NR",
-      "type": "string"
+      "type": "string",
+      "description": "Phone number of the lock."
     },
     {
       "name": "AFST_BED",
-      "type": "string"
+      "type": "string",
+      "description": "Remotely operated (afstandsbediening), Yes/No; cf. IsRemoteControlled in the RWS FIS Lock schema."
     },
     {
       "name": "BHR_NAAM",
-      "type": "string"
+      "type": "string",
+      "description": "Managing organisation unit (beheerder): the RWS regional service, e.g. Zuid-Nederland."
     },
     {
       "name": "BHR_AFDELI",
-      "type": "string"
+      "type": "string",
+      "description": "Department/district of the manager, e.g. District Zuid-Oost."
     },
     {
       "name": "BHR_TYPE",
-      "type": "string"
+      "type": "string",
+      "description": "Type of managing authority; 'RWS' (Rijkswaterstaat) for all locks in this extract."
     },
     {
       "name": "BHR_BE_ADR",
-      "type": "string"
+      "type": "string",
+      "description": "Visiting address (bezoekadres) of the managing district office."
     },
     {
       "name": "BHR_B_PLTS",
-      "type": "string"
+      "type": "string",
+      "description": "Town of the manager's visiting address."
     },
     {
       "name": "BHR_POSTAD",
-      "type": "string"
+      "type": "string",
+      "description": "Postal address (PO box) of the manager."
     },
     {
       "name": "BHR_POS_PC",
-      "type": "string"
+      "type": "string",
+      "description": "Postcode of the manager's postal address."
     },
     {
       "name": "BHR_P_PLTS",
-      "type": "string"
+      "type": "string",
+      "description": "Town of the manager's postal address."
     },
     {
       "name": "BHR_TEL_NR",
-      "type": "string"
+      "type": "string",
+      "description": "Phone number of the manager."
     },
     {
       "name": "KCP_NAAM",
-      "type": "string"
+      "type": "string",
+      "description": "Name of the structure complex the lock belongs to (e.g. Houtribsluizen); matches RelatedBuildingComplexName in the FIS Lock schema. Blank if none."
     },
     {
       "name": "ID",
-      "type": "int32"
+      "type": "int32",
+      "description": "Numeric id of the lock in the source ViN/FIS database."
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry, WKB encoded; see proj:epsg for the CRS."
     }
   ],
   "portolan:styles": [

@@ -36,9 +36,15 @@
     },
     {
       "rel": "via",
-      "href": "https://service.pdok.nl/cbs/pd/atom/v1_0/index.xml",
+      "href": "https://service.pdok.nl/cbs/population-distribution/atom/index.xml",
       "type": "application/atom+xml",
       "title": "ATOM download service"
+    },
+    {
+      "rel": "via",
+      "href": "https://inspire-mif.github.io/technical-guidelines/data/pd/dataspecification_pd.html",
+      "type": "text/html",
+      "title": "Column definitions: D2.8.III.10 INSPIRE Data Specification on Population Distribution (Demography) – Technical Guidelines v3.0.0"
     },
     {
       "rel": "pmtiles",
@@ -70,243 +76,303 @@
   "table:columns": [
     {
       "name": "gml_id",
-      "type": "string"
+      "type": "string",
+      "description": "Technical XML id of the feature in the source INSPIRE GML (gml:id); unique within the delivered file, usually derived from the INSPIRE object identifier."
     },
     {
       "name": "gid",
-      "type": "string"
+      "type": "string",
+      "description": "Technical: sequential feature id added in the cloud-native conversion."
     },
     {
       "name": "gmsurface",
-      "type": "string"
+      "type": "string",
+      "description": "Geometry: the part of the 2D world the statistical distribution describes (StatisticalDistribution.areaOfDissemination, GM_Surface; INSPIRE PD spec)."
     },
     {
       "name": "measure",
-      "type": "string"
+      "type": "string",
+      "description": "The measure concerned by the distribution, e.g. population by age and gender (StatisticalDistribution.measure, INSPIRE PD spec)."
     },
     {
       "name": "stat",
-      "type": "string"
+      "type": "string",
+      "description": "Description of the statistic measurement method, from code list StatisticsMeasurementMethodValue (StatisticalDistribution.measurementMethod, PD spec)."
     },
     {
       "name": "freq",
-      "type": "string"
+      "type": "string",
+      "description": "Frequency dimension from the statistical source (SDMX; value 'A' = annual). Not an INSPIRE PD model attribute."
     },
     {
       "name": "obsvalue",
-      "type": "double"
+      "type": "double",
+      "description": "The value for the piece of datum: the observed statistical value for this unit (StatisticalValue.value, INSPIRE PD spec)."
     },
     {
       "name": "obsstatus",
-      "type": "string"
+      "type": "string",
+      "description": "The status of the statistical data, from code list StatisticalDataStatusValue (StatisticalValue.status, INSPIRE PD spec)."
     },
     {
       "name": "periodofreference",
-      "type": "string"
+      "type": "string",
+      "description": "Date or period the observation was taken and the data were collected (StatisticalDistribution.periodOfMeasurement, INSPIRE PD spec)."
     },
     {
       "name": "fuuid",
-      "type": "string"
+      "type": "string",
+      "description": "Not defined in any INSPIRE specification; a per-feature UUID added by the ETL/flattening tooling."
     },
     {
       "name": "geom",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry, WKB encoded; see proj:epsg for the CRS."
     },
     {
       "name": "geom_bbox",
-      "type": "struct<xmin: float, ymin: float, xmax: float, ymax: float>"
+      "type": "struct<xmin: float, ymin: float, xmax: float, ymax: float>",
+      "description": "Technical: per-feature bounding box struct added for spatial filtering (GeoParquet covering)."
     },
     {
       "name": "gml_id2",
-      "type": "string"
+      "type": "string",
+      "description": "Technical: gml:id of the second source feature merged during flattening; a join artifact, not an INSPIRE attribute."
     },
     {
       "name": "localId",
-      "type": "string"
+      "type": "string",
+      "description": "Local identifier assigned by the data provider; unique within the namespace, so no other spatial object carries the same id (INSPIRE Identifier.localId, GCM)."
     },
     {
       "name": "namespace",
-      "type": "string"
+      "type": "string",
+      "description": "Namespace uniquely identifying the data source of the spatial object; owned by the data provider (INSPIRE Identifier.namespace, GCM D2.5)."
     },
     {
       "name": "versionId",
-      "type": "string"
+      "type": "string",
+      "description": "Identifier of this particular version of the spatial object, unique among all versions of the object; max 25 chars (INSPIRE Identifier.versionId, GCM D2.5)."
     },
     {
       "name": "identifier",
-      "type": "string"
+      "type": "string",
+      "description": "URI/URN form of the INSPIRE external object identifier, carried as gml:identifier in the GML encoding; combines namespace and localId."
     },
     {
       "name": "identifierScheme",
-      "type": "string"
+      "type": "string",
+      "description": "Code space of gml:identifier, naming the scheme the identifier value belongs to (e.g. http://inspire.ec.europa.eu/ids); GML encoding, not a model attribute."
     },
     {
       "name": "language",
-      "type": "string"
+      "type": "string",
+      "description": "Language of the geographical name, as a three-letter code per ISO 639-3 or ISO 639-5 (GeographicalName.language, INSPIRE GN spec)."
     },
     {
       "name": "nameStatus",
-      "type": "string"
+      "type": "string",
+      "description": "Qualitative information on the credit to give the name regarding its standardisation and/or topicality, e.g. official (GeographicalName.nameStatus, GN spec)."
     },
     {
       "name": "sourceOfName",
-      "type": "string"
+      "type": "string",
+      "description": "Original data source from which the geographical name is taken and integrated in the data set providing it (GeographicalName.sourceOfName, GN spec)."
     },
     {
       "name": "pronunciation",
-      "type": "string"
+      "type": "string",
+      "description": "Proper, correct or standard pronunciation of the geographical name, as IPA text and/or a sound-file link (GeographicalName.pronunciation, GN spec)."
     },
     {
       "name": "text",
-      "type": "string"
+      "type": "string",
+      "description": "Way the name is written: the spelling text of the geographical name (SpellingOfName.text, INSPIRE GN spec)."
     },
     {
       "name": "script",
-      "type": "string"
+      "type": "string",
+      "description": "Set of graphic symbols the name is written in, as a four-letter ISO 15924 code, e.g. Latn (SpellingOfName.script, INSPIRE GN spec)."
     },
     {
       "name": "beginLifespanVersion",
-      "type": "string"
+      "type": "string",
+      "description": "Date and time at which this version of the spatial object was inserted or changed in the spatial data set (INSPIRE GCM lifecycle attribute, voidable)."
     },
     {
       "name": "endLifespanVersion",
-      "type": "string"
+      "type": "string",
+      "description": "Date and time at which this version of the spatial object was superseded or retired in the spatial data set (INSPIRE GCM lifecycle attribute, voidable)."
     },
     {
       "name": "timePosition",
-      "type": "string"
+      "type": "string",
+      "description": "Timestamp value of a flattened GML time instant (gml:timePosition), carrying the actual date/time of the feature's temporal property."
     },
     {
       "name": "referencePeriod_end",
-      "type": "string"
+      "type": "string",
+      "description": "End of the period when the data are supposed to give a picture of the territorial division in statistical units (SU referencePeriod, INSPIRE SU spec)."
     },
     {
       "name": "leastDetailedScale",
-      "type": "int32"
+      "type": "int32",
+      "description": "Least detailed scale the generalised geometry is suitable for, as the inverse of an indicative scale (VectorStatisticalUnitGeometry, INSPIRE SU spec)."
     },
     {
       "name": "areaValue",
-      "type": "double"
+      "type": "double",
+      "description": "Area of the statistical unit's reference geometry (AreaStatisticalUnit.areaValue, INSPIRE SU spec)."
     },
     {
       "name": "areaValue_uom",
-      "type": "string"
+      "type": "string",
+      "description": "Unit of measure for areaValue, from the uom attribute of the GML Area measure (e.g. m2, km2); encoding detail, not a separate model attribute."
     },
     {
       "name": "landAreaValue",
-      "type": "string"
+      "type": "string",
+      "description": "Area of the above-water part of the statistical unit (AreaStatisticalUnit.landAreaValue, INSPIRE SU spec)."
     },
     {
       "name": "livableAreaValue",
-      "type": "string"
+      "type": "string",
+      "description": "Area of the livable part of the statistical unit (AreaStatisticalUnit.livableAreaValue, INSPIRE SU spec)."
     },
     {
       "name": "tesselation_localId",
-      "type": "string"
+      "type": "string",
+      "description": "localId of the INSPIRE Identifier of the statistical tessellation this area unit composes (AreaStatisticalUnit.tessellation association, SU spec)."
     },
     {
       "name": "tesselation_namespace",
-      "type": "string"
+      "type": "string",
+      "description": "namespace of the INSPIRE Identifier of the statistical tessellation this area unit composes (AreaStatisticalUnit.tessellation association, SU spec)."
     },
     {
       "name": "PD_NL_LAU_T_STAT",
-      "type": "string"
+      "type": "string",
+      "description": "Statistic measurement method of the LAU-level total population series (PD measurementMethod)."
     },
     {
       "name": "PD_NL_LAU_T_MEASURE",
-      "type": "string"
+      "type": "string",
+      "description": "Measure of the LAU-level T series; the data carries 'Population_Total'."
     },
     {
       "name": "PD_NL_LAU_PERIOD_OF_REFERENCE",
-      "type": "string"
+      "type": "string",
+      "description": "Date or period the LAU-level observation was taken and the data were collected (StatisticalDistribution.periodOfMeasurement, INSPIRE PD spec)."
     },
     {
       "name": "PD_NL_LAU_T_OBS_VALUE",
-      "type": "string"
+      "type": "string",
+      "description": "Observed value of the LAU-level total population series (StatisticalValue.value, INSPIRE PD)."
     },
     {
       "name": "PD_NL_LAU_D_STAT",
-      "type": "string"
+      "type": "string",
+      "description": "Statistic measurement method of the joined LAU-level distribution variant D (PD measurementMethod); the T/D suffix is not defined by the PD spec."
     },
     {
       "name": "PD_NL_LAU_D_MEASURE",
-      "type": "string"
+      "type": "string",
+      "description": "Measure of the LAU-level D series; the data carries 'Population_Density' (persons per km2)."
     },
     {
       "name": "PD_NL_LAU_D_OBS_VALUE",
-      "type": "string"
+      "type": "string",
+      "description": "Observed value of the LAU-level population density series (StatisticalValue.value, INSPIRE PD)."
     },
     {
       "name": "PD_NL_LAU_M_STAT",
-      "type": "string"
+      "type": "string",
+      "description": "Statistic measurement method of the LAU-level male population series (PD measurementMethod)."
     },
     {
       "name": "PD_NL_LAU_M_MEASURE",
-      "type": "string"
+      "type": "string",
+      "description": "Measure of the LAU-level M series; the data carries 'Population_Male'."
     },
     {
       "name": "PD_NL_LAU_M_OBS_VALUE",
-      "type": "string"
+      "type": "string",
+      "description": "Observed value of the LAU-level male population series (StatisticalValue.value, INSPIRE PD)."
     },
     {
       "name": "PD_NL_LAU_F_STAT",
-      "type": "string"
+      "type": "string",
+      "description": "Statistic measurement method of the LAU-level female population series (PD measurementMethod)."
     },
     {
       "name": "PD_NL_LAU_F_MEASURE",
-      "type": "string"
+      "type": "string",
+      "description": "Measure of the LAU-level F series; the data carries 'Population_Female'."
     },
     {
       "name": "PD_NL_LAU_F_OBS_VALUE",
-      "type": "string"
+      "type": "string",
+      "description": "Observed value of the LAU-level female population series (StatisticalValue.value, INSPIRE PD)."
     },
     {
       "name": "validityPeriod",
-      "type": "string"
+      "type": "string",
+      "description": "Period when the statistical unit is supposed to be preferably used, or not (VectorStatisticalUnit.validityPeriod, INSPIRE SU spec)."
     },
     {
       "name": "referencePeriod_begin",
-      "type": "string"
+      "type": "string",
+      "description": "Start of the period when the data are supposed to give a picture of the territorial division in statistical units (SU referencePeriod, INSPIRE SU spec)."
     },
     {
       "name": "PD_NL_NUTS2_FREQ",
-      "type": "string"
+      "type": "string",
+      "description": "SDMX frequency dimension of the NUTS2 series; the data carries 'A' (annual)."
     },
     {
       "name": "PD_NL_NUTS2_UNIT",
-      "type": "string"
+      "type": "string",
+      "description": "SDMX unit dimension of the NUTS2 series; the data carries 'NR' (number of persons)."
     },
     {
       "name": "PD_NL_NUTS2_SEX",
-      "type": "string"
+      "type": "string",
+      "description": "SDMX sex dimension of the NUTS2 series; the data carries 'T' (total)."
     },
     {
       "name": "PD_NL_NUTS2_AGE",
-      "type": "string"
+      "type": "string",
+      "description": "SDMX age dimension of the NUTS2 series; the data carries 'TOTAL' (all ages)."
     },
     {
       "name": "PD_NL_NUTS2_STATCODE",
-      "type": "string"
+      "type": "string",
+      "description": "Code of the NUTS 2 statistical region the observation refers to."
     },
     {
       "name": "PD_NL_NUTS2_STANAAM",
-      "type": "string"
+      "type": "string",
+      "description": "Name of the NUTS 2 statistical region (Dutch province name)."
     },
     {
       "name": "PD_NL_NUTS2_TIME",
-      "type": "string"
+      "type": "string",
+      "description": "SDMX time dimension of the NUTS2 series: the reference year of the observation."
     },
     {
       "name": "PD_NL_NUTS2_OBS_VALUE",
-      "type": "string"
+      "type": "string",
+      "description": "Observed population value of the NUTS2 series (StatisticalValue.value, INSPIRE PD)."
     },
     {
       "name": "PD_NL_NUTS2_OBS_FLAG",
-      "type": "string"
+      "type": "string",
+      "description": "SDMX observation flag of the NUTS2 series; null in the current data."
     },
     {
       "name": "PD_NL_NUTS2_OBS_STATUS",
-      "type": "string"
+      "type": "string",
+      "description": "Status of the statistical data, from code list StatisticalDataStatusValue (StatisticalValue.status, INSPIRE PD)."
     }
   ],
   "portolan:styles": [

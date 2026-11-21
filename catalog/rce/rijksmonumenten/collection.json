@@ -19,7 +19,7 @@
     },
     {
       "rel": "via",
-      "href": "https://api.pdok.nl/rce/beschermde-gebieden-cultuurhistorie/ogc/v1/collections/rijksmonumentpunten",
+      "href": "https://api.pdok.nl/rce/beschermde-gebieden-cultuurhistorie/ogc/v1/collections/rce_inspire_points",
       "type": "text/html",
       "title": "PDOK OGC API collection"
     },

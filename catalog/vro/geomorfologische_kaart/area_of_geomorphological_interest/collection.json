@@ -24,7 +24,7 @@
     },
     {
       "rel": "via",
-      "href": "https://service.pdok.nl/tno/bro-geomorfologische-kaart/wms/v1_0?request=GetCapabilities&service=WMS",
+      "href": "https://service.pdok.nl/tno/bro-geomorfologische-kaart/wms/v2_0?request=GetCapabilities&service=WMS",
       "type": "application/xml",
       "title": "PDOK WMS (GetCapabilities)"
     },
@@ -33,6 +33,12 @@
       "href": "https://www.pdok.nl/introductie/-/article/bro-geomorfologische-kaart-gmm-",
       "type": "text/html",
       "title": "PDOK dataset page: BRO Geomorfologische kaart (GMM)"
+    },
+    {
+      "rel": "via",
+      "href": "https://docs.geostandaarden.nl/bro/def-im-GMM-20230607/",
+      "type": "text/html",
+      "title": "Column definitions: BRO Catalogus geomorfologische kaart (GMM) v1.1"
     },
     {
       "rel": "pmtiles",
@@ -72,15 +78,18 @@
     },
     {
       "name": "identification",
-      "type": "string"
+      "type": "string",
+      "description": "Unique ID of the map polygon (Kaartvlak identificatie) of this area of geomorphological interest (GMM cat. 4.3.3.1)."
     },
     {
       "name": "collection_id",
-      "type": "string"
+      "type": "string",
+      "description": "ID of the geomorphological area collection (vlakcollectie) this polygon belongs to (GMM cat. 4.3.2.1)."
     },
     {
       "name": "type",
-      "type": "string"
+      "type": "string",
+      "description": "Type of geomorphological interest (geomorfologisch belang): Dijk or Water; features relevant to landform formation, without a landform description (GMM cat. 4.3.4)."
     },
     {
       "name": "geom",

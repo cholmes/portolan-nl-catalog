@@ -61,67 +61,83 @@
   "table:columns": [
     {
       "name": "OBJECTID",
-      "type": "int64"
+      "type": "int64",
+      "description": "Esri row id (see generic)."
     },
     {
       "name": "bergendvermogen",
-      "type": "double"
+      "type": "double",
+      "description": "Storage capacity (bergend vermogen): maximum volume of water the area can store; unit not stated in the service (m3 in the Aquo/DAMO water model)."
     },
     {
       "name": "code",
-      "type": "string"
+      "type": "string",
+      "description": "Manager's own code for the area; null in sampled records."
     },
     {
       "name": "guid",
-      "type": "string"
+      "type": "string",
+      "description": "See generic."
     },
     {
       "name": "indicatiewettelijkvastgesteld",
-      "type": "string"
+      "type": "string",
+      "description": "ja/nee: whether the storage area is formally (legally) established, i.e. designated and adopted in the water manager's legger."
     },
     {
       "name": "naam",
-      "type": "string"
+      "type": "string",
+      "description": "Name of the storage area."
     },
     {
       "name": "nen3610id",
-      "type": "string"
+      "type": "string",
+      "description": "NEN 3610 object id, 'NL.WBHCODE.<waterboard code>.Bergingsgebied.<n>'; identifies the source waterboard register (see generic)."
     },
     {
       "name": "objectbegintijd",
-      "type": "string"
+      "type": "string",
+      "description": "Start datetime of this object version in the source registration (NEN 3610/IMWA lifecycle)."
     },
     {
       "name": "opmerking",
-      "type": "string"
+      "type": "string",
+      "description": "Free-text remark."
     },
     {
       "name": "statuslegger",
-      "type": "string"
+      "type": "string",
+      "description": "Status of the area in the legger; observed: Vastgesteld (adopted), In ontwerp (draft), Gewijzigd (amended), Niet van toepassing."
     },
     {
       "name": "statusobject",
-      "type": "string"
+      "type": "string",
+      "description": "Lifecycle status of the object itself; observed value 'gerealiseerd' (realised)."
     },
     {
       "name": "tijdstipregistratie",
-      "type": "string"
+      "type": "string",
+      "description": "Timestamp at which this version was registered in the source system."
     },
     {
       "name": "url",
-      "type": "string"
+      "type": "string",
+      "description": "Link to further information; null in sampled records."
     },
     {
       "name": "Shape__Area",
-      "type": "double"
+      "type": "double",
+      "description": "See generic."
     },
     {
       "name": "Shape__Length",
-      "type": "double"
+      "type": "double",
+      "description": "See generic."
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry, WKB encoded; see proj:epsg for the CRS."
     }
   ],
   "portolan:styles": [

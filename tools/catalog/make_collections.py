@@ -84,6 +84,7 @@ C = {
               "assessment, remediation or aftercare. Produced under VRO; bronhouder TNO.",
         cols={}),
     "grondwatergebruiksysteem": dict(
+        wms="https://service.pdok.nl/tno/bro-grondwatergebruiksysteem-geharmoniseerd/wms/v2_0?request=GetCapabilities&service=WMS",
         landing=("https://www.pdok.nl/introductie/-/article/bro-grondwatergebruiksysteem-guf-",
                  "PDOK dataset page: BRO Grondwatergebruiksysteem (GUF)"),
         title="BRO Groundwater Use System (GUF / Grondwatergebruiksysteem)",
@@ -117,6 +118,7 @@ C = {
               "bronhouder Wageningen Environmental Research.",
         cols={}),
     "geomorfologische_kaart/geomorphological_area": dict(
+        wms="https://service.pdok.nl/tno/bro-geomorfologische-kaart/wms/v2_0?request=GetCapabilities&service=WMS",
         landing=("https://www.pdok.nl/introductie/-/article/bro-geomorfologische-kaart-gmm-",
                  "PDOK dataset page: BRO Geomorfologische kaart (GMM)"),
         title="BRO Geomorphological Map 1:50,000 — Geomorphological areas (GMM)",
@@ -135,6 +137,7 @@ C = {
               "additional_surface_relief_code": "Additional surface relief code (optional).",
               "additional_surface_cover_code": "Additional surface cover code (optional)."}),
     "geomorfologische_kaart/area_of_geomorphological_interest": dict(
+        wms="https://service.pdok.nl/tno/bro-geomorfologische-kaart/wms/v2_0?request=GetCapabilities&service=WMS",
         landing=("https://www.pdok.nl/introductie/-/article/bro-geomorfologische-kaart-gmm-",
                  "PDOK dataset page: BRO Geomorfologische kaart (GMM)"),
         title="BRO Geomorphological Map — Area of geomorphological interest",
@@ -144,6 +147,7 @@ C = {
               "Environmental Research.",
         cols={}),
     "geomorfologische_kaart/geomorphological_area_collection": dict(
+        wms="https://service.pdok.nl/tno/bro-geomorfologische-kaart/wms/v2_0?request=GetCapabilities&service=WMS",
         landing=("https://www.pdok.nl/introductie/-/article/bro-geomorfologische-kaart-gmm-",
                  "PDOK dataset page: BRO Geomorfologische kaart (GMM)"),
         title="BRO Geomorphological Map — Map area collections",
@@ -162,6 +166,93 @@ STYLE_TITLES = {
     "by-type": "By type", "by-method": "By inventory method",
     "by-landform": "By landform subgroup", "by-litter": "By litter layer investigated",
     "by-delivery-context": "By delivery context", "by-bronhouder": "By data owner (bronhouder)",
+}
+
+
+
+# Researched column definitions, grounded in the BRO catalogi on
+# docs.geostandaarden.nl (content-verified 2026-11-20; see the catalogus
+# via links the collections carry). Merged over SHARED_COLS per collection.
+RESEARCHED_COLS = {
+ "geomorfologische_kaart/geomorphological_area": {
+  "collection_id": "ID of the geomorphological area collection (Geomorfologische vlakcollectie) this polygon belongs to (GMM cat. 4.3.2.1 identificatie).",
+  "identification": "Unique ID of the map polygon (Kaartvlak identificatie), a published spatial-object identifier for external reference (GMM cat. 4.3.3.1).",
+  "genese_validfrom": "Start date (yyyymmdd) from which the recorded genesis (ontstaanswijze) value is valid; material history per GMM cat. 2.5, 4.3.8.3.",
+  "genese_validto": "End date (yyyymmdd) of validity of the recorded genesis value; empty while current (material history, GMM cat. 2.5).",
+  "landform_subgroup_validfrom": "Start date (yyyymmdd) from which the recorded landform subgroup (landvormsubgroep) value is valid (material history, GMM cat. 2.5, 4.3.7.5).",
+  "landform_subgroup_validto": "End date (yyyymmdd) of validity of the recorded landform subgroup value; empty while current (material history, GMM cat. 2.5).",
+  "additional_surface_relief_description": "Relief addition (toevoeging relief): further typing of the relief and/or relative elevation of the landform unit (GMM cat. 4.3.7.1, list 5.4).",
+  "additional_surface_relief_validfrom": "Start date (yyyymmdd) from which the recorded relief addition is valid (material history, GMM cat. 2.5).",
+  "additional_surface_relief_validto": "End date (yyyymmdd) of validity of the recorded relief addition; empty while current (material history, GMM cat. 2.5).",
+  "additional_surface_cover_description": "Cover addition (toevoeging bedekking): typing of the deviating sediment layer covering the landform subgroup (GMM cat. 4.3.7.3, 6.3.6).",
+  "additional_surface_cover_validfrom": "Start date (yyyymmdd) from which the recorded cover addition is valid (material history, GMM cat. 2.5).",
+  "additional_surface_cover_validto": "End date (yyyymmdd) of validity of the recorded cover addition; empty while current (material history, GMM cat. 2.5).",
+  "relief_klasse": "Relief class (reliefklasse): whether the relief code is for valley-shaped (dalvormige) or non-valley landform groups (GMM cat. 4.3.9.2, 4.3.10).",
+  "relief_subklasse": "Relief description (relief) of the non-valley relief code, e.g. 'Vrij vlak, laaggelegen relief'; empty for valleys (GMM cat. list 5.3).",
+  "helling": "Slope: class of the angle of the steepest slope of the landform; non-valley relief codes only (GMM cat. list 5.3, 6.3.3).",
+  "lokaal_maximaal_hoogteverschil": "Local maximum height difference within the landform, in metres; non-valley relief codes only (GMM cat. list 5.3, 6.3.3).",
+  "diepte_tov_omgeving": "Depth of the valley incision relative to the surroundings, in metres; valley relief codes only (GMM cat. list 5.2 diepte).",
+  "steilste_verhang": "Steepest gradient (steilste verhang) of the valley form; valley relief codes only (GMM cat. list 5.2).",
+  "maximaal_hoogteverschil": "Maximum height difference within the form, in metres; valley relief codes only (GMM cat. list 5.2).",
+  "maximaal_verval": "Maximum drop (maximaal verval) of the valley, in metres; valley relief codes only (GMM cat. list 5.2).",
+  "relief_validfrom": "Start date (yyyymmdd) from which the recorded relief typing is valid (material history, GMM cat. 2.5, 4.3.7.4).",
+  "relief_validto": "End date (yyyymmdd) of validity of the recorded relief typing; empty while current (material history, GMM cat. 2.5)."
+ },
+ "geomorfologische_kaart/geomorphological_area_collection": {
+  "version": "Version of the delivered GMM map model (e.g. GEOM50000-V2025-1); model version management per GMM cat. 6.3.1.",
+  "collection_id": "Unique identifier (identificatie) of the geomorphological area collection in the GMM registration object (GMM cat. 4.3.2.1).",
+  "name": "Name of the (sub)collection: the map sheet number or project name, e.g. Bergen_op_Zoom (GMM cat. 4.3.1.1 naam).",
+  "inventorymethod": "Inventory method (inventarisatiemethode): analogue mapping with field survey or digital mapping with field verification (GMM cat. 4.3.2.5, 6.5).",
+  "source": "Elevation source (bron/Bestand): name and version of the height data file used to delineate and classify the areas, e.g. AHN4 (GMM cat. 4.3.2.8, 4.3.6).",
+  "beginlifespan": "Date (yyyymmdd) this version of the spatial object was inserted or changed in the dataset (begin levensduur, GMM cat. 4.3.2.6).",
+  "endlifespan": "Date (yyyymmdd) this version of the spatial object was superseded or retired; empty while current (einde levensduur, GMM cat. 4.3.2.7).",
+  "citation_id": "Reference to the CI_Citation record documenting this collection, e.g. the descriptive report of the survey or update (GMM cat. 4.3.2.4)."
+ },
+ "geomorfologische_kaart/area_of_geomorphological_interest": {
+  "identification": "Unique ID of the map polygon (Kaartvlak identificatie) of this area of geomorphological interest (GMM cat. 4.3.3.1).",
+  "collection_id": "ID of the geomorphological area collection (vlakcollectie) this polygon belongs to (GMM cat. 4.3.2.1).",
+  "type": "Type of geomorphological interest (geomorfologisch belang): Dijk or Water; features relevant to landform formation, without a landform description (GMM cat. 4.3.4)."
+ },
+ "bodemkaart/areaofpedologicalinterest": {
+  "maparea_id": "Unique ID of this map polygon in the delivered SGM model version (e.g. V2025-1.areaofpedologicalinterrest.NNN).",
+  "maparea_collection": "Soil area collection (bodemvlakcollectie) this polygon belongs to, given by collection kind (SGM cat. 4.3.6.2).",
+  "beginlifespan": "Date/time this version of the spatial object was inserted or changed in the dataset (INSPIRE lifespan; not in SGM catalogus v1.2; null in data).",
+  "endlifespan": "Date/time this version of the spatial object was superseded or retired (INSPIRE lifespan; not in SGM catalogus v1.2; null in data).",
+  "pedologicalinterest": "Pedological interest (bodemkundig belang): area type where soil cannot be typed, relevant for interpreting surrounding soils (SGM cat. 4.3.8)."
+ },
+ "bodemverontreiniging_besluit": {
+  "soil_legal_decision_pk": "Technical surrogate key from the PDOK GeoPackage delivery (sequential integer, unique per row); not defined in the SLD catalogus."
+ },
+ "mijnbouwconstructie": {
+  "mining_construction_pk": "Technical surrogate key from the PDOK GeoPackage delivery (sequential integer, unique per row); not defined in the EPC catalogus."
+ },
+ "grondwatergebruiksysteem": {
+  "groundwater_usage_facility_pk": "Technical surrogate key from the PDOK GeoPackage delivery (sequential integer, unique per row); not defined in the GUF catalogus."
+ }
+}
+
+# The catalogus each collection's column definitions come from (via link).
+CATALOGUS = {
+ "geomorfologische_kaart/geomorphological_area": [
+  "https://docs.geostandaarden.nl/bro/def-im-GMM-20230607/",
+  "Column definitions: BRO Catalogus geomorfologische kaart (GMM) v1.1"
+ ],
+ "geomorfologische_kaart/geomorphological_area_collection": [
+  "https://docs.geostandaarden.nl/bro/def-im-GMM-20230607/",
+  "Column definitions: BRO Catalogus geomorfologische kaart (GMM) v1.1"
+ ],
+ "geomorfologische_kaart/area_of_geomorphological_interest": [
+  "https://docs.geostandaarden.nl/bro/def-im-GMM-20230607/",
+  "Column definitions: BRO Catalogus geomorfologische kaart (GMM) v1.1"
+ ],
+ "bodemkaart/soilarea": [
+  "https://docs.geostandaarden.nl/bro/def-im-SGM-20230607/",
+  "Column definitions: BRO Catalogus bodemkaart (SGM) v1.2"
+ ],
+ "bodemkaart/areaofpedologicalinterest": [
+  "https://docs.geostandaarden.nl/bro/def-im-SGM-20230607/",
+  "Column definitions: BRO Catalogus bodemkaart (SGM) v1.2"
+ ]
 }
 
 
@@ -188,7 +279,9 @@ def build(path, cfg):
     cx, cy = (minx + maxx) / 2, (miny + maxy) / 2
     # columns
     cols = []
-    descs = dict(SHARED_COLS); descs.update(cfg.get("cols", {}))
+    descs = dict(SHARED_COLS)
+    descs.update(RESEARCHED_COLS.get(path, {}))
+    descs.update(cfg.get("cols", {}))
     for name, typ in arrow_cols(parquet):
         c = {"name": name, "type": typ}
         if name in descs:
@@ -231,7 +324,9 @@ def build(path, cfg):
     order = [f"styles/{x}" for x in names]
 
     atom = f"https://service.pdok.nl/tno/{cfg['slug']}/atom/index.xml"
-    wms = f"https://service.pdok.nl/tno/{cfg['slug']}/wms/v1_0?request=GetCapabilities&service=WMS"
+    # PDOK moved some WMS endpoints (verified 2026-11-20); a config override
+    # carries the working URL where the v1_0 pattern now 404s.
+    wms = cfg.get("wms") or f"https://service.pdok.nl/tno/{cfg['slug']}/wms/v1_0?request=GetCapabilities&service=WMS"
     landing_url, landing_title = cfg["landing"]
 
     coll = {
@@ -248,6 +343,8 @@ def build(path, cfg):
             # PORTO-CORE-053/-084: at least one via link is the source's own
             # HTML page; the service links above keep their real media types.
             stac.link("via", landing_url, "text/html", landing_title),
+            *( [stac.link("via", *CATALOGUS[path][:1], "text/html", CATALOGUS[path][1])]
+               if path in CATALOGUS else [] ),
             # web-map-links: the extension is declared below, and declaring it
             # without a web-map link is a validation error. Every sibling
             # collection in the catalog carries this link.

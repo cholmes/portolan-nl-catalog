@@ -1,6 +1,6 @@
 # CBS Postcode6 (Statistics per Postcode)
 
-Statistical data for all 6-digit postcodes in the Netherlands from CBS (Statistics Netherlands). Contains 157 attributes covering demographics, housing, energy consumption, income, social security, and proximity to facilities. Data available from 2015 to 2024, measured as of January 1st annually. Privacy protected: postcodes with fewer than 5 residents or 5 housing units are suppressed (value -99997). Published via PDOK.
+Statistical data for all 6-digit postcodes in the Netherlands from CBS (Statistics Netherlands): 130 statistical variables covering demographics, households, housing, energy consumption, social security, and proximity to facilities, from the CBS publication 'Statistische gegevens per vierkant en postcode 2022-2023-2024'. Counts are measured on 1 January; energy figures cover a calendar year. Privacy protected: counts are rounded to multiples of 5 and small areas are suppressed with sentinel -99997. Published via PDOK.
 
 > AI/Agent users: See [AGENTS.md](./AGENTS.md) for field descriptions, query examples, and usage tips.
 
@@ -14,28 +14,30 @@ Statistical data for all 6-digit postcodes in the Netherlands from CBS (Statisti
 
 | Column | Type | Description |
 |--------|------|-------------|
-| postcode6 | string | 6-digit Dutch postcode (e.g. "1011AB") |
-| jaarcode | int32 | Reference year (2015-2024) |
-| startdatum | datetime | Start of validity period |
-| einddatum | datetime | End of validity period |
-| aantal_inwoners | int32 | Number of inhabitants |
-| aantal_woningen | int32 | Number of dwellings |
-| mediaan_inkomen_huishouden | string | Median household income (x1000 EUR) |
-| gemiddeld_aardgasverbruik_totaal | int32 | Average gas consumption (m3) |
-| gemiddeld_elektriciteitsverbruik_totaal | int32 | Average electricity consumption (kWh) |
-| afstand_tot_huisartsenpraktijk | float | Distance to nearest GP (km) |
+| postcode6 | string | Full 6-position Dutch postal code (e.g. "1011AB") |
+| aantal_inwoners | int32 | Inhabitants on 1 January (rounded to multiples of 5) |
+| aantal_woningen | int32 | Dwellings on 1 January (BAG residential objects) |
+| aantal_woningen_bouwjaar_voor_1945 | int32 | Dwellings built before 1945 |
+| percentage_koopwoningen | int32 | Share of owner-occupied dwellings (%) |
+| percentage_huurwoningen | int32 | Share of rental dwellings (%) |
+| aantal_personen_met_uitkering_onder_aowlft | int32 | Benefit recipients below state-pension age |
 | geom | binary | MultiPolygon in EPSG:28992 (RD New), WKB encoded |
 
-Plus ~146 additional fields across demographics, housing, energy, income, social security, and facility proximity domains. Value -99997 indicates privacy suppression.
+All 134 columns carry sourced descriptions in `collection.json` (`table:columns`), grounded in the [CBS documentation](https://www.cbs.nl/nl-nl/longread/diversen/2025/statistische-gegevens-per-vierkant-en-postcode-2022-2023-2024/4-beschrijving-cijfers). Value -99997 indicates privacy suppression; counts are rounded to multiples of 5. Measured 2026-11-20: 34 of the 130 variables carry values in this edition; the energy, WOZ and facility-proximity variables hold -99995 on every row (CBS publishes them in a later release).
 
 ## Quick Start
 
 ```python
-import geopandas as gpd
-gdf = gpd.read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/postcode6.parquet')
-# Filter to latest year
-gdf_2024 = gdf[gdf['jaarcode'] == 2024]
-print(gdf_2024[['postcode6', 'aantal_inwoners', 'aantal_woningen']].head())
+import duckdb
+con = duckdb.connect()
+con.execute("INSTALL spatial; LOAD spatial;")
+df = con.execute("""
+    SELECT postcode6, aantal_inwoners, aantal_woningen
+    FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/postcode6.parquet')
+    WHERE aantal_inwoners > 0
+    ORDER BY aantal_inwoners DESC LIMIT 10
+""").df()
+print(df)
 ```
 
 ## STAC Metadata

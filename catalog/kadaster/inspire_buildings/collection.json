@@ -29,6 +29,12 @@
       "title": "Source WFS endpoint"
     },
     {
+      "rel": "via",
+      "href": "https://inspire-mif.github.io/technical-guidelines/data/bu/dataspecification_bu.html",
+      "type": "text/html",
+      "title": "Column definitions: D2.8.III.2 INSPIRE Data Specification on Buildings – Technical Guidelines v3.0"
+    },
+    {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/kadaster/inspire_buildings/buildings.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -61,63 +67,78 @@
   "table:columns": [
     {
       "name": "OGC_FID",
-      "type": "int64"
+      "type": "int64",
+      "description": "Technical: sequential feature id added by the OGR/GDAL conversion."
     },
     {
       "name": "gml_id",
-      "type": "string"
+      "type": "string",
+      "description": "Technical XML id of the feature in the source INSPIRE GML (gml:id); unique within the delivered file."
     },
     {
       "name": "beginLifespanVersion",
-      "type": "string"
+      "type": "string",
+      "description": "Date and time at which this version of the building was inserted or changed in the spatial data set (BU beginLifespanVersion)."
     },
     {
       "name": "anyPoint",
-      "type": "string"
+      "type": "string",
+      "description": "A date and time of any point of the event, between its beginning and its end (BU DateOfEvent.anyPoint); here from dateOfConstruction/dateOfDemolition."
     },
     {
       "name": "endLifespanVersion",
-      "type": "string"
+      "type": "string",
+      "description": "Date and time at which this version of the building was superseded or retired in the spatial data set (BU endLifespanVersion)."
     },
     {
       "name": "localId",
-      "type": "int64"
+      "type": "int64",
+      "description": "Local identifier assigned by the data provider; unique within the namespace (INSPIRE Identifier.localId, GCM)."
     },
     {
       "name": "namespace",
-      "type": "string"
+      "type": "string",
+      "description": "Namespace uniquely identifying the data source of the spatial object (INSPIRE Identifier.namespace, GCM)."
     },
     {
       "name": "referenceGeometry",
-      "type": "bool"
+      "type": "bool",
+      "description": "Flag marking the geometry to be taken into account by view services, for portrayal (BuildingGeometry2D.referenceGeometry, INSPIRE BU spec)."
     },
     {
       "name": "horizontalGeometryEstimatedAccuracy",
-      "type": "string"
+      "type": "string",
+      "description": "Estimated absolute positional accuracy of the (X,Y) coordinates of the building geometry, in the INSPIRE CRS; metres (BU spec)."
     },
     {
       "name": "verticalGeometryEstimatedAccuracy",
-      "type": "string"
+      "type": "string",
+      "description": "Estimated absolute positional accuracy of the Z coordinates of the building geometry, in the INSPIRE CRS; metres (BU spec)."
     },
     {
       "name": "end",
-      "type": "string"
+      "type": "string",
+      "description": "Date and time when the event ended (BU DateOfEvent.end); flattened from a building DateOfEvent such as dateOfConstruction or dateOfDemolition."
     },
     {
       "name": "beginning",
-      "type": "string"
+      "type": "string",
+      "description": "Date and time when the event begun (BU DateOfEvent.beginning); flattened from a building DateOfEvent such as dateOfConstruction or dateOfDemolition."
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry, WKB encoded; see proj:epsg for the CRS."
     },
     {
       "name": "bbox",
-      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>"
+      "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>",
+      "description": "Technical: per-feature bounding box struct added for spatial filtering (GeoParquet covering)."
     },
     {
       "name": "kdtree_cell",
-      "type": "string"
+      "type": "string",
+      "description": "Technical: KD-tree partition cell id written by the conversion pipeline; the published file is one unpartitioned parquet."
     }
   ],
   "portolan:styles": [

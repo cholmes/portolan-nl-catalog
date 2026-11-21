@@ -12,11 +12,7 @@ Use as a mask/extent for the soil map; shows where soil data exists.
 
 ## About the BRO
 
-This collection comes from the **Basisregistratie Ondergrond (BRO)** — the Dutch Key Registry of the Subsurface, a statutory base registry in force since 1 January 2018. Government bodies must register subsurface data in the BRO and may only use registered data for public tasks. Data is published openly via PDOK, usually within ~1 day of registration. The Ministry of Housing and Spatial Planning (**VRO**) is the system-responsible provider; the data here is produced by **TNO – Geologische Dienst Nederland** (subsurface objects) or **Wageningen Environmental Research** (the soil and geomorphological maps).
-
-Two BRO concepts appear in almost every dataset:
-- **`bro_id`** — the unique registration identifier of each object (e.g. `GMW000000012345`).
-- **`quality_regime`** — `IMBRO` (full quality assurance) or `IMBRO/A` (transitional data delivered under a lighter regime; treat with slightly more caution).
+Part of the **Basisregistratie Ondergrond (BRO)**, the Dutch Key Registry of the Subsurface; see the [VRO catalog](../../catalog.json) description and [../../AGENTS.md](../../AGENTS.md) for the registry context. The schema table below defines the shared BRO fields (`bro_id`, `quality_regime`).
 
 ## How to access
 
@@ -42,11 +38,11 @@ gdf = gpd.read_parquet('https://data.source.coop/cholmes/portolan-nl/vro/bodemka
 | Column | Type | Meaning |
 |--------|------|---------|
 | `fid` | int64 | Feature ID. |
-| `maparea_id` | string |  |
-| `maparea_collection` | string |  |
-| `beginlifespan` | string |  |
-| `endlifespan` | string |  |
-| `pedologicalinterest` | string |  |
+| `maparea_id` | string | Unique ID of this map polygon in the delivered SGM model version (e.g. V2025-1.areaofpedologicalinterrest.NNN). |
+| `maparea_collection` | string | Soil area collection (bodemvlakcollectie) this polygon belongs to, given by collection kind (SGM cat. 4.3.6.2). |
+| `beginlifespan` | string | Date/time this version of the spatial object was inserted or changed in the dataset (INSPIRE lifespan; not in SGM catalogus v1.2; null in data). |
+| `endlifespan` | string | Date/time this version of the spatial object was superseded or retired (INSPIRE lifespan; not in SGM catalogus v1.2; null in data). |
+| `pedologicalinterest` | string | Pedological interest (bodemkundig belang): area type where soil cannot be typed, relevant for interpreting surrounding soils (SGM cat. 4.3.8). |
 | `geom` | binary | Feature geometry (WKB) in EPSG:28992 (Amersfoort / RD New). |
 | `geom_bbox` | struct<xmin: float, ymin: float, xmax: float, ymax: float> | Per-feature bounding box struct for spatial filtering. |
 

@@ -61,87 +61,108 @@
   "table:columns": [
     {
       "name": "OBJECTID",
-      "type": "int64"
+      "type": "int64",
+      "description": "Esri row id (see generic)."
     },
     {
       "name": "NAMESPACE",
-      "type": "string"
+      "type": "string",
+      "description": "Namespace of the trajectory identifier; constant 'NL99' (national register) in this dataset."
     },
     {
       "name": "TRAJECT_ID",
-      "type": "string"
+      "type": "string",
+      "description": "Dike trajectory id as listed with the statutory flood-protection norms in the Waterwet/Bkl annexes (e.g. '13-5')."
     },
     {
       "name": "VERSIE",
-      "type": "string"
+      "type": "string",
+      "description": "Version number of the trajectory record in the NBPW (observed values 2-4)."
     },
     {
       "name": "FL_BEGIN",
-      "type": "timestamp[ms]"
+      "type": "timestamp[ms]",
+      "description": "Date field; 2016-05-09 on every row (introduction of the 2017 norm trajectories). Exact meaning of the 'FL' prefix is not published."
     },
     {
       "name": "FL_EINDE",
-      "type": "timestamp[ms]"
+      "type": "timestamp[ms]",
+      "description": "Date field, counterpart of FL_BEGIN; null for current records. Exact meaning of 'FL' prefix not published."
     },
     {
       "name": "FH_BEGIN",
-      "type": "timestamp[ms]"
+      "type": "timestamp[ms]",
+      "description": "Date field; varies per trajectory, consistent with the date this record version took effect. Exact meaning of 'FH' prefix not published."
     },
     {
       "name": "FH_EINDE",
-      "type": "timestamp[ms]"
+      "type": "timestamp[ms]",
+      "description": "Date field, counterpart of FH_BEGIN; null for current records. Exact meaning of 'FH' prefix not published."
     },
     {
       "name": "NORMGRP_C",
-      "type": "string"
+      "type": "string",
+      "description": "Norm group code; constant '40' in this dataset."
     },
     {
       "name": "NORMGRP_O",
-      "type": "string"
+      "type": "string",
+      "description": "Norm group description; constant 'Landelijke normering primaire waterkeringen' (national norm system for primary flood defences)."
     },
     {
       "name": "NORMKDR_C",
-      "type": "string"
+      "type": "string",
+      "description": "Norm framework code; constant 'WTWT'."
     },
     {
       "name": "NORMKDR_O",
-      "type": "string"
+      "type": "string",
+      "description": "Norm framework description; constant 'Waterwet' (the Water Act that anchors the dike norms)."
     },
     {
       "name": "NORMTYP_ID",
-      "type": "int32"
+      "type": "int32",
+      "description": "Norm type code: 1 = overstromingskans (flooding probability), 2 = faalkans (failure probability)."
     },
     {
       "name": "NORMTYP_O",
-      "type": "string"
+      "type": "string",
+      "description": "Norm type description: 'Overstromingskans' or 'Faalkans'."
     },
     {
       "name": "NORM_SW",
-      "type": "int32"
+      "type": "int32",
+      "description": "Signaleringswaarde: statutory signalling value, stored as x meaning a probability of 1/x per year (e.g. 30000 = 1/30,000); exceedance signals reinforcement."
     },
     {
       "name": "NORM_OG",
-      "type": "int32"
+      "type": "int32",
+      "description": "Ondergrens: lower-limit norm (maximum allowed flooding/failure probability), stored as x meaning 1/x per year."
     },
     {
       "name": "NORM_THB",
-      "type": "int32"
+      "type": "int32",
+      "description": "Integer, observed 0 or 10. No public definition found; do not interpret."
     },
     {
       "name": "NORM_NS",
-      "type": "int32"
+      "type": "int32",
+      "description": "Integer, observed 0/10/100/200. No public definition found; do not interpret."
     },
     {
       "name": "WET_JN",
-      "type": "string"
+      "type": "string",
+      "description": "Whether the trajectory is anchored in the Waterwet annexes (J/N); 'J' on all rows."
     },
     {
       "name": "Shape__Length",
-      "type": "double"
+      "type": "double",
+      "description": "See generic."
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry, WKB encoded; see proj:epsg for the CRS."
     }
   ],
   "portolan:styles": [

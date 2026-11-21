@@ -61,43 +61,53 @@
   "table:columns": [
     {
       "name": "OBJECTID",
-      "type": "int64"
+      "type": "int64",
+      "description": "Esri row id (see generic)."
     },
     {
       "name": "tunnelnaam",
-      "type": "string"
+      "type": "string",
+      "description": "Name of the tunnel."
     },
     {
       "name": "wegnummer",
-      "type": "string"
+      "type": "string",
+      "description": "Number of the national road running through the tunnel (e.g. A4, N434)."
     },
     {
       "name": "gemeente",
-      "type": "string"
+      "type": "string",
+      "description": "Municipality where the tunnel is located."
     },
     {
       "name": "jaar_openstelling",
-      "type": "string"
+      "type": "string",
+      "description": "Year the tunnel opened to traffic; text, may hold two years ('1966/2013') or a forecast ('2035 (prognose)')."
     },
     {
       "name": "status",
-      "type": "string"
+      "type": "string",
+      "description": "'Bestaand' (existing) or 'Gepland' (planned)."
     },
     {
       "name": "url",
-      "type": "string"
+      "type": "string",
+      "description": "Link to the tunnel's page on rijkswaterstaat.nl."
     },
     {
       "name": "beheerder",
-      "type": "string"
+      "type": "string",
+      "description": "Managing RWS regional service and district, e.g. 'RWS WNZ / WNZ District Noord'."
     },
     {
       "name": "last_update",
-      "type": "timestamp[ms]"
+      "type": "timestamp[ms]",
+      "description": "Date the record was last updated."
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry, WKB encoded; see proj:epsg for the CRS."
     }
   ],
   "portolan:styles": [

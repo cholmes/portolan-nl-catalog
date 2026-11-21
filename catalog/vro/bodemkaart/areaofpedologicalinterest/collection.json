@@ -35,6 +35,12 @@
       "title": "PDOK dataset page: BRO Bodemkaart (SGM)"
     },
     {
+      "rel": "via",
+      "href": "https://docs.geostandaarden.nl/bro/def-im-SGM-20230607/",
+      "type": "text/html",
+      "title": "Column definitions: BRO Catalogus bodemkaart (SGM) v1.2"
+    },
+    {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/vro/bodemkaart/areaofpedologicalinterest/areaofpedologicalinterest.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -72,23 +78,28 @@
     },
     {
       "name": "maparea_id",
-      "type": "string"
+      "type": "string",
+      "description": "Unique ID of this map polygon in the delivered SGM model version (e.g. V2025-1.areaofpedologicalinterrest.NNN)."
     },
     {
       "name": "maparea_collection",
-      "type": "string"
+      "type": "string",
+      "description": "Soil area collection (bodemvlakcollectie) this polygon belongs to, given by collection kind (SGM cat. 4.3.6.2)."
     },
     {
       "name": "beginlifespan",
-      "type": "string"
+      "type": "string",
+      "description": "Date/time this version of the spatial object was inserted or changed in the dataset (INSPIRE lifespan; not in SGM catalogus v1.2; null in data)."
     },
     {
       "name": "endlifespan",
-      "type": "string"
+      "type": "string",
+      "description": "Date/time this version of the spatial object was superseded or retired (INSPIRE lifespan; not in SGM catalogus v1.2; null in data)."
     },
     {
       "name": "pedologicalinterest",
-      "type": "string"
+      "type": "string",
+      "description": "Pedological interest (bodemkundig belang): area type where soil cannot be typed, relevant for interpreting surrounding soils (SGM cat. 4.3.8)."
     },
     {
       "name": "geom",

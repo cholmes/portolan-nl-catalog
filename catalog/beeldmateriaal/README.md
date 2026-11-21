@@ -23,7 +23,7 @@ Headquartered in Amersfoort. Coordinated under the Geo-Informatieberaad (GI-bera
 - [beeldmateriaal.nl](https://www.beeldmateriaal.nl/) — Official website
 - [opendata.beeldmateriaal.nl](https://opendata.beeldmateriaal.nl/) — Open data downloads
 - [PDOK WMTS](https://service.pdok.nl/hwh/luchtfotorgb/wmts/v1_0) — Preview service
-- [GeoTiles (TU Delft)](https://geotiles.citg.tudelft.nl/) — GeoTIFF tile downloads
+- [GeoTiles (TU Delft)](https://geotiles.citg.tudelft.nl/) — GeoTIFF tile downloads (the GeoTiles site is offline as of 2026-11-20; [archived copy](http://web.archive.org/web/20260811130027/https://geotiles.citg.tudelft.nl/))
 
 ---
 

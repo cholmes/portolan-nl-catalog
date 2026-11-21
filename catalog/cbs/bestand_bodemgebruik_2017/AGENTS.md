@@ -58,15 +58,16 @@ Also available via WFS and WMS from PDOK:
 | Field | Type | Meaning |
 |-------|------|---------|
 | `bg2017` | int32 | **Land use code** — numeric code identifying the specific land use type in the BBG 2017 hierarchical classification. |
-| `bodemgebruik` | string | **Land use type label** (Dutch) — the specific land use classification name, e.g. "Spoorterrein", "Woonterrein", "Bos". |
-| `categorie` | string | **Category label** (Dutch) — higher-level grouping, e.g. "Verkeersterrein", "Bebouwd terrein". Often the same as `bodemgebruik` for categories that have no sub-types. |
+| `bodemgebruik` | string | **Aggregated class** (Dutch) — the 14-class PDOK/INSPIRE grouping, e.g. "Bebouwd exclusief bedrijfsterrein", "Recreatie", "Water". |
+| `categorie` | string | **Detailed category** (Dutch) — the specific BBG2017 category for the bg2017 code (38 categories), e.g. "Woongebied", "Sportterrein", "Bos". |
 | `geom` | MultiPolygon | **Land use polygon** in EPSG:28992 (RD New). Coordinates in meters. |
 
 ## Hierarchical Classification System
 
-The BBG uses a hierarchical classification. The `categorie` field gives the broad group;
-`bodemgebruik` gives the specific type. The `bg2017` numeric code uniquely identifies each
-type.
+The BBG uses a hierarchical classification. `bodemgebruik` gives the broad PDOK/INSPIRE
+group (14 classes); `categorie` gives the specific BBG2017 category. The `bg2017` numeric
+code uniquely identifies each category. (Verified against the data: code 20 has
+bodemgebruik "Bebouwd exclusief bedrijfsterrein" and categorie "Woongebied".)
 
 ### Main Categories and Land Use Types
 
@@ -124,8 +125,8 @@ type.
 ## Important Columns
 
 - **`bg2017`** — the numeric code; use this for joins and programmatic filtering
-- **`bodemgebruik`** — the human-readable land use label; use for display and reports
-- **`categorie`** — the higher-level category; useful for aggregation and summary statistics
+- **`bodemgebruik`** — the broad aggregated class; useful for aggregation and summary statistics
+- **`categorie`** — the detailed category name; use for display and fine-grained filtering
 - **`geom`** — MultiPolygon geometries covering the entire Netherlands
 
 ## Geometry Notes
@@ -148,7 +149,7 @@ type.
 
 ```sql
 SELECT bodemgebruik, COUNT(*) AS cnt
-FROM read_parquet('bestand_bodemgebruik_2017.parquet')
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/bestand_bodemgebruik_2017/bbg2017.parquet')
 GROUP BY bodemgebruik
 ORDER BY cnt DESC
 ```
@@ -161,7 +162,7 @@ INSTALL spatial; LOAD spatial;
 SELECT categorie,
        COUNT(*) AS polygons,
        ROUND(SUM(ST_Area(geom)) / 10000, 1) AS hectares
-FROM read_parquet('bestand_bodemgebruik_2017.parquet')
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/bestand_bodemgebruik_2017/bbg2017.parquet')
 GROUP BY categorie
 ORDER BY hectares DESC
 ```
@@ -172,7 +173,7 @@ Since CRS is in meters, `ST_Area(geom)` gives m2 directly. Divide by 10,000 for 
 
 ```sql
 SELECT bodemgebruik, ST_Area(geom) / 10000 AS hectares
-FROM read_parquet('bestand_bodemgebruik_2017.parquet')
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/bestand_bodemgebruik_2017/bbg2017.parquet')
 WHERE bodemgebruik = 'Bos'
 ORDER BY hectares DESC
 LIMIT 20
@@ -184,10 +185,10 @@ LIMIT 20
 INSTALL spatial; LOAD spatial;
 
 WITH target AS (
-    SELECT ST_Transform(ST_Point(4.9003, 52.3792), 'EPSG:4326', 'EPSG:28992') AS pt
+    SELECT ST_Transform(ST_Point(4.9003, 52.3792), 'EPSG:4326', 'EPSG:28992', always_xy := true) AS pt
 )
 SELECT bodemgebruik, categorie, bg2017
-FROM read_parquet('bestand_bodemgebruik_2017.parquet'), target
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/bestand_bodemgebruik_2017/bbg2017.parquet'), target
 WHERE ST_Intersects(geom, pt)
 ```
 
@@ -199,7 +200,7 @@ INSTALL spatial; LOAD spatial;
 -- Amsterdam area (approximate RD New coordinates)
 SELECT categorie,
        ROUND(SUM(ST_Area(geom)) / 10000, 1) AS hectares
-FROM read_parquet('bestand_bodemgebruik_2017.parquet')
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/bestand_bodemgebruik_2017/bbg2017.parquet')
 WHERE bbox.xmin >= 109000 AND bbox.xmax <= 135000
   AND bbox.ymin >= 478000 AND bbox.ymax <= 498000
 GROUP BY categorie
@@ -218,7 +219,7 @@ SELECT
         ELSE 'Other'
     END AS land_use_group,
     ROUND(SUM(ST_Area(geom)) / 1e6, 1) AS area_km2
-FROM read_parquet('bestand_bodemgebruik_2017.parquet')
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/bestand_bodemgebruik_2017/bbg2017.parquet')
 GROUP BY 1
 ORDER BY area_km2 DESC
 ```

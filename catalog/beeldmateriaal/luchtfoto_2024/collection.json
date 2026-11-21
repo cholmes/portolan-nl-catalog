@@ -189,63 +189,78 @@
   "table:columns": [
     {
       "name": "type",
-      "type": "string"
+      "type": "string",
+      "description": "STAC object type; every row is 'Feature' (one STAC Item per scene). STAC-GeoParquet collection mirror column."
     },
     {
       "name": "stac_version",
-      "type": "string"
+      "type": "string",
+      "description": "STAC specification version of the mirrored items (1.1.0)."
     },
     {
       "name": "id",
-      "type": "string"
+      "type": "string",
+      "description": "STAC Item id of the scene, e.g. 'luchtfoto-2024-19an1' (kaartblad-based)."
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Scene footprint polygon (WKB, WGS84), from the STAC Item geometry."
     },
     {
       "name": "bbox",
-      "type": "string"
+      "type": "string",
+      "description": "Scene bounding box struct, from the STAC Item bbox."
     },
     {
       "name": "collection",
-      "type": "string"
+      "type": "string",
+      "description": "Id of the STAC Collection the item belongs to (luchtfoto_2024)."
     },
     {
       "name": "datetime",
-      "type": "string"
+      "type": "string",
+      "description": "Scene acquisition datetime of the STAC Item (summer 2024 campaign)."
     },
     {
       "name": "created",
-      "type": "string"
+      "type": "string",
+      "description": "Creation timestamp of the STAC Item metadata."
     },
     {
       "name": "title",
-      "type": "string"
+      "type": "string",
+      "description": "Human-readable title of the scene."
     },
     {
       "name": "gsd",
-      "type": "double"
+      "type": "double",
+      "description": "Ground sampling distance of the scene in metres (0.25)."
     },
     {
       "name": "proj:code",
-      "type": "string"
+      "type": "string",
+      "description": "CRS of the scene assets as a projection extension code (EPSG:28992)."
     },
     {
       "name": "beeldmateriaal:kaartblad",
-      "type": "string"
+      "type": "string",
+      "description": "Dutch national map sheet (kaartblad) code of the scene, e.g. '19AN1'."
     },
     {
       "name": "assets",
-      "type": "string"
+      "type": "string",
+      "description": "STAC Item assets struct: the RGB (and for kaartblad 32 the RGBNIR) COG hrefs with band metadata."
     },
     {
       "name": "links",
-      "type": "string"
+      "type": "string",
+      "description": "STAC Item links struct (self/parent/collection relations), as mirrored."
     },
     {
       "name": "stac_extensions",
-      "type": "string"
+      "type": "string",
+      "description": "STAC extension schema URIs the item declares (eo, projection)."
     }
   ],
   "title": "Luchtfoto 2024 — Aerial Orthophotos",
@@ -346,8 +361,8 @@
       ],
       "title": "Documentation",
       "description": "Human-readable documentation for Luchtfoto 2024 — Aerial Orthophotos.",
-      "file:size": 4261,
-      "file:checksum": "1220b5a56e3adfe31d3f1938364a390fc3692741d854ef4d0d0e175b868c8d403d1a"
+      "file:size": 4403,
+      "file:checksum": "1220d0549cb9531abbce0b9a1438a8bcd637da9f9ca806beb827d0c0dbe0e6541484"
     },
     "thumbnail": {
       "href": "./thumbnail.webp",

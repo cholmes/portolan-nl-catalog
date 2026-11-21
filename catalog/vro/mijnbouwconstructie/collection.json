@@ -67,7 +67,8 @@
   "table:columns": [
     {
       "name": "mining_construction_pk",
-      "type": "int64"
+      "type": "int64",
+      "description": "Technical surrogate key from the PDOK GeoPackage delivery (sequential integer, unique per row); not defined in the EPC catalogus."
     },
     {
       "name": "bro_id",

@@ -16,9 +16,9 @@
 | Column | Type | Description |
 |--------|------|-------------|
 | fid | int64 | Feature ID. |
-| identification | string |  |
-| collection_id | string |  |
-| type | string |  |
+| identification | string | Unique ID of the map polygon (Kaartvlak identificatie) of this area of geomorphological interest (GMM cat. 4.3.3.1). |
+| collection_id | string | ID of the geomorphological area collection (vlakcollectie) this polygon belongs to (GMM cat. 4.3.2.1). |
+| type | string | Type of geomorphological interest (geomorfologisch belang): Dijk or Water; features relevant to landform formation, without a landform description (GMM cat. 4.3.4). |
 | geom | binary | Feature geometry (WKB) in EPSG:28992 (Amersfoort / RD New). |
 | geom_bbox | struct<xmin: float, ymin: float, xmax: float, ymax: float> | Per-feature bounding box struct for spatial filtering. |
 

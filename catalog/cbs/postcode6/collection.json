@@ -2,7 +2,7 @@
   "type": "Collection",
   "id": "postcode6",
   "stac_version": "1.1.0",
-  "description": "Statistical data for all 6-digit postcodes in the Netherlands, published by CBS (Statistics Netherlands) via PDOK. Contains 157 attributes covering demographics, housing, energy consumption, income, social security, and proximity to facilities. Data is measured as of January 1st annually from 2015 onwards; some variables (energy, income) reflect full-year figures. Privacy protected: postcodes with fewer than 5 residents or 5 housing units are suppressed (value -99997). Data is supplemented over a 3-year period. Native CRS is EPSG:28992 (RD New / Amersfoort).",
+  "description": "Statistical data for all 6-digit postcodes in the Netherlands, published by CBS (Statistics Netherlands) via PDOK. Contains 130 statistical variables covering demographics, households, housing, energy consumption, social security, and proximity to facilities (CBS publication 'Statistische gegevens per vierkant en postcode 2022-2023-2024'). Counts are measured on 1 January; energy figures cover a calendar year. Privacy protected: postcodes with fewer than 5 residents or 5 housing units are suppressed (value -99997). Data is supplemented over a 3-year period. Native CRS is EPSG:28992 (RD New / Amersfoort).",
   "links": [
     {
       "rel": "root",
@@ -35,6 +35,12 @@
       "title": "OGC API Features endpoint"
     },
     {
+      "rel": "via",
+      "href": "https://www.cbs.nl/nl-nl/longread/diversen/2025/statistische-gegevens-per-vierkant-en-postcode-2022-2023-2024/4-beschrijving-cijfers",
+      "type": "text/html",
+      "title": "Column definitions: Statistische gegevens per vierkant en postcode 2022-2023-2024, section 4 'Beschrijving van de cijfers' (CBS longread)"
+    },
+    {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/postcode6.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -65,539 +71,673 @@
   "table:columns": [
     {
       "name": "fid",
-      "type": "int64"
+      "type": "int64",
+      "description": "Technical: sequential feature id added in the cloud-native conversion; not a CBS variable."
     },
     {
       "name": "postcode6",
-      "type": "string"
+      "type": "string",
+      "description": "Full 6-position Dutch postal code (4 digits + 2 letters) identifying the PC6 area the statistics describe."
     },
     {
       "name": "aantal_inwoners",
-      "type": "int32"
+      "type": "int32",
+      "description": "Number of inhabitants on 1 January (registered population); rounded to multiples of 5, -99997 if fewer than 5."
     },
     {
       "name": "aantal_mannen",
-      "type": "int32"
+      "type": "int32",
+      "description": "Number of male inhabitants on 1 January; rounded to multiples of 5."
     },
     {
       "name": "aantal_vrouwen",
-      "type": "int32"
+      "type": "int32",
+      "description": "Number of female inhabitants on 1 January; rounded to multiples of 5."
     },
     {
       "name": "aantal_inwoners_0_tot_15_jaar",
-      "type": "int32"
+      "type": "int32",
+      "description": "Inhabitants younger than 15 on 1 January; rounded to multiples of 5."
     },
     {
       "name": "aantal_inwoners_15_tot_25_jaar",
-      "type": "int32"
+      "type": "int32",
+      "description": "Inhabitants aged 15 up to 25 on 1 January; rounded to multiples of 5."
     },
     {
       "name": "aantal_inwoners_25_tot_45_jaar",
-      "type": "int32"
+      "type": "int32",
+      "description": "Inhabitants aged 25 up to 45 on 1 January; rounded to multiples of 5."
     },
     {
       "name": "aantal_inwoners_45_tot_65_jaar",
-      "type": "int32"
+      "type": "int32",
+      "description": "Inhabitants aged 45 up to 65 on 1 January; rounded to multiples of 5."
     },
     {
       "name": "aantal_inwoners_65_jaar_en_ouder",
-      "type": "int32"
+      "type": "int32",
+      "description": "Inhabitants aged 65 or older on 1 January; rounded to multiples of 5."
     },
     {
       "name": "aantal_geboorten",
-      "type": "int32"
+      "type": "int32",
+      "description": "Live births during the calendar year (1 January through 31 December); rounded to multiples of 5."
     },
     {
       "name": "percentage_geb_nederland_herkomst_nederland",
-      "type": "int32"
+      "type": "int32",
+      "description": "Share of inhabitants born in the Netherlands with both parents born in the Netherlands; rounded to tens of percent."
     },
     {
       "name": "percentage_geb_nederland_herkomst_overig_europa",
-      "type": "int32"
+      "type": "int32",
+      "description": "Share of inhabitants born in the Netherlands whose origin (parental birth country) is elsewhere in Europe; rounded to tens of percent."
     },
     {
       "name": "percentage_geb_nederland_herkomst_buiten_europa",
-      "type": "int32"
+      "type": "int32",
+      "description": "Share of inhabitants born in the Netherlands whose origin (parental birth country) is outside Europe; rounded to tens of percent."
     },
     {
       "name": "percentage_geb_buiten_nederland_herkomst_europa",
-      "type": "int32"
+      "type": "int32",
+      "description": "Share of inhabitants born abroad in another European country; rounded to tens of percent."
     },
     {
       "name": "percentage_geb_buiten_nederland_herkmst_buiten_europa",
-      "type": "int32"
+      "type": "int32",
+      "description": "Share of inhabitants born outside Europe (Africa, Americas, Asia, Oceania); rounded to tens of percent."
     },
     {
       "name": "aantal_part_huishoudens",
-      "type": "int32"
+      "type": "int32",
+      "description": "Private households on 1 January (institutional households excluded); rounded to multiples of 5, -99997 if fewer than 5."
     },
     {
       "name": "aantal_eenpersoonshuishoudens",
-      "type": "int32"
+      "type": "int32",
+      "description": "Private households consisting of one person, on 1 January."
     },
     {
       "name": "aantal_meerpersoonshuishoudens_zonder_kind",
-      "type": "int32"
+      "type": "int32",
+      "description": "Multi-person private households without children (couples without children and other households), on 1 January."
     },
     {
       "name": "aantal_eenouderhuishoudens",
-      "type": "int32"
+      "type": "int32",
+      "description": "Private households of one parent with children living at home, on 1 January."
     },
     {
       "name": "aantal_tweeouderhuishoudens",
-      "type": "int32"
+      "type": "int32",
+      "description": "Private households of two parents with at least one child living at home, on 1 January."
     },
     {
       "name": "gemiddelde_huishoudensgrootte",
-      "type": "double"
+      "type": "double",
+      "description": "Average household size: persons living in private households divided by the number of private households, on 1 January."
     },
     {
       "name": "aantal_woningen",
-      "type": "int32"
+      "type": "int32",
+      "description": "Total dwellings on 1 January: BAG residence objects with a residential function; rounded to multiples of 5, -99997 if fewer than 5."
     },
     {
       "name": "aantal_woningen_bouwjaar_voor_1945",
-      "type": "int32"
+      "type": "int32",
+      "description": "Dwellings with construction year before 1945, on 1 January."
     },
     {
       "name": "aantal_woningen_bouwjaar_45_tot_65",
-      "type": "int32"
+      "type": "int32",
+      "description": "Dwellings with construction year 1945 up to 1965, on 1 January."
     },
     {
       "name": "aantal_woningen_bouwjaar_65_tot_75",
-      "type": "int32"
+      "type": "int32",
+      "description": "Dwellings with construction year 1965 up to 1975, on 1 January."
     },
     {
       "name": "aantal_woningen_bouwjaar_75_tot_85",
-      "type": "int32"
+      "type": "int32",
+      "description": "Dwellings with construction year 1975 up to 1985, on 1 January."
     },
     {
       "name": "aantal_woningen_bouwjaar_85_tot_95",
-      "type": "int32"
+      "type": "int32",
+      "description": "Dwellings with construction year 1985 up to 1995, on 1 January."
     },
     {
       "name": "aantal_woningen_bouwjaar_95_tot_05",
-      "type": "int32"
+      "type": "int32",
+      "description": "Dwellings with construction year 1995 up to 2005, on 1 January."
     },
     {
       "name": "aantal_woningen_bouwjaar_05_tot_15",
-      "type": "int32"
+      "type": "int32",
+      "description": "Dwellings with construction year 2005 up to 2015, on 1 January."
     },
     {
       "name": "aantal_woningen_bouwjaar_15_en_later",
-      "type": "int32"
+      "type": "int32",
+      "description": "Dwellings with construction year 2015 or later, on 1 January."
     },
     {
       "name": "aantal_meergezins_woningen",
-      "type": "int32"
+      "type": "int32",
+      "description": "Multi-family dwellings: flats, gallery/porch flats, upstairs/downstairs units, apartments and dwellings above business premises, 1 January."
     },
     {
       "name": "percentage_koopwoningen",
-      "type": "int32"
+      "type": "int32",
+      "description": "Share of dwellings owned by the (future) occupants or used as second homes; rounded to tens of percent; needs >=10 dwellings, <=50% unknown ownership."
     },
     {
       "name": "percentage_huurwoningen",
-      "type": "int32"
+      "type": "int32",
+      "description": "Share of rental dwellings (not owner-occupied; vacant dwellings counted to the rental market); rounded to tens of percent, same thresholds as koop."
     },
     {
       "name": "aantal_huurwoningen_in_bezit_woningcorporaties",
-      "type": "int32"
+      "type": "int32",
+      "description": "Rental dwellings owned by housing corporations (toegelaten instellingen volkshuisvesting); ownership status, not social-rent price level."
     },
     {
       "name": "aantal_niet_bewoonde_woningen",
-      "type": "int32"
+      "type": "int32",
+      "description": "Dwellings with nobody registered in the population register (BRP) on reference date 1 January."
     },
     {
       "name": "gemiddelde_woz_waarde_woning",
-      "type": "int32"
+      "type": "int32",
+      "description": "Average provisional WOZ value of dwellings with a known WOZ value, in 1,000 euro; values below 10,000 or above 5 million euro excluded (since 2022)."
     },
     {
       "name": "gemiddeld_gasverbruik_woning",
-      "type": "int32"
+      "type": "int32",
+      "description": "Average annual natural gas consumption of private dwellings (m3), calendar year; rounded to multiples of 50, published at 6+ occupied dwellings."
     },
     {
       "name": "gemiddeld_elektriciteitsverbruik_woning",
-      "type": "int32"
+      "type": "int32",
+      "description": "Average annual electricity use on individual connections of private dwellings (kWh); excl. collective use and own solar generation; rounded to 50s."
     },
     {
       "name": "aantal_personen_met_uitkering_onder_aowlft",
-      "type": "int32"
+      "type": "int32",
+      "description": "Residents below AOW (state pension) age receiving unemployment (WW), social assistance or disability benefits on 1 January; each person counted once."
     },
     {
       "name": "dichtstbijzijnde_grote_supermarkt_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest large supermarket (daily-goods shop of at least 150 m2)."
     },
     {
       "name": "grote_supermarkt_aantal_binnen_1_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of large supermarkets (>=150 m2) within 1 km by road, averaged over all residents."
     },
     {
       "name": "grote_supermarkt_aantal_binnen_3_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of large supermarkets (>=150 m2) within 3 km by road, averaged over all residents."
     },
     {
       "name": "grote_supermarkt_aantal_binnen_5_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of large supermarkets (>=150 m2) within 5 km by road, averaged over all residents."
     },
     {
       "name": "dichtstbijzijnde_winkels_ov_dagel_levensm_afst_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest other shop for daily food (baker, butcher, greengrocer, delicatessen, mini-supermarket, etc.)."
     },
     {
       "name": "winkels_ov_dagel_levensm_aantal_binnen_1_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of other daily-food shops within 1 km by road, averaged over all residents."
     },
     {
       "name": "winkels_ov_dagel_levensm_aantal_binnen_3_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of other daily-food shops within 3 km by road, averaged over all residents."
     },
     {
       "name": "winkels_ov_dagel_levensm_aantal_binnen_5_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of other daily-food shops within 5 km by road, averaged over all residents."
     },
     {
       "name": "dichtstbijzijnde_warenhuis_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest department store."
     },
     {
       "name": "warenhuis_aantal_binnen_5_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of department stores within 5 km by road, averaged over all residents."
     },
     {
       "name": "warenhuis_aantal_binnen_10_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of department stores within 10 km by road, averaged over all residents."
     },
     {
       "name": "warenhuis_aantal_binnen_20_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of department stores within 20 km by road, averaged over all residents."
     },
     {
       "name": "dichtstbijzijnde_cafe_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest cafe (incl. coffee house, coffeeshop, discotheque, night club, party centre)."
     },
     {
       "name": "cafe_aantal_binnen_1_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of cafes within 1 km by road, averaged over all residents."
     },
     {
       "name": "cafe_aantal_binnen_3_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of cafes within 3 km by road, averaged over all residents."
     },
     {
       "name": "cafe_aantal_binnen_5_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of cafes within 5 km by road, averaged over all residents."
     },
     {
       "name": "dichtstbijzijnde_cafetaria_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest cafetaria (incl. fast food, grill/shoarma, lunchroom, pancake house, ice-cream parlour)."
     },
     {
       "name": "cafetaria_aantal_binnen_1_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of cafetarias/fast-food outlets within 1 km by road, averaged over all residents."
     },
     {
       "name": "cafetaria_aantal_binnen_3_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of cafetarias/fast-food outlets within 3 km by road, averaged over all residents."
     },
     {
       "name": "cafetaria_aantal_binnen_5_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of cafetarias/fast-food outlets within 5 km by road, averaged over all residents."
     },
     {
       "name": "dichtstbijzijnde_hotel_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest hotel."
     },
     {
       "name": "hotel_aantal_binnen_5_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of hotels within 5 km by road, averaged over all residents."
     },
     {
       "name": "hotel_aantal_binnen_10_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of hotels within 10 km by road, averaged over all residents."
     },
     {
       "name": "hotel_aantal_binnen_20_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of hotels within 20 km by road, averaged over all residents."
     },
     {
       "name": "dichtstbijzijnde_restaurant_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest restaurant (incl. cafe-restaurant and takeaway/home delivery)."
     },
     {
       "name": "restaurant_aantal_binnen_1_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of restaurants within 1 km by road, averaged over all residents."
     },
     {
       "name": "restaurant_aantal_binnen_3_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of restaurants within 3 km by road, averaged over all residents."
     },
     {
       "name": "restaurant_aantal_binnen_5_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of restaurants within 5 km by road, averaged over all residents."
     },
     {
       "name": "dichtstbijzijnde_buitenschoolse_opvang_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest after-school childcare location (primary-school-age children)."
     },
     {
       "name": "buitenschoolse_opvang_aantal_binnen_1_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of after-school childcare locations within 1 km by road, averaged over all residents."
     },
     {
       "name": "buitenschoolse_opvang_aantal_binnen_3_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of after-school childcare locations within 3 km by road, averaged over all residents."
     },
     {
       "name": "buitenschoolse_opvang_aantal_binnen_5_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of after-school childcare locations within 5 km by road, averaged over all residents."
     },
     {
       "name": "dichtstbijzijnde_kinderdagverblijf_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest day-care centre (children aged 0-4)."
     },
     {
       "name": "kinderdagverblijf_aantal_binnen_1_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of day-care centres within 1 km by road, averaged over all residents."
     },
     {
       "name": "kinderdagverblijf_aantal_binnen_3_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of day-care centres within 3 km by road, averaged over all residents."
     },
     {
       "name": "kinderdagverblijf_aantal_binnen_5_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of day-care centres within 5 km by road, averaged over all residents."
     },
     {
       "name": "dichtstbijzijnde_brandweerkazerne_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest fire station (fireboat stations excluded)."
     },
     {
       "name": "dichtstbijzijnde_oprit_hoofdverkeersweg_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest access/on-ramp to a national or provincial main road (Nationaal Wegenbestand)."
     },
     {
       "name": "dichtstbijzijnde_overstapstation_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest major transfer train station."
     },
     {
       "name": "dichtstbijzijnde_treinstation_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest train station."
     },
     {
       "name": "dichtstbijzijnde_attractiepark_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest attraction: amusement park, zoo or indoor playground."
     },
     {
       "name": "attractiepark_aantal_binnen_10_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of attractions (amusement park, zoo, indoor playground) within 10 km by road, averaged over all residents."
     },
     {
       "name": "attractiepark_aantal_binnen_20_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of attractions (amusement park, zoo, indoor playground) within 20 km by road, averaged over all residents."
     },
     {
       "name": "attractiepark_aantal_binnen_50_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of attractions (amusement park, zoo, indoor playground) within 50 km by road, averaged over all residents."
     },
     {
       "name": "dichtstbijzijnde_bioscoop_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest cinema."
     },
     {
       "name": "bioscoop_aantal_binnen_5_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of cinemas within 5 km by road, averaged over all residents."
     },
     {
       "name": "bioscoop_aantal_binnen_10_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of cinemas within 10 km by road, averaged over all residents."
     },
     {
       "name": "bioscoop_aantal_binnen_20_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of cinemas within 20 km by road, averaged over all residents."
     },
     {
       "name": "dichtstbijzijnde_museum_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest museum."
     },
     {
       "name": "museum_aantal_binnen_5_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of museums within 5 km by road, averaged over all residents."
     },
     {
       "name": "museum_aantal_binnen_10_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of museums within 10 km by road, averaged over all residents."
     },
     {
       "name": "museum_aantal_binnen_20_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of museums within 20 km by road, averaged over all residents."
     },
     {
       "name": "dichtstbijzijnde_theater_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest performing-arts venue (theatre, concert hall, community centre or pop venue)."
     },
     {
       "name": "theater_aantal_binnen_5_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of performing-arts venues within 5 km by road, averaged over all residents."
     },
     {
       "name": "theater_aantal_binnen_10_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of performing-arts venues within 10 km by road, averaged over all residents."
     },
     {
       "name": "theater_aantal_binnen_20_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of performing-arts venues within 20 km by road, averaged over all residents."
     },
     {
       "name": "dichtstbijzijnde_bibliotheek_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest public library branch or service point (excl. mini/self-service branches and bookmobiles)."
     },
     {
       "name": "dichtstbijzijnde_kunstijsbaan_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest artificial ice rink open during the winter season."
     },
     {
       "name": "dichtstbijzijnde_poppodium_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest pop music venue (festivals and sideline activities excluded)."
     },
     {
       "name": "dichtstbijzijnde_sauna_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest sauna."
     },
     {
       "name": "dichtstbijzijnde_zonnebank_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest tanning salon."
     },
     {
       "name": "dichtstbijzijnde_zwembad_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest swimming pool (commercial, publicly accessible at least three days a week)."
     },
     {
       "name": "dichtstbijzijnde_basisonderwijs_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest regular primary school (special education excluded)."
     },
     {
       "name": "basisonderwijs_aantal_binnen_1_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of regular primary schools within 1 km by road, averaged over all residents."
     },
     {
       "name": "basisonderwijs_aantal_binnen_3_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of regular primary schools within 3 km by road, averaged over all residents."
     },
     {
       "name": "basisonderwijs_aantal_binnen_5_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of regular primary schools within 5 km by road, averaged over all residents."
     },
     {
       "name": "dichtstbijzijnde_havo_vwo_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest school offering HAVO or VWO upper-secondary education."
     },
     {
       "name": "havo_vwo_aantal_binnen_3_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of HAVO/VWO school locations within 3 km by road, averaged over all residents."
     },
     {
       "name": "havo_vwo_aantal_binnen_5_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of HAVO/VWO school locations within 5 km by road, averaged over all residents."
     },
     {
       "name": "havo_vwo_aantal_binnen_10_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of HAVO/VWO school locations within 10 km by road, averaged over all residents."
     },
     {
       "name": "dichtstbijzijnde_vmbo_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest school offering VMBO pre-vocational secondary education."
     },
     {
       "name": "vmbo_aantal_binnen_3_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of VMBO school locations within 3 km by road, averaged over all residents."
     },
     {
       "name": "vmbo_aantal_binnen_5_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of VMBO school locations within 5 km by road, averaged over all residents."
     },
     {
       "name": "vmbo_aantal_binnen_10_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of VMBO school locations within 10 km by road, averaged over all residents."
     },
     {
       "name": "dichtstbijzijnde_voortgezet_onderwijs_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest secondary school (VMBO, HAVO or VWO; special education excluded)."
     },
     {
       "name": "voortgezet_onderwijs_aantal_binnen_3_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of secondary schools within 3 km by road, averaged over all residents."
     },
     {
       "name": "voortgezet_onderwijs_aantal_binnen_5_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of secondary schools within 5 km by road, averaged over all residents."
     },
     {
       "name": "voortgezet_onderwijs_aantal_binnen_10_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of secondary schools within 10 km by road, averaged over all residents."
     },
     {
       "name": "dichtstbijzijnde_huisartsenpraktijk_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest general practitioner practice (branch locations included)."
     },
     {
       "name": "huisartsenpraktijk_aantal_binnen_1_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of GP practices within 1 km by road, averaged over all residents."
     },
     {
       "name": "huisartsenpraktijk_aantal_binnen_3_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of GP practices within 3 km by road, averaged over all residents."
     },
     {
       "name": "huisartsenpraktijk_aantal_binnen_5_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of GP practices within 5 km by road, averaged over all residents."
     },
     {
       "name": "dichtstbijzijnde_ziekenh_excl_buitenpoli_afst_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest hospital (24h admission and major surgery), outpatient clinics excluded."
     },
     {
       "name": "ziekenhuis_excl_buitenpoli_aantal_binnen_5_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of hospitals excl. outpatient clinics within 5 km by road, averaged over all residents."
     },
     {
       "name": "ziekenhuis_excl_buitenpoli_aantal_binnen_10_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of hospitals excl. outpatient clinics within 10 km by road, averaged over all residents."
     },
     {
       "name": "ziekenhuis_excl_buitenpoli_aantal_binnen_20_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of hospitals excl. outpatient clinics within 20 km by road, averaged over all residents."
     },
     {
       "name": "dichtstbijzijnde_ziekenh_incl_buitenpoli_afst_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest hospital including outpatient clinic locations."
     },
     {
       "name": "ziekenhuis_incl_buitenpoli_aantal_binnen_5_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of hospitals incl. outpatient clinics within 5 km by road, averaged over all residents."
     },
     {
       "name": "ziekenhuis_incl_buitenpoli_aantal_binnen_10_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of hospitals incl. outpatient clinics within 10 km by road, averaged over all residents."
     },
     {
       "name": "ziekenhuis_incl_buitenpoli_aantal_binnen_20_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average number of hospitals incl. outpatient clinics within 20 km by road, averaged over all residents."
     },
     {
       "name": "dichtstbijzijnde_apotheek_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest pharmacy or dispensing GP (apotheekhoudende huisarts)."
     },
     {
       "name": "dichtstbijzijnde_huisartsenpost_afstand_in_km",
-      "type": "double"
+      "type": "double",
+      "description": "Average distance by road (km) for all residents to the nearest out-of-hours GP post (evening, night and weekend care)."
     },
     {
       "name": "geom",
-      "type": "binary"
+      "type": "binary",
+      "description": "Technical: PC6 area polygon geometry (CBS source data in EPSG:28992 RD New); mirror geometry column, not a CBS statistical variable."
     },
     {
       "name": "geom_bbox",
-      "type": "struct<xmin: float, ymin: float, xmax: float, ymax: float>"
+      "type": "struct<xmin: float, ymin: float, xmax: float, ymax: float>",
+      "description": "Technical: per-feature bounding box struct added in the GeoParquet conversion for spatial indexing; not a CBS variable."
     }
   ],
   "portolan:styles": [
@@ -649,7 +789,7 @@
       "href": "./postcode6.parquet",
       "type": "application/vnd.apache.parquet",
       "title": "Postcode6 Statistics 2024 (GeoParquet)",
-      "description": "464,964 postcode areas with 157 statistical attributes, EPSG:28992.",
+      "description": "464,964 postcode areas with 130 statistical variables, EPSG:28992.",
       "roles": [
         "data"
       ],
@@ -718,8 +858,8 @@
       ],
       "title": "Documentation",
       "description": "Human-readable documentation for CBS Postcode6 (Statistics per Postcode).",
-      "file:size": 2673,
-      "file:checksum": "1220b32efea68eaaa409f2689e0ecba66b71e8f49587f9d881b49c034b72e17264a7"
+      "file:size": 3138,
+      "file:checksum": "1220573e289493bde10f2d81cf869c65a12d259cae3531bf3abe07ec8d7ad4cd83c8"
     },
     "metadata": {
       "href": "./postcode6.parquet.aux.xml",

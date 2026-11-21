@@ -33,6 +33,7 @@ GENERATORS = [
     ("tools/catalog/make_vro_agents.py", "vro AGENTS.md"),
     ("tools/catalog/make_styles.py --confirm", "MapLibre styles for cbs/rws collections"),
     ("tools/catalog/make_docs_files.py --confirm", "AGENTS.md and missing README.md"),
+    ("tools/catalog/make_root_tables.py", "root README/AGENTS collection tables"),
     ("tools/collections/brp_gewaspercelen/generate_items.py", "brp item JSON"),
     ("tools/collections/brp_gewaspercelen/generate_year_docs.py", "brp year docs"),
     ("tools/collections/brp_gewaspercelen/regen_year_styles.py", "brp per-year styles"),

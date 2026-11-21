@@ -41,6 +41,12 @@
       "title": "WMS service (2025)"
     },
     {
+      "rel": "via",
+      "href": "https://www.cbs.nl/nl-nl/longread/diversen/2025/toelichting-wijk-en-buurtkaart-2023-2024-en-2025/5-beschrijving-kerncijfers",
+      "type": "text/html",
+      "title": "Column definitions: CBS, Toelichting Wijk- en Buurtkaart 2023, 2024 en 2025 — 5. Beschrijving kerncijfers"
+    },
+    {
       "rel": "pmtiles",
       "href": "https://data.source.coop/cholmes/portolan-nl/cbs/wijken_en_buurten/wijken_en_buurten.pmtiles",
       "type": "application/vnd.pmtiles",
@@ -71,191 +77,238 @@
   "table:columns": [
     {
       "name": "gml_id",
-      "type": "string"
+      "type": "string",
+      "description": "Technical: feature id from the PDOK WFS GML output; not a CBS kerncijfer."
     },
     {
       "name": "buurtcode",
-      "type": "string"
+      "type": "string",
+      "description": "Neighborhood (buurt) code: 'BU' + 8 digits = 4-digit municipality + 2-digit district + 2-digit neighborhood number (e.g. BU00030102)."
     },
     {
       "name": "buurtnaam",
-      "type": "string"
+      "type": "string",
+      "description": "Name of the neighborhood (buurt), the lowest regional level, delimited by the municipality and coordinated nationally by CBS."
     },
     {
       "name": "wijkcode",
-      "type": "string"
+      "type": "string",
+      "description": "District (wijk) code: 'WK' + 6 digits; first 4 digits are the municipality code. A wijk is part of a municipality comprising one or more buurten."
     },
     {
       "name": "gemeentecode",
-      "type": "string"
+      "type": "string",
+      "description": "Municipality (gemeente) code: 'GM' + 4 digits."
     },
     {
       "name": "gemeentenaam",
-      "type": "string"
+      "type": "string",
+      "description": "Name of the municipality (gemeente)."
     },
     {
       "name": "indelingswijzigingWijkenEnBuurten",
-      "type": "int32"
+      "type": "int32",
+      "description": "Change vs previous year: 1 = code and boundary unchanged; 2 = code changed, boundary unchanged; 3 = boundary changed (figures not comparable)."
     },
     {
       "name": "water",
-      "type": "string"
+      "type": "string",
+      "description": "Land/water flag: JA = polygon is (larger) water surface, NEE = land, B = Belgian territory (enclaves near Baarle-Nassau, municipality GM0998)."
     },
     {
       "name": "meestVoorkomendePostcode",
-      "type": "string"
+      "type": "string",
+      "description": "Most common numeric (4-digit) postcode in the area, based on address counts in the Geographic Base Register (GBR) on 1 January."
     },
     {
       "name": "dekkingspercentage",
-      "type": "int32"
+      "type": "int32",
+      "description": "Share of addresses carrying the most common postcode, in six classes (1-6): >90%, 81-90%, 71-80%, 61-70%, 51-60%, <=50%."
     },
     {
       "name": "omgevingsadressendichtheid",
-      "type": "int32"
+      "type": "int32",
+      "description": "Environmental address density: average number of addresses per km2 within a 1 km radius around each address in the area, on 1 January."
     },
     {
       "name": "stedelijkheidAdressenPerKm2",
-      "type": "int32"
+      "type": "int32",
+      "description": "Urbanity class from address density: 1 very highly urban (>=2500 addr/km2), 2 (1500-2500), 3 (1000-1500), 4 (500-1000), 5 not urban (<500)."
     },
     {
       "name": "bevolkingsdichtheidInwonersPerKm2",
-      "type": "int32"
+      "type": "int32",
+      "description": "Population density: inhabitants per km2 of land area."
     },
     {
       "name": "aantalInwoners",
-      "type": "int32"
+      "type": "int32",
+      "description": "Inhabitants registered in municipal population registers on 1 January; buurt/wijk figures are randomly rounded to multiples of 5."
     },
     {
       "name": "mannen",
-      "type": "int32"
+      "type": "int32",
+      "description": "Number of male inhabitants on 1 January."
     },
     {
       "name": "vrouwen",
-      "type": "int32"
+      "type": "int32",
+      "description": "Number of female inhabitants on 1 January."
     },
     {
       "name": "percentagePersonen0Tot15Jaar",
-      "type": "int32"
+      "type": "int32",
+      "description": "Inhabitants aged 0 up to 15 as a percentage of total inhabitants (1 January)."
     },
     {
       "name": "percentagePersonen15Tot25Jaar",
-      "type": "int32"
+      "type": "int32",
+      "description": "Inhabitants aged 15 up to 25 as a percentage of total inhabitants (1 January)."
     },
     {
       "name": "percentagePersonen25Tot45Jaar",
-      "type": "int32"
+      "type": "int32",
+      "description": "Inhabitants aged 25 up to 45 as a percentage of total inhabitants (1 January)."
     },
     {
       "name": "percentagePersonen45Tot65Jaar",
-      "type": "int32"
+      "type": "int32",
+      "description": "Inhabitants aged 45 up to 65 as a percentage of total inhabitants (1 January)."
     },
     {
       "name": "percentagePersonen65JaarEnOuder",
-      "type": "int32"
+      "type": "int32",
+      "description": "Inhabitants aged 65 and over as a percentage of total inhabitants (1 January)."
     },
     {
       "name": "percentageOngehuwd",
-      "type": "int32"
+      "type": "int32",
+      "description": "Percentage of inhabitants never married and never in a registered partnership."
     },
     {
       "name": "percentageGehuwd",
-      "type": "int32"
+      "type": "int32",
+      "description": "Percentage married or in a registered partnership; includes persons legally separated (gescheiden van tafel en bed)."
     },
     {
       "name": "percentageGescheid",
-      "type": "int32"
+      "type": "int32",
+      "description": "Percentage divorced from marriage or registered partnership; legally separated persons count as married."
     },
     {
       "name": "percentageVerweduwd",
-      "type": "int32"
+      "type": "int32",
+      "description": "Percentage widowed, including surviving partners of a registered partnership."
     },
     {
       "name": "aantalHuishoudens",
-      "type": "int32"
+      "type": "int32",
+      "description": "Number of private households on 1 January."
     },
     {
       "name": "percentageEenpersoonshuishoudens",
-      "type": "int32"
+      "type": "int32",
+      "description": "One-person households as a percentage of all private households."
     },
     {
       "name": "percentageHuishoudensZonderKinderen",
-      "type": "int32"
+      "type": "int32",
+      "description": "Multi-person households without children as a percentage of all private households."
     },
     {
       "name": "percentageHuishoudensMetKinderen",
-      "type": "int32"
+      "type": "int32",
+      "description": "Multi-person households with children as a percentage of all private households."
     },
     {
       "name": "gemiddeldeHuishoudsgrootte",
-      "type": "double"
+      "type": "double",
+      "description": "Average household size: persons in private households divided by the number of private households."
     },
     {
       "name": "percentageMetHerkomstlandNederland",
-      "type": "int32"
+      "type": "int32",
+      "description": "Percentage with country of origin Netherlands. Origin = own birth country; for NL-born persons, the parents' (mother's) birth country."
     },
     {
       "name": "percentageMetHerkomstlandUitEuropaExclNl",
-      "type": "int32"
+      "type": "int32",
+      "description": "Percentage with country of origin in Europe excl. NL (Turkey, Caucasus and Central Asia are counted under Asia)."
     },
     {
       "name": "percentageMetHerkomstlandBuitenEuropa",
-      "type": "int32"
+      "type": "int32",
+      "description": "Percentage of inhabitants with country of origin outside Europe."
     },
     {
       "name": "percentageGebInNlMetHerkomstlandNederland",
-      "type": "int32"
+      "type": "int32",
+      "description": "Percentage born in the Netherlands with country of origin Netherlands."
     },
     {
       "name": "percGebInNlMetHerkomstlandInEuropaExNl",
-      "type": "int32"
+      "type": "int32",
+      "description": "Percentage born in the Netherlands with country of origin in Europe excl. the Netherlands."
     },
     {
       "name": "percGebInNlMetHerkomstlandBuitenEuropa",
-      "type": "int32"
+      "type": "int32",
+      "description": "Percentage born in the Netherlands with country of origin outside Europe."
     },
     {
       "name": "percGebBuitenNlMetHerkomstlndInEuropaExNl",
-      "type": "int32"
+      "type": "int32",
+      "description": "Percentage born outside the Netherlands with country of origin in Europe excl. the Netherlands."
     },
     {
       "name": "percGebBuitenNlMetHerkomstlndBuitenEuropa",
-      "type": "int32"
+      "type": "int32",
+      "description": "Percentage born outside the Netherlands with country of origin outside Europe."
     },
     {
       "name": "oppervlakteTotaalInHa",
-      "type": "int32"
+      "type": "int32",
+      "description": "Total area of the region in hectares (land plus water)."
     },
     {
       "name": "oppervlakteLandInHa",
-      "type": "int32"
+      "type": "int32",
+      "description": "Land area of the region in hectares."
     },
     {
       "name": "oppervlakteWaterInHa",
-      "type": "int32"
+      "type": "int32",
+      "description": "Water area in hectares (inland and outer water; outer water is assigned only at municipality level)."
     },
     {
       "name": "jrstatcode",
-      "type": "string"
+      "type": "string",
+      "description": "Technical key: reference year concatenated with the region code, e.g. '2025BU09989999' (CBS/PDOK file key)."
     },
     {
       "name": "jaar",
-      "type": "int32"
+      "type": "int32",
+      "description": "Reference year of the Wijk- en Buurtkaart edition; most kerncijfers refer to 1 January of this year."
     },
     {
       "name": "fuuid",
-      "type": "string"
+      "type": "string",
+      "description": "Technical: PDOK feature UUID; not in the CBS documentation."
     },
     {
       "name": "geom",
-      "type": "binary"
+      "type": "binary",
+      "description": "Technical: PC6 area polygon geometry (CBS source data in EPSG:28992 RD New); mirror geometry column, not a CBS statistical variable."
     },
     {
       "name": "geom_bbox",
-      "type": "struct<xmin: float, ymin: float, xmax: float, ymax: float>"
+      "type": "struct<xmin: float, ymin: float, xmax: float, ymax: float>",
+      "description": "Technical: per-feature bounding box struct added in the GeoParquet conversion for spatial indexing; not a CBS variable."
     },
     {
       "name": "wijknaam",
-      "type": "string"
+      "type": "string",
+      "description": "Name of the district (wijk) the neighborhood belongs to."
     }
   ],
   "portolan:styles": [

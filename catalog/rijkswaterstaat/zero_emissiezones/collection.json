@@ -61,35 +61,43 @@
   "table:columns": [
     {
       "name": "OBJECTID",
-      "type": "int64"
+      "type": "int64",
+      "description": "Esri row id (see generic)."
     },
     {
       "name": "Naam",
-      "type": "string"
+      "type": "string",
+      "description": "Zone name: type plus municipality, e.g. 'ZE Amsterdam', 'Milieuzone Arnhem', 'LEZ Utrecht'; some rows 'onbekend'."
     },
     {
       "name": "Startdatum",
-      "type": "timestamp[ms]"
+      "type": "timestamp[ms]",
+      "description": "Date the zone comes into force."
     },
     {
       "name": "Einddatum",
-      "type": "timestamp[ms]"
+      "type": "timestamp[ms]",
+      "description": "End date of the zone, if set."
     },
     {
       "name": "Soort",
-      "type": "string"
+      "type": "string",
+      "description": "Zone type code: ZE/ZES = zero-emission zone (city logistics, from 1 Jan 2025), Milieuzone = diesel low-emission zone, LEZ, Onbekend."
     },
     {
       "name": "Shape__Area",
-      "type": "double"
+      "type": "double",
+      "description": "See generic."
     },
     {
       "name": "Shape__Length",
-      "type": "double"
+      "type": "double",
+      "description": "See generic."
     },
     {
       "name": "geometry",
-      "type": "binary"
+      "type": "binary",
+      "description": "Feature geometry, WKB encoded; see proj:epsg for the CRS."
     }
   ],
   "portolan:styles": [
