@@ -69,38 +69,28 @@
   "table:columns": [
     {
       "name": "wvk_id",
-      "type": "double",
+      "type": "float64",
       "description": "Road segment ID (wegvak ID)"
     },
     {
       "name": "wvk_begdat",
-      "type": "string",
+      "type": "timestamp[us, tz=UTC]",
       "description": "Segment start date (begin datum)"
     },
     {
       "name": "jte_id_beg",
-      "type": "double",
+      "type": "float64",
       "description": "Junction ID at start of segment"
     },
     {
       "name": "jte_id_end",
-      "type": "double",
+      "type": "float64",
       "description": "Junction ID at end of segment"
     },
     {
       "name": "wegbehsrt",
       "type": "string",
       "description": "Road manager type (wegbeheerder soort): R=Rijk, P=Provincie, G=Gemeente, W=Waterschap"
-    },
-    {
-      "name": "wegbehcode",
-      "type": "string",
-      "description": "Road manager code (wegbeheerder code)"
-    },
-    {
-      "name": "wegbehnaam",
-      "type": "string",
-      "description": "Road manager name (wegbeheerder naam)"
     },
     {
       "name": "wegnummer",
@@ -113,34 +103,9 @@
       "description": "Road section letter"
     },
     {
-      "name": "hession",
-      "type": "int16",
-      "description": "Hectometer session number"
-    },
-    {
-      "name": "begafstand",
-      "type": "int32",
-      "description": "Begin distance in hectometers"
-    },
-    {
-      "name": "endafstand",
-      "type": "int32",
-      "description": "End distance in hectometers"
-    },
-    {
-      "name": "beginkm",
-      "type": "double",
-      "description": "Begin kilometer point"
-    },
-    {
-      "name": "eindkm",
-      "type": "double",
-      "description": "End kilometer point"
-    },
-    {
-      "name": "pos_tv_wol",
+      "name": "admrichtng",
       "type": "string",
-      "description": "Position relative to center line (positie t.o.v. wegas)"
+      "description": "Administrative direction"
     },
     {
       "name": "rijrichtng",
@@ -148,34 +113,19 @@
       "description": "Driving direction (rijrichting): H=heen, T=terug, B=both, O=unknown"
     },
     {
-      "name": "admrichtng",
+      "name": "stt_naam",
       "type": "string",
-      "description": "Administrative direction"
+      "description": "Street name (straatnaam)"
     },
     {
-      "name": "wegtype",
+      "name": "stt_bron",
       "type": "string",
-      "description": "Road type code"
+      "description": "Street name source"
     },
     {
-      "name": "wgtype_oms",
+      "name": "wpsnaam",
       "type": "string",
-      "description": "Road type description (wegtype omschrijving)"
-    },
-    {
-      "name": "routeltr",
-      "type": "string",
-      "description": "Route letter (A, N, etc.)"
-    },
-    {
-      "name": "routenr",
-      "type": "int16",
-      "description": "Route number"
-    },
-    {
-      "name": "subession",
-      "type": "int16",
-      "description": "Sub-session number"
+      "description": "Place name (woonplaatsnaam)"
     },
     {
       "name": "gme_id",
@@ -199,72 +149,82 @@
     },
     {
       "name": "e_hnr_lnks",
-      "type": "string",
+      "type": "int32",
       "description": "First house number left"
     },
     {
       "name": "e_hnr_rhts",
-      "type": "string",
+      "type": "int32",
       "description": "First house number right"
     },
     {
       "name": "l_hnr_lnks",
-      "type": "string",
+      "type": "int32",
       "description": "Last house number left"
     },
     {
       "name": "l_hnr_rhts",
-      "type": "string",
+      "type": "int32",
       "description": "Last house number right"
     },
     {
-      "name": "beg_opafst",
+      "name": "begafstand",
       "type": "int32",
-      "description": "Start address distance"
+      "description": "Begin distance in hectometers"
     },
     {
-      "name": "end_opafst",
+      "name": "endafstand",
       "type": "int32",
-      "description": "End address distance"
+      "description": "End distance in hectometers"
     },
     {
-      "name": "stt_naam",
-      "type": "string",
-      "description": "Street name (straatnaam)"
+      "name": "beginkm",
+      "type": "float64",
+      "description": "Begin kilometer point"
     },
     {
-      "name": "stt_bron",
-      "type": "string",
-      "description": "Street name source"
+      "name": "eindkm",
+      "type": "float64",
+      "description": "End kilometer point"
     },
     {
-      "name": "wpsnaam",
+      "name": "pos_tv_wol",
       "type": "string",
-      "description": "Place name (woonplaatsnaam)"
+      "description": "Position relative to center line (positie t.o.v. wegas)"
     },
     {
-      "name": "wpsbron",
+      "name": "wegbehcode",
       "type": "string",
-      "description": "Place name source"
+      "description": "Road manager code (wegbeheerder code)"
     },
     {
-      "name": "gmebron",
+      "name": "wegbehnaam",
       "type": "string",
-      "description": "Municipality data source"
+      "description": "Road manager name (wegbeheerder naam)"
     },
     {
-      "name": "admrichtng_sort",
+      "name": "wegtype",
       "type": "string",
-      "description": "Administrative direction sort key"
+      "description": "Road type code"
     },
     {
-      "name": "rijrichtng_sort",
+      "name": "wgtype_oms",
       "type": "string",
-      "description": "Driving direction sort key"
+      "description": "Road type description (wegtype omschrijving)"
+    },
+    {
+      "name": "routeltr",
+      "type": "string",
+      "description": "Route letter (A, N, etc.)"
+    },
+    {
+      "name": "routenr",
+      "type": "int16",
+      "description": "Route number"
     },
     {
       "name": "st_lengthshape",
-      "type": "double",
+      "type": "float64",
       "description": "Segment length in metres"
     },
     {

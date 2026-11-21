@@ -69,7 +69,7 @@ Each layer has 12 features (one per province).
 | `referencePeriod_end` | datetime | End of the reference period |
 | `areaValue` | float64 | Province area in square metres |
 | `HH_NL_NUTS2_doctors_STATCODE` | string | Province code in the doctors layer, e.g. `PV20` |
-| `geometry` | MultiPolygon | Provincial boundary in **EPSG:3035** (ETRS89-LAEA) |
+| `geom` | MultiPolygon | Provincial boundary in **EPSG:3035** (ETRS89-LAEA) |
 
 Additional INSPIRE-standard metadata fields may be present depending on the WFS response.
 
@@ -79,7 +79,7 @@ The columns you'll most often use:
 
 - **`identifier`** -- NUTS2 province code (the join key for Eurostat/INSPIRE data)
 - **`text`** -- province name in Dutch
-- **`geometry`** -- provincial boundary polygon
+- **`geom`** -- provincial boundary polygon
 
 ## NUTS2 Province Codes
 
@@ -105,11 +105,11 @@ The columns you'll most often use:
   Coordinates are in metres on a European-wide grid.
 - To convert to WGS84 (lon/lat) for web mapping:
   ```sql
-  ST_Transform(geometry, 'EPSG:3035', 'EPSG:4326')
+  ST_Transform(geom, 'EPSG:3035', 'EPSG:4326')
   ```
 - To convert to Dutch national CRS:
   ```sql
-  ST_Transform(geometry, 'EPSG:3035', 'EPSG:28992')
+  ST_Transform(geom, 'EPSG:3035', 'EPSG:28992')
   ```
 - Bounding box in WGS84: [3.37, 50.73, 7.24, 53.55] (all of Netherlands)
 

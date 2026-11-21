@@ -30,7 +30,7 @@ INSPIRE-harmonized health statistics for the Netherlands, providing doctor count
 | referencePeriod_begin | datetime | Start of reference period |
 | referencePeriod_end | datetime | End of reference period |
 | areaValue | float64 | Province area in square metres |
-| geometry | binary | MultiPolygon in EPSG:3035 (ETRS89-LAEA), WKB encoded |
+| geom | binary | MultiPolygon in EPSG:3035 (ETRS89-LAEA), WKB encoded |
 
 ## Quick Start
 

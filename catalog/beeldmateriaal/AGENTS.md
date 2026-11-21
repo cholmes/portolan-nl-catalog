@@ -89,7 +89,7 @@ The full tile code (e.g., 32DN1) locates a specific ~5 × 6.25 km area.
 
 Other collections in this Portolan catalog pair well with the orthophotos:
 
-- **BAG Light** (kadaster/bag_light) — 11.4M building footprints for overlay analysis
+- **BAG Light** (kadaster/panden) — 11.4M building footprints for overlay analysis
 - **Bestuurlijke Gebieden** (kadaster/bestuurlijke_gebieden) — Administrative boundaries
 - **Rijksmonumenten** (rce/rijksmonumenten) — 63K national monument locations
 - **Nationale Parken** (rvo/nationale_parken) — 21 national park boundaries

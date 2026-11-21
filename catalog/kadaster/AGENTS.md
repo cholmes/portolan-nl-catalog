@@ -8,7 +8,7 @@ key registrations (basisregistraties) and publishes them via PDOK.
 
 ## Collections
 
-### bag_light/ — BAG Buildings (Light Extract)
+### panden/ — BAG Buildings (Light Extract)
 11.4 million buildings (panden) from the BAG (Basisregistratie Adressen en Gebouwen),
 the authoritative Dutch building and address registry. Current records only, with
 construction year, usage function, floor area, and dwelling unit count. This is the
@@ -71,7 +71,7 @@ Use bestuurlijke_gebieden as the reference geometry for any municipality-level a
 INSTALL spatial; LOAD spatial;
 
 SELECT g.naam AS gemeente, COUNT(*) AS buildings
-FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/bag_light/bag-light.parquet') b
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/panden/bag-light.parquet') b
 JOIN read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/bestuurlijke_gebieden/gemeentegebied.parquet') g
   ON LEFT(b.identificatie, 4) = g.identificatie
 WHERE b.status = 'Pand in gebruik'
@@ -84,7 +84,7 @@ LIMIT 10
 
 ```sql
 SELECT 'BAG Light' AS source, COUNT(*) AS buildings
-FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/bag_light/bag-light.parquet')
+FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/panden/bag-light.parquet')
 UNION ALL
 SELECT 'INSPIRE (current)', COUNT(*)
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/inspire_buildings/buildings.parquet')
@@ -104,7 +104,7 @@ ORDER BY municipalities DESC
 
 Each collection has its own `AGENTS.md` with detailed field descriptions, value distributions,
 and query patterns:
-- `bag_light/AGENTS.md`
+- `panden/AGENTS.md`
 - `bestuurlijke_gebieden/AGENTS.md`
 - `inspire_buildings/AGENTS.md`
 

@@ -26,7 +26,7 @@ Natura 2000 areas carry the strongest nature protection in Dutch law — any pla
 | status | string | Legal designation status (free-text with date) |
 | shape_area | float64 | Area per feature in m² |
 | shape_len | float64 | Perimeter per feature in metres |
-| geometry | binary | MultiPolygon in EPSG:28992 (RD New), WKB encoded |
+| geom | binary | MultiPolygon in EPSG:28992 (RD New), WKB encoded |
 
 ## Files
 

@@ -58,7 +58,7 @@
     "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "table:row_count": 355,
-  "table:primary_geometry": "geometry",
+  "table:primary_geometry": "geom",
   "table:columns": [
     {
       "name": "fid",
@@ -91,6 +91,16 @@
       "description": "Province name (gemeentegebied only)"
     },
     {
+      "name": "geom",
+      "type": "binary",
+      "description": "Boundary polygon in EPSG:28992 (Amersfoort / RD New), WKB encoded"
+    },
+    {
+      "name": "geom_bbox",
+      "type": "struct<xmin: float not null, ymin: float not null, xmax: float not null, ymax: float not null>",
+      "description": "Boundary polygon in EPSG:28992 (Amersfoort / RD New), WKB encoded"
+    },
+    {
       "name": "ligt_in_land_code",
       "type": "string",
       "description": "Country code (provinciegebied only)"
@@ -99,11 +109,6 @@
       "name": "ligt_in_land_naam",
       "type": "string",
       "description": "Country name (provinciegebied only)"
-    },
-    {
-      "name": "geometry",
-      "type": "binary",
-      "description": "Boundary polygon in EPSG:28992 (Amersfoort / RD New), WKB encoded"
     }
   ],
   "geoparquet:geometry_type": "MultiPolygon",

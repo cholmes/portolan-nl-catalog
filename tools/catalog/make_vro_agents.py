@@ -195,6 +195,13 @@ def build(path, meta):
     geomcol = coll["table:primary_geometry"]
     n = coll["table:row_count"]
     title = coll["title"]
+    # The BRO registration id names the object across the registry, so the
+    # spatial example selects it when the layer carries it. The bodemkaart
+    # and geomorfologische_kaart layers do not, so each one falls back to the
+    # identifier it does carry.
+    names = {c["name"] for c in coll["table:columns"]}
+    idcol = next((c for c in ("bro_id", "maparea_id", "identification",
+                              "collection_id", "fid") if c in names), "fid")
     # group/intersect helpers based on geometry
     cat = next((c["name"] for c in (("hoofdklasse",), ("genese_code",), ("survey_purpose",),
                ("legal_status",), ("quality_regime",)) for c in [c[0]]
@@ -245,7 +252,7 @@ struct enabling fast spatial pre-filtering.
 
 ```sql
 INSTALL spatial; LOAD spatial;
-SELECT bro_id{', ' + cat if cat else ''}
+SELECT {idcol}{', ' + cat if cat else ''}
 FROM read_parquet('{url}')
 WHERE ST_DWithin(
     {geomcol},

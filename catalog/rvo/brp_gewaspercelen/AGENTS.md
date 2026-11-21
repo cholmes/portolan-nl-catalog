@@ -78,10 +78,14 @@ column distinguishes them.
 
 ```python
 # Globbing needs a file listing, which plain HTTPS does not provide, so the
-# cross-year glob is the S3 form of the published prefix (anonymous access,
-# path-style addressing because the bucket name contains dots):
-#   CREATE SECRET src (TYPE s3, PROVIDER config,
-#                      REGION 'us-west-2', URL_STYLE 'path');
+# cross-year glob is the S3 form of the published prefix. The access is
+# anonymous. The bucket name contains dots, so TLS needs path-style
+# addressing: without URL_STYLE the certificate does not match the host.
+con.execute("""
+    CREATE OR REPLACE SECRET src (
+        TYPE s3, PROVIDER config, REGION 'us-west-2', URL_STYLE 'path')
+""")
+
 GLOB = 's3://us-west-2.opendata.source.coop/cholmes/portolan-nl/rvo/brp_gewaspercelen/*/brp_gewaspercelen_*.parquet'
 
 # Grassland hectares per year
@@ -319,7 +323,7 @@ gdf = gpd.read_parquet('…/2025/brp_gewaspercelen_2025.parquet',
 - `rvo/natura2000/` — protected nature areas. Useful for "crops near protected habitats".
 - `cbs/bestuurlijke_gebieden/` — municipality / province / country boundaries.
 - `rvo/nationale_parken/` — national park boundaries.
-- `kadaster/bag_light/` — building footprints (compare farm buildings to crop parcels).
+- `kadaster/panden/` — building footprints (compare farm buildings to crop parcels).
 
 ## Use Cases
 
