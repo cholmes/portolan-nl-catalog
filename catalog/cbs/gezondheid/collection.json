@@ -74,12 +74,17 @@
     "https://stac-extensions.github.io/file/v2.1.0/schema.json"
   ],
   "table:row_count": 24,
-  "table:primary_geometry": "geometry",
+  "table:primary_geometry": "geom",
   "table:columns": [
     {
       "name": "gml_id",
       "type": "string",
       "description": "Technical XML id of the feature in the source INSPIRE GML (gml:id); unique within the delivered file, usually derived from the INSPIRE object identifier."
+    },
+    {
+      "name": "gml_id2",
+      "type": "string",
+      "description": "Technical: gml:id of the second source feature merged during flattening; a join artifact, not an INSPIRE attribute."
     },
     {
       "name": "localId",
@@ -92,54 +97,14 @@
       "description": "Namespace uniquely identifying the data source of the spatial object; owned by the data provider (INSPIRE Identifier.namespace, GCM D2.5)."
     },
     {
-      "name": "identifier",
-      "type": "string",
-      "description": "URI/URN form of the INSPIRE external object identifier, carried as gml:identifier in the GML encoding; combines namespace and localId."
-    },
-    {
-      "name": "text",
-      "type": "string",
-      "description": "Way the name is written: the spelling text of the geographical name (SpellingOfName.text, INSPIRE GN spec)."
-    },
-    {
-      "name": "timePosition",
-      "type": "datetime",
-      "description": "Timestamp value of a flattened GML time instant (gml:timePosition), carrying the actual date/time of the feature's temporal property."
-    },
-    {
-      "name": "referencePeriod_begin",
-      "type": "datetime",
-      "description": "Start of the period when the data are supposed to give a picture of the territorial division in statistical units (SU referencePeriod, INSPIRE SU spec)."
-    },
-    {
-      "name": "referencePeriod_end",
-      "type": "datetime",
-      "description": "End of the period when the data are supposed to give a picture of the territorial division in statistical units (SU referencePeriod, INSPIRE SU spec)."
-    },
-    {
-      "name": "areaValue",
-      "type": "float64",
-      "description": "Area of the statistical unit's reference geometry (AreaStatisticalUnit.areaValue, INSPIRE SU spec)."
-    },
-    {
-      "name": "HH_NL_NUTS2_doctors_STATCODE",
-      "type": "string",
-      "description": "Code of the NUTS 2 statistical unit the doctors statistic refers to; HH statistical data are attached to Statistical Units (INSPIRE HH spec)."
-    },
-    {
-      "name": "geometry",
-      "type": "binary",
-      "description": "Feature geometry, WKB encoded; see proj:epsg for the CRS."
-    },
-    {
-      "name": "gml_id2",
-      "type": "string",
-      "description": "Technical: gml:id of the second source feature merged during flattening; a join artifact, not an INSPIRE attribute."
-    },
-    {
       "name": "versionId",
       "type": "string",
       "description": "Identifier of this particular version of the spatial object, unique among all versions of the object; max 25 chars (INSPIRE Identifier.versionId, GCM D2.5)."
+    },
+    {
+      "name": "identifier",
+      "type": "string",
+      "description": "URI/URN form of the INSPIRE external object identifier, carried as gml:identifier in the GML encoding; combines namespace and localId."
     },
     {
       "name": "identifierScheme",
@@ -167,6 +132,11 @@
       "description": "Proper, correct or standard pronunciation of the geographical name, as IPA text and/or a sound-file link (GeographicalName.pronunciation, GN spec)."
     },
     {
+      "name": "text",
+      "type": "string",
+      "description": "Way the name is written: the spelling text of the geographical name (SpellingOfName.text, INSPIRE GN spec)."
+    },
+    {
       "name": "script",
       "type": "string",
       "description": "Set of graphic symbols the name is written in, as a four-letter ISO 15924 code, e.g. Latn (SpellingOfName.script, INSPIRE GN spec)."
@@ -182,14 +152,34 @@
       "description": "Date and time at which this version of the spatial object was superseded or retired in the spatial data set (INSPIRE GCM lifecycle attribute, voidable)."
     },
     {
+      "name": "timePosition",
+      "type": "string",
+      "description": "Timestamp value of a flattened GML time instant (gml:timePosition), carrying the actual date/time of the feature's temporal property."
+    },
+    {
       "name": "validityPeriod",
       "type": "string",
       "description": "Period when the statistical unit is supposed to be preferably used, or not (VectorStatisticalUnit.validityPeriod, INSPIRE SU spec)."
     },
     {
+      "name": "referencePeriod_begin",
+      "type": "string",
+      "description": "Start of the period when the data are supposed to give a picture of the territorial division in statistical units (SU referencePeriod, INSPIRE SU spec)."
+    },
+    {
+      "name": "referencePeriod_end",
+      "type": "string",
+      "description": "End of the period when the data are supposed to give a picture of the territorial division in statistical units (SU referencePeriod, INSPIRE SU spec)."
+    },
+    {
       "name": "leastDetailedScale",
       "type": "int32",
       "description": "Least detailed scale the generalised geometry is suitable for, as the inverse of an indicative scale (VectorStatisticalUnitGeometry, INSPIRE SU spec)."
+    },
+    {
+      "name": "areaValue",
+      "type": "float64",
+      "description": "Area of the statistical unit's reference geometry (AreaStatisticalUnit.areaValue, INSPIRE SU spec)."
     },
     {
       "name": "areaValue_uom",
@@ -217,19 +207,19 @@
       "description": "namespace of the INSPIRE Identifier of the statistical tessellation this area unit composes (AreaStatisticalUnit.tessellation association, SU spec)."
     },
     {
-      "name": "HH_NL_NUTS2_nrdeath_STATCODE",
+      "name": "HH_NL_NUTS2_doctors_STATCODE",
       "type": "string",
-      "description": "Code of the NUTS 2 statistical unit the deaths statistic refers to; HH statistical data are attached to Statistical Units (INSPIRE HH spec)."
+      "description": "Code of the NUTS 2 statistical unit the doctors statistic refers to; HH statistical data are attached to Statistical Units (INSPIRE HH spec)."
     },
     {
-      "name": "HH_NL_NUTS2_nrdeath_JAAR",
+      "name": "HH_NL_NUTS2_doctors_YEAR",
       "type": "string",
-      "description": "Reference year (Dutch: jaar) of the deaths statistic: the time period the statistical data cover (HH referencePeriod, INSPIRE HH spec)."
+      "description": "Reference year of the doctors statistic: the time period the statistical data cover (HH referencePeriod, INSPIRE HH spec)."
     },
     {
-      "name": "HH_NL_NUTS2_nrdeath_OBS_VALUE",
+      "name": "HH_NL_NUTS2_doctors_OBS_VALUE",
       "type": "string",
-      "description": "Value of the mortality statistic: deaths per 100 000 inhabitants in the NUTS 2 region (HH health statistical data value, INSPIRE HH spec)."
+      "description": "Value of the health services statistic: doctors per 100 000 inhabitants in the NUTS 2 region (HealthServicesStatistic value, INSPIRE HH spec)."
     },
     {
       "name": "fuuid",
@@ -247,14 +237,19 @@
       "description": "Technical: per-feature bounding box struct added for spatial filtering (GeoParquet covering)."
     },
     {
-      "name": "HH_NL_NUTS2_doctors_YEAR",
+      "name": "HH_NL_NUTS2_nrdeath_STATCODE",
       "type": "string",
-      "description": "Reference year of the doctors statistic: the time period the statistical data cover (HH referencePeriod, INSPIRE HH spec)."
+      "description": "Code of the NUTS 2 statistical unit the deaths statistic refers to; HH statistical data are attached to Statistical Units (INSPIRE HH spec)."
     },
     {
-      "name": "HH_NL_NUTS2_doctors_OBS_VALUE",
+      "name": "HH_NL_NUTS2_nrdeath_JAAR",
       "type": "string",
-      "description": "Value of the health services statistic: doctors per 100 000 inhabitants in the NUTS 2 region (HealthServicesStatistic value, INSPIRE HH spec)."
+      "description": "Reference year (Dutch: jaar) of the deaths statistic: the time period the statistical data cover (HH referencePeriod, INSPIRE HH spec)."
+    },
+    {
+      "name": "HH_NL_NUTS2_nrdeath_OBS_VALUE",
+      "type": "string",
+      "description": "Value of the mortality statistic: deaths per 100 000 inhabitants in the NUTS 2 region (HH health statistical data value, INSPIRE HH spec)."
     }
   ],
   "portolan:styles": [

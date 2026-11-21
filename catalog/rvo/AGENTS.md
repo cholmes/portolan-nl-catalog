@@ -75,7 +75,7 @@ INSTALL spatial; LOAD spatial;
 SELECT np.naam AS national_park, n2k.naam_n2k AS natura2000_area
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rvo/nationale_parken/nationale_parken.parquet') np
 JOIN read_parquet('https://data.source.coop/cholmes/portolan-nl/rvo/natura2000/natura2000.parquet') n2k
-  ON ST_Intersects(np.geometry, n2k.geometry)
+  ON ST_Intersects(np.geometry, n2k.geom)
 ORDER BY np.naam
 ```
 

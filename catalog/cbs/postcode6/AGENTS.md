@@ -218,25 +218,23 @@ The energy, WOZ and proximity variables hold -99995 throughout this edition
 INSTALL spatial; LOAD spatial;
 
 -- Amsterdam city center (RD New coordinates)
-SELECT postcode6, aantal_inwoners, aantal_woningen, mediaan_inkomen_huishouden
+SELECT postcode6, aantal_inwoners, aantal_woningen
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/postcode6.parquet')
-WHERE jaarcode = 2024
-  AND bbox.xmin >= 119000 AND bbox.xmax <= 123000
-  AND bbox.ymin >= 484000 AND bbox.ymax <= 488000
+WHERE geom_bbox.xmin >= 119000 AND geom_bbox.xmax <= 123000
+  AND geom_bbox.ymin >= 484000 AND geom_bbox.ymax <= 488000
 ```
 
 ### Distance to facilities — find underserved postcodes
 
 ```sql
 SELECT postcode6, aantal_inwoners,
-       afstand_tot_huisartsenpraktijk,
-       afstand_tot_supermarkt,
-       afstand_tot_basisonderwijs
+       dichtstbijzijnde_huisartsenpraktijk_afstand_in_km,
+       dichtstbijzijnde_grote_supermarkt_afstand_in_km,
+       dichtstbijzijnde_basisonderwijs_afstand_in_km
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/postcode6/postcode6.parquet')
-WHERE jaarcode = 2024
-  AND aantal_inwoners > 100
-  AND afstand_tot_huisartsenpraktijk > 5
-ORDER BY afstand_tot_huisartsenpraktijk DESC
+WHERE aantal_inwoners > 100
+  AND dichtstbijzijnde_huisartsenpraktijk_afstand_in_km > 5
+ORDER BY dichtstbijzijnde_huisartsenpraktijk_afstand_in_km DESC
 LIMIT 20
 ```
 
@@ -256,10 +254,9 @@ print(f"Rows: {len(gdf):,}")
 
 ## Temporal Coverage
 
-Data covers years **2015 to 2024**. Each row has a `jaarcode` indicating the reference
-year. The dataset contains multiple years stacked — filter by `jaarcode` to get a single
-year's snapshot. Most demographic and housing data reflects the situation on January 1st
-of that year. Energy and income data reflect the full preceding year.
+The published file holds one edition, the CBS publication 'Statistische gegevens per
+vierkant en postcode 2022-2023-2024'. It carries no year column, so a query needs no
+year filter. Counts are measured on 1 January. Energy figures cover a calendar year.
 
 ## Caveats
 

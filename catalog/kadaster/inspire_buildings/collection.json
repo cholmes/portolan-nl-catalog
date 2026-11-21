@@ -134,11 +134,6 @@
       "name": "bbox",
       "type": "struct<xmin: double, ymin: double, xmax: double, ymax: double>",
       "description": "Technical: per-feature bounding box struct added for spatial filtering (GeoParquet covering)."
-    },
-    {
-      "name": "kdtree_cell",
-      "type": "string",
-      "description": "Technical: KD-tree partition cell id written by the conversion pipeline; the published file is one unpartitioned parquet."
     }
   ],
   "portolan:styles": [

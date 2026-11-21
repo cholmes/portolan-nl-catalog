@@ -68,7 +68,7 @@ mortality rates per 100,000 inhabitants. Small dataset (~24 features: 12 provinc
 CBS municipality codes (gemeentecodes) are the universal join key across Dutch government
 data. The `gemeentecode` field in Wijken en Buurten (e.g., "GM0363" for Amsterdam) links
 to the `identificatie` field in kadaster/bestuurlijke_gebieden/. The first 4 digits of
-BAG building IDs (kadaster/bag_light/) also encode the gemeentecode.
+BAG building IDs (kadaster/panden/) also encode the gemeentecode.
 
 Postcode6 data can be spatially joined with Wijken en Buurten to combine postcode-level
 statistics with neighborhood-level statistics.

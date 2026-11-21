@@ -201,8 +201,8 @@ INSTALL spatial; LOAD spatial;
 SELECT categorie,
        ROUND(SUM(ST_Area(geom)) / 10000, 1) AS hectares
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/cbs/bestand_bodemgebruik_2017/bbg2017.parquet')
-WHERE bbox.xmin >= 109000 AND bbox.xmax <= 135000
-  AND bbox.ymin >= 478000 AND bbox.ymax <= 498000
+WHERE geom_bbox.xmin >= 109000 AND geom_bbox.xmax <= 135000
+  AND geom_bbox.ymin >= 478000 AND geom_bbox.ymax <= 498000
 GROUP BY categorie
 ORDER BY hectares DESC
 ```

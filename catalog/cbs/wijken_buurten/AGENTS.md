@@ -175,7 +175,7 @@ columns are identical.
 
 | Column | Type | Meaning |
 |--------|------|---------|
-| `geometry` | WKB MultiPolygon | Area boundary in **EPSG:28992** (Amersfoort / RD New) |
+| `geom` | WKB MultiPolygon | Area boundary in **EPSG:28992** (Amersfoort / RD New) |
 
 ## Useful Query Patterns
 

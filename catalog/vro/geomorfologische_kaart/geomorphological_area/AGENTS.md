@@ -83,7 +83,7 @@ struct enabling fast spatial pre-filtering.
 
 ```sql
 INSTALL spatial; LOAD spatial;
-SELECT bro_id
+SELECT identification
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/vro/geomorfologische_kaart/geomorphological_area/geomorphological_area.parquet')
 WHERE ST_DWithin(
     geom,

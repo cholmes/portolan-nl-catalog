@@ -283,7 +283,7 @@ Style files are at: `https://data.source.coop/cholmes/portolan-nl/cbs/wijken_en_
 
 - **Bestuurlijke Gebieden** (`kadaster/bestuurlijke_gebieden/`) — administrative boundaries
   from Kadaster (municipalities, provinces, water boards) without the statistical attributes
-- **BAG Light** (`kadaster/bag_light/`) — all 11.4M buildings, can be spatially joined with
+- **BAG Light** (`kadaster/panden/`) — all 11.4M buildings, can be spatially joined with
   neighborhoods for building-level analysis
 - **Bestand Bodemgebruik** (`cbs/bestand_bodemgebruik_2017/`) — land use data from CBS,
   used to derive water/land borders in this dataset

@@ -26,7 +26,7 @@ The official administrative boundaries of the Netherlands: 342 municipalities (g
 | ligt_in_provincie_naam | string | Province name (gemeentegebied only) |
 | ligt_in_land_code | string | Country code (provinciegebied only) |
 | ligt_in_land_naam | string | Country name (provinciegebied only) |
-| geometry | binary | Boundary polygon in EPSG:28992 (RD New), WKB encoded |
+| geom | binary | Boundary polygon in EPSG:28992 (RD New), WKB encoded |
 
 ## Files
 

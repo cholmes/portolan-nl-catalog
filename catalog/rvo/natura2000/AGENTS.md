@@ -48,7 +48,7 @@ The file is ~7.5 MB (209 features) — loads entirely into memory.
 
 | Field | Type | Meaning |
 |-------|------|---------|
-| `geometry` | WKB MultiPolygon | Area boundary in **EPSG:28992** (Amersfoort / RD New). |
+| `geom` | WKB MultiPolygon | Area boundary in **EPSG:28992** (Amersfoort / RD New). |
 | `naam_n2k` | string | **Name** of the Natura 2000 area (Dutch). |
 | `nr` | int32 | Official area number (1–166). The key identifier for joining with other datasets. |
 | `vhn_new` | int16 | **Designation type code**: 1=VR (Birds), 2=HR (Habitats), 3=VR+HR (Both), 9=HR quarry. |
@@ -73,7 +73,7 @@ The columns you'll actually use:
 - **`nr`** — official area number (use for grouping/joining)
 - **`beschermin`** (or `vhn_new`) — designation type (VR/HR/VR+HR)
 - **`shape_area`** — area in m² (per-feature)
-- **`geometry`** — area boundary polygon
+- **`geom`** — area boundary polygon
 
 ## 209 Features ≠ 162 Areas
 
@@ -136,7 +136,7 @@ INSTALL spatial; LOAD spatial;
 SELECT naam_n2k, beschermin
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/rvo/natura2000/natura2000.parquet')
 WHERE ST_Intersects(
-    geometry,
+    geom,
     ST_Transform(ST_Point(5.39, 52.16), 'EPSG:4326', 'EPSG:28992')
 )
 ```

@@ -18,17 +18,24 @@ Run: PORTOLAN_LIVE=1 python3 tests/test_docs_queries.py
 """
 from __future__ import annotations
 
+import concurrent.futures as cf
 import json
 import os
 import re
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
 CATALOG = REPO / "catalog"
 PUB = "https://data.source.coop/cholmes/portolan-nl"
-QUERY_TIMEOUT = 240  # seconds; the cross-year brp scans take minutes
+QUERY_TIMEOUT = 300  # seconds per block; the cross-year brp scans take minutes
+# The blocks run one at a time. A concurrent run truncates range reads from the
+# bucket: a November 2026 run with 4 workers reported 25 ZSTD decompression
+# failures and 12 thrift errors, and every one of those files read clean
+# sequentially. Raise this only with evidence that the bucket holds up.
+WORKERS = 1
 
 # Collections whose table:row_count deliberately does not equal the sum of
 # all parquet data assets. Each entry names the assets the count covers and
@@ -99,26 +106,75 @@ def doc_blocks():
             yield p.relative_to(CATALOG).as_posix(), lang, body
 
 
-def run_sql(duckdb, body: str) -> str | None:
-    con = duckdb.connect()
-    con.execute(f"SET http_timeout={QUERY_TIMEOUT * 1000}")
-    try:
-        for stmt in [s.strip() for s in body.split(";") if s.strip()]:
+# A document's sql blocks run in order in one session, which is how a reader
+# works down the page. Each document opens with a setup block that installs the
+# spatial extension, so the session loads it first: a later block calls ST_Area
+# without repeating the install.
+#
+# The session runs in a child process. An in-process duckdb call cannot be
+# interrupted: a worker that blocks on a stalled read from the bucket never
+# returns, and ThreadPoolExecutor.map then waits for it forever. A run in
+# November 2026 sat for 11 hours this way. A child process accepts a timeout
+# and the parent kills it.
+SQL_RUNNER = """
+import sys
+import duckdb
+blocks = sys.stdin.read().split("\\x00")
+con = duckdb.connect()
+con.execute("SET http_timeout=" + sys.argv[1])
+try:
+    con.execute("INSTALL spatial; LOAD spatial;")
+except Exception:
+    pass  # a document that needs no geometry still runs
+for i, body in enumerate(blocks):
+    for stmt in [s.strip() for s in body.split(";") if s.strip()]:
+        try:
             con.execute(stmt)
-    except Exception as e:  # noqa: BLE001 - report, do not crash the gate
-        return f"{type(e).__name__}: {e}"
+        except Exception as e:
+            sys.stderr.write("block %d: %s: %s" % (i + 1, type(e).__name__, e))
+            raise SystemExit(1)
+"""
+
+
+def run_sql(bodies: list[str]) -> str | None:
+    """Run one document's sql blocks in order. Report the first failure."""
+    r = subprocess.run([sys.executable, "-c", SQL_RUNNER, str(QUERY_TIMEOUT * 1000)],
+                       input="\x00".join(bodies), capture_output=True, text=True,
+                       timeout=QUERY_TIMEOUT)
+    if r.returncode != 0:
+        return r.stderr.strip()[-400:]
     return None
 
 
 ALLOWED_IMPORTS = {"duckdb", "pandas", "json", "io", "textwrap"}
 
 
-def run_python(body: str) -> str | None:
-    imports = set(re.findall(r"^\s*(?:import|from)\s+(\w+)", body, re.M))
-    if not imports <= ALLOWED_IMPORTS:
-        return "SKIP"  # geopandas/matplotlib examples need heavier deps
-    r = subprocess.run([sys.executable, "-c", body], capture_output=True,
-                       text=True, timeout=QUERY_TIMEOUT)
+def runnable_python(bodies: list[str]) -> tuple[list[str], int]:
+    """The blocks this gate can run, and the count it cannot.
+
+    A geopandas or matplotlib example needs heavier dependencies than the
+    gate installs, so it is reported as skipped rather than run.
+    """
+    keep, skipped = [], 0
+    for body in bodies:
+        imports = set(re.findall(r"^\s*(?:import|from)\s+(\w+)", body, re.M))
+        if imports <= ALLOWED_IMPORTS:
+            keep.append(body)
+        else:
+            skipped += 1
+    return keep, skipped
+
+
+def run_python(bodies: list[str]) -> str | None:
+    """Run one document's python blocks in order, as one script.
+
+    A later block uses the connection an earlier one opened, the same way a
+    reader works down the page, so the blocks share a process.
+    """
+    if not bodies:
+        return "SKIP"
+    r = subprocess.run([sys.executable, "-c", "\n".join(bodies)],
+                       capture_output=True, text=True, timeout=QUERY_TIMEOUT)
     if r.returncode != 0:
         return r.stderr.strip()[-400:]
     return None
@@ -134,28 +190,58 @@ def main() -> int:
         print("FAIL: the duckdb package is required for the live checks")
         return 1
 
+    started = time.monotonic()
     failures = check_row_counts(duckdb)
-    ran = skipped = 0
+    print(f"row-count claim checks: {len(failures)} failure(s) "
+          f"in {time.monotonic() - started:.0f}s")
+
+    # One job per document for sql, one job per block for python. A python
+    # block is a standalone script, so it carries its own setup.
+    sql_by_doc: dict[str, list[str]] = {}
+    py_by_doc: dict[str, list[str]] = {}
     for where, lang, body in doc_blocks():
+        bucket = sql_by_doc if lang == "sql" else py_by_doc
+        bucket.setdefault(where, []).append(body)
+
+    skipped_heavy = 0
+    jobs = [(w, "sql", b) for w, b in sql_by_doc.items()]
+    for where, bodies in py_by_doc.items():
+        keep, n = runnable_python(bodies)
+        skipped_heavy += n
+        if keep:
+            jobs.append((where, "python", keep))
+
+    def run_one(job):
+        where, lang, body = job
         try:
-            err = run_sql(duckdb, body) if lang == "sql" else run_python(body)
+            return where, lang, (run_sql(body) if lang == "sql"
+                                 else run_python(body))
         except subprocess.TimeoutExpired:
-            err = f"timed out after {QUERY_TIMEOUT}s"
-        if err == "SKIP":
-            skipped += 1
-            print(f"skip  {where} ({lang}: needs extra dependencies)")
-            continue
-        ran += 1
-        if err:
-            failures.append(f"{where} ({lang}): {err}")
+            return where, lang, f"timed out after {QUERY_TIMEOUT}s"
+        except Exception as e:  # noqa: BLE001 - a crashed worker is a failure
+            return where, lang, f"{type(e).__name__}: {e}"
+
+    ran = 0
+    skipped = skipped_heavy
+    t0 = time.monotonic()
+    with cf.ThreadPoolExecutor(WORKERS) as pool:
+        for where, lang, err in pool.map(run_one, jobs):
+            if err == "SKIP":
+                skipped += 1
+                continue
+            ran += 1
+            if err:
+                failures.append(f"{where} ({lang}): {err}")
+    elapsed = time.monotonic() - t0
 
     for f in failures:
         print(f"FAIL {f}")
     if failures:
-        print(f"\n{len(failures)} failure(s); {ran} blocks ran, {skipped} skipped")
+        print(f"\n{len(failures)} failure(s); {ran} job(s) ran in {elapsed:.0f}s, "
+              f"{skipped} skipped")
         return 1
-    print(f"OK: row counts match the published parquet; "
-          f"{ran} documented blocks ran clean, {skipped} skipped (heavy deps)")
+    print(f"OK: row counts match the published parquet; {ran} documented job(s) "
+          f"ran clean in {elapsed:.0f}s, {skipped} skipped (heavy deps)")
     return 0
 
 

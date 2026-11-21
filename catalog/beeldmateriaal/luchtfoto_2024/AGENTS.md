@@ -282,7 +282,7 @@ PDOK services: https://service.pdok.nl/hwh/luchtfotorgb/wmts/v1_0
 
 ## Related Datasets in This Catalog
 
-- **BAG Light** (kadaster/bag_light) — 11.4M building footprints, ideal for overlay
+- **BAG Light** (kadaster/panden) — 11.4M building footprints, ideal for overlay
 - **Bestuurlijke Gebieden** (kadaster/bestuurlijke_gebieden) — Administrative boundaries
 - **Rijksmonumenten** (rce/rijksmonumenten) — 63K national monument locations
 - **Nationale Parken** (rvo/nationale_parken) — 21 national park boundaries

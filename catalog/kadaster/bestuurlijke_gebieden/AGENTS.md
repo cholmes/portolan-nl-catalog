@@ -53,7 +53,7 @@ Files are small: gemeentegebied ~8 MB, provinciegebied ~1.6 MB, landgebied ~0.4 
 
 | Field | Type | Meaning |
 |-------|------|---------|
-| `geometry` | WKB MultiPolygon | Municipality boundary in **EPSG:28992**. |
+| `geom` | WKB MultiPolygon | Municipality boundary in **EPSG:28992**. |
 | `identificatie` | string | **CBS municipality code** (4-digit, e.g. `0363` for Amsterdam). The key join field for all Dutch government data. |
 | `naam` | string | **Municipality name** (Dutch). |
 | `code` | string | Prefixed code: `GM0363`. GM = gemeente (municipality). |
@@ -65,7 +65,7 @@ Files are small: gemeentegebied ~8 MB, provinciegebied ~1.6 MB, landgebied ~0.4 
 
 | Field | Type | Meaning |
 |-------|------|---------|
-| `geometry` | WKB MultiPolygon | Province boundary in **EPSG:28992**. |
+| `geom` | WKB MultiPolygon | Province boundary in **EPSG:28992**. |
 | `identificatie` | string | Province identifier. |
 | `naam` | string | **Province name** (Dutch). |
 | `code` | string | Prefixed code: `PV27`. PV = provincie. |
@@ -77,7 +77,7 @@ Files are small: gemeentegebied ~8 MB, provinciegebied ~1.6 MB, landgebied ~0.4 
 
 | Field | Type | Meaning |
 |-------|------|---------|
-| `geometry` | WKB MultiPolygon | National territory boundary in **EPSG:28992**. |
+| `geom` | WKB MultiPolygon | National territory boundary in **EPSG:28992**. |
 | `identificatie` | string | Country identifier. |
 | `naam` | string | Country name (`Nederland`). |
 | `code` | string | Country code (`LND6030`). |
@@ -146,7 +146,7 @@ INSTALL spatial; LOAD spatial;
 SELECT naam, code
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/bestuurlijke_gebieden/gemeentegebied.parquet')
 WHERE ST_Intersects(
-    geometry,
+    geom,
     ST_Transform(ST_Point(4.9003, 52.3792), 'EPSG:4326', 'EPSG:28992')
 )
 ```
@@ -157,7 +157,7 @@ WHERE ST_Intersects(
 INSTALL spatial; LOAD spatial;
 
 SELECT naam, code,
-       ST_Area(geometry) / 1e6 AS area_km2
+       ST_Area(geom) / 1e6 AS area_km2
 FROM read_parquet('https://data.source.coop/cholmes/portolan-nl/kadaster/bestuurlijke_gebieden/gemeentegebied.parquet')
 ORDER BY area_km2 DESC
 LIMIT 10
