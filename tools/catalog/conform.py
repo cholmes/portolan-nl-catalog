@@ -735,11 +735,16 @@ def _file_meta(doc, path):
         target = (path.parent / href).resolve()
         if not target.is_file() or target == path.resolve():
             continue        # absent locally, or a self-reference (PORTO-CORE-085)
-        if "file:size" not in a:
-            a["file:size"] = target.stat().st_size
+        # Recompute rather than fill a gap. An edit to a README changes its
+        # size and its hash, and a stale value is a wrong value, which
+        # tests/test_file_metadata.py reports.
+        size = target.stat().st_size
+        if a.get("file:size") != size:
+            a["file:size"] = size
             changed = True
-        if "file:checksum" not in a:
-            a["file:checksum"] = "1220" + hashlib.sha256(target.read_bytes()).hexdigest()
+        digest = "1220" + hashlib.sha256(target.read_bytes()).hexdigest()
+        if a.get("file:checksum") != digest:
+            a["file:checksum"] = digest
             changed = True
     if changed and doc.get("type") in ("Catalog", "Collection", "Feature"):
         ext = doc.setdefault("stac_extensions", [])
